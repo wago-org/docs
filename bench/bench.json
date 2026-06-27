@@ -628,57 +628,152 @@
       "allocs": 6059
     },
     "WarpCompile/arith": {
-      "ns": 123170,
+      "ns": 25000,
       "bytes": 0,
       "allocs": 0
     },
     "WarpCompile/big_func": {
-      "ns": 18711800,
+      "ns": 1151000,
       "bytes": 0,
       "allocs": 0
     },
     "WarpCompile/branches": {
-      "ns": 102451,
+      "ns": 21000,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "WarpCompile/dispatch": {
+      "ns": 32000,
       "bytes": 0,
       "allocs": 0
     },
     "WarpCompile/fib_iter": {
-      "ns": 116918,
+      "ns": 25000,
       "bytes": 0,
       "allocs": 0
     },
     "WarpCompile/fib_rec": {
-      "ns": 127338,
+      "ns": 26000,
       "bytes": 0,
       "allocs": 0
     },
     "WarpCompile/float": {
-      "ns": 117360,
+      "ns": 27000,
       "bytes": 0,
       "allocs": 0
     },
     "WarpCompile/geo": {
-      "ns": 747135,
+      "ns": 99000,
       "bytes": 0,
       "allocs": 0
     },
     "WarpCompile/globals": {
-      "ns": 123009,
+      "ns": 24000,
       "bytes": 0,
       "allocs": 0
     },
     "WarpCompile/hash": {
-      "ns": 266617,
+      "ns": 45000,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "WarpCompile/mandel": {
+      "ns": 47000,
       "bytes": 0,
       "allocs": 0
     },
     "WarpCompile/many_funcs": {
-      "ns": 2457730,
+      "ns": 156000,
       "bytes": 0,
       "allocs": 0
     },
     "WarpCompile/memory": {
-      "ns": 231021,
+      "ns": 29000,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "WarpCompile/tiny": {
+      "ns": 26000,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "WarpExec/arith.run": {
+      "ns": 1499.773,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "WarpExec/big_func.run": {
+      "ns": 1843.828,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "WarpExec/branches.classify": {
+      "ns": 22.73355,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "WarpExec/dispatch.apply": {
+      "ns": 24.39339,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "WarpExec/fib_iter.fib": {
+      "ns": 33.69335,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "WarpExec/fib_rec.fib": {
+      "ns": 1191556,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "WarpExec/float.run": {
+      "ns": 3813.411,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "WarpExec/geo.geo_area": {
+      "ns": 2050.235,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "WarpExec/geo.geo_perimeter": {
+      "ns": 2568.374,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "WarpExec/geo.geo_pip": {
+      "ns": 2017.355,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "WarpExec/globals.accumulate": {
+      "ns": 3074.591,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "WarpExec/hash.hashmix": {
+      "ns": 4986.369,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "WarpExec/mandel.mandel": {
+      "ns": 203134.5,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "WarpExec/many_funcs.run": {
+      "ns": 25.0443,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "WarpExec/memory.sum": {
+      "ns": 243.0712,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "WarpExec/tiny.add": {
+      "ns": 27.0294,
       "bytes": 0,
       "allocs": 0
     },

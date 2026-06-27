@@ -28,59 +28,62 @@
 <text x="64" y="71.0" class="ax" text-anchor="end">10s</text>
 <rect x="74.0" y="355.5" width="9.7" height="28.5" fill="#4e79a7" fill-opacity="1.00"/>
 <rect x="84.8" y="308.6" width="9.7" height="75.4" fill="#e15759" fill-opacity="1.00"/>
+<rect x="95.5" y="320.1" width="9.7" height="63.9" fill="#f28e2b" fill-opacity="1.00"/>
 <text x="90.2" y="398.0" class="cat" text-anchor="end" transform="rotate(-35 90.2 398.0)">tiny</text>
 <rect x="114.3" y="347.3" width="9.7" height="36.7" fill="#4e79a7" fill-opacity="1.00"/>
 <rect x="125.1" y="309.0" width="9.7" height="75.0" fill="#e15759" fill-opacity="1.00"/>
-<rect x="135.8" y="289.0" width="9.7" height="95.0" fill="#f28e2b" fill-opacity="1.00"/>
+<rect x="135.8" y="320.1" width="9.7" height="63.9" fill="#f28e2b" fill-opacity="1.00"/>
 <text x="130.4" y="398.0" class="cat" text-anchor="end" transform="rotate(-35 130.4 398.0)">fib_rec</text>
 <rect x="154.6" y="349.4" width="9.7" height="34.6" fill="#4e79a7" fill-opacity="1.00"/>
 <rect x="165.4" y="309.2" width="9.7" height="74.8" fill="#e15759" fill-opacity="1.00"/>
-<rect x="176.1" y="293.2" width="9.7" height="90.8" fill="#f28e2b" fill-opacity="1.00"/>
+<rect x="176.1" y="324.3" width="9.7" height="59.7" fill="#f28e2b" fill-opacity="1.00"/>
 <text x="170.8" y="398.0" class="cat" text-anchor="end" transform="rotate(-35 170.8 398.0)">branches</text>
 <rect x="194.9" y="345.0" width="9.7" height="39.0" fill="#4e79a7" fill-opacity="1.00"/>
 <rect x="205.7" y="309.0" width="9.7" height="75.0" fill="#e15759" fill-opacity="1.00"/>
-<rect x="216.4" y="290.6" width="9.7" height="93.4" fill="#f28e2b" fill-opacity="1.00"/>
+<rect x="216.4" y="320.9" width="9.7" height="63.1" fill="#f28e2b" fill-opacity="1.00"/>
 <text x="211.0" y="398.0" class="cat" text-anchor="end" transform="rotate(-35 211.0 398.0)">fib_iter</text>
 <rect x="235.2" y="342.6" width="9.7" height="41.4" fill="#4e79a7" fill-opacity="1.00"/>
 <rect x="246.0" y="308.7" width="9.7" height="75.3" fill="#e15759" fill-opacity="1.00"/>
-<rect x="256.7" y="289.6" width="9.7" height="94.4" fill="#f28e2b" fill-opacity="1.00"/>
+<rect x="256.7" y="320.9" width="9.7" height="63.1" fill="#f28e2b" fill-opacity="1.00"/>
 <text x="251.3" y="398.0" class="cat" text-anchor="end" transform="rotate(-35 251.3 398.0)">arith</text>
 <rect x="275.5" y="345.4" width="9.7" height="38.6" fill="#4e79a7" fill-opacity="1.00"/>
 <rect x="286.3" y="308.9" width="9.7" height="75.1" fill="#e15759" fill-opacity="1.00"/>
-<rect x="297.0" y="290.6" width="9.7" height="93.4" fill="#f28e2b" fill-opacity="1.00"/>
+<rect x="297.0" y="319.4" width="9.7" height="64.6" fill="#f28e2b" fill-opacity="1.00"/>
 <text x="291.6" y="398.0" class="cat" text-anchor="end" transform="rotate(-35 291.6 398.0)">float</text>
 <rect x="315.8" y="343.4" width="9.7" height="40.6" fill="#4e79a7" fill-opacity="1.00"/>
 <rect x="326.6" y="304.3" width="9.7" height="79.7" fill="#e15759" fill-opacity="1.00"/>
-<rect x="337.3" y="289.7" width="9.7" height="94.3" fill="#f28e2b" fill-opacity="1.00"/>
+<rect x="337.3" y="321.7" width="9.7" height="62.3" fill="#f28e2b" fill-opacity="1.00"/>
 <text x="331.9" y="398.0" class="cat" text-anchor="end" transform="rotate(-35 331.9 398.0)">globals</text>
 <rect x="356.1" y="338.1" width="9.7" height="45.9" fill="#4e79a7" fill-opacity="1.00"/>
 <rect x="366.9" y="301.6" width="9.7" height="82.4" fill="#e15759" fill-opacity="1.00"/>
+<rect x="377.6" y="316.1" width="9.7" height="67.9" fill="#f28e2b" fill-opacity="1.00"/>
 <text x="372.2" y="398.0" class="cat" text-anchor="end" transform="rotate(-35 372.2 398.0)">dispatch</text>
 <rect x="396.4" y="333.7" width="9.7" height="50.3" fill="#4e79a7" fill-opacity="1.00"/>
 <rect x="407.2" y="300.4" width="9.7" height="83.6" fill="#e15759" fill-opacity="1.00"/>
-<rect x="417.9" y="277.3" width="9.7" height="106.7" fill="#f28e2b" fill-opacity="1.00"/>
+<rect x="417.9" y="318.0" width="9.7" height="66.0" fill="#f28e2b" fill-opacity="1.00"/>
 <text x="412.5" y="398.0" class="cat" text-anchor="end" transform="rotate(-35 412.5 398.0)">memory</text>
 <rect x="436.7" y="312.9" width="9.7" height="71.1" fill="#4e79a7" fill-opacity="1.00"/>
 <rect x="447.5" y="289.9" width="9.7" height="94.1" fill="#e15759" fill-opacity="1.00"/>
+<rect x="458.2" y="308.5" width="9.7" height="75.5" fill="#f28e2b" fill-opacity="1.00"/>
 <text x="452.8" y="398.0" class="cat" text-anchor="end" transform="rotate(-35 452.8 398.0)">mandel</text>
 <rect x="477.0" y="313.5" width="9.7" height="70.5" fill="#4e79a7" fill-opacity="1.00"/>
 <rect x="487.8" y="294.0" width="9.7" height="90.0" fill="#e15759" fill-opacity="1.00"/>
-<rect x="498.5" y="274.5" width="9.7" height="109.5" fill="#f28e2b" fill-opacity="1.00"/>
+<rect x="498.5" y="309.4" width="9.7" height="74.6" fill="#f28e2b" fill-opacity="1.00"/>
 <text x="493.1" y="398.0" class="cat" text-anchor="end" transform="rotate(-35 493.1 398.0)">hash</text>
 <rect x="517.3" y="289.4" width="9.7" height="94.6" fill="#4e79a7" fill-opacity="1.00"/>
 <rect x="528.1" y="271.4" width="9.7" height="112.6" fill="#e15759" fill-opacity="1.00"/>
-<rect x="538.8" y="254.3" width="9.7" height="129.7" fill="#f28e2b" fill-opacity="1.00"/>
+<rect x="538.8" y="293.9" width="9.7" height="90.1" fill="#f28e2b" fill-opacity="1.00"/>
 <text x="533.4" y="398.0" class="cat" text-anchor="end" transform="rotate(-35 533.4 398.0)">geo</text>
 <rect x="557.6" y="268.5" width="9.7" height="115.5" fill="#4e79a7" fill-opacity="1.00"/>
 <rect x="568.4" y="248.6" width="9.7" height="135.4" fill="#e15759" fill-opacity="1.00"/>
-<rect x="579.1" y="230.9" width="9.7" height="153.1" fill="#f28e2b" fill-opacity="1.00"/>
+<rect x="579.1" y="285.0" width="9.7" height="99.0" fill="#f28e2b" fill-opacity="1.00"/>
 <text x="573.7" y="398.0" class="cat" text-anchor="end" transform="rotate(-35 573.7 398.0)">many_funcs</text>
 <rect x="597.9" y="248.8" width="9.7" height="135.2" fill="#4e79a7" fill-opacity="1.00"/>
 <rect x="608.7" y="250.4" width="9.7" height="133.6" fill="#e15759" fill-opacity="1.00"/>
 <text x="614.0" y="398.0" class="cat" text-anchor="end" transform="rotate(-35 614.0 398.0)">real_medstack</text>
 <rect x="638.2" y="220.1" width="9.7" height="163.9" fill="#4e79a7" fill-opacity="1.00"/>
 <rect x="649.0" y="228.0" width="9.7" height="156.0" fill="#e15759" fill-opacity="1.00"/>
-<rect x="659.7" y="191.1" width="9.7" height="192.9" fill="#f28e2b" fill-opacity="1.00"/>
+<rect x="659.7" y="245.8" width="9.7" height="138.2" fill="#f28e2b" fill-opacity="1.00"/>
 <text x="654.3" y="398.0" class="cat" text-anchor="end" transform="rotate(-35 654.3 398.0)">big_func</text>
 <rect x="678.5" y="198.9" width="9.7" height="185.1" fill="#4e79a7" fill-opacity="1.00"/>
 <rect x="689.3" y="203.0" width="9.7" height="181.0" fill="#e15759" fill-opacity="1.00"/>
