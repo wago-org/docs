@@ -1,70 +1,87 @@
-<svg width="900" height="460" viewBox="0 0 900 460" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif">
-<style>.val{font-size:10px;fill:#444}.cat{font-size:11px;fill:#333}.leg{font-size:11px;fill:#333}.ax{font-size:10px;fill:#888}.grid{stroke:#eee}.axis{stroke:#bbb}</style>
-<rect width="900" height="460" fill="#fff"/>
+<svg width="1180" height="460" viewBox="0 0 1180 460" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif">
+<style>.val{font-size:10px;fill:#444}.bval{font-size:8px;fill:#555}.cat{font-size:11px;fill:#333}.leg{font-size:11px;fill:#333}.ax{font-size:10px;fill:#888}.grid{stroke:#eee}.axis{stroke:#bbb}</style>
+<rect width="1180" height="460" fill="#fff"/>
 <text x="70" y="26" font-size="15" font-weight="600" fill="#222">wago Compile — ns/op over versions (log scale)</text>
-<line x1="70" y1="364.0" x2="876" y2="364.0" class="grid"/>
+<line x1="70" y1="364.0" x2="1156" y2="364.0" class="grid"/>
 <text x="64" y="367.0" class="ax" text-anchor="end">100ns</text>
-<line x1="70" y1="300.8" x2="876" y2="300.8" class="grid"/>
+<line x1="70" y1="300.8" x2="1156" y2="300.8" class="grid"/>
 <text x="64" y="303.8" class="ax" text-anchor="end">1µs</text>
-<line x1="70" y1="237.6" x2="876" y2="237.6" class="grid"/>
+<line x1="70" y1="237.6" x2="1156" y2="237.6" class="grid"/>
 <text x="64" y="240.6" class="ax" text-anchor="end">10µs</text>
-<line x1="70" y1="174.4" x2="876" y2="174.4" class="grid"/>
+<line x1="70" y1="174.4" x2="1156" y2="174.4" class="grid"/>
 <text x="64" y="177.4" class="ax" text-anchor="end">100µs</text>
-<line x1="70" y1="111.2" x2="876" y2="111.2" class="grid"/>
+<line x1="70" y1="111.2" x2="1156" y2="111.2" class="grid"/>
 <text x="64" y="114.2" class="ax" text-anchor="end">1ms</text>
-<line x1="70" y1="48.0" x2="876" y2="48.0" class="grid"/>
+<line x1="70" y1="48.0" x2="1156" y2="48.0" class="grid"/>
 <text x="64" y="51.0" class="ax" text-anchor="end">10ms</text>
-<circle cx="398.0" cy="296.5" r="2.5" fill="#4e79a7"/>
-<rect x="744.0" y="48.0" width="10" height="10" fill="#4e79a7"/>
-<text x="758.0" y="57.0" class="leg" text-anchor="start">arith</text>
-<circle cx="398.0" cy="134.5" r="2.5" fill="#f28e2b"/>
-<rect x="744.0" y="64.0" width="10" height="10" fill="#f28e2b"/>
-<text x="758.0" y="73.0" class="leg" text-anchor="start">big_func</text>
-<circle cx="398.0" cy="301.6" r="2.5" fill="#59a14f"/>
-<rect x="744.0" y="80.0" width="10" height="10" fill="#59a14f"/>
-<text x="758.0" y="89.0" class="leg" text-anchor="start">branches</text>
-<circle cx="398.0" cy="273.3" r="2.5" fill="#e15759"/>
-<rect x="744.0" y="96.0" width="10" height="10" fill="#e15759"/>
-<text x="758.0" y="105.0" class="leg" text-anchor="start">dispatch</text>
-<circle cx="398.0" cy="299.6" r="2.5" fill="#76b7b2"/>
-<rect x="744.0" y="112.0" width="10" height="10" fill="#76b7b2"/>
-<text x="758.0" y="121.0" class="leg" text-anchor="start">fib_iter</text>
-<circle cx="398.0" cy="294.5" r="2.5" fill="#edc948"/>
-<rect x="744.0" y="128.0" width="10" height="10" fill="#edc948"/>
-<text x="758.0" y="137.0" class="leg" text-anchor="start">fib_rec</text>
-<circle cx="398.0" cy="296.6" r="2.5" fill="#b07aa1"/>
-<rect x="744.0" y="144.0" width="10" height="10" fill="#b07aa1"/>
-<text x="758.0" y="153.0" class="leg" text-anchor="start">float</text>
-<circle cx="398.0" cy="218.1" r="2.5" fill="#ff9da7"/>
-<rect x="744.0" y="160.0" width="10" height="10" fill="#ff9da7"/>
-<text x="758.0" y="169.0" class="leg" text-anchor="start">geo</text>
-<circle cx="398.0" cy="292.3" r="2.5" fill="#9c755f"/>
-<rect x="744.0" y="176.0" width="10" height="10" fill="#9c755f"/>
-<text x="758.0" y="185.0" class="leg" text-anchor="start">globals</text>
-<circle cx="398.0" cy="261.5" r="2.5" fill="#bab0ac"/>
-<rect x="744.0" y="192.0" width="10" height="10" fill="#bab0ac"/>
-<text x="758.0" y="201.0" class="leg" text-anchor="start">hash</text>
-<circle cx="398.0" cy="258.3" r="2.5" fill="#1b9e77"/>
-<rect x="744.0" y="208.0" width="10" height="10" fill="#1b9e77"/>
-<text x="758.0" y="217.0" class="leg" text-anchor="start">mandel</text>
-<circle cx="398.0" cy="170.2" r="2.5" fill="#d95f02"/>
-<rect x="744.0" y="224.0" width="10" height="10" fill="#d95f02"/>
-<text x="758.0" y="233.0" class="leg" text-anchor="start">many_funcs</text>
-<circle cx="398.0" cy="279.6" r="2.5" fill="#4e79a7"/>
-<rect x="744.0" y="240.0" width="10" height="10" fill="#4e79a7"/>
-<text x="758.0" y="249.0" class="leg" text-anchor="start">memory</text>
-<circle cx="398.0" cy="80.6" r="2.5" fill="#f28e2b"/>
-<rect x="744.0" y="256.0" width="10" height="10" fill="#f28e2b"/>
-<text x="758.0" y="265.0" class="leg" text-anchor="start">real_bigstack</text>
-<circle cx="398.0" cy="109.4" r="2.5" fill="#59a14f"/>
-<rect x="744.0" y="272.0" width="10" height="10" fill="#59a14f"/>
-<text x="758.0" y="281.0" class="leg" text-anchor="start">real_highstack</text>
-<circle cx="398.0" cy="174.4" r="2.5" fill="#e15759"/>
-<rect x="744.0" y="288.0" width="10" height="10" fill="#e15759"/>
-<text x="758.0" y="297.0" class="leg" text-anchor="start">real_medstack</text>
-<circle cx="398.0" cy="308.7" r="2.5" fill="#76b7b2"/>
-<rect x="744.0" y="304.0" width="10" height="10" fill="#76b7b2"/>
-<text x="758.0" y="313.0" class="leg" text-anchor="start">tiny</text>
-<text x="398.0" y="378.0" class="cat" text-anchor="end" transform="rotate(-35 398.0 378.0)">3187714</text>
-<line x1="70" y1="364.0" x2="876" y2="364.0" class="axis"/>
+<circle cx="538.0" cy="296.5" r="2.5" fill="#4e79a7"/>
+<text x="543.0" y="299.5" class="bval" text-anchor="start">1.2µs</text>
+<rect x="1024.0" y="48.0" width="10" height="10" fill="#4e79a7"/>
+<text x="1038.0" y="57.0" class="leg" text-anchor="start">arith</text>
+<circle cx="538.0" cy="134.5" r="2.5" fill="#f28e2b"/>
+<text x="543.0" y="137.5" class="bval" text-anchor="start">427.3µs</text>
+<rect x="1024.0" y="64.0" width="10" height="10" fill="#f28e2b"/>
+<text x="1038.0" y="73.0" class="leg" text-anchor="start">big_func</text>
+<circle cx="538.0" cy="301.6" r="2.5" fill="#59a14f"/>
+<text x="543.0" y="304.6" class="bval" text-anchor="start">970.4ns</text>
+<rect x="1024.0" y="80.0" width="10" height="10" fill="#59a14f"/>
+<text x="1038.0" y="89.0" class="leg" text-anchor="start">branches</text>
+<circle cx="538.0" cy="273.3" r="2.5" fill="#e15759"/>
+<text x="543.0" y="276.3" class="bval" text-anchor="start">2.7µs</text>
+<rect x="1024.0" y="96.0" width="10" height="10" fill="#e15759"/>
+<text x="1038.0" y="105.0" class="leg" text-anchor="start">dispatch</text>
+<circle cx="538.0" cy="299.6" r="2.5" fill="#76b7b2"/>
+<text x="543.0" y="302.6" class="bval" text-anchor="start">1µs</text>
+<rect x="1024.0" y="112.0" width="10" height="10" fill="#76b7b2"/>
+<text x="1038.0" y="121.0" class="leg" text-anchor="start">fib_iter</text>
+<circle cx="538.0" cy="294.5" r="2.5" fill="#edc948"/>
+<text x="543.0" y="297.5" class="bval" text-anchor="start">1.3µs</text>
+<rect x="1024.0" y="128.0" width="10" height="10" fill="#edc948"/>
+<text x="1038.0" y="137.0" class="leg" text-anchor="start">fib_rec</text>
+<circle cx="538.0" cy="296.6" r="2.5" fill="#b07aa1"/>
+<text x="543.0" y="299.6" class="bval" text-anchor="start">1.2µs</text>
+<rect x="1024.0" y="144.0" width="10" height="10" fill="#b07aa1"/>
+<text x="1038.0" y="153.0" class="leg" text-anchor="start">float</text>
+<circle cx="538.0" cy="218.1" r="2.5" fill="#ff9da7"/>
+<text x="543.0" y="221.1" class="bval" text-anchor="start">20.4µs</text>
+<rect x="1024.0" y="160.0" width="10" height="10" fill="#ff9da7"/>
+<text x="1038.0" y="169.0" class="leg" text-anchor="start">geo</text>
+<circle cx="538.0" cy="292.3" r="2.5" fill="#9c755f"/>
+<text x="543.0" y="295.3" class="bval" text-anchor="start">1.4µs</text>
+<rect x="1024.0" y="176.0" width="10" height="10" fill="#9c755f"/>
+<text x="1038.0" y="185.0" class="leg" text-anchor="start">globals</text>
+<circle cx="538.0" cy="261.5" r="2.5" fill="#bab0ac"/>
+<text x="543.0" y="264.5" class="bval" text-anchor="start">4.2µs</text>
+<rect x="1024.0" y="192.0" width="10" height="10" fill="#bab0ac"/>
+<text x="1038.0" y="201.0" class="leg" text-anchor="start">hash</text>
+<circle cx="538.0" cy="258.3" r="2.5" fill="#1b9e77"/>
+<text x="543.0" y="261.3" class="bval" text-anchor="start">4.7µs</text>
+<rect x="1024.0" y="208.0" width="10" height="10" fill="#1b9e77"/>
+<text x="1038.0" y="217.0" class="leg" text-anchor="start">mandel</text>
+<circle cx="538.0" cy="170.2" r="2.5" fill="#d95f02"/>
+<text x="543.0" y="173.2" class="bval" text-anchor="start">116.6µs</text>
+<rect x="1024.0" y="224.0" width="10" height="10" fill="#d95f02"/>
+<text x="1038.0" y="233.0" class="leg" text-anchor="start">many_funcs</text>
+<circle cx="538.0" cy="279.6" r="2.5" fill="#4e79a7"/>
+<text x="543.0" y="282.6" class="bval" text-anchor="start">2.2µs</text>
+<rect x="1024.0" y="240.0" width="10" height="10" fill="#4e79a7"/>
+<text x="1038.0" y="249.0" class="leg" text-anchor="start">memory</text>
+<circle cx="538.0" cy="80.6" r="2.5" fill="#f28e2b"/>
+<text x="543.0" y="83.6" class="bval" text-anchor="start">3.1ms</text>
+<rect x="1024.0" y="256.0" width="10" height="10" fill="#f28e2b"/>
+<text x="1038.0" y="265.0" class="leg" text-anchor="start">real_bigstack</text>
+<circle cx="538.0" cy="109.4" r="2.5" fill="#59a14f"/>
+<text x="543.0" y="112.4" class="bval" text-anchor="start">1.1ms</text>
+<rect x="1024.0" y="272.0" width="10" height="10" fill="#59a14f"/>
+<text x="1038.0" y="281.0" class="leg" text-anchor="start">real_highstack</text>
+<circle cx="538.0" cy="174.4" r="2.5" fill="#e15759"/>
+<text x="543.0" y="177.4" class="bval" text-anchor="start">100µs</text>
+<rect x="1024.0" y="288.0" width="10" height="10" fill="#e15759"/>
+<text x="1038.0" y="297.0" class="leg" text-anchor="start">real_medstack</text>
+<circle cx="538.0" cy="308.7" r="2.5" fill="#76b7b2"/>
+<text x="543.0" y="311.7" class="bval" text-anchor="start">748.7ns</text>
+<rect x="1024.0" y="304.0" width="10" height="10" fill="#76b7b2"/>
+<text x="1038.0" y="313.0" class="leg" text-anchor="start">tiny</text>
+<text x="538.0" y="378.0" class="cat" text-anchor="end" transform="rotate(-35 538.0 378.0)">3187714</text>
+<line x1="70" y1="364.0" x2="1156" y2="364.0" class="axis"/>
 </svg>

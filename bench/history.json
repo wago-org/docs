@@ -630,22 +630,22 @@
           "allocs": 6059
         },
         "WarpCompile/arith": {
-          "ns": 25000,
+          "ns": 34000,
           "bytes": 0,
           "allocs": 0
         },
         "WarpCompile/big_func": {
-          "ns": 1151000,
+          "ns": 1250000,
           "bytes": 0,
           "allocs": 0
         },
         "WarpCompile/branches": {
-          "ns": 21000,
+          "ns": 20000,
           "bytes": 0,
           "allocs": 0
         },
         "WarpCompile/dispatch": {
-          "ns": 32000,
+          "ns": 28000,
           "bytes": 0,
           "allocs": 0
         },
@@ -655,127 +655,127 @@
           "allocs": 0
         },
         "WarpCompile/fib_rec": {
-          "ns": 26000,
-          "bytes": 0,
-          "allocs": 0
-        },
-        "WarpCompile/float": {
           "ns": 27000,
           "bytes": 0,
           "allocs": 0
         },
+        "WarpCompile/float": {
+          "ns": 25000,
+          "bytes": 0,
+          "allocs": 0
+        },
         "WarpCompile/geo": {
-          "ns": 99000,
+          "ns": 120000,
           "bytes": 0,
           "allocs": 0
         },
         "WarpCompile/globals": {
-          "ns": 24000,
-          "bytes": 0,
-          "allocs": 0
-        },
-        "WarpCompile/hash": {
-          "ns": 45000,
-          "bytes": 0,
-          "allocs": 0
-        },
-        "WarpCompile/mandel": {
-          "ns": 47000,
-          "bytes": 0,
-          "allocs": 0
-        },
-        "WarpCompile/many_funcs": {
-          "ns": 156000,
-          "bytes": 0,
-          "allocs": 0
-        },
-        "WarpCompile/memory": {
           "ns": 29000,
           "bytes": 0,
           "allocs": 0
         },
+        "WarpCompile/hash": {
+          "ns": 54000,
+          "bytes": 0,
+          "allocs": 0
+        },
+        "WarpCompile/mandel": {
+          "ns": 45000,
+          "bytes": 0,
+          "allocs": 0
+        },
+        "WarpCompile/many_funcs": {
+          "ns": 165000,
+          "bytes": 0,
+          "allocs": 0
+        },
+        "WarpCompile/memory": {
+          "ns": 27000,
+          "bytes": 0,
+          "allocs": 0
+        },
         "WarpCompile/tiny": {
-          "ns": 26000,
+          "ns": 33000,
           "bytes": 0,
           "allocs": 0
         },
         "WarpExec/arith.run": {
-          "ns": 1499.773,
+          "ns": 1500.505,
           "bytes": 0,
           "allocs": 0
         },
         "WarpExec/big_func.run": {
-          "ns": 1843.828,
+          "ns": 1842.909,
           "bytes": 0,
           "allocs": 0
         },
         "WarpExec/branches.classify": {
-          "ns": 22.73355,
+          "ns": 22.67787,
           "bytes": 0,
           "allocs": 0
         },
         "WarpExec/dispatch.apply": {
-          "ns": 24.39339,
+          "ns": 24.80631,
           "bytes": 0,
           "allocs": 0
         },
         "WarpExec/fib_iter.fib": {
-          "ns": 33.69335,
+          "ns": 33.4471,
           "bytes": 0,
           "allocs": 0
         },
         "WarpExec/fib_rec.fib": {
-          "ns": 1191556,
+          "ns": 1202740,
           "bytes": 0,
           "allocs": 0
         },
         "WarpExec/float.run": {
-          "ns": 3813.411,
+          "ns": 3848.962,
           "bytes": 0,
           "allocs": 0
         },
         "WarpExec/geo.geo_area": {
-          "ns": 2050.235,
+          "ns": 2068.939,
           "bytes": 0,
           "allocs": 0
         },
         "WarpExec/geo.geo_perimeter": {
-          "ns": 2568.374,
+          "ns": 2490.983,
           "bytes": 0,
           "allocs": 0
         },
         "WarpExec/geo.geo_pip": {
-          "ns": 2017.355,
+          "ns": 2043.644,
           "bytes": 0,
           "allocs": 0
         },
         "WarpExec/globals.accumulate": {
-          "ns": 3074.591,
+          "ns": 3081.056,
           "bytes": 0,
           "allocs": 0
         },
         "WarpExec/hash.hashmix": {
-          "ns": 4986.369,
+          "ns": 4985.753,
           "bytes": 0,
           "allocs": 0
         },
         "WarpExec/mandel.mandel": {
-          "ns": 203134.5,
+          "ns": 205101.5,
           "bytes": 0,
           "allocs": 0
         },
         "WarpExec/many_funcs.run": {
-          "ns": 25.0443,
+          "ns": 25.2348,
           "bytes": 0,
           "allocs": 0
         },
         "WarpExec/memory.sum": {
-          "ns": 243.0712,
+          "ns": 242.9978,
           "bytes": 0,
           "allocs": 0
         },
         "WarpExec/tiny.add": {
-          "ns": 27.0294,
+          "ns": 26.54861,
           "bytes": 0,
           "allocs": 0
         },

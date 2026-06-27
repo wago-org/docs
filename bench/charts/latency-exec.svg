@@ -1,68 +1,68 @@
-<svg width="900" height="420" viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif">
-<style>.val{font-size:10px;fill:#444}.cat{font-size:11px;fill:#333}.leg{font-size:11px;fill:#333}.ax{font-size:10px;fill:#888}.grid{stroke:#eee}.axis{stroke:#bbb}</style>
-<rect width="900" height="420" fill="#fff"/>
+<svg width="1180" height="420" viewBox="0 0 1180 420" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif">
+<style>.val{font-size:10px;fill:#444}.bval{font-size:8px;fill:#555}.cat{font-size:11px;fill:#333}.leg{font-size:11px;fill:#333}.ax{font-size:10px;fill:#888}.grid{stroke:#eee}.axis{stroke:#bbb}</style>
+<rect width="1180" height="420" fill="#fff"/>
 <text x="70" y="26" font-size="15" font-weight="600" fill="#222">wago Exec — ns/op by module (log scale, lower is faster)</text>
-<line x1="70" y1="324.0" x2="876" y2="324.0" class="grid"/>
+<line x1="70" y1="324.0" x2="1156" y2="324.0" class="grid"/>
 <text x="64" y="327.0" class="ax" text-anchor="end">10ns</text>
-<line x1="70" y1="278.0" x2="876" y2="278.0" class="grid"/>
+<line x1="70" y1="278.0" x2="1156" y2="278.0" class="grid"/>
 <text x="64" y="281.0" class="ax" text-anchor="end">100ns</text>
-<line x1="70" y1="232.0" x2="876" y2="232.0" class="grid"/>
+<line x1="70" y1="232.0" x2="1156" y2="232.0" class="grid"/>
 <text x="64" y="235.0" class="ax" text-anchor="end">1µs</text>
-<line x1="70" y1="186.0" x2="876" y2="186.0" class="grid"/>
+<line x1="70" y1="186.0" x2="1156" y2="186.0" class="grid"/>
 <text x="64" y="189.0" class="ax" text-anchor="end">10µs</text>
-<line x1="70" y1="140.0" x2="876" y2="140.0" class="grid"/>
+<line x1="70" y1="140.0" x2="1156" y2="140.0" class="grid"/>
 <text x="64" y="143.0" class="ax" text-anchor="end">100µs</text>
-<line x1="70" y1="94.0" x2="876" y2="94.0" class="grid"/>
+<line x1="70" y1="94.0" x2="1156" y2="94.0" class="grid"/>
 <text x="64" y="97.0" class="ax" text-anchor="end">1ms</text>
-<line x1="70" y1="48.0" x2="876" y2="48.0" class="grid"/>
+<line x1="70" y1="48.0" x2="1156" y2="48.0" class="grid"/>
 <text x="64" y="51.0" class="ax" text-anchor="end">10ms</text>
-<rect x="80.1" y="203.8" width="30.2" height="120.2" fill="#4e79a7"/>
-<text x="95.2" y="199.8" class="val" text-anchor="middle">4.1µs</text>
-<text x="95.2" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 95.2 338.0)">arith.run</text>
-<rect x="130.4" y="219.5" width="30.2" height="104.5" fill="#f28e2b"/>
-<text x="145.6" y="215.5" class="val" text-anchor="middle">1.9µs</text>
-<text x="145.6" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 145.6 338.0)">big_func.run</text>
-<rect x="180.8" y="308.8" width="30.2" height="15.2" fill="#59a14f"/>
-<text x="195.9" y="304.8" class="val" text-anchor="middle">21.4ns</text>
-<text x="195.9" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 195.9 338.0)">branches.classify</text>
-<rect x="231.2" y="301.2" width="30.2" height="22.8" fill="#e15759"/>
-<text x="246.3" y="297.2" class="val" text-anchor="middle">31.3ns</text>
-<text x="246.3" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 246.3 338.0)">dispatch.apply</text>
-<rect x="281.6" y="287.1" width="30.2" height="36.9" fill="#76b7b2"/>
-<text x="296.7" y="283.1" class="val" text-anchor="middle">63.5ns</text>
-<text x="296.7" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 296.7 338.0)">fib_iter.fib</text>
-<rect x="331.9" y="73.5" width="30.2" height="250.5" fill="#edc948"/>
-<text x="347.1" y="69.5" class="val" text-anchor="middle">2.8ms</text>
-<text x="347.1" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 347.1 338.0)">fib_rec.fib</text>
-<rect x="382.3" y="195.2" width="30.2" height="128.8" fill="#b07aa1"/>
-<text x="397.4" y="191.2" class="val" text-anchor="middle">6.3µs</text>
-<text x="397.4" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 397.4 338.0)">float.run</text>
-<rect x="432.7" y="210.9" width="30.2" height="113.1" fill="#ff9da7"/>
-<text x="447.8" y="206.9" class="val" text-anchor="middle">2.9µs</text>
-<text x="447.8" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 447.8 338.0)">geo.geo_area</text>
-<rect x="483.1" y="209.8" width="30.2" height="114.2" fill="#9c755f"/>
-<text x="498.2" y="205.8" class="val" text-anchor="middle">3µs</text>
-<text x="498.2" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 498.2 338.0)">geo.geo_perimeter</text>
-<rect x="533.5" y="210.9" width="30.2" height="113.1" fill="#bab0ac"/>
-<text x="548.6" y="206.9" class="val" text-anchor="middle">2.9µs</text>
-<text x="548.6" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 548.6 338.0)">geo.geo_pip</text>
-<rect x="583.8" y="214.6" width="30.2" height="109.4" fill="#1b9e77"/>
-<text x="598.9" y="210.6" class="val" text-anchor="middle">2.4µs</text>
-<text x="598.9" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 598.9 338.0)">globals.accumulate</text>
-<rect x="634.2" y="186.0" width="30.2" height="138.0" fill="#d95f02"/>
-<text x="649.3" y="182.0" class="val" text-anchor="middle">10µs</text>
-<text x="649.3" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 649.3 338.0)">hash.hashmix</text>
-<rect x="684.6" y="108.9" width="30.2" height="215.1" fill="#4e79a7"/>
-<text x="699.7" y="104.9" class="val" text-anchor="middle">474.3µs</text>
-<text x="699.7" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 699.7 338.0)">mandel.mandel</text>
-<rect x="735.0" y="301.8" width="30.2" height="22.2" fill="#f28e2b"/>
-<text x="750.1" y="297.8" class="val" text-anchor="middle">30.4ns</text>
-<text x="750.1" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 750.1 338.0)">many_funcs.run</text>
-<rect x="785.3" y="236.5" width="30.2" height="87.5" fill="#59a14f"/>
-<text x="800.4" y="232.5" class="val" text-anchor="middle">796.6ns</text>
-<text x="800.4" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 800.4 338.0)">memory.sum</text>
-<rect x="835.7" y="305.2" width="30.2" height="18.8" fill="#e15759"/>
-<text x="850.8" y="301.2" class="val" text-anchor="middle">25.6ns</text>
-<text x="850.8" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 850.8 338.0)">tiny.add</text>
-<line x1="70" y1="324.0" x2="876" y2="324.0" class="axis"/>
+<rect x="83.6" y="203.8" width="40.7" height="120.2" fill="#4e79a7"/>
+<text x="103.9" y="199.8" class="val" text-anchor="middle">4.1µs</text>
+<text x="103.9" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 103.9 338.0)">arith.run</text>
+<rect x="151.4" y="219.5" width="40.7" height="104.5" fill="#f28e2b"/>
+<text x="171.8" y="215.5" class="val" text-anchor="middle">1.9µs</text>
+<text x="171.8" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 171.8 338.0)">big_func.run</text>
+<rect x="219.3" y="308.8" width="40.7" height="15.2" fill="#59a14f"/>
+<text x="239.7" y="304.8" class="val" text-anchor="middle">21.4ns</text>
+<text x="239.7" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 239.7 338.0)">branches.classify</text>
+<rect x="287.2" y="301.2" width="40.7" height="22.8" fill="#e15759"/>
+<text x="307.6" y="297.2" class="val" text-anchor="middle">31.3ns</text>
+<text x="307.6" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 307.6 338.0)">dispatch.apply</text>
+<rect x="355.1" y="287.1" width="40.7" height="36.9" fill="#76b7b2"/>
+<text x="375.4" y="283.1" class="val" text-anchor="middle">63.5ns</text>
+<text x="375.4" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 375.4 338.0)">fib_iter.fib</text>
+<rect x="422.9" y="73.5" width="40.7" height="250.5" fill="#edc948"/>
+<text x="443.3" y="69.5" class="val" text-anchor="middle">2.8ms</text>
+<text x="443.3" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 443.3 338.0)">fib_rec.fib</text>
+<rect x="490.8" y="195.2" width="40.7" height="128.8" fill="#b07aa1"/>
+<text x="511.2" y="191.2" class="val" text-anchor="middle">6.3µs</text>
+<text x="511.2" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 511.2 338.0)">float.run</text>
+<rect x="558.7" y="210.9" width="40.7" height="113.1" fill="#ff9da7"/>
+<text x="579.1" y="206.9" class="val" text-anchor="middle">2.9µs</text>
+<text x="579.1" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 579.1 338.0)">geo.geo_area</text>
+<rect x="626.6" y="209.8" width="40.7" height="114.2" fill="#9c755f"/>
+<text x="646.9" y="205.8" class="val" text-anchor="middle">3µs</text>
+<text x="646.9" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 646.9 338.0)">geo.geo_perimeter</text>
+<rect x="694.5" y="210.9" width="40.7" height="113.1" fill="#bab0ac"/>
+<text x="714.8" y="206.9" class="val" text-anchor="middle">2.9µs</text>
+<text x="714.8" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 714.8 338.0)">geo.geo_pip</text>
+<rect x="762.3" y="214.6" width="40.7" height="109.4" fill="#1b9e77"/>
+<text x="782.7" y="210.6" class="val" text-anchor="middle">2.4µs</text>
+<text x="782.7" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 782.7 338.0)">globals.accumulate</text>
+<rect x="830.2" y="186.0" width="40.7" height="138.0" fill="#d95f02"/>
+<text x="850.6" y="182.0" class="val" text-anchor="middle">10µs</text>
+<text x="850.6" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 850.6 338.0)">hash.hashmix</text>
+<rect x="898.1" y="108.9" width="40.7" height="215.1" fill="#4e79a7"/>
+<text x="918.4" y="104.9" class="val" text-anchor="middle">474.3µs</text>
+<text x="918.4" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 918.4 338.0)">mandel.mandel</text>
+<rect x="966.0" y="301.8" width="40.7" height="22.2" fill="#f28e2b"/>
+<text x="986.3" y="297.8" class="val" text-anchor="middle">30.4ns</text>
+<text x="986.3" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 986.3 338.0)">many_funcs.run</text>
+<rect x="1033.8" y="236.5" width="40.7" height="87.5" fill="#59a14f"/>
+<text x="1054.2" y="232.5" class="val" text-anchor="middle">796.6ns</text>
+<text x="1054.2" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 1054.2 338.0)">memory.sum</text>
+<rect x="1101.7" y="305.2" width="40.7" height="18.8" fill="#e15759"/>
+<text x="1122.1" y="301.2" class="val" text-anchor="middle">25.6ns</text>
+<text x="1122.1" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 1122.1 338.0)">tiny.add</text>
+<line x1="70" y1="324.0" x2="1156" y2="324.0" class="axis"/>
 </svg>
