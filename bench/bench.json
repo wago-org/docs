@@ -1,0 +1,866 @@
+{
+  "version": "3187714",
+  "commit": "3187714",
+  "date": "2026-06-27T00:44:05-07:00",
+  "goos": "linux",
+  "goarch": "amd64",
+  "cpu": "AMD Ryzen 7 7800X3D 8-Core Processor",
+  "modules": {
+    "arith": {
+      "category": "alu",
+      "bytes": 88
+    },
+    "big_func": {
+      "category": "scale",
+      "bytes": 47726
+    },
+    "branches": {
+      "category": "control",
+      "bytes": 71
+    },
+    "clang": {
+      "category": "real-large",
+      "bytes": 0
+    },
+    "dispatch": {
+      "category": "calls",
+      "bytes": 108
+    },
+    "fib_iter": {
+      "category": "loop",
+      "bytes": 82
+    },
+    "fib_rec": {
+      "category": "calls",
+      "bytes": 62
+    },
+    "float": {
+      "category": "fp",
+      "bytes": 89
+    },
+    "geo": {
+      "category": "compute",
+      "bytes": 1651
+    },
+    "globals": {
+      "category": "globals",
+      "bytes": 96
+    },
+    "hash": {
+      "category": "compute",
+      "bytes": 795
+    },
+    "mandel": {
+      "category": "compute",
+      "bytes": 712
+    },
+    "many_funcs": {
+      "category": "scale",
+      "bytes": 2992
+    },
+    "memory": {
+      "category": "memory",
+      "bytes": 139
+    },
+    "real_bigstack": {
+      "category": "real",
+      "bytes": 235130
+    },
+    "real_dwarf": {
+      "category": "real-large",
+      "bytes": 428915
+    },
+    "real_highstack": {
+      "category": "real",
+      "bytes": 82630
+    },
+    "real_medstack": {
+      "category": "real",
+      "bytes": 7622
+    },
+    "real_pspdfkit": {
+      "category": "real-large",
+      "bytes": 9097410
+    },
+    "tiny": {
+      "category": "micro",
+      "bytes": 60
+    },
+    "wasm3": {
+      "category": "real-large",
+      "bytes": 184108
+    }
+  },
+  "metrics": {
+    "Compile/arith": {
+      "ns": 1171,
+      "bytes": 1800,
+      "allocs": 20
+    },
+    "Compile/big_func": {
+      "ns": 427252,
+      "bytes": 474368,
+      "allocs": 34
+    },
+    "Compile/branches": {
+      "ns": 970.4,
+      "bytes": 2408,
+      "allocs": 26
+    },
+    "Compile/dispatch": {
+      "ns": 2720,
+      "bytes": 5984,
+      "allocs": 62
+    },
+    "Compile/fib_iter": {
+      "ns": 1044,
+      "bytes": 1656,
+      "allocs": 19
+    },
+    "Compile/fib_rec": {
+      "ns": 1260,
+      "bytes": 2160,
+      "allocs": 24
+    },
+    "Compile/float": {
+      "ns": 1166,
+      "bytes": 1640,
+      "allocs": 19
+    },
+    "Compile/geo": {
+      "ns": 20385,
+      "bytes": 29888,
+      "allocs": 94
+    },
+    "Compile/globals": {
+      "ns": 1363,
+      "bytes": 2592,
+      "allocs": 28
+    },
+    "Compile/hash": {
+      "ns": 4183,
+      "bytes": 4696,
+      "allocs": 32
+    },
+    "Compile/mandel": {
+      "ns": 4705,
+      "bytes": 6872,
+      "allocs": 36
+    },
+    "Compile/many_funcs": {
+      "ns": 116645,
+      "bytes": 324976,
+      "allocs": 3039
+    },
+    "Compile/memory": {
+      "ns": 2166,
+      "bytes": 4000,
+      "allocs": 35
+    },
+    "Compile/real_bigstack": {
+      "ns": 3051702,
+      "bytes": 3833089,
+      "allocs": 42
+    },
+    "Compile/real_highstack": {
+      "ns": 1066431,
+      "bytes": 1121536,
+      "allocs": 37
+    },
+    "Compile/real_medstack": {
+      "ns": 100021,
+      "bytes": 104320,
+      "allocs": 29
+    },
+    "Compile/tiny": {
+      "ns": 748.7,
+      "bytes": 1400,
+      "allocs": 24
+    },
+    "CompileFull/arith": {
+      "ns": 8260,
+      "bytes": 11865,
+      "allocs": 127
+    },
+    "CompileFull/big_func": {
+      "ns": 4263782,
+      "bytes": 7582709,
+      "allocs": 62854
+    },
+    "CompileFull/branches": {
+      "ns": 5855,
+      "bytes": 10305,
+      "allocs": 111
+    },
+    "CompileFull/dispatch": {
+      "ns": 10393,
+      "bytes": 15010,
+      "allocs": 202
+    },
+    "CompileFull/fib_iter": {
+      "ns": 7299,
+      "bytes": 9769,
+      "allocs": 120
+    },
+    "CompileFull/fib_rec": {
+      "ns": 6500,
+      "bytes": 8929,
+      "allocs": 110
+    },
+    "CompileFull/float": {
+      "ns": 7164,
+      "bytes": 9033,
+      "allocs": 114
+    },
+    "CompileFull/geo": {
+      "ns": 124773,
+      "bytes": 185440,
+      "allocs": 1502
+    },
+    "CompileFull/globals": {
+      "ns": 7946,
+      "bytes": 10617,
+      "allocs": 134
+    },
+    "CompileFull/hash": {
+      "ns": 36495,
+      "bytes": 48616,
+      "allocs": 506
+    },
+    "CompileFull/mandel": {
+      "ns": 37636,
+      "bytes": 57563,
+      "allocs": 513
+    },
+    "CompileFull/many_funcs": {
+      "ns": 362081,
+      "bytes": 657991,
+      "allocs": 7655
+    },
+    "CompileFull/memory": {
+      "ns": 12991,
+      "bytes": 18386,
+      "allocs": 209
+    },
+    "CompileFull/real_bigstack": {
+      "ns": 40358390,
+      "bytes": 63794820,
+      "allocs": 469976
+    },
+    "CompileFull/real_highstack": {
+      "ns": 12592462,
+      "bytes": 20123904,
+      "allocs": 165000
+    },
+    "CompileFull/real_medstack": {
+      "ns": 990128,
+      "bytes": 1460724,
+      "allocs": 14964
+    },
+    "CompileFull/tiny": {
+      "ns": 4270,
+      "bytes": 5016,
+      "allocs": 86
+    },
+    "Decode/arith": {
+      "ns": 1656,
+      "bytes": 6208,
+      "allocs": 27
+    },
+    "Decode/big_func": {
+      "ns": 757197,
+      "bytes": 5931892,
+      "allocs": 37
+    },
+    "Decode/branches": {
+      "ns": 1417,
+      "bytes": 4480,
+      "allocs": 33
+    },
+    "Decode/dispatch": {
+      "ns": 2013,
+      "bytes": 4285,
+      "allocs": 42
+    },
+    "Decode/fib_iter": {
+      "ns": 1514,
+      "bytes": 4608,
+      "allocs": 27
+    },
+    "Decode/fib_rec": {
+      "ns": 1263,
+      "bytes": 3824,
+      "allocs": 25
+    },
+    "Decode/float": {
+      "ns": 1406,
+      "bytes": 4160,
+      "allocs": 26
+    },
+    "Decode/geo": {
+      "ns": 18824,
+      "bytes": 97088,
+      "allocs": 199
+    },
+    "Decode/globals": {
+      "ns": 1671,
+      "bytes": 4528,
+      "allocs": 32
+    },
+    "Decode/hash": {
+      "ns": 6514,
+      "bytes": 23112,
+      "allocs": 90
+    },
+    "Decode/mandel": {
+      "ns": 6468,
+      "bytes": 22384,
+      "allocs": 96
+    },
+    "Decode/many_funcs": {
+      "ns": 51967,
+      "bytes": 155795,
+      "allocs": 1218
+    },
+    "Decode/memory": {
+      "ns": 2521,
+      "bytes": 8280,
+      "allocs": 44
+    },
+    "Decode/real_bigstack": {
+      "ns": 11045975,
+      "bytes": 51185159,
+      "allocs": 62
+    },
+    "Decode/real_dwarf": {
+      "ns": 6722167,
+      "bytes": 29464332,
+      "allocs": 61639
+    },
+    "Decode/real_highstack": {
+      "ns": 2740331,
+      "bytes": 15918457,
+      "allocs": 49
+    },
+    "Decode/real_medstack": {
+      "ns": 137753,
+      "bytes": 1074538,
+      "allocs": 39
+    },
+    "Decode/real_pspdfkit": {
+      "ns": 188174019,
+      "bytes": 698718540,
+      "allocs": 1534836
+    },
+    "Decode/tiny": {
+      "ns": 960.9,
+      "bytes": 1914,
+      "allocs": 22
+    },
+    "Decode/wasm3": {
+      "ns": 3063887,
+      "bytes": 12953950,
+      "allocs": 29328
+    },
+    "Exec/arith.run": {
+      "ns": 4110,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/big_func.run": {
+      "ns": 1871,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/branches.classify": {
+      "ns": 21.35,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/dispatch.apply": {
+      "ns": 31.26,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/fib_iter.fib": {
+      "ns": 63.55,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/fib_rec.fib": {
+      "ns": 2789459,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/float.run": {
+      "ns": 6310,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/geo.geo_area": {
+      "ns": 2872,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/geo.geo_perimeter": {
+      "ns": 3043,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/geo.geo_pip": {
+      "ns": 2881,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/globals.accumulate": {
+      "ns": 2387,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/hash.hashmix": {
+      "ns": 10007,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/mandel.mandel": {
+      "ns": 474280,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/many_funcs.run": {
+      "ns": 30.42,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/memory.sum": {
+      "ns": 796.6,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/tiny.add": {
+      "ns": 25.59,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Instantiate/arith": {
+      "ns": 16578,
+      "bytes": 496,
+      "allocs": 5
+    },
+    "Instantiate/big_func": {
+      "ns": 42312,
+      "bytes": 496,
+      "allocs": 5
+    },
+    "Instantiate/branches": {
+      "ns": 16517,
+      "bytes": 496,
+      "allocs": 5
+    },
+    "Instantiate/dispatch": {
+      "ns": 19883,
+      "bytes": 496,
+      "allocs": 5
+    },
+    "Instantiate/fib_iter": {
+      "ns": 16606,
+      "bytes": 496,
+      "allocs": 5
+    },
+    "Instantiate/fib_rec": {
+      "ns": 16586,
+      "bytes": 496,
+      "allocs": 5
+    },
+    "Instantiate/float": {
+      "ns": 16546,
+      "bytes": 496,
+      "allocs": 5
+    },
+    "Instantiate/geo": {
+      "ns": 22190,
+      "bytes": 1648,
+      "allocs": 17
+    },
+    "Instantiate/globals": {
+      "ns": 20120,
+      "bytes": 600,
+      "allocs": 7
+    },
+    "Instantiate/hash": {
+      "ns": 20736,
+      "bytes": 1648,
+      "allocs": 17
+    },
+    "Instantiate/mandel": {
+      "ns": 20740,
+      "bytes": 1648,
+      "allocs": 17
+    },
+    "Instantiate/many_funcs": {
+      "ns": 27959,
+      "bytes": 496,
+      "allocs": 5
+    },
+    "Instantiate/memory": {
+      "ns": 16562,
+      "bytes": 496,
+      "allocs": 5
+    },
+    "Instantiate/real_bigstack": {
+      "ns": 188706,
+      "bytes": 496,
+      "allocs": 5
+    },
+    "Instantiate/real_highstack": {
+      "ns": 76862,
+      "bytes": 496,
+      "allocs": 5
+    },
+    "Instantiate/real_medstack": {
+      "ns": 21816,
+      "bytes": 496,
+      "allocs": 5
+    },
+    "Instantiate/tiny": {
+      "ns": 16570,
+      "bytes": 496,
+      "allocs": 5
+    },
+    "Validate/arith": {
+      "ns": 1586,
+      "bytes": 1072,
+      "allocs": 9
+    },
+    "Validate/big_func": {
+      "ns": 944559,
+      "bytes": 640,
+      "allocs": 7
+    },
+    "Validate/branches": {
+      "ns": 763.3,
+      "bytes": 1280,
+      "allocs": 7
+    },
+    "Validate/dispatch": {
+      "ns": 1765,
+      "bytes": 2240,
+      "allocs": 25
+    },
+    "Validate/fib_iter": {
+      "ns": 1230,
+      "bytes": 1040,
+      "allocs": 9
+    },
+    "Validate/fib_rec": {
+      "ns": 1325,
+      "bytes": 1200,
+      "allocs": 13
+    },
+    "Validate/float": {
+      "ns": 1315,
+      "bytes": 848,
+      "allocs": 8
+    },
+    "Validate/geo": {
+      "ns": 30556,
+      "bytes": 17871,
+      "allocs": 107
+    },
+    "Validate/globals": {
+      "ns": 1358,
+      "bytes": 1088,
+      "allocs": 12
+    },
+    "Validate/hash": {
+      "ns": 9224,
+      "bytes": 6444,
+      "allocs": 58
+    },
+    "Validate/mandel": {
+      "ns": 8913,
+      "bytes": 8124,
+      "allocs": 55
+    },
+    "Validate/many_funcs": {
+      "ns": 84681,
+      "bytes": 91744,
+      "allocs": 1206
+    },
+    "Validate/memory": {
+      "ns": 2387,
+      "bytes": 1872,
+      "allocs": 16
+    },
+    "Validate/real_bigstack": {
+      "ns": 8960549,
+      "bytes": 592,
+      "allocs": 6
+    },
+    "Validate/real_dwarf": {
+      "ns": 6666081,
+      "bytes": 1690609,
+      "allocs": 5977
+    },
+    "Validate/real_highstack": {
+      "ns": 3147746,
+      "bytes": 592,
+      "allocs": 6
+    },
+    "Validate/real_medstack": {
+      "ns": 288066,
+      "bytes": 592,
+      "allocs": 6
+    },
+    "Validate/real_pspdfkit": {
+      "ns": 791051480,
+      "bytes": 223520168,
+      "allocs": 640888
+    },
+    "Validate/tiny": {
+      "ns": 483.9,
+      "bytes": 512,
+      "allocs": 7
+    },
+    "Validate/wasm3": {
+      "ns": 4229850,
+      "bytes": 1278689,
+      "allocs": 6059
+    },
+    "WarpCompile/arith": {
+      "ns": 123170,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "WarpCompile/big_func": {
+      "ns": 18711800,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "WarpCompile/branches": {
+      "ns": 102451,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "WarpCompile/fib_iter": {
+      "ns": 116918,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "WarpCompile/fib_rec": {
+      "ns": 127338,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "WarpCompile/float": {
+      "ns": 117360,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "WarpCompile/geo": {
+      "ns": 747135,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "WarpCompile/globals": {
+      "ns": 123009,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "WarpCompile/hash": {
+      "ns": 266617,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "WarpCompile/many_funcs": {
+      "ns": 2457730,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "WarpCompile/memory": {
+      "ns": 231021,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "WazeroCompile/arith": {
+      "ns": 46457,
+      "bytes": 298230,
+      "allocs": 237
+    },
+    "WazeroCompile/big_func": {
+      "ns": 2857970,
+      "bytes": 6621271,
+      "allocs": 597
+    },
+    "WazeroCompile/branches": {
+      "ns": 45424,
+      "bytes": 278952,
+      "allocs": 242
+    },
+    "WazeroCompile/dispatch": {
+      "ns": 66904,
+      "bytes": 280613,
+      "allocs": 228
+    },
+    "WazeroCompile/fib_iter": {
+      "ns": 45949,
+      "bytes": 298566,
+      "allocs": 248
+    },
+    "WazeroCompile/fib_rec": {
+      "ns": 45816,
+      "bytes": 279223,
+      "allocs": 232
+    },
+    "WazeroCompile/float": {
+      "ns": 46151,
+      "bytes": 297958,
+      "allocs": 234
+    },
+    "WazeroCompile/geo": {
+      "ns": 312804,
+      "bytes": 415074,
+      "allocs": 860
+    },
+    "WazeroCompile/globals": {
+      "ns": 58259,
+      "bytes": 296638,
+      "allocs": 258
+    },
+    "WazeroCompile/hash": {
+      "ns": 98322,
+      "bytes": 328787,
+      "allocs": 474
+    },
+    "WazeroCompile/mandel": {
+      "ns": 121669,
+      "bytes": 348159,
+      "allocs": 695
+    },
+    "WazeroCompile/many_funcs": {
+      "ns": 996407,
+      "bytes": 354030,
+      "allocs": 1091
+    },
+    "WazeroCompile/memory": {
+      "ns": 71099,
+      "bytes": 302410,
+      "allocs": 275
+    },
+    "WazeroCompile/real_bigstack": {
+      "ns": 30982192,
+      "bytes": 71266869,
+      "allocs": 3942
+    },
+    "WazeroCompile/real_dwarf": {
+      "ns": 76466924,
+      "bytes": 11280112,
+      "allocs": 22032
+    },
+    "WazeroCompile/real_highstack": {
+      "ns": 10243049,
+      "bytes": 23639943,
+      "allocs": 1552
+    },
+    "WazeroCompile/real_medstack": {
+      "ns": 909967,
+      "bytes": 2196123,
+      "allocs": 353
+    },
+    "WazeroCompile/real_pspdfkit": {
+      "ns": 2951908287,
+      "bytes": 208440319,
+      "allocs": 386339
+    },
+    "WazeroCompile/tiny": {
+      "ns": 46786,
+      "bytes": 274674,
+      "allocs": 189
+    },
+    "WazeroCompile/wasm3": {
+      "ns": 42564804,
+      "bytes": 8926590,
+      "allocs": 24928
+    },
+    "WazeroExec/arith.run": {
+      "ns": 1400,
+      "bytes": 8,
+      "allocs": 1
+    },
+    "WazeroExec/big_func.run": {
+      "ns": 1850,
+      "bytes": 8,
+      "allocs": 1
+    },
+    "WazeroExec/branches.classify": {
+      "ns": 23.26,
+      "bytes": 8,
+      "allocs": 1
+    },
+    "WazeroExec/dispatch.apply": {
+      "ns": 28.63,
+      "bytes": 24,
+      "allocs": 1
+    },
+    "WazeroExec/fib_iter.fib": {
+      "ns": 31.66,
+      "bytes": 8,
+      "allocs": 1
+    },
+    "WazeroExec/fib_rec.fib": {
+      "ns": 2015012,
+      "bytes": 8,
+      "allocs": 1
+    },
+    "WazeroExec/float.run": {
+      "ns": 3813,
+      "bytes": 8,
+      "allocs": 1
+    },
+    "WazeroExec/geo.geo_area": {
+      "ns": 2237,
+      "bytes": 8,
+      "allocs": 1
+    },
+    "WazeroExec/geo.geo_perimeter": {
+      "ns": 2434,
+      "bytes": 8,
+      "allocs": 1
+    },
+    "WazeroExec/geo.geo_pip": {
+      "ns": 2353,
+      "bytes": 24,
+      "allocs": 1
+    },
+    "WazeroExec/globals.accumulate": {
+      "ns": 866.3,
+      "bytes": 8,
+      "allocs": 1
+    },
+    "WazeroExec/hash.hashmix": {
+      "ns": 4944,
+      "bytes": 8,
+      "allocs": 1
+    },
+    "WazeroExec/mandel.mandel": {
+      "ns": 165216,
+      "bytes": 24,
+      "allocs": 1
+    },
+    "WazeroExec/many_funcs.run": {
+      "ns": 26.07,
+      "bytes": 8,
+      "allocs": 1
+    },
+    "WazeroExec/memory.sum": {
+      "ns": 349.5,
+      "bytes": 8,
+      "allocs": 1
+    },
+    "WazeroExec/tiny.add": {
+      "ns": 26.19,
+      "bytes": 16,
+      "allocs": 1
+    }
+  }
+}

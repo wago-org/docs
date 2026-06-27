@@ -1,0 +1,83 @@
+<svg width="900" height="460" viewBox="0 0 900 460" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif">
+<style>.val{font-size:10px;fill:#444}.cat{font-size:11px;fill:#333}.leg{font-size:11px;fill:#333}.ax{font-size:10px;fill:#888}.grid{stroke:#eee}.axis{stroke:#bbb}</style>
+<rect width="900" height="460" fill="#fff"/>
+<text x="70" y="26" font-size="15" font-weight="600" fill="#222">wago Decode — ns/op over versions (log scale)</text>
+<line x1="70" y1="364.0" x2="876" y2="364.0" class="grid"/>
+<text x="64" y="367.0" class="ax" text-anchor="end">100ns</text>
+<line x1="70" y1="318.9" x2="876" y2="318.9" class="grid"/>
+<text x="64" y="321.9" class="ax" text-anchor="end">1µs</text>
+<line x1="70" y1="273.7" x2="876" y2="273.7" class="grid"/>
+<text x="64" y="276.7" class="ax" text-anchor="end">10µs</text>
+<line x1="70" y1="228.6" x2="876" y2="228.6" class="grid"/>
+<text x="64" y="231.6" class="ax" text-anchor="end">100µs</text>
+<line x1="70" y1="183.4" x2="876" y2="183.4" class="grid"/>
+<text x="64" y="186.4" class="ax" text-anchor="end">1ms</text>
+<line x1="70" y1="138.3" x2="876" y2="138.3" class="grid"/>
+<text x="64" y="141.3" class="ax" text-anchor="end">10ms</text>
+<line x1="70" y1="93.1" x2="876" y2="93.1" class="grid"/>
+<text x="64" y="96.1" class="ax" text-anchor="end">100ms</text>
+<line x1="70" y1="48.0" x2="876" y2="48.0" class="grid"/>
+<text x="64" y="51.0" class="ax" text-anchor="end">1s</text>
+<circle cx="398.0" cy="309.0" r="2.5" fill="#4e79a7"/>
+<rect x="744.0" y="48.0" width="10" height="10" fill="#4e79a7"/>
+<text x="758.0" y="57.0" class="leg" text-anchor="start">arith</text>
+<circle cx="398.0" cy="188.9" r="2.5" fill="#f28e2b"/>
+<rect x="744.0" y="64.0" width="10" height="10" fill="#f28e2b"/>
+<text x="758.0" y="73.0" class="leg" text-anchor="start">big_func</text>
+<circle cx="398.0" cy="312.0" r="2.5" fill="#59a14f"/>
+<rect x="744.0" y="80.0" width="10" height="10" fill="#59a14f"/>
+<text x="758.0" y="89.0" class="leg" text-anchor="start">branches</text>
+<circle cx="398.0" cy="305.1" r="2.5" fill="#e15759"/>
+<rect x="744.0" y="96.0" width="10" height="10" fill="#e15759"/>
+<text x="758.0" y="105.0" class="leg" text-anchor="start">dispatch</text>
+<circle cx="398.0" cy="310.7" r="2.5" fill="#76b7b2"/>
+<rect x="744.0" y="112.0" width="10" height="10" fill="#76b7b2"/>
+<text x="758.0" y="121.0" class="leg" text-anchor="start">fib_iter</text>
+<circle cx="398.0" cy="314.3" r="2.5" fill="#edc948"/>
+<rect x="744.0" y="128.0" width="10" height="10" fill="#edc948"/>
+<text x="758.0" y="137.0" class="leg" text-anchor="start">fib_rec</text>
+<circle cx="398.0" cy="312.2" r="2.5" fill="#b07aa1"/>
+<rect x="744.0" y="144.0" width="10" height="10" fill="#b07aa1"/>
+<text x="758.0" y="153.0" class="leg" text-anchor="start">float</text>
+<circle cx="398.0" cy="261.3" r="2.5" fill="#ff9da7"/>
+<rect x="744.0" y="160.0" width="10" height="10" fill="#ff9da7"/>
+<text x="758.0" y="169.0" class="leg" text-anchor="start">geo</text>
+<circle cx="398.0" cy="308.8" r="2.5" fill="#9c755f"/>
+<rect x="744.0" y="176.0" width="10" height="10" fill="#9c755f"/>
+<text x="758.0" y="185.0" class="leg" text-anchor="start">globals</text>
+<circle cx="398.0" cy="282.1" r="2.5" fill="#bab0ac"/>
+<rect x="744.0" y="192.0" width="10" height="10" fill="#bab0ac"/>
+<text x="758.0" y="201.0" class="leg" text-anchor="start">hash</text>
+<circle cx="398.0" cy="282.3" r="2.5" fill="#1b9e77"/>
+<rect x="744.0" y="208.0" width="10" height="10" fill="#1b9e77"/>
+<text x="758.0" y="217.0" class="leg" text-anchor="start">mandel</text>
+<circle cx="398.0" cy="241.4" r="2.5" fill="#d95f02"/>
+<rect x="744.0" y="224.0" width="10" height="10" fill="#d95f02"/>
+<text x="758.0" y="233.0" class="leg" text-anchor="start">many_funcs</text>
+<circle cx="398.0" cy="300.7" r="2.5" fill="#4e79a7"/>
+<rect x="744.0" y="240.0" width="10" height="10" fill="#4e79a7"/>
+<text x="758.0" y="249.0" class="leg" text-anchor="start">memory</text>
+<circle cx="398.0" cy="136.3" r="2.5" fill="#f28e2b"/>
+<rect x="744.0" y="256.0" width="10" height="10" fill="#f28e2b"/>
+<text x="758.0" y="265.0" class="leg" text-anchor="start">real_bigstack</text>
+<circle cx="398.0" cy="146.1" r="2.5" fill="#59a14f"/>
+<rect x="744.0" y="272.0" width="10" height="10" fill="#59a14f"/>
+<text x="758.0" y="281.0" class="leg" text-anchor="start">real_dwarf</text>
+<circle cx="398.0" cy="163.7" r="2.5" fill="#e15759"/>
+<rect x="744.0" y="288.0" width="10" height="10" fill="#e15759"/>
+<text x="758.0" y="297.0" class="leg" text-anchor="start">real_highstack</text>
+<circle cx="398.0" cy="222.3" r="2.5" fill="#76b7b2"/>
+<rect x="744.0" y="304.0" width="10" height="10" fill="#76b7b2"/>
+<text x="758.0" y="313.0" class="leg" text-anchor="start">real_medstack</text>
+<circle cx="398.0" cy="80.7" r="2.5" fill="#edc948"/>
+<rect x="744.0" y="320.0" width="10" height="10" fill="#edc948"/>
+<text x="758.0" y="329.0" class="leg" text-anchor="start">real_pspdfkit</text>
+<circle cx="398.0" cy="319.6" r="2.5" fill="#b07aa1"/>
+<rect x="744.0" y="336.0" width="10" height="10" fill="#b07aa1"/>
+<text x="758.0" y="345.0" class="leg" text-anchor="start">tiny</text>
+<circle cx="398.0" cy="161.5" r="2.5" fill="#ff9da7"/>
+<rect x="744.0" y="352.0" width="10" height="10" fill="#ff9da7"/>
+<text x="758.0" y="361.0" class="leg" text-anchor="start">wasm3</text>
+<text x="398.0" y="378.0" class="cat" text-anchor="end" transform="rotate(-35 398.0 378.0)">3187714</text>
+<line x1="70" y1="364.0" x2="876" y2="364.0" class="axis"/>
+</svg>
