@@ -960,6 +960,528 @@
           "allocs": 1
         }
       }
+    },
+    {
+      "version": "faea170-dirty",
+      "commit": "faea170",
+      "date": "2026-06-29T13:54:49-07:00",
+      "goos": "linux",
+      "goarch": "amd64",
+      "cpu": "AMD Ryzen 7 7800X3D 8-Core Processor",
+      "modules": {
+        "arith": {
+          "category": "alu",
+          "bytes": 88
+        },
+        "branches": {
+          "category": "control",
+          "bytes": 71
+        },
+        "dispatch": {
+          "category": "calls",
+          "bytes": 108
+        },
+        "fib_iter": {
+          "category": "loop",
+          "bytes": 82
+        },
+        "fib_rec": {
+          "category": "calls",
+          "bytes": 62
+        },
+        "float": {
+          "category": "fp",
+          "bytes": 89
+        },
+        "globals": {
+          "category": "globals",
+          "bytes": 96
+        },
+        "many_funcs": {
+          "category": "scale",
+          "bytes": 2992
+        },
+        "memory": {
+          "category": "memory",
+          "bytes": 139
+        },
+        "tiny": {
+          "category": "micro",
+          "bytes": 60
+        }
+      },
+      "metrics": {
+        "Compile/arith": {
+          "ns": 1369.5,
+          "bytes": 1824,
+          "allocs": 23
+        },
+        "Compile/branches": {
+          "ns": 1165.5,
+          "bytes": 2432,
+          "allocs": 28
+        },
+        "Compile/dispatch": {
+          "ns": 3629,
+          "bytes": 7592,
+          "allocs": 82
+        },
+        "Compile/fib_iter": {
+          "ns": 1221.5,
+          "bytes": 1744,
+          "allocs": 23
+        },
+        "Compile/fib_rec": {
+          "ns": 1438.5,
+          "bytes": 2216,
+          "allocs": 26
+        },
+        "Compile/float": {
+          "ns": 1343.5,
+          "bytes": 1664,
+          "allocs": 21
+        },
+        "Compile/globals": {
+          "ns": 1592,
+          "bytes": 2616,
+          "allocs": 30
+        },
+        "Compile/many_funcs": {
+          "ns": 147747.5,
+          "bytes": 333339,
+          "allocs": 3641
+        },
+        "Compile/memory": {
+          "ns": 2444.5,
+          "bytes": 3616,
+          "allocs": 41
+        },
+        "Compile/tiny": {
+          "ns": 939.95,
+          "bytes": 1728,
+          "allocs": 28
+        },
+        "CompileFull/arith": {
+          "ns": 9149,
+          "bytes": 11901,
+          "allocs": 130
+        },
+        "CompileFull/branches": {
+          "ns": 6586,
+          "bytes": 10333,
+          "allocs": 113
+        },
+        "CompileFull/dispatch": {
+          "ns": 12122.5,
+          "bytes": 16615,
+          "allocs": 222
+        },
+        "CompileFull/fib_iter": {
+          "ns": 8133,
+          "bytes": 9868,
+          "allocs": 124
+        },
+        "CompileFull/fib_rec": {
+          "ns": 7253,
+          "bytes": 8916,
+          "allocs": 111
+        },
+        "CompileFull/float": {
+          "ns": 8066,
+          "bytes": 9068,
+          "allocs": 116
+        },
+        "CompileFull/globals": {
+          "ns": 8865,
+          "bytes": 10652,
+          "allocs": 136
+        },
+        "CompileFull/many_funcs": {
+          "ns": 429596.5,
+          "bytes": 666546,
+          "allocs": 8257
+        },
+        "CompileFull/memory": {
+          "ns": 14619.5,
+          "bytes": 18008,
+          "allocs": 215
+        },
+        "CompileFull/tiny": {
+          "ns": 4771,
+          "bytes": 5338,
+          "allocs": 90
+        },
+        "Compile_wago": {
+          "ns": 4627,
+          "bytes": 7960,
+          "allocs": 65
+        },
+        "Compile_wazero": {
+          "ns": 63638,
+          "bytes": 299096,
+          "allocs": 271
+        },
+        "Decode/arith": {
+          "ns": 1911,
+          "bytes": 6208,
+          "allocs": 27
+        },
+        "Decode/branches": {
+          "ns": 1602,
+          "bytes": 4480,
+          "allocs": 33
+        },
+        "Decode/dispatch": {
+          "ns": 2239.5,
+          "bytes": 4285,
+          "allocs": 42
+        },
+        "Decode/fib_iter": {
+          "ns": 1710.5,
+          "bytes": 4608,
+          "allocs": 27
+        },
+        "Decode/fib_rec": {
+          "ns": 1439,
+          "bytes": 3824,
+          "allocs": 25
+        },
+        "Decode/float": {
+          "ns": 1560.5,
+          "bytes": 4160,
+          "allocs": 26
+        },
+        "Decode/globals": {
+          "ns": 1896,
+          "bytes": 4528,
+          "allocs": 32
+        },
+        "Decode/many_funcs": {
+          "ns": 60938.5,
+          "bytes": 155796,
+          "allocs": 1218
+        },
+        "Decode/memory": {
+          "ns": 2983,
+          "bytes": 8280,
+          "allocs": 44
+        },
+        "Decode/tiny": {
+          "ns": 1046.5,
+          "bytes": 1914,
+          "allocs": 22
+        },
+        "Exec/arith.run": {
+          "ns": 1491,
+          "bytes": 0,
+          "allocs": 0
+        },
+        "Exec/branches.classify": {
+          "ns": 23.355,
+          "bytes": 0,
+          "allocs": 0
+        },
+        "Exec/dispatch.apply": {
+          "ns": 36.055,
+          "bytes": 0,
+          "allocs": 0
+        },
+        "Exec/fib_iter.fib": {
+          "ns": 36.06,
+          "bytes": 0,
+          "allocs": 0
+        },
+        "Exec/fib_rec.fib": {
+          "ns": 3036470.5,
+          "bytes": 0,
+          "allocs": 0
+        },
+        "Exec/float.run": {
+          "ns": 6517,
+          "bytes": 0,
+          "allocs": 0
+        },
+        "Exec/globals.accumulate": {
+          "ns": 1786.5,
+          "bytes": 0,
+          "allocs": 0
+        },
+        "Exec/many_funcs.run": {
+          "ns": 32.795,
+          "bytes": 0,
+          "allocs": 0
+        },
+        "Exec/memory.sum": {
+          "ns": 466.75,
+          "bytes": 0,
+          "allocs": 0
+        },
+        "Exec/tiny.add": {
+          "ns": 26.125,
+          "bytes": 0,
+          "allocs": 0
+        },
+        "ExecCallOverhead_wago": {
+          "ns": 11.065000000000001,
+          "bytes": 0,
+          "allocs": 0
+        },
+        "ExecCallOverhead_wazero": {
+          "ns": 32.55,
+          "bytes": 16,
+          "allocs": 2
+        },
+        "ExecFibLoop_wago": {
+          "ns": 21.73,
+          "bytes": 0,
+          "allocs": 0
+        },
+        "ExecFibLoop_wazero": {
+          "ns": 44.015,
+          "bytes": 16,
+          "allocs": 2
+        },
+        "ExecFibRec_wago": {
+          "ns": 718023,
+          "bytes": 14,
+          "allocs": 0
+        },
+        "ExecFibRec_wazero": {
+          "ns": 506379.5,
+          "bytes": 157,
+          "allocs": 2
+        },
+        "ExecGlobalGet_wago": {
+          "ns": 18.130000000000003,
+          "bytes": 0,
+          "allocs": 0
+        },
+        "ExecGlobalSet_wago": {
+          "ns": 21.770000000000003,
+          "bytes": 0,
+          "allocs": 0
+        },
+        "ExecLocalGet_wago": {
+          "ns": 27.555,
+          "bytes": 0,
+          "allocs": 0
+        },
+        "ExecMemoryLoad_wago": {
+          "ns": 18.33,
+          "bytes": 0,
+          "allocs": 0
+        },
+        "Instantiate/arith": {
+          "ns": 18310.5,
+          "bytes": 496,
+          "allocs": 5
+        },
+        "Instantiate/branches": {
+          "ns": 18309,
+          "bytes": 496,
+          "allocs": 5
+        },
+        "Instantiate/dispatch": {
+          "ns": 20404,
+          "bytes": 496,
+          "allocs": 5
+        },
+        "Instantiate/fib_iter": {
+          "ns": 18376.5,
+          "bytes": 496,
+          "allocs": 5
+        },
+        "Instantiate/fib_rec": {
+          "ns": 18397.5,
+          "bytes": 496,
+          "allocs": 5
+        },
+        "Instantiate/float": {
+          "ns": 18106,
+          "bytes": 496,
+          "allocs": 5
+        },
+        "Instantiate/globals": {
+          "ns": 20625.5,
+          "bytes": 600,
+          "allocs": 7
+        },
+        "Instantiate/many_funcs": {
+          "ns": 32003,
+          "bytes": 496,
+          "allocs": 5
+        },
+        "Instantiate/memory": {
+          "ns": 18156.5,
+          "bytes": 496,
+          "allocs": 5
+        },
+        "Instantiate/tiny": {
+          "ns": 18473,
+          "bytes": 496,
+          "allocs": 5
+        },
+        "Instantiate_wago": {
+          "ns": 14150.5,
+          "bytes": 80,
+          "allocs": 2
+        },
+        "Instantiate_wazero": {
+          "ns": 8094.5,
+          "bytes": 7373,
+          "allocs": 23
+        },
+        "Validate/arith": {
+          "ns": 1737,
+          "bytes": 1072,
+          "allocs": 9
+        },
+        "Validate/branches": {
+          "ns": 873.95,
+          "bytes": 1280,
+          "allocs": 7
+        },
+        "Validate/dispatch": {
+          "ns": 1923.5,
+          "bytes": 2240,
+          "allocs": 25
+        },
+        "Validate/fib_iter": {
+          "ns": 1345,
+          "bytes": 1040,
+          "allocs": 9
+        },
+        "Validate/fib_rec": {
+          "ns": 1408.5,
+          "bytes": 1136,
+          "allocs": 12
+        },
+        "Validate/float": {
+          "ns": 1461.5,
+          "bytes": 848,
+          "allocs": 8
+        },
+        "Validate/globals": {
+          "ns": 1485.5,
+          "bytes": 1088,
+          "allocs": 12
+        },
+        "Validate/many_funcs": {
+          "ns": 93063.5,
+          "bytes": 91744,
+          "allocs": 1206
+        },
+        "Validate/memory": {
+          "ns": 2633,
+          "bytes": 1872,
+          "allocs": 16
+        },
+        "Validate/tiny": {
+          "ns": 534.15,
+          "bytes": 512,
+          "allocs": 7
+        },
+        "WazeroCompile/arith": {
+          "ns": 75179,
+          "bytes": 298245,
+          "allocs": 237
+        },
+        "WazeroCompile/branches": {
+          "ns": 62115.5,
+          "bytes": 278965,
+          "allocs": 242
+        },
+        "WazeroCompile/dispatch": {
+          "ns": 85201.5,
+          "bytes": 280631,
+          "allocs": 228
+        },
+        "WazeroCompile/fib_iter": {
+          "ns": 71895.5,
+          "bytes": 298580,
+          "allocs": 248
+        },
+        "WazeroCompile/fib_rec": {
+          "ns": 73689,
+          "bytes": 279236,
+          "allocs": 232
+        },
+        "WazeroCompile/float": {
+          "ns": 73546,
+          "bytes": 297972,
+          "allocs": 234
+        },
+        "WazeroCompile/globals": {
+          "ns": 81071.5,
+          "bytes": 296656,
+          "allocs": 258
+        },
+        "WazeroCompile/many_funcs": {
+          "ns": 1089206.5,
+          "bytes": 354306,
+          "allocs": 1092
+        },
+        "WazeroCompile/memory": {
+          "ns": 102016,
+          "bytes": 302430,
+          "allocs": 275
+        },
+        "WazeroCompile/tiny": {
+          "ns": 67353,
+          "bytes": 274687,
+          "allocs": 189
+        },
+        "WazeroExec/arith.run": {
+          "ns": 1430,
+          "bytes": 8,
+          "allocs": 1
+        },
+        "WazeroExec/branches.classify": {
+          "ns": 25.060000000000002,
+          "bytes": 8,
+          "allocs": 1
+        },
+        "WazeroExec/dispatch.apply": {
+          "ns": 29.92,
+          "bytes": 24,
+          "allocs": 1
+        },
+        "WazeroExec/fib_iter.fib": {
+          "ns": 33.905,
+          "bytes": 8,
+          "allocs": 1
+        },
+        "WazeroExec/fib_rec.fib": {
+          "ns": 2121062,
+          "bytes": 8,
+          "allocs": 1
+        },
+        "WazeroExec/float.run": {
+          "ns": 3917.5,
+          "bytes": 8,
+          "allocs": 1
+        },
+        "WazeroExec/globals.accumulate": {
+          "ns": 907.55,
+          "bytes": 8,
+          "allocs": 1
+        },
+        "WazeroExec/many_funcs.run": {
+          "ns": 27.755,
+          "bytes": 8,
+          "allocs": 1
+        },
+        "WazeroExec/memory.sum": {
+          "ns": 365.8,
+          "bytes": 8,
+          "allocs": 1
+        },
+        "WazeroExec/tiny.add": {
+          "ns": 27.955,
+          "bytes": 16,
+          "allocs": 1
+        }
+      }
     }
   ]
 }

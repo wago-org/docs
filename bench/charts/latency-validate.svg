@@ -4,79 +4,41 @@
 <text x="70" y="26" font-size="15" font-weight="600" fill="#222">wago Validate — ns/op by module (log scale, lower is faster)</text>
 <line x1="70" y1="324.0" x2="1156" y2="324.0" class="grid"/>
 <text x="64" y="327.0" class="ax" text-anchor="end">100ns</text>
-<line x1="70" y1="284.6" x2="1156" y2="284.6" class="grid"/>
-<text x="64" y="287.6" class="ax" text-anchor="end">1µs</text>
-<line x1="70" y1="245.1" x2="1156" y2="245.1" class="grid"/>
-<text x="64" y="248.1" class="ax" text-anchor="end">10µs</text>
-<line x1="70" y1="205.7" x2="1156" y2="205.7" class="grid"/>
-<text x="64" y="208.7" class="ax" text-anchor="end">100µs</text>
-<line x1="70" y1="166.3" x2="1156" y2="166.3" class="grid"/>
-<text x="64" y="169.3" class="ax" text-anchor="end">1ms</text>
-<line x1="70" y1="126.9" x2="1156" y2="126.9" class="grid"/>
-<text x="64" y="129.9" class="ax" text-anchor="end">10ms</text>
-<line x1="70" y1="87.4" x2="1156" y2="87.4" class="grid"/>
-<text x="64" y="90.4" class="ax" text-anchor="end">100ms</text>
+<line x1="70" y1="232.0" x2="1156" y2="232.0" class="grid"/>
+<text x="64" y="235.0" class="ax" text-anchor="end">1µs</text>
+<line x1="70" y1="140.0" x2="1156" y2="140.0" class="grid"/>
+<text x="64" y="143.0" class="ax" text-anchor="end">10µs</text>
 <line x1="70" y1="48.0" x2="1156" y2="48.0" class="grid"/>
-<text x="64" y="51.0" class="ax" text-anchor="end">1s</text>
-<rect x="80.9" y="276.7" width="32.6" height="47.3" fill="#4e79a7"/>
-<text x="97.2" y="272.7" class="val" text-anchor="middle">1.6µs</text>
-<text x="97.2" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 97.2 338.0)">arith</text>
-<rect x="135.2" y="167.3" width="32.6" height="156.7" fill="#f28e2b"/>
-<text x="151.4" y="163.3" class="val" text-anchor="middle">944.6µs</text>
-<text x="151.4" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 151.4 338.0)">big_func</text>
-<rect x="189.5" y="289.2" width="32.6" height="34.8" fill="#59a14f"/>
-<text x="205.7" y="285.2" class="val" text-anchor="middle">763.3ns</text>
-<text x="205.7" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 205.7 338.0)">branches</text>
-<rect x="243.8" y="274.8" width="32.6" height="49.2" fill="#e15759"/>
-<text x="260.1" y="270.8" class="val" text-anchor="middle">1.8µs</text>
-<text x="260.1" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 260.1 338.0)">dispatch</text>
-<rect x="298.1" y="281.0" width="32.6" height="43.0" fill="#76b7b2"/>
-<text x="314.4" y="277.0" class="val" text-anchor="middle">1.2µs</text>
-<text x="314.4" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 314.4 338.0)">fib_iter</text>
-<rect x="352.4" y="279.8" width="32.6" height="44.2" fill="#edc948"/>
-<text x="368.7" y="275.8" class="val" text-anchor="middle">1.3µs</text>
-<text x="368.7" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 368.7 338.0)">fib_rec</text>
-<rect x="406.7" y="279.9" width="32.6" height="44.1" fill="#b07aa1"/>
-<text x="422.9" y="275.9" class="val" text-anchor="middle">1.3µs</text>
-<text x="422.9" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 422.9 338.0)">float</text>
-<rect x="461.0" y="226.0" width="32.6" height="98.0" fill="#ff9da7"/>
-<text x="477.2" y="222.0" class="val" text-anchor="middle">30.6µs</text>
-<text x="477.2" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 477.2 338.0)">geo</text>
-<rect x="515.3" y="279.3" width="32.6" height="44.7" fill="#9c755f"/>
-<text x="531.5" y="275.3" class="val" text-anchor="middle">1.4µs</text>
-<text x="531.5" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 531.5 338.0)">globals</text>
-<rect x="569.6" y="246.5" width="32.6" height="77.5" fill="#bab0ac"/>
-<text x="585.9" y="242.5" class="val" text-anchor="middle">9.2µs</text>
-<text x="585.9" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 585.9 338.0)">hash</text>
-<rect x="623.9" y="247.1" width="32.6" height="76.9" fill="#1b9e77"/>
-<text x="640.1" y="243.1" class="val" text-anchor="middle">8.9µs</text>
-<text x="640.1" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 640.1 338.0)">mandel</text>
-<rect x="678.2" y="208.6" width="32.6" height="115.4" fill="#d95f02"/>
-<text x="694.4" y="204.6" class="val" text-anchor="middle">84.7µs</text>
-<text x="694.4" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 694.4 338.0)">many_funcs</text>
-<rect x="732.5" y="269.7" width="32.6" height="54.3" fill="#4e79a7"/>
-<text x="748.7" y="265.7" class="val" text-anchor="middle">2.4µs</text>
-<text x="748.7" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 748.7 338.0)">memory</text>
-<rect x="786.8" y="128.7" width="32.6" height="195.3" fill="#f28e2b"/>
-<text x="803.0" y="124.7" class="val" text-anchor="middle">9ms</text>
-<text x="803.0" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 803.0 338.0)">real_bigstack</text>
-<rect x="841.1" y="133.8" width="32.6" height="190.2" fill="#59a14f"/>
-<text x="857.3" y="129.8" class="val" text-anchor="middle">6.7ms</text>
-<text x="857.3" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 857.3 338.0)">real_dwarf</text>
-<rect x="895.4" y="146.7" width="32.6" height="177.3" fill="#e15759"/>
-<text x="911.6" y="142.7" class="val" text-anchor="middle">3.1ms</text>
-<text x="911.6" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 911.6 338.0)">real_highstack</text>
-<rect x="949.7" y="187.6" width="32.6" height="136.4" fill="#76b7b2"/>
-<text x="965.9" y="183.6" class="val" text-anchor="middle">288.1µs</text>
-<text x="965.9" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 965.9 338.0)">real_medstack</text>
-<rect x="1004.0" y="52.0" width="32.6" height="272.0" fill="#edc948"/>
-<text x="1020.2" y="48.0" class="val" text-anchor="middle">791.1ms</text>
-<text x="1020.2" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 1020.2 338.0)">real_pspdfkit</text>
-<rect x="1058.3" y="297.0" width="32.6" height="27.0" fill="#b07aa1"/>
-<text x="1074.5" y="293.0" class="val" text-anchor="middle">483.9ns</text>
-<text x="1074.5" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 1074.5 338.0)">tiny</text>
-<rect x="1112.6" y="141.6" width="32.6" height="182.4" fill="#ff9da7"/>
-<text x="1128.8" y="137.6" class="val" text-anchor="middle">4.2ms</text>
-<text x="1128.8" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 1128.8 338.0)">wasm3</text>
+<text x="64" y="51.0" class="ax" text-anchor="end">100µs</text>
+<rect x="91.7" y="209.9" width="65.2" height="114.1" fill="#4e79a7"/>
+<text x="124.3" y="205.9" class="val" text-anchor="middle">1.7µs</text>
+<text x="124.3" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 124.3 338.0)">arith</text>
+<rect x="200.3" y="237.4" width="65.2" height="86.6" fill="#f28e2b"/>
+<text x="232.9" y="233.4" class="val" text-anchor="middle">874ns</text>
+<text x="232.9" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 232.9 338.0)">branches</text>
+<rect x="308.9" y="205.9" width="65.2" height="118.1" fill="#59a14f"/>
+<text x="341.5" y="201.9" class="val" text-anchor="middle">1.9µs</text>
+<text x="341.5" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 341.5 338.0)">dispatch</text>
+<rect x="417.5" y="220.2" width="65.2" height="103.8" fill="#e15759"/>
+<text x="450.1" y="216.2" class="val" text-anchor="middle">1.3µs</text>
+<text x="450.1" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 450.1 338.0)">fib_iter</text>
+<rect x="526.1" y="218.3" width="65.2" height="105.7" fill="#76b7b2"/>
+<text x="558.7" y="214.3" class="val" text-anchor="middle">1.4µs</text>
+<text x="558.7" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 558.7 338.0)">fib_rec</text>
+<rect x="634.7" y="216.8" width="65.2" height="107.2" fill="#edc948"/>
+<text x="667.3" y="212.8" class="val" text-anchor="middle">1.5µs</text>
+<text x="667.3" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 667.3 338.0)">float</text>
+<rect x="743.3" y="216.2" width="65.2" height="107.8" fill="#b07aa1"/>
+<text x="775.9" y="212.2" class="val" text-anchor="middle">1.5µs</text>
+<text x="775.9" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 775.9 338.0)">globals</text>
+<rect x="851.9" y="50.9" width="65.2" height="273.1" fill="#ff9da7"/>
+<text x="884.5" y="46.9" class="val" text-anchor="middle">93.1µs</text>
+<text x="884.5" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 884.5 338.0)">many_funcs</text>
+<rect x="960.5" y="193.3" width="65.2" height="130.7" fill="#9c755f"/>
+<text x="993.1" y="189.3" class="val" text-anchor="middle">2.6µs</text>
+<text x="993.1" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 993.1 338.0)">memory</text>
+<rect x="1069.1" y="257.1" width="65.2" height="66.9" fill="#bab0ac"/>
+<text x="1101.7" y="253.1" class="val" text-anchor="middle">534.1ns</text>
+<text x="1101.7" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 1101.7 338.0)">tiny</text>
 <line x1="70" y1="324.0" x2="1156" y2="324.0" class="axis"/>
 </svg>

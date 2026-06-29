@@ -14,74 +14,95 @@
 <text x="64" y="114.2" class="ax" text-anchor="end">1ms</text>
 <line x1="70" y1="48.0" x2="1156" y2="48.0" class="grid"/>
 <text x="64" y="51.0" class="ax" text-anchor="end">10ms</text>
-<circle cx="538.0" cy="296.5" r="2.5" fill="#4e79a7"/>
-<text x="543.0" y="299.5" class="bval" text-anchor="start">1.2µs</text>
+<circle cx="70.0" cy="296.5" r="2.5" fill="#4e79a7"/>
+<circle cx="1006.0" cy="292.2" r="2.5" fill="#4e79a7"/>
+<polyline points="70.0,296.5 1006.0,292.2" fill="none" stroke="#4e79a7" stroke-width="1.5"/>
+<text x="1011.0" y="295.2" class="bval" text-anchor="start">1.4µs</text>
 <rect x="1024.0" y="48.0" width="10" height="10" fill="#4e79a7"/>
 <text x="1038.0" y="57.0" class="leg" text-anchor="start">arith</text>
-<circle cx="538.0" cy="134.5" r="2.5" fill="#f28e2b"/>
-<text x="543.0" y="137.5" class="bval" text-anchor="start">427.3µs</text>
+<circle cx="70.0" cy="134.5" r="2.5" fill="#f28e2b"/>
+<text x="75.0" y="137.5" class="bval" text-anchor="start">427.3µs</text>
 <rect x="1024.0" y="64.0" width="10" height="10" fill="#f28e2b"/>
 <text x="1038.0" y="73.0" class="leg" text-anchor="start">big_func</text>
-<circle cx="538.0" cy="301.6" r="2.5" fill="#59a14f"/>
-<text x="543.0" y="304.6" class="bval" text-anchor="start">970.4ns</text>
+<circle cx="70.0" cy="301.6" r="2.5" fill="#59a14f"/>
+<circle cx="1006.0" cy="296.6" r="2.5" fill="#59a14f"/>
+<polyline points="70.0,301.6 1006.0,296.6" fill="none" stroke="#59a14f" stroke-width="1.5"/>
+<text x="1011.0" y="299.6" class="bval" text-anchor="start">1.2µs</text>
 <rect x="1024.0" y="80.0" width="10" height="10" fill="#59a14f"/>
 <text x="1038.0" y="89.0" class="leg" text-anchor="start">branches</text>
-<circle cx="538.0" cy="273.3" r="2.5" fill="#e15759"/>
-<text x="543.0" y="276.3" class="bval" text-anchor="start">2.7µs</text>
+<circle cx="70.0" cy="273.3" r="2.5" fill="#e15759"/>
+<circle cx="1006.0" cy="265.4" r="2.5" fill="#e15759"/>
+<polyline points="70.0,273.3 1006.0,265.4" fill="none" stroke="#e15759" stroke-width="1.5"/>
+<text x="1011.0" y="268.4" class="bval" text-anchor="start">3.6µs</text>
 <rect x="1024.0" y="96.0" width="10" height="10" fill="#e15759"/>
 <text x="1038.0" y="105.0" class="leg" text-anchor="start">dispatch</text>
-<circle cx="538.0" cy="299.6" r="2.5" fill="#76b7b2"/>
-<text x="543.0" y="302.6" class="bval" text-anchor="start">1µs</text>
+<circle cx="70.0" cy="299.6" r="2.5" fill="#76b7b2"/>
+<circle cx="1006.0" cy="295.3" r="2.5" fill="#76b7b2"/>
+<polyline points="70.0,299.6 1006.0,295.3" fill="none" stroke="#76b7b2" stroke-width="1.5"/>
+<text x="1011.0" y="298.3" class="bval" text-anchor="start">1.2µs</text>
 <rect x="1024.0" y="112.0" width="10" height="10" fill="#76b7b2"/>
 <text x="1038.0" y="121.0" class="leg" text-anchor="start">fib_iter</text>
-<circle cx="538.0" cy="294.5" r="2.5" fill="#edc948"/>
-<text x="543.0" y="297.5" class="bval" text-anchor="start">1.3µs</text>
+<circle cx="70.0" cy="294.5" r="2.5" fill="#edc948"/>
+<circle cx="1006.0" cy="290.8" r="2.5" fill="#edc948"/>
+<polyline points="70.0,294.5 1006.0,290.8" fill="none" stroke="#edc948" stroke-width="1.5"/>
+<text x="1011.0" y="293.8" class="bval" text-anchor="start">1.4µs</text>
 <rect x="1024.0" y="128.0" width="10" height="10" fill="#edc948"/>
 <text x="1038.0" y="137.0" class="leg" text-anchor="start">fib_rec</text>
-<circle cx="538.0" cy="296.6" r="2.5" fill="#b07aa1"/>
-<text x="543.0" y="299.6" class="bval" text-anchor="start">1.2µs</text>
+<circle cx="70.0" cy="296.6" r="2.5" fill="#b07aa1"/>
+<circle cx="1006.0" cy="292.7" r="2.5" fill="#b07aa1"/>
+<polyline points="70.0,296.6 1006.0,292.7" fill="none" stroke="#b07aa1" stroke-width="1.5"/>
+<text x="1011.0" y="295.7" class="bval" text-anchor="start">1.3µs</text>
 <rect x="1024.0" y="144.0" width="10" height="10" fill="#b07aa1"/>
 <text x="1038.0" y="153.0" class="leg" text-anchor="start">float</text>
-<circle cx="538.0" cy="218.1" r="2.5" fill="#ff9da7"/>
-<text x="543.0" y="221.1" class="bval" text-anchor="start">20.4µs</text>
+<circle cx="70.0" cy="218.1" r="2.5" fill="#ff9da7"/>
+<text x="75.0" y="221.1" class="bval" text-anchor="start">20.4µs</text>
 <rect x="1024.0" y="160.0" width="10" height="10" fill="#ff9da7"/>
 <text x="1038.0" y="169.0" class="leg" text-anchor="start">geo</text>
-<circle cx="538.0" cy="292.3" r="2.5" fill="#9c755f"/>
-<text x="543.0" y="295.3" class="bval" text-anchor="start">1.4µs</text>
+<circle cx="70.0" cy="292.3" r="2.5" fill="#9c755f"/>
+<circle cx="1006.0" cy="288.0" r="2.5" fill="#9c755f"/>
+<polyline points="70.0,292.3 1006.0,288.0" fill="none" stroke="#9c755f" stroke-width="1.5"/>
+<text x="1011.0" y="291.0" class="bval" text-anchor="start">1.6µs</text>
 <rect x="1024.0" y="176.0" width="10" height="10" fill="#9c755f"/>
 <text x="1038.0" y="185.0" class="leg" text-anchor="start">globals</text>
-<circle cx="538.0" cy="261.5" r="2.5" fill="#bab0ac"/>
-<text x="543.0" y="264.5" class="bval" text-anchor="start">4.2µs</text>
+<circle cx="70.0" cy="261.5" r="2.5" fill="#bab0ac"/>
+<text x="75.0" y="264.5" class="bval" text-anchor="start">4.2µs</text>
 <rect x="1024.0" y="192.0" width="10" height="10" fill="#bab0ac"/>
 <text x="1038.0" y="201.0" class="leg" text-anchor="start">hash</text>
-<circle cx="538.0" cy="258.3" r="2.5" fill="#1b9e77"/>
-<text x="543.0" y="261.3" class="bval" text-anchor="start">4.7µs</text>
+<circle cx="70.0" cy="258.3" r="2.5" fill="#1b9e77"/>
+<text x="75.0" y="261.3" class="bval" text-anchor="start">4.7µs</text>
 <rect x="1024.0" y="208.0" width="10" height="10" fill="#1b9e77"/>
 <text x="1038.0" y="217.0" class="leg" text-anchor="start">mandel</text>
-<circle cx="538.0" cy="170.2" r="2.5" fill="#d95f02"/>
-<text x="543.0" y="173.2" class="bval" text-anchor="start">116.6µs</text>
+<circle cx="70.0" cy="170.2" r="2.5" fill="#d95f02"/>
+<circle cx="1006.0" cy="163.7" r="2.5" fill="#d95f02"/>
+<polyline points="70.0,170.2 1006.0,163.7" fill="none" stroke="#d95f02" stroke-width="1.5"/>
+<text x="1011.0" y="166.7" class="bval" text-anchor="start">147.7µs</text>
 <rect x="1024.0" y="224.0" width="10" height="10" fill="#d95f02"/>
 <text x="1038.0" y="233.0" class="leg" text-anchor="start">many_funcs</text>
-<circle cx="538.0" cy="279.6" r="2.5" fill="#4e79a7"/>
-<text x="543.0" y="282.6" class="bval" text-anchor="start">2.2µs</text>
+<circle cx="70.0" cy="279.6" r="2.5" fill="#4e79a7"/>
+<circle cx="1006.0" cy="276.3" r="2.5" fill="#4e79a7"/>
+<polyline points="70.0,279.6 1006.0,276.3" fill="none" stroke="#4e79a7" stroke-width="1.5"/>
+<text x="1011.0" y="279.3" class="bval" text-anchor="start">2.4µs</text>
 <rect x="1024.0" y="240.0" width="10" height="10" fill="#4e79a7"/>
 <text x="1038.0" y="249.0" class="leg" text-anchor="start">memory</text>
-<circle cx="538.0" cy="80.6" r="2.5" fill="#f28e2b"/>
-<text x="543.0" y="83.6" class="bval" text-anchor="start">3.1ms</text>
+<circle cx="70.0" cy="80.6" r="2.5" fill="#f28e2b"/>
+<text x="75.0" y="83.6" class="bval" text-anchor="start">3.1ms</text>
 <rect x="1024.0" y="256.0" width="10" height="10" fill="#f28e2b"/>
 <text x="1038.0" y="265.0" class="leg" text-anchor="start">real_bigstack</text>
-<circle cx="538.0" cy="109.4" r="2.5" fill="#59a14f"/>
-<text x="543.0" y="112.4" class="bval" text-anchor="start">1.1ms</text>
+<circle cx="70.0" cy="109.4" r="2.5" fill="#59a14f"/>
+<text x="75.0" y="112.4" class="bval" text-anchor="start">1.1ms</text>
 <rect x="1024.0" y="272.0" width="10" height="10" fill="#59a14f"/>
 <text x="1038.0" y="281.0" class="leg" text-anchor="start">real_highstack</text>
-<circle cx="538.0" cy="174.4" r="2.5" fill="#e15759"/>
-<text x="543.0" y="177.4" class="bval" text-anchor="start">100µs</text>
+<circle cx="70.0" cy="174.4" r="2.5" fill="#e15759"/>
+<text x="75.0" y="177.4" class="bval" text-anchor="start">100µs</text>
 <rect x="1024.0" y="288.0" width="10" height="10" fill="#e15759"/>
 <text x="1038.0" y="297.0" class="leg" text-anchor="start">real_medstack</text>
-<circle cx="538.0" cy="308.7" r="2.5" fill="#76b7b2"/>
-<text x="543.0" y="311.7" class="bval" text-anchor="start">748.7ns</text>
+<circle cx="70.0" cy="308.7" r="2.5" fill="#76b7b2"/>
+<circle cx="1006.0" cy="302.5" r="2.5" fill="#76b7b2"/>
+<polyline points="70.0,308.7 1006.0,302.5" fill="none" stroke="#76b7b2" stroke-width="1.5"/>
+<text x="1011.0" y="305.5" class="bval" text-anchor="start">940ns</text>
 <rect x="1024.0" y="304.0" width="10" height="10" fill="#76b7b2"/>
 <text x="1038.0" y="313.0" class="leg" text-anchor="start">tiny</text>
-<text x="538.0" y="378.0" class="cat" text-anchor="end" transform="rotate(-35 538.0 378.0)">3187714</text>
+<text x="70.0" y="378.0" class="cat" text-anchor="end" transform="rotate(-35 70.0 378.0)">3187714</text>
+<text x="1006.0" y="378.0" class="cat" text-anchor="end" transform="rotate(-35 1006.0 378.0)">faea170-dirty</text>
 <line x1="70" y1="364.0" x2="1156" y2="364.0" class="axis"/>
 </svg>
