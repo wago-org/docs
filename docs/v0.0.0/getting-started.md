@@ -1,3 +1,7 @@
+---
+description: Install the official Wago v0.0.0 release and run your first WebAssembly module.
+---
+
 # Getting started
 
 Install the pinned v0.0.0 release and run a small WebAssembly module.

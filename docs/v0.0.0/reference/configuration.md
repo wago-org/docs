@@ -1,3 +1,7 @@
+---
+description: Configure Wago v0.0.0 projects, plugin constraints, lockfiles, and capability grants.
+---
+
 # Configuration
 
 Wago v0.0.0 keeps project intent in `wago.json` and exact plugin resolution and authority in `wago-lock.json`.

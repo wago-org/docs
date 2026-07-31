@@ -1,3 +1,7 @@
+---
+description: Configure projects and reproducible plugin lockfiles with the Wago nightly runtime channel.
+---
+
 # Configuration
 
 Nightly uses the same schema-backed project format as the current official release while previewing runtime and tooling changes.

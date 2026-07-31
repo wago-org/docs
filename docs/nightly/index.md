@@ -1,3 +1,7 @@
+---
+description: Preview documentation for the latest successful nightly build of the Wago WebAssembly engine.
+---
+
 # Wago documentation
 
 You are reading documentation for the latest **nightly** build of Wago.

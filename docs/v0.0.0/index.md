@@ -1,3 +1,7 @@
+---
+description: Documentation for Wago v0.0.0, the latest official release of the pure-Go WebAssembly engine.
+---
+
 # Wago documentation
 
 You are reading the documentation for **Wago v0.0.0**.

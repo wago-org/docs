@@ -1,3 +1,7 @@
+---
+description: Install the latest Wago nightly build and run a WebAssembly module with the preview runtime channel.
+---
+
 # Getting started
 
 Install the most recent successful nightly build and run a small WebAssembly module.

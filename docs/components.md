@@ -1,3 +1,7 @@
+---
+description: Author rich Wago documentation with synchronized tabs, cards, steps, API blocks, file trees, and WAT highlighting.
+---
+
 # Documentation components
 
 Reusable components for clear, interactive Wago documentation. All components support keyboard navigation and narrow screens.

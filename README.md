@@ -50,3 +50,19 @@ repository's Pages settings after GitHub provisions the certificate.
 
 The build verifier checks every documented version route, the generated
 sitemap, and the custom-domain marker before an artifact can be deployed.
+
+## Search and AI discovery
+
+Every development or production build runs `scripts/generate-discovery.mjs`.
+It derives the following artifacts from the Markdown page tree, so adding or
+removing a documentation page updates them automatically:
+
+- `/sitemap.xml` with Git-backed modification dates
+- `/llms.txt` as a concise, categorized documentation map
+- `/llms-full.txt` as the complete documentation corpus
+- `/data/docs.json` as a structured page and heading index
+- `/raw/**/*.md` as clean Markdown mirrors without site navigation
+
+VitePress also adds a canonical URL, Markdown alternate, Open Graph metadata,
+Twitter card metadata, and Schema.org JSON-LD to every rendered page. The
+deployment verifier fails if these discovery artifacts drift or disappear.

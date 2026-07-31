@@ -1,3 +1,7 @@
+---
+description: Install Wago, select a runtime channel, and compile and run your first WebAssembly module.
+---
+
 # Getting started
 
 Install the Wago manager, select a runtime channel, and run a small WebAssembly module.

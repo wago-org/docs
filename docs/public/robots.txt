@@ -1,3 +1,6 @@
+# LLM-readable documentation: https://docs.wago.sh/llms.txt
+# Complete text corpus: https://docs.wago.sh/llms-full.txt
+# Structured documentation index: https://docs.wago.sh/data/docs.json
 User-agent: *
 Allow: /
 

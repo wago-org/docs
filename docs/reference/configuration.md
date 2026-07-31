@@ -1,3 +1,7 @@
+---
+description: Configure Wago projects, plugin constraints, reproducible lockfiles, capability grants, and machine-level paths.
+---
+
 # Configuration
 
 Wago keeps project intent in `wago.json` and exact, authority-bearing resolution in `wago-lock.json`. Commit both files when your project uses plugins.
