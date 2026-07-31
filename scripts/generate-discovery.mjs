@@ -4,8 +4,8 @@ import { fileURLToPath } from 'node:url'
 import { glob } from 'node:fs/promises'
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
-const docsRoot = join(root, 'docs')
-const publicRoot = join(docsRoot, 'public')
+const contentRoot = root
+const publicRoot = join(root, 'public')
 const rawRoot = join(publicRoot, 'raw')
 const origin = 'https://docs.wago.sh'
 
@@ -66,14 +66,20 @@ function sectionFor(path) {
 }
 
 const paths = []
-for await (const path of glob('**/*.md', { cwd: docsRoot })) {
-  if (path.startsWith(`public${sep}`) || path.startsWith('.vitepress/')) continue
+for await (const path of glob('**/*.md', { cwd: contentRoot })) {
+  if (
+    path === 'README.md' ||
+    path.startsWith(`public${sep}`) ||
+    path.startsWith(`node_modules${sep}`) ||
+    path.startsWith('.vitepress/') ||
+    path.startsWith('.github/')
+  ) continue
   paths.push(path.split(sep).join('/'))
 }
 paths.sort((a, b) => a.localeCompare(b, 'en'))
 
 const pages = await Promise.all(paths.map(async (path) => {
-  const source = await readFile(join(docsRoot, path), 'utf8')
+  const source = await readFile(join(contentRoot, path), 'utf8')
   const title = titleFrom(source, path)
   const route = routeFor(path)
   const cleaned = cleanMarkdown(source)

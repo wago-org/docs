@@ -30,18 +30,18 @@ npm run docs:check
 
 ## Documentation versions
 
-Canary documentation lives directly under `docs/`. Other rolling channels and
-frozen releases live in subdirectories such as `docs/nightly/` and
-`docs/v0.0.0/`.
+Canary documentation lives directly in the repository root. Other rolling
+channels and frozen releases live in directories such as `nightly/` and
+`v0.0.0/`.
 
 To add a release, copy the current page tree into its version directory and add
-the version to `docs/.vitepress/versions.ts`. The navigation and version-aware
+the version to `.vitepress/versions.ts`. The navigation and version-aware
 sidebars are generated from that list.
 
 ## Deployment
 
 Pull requests run the production build and artifact verification. A push to
-`main` deploys `docs/.vitepress/dist` through the protected `github-pages`
+`main` deploys `.vitepress/dist` through the protected `github-pages`
 environment. Deployment can also be started manually from the Actions tab.
 
 The site expects the custom domain `docs.wago.sh`. Configure DNS with a CNAME

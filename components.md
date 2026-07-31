@@ -147,14 +147,12 @@ Record a completed plugin installation.
 ## File trees
 
 <FileTree>
-  <FileTreeItem name="docs/" type="folder">
-    <FileTreeItem name=".vitepress/" type="folder" comment="site configuration and theme">
-      <FileTreeItem name="config.mts" comment="navigation and search" />
-      <FileTreeItem name="theme/" type="folder" comment="Wago components" />
-    </FileTreeItem>
-    <FileTreeItem name="getting-started.md" />
-    <FileTreeItem name="reference/" type="folder" />
+  <FileTreeItem name=".vitepress/" type="folder" comment="site configuration and theme">
+    <FileTreeItem name="config.mts" comment="navigation and search" />
+    <FileTreeItem name="theme/" type="folder" comment="Wago components" />
   </FileTreeItem>
+  <FileTreeItem name="getting-started.md" />
+  <FileTreeItem name="reference/" type="folder" />
 </FileTree>
 
 ## Code annotations

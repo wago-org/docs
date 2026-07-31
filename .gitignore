@@ -1,9 +1,9 @@
 node_modules/
-docs/.vitepress/cache/
-docs/.vitepress/dist/
-docs/public/data/docs.json
-docs/public/llms.txt
-docs/public/llms-full.txt
-docs/public/raw/
+.vitepress/cache/
+.vitepress/dist/
+public/data/docs.json
+public/llms.txt
+public/llms-full.txt
+public/raw/
 *.log
 .DS_Store

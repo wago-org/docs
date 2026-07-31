@@ -1,6 +1,6 @@
 import { access, readFile } from 'node:fs/promises'
 
-const output = new URL('../docs/.vitepress/dist/', import.meta.url)
+const output = new URL('../.vitepress/dist/', import.meta.url)
 
 const expectedFiles = [
   'index.html',
