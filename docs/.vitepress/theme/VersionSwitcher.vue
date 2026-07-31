@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useRoute, withBase } from 'vitepress'
 import { docsVersions, type DocsVersion } from '../versions'
 
 const route = useRoute()
+const switcher = ref<HTMLDetailsElement | null>(null)
 
 const versionGroups = [
   {
@@ -32,10 +33,25 @@ function versionHref(version: DocsVersion) {
 
   return withBase(`${version.base}${normalizedPath}` || '/')
 }
+
+function closeWhenClickingOutside(event: PointerEvent) {
+  const element = switcher.value
+  if (element?.open && !event.composedPath().includes(element)) {
+    element.open = false
+  }
+}
+
+onMounted(() => {
+  document.addEventListener('pointerdown', closeWhenClickingOutside, true)
+})
+
+onBeforeUnmount(() => {
+  document.removeEventListener('pointerdown', closeWhenClickingOutside, true)
+})
 </script>
 
 <template>
-  <details class="version-switcher">
+  <details ref="switcher" class="version-switcher">
     <summary>
       <span>{{ activeVersion.label.toLowerCase() }}</span>
       <svg
