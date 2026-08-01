@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "channels": [
+    {
+      "label": "canary",
+      "base": "",
+      "release": null
+    },
+    {
+      "label": "nightly",
+      "base": "/nightly",
+      "release": null
+    }
+  ],
+  "releases": [
+    {
+      "label": "v0.0.0",
+      "base": "/v0.0.0",
+      "latest": true,
+      "release": null
+    }
+  ]
+}

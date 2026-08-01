@@ -1,14 +1,35 @@
+import manifestData from '../versions.json'
+
+export interface CodeRelease {
+  tag: string
+  sha: string
+  publishedAt: string
+  docsSource: string
+}
+
 export interface DocsVersion {
   label: string
   base: string
   group: 'channel' | 'release'
   latest?: boolean
+  release?: CodeRelease | null
 }
 
-// Keep channels first and releases newest-first. Each non-empty base must have
-// a matching docs directory; the empty base is the canary documentation.
+interface VersionManifest {
+  schemaVersion: number
+  channels: Omit<DocsVersion, 'group'>[]
+  releases: Omit<DocsVersion, 'group'>[]
+}
+
+const manifest = manifestData as VersionManifest
+
+if (manifest.schemaVersion !== 1 || !manifest.channels.length) {
+  throw new Error('versions.json is not a supported documentation version manifest')
+}
+
+// The JSON manifest is the release automation's source of truth. Channels stay
+// first and official releases stay newest-first in the version selector.
 export const docsVersions: DocsVersion[] = [
-  { label: 'canary', base: '', group: 'channel' },
-  { label: 'nightly', base: '/nightly', group: 'channel' },
-  { label: 'v0.0.0', base: '/v0.0.0', group: 'release', latest: true }
+  ...manifest.channels.map((version) => ({ ...version, group: 'channel' as const })),
+  ...manifest.releases.map((version) => ({ ...version, group: 'release' as const }))
 ]

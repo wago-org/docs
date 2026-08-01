@@ -1,18 +1,22 @@
 import { access, readFile } from 'node:fs/promises'
 
 const output = new URL('../.vitepress/dist/', import.meta.url)
+const manifest = JSON.parse(await readFile(new URL('../versions.json', import.meta.url), 'utf8'))
+const versionBases = [...manifest.channels, ...manifest.releases]
+  .map(({ base }) => base.replace(/^\//, ''))
+  .filter(Boolean)
+const versionFiles = versionBases.flatMap((base) => [
+  `${base}/index.html`,
+  `${base}/getting-started.html`,
+  `${base}/reference/configuration.html`,
+  `raw/${base}/index.md`
+])
 
 const expectedFiles = [
   'index.html',
   'getting-started.html',
   'reference/configuration.html',
   'components.html',
-  'nightly/index.html',
-  'nightly/getting-started.html',
-  'nightly/reference/configuration.html',
-  'v0.0.0/index.html',
-  'v0.0.0/getting-started.html',
-  'v0.0.0/reference/configuration.html',
   '404.html',
   'CNAME',
   'robots.txt',
@@ -22,8 +26,7 @@ const expectedFiles = [
   'data/docs.json',
   'raw/index.md',
   'raw/getting-started.md',
-  'raw/nightly/index.md',
-  'raw/v0.0.0/index.md'
+  ...versionFiles
 ]
 
 await Promise.all(
@@ -36,7 +39,7 @@ if (cname !== 'docs.wago.sh') {
 }
 
 const sitemap = await readFile(new URL('sitemap.xml', output), 'utf8')
-for (const route of ['/', '/nightly/', '/v0.0.0/', '/llms.txt', '/llms-full.txt', '/data/docs.json']) {
+for (const route of ['/', ...versionBases.map((base) => `/${base}/`), '/llms.txt', '/llms-full.txt', '/data/docs.json']) {
   const url = `https://docs.wago.sh${route}`
   if (!sitemap.includes(url)) {
     throw new Error(`Sitemap is missing ${url}`)

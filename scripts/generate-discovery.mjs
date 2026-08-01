@@ -71,6 +71,8 @@ for await (const path of glob('**/*.md', { cwd: contentRoot })) {
     path === 'README.md' ||
     path.startsWith(`public${sep}`) ||
     path.startsWith(`node_modules${sep}`) ||
+    path.startsWith(`.docs-snapshots${sep}`) ||
+    path.startsWith('.docs-sync-') ||
     path.startsWith('.vitepress/') ||
     path.startsWith('.github/')
   ) continue

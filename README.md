@@ -34,15 +34,31 @@ Canary documentation lives directly in the repository root. Other rolling
 channels and frozen releases live in directories such as `nightly/` and
 `v0.0.0/`.
 
-To add a release, copy the current page tree into its version directory and add
-the version to `.vitepress/versions.ts`. The navigation and version-aware
-sidebars are generated from that list.
+Only edit the canary documentation directly. Successful Wago releases update
+`versions.json` automatically:
+
+- canary records the code release associated with the root documentation;
+- nightly snapshots the root into both `nightly/` and an immutable commit-keyed
+  source under `.docs-snapshots/`;
+- a stable `vMAJOR.MINOR.PATCH` release promotes the snapshot for the exact same
+  Wago commit into its permanent version directory.
+
+Stable promotion fails if the code commit never received a nightly snapshot.
+This prevents a release from silently publishing documentation for different
+code. `.vitepress/versions.ts` reads `versions.json`, so the version selector,
+latest marker, provenance links, search index, sitemap, and LLM exports all move
+together.
 
 ## Deployment
 
 Pull requests run the production build and artifact verification. A push to
 `main` deploys `.vitepress/dist` through the protected `github-pages`
 environment. Deployment can also be started manually from the Actions tab.
+
+The release synchronization workflow accepts authenticated `code-release`
+repository dispatches and also reconciles against GitHub Releases every 15
+minutes. The scheduled pass is a recovery path if a cross-repository dispatch is
+missed.
 
 The site expects the custom domain `docs.wago.sh`. Configure DNS with a CNAME
 record from `docs.wago.sh` to `wago-org.github.io`, then enable HTTPS in the

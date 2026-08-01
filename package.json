@@ -8,11 +8,12 @@
   },
   "scripts": {
     "docs:prepare": "node scripts/generate-discovery.mjs",
+    "docs:test": "node --test scripts/*.test.mjs",
     "docs:dev": "npm run docs:prepare && vitepress dev .",
     "docs:build": "npm run docs:prepare && vitepress build .",
     "docs:preview": "vitepress preview .",
     "docs:verify": "node scripts/verify-build.mjs",
-    "docs:check": "npm run docs:build && npm run docs:verify"
+    "docs:check": "npm run docs:test && npm run docs:build && npm run docs:verify"
   },
   "devDependencies": {
     "vitepress": "^1.6.4"

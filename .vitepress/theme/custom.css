@@ -525,6 +525,11 @@ body {
   box-shadow: 0 0 10px rgba(195, 168, 255, 0.55);
 }
 
+.wago-version-banner[data-channel='release'] .wago-version-banner__signal {
+  background: #7ee7b7;
+  box-shadow: 0 0 10px rgba(126, 231, 183, 0.45);
+}
+
 .wago-version-banner strong {
   color: var(--wago-text);
   font-family: var(--wago-mono);

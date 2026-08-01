@@ -48,7 +48,7 @@ export default defineConfig({
   lang: 'en-US',
   title: 'Wago',
   description: 'Documentation for Wago',
-  srcExclude: ['README.md', 'public/**/*.md'],
+  srcExclude: ['README.md', '.docs-snapshots/**', '.docs-sync-*/**', 'public/**/*.md'],
   cleanUrls: true,
   lastUpdated: true,
   appearance: 'force-dark',

@@ -1,0 +1,96 @@
+name: Synchronize release documentation
+
+on:
+  repository_dispatch:
+    types: [code-release]
+  schedule:
+    - cron: "7,22,37,52 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    outputs:
+      changed: ${{ steps.changes.outputs.changed }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Resolve and synchronize Wago releases
+        id: reconcile
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          DOCS_SOURCE_SHA: ${{ github.sha }}
+          DOCS_RELEASE_CHANNEL: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.channel || '' }}
+          DOCS_RELEASE_TAG: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.tag || '' }}
+          DOCS_RELEASE_SHA: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.sha || '' }}
+        run: node scripts/reconcile-releases.mjs
+
+      - name: Detect changes
+        id: changes
+        run: |
+          if test -z "$(git status --porcelain --untracked-files=all)"; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Configure GitHub Pages
+        if: steps.changes.outputs.changed == 'true'
+        uses: actions/configure-pages@v5
+
+      - name: Build and verify documentation
+        if: steps.changes.outputs.changed == 'true'
+        run: npm run docs:check
+
+      - name: Commit synchronized documentation
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          CHANNEL: ${{ github.event.client_payload.channel || 'release channels' }}
+        run: |
+          git config user.name "wago-docs-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "sync ${CHANNEL} documentation"
+          git push origin HEAD:main
+
+      - name: Upload GitHub Pages artifact
+        if: steps.changes.outputs.changed == 'true'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: .vitepress/dist
+
+  deploy:
+    name: Deploy
+    needs: sync
+    if: needs.sync.outputs.changed == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
