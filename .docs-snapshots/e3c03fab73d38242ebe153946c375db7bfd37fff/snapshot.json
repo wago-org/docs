@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "release": {
+    "tag": "nightly-20260731-e3c03fa",
+    "sha": "e3c03fab73d38242ebe153946c375db7bfd37fff",
+    "publishedAt": "2026-07-31T08:48:04Z",
+    "docsSource": "8d315a11117275eda873b259adf9139be2232d78"
+  },
+  "files": [
+    "getting-started.md",
+    "index.md",
+    "reference/configuration.md"
+  ]
+}
