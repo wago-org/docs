@@ -28,6 +28,21 @@ npm ci
 npm run docs:check
 ```
 
+## Terminal demos
+
+The onboarding recordings are generated from the readable source tapes in
+`demos/`. To record them again, install [VHS](https://github.com/charmbracelet/vhs) and
+`gifsicle`, make sure an active `wago` runtime is on your `PATH`, then run:
+
+```sh
+npm run docs:demos
+```
+
+The recording script passes each tape through `scripts/humanize-tape.py`. It
+adds reproducible per-letter cadence without making the source tapes hard to
+edit, and it leaves hidden setup alone. The optimized GIFs are written to
+`public/demos/`.
+
 ## Documentation versions
 
 Canary documentation lives directly in the repository root. Other rolling

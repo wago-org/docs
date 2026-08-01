@@ -1,90 +1,123 @@
 ---
-description: Install Wago, select a runtime channel, and compile and run your first WebAssembly module.
+description: Install Wago, select a runtime, and run a real WebAssembly module from a clean terminal.
 ---
 
 # Getting started
 
-Install the Wago manager, select a runtime channel, and run a small WebAssembly module.
+This guide takes you from an empty machine to a successful WebAssembly call. You will install the Wago manager, select a runtime, download a tiny module, and run it.
 
-::: tip Prerequisite
-The source installer requires Go 1.22 or newer. It prefers Git and can fall back to a GitHub source archive when necessary.
+![Inspecting and running a small WebAssembly module with Wago](/demos/getting-started.gif)
+
+::: tip What you need
+The source installer requires Go 1.22 or newer. Git is preferred; if Git is unavailable, the installer can use a GitHub source archive with `curl` or `wget` and an archive extractor.
 :::
 
-<Steps>
-  <Step title="Install the manager">
+## 1. Install the manager
 
 ```sh
 curl -fsSL https://wago.sh/install.sh | sh
 ```
 
-The interactive installer defaults to `~/.wago/bin` and can add that directory to your shell path.
+The installer asks where to put `wago`, normally `~/.wago/bin`, and can add that directory to your shell configuration.
 
-  </Step>
-  <Step title="Choose a runtime">
-
-Your channel preference is shared with other channel tabs across the documentation.
-
-<Tabs sync="release-channel">
-  <Tab title="Canary">
+Open a new terminal if the installer changed your `PATH`, then check the command:
 
 ```sh
-wago version install canary
+wago --version
 ```
 
-  </Tab>
-  <Tab title="Nightly">
+The manager handles versions and projects. It intentionally does not bundle a runtime.
+
+## 2. Install a runtime
+
+Nightly is a good place to begin while Wago is pre-release: it follows `main` on a daily cadence without changing after publication.
 
 ```sh
-wago version install nightly
+wago version install --nightly --use
 ```
 
-  </Tab>
-  <Tab title="Official">
+`--use` makes the installed runtime active immediately. Without it, Wago asks whether you want to switch.
+
+Other choices are covered in [Release channels and builds](/guides/version-channels). If you skip this step and run a module, Wago opens the same version picker for you.
+
+## 3. Download a small module
 
 ```sh
-wago version install 0.0.0
+curl -fsSL \
+  https://raw.githubusercontent.com/wago-org/wago/main/tests/testdata/fib.wasm \
+  -o fib.wasm
 ```
 
-  </Tab>
-</Tabs>
+This module exports a function named `fib`. It takes one `i32` argument and returns the corresponding Fibonacci number.
 
-  </Step>
-  <Step title="Download a small module">
+You can inspect its host requirements before running it:
 
 ```sh
-curl -LO https://raw.githubusercontent.com/wago-org/wago/main/tests/testdata/fib.wasm
+wago module imports fib.wasm
 ```
 
-  </Step>
-  <Step title="Run it">
+No imports means this module is self-contained. It does not need WASI, files, network access, or a custom host function.
+
+## 4. Run it
 
 ```sh
 wago run fib.wasm 30
 ```
 
-`run` validates and compiles the module before invoking the exported function.
+You should see:
 
-  </Step>
-</Steps>
+```text
+fib(30) = 832040
+```
 
-## What was installed?
+Wago decoded and validated the module, compiled it to native code, created an instance, selected the exported function, converted `30` to the argument type from the Wasm signature, and printed the result.
 
-On macOS, Wago uses the following default layout. Linux uses the corresponding XDG data, config, and cache directories; `WAGO_HOME` can override both layouts.
+`run` is the default command, so this is equivalent:
 
-<FileTree>
-  <FileTreeItem name="~/.wago/" type="folder">
-    <FileTreeItem name="bin/" type="folder" comment="runtime-independent manager" />
-    <FileTreeItem name="versions/" type="folder" comment="installed runtime channels and releases" />
-  </FileTreeItem>
-</FileTree>
+```sh
+wago fib.wasm 30
+```
 
-## Next steps
+## 5. Try the everyday commands
+
+Validate without executing:
+
+```sh
+wago validate fib.wasm
+```
+
+A successful validation is quiet.
+
+Precompile it for faster startup on the same host architecture:
+
+```sh
+wago build fib.wasm -o fib.wago
+wago run fib.wago 30
+```
+
+Show the runtime, project, and plugin scope Wago selected:
+
+```sh
+wago status
+```
+
+::: warning Precompiled files are not portable releases
+A `.wago` artifact is tied to its host architecture and Wago's compiled format. Keep the original `.wasm` and rebuild the artifact after an incompatible Wago upgrade.
+:::
+
+## Where to go next
 
 <CardGroup>
-  <Card title="Configure a project" href="/reference/configuration" icon="⚙">
-    Add project-level settings and runtime options.
+  <Card title="Use the CLI well" href="/guides/run-a-module" icon="→">
+    Pick exports, pass typed arguments, watch files, inspect imports, and precompile modules.
   </Card>
-  <Card title="Browse plugins" href="https://plugins.wago.sh/" icon="✦">
-    Extend Wago with host integrations and runtime services.
+  <Card title="Embed Wago in Go" href="/guides/embed-wago" icon="◇">
+    Move from a shell command to a long-lived runtime inside your application.
+  </Card>
+  <Card title="Add host capabilities" href="/guides/plugins" icon="✦">
+    Understand when a module needs WASI, another plugin, or a host function of your own.
+  </Card>
+  <Card title="Fix a first-run problem" href="/troubleshooting" icon="?">
+    Diagnose PATH, runtime selection, imports, exports, and stale precompiled files.
   </Card>
 </CardGroup>

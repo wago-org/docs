@@ -1,64 +1,78 @@
 ---
-description: Learn Wago, a pure-Go WebAssembly engine with native compilation, versioned runtime channels, and extensible plugins.
+description: Learn Wago by running a module, embedding the runtime in Go, and adding only the host capabilities your application needs.
 ---
 
 # Wago documentation
 
-Wago is a Go-native WebAssembly runtime and compiler built for fast startup, low memory use, and straightforward embedding.
+Wago is a WebAssembly engine written in Go. It compiles Wasm to native code, runs without cgo, and can be used from the command line or embedded in a Go program.
 
-Use these guides to run WebAssembly from the command line, embed Wago in Go, and extend the runtime with plugins.
+If you are new here, you do not need to understand the compiler or plugin system yet. Pick the path that matches what you are trying to do and get something working first.
 
-## Start here
+## What do you want to build?
 
 <CardGroup>
-  <Card title="Get started" href="/getting-started" icon="→">
-    Install Wago, choose a release channel, and run your first module.
+  <Card title="Run a Wasm file" href="/getting-started" icon="→">
+    Install Wago, choose a runtime, and run a real module in a few minutes.
   </Card>
-  <Card title="Configuration" href="/reference/configuration" icon="⚙">
-    Learn how Wago projects and runtime options are configured.
+  <Card title="Embed Wago in Go" href="/guides/embed-wago" icon="◇">
+    Compile a module once, create an instance, and call an export with typed values.
   </Card>
-  <Card title="Plugin registry" href="https://plugins.wago.sh/" icon="✦">
-    Discover WASI, workers, pools, and other runtime extensions.
+  <Card title="Connect Wasm to your host" href="/guides/host-functions" icon="↔">
+    Let guest code call Go functions and safely exchange data through linear memory.
   </Card>
-  <Card title="Documentation components" href="/components" icon="◇">
-    Browse the reusable components available to documentation authors.
+  <Card title="Add capabilities with plugins" href="/guides/plugins" icon="✦">
+    Add WASI and other integrations without hiding permissions or resolved versions.
   </Card>
 </CardGroup>
 
-## Choose your channel
+## The two pieces you install
 
-<Tabs sync="release-channel">
-  <Tab title="Canary">
+Wago separates management from execution:
 
-<Badge tone="pink">bleeding edge</Badge>
+- The **manager** is the small `wago` command installed by `install.sh`. It installs versions, switches runtimes, manages plugins, and keeps projects reproducible.
+- A **runtime** is the version and build that actually compiles and executes WebAssembly. You choose one after installing the manager.
 
-Built from the most recent successful CI run on `main`. Best for testing upcoming changes.
+That is why a fresh installation may ask you to select a runtime the first time you run a module. Nothing is broken; Wago is asking which release channel and build you want.
 
-```sh
-wago version install canary
-```
+## A useful first ten minutes
 
-  </Tab>
-  <Tab title="Nightly">
+<Steps>
+  <Step title="Run one module">
 
-<Badge tone="muted">daily</Badge>
+Follow [Getting started](/getting-started) and make sure `fib(30) = 832040` appears in your terminal.
 
-The latest successful nightly release, useful for early access with a steadier cadence.
+  </Step>
+  <Step title="Inspect what it needs">
 
-```sh
-wago version install nightly
-```
+Use `wago module imports` before adding plugins or host functions. A Wasm module's imports are its contract with the host.
 
-  </Tab>
-  <Tab title="Official">
+  </Step>
+  <Step title="Choose how Wago fits">
 
-<Badge tone="green">recommended</Badge>
+Keep using the [command line](/guides/run-a-module), or move into the [Go API](/guides/embed-wago) when your application needs instances, host functions, cancellation, or custom policy.
 
-Pinned releases are the safest choice when reproducibility matters.
+  </Step>
+</Steps>
 
-```sh
-wago version install 0.0.0
-```
+## Where Wago fits
 
-  </Tab>
-</Tabs>
+Wago runs `.wasm` modules and its own precompiled `.wago` artifacts. It does not compile Rust, TinyGo, AssemblyScript, or C source into WebAssembly; use that language's Wasm toolchain first, then give the resulting module to Wago.
+
+Wago is JIT-only. It is designed for native execution, low host-call overhead, and a small operational footprint. If a module depends on host APIs such as WASI, files, clocks, or networking, those capabilities must be supplied explicitly through host functions or plugins.
+
+## Keep going
+
+<CardGroup>
+  <Card title="Understand release channels" href="/guides/version-channels" icon="⌁">
+    Pick canary, nightly, or a pinned release, then choose a profile and build.
+  </Card>
+  <Card title="Troubleshoot a problem" href="/troubleshooting" icon="?">
+    Work through the errors new users are most likely to meet.
+  </Card>
+  <Card title="Browse plugins" href="https://plugins.wago.sh/" icon="✦">
+    Find open-source integrations published for the Wago plugin ecosystem.
+  </Card>
+  <Card title="Read the source" href="https://github.com/wago-org/wago" icon="↗">
+    Explore runnable examples, feature support, and the engine itself.
+  </Card>
+</CardGroup>

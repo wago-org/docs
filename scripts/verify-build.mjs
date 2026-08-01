@@ -17,6 +17,8 @@ const expectedFiles = [
   'getting-started.html',
   'reference/configuration.html',
   'components.html',
+  'demos/getting-started.gif',
+  'demos/version-switcher.gif',
   '404.html',
   'CNAME',
   'robots.txt',
@@ -56,6 +58,26 @@ if (docsIndex.schemaVersion !== 1 || !Array.isArray(docsIndex.pages) || docsInde
 
 for (const page of docsIndex.pages) {
   await access(new URL(page.markdown.replace('https://docs.wago.sh/', ''), output))
+  const pathname = new URL(page.url).pathname
+  const html = pathname === '/'
+    ? 'index.html'
+    : pathname.endsWith('/')
+      ? `${pathname.slice(1)}index.html`
+      : `${pathname.slice(1)}.html`
+  await access(new URL(html, output))
+}
+
+for (const path of [
+  'guides/run-a-module.md',
+  'guides/embed-wago.md',
+  'guides/host-functions.md',
+  'guides/plugins.md',
+  'guides/version-channels.md',
+  'troubleshooting.md'
+]) {
+  if (!docsIndex.pages.some((page) => page.path === path)) {
+    throw new Error(`Structured documentation index is missing ${path}`)
+  }
 }
 
 const homepage = await readFile(new URL('index.html', output), 'utf8')
@@ -71,6 +93,18 @@ for (const marker of [
 const jsonLd = homepage.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)?.[1]
 if (!jsonLd) throw new Error('Homepage JSON-LD is missing')
 JSON.parse(jsonLd)
+
+for (const marker of [
+  '<a href="/getting-started">Getting started</a>',
+  '<code>fib(30) = 832040</code>'
+]) {
+  if (!homepage.includes(marker)) throw new Error(`Homepage content did not render ${marker}`)
+}
+
+const rawHomepage = await readFile(new URL('raw/index.md', output), 'utf8')
+if (!rawHomepage.includes('### [Run a Wasm file](/getting-started)')) {
+  throw new Error('Raw homepage lost the destination of its onboarding cards')
+}
 
 const llms = await readFile(new URL('llms.txt', output), 'utf8')
 const full = await readFile(new URL('llms-full.txt', output), 'utf8')

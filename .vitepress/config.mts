@@ -1,8 +1,12 @@
 import { defineConfig } from 'vitepress'
+import { existsSync } from 'node:fs'
+import { join } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { docsVersions } from './versions'
 
 const origin = 'https://docs.wago.sh'
 const socialImage = 'https://wago.sh/assets/og-card.png'
+const sourceRoot = fileURLToPath(new URL('..', import.meta.url))
 
 function routeFor(relativePath: string) {
   const withoutExtension = relativePath.replace(/\.md$/, '')
@@ -18,20 +22,40 @@ function markdownRouteFor(relativePath: string) {
 
 function sidebarFor(base: string) {
   const link = (path: string) => `${base}${path}` || '/'
+  const pageExists = (path: string) => {
+    const route = `${base}${path}` || '/'
+    const source = route.endsWith('/') ? `${route}index.md` : `${route}.md`
+    return existsSync(join(sourceRoot, source.replace(/^\//, '')))
+  }
+  const available = (items: { text: string; path: string }[]) =>
+    items
+      .filter(({ path }) => pageExists(path))
+      .map(({ text, path }) => ({ text, link: link(path) }))
 
   return [
     {
       text: 'Introduction',
-      items: [
-        { text: 'Overview', link: link('/') },
-        { text: 'Getting started', link: link('/getting-started') }
-      ]
+      items: available([
+        { text: 'Overview', path: '/' },
+        { text: 'Getting started', path: '/getting-started' }
+      ])
+    },
+    {
+      text: 'Guides',
+      items: available([
+        { text: 'Run a module', path: '/guides/run-a-module' },
+        { text: 'Embed Wago in Go', path: '/guides/embed-wago' },
+        { text: 'Host functions', path: '/guides/host-functions' },
+        { text: 'Use plugins', path: '/guides/plugins' },
+        { text: 'Release channels', path: '/guides/version-channels' }
+      ])
     },
     {
       text: 'Reference',
-      items: [
-        { text: 'Configuration', link: link('/reference/configuration') }
-      ]
+      items: available([
+        { text: 'Configuration', path: '/reference/configuration' },
+        { text: 'Troubleshooting', path: '/troubleshooting' }
+      ])
     },
     ...(base === ''
       ? [
@@ -41,7 +65,7 @@ function sidebarFor(base: string) {
           }
         ]
       : [])
-  ]
+  ].filter(({ items }) => items.length > 0)
 }
 
 export default defineConfig({

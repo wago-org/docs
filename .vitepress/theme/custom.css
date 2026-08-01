@@ -479,6 +479,16 @@ body {
   font-family: var(--wago-mono);
 }
 
+.vp-doc img[src^='/demos/'] {
+  display: block;
+  width: 100%;
+  margin: 22px 0;
+  border: 1px solid var(--wago-line-2);
+  border-radius: 12px;
+  background: var(--wago-bg-deep);
+  box-shadow: var(--vp-shadow-1);
+}
+
 .vp-doc blockquote {
   border-left-color: var(--wago-lilac);
   background: var(--wago-panel-glass);

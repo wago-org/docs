@@ -8,6 +8,18 @@ const contentRoot = root
 const publicRoot = join(root, 'public')
 const rawRoot = join(publicRoot, 'raw')
 const origin = 'https://docs.wago.sh'
+const versionManifest = JSON.parse(await readFile(join(root, 'versions.json'), 'utf8'))
+const versionSections = [
+  ...versionManifest.channels.map(({ label, base }) => ({
+    base: base.replace(/^\//, ''),
+    section: `${label[0].toUpperCase()}${label.slice(1)} channel`
+  })),
+  ...versionManifest.releases.map(({ label, base }) => ({
+    base: base.replace(/^\//, ''),
+    section: `Official ${label}`
+  }))
+]
+const versionMatchers = [...versionSections].sort((a, b) => b.base.length - a.base.length)
 
 function routeFor(path) {
   const withoutExtension = path.replace(/\.md$/, '')
@@ -45,6 +57,7 @@ function cleanMarkdown(markdown) {
     .replace(/^---\n[\s\S]*?\n---\n?/, '')
     .replace(/<Step\s+title="([^"]+)"[^>]*>/g, '### $1')
     .replace(/<Tab\s+title="([^"]+)"[^>]*>/g, '### $1')
+    .replace(/<Card\s+title="([^"]+)"\s+href="([^"]+)"[^>]*>/g, '### [$1]($2)')
     .replace(/<Card\s+title="([^"]+)"[^>]*>/g, '### $1')
     .replace(/<Accordion\s+title="([^"]+)"[^>]*>/g, '### $1')
     .replace(/<ApiEndpoint\s+method="([^"]+)"\s+path="([^"]+)"[^>]*>/g, '### $1 $2')
@@ -59,10 +72,9 @@ function cleanMarkdown(markdown) {
 }
 
 function sectionFor(path) {
-  if (path.startsWith('nightly/')) return 'Nightly channel'
-  if (path.startsWith('v0.0.0/')) return 'Official v0.0.0'
   if (path === 'components.md') return 'Optional authoring reference'
-  return 'Canary channel'
+  const version = versionMatchers.find(({ base }) => base === '' || path.startsWith(`${base}/`))
+  return version?.section || 'Documentation'
 }
 
 const paths = []
@@ -106,7 +118,11 @@ for (const page of pages) {
 }
 
 const grouped = Map.groupBy(pages, (page) => page.section)
-const sectionOrder = ['Canary channel', 'Nightly channel', 'Official v0.0.0', 'Optional authoring reference']
+const sectionOrder = [
+  ...versionSections.map(({ section }) => section),
+  'Documentation',
+  'Optional authoring reference'
+]
 const summarySections = sectionOrder
   .filter((section) => grouped.has(section))
   .map((section) => `## ${section}\n\n${grouped.get(section)
