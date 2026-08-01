@@ -5,20 +5,20 @@
       "label": "canary",
       "base": "",
       "release": {
-        "tag": "canary-e3c03fa",
-        "sha": "e3c03fab73d38242ebe153946c375db7bfd37fff",
-        "publishedAt": "2026-07-31T07:22:08Z",
-        "docsSource": "8d315a11117275eda873b259adf9139be2232d78"
+        "tag": "canary-ed69d61",
+        "sha": "ed69d6160d113bf00a85984956ced59f93ce0e88",
+        "publishedAt": "2026-08-01T03:22:26Z",
+        "docsSource": "9963c4ac6e7275b8414fc59c724fe7bfda4b126c"
       }
     },
     {
       "label": "nightly",
       "base": "/nightly",
       "release": {
-        "tag": "nightly-20260731-e3c03fa",
-        "sha": "e3c03fab73d38242ebe153946c375db7bfd37fff",
-        "publishedAt": "2026-07-31T08:48:04Z",
-        "docsSource": "8d315a11117275eda873b259adf9139be2232d78"
+        "tag": "nightly-20260801-b1785d6",
+        "sha": "b1785d604fc0c0a2affa81dcd32819933dadade0",
+        "publishedAt": "2026-08-01T00:22:47Z",
+        "docsSource": "9963c4ac6e7275b8414fc59c724fe7bfda4b126c"
       }
     }
   ],
