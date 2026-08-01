@@ -51,7 +51,7 @@ export default defineConfig({
   srcExclude: ['README.md', '.docs-snapshots/**', '.docs-sync-*/**', 'public/**/*.md'],
   cleanUrls: true,
   lastUpdated: true,
-  appearance: 'force-dark',
+  appearance: true,
   sitemap: {
     hostname: origin,
     transformItems: (items) => [
@@ -68,6 +68,11 @@ export default defineConfig({
   },
   head: [
     ['meta', { name: 'theme-color', content: '#1a1547' }],
+    [
+      'script',
+      {},
+      `(function(){try{var query=window.matchMedia('(prefers-color-scheme: dark)');var system=query.matches?'dark':'light';var key='wagoDocsSystemTheme';var previous=localStorage.getItem(key);if(previous&&previous!==system)localStorage.removeItem('vitepress-theme-appearance');localStorage.setItem(key,system);var meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.setAttribute('content',system==='dark'?'#1a1547':'#f7f4ff')}catch(_){}})()`
+    ],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
     [

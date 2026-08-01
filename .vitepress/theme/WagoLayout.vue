@@ -1,9 +1,38 @@
 <script setup lang="ts">
+import { onBeforeUnmount, onMounted, watch } from 'vue'
+import { useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import VersionSwitcher from './VersionSwitcher.vue'
 import VersionBanner from './components/VersionBanner.vue'
 
 const { Layout } = DefaultTheme
+const { isDark } = useData()
+let systemPreference: MediaQueryList | undefined
+
+function updateThemeColor(dark: boolean) {
+  document
+    .querySelector<HTMLMetaElement>('meta[name="theme-color"]')
+    ?.setAttribute('content', dark ? '#1a1547' : '#f7f4ff')
+}
+
+function followSystem(event: MediaQueryListEvent) {
+  isDark.value = event.matches
+  try {
+    localStorage.setItem('wagoDocsSystemTheme', event.matches ? 'dark' : 'light')
+    localStorage.removeItem('vitepress-theme-appearance')
+  } catch {
+    // The live system preference still applies when storage is unavailable.
+  }
+}
+
+onMounted(() => {
+  systemPreference = window.matchMedia('(prefers-color-scheme: dark)')
+  systemPreference.addEventListener('change', followSystem)
+  updateThemeColor(isDark.value)
+})
+
+onBeforeUnmount(() => systemPreference?.removeEventListener('change', followSystem))
+watch(isDark, updateThemeColor)
 </script>
 
 <template>

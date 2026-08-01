@@ -17,6 +17,16 @@
   --wago-pink: #ff9ec4;
   --wago-violet: #5a3ff0;
   --wago-ink: #1a1547;
+  --wago-nav-bg: rgba(26, 21, 71, 0.88);
+  --wago-panel-glass: rgba(34, 28, 82, 0.72);
+  --wago-link-hover: #fff;
+  --wago-accent-hover: #fff;
+  --wago-accent-hover-ink: #1a1547;
+  --wago-badge-green-border: #2e5a48;
+  --wago-badge-green-bg: #16322c;
+  --wago-badge-pink-border: #6b3453;
+  --wago-badge-pink-bg: #3a1f34;
+  --wago-badge-pink-text: #ffb4d2;
   --wago-sans: "Outfit", system-ui, -apple-system, sans-serif;
   --wago-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
@@ -47,7 +57,7 @@
   --vp-code-bg: var(--wago-bg-deep);
   --vp-code-block-bg: var(--wago-bg-deep);
   --vp-code-tab-divider: var(--wago-line-2);
-  --vp-nav-bg-color: rgba(26, 21, 71, 0.88);
+  --vp-nav-bg-color: var(--wago-nav-bg);
   --vp-sidebar-bg-color: var(--wago-bg-deep);
   --vp-local-search-bg: var(--wago-panel);
   --vp-local-search-result-bg: var(--wago-bg-deep);
@@ -55,6 +65,47 @@
   --vp-shadow-1: 0 12px 32px rgba(10, 6, 38, 0.22);
   --vp-shadow-2: 0 18px 48px rgba(10, 6, 38, 0.3);
   --vp-shadow-3: 0 24px 64px rgba(10, 6, 38, 0.4);
+}
+
+:root:not(.dark) {
+  color-scheme: light;
+
+  --wago-bg: #f7f4ff;
+  --wago-bg-deep: #eee8fb;
+  --wago-panel: #ffffff;
+  --wago-panel-2: #ebe4fa;
+  --wago-line: #e2d8f3;
+  --wago-line-2: #c7b6e3;
+  --wago-text: #211a3d;
+  --wago-text-dim: #514767;
+  --wago-text-soft: #665b7d;
+  --wago-muted: #746787;
+  --wago-lilac: #6f45c6;
+  --wago-green: #147550;
+  --wago-pink: #b52b64;
+  --wago-violet: #5932c4;
+  --wago-ink: #ffffff;
+  --wago-nav-bg: rgba(247, 244, 255, 0.9);
+  --wago-panel-glass: rgba(255, 255, 255, 0.82);
+  --wago-link-hover: #4e2f91;
+  --wago-accent-hover: #56329f;
+  --wago-accent-hover-ink: #ffffff;
+  --wago-badge-green-border: #8bcbb0;
+  --wago-badge-green-bg: #e6f5ee;
+  --wago-badge-pink-border: #df9bb9;
+  --wago-badge-pink-bg: #fbeaf2;
+  --wago-badge-pink-text: #8f234f;
+
+  --vp-c-brand-2: #5932c4;
+  --vp-c-brand-3: #835ed2;
+  --vp-c-brand-soft: rgba(111, 69, 198, 0.12);
+  --vp-c-tip-2: #116744;
+  --vp-c-tip-3: #2a8d65;
+  --vp-c-tip-soft: rgba(20, 117, 80, 0.1);
+  --vp-c-warning-soft: rgba(181, 43, 100, 0.1);
+  --vp-shadow-1: 0 12px 32px rgba(64, 43, 100, 0.1);
+  --vp-shadow-2: 0 18px 48px rgba(64, 43, 100, 0.14);
+  --vp-shadow-3: 0 24px 64px rgba(64, 43, 100, 0.18);
 }
 
 * {
@@ -123,7 +174,7 @@ body {
 .VPNav,
 .VPNavBar,
 .VPNavBar.has-sidebar .content {
-  background: rgba(26, 21, 71, 0.88) !important;
+  background: var(--wago-nav-bg) !important;
   border-color: var(--wago-line) !important;
   backdrop-filter: blur(16px);
 }
@@ -194,8 +245,8 @@ body {
 }
 
 .VPNavBarMenu .VPNavBarMenuLink[href*='github.com/wago-org/wago']:hover {
-  background: #fff;
-  color: var(--wago-ink);
+  background: var(--wago-accent-hover);
+  color: var(--wago-accent-hover-ink);
 }
 
 .version-switcher {
@@ -242,7 +293,7 @@ body {
 .version-switcher[open] summary {
   border-color: var(--wago-line-2);
   background: transparent;
-  color: #fff;
+  color: var(--wago-link-hover);
 }
 
 .version-switcher__menu {
@@ -406,7 +457,7 @@ body {
 }
 
 .vp-doc a:hover {
-  color: #fff;
+  color: var(--wago-link-hover);
 }
 
 .vp-doc :not(pre) > code {
@@ -430,7 +481,7 @@ body {
 
 .vp-doc blockquote {
   border-left-color: var(--wago-lilac);
-  background: rgba(34, 28, 82, 0.7);
+  background: var(--wago-panel-glass);
   padding: 12px 18px;
 }
 
@@ -506,7 +557,7 @@ body {
   padding: 10px 12px;
   border: 1px solid var(--wago-line);
   border-radius: 10px;
-  background: rgba(34, 28, 82, 0.72);
+  background: var(--wago-panel-glass);
   color: var(--wago-text-dim);
   font-size: 13px;
   line-height: 1.45;
@@ -544,7 +595,7 @@ body {
 }
 
 .wago-version-banner a:hover {
-  color: #fff;
+  color: var(--wago-link-hover);
 }
 
 .wago-tabs {
@@ -805,15 +856,15 @@ body {
 }
 
 .wago-badge--green {
-  border-color: #2e5a48;
-  background: #16322c;
+  border-color: var(--wago-badge-green-border);
+  background: var(--wago-badge-green-bg);
   color: var(--wago-green);
 }
 
 .wago-badge--pink {
-  border-color: #6b3453;
-  background: #3a1f34;
-  color: #ffb4d2;
+  border-color: var(--wago-badge-pink-border);
+  background: var(--wago-badge-pink-bg);
+  color: var(--wago-badge-pink-text);
 }
 
 .wago-badge--muted {
