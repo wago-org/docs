@@ -1,10 +1,10 @@
 ---
-description: Learn Wago, a pure-Go WebAssembly engine with native compilation, versioned runtime channels, and extensible plugins.
+description: A wonderfully quick, compact, and extensible WebAssembly runtime for Go
 ---
 
 # Wago documentation
 
-Wago is a Go-native WebAssembly runtime and compiler built for fast startup, low memory use, and straightforward embedding.
+A wonderfully quick, compact, and extensible WebAssembly runtime for Go
 
 Use these guides to run WebAssembly from the command line, embed Wago in Go, and extend the runtime with plugins.
 

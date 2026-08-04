@@ -1,10 +1,12 @@
 ---
-description: Learn Wago by running a module, embedding the runtime in Go, and adding only the host capabilities your application needs.
+description: A wonderfully quick, compact, and extensible WebAssembly runtime for Go
 ---
 
 # Wago documentation
 
-Wago is a WebAssembly engine written in Go. It compiles Wasm to native code, runs without cgo, and can be used from the command line or embedded in a Go program.
+A wonderfully quick, compact, and extensible WebAssembly runtime for Go
+
+Wago compiles Wasm to native code, runs without cgo, and can be used from the command line or embedded in a Go program.
 
 If you are new here, you do not need to understand the compiler or plugin system yet. Pick the path that matches what you are trying to do and get something working first.
 

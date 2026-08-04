@@ -8,6 +8,7 @@ const contentRoot = root
 const publicRoot = join(root, 'public')
 const rawRoot = join(publicRoot, 'raw')
 const origin = 'https://docs.wago.sh'
+const tagline = 'A wonderfully quick, compact, and extensible WebAssembly runtime for Go'
 const versionManifest = JSON.parse(await readFile(join(root, 'versions.json'), 'utf8'))
 const versionSections = [
   ...versionManifest.channels.map(({ label, base }) => ({
@@ -49,7 +50,7 @@ function descriptionFrom(markdown, title) {
     .split(/\n\s*\n/)
     .map((value) => value.replace(/\s+/g, ' ').trim())
     .find((value) => value && !value.startsWith(':::') && !value.startsWith('```'))
-  return paragraph || `${title} for Wago, the pure-Go WebAssembly engine.`
+  return paragraph || `${title} for Wago. ${tagline}`
 }
 
 function cleanMarkdown(markdown) {
@@ -132,7 +133,7 @@ const summarySections = sectionOrder
 
 const llms = `# Wago documentation
 
-> Documentation for Wago, a pure-Go WebAssembly engine with native amd64 and arm64 backends, no cgo, versioned runtime channels, and a capability-based plugin system.
+> ${tagline}
 
 Canonical documentation: ${origin}/
 Project website: https://wago.sh/

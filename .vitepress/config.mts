@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url'
 import { docsVersions } from './versions'
 
 const origin = 'https://docs.wago.sh'
+const tagline = 'A wonderfully quick, compact, and extensible WebAssembly runtime for Go'
 const socialImage = 'https://wago.sh/assets/og-card.png'
 const sourceRoot = fileURLToPath(new URL('..', import.meta.url))
 
@@ -120,7 +121,7 @@ export default defineConfig({
     const title = pageTitle === 'Wago documentation' ? pageTitle : `${pageTitle} | Wago documentation`
     const description =
       pageData.frontmatter.description ||
-      `${pageTitle} for Wago, the pure-Go WebAssembly engine.`
+      `${pageTitle} for Wago. ${tagline}`
     const dateModified = pageData.lastUpdated
       ? new Date(pageData.lastUpdated).toISOString()
       : undefined
@@ -132,7 +133,7 @@ export default defineConfig({
           '@id': `${origin}/#website`,
           url: `${origin}/`,
           name: 'Wago documentation',
-          description: 'Documentation for Wago, the pure-Go WebAssembly engine.',
+          description: tagline,
           publisher: { '@id': `${origin}/#organization` }
         },
         {
