@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "release": {
+    "tag": "nightly-20260804-f59d3af",
+    "sha": "f59d3af1b9987cc237c8ce6656b1f6eaa493523b",
+    "publishedAt": "2026-08-04T08:35:58Z",
+    "docsSource": "f15e7735abdaba9044453ac877e26e80fba568d3"
+  },
+  "files": [
+    "getting-started.md",
+    "guides/embed-wago.md",
+    "guides/host-functions.md",
+    "guides/plugins.md",
+    "guides/run-a-module.md",
+    "guides/version-channels.md",
+    "index.md",
+    "reference/configuration.md",
+    "troubleshooting.md"
+  ]
+}
