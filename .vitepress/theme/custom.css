@@ -769,6 +769,11 @@ body {
   font-family: var(--wago-mono);
 }
 
+.wago-card__icon .svg-inline--fa {
+  width: 15px;
+  height: 15px;
+}
+
 .wago-card__body {
   min-width: 0;
 }

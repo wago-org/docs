@@ -4,23 +4,40 @@ description: Install Wago, select a runtime, and run a real WebAssembly module f
 
 # Getting started
 
-This guide takes you from an empty machine to a successful WebAssembly call. You will install the Wago manager, select a runtime, download a tiny module, and run it.
+This guide takes you from an empty machine to a successful WebAssembly call. You will install the Wago version manager, select a runtime, download a tiny module, and run it.
 
-![Inspecting and running a small WebAssembly module with Wago](/demos/getting-started.gif)
-
-::: tip What you need
-The source installer requires Go 1.22 or newer. Git is preferred; if Git is unavailable, the installer can use a GitHub source archive with `curl` or `wget` and an archive extractor.
-:::
+![Installing Wago and selecting a canary runtime](/demos/install.gif)
 
 ## 1. Install the manager
 
+<Tabs sync="install-os">
+  <Tab title="macOS / Linux">
+
 ```sh
-curl -fsSL https://wago.sh/install.sh | sh
+curl -fsSL https://install.wago.sh/unix | sh
 ```
 
-The installer asks where to put `wago`, normally `~/.wago/bin`, and can add that directory to your shell configuration.
+  </Tab>
+  <Tab title="Windows">
 
-Open a new terminal if the installer changed your `PATH`, then check the command:
+In PowerShell:
+
+```powershell
+irm https://install.wago.sh/ps | iex
+```
+
+In Command Prompt:
+
+```cmd
+curl -fsSL https://install.wago.sh/cmd | cmd
+```
+
+  </Tab>
+</Tabs>
+
+The bootstrap downloads a checksummed installer for your platform, then walks you through the destination and `PATH` setup. Go is only needed if Wago cannot download a release manager and has to build one from source.
+
+Open a new terminal if the installer changed your `PATH`, then make sure the manager is ready:
 
 ```sh
 wago --version
@@ -28,23 +45,25 @@ wago --version
 
 The manager handles versions and projects. It intentionally does not bundle a runtime.
 
-## 2. Install a runtime
-
-Nightly is a good place to begin while Wago is pre-release: it follows `main` on a daily cadence without changing after publication.
+If you only need Wago as a library in an existing Go project, add the package without installing the CLI:
 
 ```sh
-wago version install --nightly --use
+go get github.com/wago-org/wago
 ```
 
-`--use` makes the installed runtime active immediately. Without it, Wago asks whether you want to switch.
+## 2. Install a runtime
 
-Other choices are covered in [Release channels and builds](/guides/version-channels). If you skip this step and run a module, Wago opens the same version picker for you.
+```sh
+wago version install
+```
 
 ## 3. Download a small module
 
+![Downloading, inspecting, and running the Fibonacci module](/demos/run-fib.gif)
+
 ```sh
 curl -fsSL \
-  https://raw.githubusercontent.com/wago-org/wago/main/tests/testdata/fib.wasm \
+  https://wago.sh/corpora/fib.wasm \
   -o fib.wasm
 ```
 

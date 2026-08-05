@@ -1,3 +1,5 @@
+import { config as fontAwesomeConfig } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
 import DefaultTheme from 'vitepress/theme'
 import WagoLayout from './WagoLayout.vue'
 import Accordion from './components/Accordion.vue'
@@ -16,6 +18,8 @@ import Steps from './components/Steps.vue'
 import Tab from './components/Tab.vue'
 import Tabs from './components/Tabs.vue'
 import './custom.css'
+
+fontAwesomeConfig.autoAddCss = false
 
 export default {
   extends: DefaultTheme,

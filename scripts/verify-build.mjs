@@ -17,7 +17,9 @@ const expectedFiles = [
   'getting-started.html',
   'reference/configuration.html',
   'components.html',
-  'demos/getting-started.gif',
+  'demos/install.gif',
+  'demos/run-fib.gif',
+  'demos/wasi.gif',
   'demos/version-switcher.gif',
   '404.html',
   'CNAME',
@@ -95,15 +97,44 @@ if (!jsonLd) throw new Error('Homepage JSON-LD is missing')
 JSON.parse(jsonLd)
 
 for (const marker of [
-  '<a href="/getting-started">Getting started</a>',
-  '<code>fib(30) = 832040</code>'
+  'Welcome to Wago',
+  'href="/getting-started"',
+  'Run a Wasm file'
 ]) {
   if (!homepage.includes(marker)) throw new Error(`Homepage content did not render ${marker}`)
+}
+
+for (const icon of ['play', 'code', 'right-left', 'plug']) {
+  if (!homepage.includes(`data-icon="${icon}"`)) {
+    throw new Error(`Homepage did not render the Font Awesome ${icon} icon`)
+  }
 }
 
 const rawHomepage = await readFile(new URL('raw/index.md', output), 'utf8')
 if (!rawHomepage.includes('### [Run a Wasm file](/getting-started)')) {
   throw new Error('Raw homepage lost the destination of its onboarding cards')
+}
+
+const gettingStarted = await readFile(new URL('getting-started.html', output), 'utf8')
+for (const os of ['macOS / Linux', 'Windows']) {
+  if (!gettingStarted.includes(`>${os}</button>`)) {
+    throw new Error(`Getting started did not render the ${os} install tab`)
+  }
+}
+
+const rawGettingStarted = await readFile(new URL('raw/getting-started.md', output), 'utf8')
+if (!rawGettingStarted.includes('https://wago.sh/corpora/fib.wasm')) {
+  throw new Error('Getting started does not use the stable Wago corpus URL')
+}
+for (const installer of [
+  'https://install.wago.sh/unix',
+  'https://install.wago.sh/ps',
+  'https://install.wago.sh/cmd',
+  'go get github.com/wago-org/wago'
+]) {
+  if (!rawGettingStarted.includes(installer)) {
+    throw new Error(`Getting started is missing the supported install path ${installer}`)
+  }
 }
 
 const llms = await readFile(new URL('llms.txt', output), 'utf8')

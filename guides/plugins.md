@@ -8,6 +8,8 @@ Plugins add reusable host integrations to Wago. We will create a project, add th
 
 Plugins are open-source Go modules compiled into a project-specific runtime. They run as host code, so read their source and capability requests before approving them.
 
+![Adding the WASI plugin and running a command module](/demos/wasi.gif)
+
 ## 1. Create a project
 
 ```sh
@@ -63,44 +65,76 @@ wago plugin inspect wago-org/wasi
 
 `status` answers a common debugging question: which manager, runtime, project, profile, build, and plugin scope did this command select?
 
-## 5. Compare the guest with the host
+## 5. Download a WASI module
+
+Start with a tiny command that only writes to standard output:
+
+```sh
+curl -fsSL https://wago.sh/corpora/wasi-hello.wasm -o wasi-hello.wasm
+```
+
+The editable [WAT source](https://wago.sh/corpora/wasi-hello.wat) is published beside the binary, so you can see exactly what the example imports and executes.
+
+## 6. Compare the guest with the host
 
 Before running a real application module, inspect what it imports:
 
 ```sh
-wago module imports app.wasm
-wago module capabilities app.wasm
+wago module imports wasi-hello.wasm
+wago module capabilities wasi-hello.wasm
 ```
 
 The module commands describe what the guest asks for. The plugin commands describe what the runtime provides. Compare those two lists when Wago reports a missing import.
 
 Do not add WASI merely because a file is WebAssembly. A self-contained module such as the Fibonacci example has no imports and gains nothing from a WASI plugin.
 
-## 6. Run with an explicit scope
+## 7. Run with an explicit scope
 
 Inside this directory, Wago selects the local project by default:
 
 ```sh
-wago run app.wasm
-wago run --local app.wasm
+wago run wasi-hello.wasm
+```
+
+You should see:
+
+```text
+hello from wasi
+```
+
+Try a second module that reads its first guest argument:
+
+```sh
+curl -fsSL https://wago.sh/corpora/wasi-args.wasm -o wasi-args.wasm
+wago run wasi-args.wasm Ada
+```
+
+```text
+Ada
+```
+
+Pass `--local` when you want to make the project scope explicit:
+
+```sh
+wago run --local wasi-hello.wasm
 ```
 
 Global plugins are useful for personal tools outside a project:
 
 ```sh
 wago add --global wago-org/wasi
-wago run --global app.wasm
+wago run --global wasi-hello.wasm
 ```
 
 A local manifest replaces the global plugin set. Wago does not merge the two. To test the module without either set:
 
 ```sh
-wago run --bare app.wasm
+wago run --bare wasi-hello.wasm
 ```
 
 `--bare` is a useful diagnostic. If the module still fails before import resolution, the problem is probably in the module rather than plugin selection.
 
-## 7. Review before committing
+## 8. Review before committing
 
 Run through this short check:
 

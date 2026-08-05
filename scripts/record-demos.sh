@@ -16,7 +16,7 @@ trap 'find "$temporary_dir" -type f -delete; rmdir "$temporary_dir"' EXIT
 mkdir -p "$repo_dir/public/demos"
 cd "$repo_dir"
 
-for demo_name in getting-started version-switcher; do
+for demo_name in install run-fib wasi version-switcher; do
   rendered_tape="$temporary_dir/$demo_name.tape"
   optimized_gif="$temporary_dir/$demo_name.gif"
 

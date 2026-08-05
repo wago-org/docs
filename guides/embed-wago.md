@@ -21,7 +21,7 @@ For this tutorial, download a ready-made module:
 
 ```sh
 curl -fsSL \
-  https://raw.githubusercontent.com/wago-org/wago/main/tests/testdata/fib.wasm \
+  https://wago.sh/corpora/fib.wasm \
   -o fib.wasm
 ```
 
