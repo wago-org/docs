@@ -32,6 +32,20 @@ function sidebarFor(base: string) {
     items
       .filter(({ path }) => pageExists(path))
       .map(({ text, path }) => ({ text, link: link(path) }))
+  const section = (
+    text: string,
+    overview: string,
+    children: { text: string; path: string }[]
+  ) => {
+    if (!pageExists(overview)) return null
+    const items = available(children)
+    if (items.length === 0) return { text, link: link(overview) }
+    return {
+      text,
+      collapsed: true,
+      items: [{ text: 'Overview', link: link(overview) }, ...items]
+    }
+  }
 
   return [
     {
@@ -43,20 +57,51 @@ function sidebarFor(base: string) {
     },
     {
       text: 'Guides',
-      items: available([
-        { text: 'Run a module', path: '/guides/run-a-module' },
-        { text: 'Embed Wago in Go', path: '/guides/embed-wago' },
-        { text: 'Host functions', path: '/guides/host-functions' },
-        { text: 'Use plugins', path: '/guides/plugins' },
-        { text: 'Release channels', path: '/guides/version-channels' }
-      ])
+      items: [
+        section('Run a module', '/guides/run-a-module', [
+          { text: 'Invoke an export', path: '/guides/run/invocation' },
+          { text: 'Inspect and validate', path: '/guides/run/inspect-and-validate' },
+          { text: 'Develop and tune', path: '/guides/run/development' },
+          { text: 'Build artifacts', path: '/guides/run/artifacts' }
+        ]),
+        section('Embed Wago in Go', '/guides/embed-wago', [
+          { text: 'Runtime and modules', path: '/guides/embed/runtime-and-modules' },
+          { text: 'Calls and guest state', path: '/guides/embed/calls-and-state' },
+          { text: 'Imports and artifacts', path: '/guides/embed/imports-and-artifacts' }
+        ]),
+        section('Host functions', '/guides/host-functions', [
+          { text: 'Signatures and slots', path: '/guides/host-functions/signatures' },
+          { text: 'Memory and errors', path: '/guides/host-functions/memory-and-errors' },
+          { text: 'Authority and references', path: '/guides/host-functions/authority-and-references' }
+        ]),
+        section('Use plugins', '/guides/plugins', [
+          { text: 'Install and choose scope', path: '/guides/plugins/install-and-scope' },
+          { text: 'Grants and lockfiles', path: '/guides/plugins/grants-and-lockfiles' },
+          { text: 'Update and rebuild', path: '/guides/plugins/update-and-rebuild' },
+          { text: 'Publish a plugin', path: '/guides/plugins/publish' }
+        ]),
+        section('Release channels', '/guides/version-channels', [
+          { text: 'Channels and switching', path: '/guides/versions/channels-and-switching' },
+          { text: 'Profiles and builds', path: '/guides/versions/profiles-and-builds' },
+          { text: 'Updates and automation', path: '/guides/versions/updates-and-automation' }
+        ])
+      ].filter((item) => item !== null)
     },
     {
       text: 'Reference',
-      items: available([
-        { text: 'Configuration', path: '/reference/configuration' },
-        { text: 'Troubleshooting', path: '/troubleshooting' }
-      ])
+      items: [
+        section('Configuration', '/reference/configuration', [
+          { text: 'Scopes and settings', path: '/reference/configuration/scopes-and-settings' },
+          { text: 'Project manifest', path: '/reference/configuration/project-manifest' },
+          { text: 'Automation and Go', path: '/reference/configuration/automation-and-go' }
+        ]),
+        section('Troubleshooting', '/troubleshooting', [
+          { text: 'Installation and runtimes', path: '/troubleshooting/installation-and-runtimes' },
+          { text: 'Modules and calls', path: '/troubleshooting/modules-and-calls' },
+          { text: 'Plugins and builds', path: '/troubleshooting/plugins-and-builds' },
+          { text: 'Go API and memory', path: '/troubleshooting/go-api-and-memory' }
+        ])
+      ].filter((item) => item !== null)
     },
     ...(base === ''
       ? [

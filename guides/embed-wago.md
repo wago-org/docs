@@ -1,152 +1,77 @@
 ---
-description: Build a small Go program that embeds Wago, compiles a module, creates an instance, and calls a typed export.
+description: Compile WebAssembly, create instances, call exports, and manage guest state with Wago's Go API.
 ---
 
 # Embed Wago in Go
 
-We will build a Go program that loads `fib.wasm` and prints the thirtieth Fibonacci number. The same runtime shape works inside a server, worker, or desktop application.
-
-## 1. Create a Go module
+Install the package:
 
 ```sh
-mkdir wago-embed
-cd wago-embed
-go mod init example.com/wago-embed
 go get github.com/wago-org/wago
 ```
 
-Wago is a Go library, so it does not compile Rust, TinyGo, AssemblyScript, or C source. Compile guest source with its own toolchain and give Wago the resulting `.wasm` file.
+The high-level API keeps compilation, instances, plugins, typed calls, and cleanup under one `Runtime`.
 
-For this tutorial, download a ready-made module:
+## Pick a topic
 
-```sh
-curl -fsSL \
-  https://wago.sh/corpora/fib.wasm \
-  -o fib.wasm
-```
+<CardGroup>
+  <Card title="Runtime and modules" href="/guides/embed/runtime-and-modules" icon="fa-code">
+    Create a runtime, compile once, instantiate many times, and set compiler policy.
+  </Card>
+  <Card title="Calls and guest state" href="/guides/embed/calls-and-state" icon="fa-play">
+    Call typed exports, cancel work, and access memory and globals.
+  </Card>
+  <Card title="Imports and artifacts" href="/guides/embed/imports-and-artifacts" icon="fa-right-left">
+    Supply host functions, load precompiled code, and close what you own.
+  </Card>
+</CardGroup>
 
-## 2. Create the host program
+## The whole lifecycle
 
-Create `main.go`:
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-
-	"github.com/wago-org/wago"
-)
-
-func main() {
-	wasm, err := os.ReadFile("fib.wasm")
-	if err != nil {
-		panic(err)
-	}
-
-	rt := wago.NewRuntime()
-	defer rt.Close()
-
-	mod, err := rt.Compile(wasm)
-	if err != nil {
-		panic(err)
-	}
-
-	ctx := context.Background()
-	inst, err := rt.Instantiate(ctx, mod)
-	if err != nil {
-		panic(err)
-	}
-	defer inst.Close()
-
-	out, err := inst.Call(ctx, "fib", wago.ValueI32(30))
-	if err != nil {
-		panic(err)
-	}
-
-	fmt.Println(out[0].I32())
-}
-```
-
-## 3. Run it
-
-```sh
-go run .
-```
-
-You should see:
-
-```text
-832040
-```
-
-The program did four pieces of work:
-
-1. `NewRuntime` created the application-level runtime.
-2. `Compile` decoded, validated, and compiled the module.
-3. `Instantiate` created one isolated set of guest state.
-4. `Call` checked the argument against the export signature and invoked `fib`.
-
-A missing export, wrong value type, guest trap, or cancelled context comes back as an error.
-
-## 4. Inspect the boundary
-
-Add these lines after `Compile`:
+<Steps>
+  <Step title="Create a runtime">
 
 ```go
-fmt.Println("exports:", mod.Exports())
-fmt.Println("imports:", mod.Imports())
-fmt.Println("capabilities:", mod.RequiredCapabilities())
+rt := wago.NewRuntime()
+defer rt.Close()
 ```
 
-Run the program again. `fib.wasm` reports an export and no host requirements. In an application that accepts third-party modules, inspect this boundary before instantiation and decide what the guest may access.
-
-## 5. Reuse compiled code
-
-The useful lifetime usually looks like this:
-
-```text
-process or service
-└── Runtime
-    ├── compiled Module
-    ├── Instance for request A
-    └── Instance for request B
-```
-
-Create one runtime for a meaningful application boundary. Compile a module once, then instantiate it more than once when callers need isolated memories, tables, or globals.
-
-Always close each instance. A direct instance remains caller-owned even when the runtime owns the compiler and plugin resources around it.
-
-::: warning Keep compiled input alive
-After a successful `Compile`, do not modify the input byte slice while the compiled module is alive. Wago may retain views into that storage to avoid copying the whole module.
-:::
-
-## 6. Put a deadline on guest work
-
-Use the request or job context you already have:
+  </Step>
+  <Step title="Compile and instantiate">
 
 ```go
-ctx, cancel := context.WithTimeout(context.Background(), 250*time.Millisecond)
-defer cancel()
-
-out, err := inst.Call(ctx, "work", wago.ValueI64(1))
+mod, err := rt.Compile(wasmBytes)
+inst, err := rt.Instantiate(ctx, mod)
+defer inst.Close()
 ```
 
-Add `time` to the import block when you try this. Cancellation interrupts running Wasm and returns an error. Close the instance according to your application's lifecycle instead of assuming cancellation disposed it.
-
-## When the low-level API fits better
-
-The package-level `Compile`, `Instantiate`, and `Invoke` functions use raw 64-bit call slots:
+  </Step>
+  <Step title="Call an export">
 
 ```go
-compiled, err := wago.Compile(nil, wasm)
-inst, err := wago.Instantiate(compiled, wago.InstantiateOptions{})
-out, err := inst.Invoke("add", wago.I32(2), wago.I32(40))
-fmt.Println(wago.AsI32(out[0]))
+out, err := inst.Call(ctx, "add", wago.ValueI32(20), wago.ValueI32(22))
+fmt.Println(out[0].I32()) // 42
 ```
 
-Use this for a small embedding that does not need runtime plugins or lifecycle hooks. Start with `Runtime` and typed `Value` calls for applications expected to grow.
+  </Step>
+</Steps>
 
-Continue with [Host functions and guest memory](/guides/host-functions) when the module needs to call back into Go. The repository also has a [runnable typed-runtime example](https://github.com/wago-org/wago/tree/main/examples/02-runtime-typed).
+## Quick answers
+
+<Accordion title="Can instances share compiled code?" open>
+
+Yes. Compile one `Module`, then instantiate it as many times as needed. Each instance gets its own globals, tables, and memory. See [Runtime and modules](/guides/embed/runtime-and-modules).
+
+</Accordion>
+
+<Accordion title="Can I call one instance from several goroutines?">
+
+An individual instance has a non-concurrent call contract. Use separate instances for simultaneous guest execution. See [Calls and guest state](/guides/embed/calls-and-state).
+
+</Accordion>
+
+<Accordion title="Where do host functions go?">
+
+Pass application-specific imports with `wago.WithImports`. Register reusable host APIs as plugins. See [Imports and artifacts](/guides/embed/imports-and-artifacts) and [Host functions](/guides/host-functions).
+
+</Accordion>

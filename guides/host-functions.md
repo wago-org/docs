@@ -1,138 +1,51 @@
 ---
-description: Run Wago's host-function examples, implement a WebAssembly import in Go, and exchange data through guest memory safely.
+description: Implement WebAssembly imports in Go with typed slots, checked memory access, and explicit host authority.
 ---
 
-# Host functions and guest memory
+# Host functions
 
-A host function is a Go function that a WebAssembly module calls synchronously. Start with Wago's small examples, then wire an imported function to Go and read a string from guest memory without trusting its pointer.
-
-## 1. Run the finished examples
-
-Clone Wago into a disposable directory:
-
-```sh
-git clone --depth 1 https://github.com/wago-org/wago.git wago-examples
-cd wago-examples
-```
-
-Run the numeric host-import example:
-
-```sh
-go run ./examples/03-host-import
-```
-
-You should see:
-
-```text
-square(9) = 81
-```
-
-Now run the memory example:
-
-```sh
-go run ./examples/04-memory
-```
-
-Its output is:
-
-```text
-guest wrote: "hello from wasm"
-run() wrote 15 bytes
-memory[0] is now 'H'
-```
-
-Keep those examples open while reading the next steps. They are short enough to change and rerun.
-
-## 2. Read the guest's import
-
-The numeric example contains the equivalent of this WebAssembly declaration:
-
-```wat
-(import "host" "square" (func $square (param i32) (result i32)))
-```
-
-The full import key is `host.square`. The guest promises to pass one `i32`; the host must return one `i32`.
-
-## 3. Implement the function in Go
+WebAssembly reaches the outside world through imports supplied by its host. Wago uses one reflection-free function shape under standard Go and TinyGo:
 
 ```go
-square := wago.HostFunc(func(_ wago.HostModule, params, results []uint64) {
-	n := wago.AsI32(params[0])
-	results[0] = wago.I32(n * n)
-})
+type HostFunc func(m wago.HostModule, params, results []uint64)
 ```
 
-Every host function uses the same reflection-free stack form. Decode parameters with `AsI32`, `AsI64`, `AsF32`, or `AsF64`. Encode results with the matching `I32`, `I64`, `F32`, or `F64` helper.
+## Pick a topic
 
-Wago checks the import signature during instantiation. A mismatched function fails before the guest gets a chance to call it.
+<CardGroup>
+  <Card title="Signatures and slots" href="/guides/host-functions/signatures" icon="fa-code">
+    Bind imports and encode scalar, vector, and reference values correctly.
+  </Card>
+  <Card title="Memory and errors" href="/guides/host-functions/memory-and-errors" icon="fa-right-left">
+    Validate pointer-length pairs and design a deliberate guest error contract.
+  </Card>
+  <Card title="Authority and references" href="/guides/host-functions/authority-and-references" icon="fa-plug">
+    Keep host power narrow and work safely with caller identity and references.
+  </Card>
+</CardGroup>
 
-## 4. Supply the import
+## Quick answers
 
-Pass the function when you instantiate the compiled module:
+<Accordion title="How do I bind host.mul?" open>
 
 ```go
-inst, err := wago.Instantiate(compiled, wago.InstantiateOptions{
-	Imports: wago.Imports{
-		"host.square": square,
-	},
-})
-if err != nil {
-	panic(err)
-}
-defer inst.Close()
+inst, err := rt.Instantiate(ctx, mod, wago.WithImports(wago.Imports{
+	"host.mul": mul,
+}))
 ```
 
-The string key must match both parts of the guest declaration. `square`, `env.square`, and `host.square` are three different imports.
+The key joins the Wasm import module and field with a dot. See [Signatures and slots](/guides/host-functions/signatures).
 
-## 5. Read a guest string
+</Accordion>
 
-WebAssembly often passes a string as two `i32` values: a pointer into linear memory and a byte length.
+<Accordion title="Can I keep HostModule after the callback?">
 
-```go
-write := wago.HostFunc(func(m wago.HostModule, params, results []uint64) {
-	ptr := uint32(wago.AsI32(params[0]))
-	n := uint32(wago.AsI32(params[1]))
-	mem := m.Memory()
+No. Its memory view and caller authority are valid only during the synchronous host call. Copy any bytes you need to retain. See [Authority and references](/guides/host-functions/authority-and-references).
 
-	end := uint64(ptr) + uint64(n)
-	if end > uint64(len(mem)) {
-		results[0] = wago.I32(-1)
-		return
-	}
+</Accordion>
 
-	message := string(mem[ptr:uint32(end)])
-	fmt.Println(message)
-	results[0] = wago.I32(int32(n))
-})
-```
+<Accordion title="How should a host function return an error?">
 
-Convert the pointer and length before adding them. Adding as `uint32` could wrap around before the bounds check.
+Design it into the Wasm interface: use a status value, an error buffer, or a command-style `HostExit`. Do not use unexpected Go panics as a normal error channel. See [Memory and errors](/guides/host-functions/memory-and-errors).
 
-The memory slice is mutable, so host writes become visible to the guest during the call.
-
-::: warning Do not keep the memory slice
-`HostModule.Memory()` is valid only while the host function is running. Copy bytes you need later. Do not save the slice or `HostModule` for another goroutine.
-:::
-
-## 6. Access memory from the host side
-
-Outside a host callback, use the instance's bounds-checked helpers:
-
-```go
-value, ok := inst.ReadUint32Le(offset)
-if !ok {
-	return errors.New("guest pointer is out of bounds")
-}
-
-if !inst.WriteFloat64Le(offset+8, float64(value)) {
-	return errors.New("guest write is out of bounds")
-}
-```
-
-Use `Read` and `Write` for byte slices. Out-of-bounds reads return `ok == false`; out-of-bounds writes return `false` and leave memory unchanged.
-
-## 7. Decide whether this should become a plugin
-
-Keep a host function inside the application when one codebase owns both sides of the interface. Build a plugin when the capability needs a name, version, configuration, lifecycle hooks, or reuse across projects.
-
-Continue with [Use plugins in a project](/guides/plugins) when the host integration is becoming a package other applications should install.
+</Accordion>

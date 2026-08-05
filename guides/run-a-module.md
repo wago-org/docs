@@ -1,153 +1,80 @@
 ---
-description: Follow a WebAssembly module from download through inspection, validation, execution, watch mode, and precompilation.
+description: Run, inspect, validate, precompile, and package WebAssembly modules with the Wago CLI.
 ---
 
-# Run a module from the command line
+# Run a module
 
-We will use a small Fibonacci module to inspect a guest's boundary, call an export, and build a precompiled `.wago` file. The module does not need access to your files, network, clock, or environment.
-
-::: tip Before you start
-You need Wago with an active runtime. If `wago --version` does not show a runtime, finish [Getting started](/getting-started) first.
-:::
-
-## 1. Make a working directory
+`wago run` turns a Wasm file into a native function call:
 
 ```sh
-mkdir wago-fib
-cd wago-fib
+wago run math.wasm 20 22
 ```
 
-Download the example module:
+`run` is the default command, so `wago math.wasm 20 22` does the same thing.
+
+## Pick a topic
+
+<CardGroup>
+  <Card title="Invoke an export" href="/guides/run/invocation" icon="fa-play">
+    Choose a function, pass typed arguments, and opt into Core 3.
+  </Card>
+  <Card title="Inspect and validate" href="/guides/run/inspect-and-validate" icon="fa-code">
+    Find imports, capabilities, and validation failures before execution.
+  </Card>
+  <Card title="Develop and tune" href="/guides/run/development" icon="fa-right-left">
+    Use watch mode, parallel compilation, and measured compiler overrides.
+  </Card>
+  <Card title="Build artifacts" href="/guides/run/artifacts" icon="fa-code">
+    Choose between portable Wasm, `.wago`, and standalone executables.
+  </Card>
+</CardGroup>
+
+## Quick answers
+
+<Accordion title="How do I call a named function?" open>
 
 ```sh
-curl -fsSL \
-  https://wago.sh/corpora/fib.wasm \
-  -o fib.wasm
+wago run --invoke add math.wasm 20 22
 ```
 
-The file is only 88 bytes, but it is a complete WebAssembly module with an exported `fib` function.
+Wago reads the function signature and checks every argument. See [Invoke an export](/guides/run/invocation).
 
-## 2. Check what the module expects from its host
+</Accordion>
+
+<Accordion title="How do I find missing host support?">
 
 ```sh
-wago module imports fib.wasm
+wago module imports app.wasm
+wago module capabilities app.wasm
 ```
 
-You should see:
+The first command lists exact imports. The second summarizes the host authority the module needs. See [Inspect and validate](/guides/run/inspect-and-validate).
 
-```text
-module has no imports
-```
+</Accordion>
 
-Imports are the functions, memories, tables, and globals a module expects the host to provide. Checking them before execution tells you whether the module needs WASI, a plugin, or host functions of your own.
-
-When a script needs the result, ask for JSON:
+<Accordion title="How do I rerun after a rebuild?">
 
 ```sh
-wago module imports fib.wasm --json
+wago run --watch app.wasm
 ```
 
-## 3. Validate without running it
+Wago polls every `200ms` by default and starts with fresh module state each time. See [Develop and tune](/guides/run/development).
+
+</Accordion>
+
+<Accordion title="Should I build .wago or an executable?">
+
+Use `.wago` when you control the Wago runtime and want to skip compilation. Use `wago compile` when the result must run without Wago installed. Keep `.wasm` as the portable source either way. See [Build artifacts](/guides/run/artifacts).
+
+</Accordion>
+
+## Everyday loop
 
 ```sh
-wago validate fib.wasm
+wago module imports app.wasm
+wago validate app.wasm
+wago run --watch app.wasm
+wago build app.wasm -o app.wago
 ```
 
-Success is quiet. A malformed binary, invalid function body, or unsupported feature fails here before guest code runs.
-
-## 4. Call the exported function
-
-```sh
-wago run fib.wasm 30
-```
-
-The result should be:
-
-```text
-fib(30) = 832040
-```
-
-`run` is the default command, so the shorter form works too:
-
-```sh
-wago fib.wasm 30
-```
-
-Wago found the callable export and parsed `30` from its Wasm signature. If a module has several callable exports, name the one you want:
-
-```sh
-wago run -e fib fib.wasm 30
-```
-
-For floating-point or ambiguous values, add a scalar suffix such as `i32`, `i64`, `f32`, or `f64`:
-
-```sh
-wago run -e hypot math.wasm 3:f64 4:f64
-```
-
-## 5. Rerun after every rebuild
-
-If another tool is writing `fib.wasm`, keep Wago open in a second terminal:
-
-```sh
-wago run --watch fib.wasm 30
-```
-
-Wago polls the file and runs it again after a change. Press <kbd>Ctrl</kbd>+<kbd>C</kbd> when you are done. For toolchains that write slowly or replace files through several renames, increase the polling interval:
-
-```sh
-wago run --watch --watch-interval 500ms fib.wasm 30
-```
-
-## 6. Precompile the module
-
-```sh
-wago build fib.wasm -o fib.wago
-```
-
-Then run the compiled artifact:
-
-```sh
-wago run fib.wago 30
-```
-
-You should get the same `832040` result. The `.wago` file skips decoding, validation, and native compilation on later starts. Instantiation still happens each time.
-
-::: warning Keep the original `.wasm`
-A `.wago` file is tied to the host architecture and Wago's compiled format. Rebuild it after an incompatible Wago upgrade, and do not use it as a portable release artifact.
-:::
-
-Large modules can opt into Wago's adaptive worker policy:
-
-```sh
-wago build -p app.wasm
-wago build -p8 app.wasm
-```
-
-Start without `-p`. Parallel compilation pays off only when the module has enough functions to cover its coordination cost.
-
-## 7. Make CI predictable
-
-Use policy flags when a command must never prompt, edit project files, or reach the network:
-
-```sh
-wago --no-input --locked --offline run app.wasm
-```
-
-- `--no-input` refuses to open a picker or confirmation prompt.
-- `--locked` prevents changes to `wago.json` and `wago-lock.json`.
-- `--offline` uses installed runtimes and cached modules only.
-
-For tooling, `wago commands --json` returns the command schema. It is safer than scraping colored help text.
-
-## Next: call it from Go
-
-Your directory now contains the portable source module and a host-specific compiled artifact:
-
-```text
-wago-fib/
-├── fib.wasm
-└── fib.wago
-```
-
-Continue with [Embed Wago in Go](/guides/embed-wago) to call the same module from an application.
+Add a plugin only when the import inspection shows that the module needs one.

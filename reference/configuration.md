@@ -1,84 +1,46 @@
 ---
-description: Configure Wago projects, plugin constraints, reproducible lockfiles, capability grants, and machine-level paths.
+description: Configure Wago globally, override it per project, and control deterministic automation with manifests and flags.
 ---
 
 # Configuration
 
-Wago keeps project intent in `wago.json` and exact, authority-bearing resolution in `wago-lock.json`. Commit both files when your project uses plugins.
+Wago layers configuration from broad defaults to one command:
 
-::: tip Editor support
-Add the schema URL to get completion, inline documentation, and typo detection in editors that support JSON Schema.
-:::
+1. Runtime defaults.
+2. User-wide configuration.
+3. Project settings in `wago.json`.
+4. Explicit command flags.
 
-## Start a project
+## Pick a topic
 
-<Tabs sync="project-setup">
-  <Tab title="Interactive">
+<CardGroup>
+  <Card title="Scopes and settings" href="/reference/configuration/scopes-and-settings" icon="fa-code">
+    Inspect, set, reset, and preview stable or experimental values.
+  </Card>
+  <Card title="Project manifest" href="/reference/configuration/project-manifest" icon="fa-right-left">
+    Configure features, optimizations, workers, and project plugins in `wago.json`.
+  </Card>
+  <Card title="Automation and Go" href="/reference/configuration/automation-and-go" icon="fa-play">
+    Isolate state, install completions, use locked modes, and configure the Go API.
+  </Card>
+</CardGroup>
 
-```sh
-wago init
-```
+## Quick answers
 
-Choose quick setup for a minimal manifest or full setup for an application or publishable plugin.
+<Accordion title="Why did my project setting win?" open>
 
-  </Tab>
-  <Tab title="Quick">
+Local settings override global settings. Command flags override both. Run `wago config diff` to see sparse overrides. See [Scopes and settings](/reference/configuration/scopes-and-settings).
 
-```sh
-wago init --quick
-```
+</Accordion>
 
-  </Tab>
-  <Tab title="Scripted">
+<Accordion title="Where do plugin versions and grants live?">
 
-```sh
-wago init --full --kind application --name demo --yes
-```
+Version constraints live in `wago.json`. Exact resolutions, grants, budgets, and opaque plugin configuration live in `wago-lock.json`. See [Project manifest](/reference/configuration/project-manifest).
 
-  </Tab>
-</Tabs>
+</Accordion>
 
-## Manifest
+<Accordion title="How do I isolate CI from my normal install?">
 
-```json
-{
-  "$schema": "https://wago.sh/v0/schema.json",
-  "plugins": {
-    "wago-org/wasi": "^0.0.0"
-  }
-}
-```
+Set a job-specific `WAGO_HOME`, pin a runtime, and use `--locked --offline` for the final prepared build. See [Automation and Go](/reference/configuration/automation-and-go).
 
-Plugin entries are semantic-version constraints. `wago add` updates the manifest and resolves exact versions into the lockfile.
-
-<ApiEndpoint method="FILE" path="wago.json">
-  Human-authored project intent, package metadata, and plugin constraints.
-</ApiEndpoint>
-
-<ApiEndpoint method="LOCK" path="wago-lock.json">
-  Exact plugin versions, reviewed capability grants, and plugin-owned configuration.
-</ApiEndpoint>
-
-::: warning Keep authority in the lockfile
-Do not copy exact resolutions or capability grants into `wago.json`. The lockfile is parsed strictly and is the reproducible source of runtime authority.
-:::
-
-## Add and inspect plugins
-
-```sh
-wago add wago-org/wasi
-wago plugin list
-wago plugin check
-wago plugin plan
-```
-
-Use `wago status` for a compact view of the active runtime, project scope, plugins, and lockfile.
-
-## Machine-level paths
-
-`WAGO_HOME` overrides the platform defaults. Without it, macOS keeps Wago state under `~/.wago`; Linux uses the corresponding XDG data, config, and cache directories.
-
-```sh
-export WAGO_HOME="$PWD/.wago-home"
-wago status
-```
+</Accordion>
