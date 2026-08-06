@@ -8,7 +8,7 @@
         "tag": "canary-daec329",
         "sha": "daec329ffbdff7af2ae5778876ff148f4c084021",
         "publishedAt": "2026-08-06T08:20:35Z",
-        "docsSource": "a43442f223cdafed18944c2fa52cdd2ad808881c"
+        "docsSource": "d31bf187eb487d0253e35ef74ce5992db0d533db"
       }
     },
     {
@@ -18,7 +18,7 @@
         "tag": "nightly-20260806-daec329",
         "sha": "daec329ffbdff7af2ae5778876ff148f4c084021",
         "publishedAt": "2026-08-06T08:34:55Z",
-        "docsSource": "a43442f223cdafed18944c2fa52cdd2ad808881c"
+        "docsSource": "d31bf187eb487d0253e35ef74ce5992db0d533db"
       }
     }
   ],
