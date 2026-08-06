@@ -5,10 +5,10 @@
       "label": "canary",
       "base": "",
       "release": {
-        "tag": "canary-e6a7b5c",
-        "sha": "e6a7b5cc8b396c02b69cff69bd7de9a9b227afb6",
-        "publishedAt": "2026-08-05T07:00:56Z",
-        "docsSource": "c68e75de343a1d876f2458837752eed68967afe1"
+        "tag": "canary-4c28f4a",
+        "sha": "4c28f4a32e67d88eda6bac4270f365283438eede",
+        "publishedAt": "2026-08-06T00:23:11Z",
+        "docsSource": "57175c24edf08cb87e57e7c389e4c44ae7b2f155"
       }
     },
     {
@@ -18,7 +18,7 @@
         "tag": "nightly-20260805-e6a7b5c",
         "sha": "e6a7b5cc8b396c02b69cff69bd7de9a9b227afb6",
         "publishedAt": "2026-08-05T08:34:56Z",
-        "docsSource": "c68e75de343a1d876f2458837752eed68967afe1"
+        "docsSource": "57175c24edf08cb87e57e7c389e4c44ae7b2f155"
       }
     }
   ],
