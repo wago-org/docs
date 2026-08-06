@@ -2,7 +2,9 @@
 description: Update Wago components, pin runtime selection in CI, and clean old runtime data safely.
 ---
 
-# Updates and automation
+# Update and automate Wago installs
+
+Refresh rolling channels, pin exact runtime selections in CI, and keep automated installs quiet and reproducible.
 
 ## Update a rolling channel
 
@@ -16,10 +18,6 @@ Use `--no-use` to refresh without switching and `--force` to reinstall a matchin
 ## Update selected components
 
 ```sh
-wago update
-wago update --manager
-wago update --runtime
-wago update --plugins
 wago update --all
 ```
 
@@ -32,7 +30,7 @@ wago update --all --dry-run --json
 ## Pin CI
 
 ```sh
-wago version install --version v0.1.0 \
+wago version install --version 4c28f4a32e67 \
   --profile standard \
   --build normal \
   --use \
@@ -42,28 +40,15 @@ wago version current
 wago status --json
 ```
 
-A channel name is not a pin. Use an exact stable release or commit when a build must remain repeatable.
-
-## Shared automation flags
-
-- `--no-input` never prompts.
-- `--dry-run` shows a supported mutation plan.
-- `--json` emits machine-readable output where supported.
-- `--locked` refuses manifest or lockfile changes.
-- `--offline` uses installed and cached resources only.
+A channel name is not a pin. The SHA above is a real example; pin the commit you tested.
 
 ## Remove old data
 
 ```sh
-wago version uninstall v0.0.9 v0.0.10
+wago version list
+wago version uninstall 4c28f4a32e67
 wago cache size
-wago cache prune
+wago cache prune --yes
 ```
 
-Use `wago cache clean` for intentional regeneration and `wago cache dir` to inspect the location first.
-
-## Next
-
-- [Configure hermetic automation](/reference/configuration/automation-and-go)
-- [Rebuild locked plugins](/guides/plugins/update-and-rebuild)
-- [Return to Release channels](/guides/version-channels)
+Uninstall only versions you no longer need. Use `wago cache dir` to inspect the cache before removing anything.

@@ -2,7 +2,7 @@
 description: Choose between Wago standard and minimal profiles and normal or TinyGo builds.
 ---
 
-# Profiles and builds
+# Choose runtime profiles and builds
 
 Every runtime selection has a profile and a build. They solve different problems.
 
@@ -47,9 +47,3 @@ wago version switch canary --profile standard --build normal
 ```
 
 `wago version current` reports all three parts: version, profile, and build.
-
-## Next
-
-- [Pin the complete selection in automation](/guides/versions/updates-and-automation)
-- [Choose a release channel](/guides/versions/channels-and-switching)
-- [Return to Release channels](/guides/version-channels)

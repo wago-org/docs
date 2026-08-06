@@ -2,7 +2,13 @@
 description: Create a Wago runtime, compile modules once, instantiate isolated state, and configure compilation.
 ---
 
-# Runtime and modules
+# Create runtimes and modules
+
+The runtime owns shared compiler resources. A module holds reusable compiled code, and each instance gets isolated mutable guest state.
+
+```sh
+go run github.com/wago-org/wago/examples/15-config@latest
+```
 
 ## Create the runtime
 
@@ -16,7 +22,7 @@ defer rt.Close()
 ## Compile Wasm
 
 ```go
-wasmBytes, err := os.ReadFile("math.wasm")
+wasmBytes, err := os.ReadFile("fib.wasm")
 if err != nil {
 	return err
 }
@@ -82,9 +88,3 @@ inst, err := rt.Instantiate(ctx, mod, wago.WithPolicy(policy))
 ```
 
 The zero policy is permissive. A non-empty allow-list becomes exclusive, explicit denies win, and declared resource limits are checked before execution.
-
-## Next
-
-- [Call exports and access guest state](/guides/embed/calls-and-state)
-- [Configure Wago from Go](/reference/configuration/automation-and-go)
-- [Return to Embed Wago](/guides/embed-wago)

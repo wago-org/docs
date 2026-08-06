@@ -1,14 +1,15 @@
 ---
-description: Choose a Wago stable, nightly, canary, or commit runtime and switch between installed versions.
+description: Choose a Wago nightly, canary, or exact-commit runtime and switch between installed versions.
 ---
 
-# Channels and switching
+# Choose and switch release channels
+
+Pick how fresh or repeatable the runtime should be, install that channel, and switch without replacing your other installed versions.
 
 ## Choose a channel
 
 | Channel | Represents | Good fit |
 |---|---|---|
-| Stable | Named immutable release | Production and repeatable builds |
 | Nightly | Rolling published snapshot | Recent integrated work |
 | Canary | Latest build from `main` | Newest fixes and experiments |
 | Commit | Exact source revision | Reproduction and bisecting |
@@ -26,10 +27,9 @@ wago version install
 Explicit:
 
 ```sh
-wago version install --latest --use --no-input
 wago version install --nightly --use --no-input
 wago version install --canary --use --no-input
-wago version install --version <commit> --use --no-input
+wago version install --version 4c28f4a32e67 --use --no-input
 ```
 
 Use `--no-use` when the new installation should not become active.
@@ -40,7 +40,6 @@ Use `--no-use` when the new installation should not become active.
 wago version list
 wago version switch
 wago version switch canary
-wago version switch v0.1.0
 ```
 
 If the requested runtime is missing, `switch` installs it first.
@@ -53,17 +52,11 @@ wago version which
 wago status
 ```
 
-## Recover a known-good version
+## Use a known-good commit
 
 ```sh
-wago version switch v0.1.0
+wago version install --version 4c28f4a32e67 --use --no-input
 wago status
 ```
 
-The project and modules stay in place. Only the selected runtime changes.
-
-## Next
-
-- [Choose a profile and build](/guides/versions/profiles-and-builds)
-- [Automate updates and pin CI](/guides/versions/updates-and-automation)
-- [Return to Release channels](/guides/version-channels)
+The project and modules stay in place. Only the selected runtime changes. The SHA above is a real example; use the commit you tested.

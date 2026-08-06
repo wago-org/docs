@@ -23,29 +23,4 @@ Plugins provide host imports, lifecycle hooks, managed instances, module transfo
   </Card>
 </CardGroup>
 
-## Quick answers
-
-<Accordion title="How do I add WASI?" open>
-
-```sh
-wago init --run
-wago add wago-org/wasi
-```
-
-Wago resolves the package, asks you to review its capabilities, locks it, and rebuilds the runtime. See [Install and choose scope](/guides/plugins/install-and-scope).
-
-</Accordion>
-
-<Accordion title="What should I commit?">
-
-Commit both `wago.json` and `wago-lock.json`. The manifest records intent; the lockfile records the exact version, approved authority, budgets, and plugin configuration. See [Grants and lockfiles](/guides/plugins/grants-and-lockfiles).
-
-</Accordion>
-
-<Accordion title="Are plugin grants a sandbox?">
-
-No. They control access to privileged Wago APIs. Plugins remain native Go dependencies and must be audited. Guest `Policy` is a separate layer. See [Grants and lockfiles](/guides/plugins/grants-and-lockfiles).
-
-</Accordion>
-
 Browse published packages at [plugins.wago.sh](https://plugins.wago.sh).

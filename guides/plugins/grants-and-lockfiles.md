@@ -2,7 +2,9 @@
 description: Review Wago plugin capabilities, guest authority, manifests, lockfiles, and resource budgets.
 ---
 
-# Grants and lockfiles
+# Review plugin grants and lockfiles
+
+The manifest records what your project asks for. The lockfile records the exact plugin versions, capabilities, and runtime result you reviewed.
 
 ## Manifest and lockfile
 
@@ -57,22 +59,3 @@ Some grants include budgets such as a live instance cap or per-instance declared
 Plugin grants control access to privileged Wago APIs. Guest capabilities such as `fs.read` and `net.outbound` describe what the module may use. Runtime `Policy` applies the guest layer.
 
 Neither layer turns arbitrary plugin Go code into a sandbox. Plugins remain native open-source dependencies.
-
-## Programmatic registration
-
-```go
-if err := rt.Use(
-	extension,
-	wago.WithPluginGrants(wago.PluginHostImports),
-); err != nil {
-	return err
-}
-```
-
-Supplying `WithPluginGrants` enables strict authorization for every declared and exercised privileged capability.
-
-## Next
-
-- [Update and rebuild plugins](/guides/plugins/update-and-rebuild)
-- [Configure the project manifest](/reference/configuration/project-manifest)
-- [Return to Use plugins](/guides/plugins)

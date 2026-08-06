@@ -2,7 +2,9 @@
 description: Isolate Wago state, use automation flags and shell completions, and configure the Go runtime API.
 ---
 
-# Automation and Go
+# Configure CI, shells, and the Go API
+
+Keep automation isolated from your normal Wago install, remove prompts from scripts, add shell completions, and set runtime policy from Go.
 
 ## Isolate Wago state
 
@@ -33,7 +35,7 @@ wago cache dir
 For a prepared repeatable build:
 
 ```sh
-wago run --locked --offline app.wasm
+wago run --locked --offline --invoke fib fib.wasm 20
 ```
 
 Describe the command surface programmatically:
@@ -51,25 +53,6 @@ wago config completions zsh --install
 
 Use `--output` for a specific completion file and `--rc` for a particular startup file. Preview installation with `--dry-run`.
 
-## Configure the Go API
+## Go API
 
-```go
-cfg := wago.NewRuntimeConfig().
-	WithCoreFeatures(wago.CoreFeaturesV3).
-	WithMemoryLimitPages(256).
-	WithFunctionWorkers(0)
-
-if err := cfg.Validate(); err != nil {
-	return err
-}
-
-rt := wago.NewRuntime(wago.WithRuntimeConfig(cfg))
-```
-
-Use `WithBoundsChecks`, `WithDeferBoundsChecks`, and `WithOptimization` for narrower compiler choices. Use `WithPolicy` during instantiation for guest authority and declared resource limits.
-
-## Next
-
-- [Pin runtimes in CI](/guides/versions/updates-and-automation)
-- [Configure project settings](/reference/configuration/project-manifest)
-- [Return to Configuration](/reference/configuration)
+Use `RuntimeConfig` for compiler policy and `WithPolicy` for per-instance guest limits. The runnable configuration example is in [Create runtimes and modules](/guides/embed/runtime-and-modules).

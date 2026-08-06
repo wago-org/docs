@@ -2,7 +2,9 @@
 description: Add Wago plugins to local or global scope and select them for run, build, and compile commands.
 ---
 
-# Install and choose scope
+# Install plugins and choose a scope
+
+Install plugins locally for one project or globally for your machine, then choose which scope `run`, `build`, and `compile` should use.
 
 ## Add a plugin
 
@@ -12,12 +14,6 @@ wago add wago-org/wasi
 ```
 
 `wago add` is the short form of `wago plugin add`. Wago resolves the package, asks you to review its capabilities, writes project state, and rebuilds the selected runtime.
-
-Add several plugins together:
-
-```sh
-wago add wago-org/wasi wago-org/workers
-```
 
 ## Local scope
 
@@ -42,9 +38,9 @@ This works well for personal tools used across unrelated directories.
 ## Select a scope at run time
 
 ```sh
-wago run --local app.wasm
-wago run --global app.wasm
-wago run --bare app.wasm
+wago run --local --invoke fib fib.wasm 20
+wago run --global --invoke fib fib.wasm 20
+wago run --bare --invoke fib fib.wasm 20
 ```
 
 - `--local` uses the project plugin set.
@@ -61,9 +57,3 @@ wago status
 wago plugin list
 wago plugin inspect wago-org/wasi
 ```
-
-## Next
-
-- [Review grants and lockfiles](/guides/plugins/grants-and-lockfiles)
-- [Inspect module imports](/guides/run/inspect-and-validate)
-- [Return to Use plugins](/guides/plugins)

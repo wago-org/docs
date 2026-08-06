@@ -4,13 +4,13 @@ description: Run, inspect, validate, precompile, and package WebAssembly modules
 
 # Run a module
 
-`wago run` turns a Wasm file into a native function call:
+Use the `fib.wasm` downloaded in [Getting started](/getting-started):
 
 ```sh
-wago run math.wasm 20 22
+wago run fib.wasm 20
 ```
 
-`run` is the default command, so `wago math.wasm 20 22` does the same thing.
+`run` is the default command, so `wago fib.wasm 20` does the same thing.
 
 ## Pick a topic
 
@@ -29,52 +29,13 @@ wago run math.wasm 20 22
   </Card>
 </CardGroup>
 
-## Quick answers
-
-<Accordion title="How do I call a named function?" open>
-
-```sh
-wago run --invoke add math.wasm 20 22
-```
-
-Wago reads the function signature and checks every argument. See [Invoke an export](/guides/run/invocation).
-
-</Accordion>
-
-<Accordion title="How do I find missing host support?">
-
-```sh
-wago module imports app.wasm
-wago module capabilities app.wasm
-```
-
-The first command lists exact imports. The second summarizes the host authority the module needs. See [Inspect and validate](/guides/run/inspect-and-validate).
-
-</Accordion>
-
-<Accordion title="How do I rerun after a rebuild?">
-
-```sh
-wago run --watch app.wasm
-```
-
-Wago polls every `200ms` by default and starts with fresh module state each time. See [Develop and tune](/guides/run/development).
-
-</Accordion>
-
-<Accordion title="Should I build .wago or an executable?">
-
-Use `.wago` when you control the Wago runtime and want to skip compilation. Use `wago compile` when the result must run without Wago installed. Keep `.wasm` as the portable source either way. See [Build artifacts](/guides/run/artifacts).
-
-</Accordion>
-
 ## Everyday loop
 
 ```sh
-wago module imports app.wasm
-wago validate app.wasm
-wago run --watch app.wasm
-wago build app.wasm -o app.wago
+wago module imports fib.wasm
+wago validate fib.wasm
+wago run --watch --invoke fib fib.wasm 20
+wago build fib.wasm -o fib.wago
 ```
 
 Add a plugin only when the import inspection shows that the module needs one.

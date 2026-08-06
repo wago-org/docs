@@ -2,14 +2,16 @@
 description: Diagnose Wago module decoding, validation, imports, exports, arguments, and WebAssembly feature sets.
 ---
 
-# Modules and calls
+# Fix module, import, export, and call errors
+
+Separate decoding, validation, linking, and invocation. The first boundary that fails tells you where to look next.
 
 ## Decode or validation failure
 
 Separate validation from execution:
 
 ```sh
-wago validate module.wasm
+wago validate fib.wasm
 ```
 
 Common causes are malformed bytes, a disabled proposal, a module built for Core 3 while Wago uses the Core 2 default, or a feature unavailable on the selected platform.
@@ -17,7 +19,7 @@ Common causes are malformed bytes, a disabled proposal, a module built for Core 
 Try Core 3 only when the producer intentionally emits it:
 
 ```sh
-wago run --core 3 module.wasm
+wago run --core 3 --invoke fib fib.wasm 20
 ```
 
 Do not use feature flags to force malformed Wasm through.
@@ -25,8 +27,8 @@ Do not use feature flags to force malformed Wasm through.
 ## Missing import
 
 ```sh
-wago module imports module.wasm
-wago module capabilities module.wasm
+wago module imports fib.wasm
+wago module capabilities fib.wasm
 ```
 
 An unresolved import means the module needs another plugin scope, an uninstalled plugin, an application host function, or a corrected name and signature.
@@ -35,7 +37,7 @@ For a local project:
 
 ```sh
 wago init --run
-wago add <plugin>
+wago add wago-org/wasi
 wago plugin list
 ```
 
@@ -52,17 +54,23 @@ wago.WithImports(wago.Imports{
 Command modules normally export `_start`. Select a library function explicitly:
 
 ```sh
-wago run --invoke add math.wasm 20 22
+wago run --invoke missing fib.wasm 20
 ```
 
 A source-language function name does not necessarily survive compilation as a Wasm export.
 
 ## Rejected arguments
 
-Wago follows the Wasm signature. Add explicit scalar suffixes where needed:
+Wago follows the Wasm signature. This fails before guest code because `nope` is not an `i32`:
 
 ```sh
-wago run --invoke convert math.wasm 42:i64 3.5:f64
+wago run --invoke fib fib.wasm nope
+```
+
+Use a value that matches the signature:
+
+```sh
+wago run --invoke fib fib.wasm 30:i32
 ```
 
 In Go, use matching typed values:
@@ -70,9 +78,3 @@ In Go, use matching typed values:
 ```go
 out, err := inst.Call(ctx, "add", wago.ValueI32(20), wago.ValueI32(22))
 ```
-
-## Next
-
-- [Inspect and validate modules](/guides/run/inspect-and-validate)
-- [Troubleshoot plugin resolution](/troubleshooting/plugins-and-builds)
-- [Return to Troubleshooting](/troubleshooting)

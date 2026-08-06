@@ -2,7 +2,9 @@
 description: Check for Wago plugin updates, review resolution changes, and reproduce a plugin runtime from its lockfile.
 ---
 
-# Update and rebuild
+# Update, remove, and rebuild plugins
+
+Check before changing anything, review the new resolution, and reproduce the selected runtime from committed lockfile state.
 
 ## Check without changing anything
 
@@ -57,9 +59,3 @@ wago rm wago-org/wasi
 ```
 
 This is the short form of `wago plugin remove`.
-
-## Next
-
-- [Troubleshoot plugin builds](/troubleshooting/plugins-and-builds)
-- [Pin the runtime too](/guides/versions/updates-and-automation)
-- [Return to Use plugins](/guides/plugins)

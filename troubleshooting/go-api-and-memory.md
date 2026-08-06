@@ -2,7 +2,9 @@
 description: Diagnose Wago Go API host signatures, guest memory access, cancellation, and instance concurrency.
 ---
 
-# Go API and memory
+# Fix Go API and guest memory problems
+
+Start at the host-to-Wasm boundary: import signatures, checked memory ranges, context cancellation, and instance ownership.
 
 ## Host import mismatch
 
@@ -11,7 +13,7 @@ Import keys use `module.name`. The value must be `wago.HostFunc` or a compatible
 Inspect the module first:
 
 ```sh
-wago module imports module.wasm
+wago module imports fib.wasm
 ```
 
 Then compare the parameter and result slots with the guest declaration.
@@ -62,9 +64,3 @@ One instance cannot execute simultaneous public calls. Create separate instances
 ## Report a reduced failure
 
 Include the exact command or Go call, complete error, selected runtime, OS, architecture, module hash, and the smallest reproducer. For memory bugs, include the pointer, length, memory size, and guest signature.
-
-## Next
-
-- [Call exports and access state](/guides/embed/calls-and-state)
-- [Implement safe host memory access](/guides/host-functions/memory-and-errors)
-- [Return to Troubleshooting](/troubleshooting)

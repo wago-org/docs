@@ -24,23 +24,3 @@ Wago layers configuration from broad defaults to one command:
     Isolate state, install completions, use locked modes, and configure the Go API.
   </Card>
 </CardGroup>
-
-## Quick answers
-
-<Accordion title="Why did my project setting win?" open>
-
-Local settings override global settings. Command flags override both. Run `wago config diff` to see sparse overrides. See [Scopes and settings](/reference/configuration/scopes-and-settings).
-
-</Accordion>
-
-<Accordion title="Where do plugin versions and grants live?">
-
-Version constraints live in `wago.json`. Exact resolutions, grants, budgets, and opaque plugin configuration live in `wago-lock.json`. See [Project manifest](/reference/configuration/project-manifest).
-
-</Accordion>
-
-<Accordion title="How do I isolate CI from my normal install?">
-
-Set a job-specific `WAGO_HOME`, pin a runtime, and use `--locked --offline` for the final prepared build. See [Automation and Go](/reference/configuration/automation-and-go).
-
-</Accordion>

@@ -2,7 +2,7 @@
 description: Bind Wago host imports and encode WebAssembly parameters and results in portable slots.
 ---
 
-# Signatures and slots
+# Bind host function signatures and slots
 
 Suppose the guest imports:
 
@@ -46,22 +46,3 @@ The key joins the import module and field with a dot. Wago already knows the sig
 An `i32` or `f32` uses the low 32 bits. A `v128` occupies two adjacent little-endian slots. References use opaque tokens; never reinterpret one as a Go pointer.
 
 The result slice is already sized for the signature. Write into it. Appending does not return another Wasm result.
-
-## Owned function references
-
-Ordinary imports accept `wago.HostFunc`. A host function that may cross a public `funcref` boundary needs explicit runtime ownership and an exact signature:
-
-```go
-owner, err := rt.NewHostFuncRef(fn, wago.FuncSig{
-	Params:  []wago.ValType{wago.ValI32},
-	Results: []wago.ValType{wago.ValI32},
-})
-```
-
-Close the owner after every importing instance is done.
-
-## Next
-
-- [Read guest memory and return errors](/guides/host-functions/memory-and-errors)
-- [Understand host authority](/guides/host-functions/authority-and-references)
-- [Return to Host functions](/guides/host-functions)

@@ -2,7 +2,13 @@
 description: Supply host imports, attach precompiled Wago code to a runtime, and close runtime resources correctly.
 ---
 
-# Imports and artifacts
+# Supply imports and load artifacts
+
+This is the seam for application-owned host behavior, precompiled code caches, and explicit runtime cleanup.
+
+```sh
+go run github.com/wago-org/wago/examples/16-serialize@latest
+```
 
 ## Supply application imports
 
@@ -59,21 +65,3 @@ if err := rt.Close(); err != nil {
 ```
 
 `Close` is idempotent. Runtime close stops plugins and internal services, but direct instances remain caller-owned.
-
-<Accordion title="Does Module need Close?">
-
-The high-level `Module.Close` currently has no work to perform. Keep instance and runtime ownership explicit; those are the resources with meaningful lifecycle.
-
-</Accordion>
-
-<Accordion title="Can I load raw Wasm with wago.Load?">
-
-Yes. `wago.Load` accepts raw Wasm or Wago's compiled binary form. Use `wago.IsCompiled` when a cache needs to distinguish them before loading.
-
-</Accordion>
-
-## Next
-
-- [Implement host function signatures](/guides/host-functions/signatures)
-- [Choose CLI artifacts](/guides/run/artifacts)
-- [Browse runnable examples](https://github.com/wago-org/wago/tree/main/examples)

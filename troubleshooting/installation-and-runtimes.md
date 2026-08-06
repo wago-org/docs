@@ -2,7 +2,9 @@
 description: Fix Wago PATH, missing runtime, wrong variant, cache, and stale precompiled artifact problems.
 ---
 
-# Installation and runtimes
+# Fix installation and runtime selection
+
+Use this page when the shell cannot find Wago, no runtime is active, the wrong build is selected, or a cached artifact became stale.
 
 ## The shell cannot find `wago`
 
@@ -63,7 +65,7 @@ wago version switch canary --profile standard --build normal
 Compiled artifacts are tied to Wago's format and the host architecture. Rebuild from the original Wasm:
 
 ```sh
-wago build module.wasm -o module.wago
+wago build fib.wasm -o fib.wago
 ```
 
 Distribute `.wasm` for portability or use `wago compile` for a target-specific standalone executable.
@@ -73,13 +75,7 @@ Distribute `.wasm` for portability or use `wago compile` for a target-specific s
 ```sh
 wago cache dir
 wago cache size
-wago cache prune
+wago cache prune --yes
 ```
 
 Use `wago cache clean` only when you intend to regenerate the selected data.
-
-## Next
-
-- [Choose a release channel](/guides/versions/channels-and-switching)
-- [Troubleshoot modules](/troubleshooting/modules-and-calls)
-- [Return to Troubleshooting](/troubleshooting)

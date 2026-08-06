@@ -2,7 +2,9 @@
 description: Diagnose Wago plugin resolution, capability grants, lockfiles, offline mode, and standalone builds.
 ---
 
-# Plugins and builds
+# Fix plugin resolution and standalone builds
+
+Inspect the selected scope and resolved plugin graph before changing grants, lockfiles, offline mode, or compiler settings.
 
 ## Inspect plugin state
 
@@ -15,9 +17,9 @@ wago plugin inspect
 Then identify the failing stage:
 
 - `wago plugin outdated` checks for newer releases.
-- `wago plugin grant <name>` edits authority.
+- `wago plugin grant wago-org/wasi` edits authority.
 - `wago plugin rebuild` reproduces locked versions.
-- `wago plugin update <name>` changes resolution and rebuilds.
+- `wago plugin update wago-org/wasi` changes resolution and rebuilds.
 
 Use `--verbose` when the underlying Go build diagnostic matters.
 
@@ -40,7 +42,7 @@ A required module or artifact is missing locally. Fetch it during an intentional
 Preview the plan:
 
 ```sh
-wago compile module.wasm --dry-run --json
+wago compile fib.wasm --invoke fib --dry-run --json
 ```
 
 Check that:
@@ -54,11 +56,5 @@ Check that:
 Show the Go build output:
 
 ```sh
-wago compile module.wasm --verbose -o module
+wago compile fib.wasm --invoke fib --verbose -o fib
 ```
-
-## Next
-
-- [Update and rebuild plugins](/guides/plugins/update-and-rebuild)
-- [Choose standalone artifacts](/guides/run/artifacts)
-- [Return to Troubleshooting](/troubleshooting)

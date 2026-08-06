@@ -2,22 +2,31 @@
 description: Call typed WebAssembly exports, honor cancellation, and access instance memory and globals.
 ---
 
-# Calls and guest state
+# Call exports and access guest state
+
+Use an instance to cross the host-to-Wasm boundary, then work with the memory and globals owned by that one guest.
+
+Run the complete examples from any directory:
+
+```sh
+go run github.com/wago-org/wago/examples/02-runtime-typed@latest
+go run github.com/wago-org/wago/examples/04-memory@latest
+go run github.com/wago-org/wago/examples/05-globals@latest
+```
 
 ## Call an export
 
 ```go
 result, err := inst.Call(
 	ctx,
-	"add",
+	"fib",
 	wago.ValueI32(20),
-	wago.ValueI32(22),
 )
 if err != nil {
 	return err
 }
 
-fmt.Println(result[0].I32()) // 42
+fmt.Println(result[0].I32()) // 6765
 ```
 
 `Call` checks the values against the export's Wasm signature.
@@ -75,13 +84,3 @@ if err := inst.SetGlobalValue("count", wago.ValueI32(100)); err != nil {
 ```
 
 Setting an immutable global or supplying the wrong value type returns an error.
-
-## Low-level calls
-
-Package-level `Compile`, `Instantiate`, and `Invoke` use raw `uint64` slots with helpers such as `wago.I32` and `wago.AsI32`. Use that path for a deliberately low-level embedder. The runtime API is the better default for typed values, context, plugins, and lifecycle.
-
-## Next
-
-- [Supply imports and load artifacts](/guides/embed/imports-and-artifacts)
-- [Implement host functions](/guides/host-functions)
-- [Troubleshoot Go API calls](/troubleshooting/go-api-and-memory)

@@ -2,7 +2,7 @@
 description: Choose between portable Wasm, Wago precompiled modules, and standalone native executables.
 ---
 
-# Build artifacts
+# Build `.wago` files and executables
 
 Wago can keep the original Wasm, serialize native compilation, or package the runtime and module together.
 
@@ -15,8 +15,8 @@ Wago can keep the original Wasm, serialize native compilation, or package the ru
 ## Precompile to `.wago`
 
 ```sh
-wago build app.wasm -o app.wago
-wago run app.wago
+wago build fib.wasm -o fib.wago
+wago run fib.wago 20
 ```
 
 This moves compilation out of the run path.
@@ -28,21 +28,14 @@ A `.wago` file is tied to its host architecture and Wago's compiled format. Rebu
 ## Build a standalone executable
 
 ```sh
-wago compile app.wasm -o app
-./app
-```
-
-The module must export `_start` unless you bake in another function:
-
-```sh
-wago compile math.wasm --invoke add -o add
-./add 20 22
+wago compile fib.wasm --invoke fib -o fib
+./fib 20
 ```
 
 Cross-compile to a supported target:
 
 ```sh
-wago compile app.wasm --target linux/arm64 -o app-linux-arm64
+wago compile fib.wasm --invoke fib --target linux/arm64 -o fib-linux-arm64
 ```
 
 Wago supports Darwin, Linux, and Windows on AMD64 and ARM64. Core features, plugins, parallelism, and compiler settings are fixed at build time.
@@ -50,9 +43,9 @@ Wago supports Darwin, Linux, and Windows on AMD64 and ARM64. Core features, plug
 ## Select plugin scope
 
 ```sh
-wago build --local app.wasm
-wago compile --global app.wasm -o app
-wago compile --bare app.wasm -o app
+wago build --local fib.wasm -o fib.wago
+wago compile --global fib.wasm --invoke fib -o fib-global
+wago compile --bare fib.wasm --invoke fib -o fib-bare
 ```
 
 - `--local` uses the nearest `wago.json`.
@@ -63,11 +56,5 @@ wago compile --bare app.wasm -o app
 Preview standalone work before changing anything:
 
 ```sh
-wago compile app.wasm --dry-run --json
+wago compile fib.wasm --invoke fib --dry-run --json
 ```
-
-## Next
-
-- [Understand plugin scopes](/guides/plugins/install-and-scope)
-- [Pin runtimes for repeatable builds](/guides/versions/updates-and-automation)
-- [Return to Run a module](/guides/run-a-module)

@@ -2,7 +2,7 @@
 description: Configure Wago runtime features, optimizations, workers, and plugins in wago.json.
 ---
 
-# Project manifest
+# Configure `wago.json`
 
 `wago.json` combines sparse project runtime settings with plugin requirements:
 
@@ -76,9 +76,3 @@ Commit both files. Keep plugin configuration out of `settings`; it belongs to th
 When the manifest describes a publishable plugin, it can also contain module path, semantic version, display metadata, SPDX license, public repository, tags, authors, platform constraints, and subpackages.
 
 See [Publish a plugin](/guides/plugins/publish) for the complete workflow.
-
-## Next
-
-- [Review plugin grants and lockfiles](/guides/plugins/grants-and-lockfiles)
-- [Inspect scopes and inherited settings](/reference/configuration/scopes-and-settings)
-- [Return to Configuration](/reference/configuration)

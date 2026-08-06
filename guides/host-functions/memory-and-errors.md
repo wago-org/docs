@@ -2,7 +2,9 @@
 description: Validate guest pointer-length pairs, copy memory safely, and define host function error behavior.
 ---
 
-# Memory and errors
+# Read guest memory and return errors
+
+Guest addresses are untrusted offsets into linear memory. Check every range, copy only what you need, and make the error contract part of the import design.
 
 ## Validate pointer and length
 
@@ -56,9 +58,3 @@ Wago recovers that value as `*wago.ExitError`. Code `0` represents a normal exit
 ## Boundary tests
 
 Test an empty input, a pointer at the end of memory, addition overflow, malformed data, the largest allowed request, missing memory, repeated calls, and every status path.
-
-## Next
-
-- [Keep host authority narrow](/guides/host-functions/authority-and-references)
-- [Troubleshoot memory access](/troubleshooting/go-api-and-memory)
-- [Return to Host functions](/guides/host-functions)

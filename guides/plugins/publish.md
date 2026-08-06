@@ -2,15 +2,13 @@
 description: Initialize, review, authenticate, and publish an open-source Wago plugin package.
 ---
 
-# Publish a plugin
+# Publish a Wago plugin
+
+Package a reusable Wago extension, preview exactly what will ship, then publish it to the public plugin registry.
+
+Publishing requires a public GitHub repository and a Wago registry account. The dry run works before login.
 
 ## Create the manifest
-
-```sh
-wago init --plugin
-```
-
-For non-interactive setup:
 
 ```sh
 wago init --plugin \
@@ -40,27 +38,3 @@ wago plugin publish
 ```
 
 Publishing uses `wago.json` and Git `HEAD` by default. Flags can override the manifest, commit, release notes, category, and tags.
-
-## Package requirements
-
-The Go code supplies an `Extension` with stable identity, version, compatibility, capability declarations, and registration behavior. Registration is transactional: a failure must not leave half a plugin active.
-
-The manifest supplies registry metadata, public provenance, compatible toolchain ranges, platform targets, and optional subpackages.
-
-<Accordion title="How is the version selected?">
-
-Use the manifest's semantic `version`. When omitted, publishing falls back to the newest Git tag.
-
-</Accordion>
-
-<Accordion title="Can I publish a private plugin?">
-
-The public registry requires open source. Application-owned private integrations can still register an `Extension` directly in Go without publishing it.
-
-</Accordion>
-
-## Next
-
-- [Review plugin capabilities](/guides/plugins/grants-and-lockfiles)
-- [Configure publish metadata](/reference/configuration/project-manifest)
-- [Browse the registry](https://plugins.wago.sh)
