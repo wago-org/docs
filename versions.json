@@ -8,7 +8,7 @@
         "tag": "canary-1e03d71",
         "sha": "1e03d71f794b28f4f55568463fa789cdb4eb4290",
         "publishedAt": "2026-08-08T15:35:32Z",
-        "docsSource": "affc8adca0681a17b9bdeb631188111222454317"
+        "docsSource": "e7d610dc256f2e482d6caf557c8bf63f38dc39c1"
       }
     },
     {
@@ -18,7 +18,7 @@
         "tag": "nightly-20260808-0ec9611",
         "sha": "0ec96116b762673f09bccabafa4a366f63c709e0",
         "publishedAt": "2026-08-08T06:50:33Z",
-        "docsSource": "affc8adca0681a17b9bdeb631188111222454317"
+        "docsSource": "e7d610dc256f2e482d6caf557c8bf63f38dc39c1"
       }
     }
   ],
