@@ -28,8 +28,14 @@ Runtime `Policy` controls guest capabilities and coarse declared resource limits
 
 `HostModule` represents one active synchronous call. Do not store it, send it to another goroutine, or use it as a long-lived instance handle.
 
-Plugins with the required privileged capability can resolve the exact caller while the callback is active. Forged, expired, and cross-runtime values fail closed.
+Plugins that separately receive `host.caller.identify` can resolve an opaque,
+comparable instance identity while the callback is active. The identity grants
+no invoke, close, memory, export, or management operation. Forged, expired, and
+cross-runtime `HostModule` values fail closed.
 
 ## Reusable host APIs
 
-Use `WithImports` for an application-specific bridge. Package a shared namespace as a plugin so imports, capabilities, configuration, ordering, and cleanup are registered once and reviewed through the manager.
+Use `WithImports` for an application-specific bridge. Package a shared namespace
+as a plugin so exact import-module scope, guest capabilities, configuration,
+dependencies, ordering, and cleanup are registered once and reviewed through
+the manager.

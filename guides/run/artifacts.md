@@ -51,7 +51,9 @@ wago compile --bare fib.wasm --invoke fib -o fib-bare
 - `--local` uses the nearest `wago.json`.
 - `--global` uses the user-wide plugin set.
 - `--bare` disables both sets.
-- `--plugin name,other` adds plugins for this command.
+
+Add plugins to `wago.json` before building so the standalone artifact uses the
+same reviewed and locked graph as the project.
 
 Preview standalone work before changing anything:
 
