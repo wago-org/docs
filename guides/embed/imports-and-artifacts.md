@@ -64,4 +64,7 @@ if err := rt.Close(); err != nil {
 }
 ```
 
-`Close` is idempotent. Runtime close stops plugins and internal services, but direct instances remain caller-owned.
+`Close` is idempotent. Closing explicitly keeps error ownership local. Runtime
+close is also a final safety boundary: it closes and drains every still-live
+runtime-created instance before stopping plugins. A retained instance handle is
+closed afterward, and calling `Close` on it again is safe.

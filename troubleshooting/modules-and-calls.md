@@ -37,7 +37,7 @@ For a local project:
 
 ```sh
 wago init --run
-wago add wago-org/wasi
+wago add github.com/wago-org/wasi
 wago plugin list
 ```
 

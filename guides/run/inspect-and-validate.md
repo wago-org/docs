@@ -32,7 +32,7 @@ The module probably needs a plugin or application-supplied host functions. A WAS
 
 ```sh
 wago init --run
-wago add wago-org/wasi
+wago add github.com/wago-org/wasi
 ```
 
 Read [Use plugins](/guides/plugins) before granting access to host resources.
@@ -49,7 +49,7 @@ wago plugin list --global
 wago status
 ```
 
-Then run with `--local`, `--global`, or an explicit `--plugin` selection.
+Then run with `--local` or `--global`, or add the plugin to `wago.json` first.
 
 </Accordion>
 

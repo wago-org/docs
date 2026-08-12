@@ -33,7 +33,7 @@ Enter
 Sleep 500ms
 Show
 
-Type "wago add wago-org/wasi"
+Type "wago add github.com/wago-org/wasi"
 Sleep 240ms
 Enter
 Sleep 7s
