@@ -35,17 +35,13 @@ curl -fsSL https://install.wago.sh/cmd | cmd
   </Tab>
 </Tabs>
 
-The bootstrap downloads a checksummed installer for your platform, then walks you through the destination and `PATH` setup. Go is only needed if Wago cannot download a release manager and has to build one from source.
-
-Open a new terminal if the installer changed your `PATH`, then make sure the manager is ready:
-
 ```sh
 wago --version
 ```
 
-The manager handles versions and projects. It intentionally does not bundle a runtime.
+You can think of the wago command as a **version manager**. It handles version installing, upgrading, and switching. In order to run wasm, you need to install the actual runtime.
 
-If you only need Wago as a library in an existing Go project, add the package without installing the CLI:
+If you only need Wago as a library in an existing Go project, add the package directly:
 
 ```sh
 go get github.com/wago-org/wago
@@ -62,25 +58,25 @@ wago version install
 ![Downloading, inspecting, and running the Fibonacci module](/demos/run-fib.gif)
 
 ```sh
-curl -fsSL \
-  https://wago.sh/corpora/fib.wasm \
-  -o fib.wasm
+curl -fsSL https://wago.sh/corpora/fib.wasm -o fib.wasm
 ```
 
 This module exports a function named `fib`. It takes one `i32` argument and returns the corresponding Fibonacci number.
 
-You can inspect its host requirements before running it:
+You can inspect its exports before running it:
 
 ```sh
-wago module imports fib.wasm
+wago module exports fib.wasm
 ```
 
-No imports means this module is self-contained. It does not need WASI, files, network access, or a custom host function.
+The module exports a `fib (i32) -> i32` function. Without `--invoke`, Wago selects `_start`, then `main`, then the module's only exported function. If several exported functions remain, name one with `--invoke` or `-e`.
 
 ## 4. Run it
 
+In this case, `fib` is the only exported function, so Wago selects it automatically:
+
 ```sh
-wago run fib.wasm 30
+wago fib.wasm 30
 ```
 
 You should see:
@@ -89,40 +85,39 @@ You should see:
 fib(30) = 832040
 ```
 
-Wago decoded and validated the module, compiled it to native code, created an instance, selected the exported function, converted `30` to the argument type from the Wasm signature, and printed the result.
-
-`run` is the default command, so this is equivalent:
-
-```sh
-wago fib.wasm 30
-```
-
 ## 5. Try the everyday commands
 
-Validate without executing:
+Create a standalone executable:
 
 ```sh
-wago validate fib.wasm
+wago compile --invoke fib fib.wasm
 ```
 
-A successful validation is quiet.
+Standalone executables default to `_start`, so `--invoke fib` bakes the library-style function into this one.
 
-Precompile it for faster startup on the same host architecture:
+<Tabs sync="run-os">
+  <Tab title="macOS / Linux">
 
 ```sh
-wago build fib.wasm -o fib.wago
-wago run fib.wago 30
+./fib 30
 ```
 
-Show the runtime, project, and plugin scope Wago selected:
+  </Tab>
+  <Tab title="PowerShell">
 
-```sh
-wago status
+```powershell
+.\fib 30
 ```
 
-::: warning Precompiled files are not portable releases
-A `.wago` artifact is tied to its host architecture and Wago's compiled format. Keep the original `.wasm` and rebuild the artifact after an incompatible Wago upgrade.
-:::
+  </Tab>
+  <Tab title="Command Prompt">
+
+```cmd
+fib 30
+```
+
+  </Tab>
+</Tabs>
 
 ## Where to go next
 
