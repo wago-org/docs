@@ -35,15 +35,25 @@ Sleep 220ms
 Enter
 Sleep 2s
 
-Type "wago module imports fib.wasm"
+Type "wago module exports fib.wasm"
 Sleep 220ms
 Enter
 Sleep 2s
 
-Type "wago run fib.wam"
+Type "wago fib.wam"
 Sleep 260ms
 Backspace
 Type "sm 30"
+Sleep 220ms
+Enter
+Sleep 3s
+
+Type "wago compile --invoke fib fib.wasm"
+Sleep 220ms
+Enter
+Sleep 6s
+
+Type "./fib 30"
 Sleep 220ms
 Enter
 Sleep 3s
