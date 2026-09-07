@@ -18,8 +18,14 @@ wago run fib.wasm 20
   <Card title="Invoke an export" href="/guides/run/invocation" icon="fa-play">
     Choose a function, pass typed arguments, and opt into Core 3.
   </Card>
+  <Card title="Write a module" href="/guides/run/write-a-module" icon="fa-code">
+    Export one function from WAT, AssemblyScript, or TinyGo, then run it.
+  </Card>
   <Card title="Inspect and validate" href="/guides/run/inspect-and-validate" icon="fa-code">
     Find imports, capabilities, and validation failures before execution.
+  </Card>
+  <Card title="Debug traps" href="/guides/run/debug-traps" icon="fa-code">
+    Read trap reasons and Wasm frames without guessing from error text.
   </Card>
   <Card title="Develop and tune" href="/guides/run/development" icon="fa-right-left">
     Use watch mode, parallel compilation, and measured compiler overrides.

@@ -41,15 +41,35 @@ This works well for personal tools used across unrelated directories.
 
 ## Select a scope at run time
 
+<Tabs sync="plugin-scope">
+  <Tab title="Project">
+
 ```sh
 wago run --local --invoke fib fib.wasm 20
+```
+
+Uses the nearest project's plugin set.
+
+  </Tab>
+  <Tab title="Global">
+
+```sh
 wago run --global --invoke fib fib.wasm 20
+```
+
+Uses the shared user-wide set.
+
+  </Tab>
+  <Tab title="Bare">
+
+```sh
 wago run --bare --invoke fib fib.wasm 20
 ```
 
-- `--local` uses the project plugin set.
-- `--global` uses the shared user-wide set.
-- `--bare` uses neither.
+Uses no plugins.
+
+  </Tab>
+</Tabs>
 
 Add plugins to `wago.json` before running so resolution, Authorities, and
 Contract bindings remain reviewable and reproducible.
@@ -57,13 +77,13 @@ Contract bindings remain reviewable and reproducible.
 ## Inspect the selection
 
 ```sh
-wago status
-wago plugin list
-wago plugin list --json
 wago plugin tree
+```
+
+`tree` shows why every transitive plugin was selected. To read one definition and its grants:
+
+```sh
 wago plugin inspect github.com/wago-org/wasi
 ```
 
-`tree` shows why every transitive plugin was selected. JSON listing and
-inspection report exact definitions, Authority Grants, Contract bindings, and
-activation order without starting plugin code.
+Inspection does not start plugin code.

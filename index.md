@@ -40,7 +40,7 @@ We wanted Wago to be wonderful to use, so we've actually added quite a bit.
   <Card title="Connect Wasm to Go" href="/guides/host-functions" icon="fa-right-left">
     Bind reflection-free host functions and exchange values through checked guest memory.
   </Card>
-  <Card title="Extend Wago with plugins" href="/guides/plugins" icon="fa-plug">
-    Add WASI, host capabilities, compiler hooks, or custom WebAssembly features through the plugin system.
+  <Card title="Extend Wago with plugins" href="/using-plugins" icon="fa-plug">
+    Add WASI and run your first module with host capabilities, then explore the full plugin system.
   </Card>
 </CardGroup>

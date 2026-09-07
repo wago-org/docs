@@ -52,7 +52,8 @@ function sidebarFor(base: string) {
       text: 'Introduction',
       items: available([
         { text: 'Overview', path: '/' },
-        { text: 'Getting started', path: '/getting-started' }
+        { text: 'Getting started', path: '/getting-started' },
+        { text: 'Using plugins', path: '/using-plugins' }
       ])
     },
     {
@@ -60,13 +61,17 @@ function sidebarFor(base: string) {
       items: [
         section('Run a module', '/guides/run-a-module', [
           { text: 'Invoke an export', path: '/guides/run/invocation' },
+          { text: 'Write a module', path: '/guides/run/write-a-module' },
           { text: 'Inspect and validate', path: '/guides/run/inspect-and-validate' },
+          { text: 'Debug traps', path: '/guides/run/debug-traps' },
           { text: 'Develop and tune', path: '/guides/run/development' },
           { text: 'Build artifacts', path: '/guides/run/artifacts' }
         ]),
         section('Embed Wago in Go', '/guides/embed-wago', [
           { text: 'Runtime and modules', path: '/guides/embed/runtime-and-modules' },
           { text: 'Calls and guest state', path: '/guides/embed/calls-and-state' },
+          { text: 'Limits and policy', path: '/guides/embed/limits-and-policy' },
+          { text: 'Services and concurrency', path: '/guides/embed/services-and-concurrency' },
           { text: 'Imports and artifacts', path: '/guides/embed/imports-and-artifacts' }
         ]),
         section('Host functions', '/guides/host-functions', [
@@ -78,6 +83,19 @@ function sidebarFor(base: string) {
           { text: 'Install and choose scope', path: '/guides/plugins/install-and-scope' },
           { text: 'Grants and lockfiles', path: '/guides/plugins/grants-and-lockfiles' },
           { text: 'Update and rebuild', path: '/guides/plugins/update-and-rebuild' },
+          { text: 'Plugin FAQ', path: '/guides/plugins/faq' }
+        ]),
+        section('Author plugins', '/guides/plugin-authoring', [
+          { text: 'Write your first plugin', path: '/guides/plugins/authoring/first-plugin' },
+          { text: 'Definitions and providers', path: '/guides/plugins/authoring/definitions-and-providers' },
+          { text: 'Host imports', path: '/guides/plugins/authoring/host-imports' },
+          { text: 'Guest languages', path: '/guides/plugins/authoring/guest-languages' },
+          { text: 'Lifecycle and hooks', path: '/guides/plugins/authoring/lifecycle-and-hooks' },
+          { text: 'Configuration', path: '/guides/plugins/authoring/configuration' },
+          { text: 'Contracts and dependencies', path: '/guides/plugins/authoring/contracts' },
+          { text: 'Custom instructions', path: '/guides/plugins/authoring/custom-instructions' },
+          { text: 'Custom types', path: '/guides/plugins/authoring/custom-types' },
+          { text: 'Testing', path: '/guides/plugins/authoring/testing' },
           { text: 'Publish a plugin', path: '/guides/plugins/publish' }
         ]),
         section('Release channels', '/guides/version-channels', [

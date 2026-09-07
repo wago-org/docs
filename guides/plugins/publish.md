@@ -6,56 +6,70 @@ description: Initialize, review, authenticate, and publish an open-source Wago p
 
 Package a reusable Wago plugin, preview exactly what will ship, then publish it to the public plugin registry.
 
+New plugin authors should finish [Write your first plugin](/guides/plugins/authoring/first-plugin) and [Test a plugin](/guides/plugins/authoring/testing) before tagging a release.
+
 Publishing requires a public GitHub repository and a Wago registry account. The dry run works before login.
 
-## Scaffold the plugin
+## Prepare the plugin
 
 ```sh
-wago init --plugin \
-  --module github.com/acme/wago-observability \
-  --name "Wago Observability" \
-  --description "Tracing hooks for Wago hosts." \
-  --version 0.1.0 \
-  --license Apache-2.0 \
-  --repository https://github.com/acme/wago-observability \
-  --yes
+wago init --plugin
 ```
 
-The scaffold creates a v1 manifest, one-method plugin, immutable
-`PluginDefinition`, explicit `/register` catalog, canonical
-`wago.providers.json`, and drift tests. A publishable manifest points to public source, includes an SPDX
-license and structured author, and keeps discovery metadata under `package`.
-Wago plugins are deliberately open source.
+Skip this command if the plugin already exists. The wizard collects the package metadata and creates the release files.
+
+A publishable manifest points to public source and keeps discovery metadata under `package`. Wago plugins are open source.
 
 Declare every privileged Wago integration as an exact Authority with a human
 reason and enforceable scope. Declare package requirements separately from
 typed, major-versioned Contracts. Provider catalogs return values from
 `Providers()`; they never self-register from `init`.
 
-## Authenticate
+## 1. Sign in
 
 ```sh
 wago auth login
-wago auth whoami
 ```
 
-## Snapshot, tag, and publish
+## 2. Refresh the catalog
 
 ```sh
 wago plugin catalog
-wago plugin catalog --check
-git add wago.json wago.providers.json register
-git commit -m "Prepare plugin v0.1.0"
-git tag v0.1.0
-git push origin HEAD v0.1.0
-wago plugin publish --dry-run --json
-wago plugin publish
 ```
 
-`wago plugin catalog` executes the current checkout's explicit catalog and
-writes its canonical, digest-bearing snapshot. Commit that file before tagging;
-`--check` is the CI-friendly drift gate. The provider artifact uses
-`https://wago.sh/v1/providers.schema.json`.
+Run the plugin tests. Then check that no definition changed during the test run:
+
+```sh
+wago plugin catalog --check
+```
+
+## 3. Commit and tag
+
+```sh
+git add wago.json wago.providers.json register
+git commit -m "Prepare plugin v0.1.0"
+```
+
+Tag that commit and push it:
+
+```sh
+git tag v0.1.0
+git push origin HEAD v0.1.0
+```
+
+The version in the tag, manifest, and definitions must match.
+
+## 4. Preview publication
+
+```sh
+wago plugin publish --dry-run
+```
+
+## 5. Publish
+
+```sh
+wago plugin publish
+```
 
 The publish dry run only prints the planned mutation. Actual publishing first
 checks the local catalog against the committed snapshot, then downloads the

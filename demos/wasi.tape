@@ -33,12 +33,10 @@ Enter
 Sleep 500ms
 Show
 
-Type "wago add github.com/wago-org/wasi"
+Type "wago add github.com/wago-org/wasi --allow-all --accept-contracts --no-input"
 Sleep 240ms
 Enter
-Sleep 7s
-Enter
-Sleep 6s
+Sleep 25s
 
 Type "curl -fsSL https://wago.sh/corpora/wasi-hello.wasm -o wasi-hello.wasm"
 Sleep 220ms

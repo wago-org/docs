@@ -6,6 +6,8 @@ description: Add, review, compose, update, lock, and publish Wago plugins withou
 
 Plugins provide host imports, lifecycle integrations, managed instances, module transforms, compiler extensions, and typed services for other plugins. They are Go code compiled into your runtime, so review them like any other native dependency.
 
+If you have not installed a plugin before, start with [Using plugins](/using-plugins) to add WASI and run a small module.
+
 Wago resolves explicit package dependencies and typed, major-versioned Contracts
 as one graph. It reviews exact scoped Plugin Authorities before downloading or
 building new code, then publishes the manifest, lock graph, and generated runtime
@@ -23,8 +25,11 @@ in one transaction.
   <Card title="Update and rebuild" href="/guides/plugins/update-and-rebuild" icon="fa-right-left">
     Check for updates, review changes, and reproduce the locked runtime.
   </Card>
-  <Card title="Publish a plugin" href="/guides/plugins/publish" icon="fa-play">
-    Create an open-source manifest, authenticate, and publish a release.
+  <Card title="Write a plugin" href="/guides/plugin-authoring" icon="fa-code">
+    Start with a working host import, then add lifecycle hooks, configuration, or Contracts.
+  </Card>
+  <Card title="Plugin FAQ" href="/guides/plugins/faq" icon="?">
+    Get short answers about builds, trust, scopes, lockfiles, and publishing.
   </Card>
 </CardGroup>
 

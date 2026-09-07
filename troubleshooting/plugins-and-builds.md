@@ -6,6 +6,8 @@ description: Diagnose Wago plugin resolution, Authority Grants, Contract binding
 
 Inspect the selected scope and resolved plugin graph before changing grants, lockfiles, offline mode, or compiler settings.
 
+If you need a concept explained rather than an error diagnosed, start with the [Plugin FAQ](/guides/plugins/faq).
+
 ## Inspect plugin state
 
 ```sh

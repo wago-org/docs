@@ -41,27 +41,8 @@ Sleep 260ms
 Enter
 Sleep 10s
 
-Type "wago version install"
+Type "wago version install --canary --profile standard --build normal --use --no-input"
 Sleep 240ms
 Enter
+Sleep 25s
 Sleep 5s
-Down
-Sleep 700ms
-Up
-Sleep 900ms
-Enter
-Sleep 2s
-Down
-Sleep 700ms
-Up
-Sleep 900ms
-Enter
-Sleep 2s
-Down
-Sleep 700ms
-Up
-Sleep 900ms
-Enter
-Sleep 12s
-Enter
-Sleep 3s

@@ -32,41 +32,23 @@ Commit both files. Review lockfile changes like a native dependency update.
 
 ```sh
 wago plugin tree
-wago plugin list --json
-wago plugin inspect github.com/JairusSW/pool
-wago plugin inspect github.com/wago-org/workers
 ```
 
-JSON listing and inspection are side-effect-free. They read immutable
-definitions and selections; they do not call plugin factories, registration,
-or lifecycle code.
+Then inspect the plugin you plan to change:
+
+```sh
+wago plugin inspect github.com/JairusSW/pool
+```
+
+Both commands are side-effect-free. They do not call plugin factories, registration, or lifecycle code.
 
 ## Review exact Authorities
 
-An Authority is one exact privileged Wago integration. Its dots group related
-names for display only—parents, wildcards, descendants, and future Authorities
-are never implied.
+An Authority grants one privileged Wago integration. Its dots group related names for display; they do not grant parents, wildcards, descendants, or future Authorities.
 
-| Authority | Authorizes |
-|---|---|
-| `host.import.define` | Define host functions in specifically granted import modules. |
-| `host.caller.identify` | Resolve an opaque identity during a synchronous host call. |
-| `host.arguments.read` | Read guest arguments owned by this Runtime. |
-| `runtime.close.observe` | Observe logical runtime close. |
-| `module.source.transform` | Replace source bytes before compilation. |
-| `module.compile.observe` | Correlate source processing with compile success or failure through opaque identities. |
-| `module.close.observe` | Observe logical close of a runtime-bound module. |
-| `instance.instantiate.intercept` | Reject a request, or attach fallible identity-keyed state after initialization and before the start function. |
-| `instance.instantiate.observe` | Observe successful or failed instantiation. |
-| `instance.close.observe` | Observe exact-instance logical close. |
-| `instance.invoke.intercept` | Inspect or reject a runtime-managed call. |
-| `instance.invoke.observe` | Observe results and traps. |
-| `instance.manage` | Create and own a bounded set of managed instances. |
-| `core.module.compile` | Compile core modules for an execution-model plugin. |
-| `core.instance.instantiate` | Instantiate and own core modules within reviewed limits. |
-| `core.funcref.create` | Create typed host function references. |
-| `compiler.type.define` | Define types in specifically granted namespaces. |
-| `compiler.instruction.define` | Define instructions in specifically granted Wasm modules. |
+Read the reason first, then check that the scope matches the job. Host imports should name only the guest import modules they define. Caller identity and guest re-entry are separate grants. Runtime, module, instance, and invocation hooks each have separate observe or intercept grants.
+
+Instance ownership, core compilation, core instantiation, and host function references carry reviewed resource limits. Compiler types are restricted to named namespaces; custom instructions are restricted to named Wasm modules. The authoring guide puts each exact Authority beside the API that uses it.
 
 Every request has a `required` or `optional` mode, a human explanation, and any
 scope Wago can enforce. A required Authority must have a grant, but you can
@@ -74,24 +56,15 @@ still narrow its modules or limits. An optional Authority may be denied
 entirely. A plugin that cannot operate under the reviewed scope fails before the
 plan commits.
 
-Interactive add and update show one consolidated review. For automation, name
-each decision and scope explicitly rather than accepting a wildcard policy:
+Interactive add and update show one consolidated review. To change an existing selection, open the grant editor:
 
 ```sh
-wago add github.com/wago-org/workers \
-  --allow instance.manage \
-  --scopes '{"github.com/wago-org/workers":{"instance.manage":{"maxInstances":4,"maxMemoryBytes":268435456}}}' \
-  --accept-contracts \
-  --no-input
+wago plugin grant github.com/wago-org/workers
 ```
 
-`--scopes` is one strict JSON object keyed first by full Plugin ID and then by
-exact Authority. Add and update may narrow direct or resolved transitive
-plugins; `wago plugin grant <full-plugin-id>` may revise only that exact existing
-selection. A scope override can never add a module, raise a requested limit, or
-name an Authority the definition did not request. Instance-owning limits are
-positive; zero does not mean unlimited. `maxMemoryBytes` bounds the aggregate
-declared maximum across all live instances owned through that handle.
+The editor cannot add a module, raise a requested limit, or grant an Authority the definition did not request. Instance-owning limits are positive; zero does not mean unlimited. `maxMemoryBytes` bounds the aggregate declared maximum across all live instances owned through that handle.
+
+For non-interactive builds, see [Automation and Go](/reference/configuration/automation-and-go).
 
 ## Typed cross-plugin Contracts
 

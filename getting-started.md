@@ -128,8 +128,8 @@ fib 30
   <Card title="Embed Wago in Go" href="/guides/embed-wago" icon="◇">
     Move from a shell command to a long-lived runtime inside your application.
   </Card>
-  <Card title="Add host capabilities" href="/guides/plugins" icon="✦">
-    Understand when a module needs WASI, another plugin, or a host function of your own.
+  <Card title="Add host capabilities" href="/using-plugins" icon="✦">
+    Install the WASI plugin, review its requested access, and run a module that uses it.
   </Card>
   <Card title="Fix a first-run problem" href="/troubleshooting" icon="?">
     Diagnose PATH, runtime selection, imports, exports, and stale precompiled files.

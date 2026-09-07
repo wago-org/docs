@@ -21,6 +21,12 @@ Inside your own Go module, add Wago with `go get github.com/wago-org/wago`. The 
   <Card title="Calls and guest state" href="/guides/embed/calls-and-state" icon="fa-play">
     Call typed exports, cancel work, and access memory and globals.
   </Card>
+  <Card title="Limits and policy" href="/guides/embed/limits-and-policy" icon="fa-code">
+    Bound compilation, instances, memory, capabilities, and call time.
+  </Card>
+  <Card title="Services and concurrency" href="/guides/embed/services-and-concurrency" icon="fa-right-left">
+    Reuse compiled code, isolate request state, and wait for shutdown.
+  </Card>
   <Card title="Imports and artifacts" href="/guides/embed/imports-and-artifacts" icon="fa-right-left">
     Supply host functions, load precompiled code, and close what you own.
   </Card>

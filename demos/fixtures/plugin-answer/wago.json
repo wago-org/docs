@@ -1,0 +1,21 @@
+{
+  "$schema": "https://wago.sh/v1/schema.json",
+  "package": {
+    "authors": [
+      {
+        "name": "Example Maintainer"
+      }
+    ],
+    "description": "A small host import for the Wago plugin tutorial.",
+    "engines": {
+      "wago": "*"
+    },
+    "license": "Apache-2.0",
+    "module": "github.com/acme/wago-answer",
+    "name": "Wago Answer",
+    "repository": "https://github.com/acme/wago-answer",
+    "stability": "experimental",
+    "version": "0.1.0"
+  },
+  "plugins": {}
+}

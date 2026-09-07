@@ -10,6 +10,20 @@ Set TypingSpeed 10ms
 Set CursorBlink false
 Set Theme { "name": "Wago", "black": "#161043", "red": "#ff9ec4", "green": "#74e0ad", "yellow": "#f3d37a", "blue": "#8c75ff", "magenta": "#c3a8ff", "cyan": "#75d8e8", "white": "#f3effd", "brightBlack": "#7d72b0", "brightRed": "#ffb4d2", "brightGreen": "#91ebc2", "brightYellow": "#ffe49a", "brightBlue": "#aa88fa", "brightMagenta": "#d6c3ff", "brightCyan": "#a4e9f2", "brightWhite": "#ffffff", "background": "#161043", "foreground": "#f3effd", "selection": "#443a8c", "cursor": "#c3a8ff" }
 
+Hide
+Type "export HOME=/tmp/wago-docs-install/home"
+Enter
+Type "export WAGO_HOME=/tmp/wago-docs-install/home/.wago"
+Enter
+Type "export WAGO_BIN_DIR=/tmp/wago-docs-install/home/.wago/bin"
+Enter
+Type "export PATH=/tmp/wago-docs-install/home/.wago/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin"
+Enter
+Type "clear"
+Enter
+Sleep 500ms
+Show
+
 Type "wago version switch"
 Sleep 220ms
 Enter
