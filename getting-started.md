@@ -82,7 +82,7 @@ wago fib.wasm 30
 You should see:
 
 ```text
-fib(30) = 832040
+832040
 ```
 
 ## 5. Try the everyday commands
