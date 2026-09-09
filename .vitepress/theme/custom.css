@@ -581,7 +581,7 @@ body {
   box-shadow: 0 0 10px rgba(255, 158, 196, 0.55);
 }
 
-.wago-version-banner[data-channel='nightly'] .wago-version-banner__signal {
+.wago-version-banner[data-channel='beta'] .wago-version-banner__signal {
   background: var(--wago-lilac);
   box-shadow: 0 0 10px rgba(195, 168, 255, 0.55);
 }

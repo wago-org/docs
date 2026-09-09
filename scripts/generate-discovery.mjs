@@ -139,7 +139,7 @@ Canonical documentation: ${origin}/
 Project website: https://wago.sh/
 Source repository: https://github.com/wago-org/wago
 
-Use the Markdown links below for low-noise technical content. Canary tracks the newest successful changes, nightly is refreshed daily, and v0.0.0 is the latest official release documented here.
+Use the Markdown links below for low-noise technical content. Canary tracks the newest successful changes, beta tracks the newest qualified prerelease, and stable versioned documentation appears after an official release.
 
 ${summarySections}
 

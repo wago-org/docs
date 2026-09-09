@@ -1,5 +1,5 @@
 ---
-description: Choose a Wago nightly, canary, or exact-commit runtime and switch between installed versions.
+description: Choose a Wago beta, canary, or exact-commit runtime and switch between installed versions.
 ---
 
 # Choose and switch release channels
@@ -10,7 +10,7 @@ Pick how fresh or repeatable the runtime should be, install that channel, and sw
 
 | Channel | Represents | Good fit |
 |---|---|---|
-| Nightly | Rolling published snapshot | Recent integrated work |
+| Beta | Rolling published snapshot | Recent integrated work |
 | Canary | Latest build from `main` | Newest fixes and experiments |
 | Commit | Exact source revision | Reproduction and bisecting |
 
@@ -27,7 +27,7 @@ wago version install
 Explicit:
 
 ```sh
-wago version install --nightly --use --no-input
+wago version install --beta --use --no-input
 wago version install --canary --use --no-input
 wago version install --version 4c28f4a32e67 --use --no-input
 ```

@@ -4,30 +4,13 @@
     {
       "label": "canary",
       "base": "",
-      "release": {
-        "tag": "canary-f46dfb5",
-        "sha": "f46dfb5383784e005d5180b866a2e693ad20dccc",
-        "publishedAt": "2026-08-12T16:49:05Z",
-        "docsSource": "454044c5c810a923359efa0b4713d1c703a22245"
-      }
+      "release": null
     },
     {
-      "label": "nightly",
-      "base": "/nightly",
-      "release": {
-        "tag": "nightly-20260812-7699749",
-        "sha": "76997498139a297bbc73f1c8b1d4b1b5cfd2d2be",
-        "publishedAt": "2026-08-12T07:24:05Z",
-        "docsSource": "454044c5c810a923359efa0b4713d1c703a22245"
-      }
-    }
-  ],
-  "releases": [
-    {
-      "label": "v0.0.0",
-      "base": "/v0.0.0",
-      "latest": true,
+      "label": "beta",
+      "base": "/beta",
       "release": null
     }
-  ]
+  ],
+  "releases": []
 }

@@ -34,7 +34,7 @@ wago version install --canary \
 For a small run-only tool:
 
 ```sh
-wago version install --nightly \
+wago version install --beta \
   --profile minimal \
   --build tiny \
   --use

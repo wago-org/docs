@@ -5,6 +5,8 @@ import { fileURLToPath } from 'node:url'
 const scriptRoot = resolve(process.env.DOCS_ROOT || dirname(fileURLToPath(import.meta.url)), process.env.DOCS_ROOT ? '.' : '..')
 const SHA_PATTERN = /^[0-9a-f]{40}$/
 const STABLE_TAG_PATTERN = /^v(\d+)\.(\d+)\.(\d+)$/
+const BETA_TAG_PATTERN = /^(v\d+\.\d+\.\d+)-beta\.(0|[1-9]\d*)$/
+const CANARY_TAG_PATTERN = /^v\d+\.\d+\.\d+-canary\.g[0-9a-f]{40}$/
 const SKIPPED_FILES = new Set(['README.md', 'components.md'])
 const SKIPPED_DIRECTORIES = new Set([
   '.docs-snapshots',
@@ -133,6 +135,7 @@ export async function syncRelease({ channel, release, root = scriptRoot }) {
   const recordedRelease = { ...release, docsSource }
 
   if (channel === 'canary') {
+    if (!CANARY_TAG_PATTERN.test(release.tag)) throw new Error(`Invalid canary release tag: ${release.tag}`)
     const canary = manifest.channels.find(({ label }) => label === 'canary')
     if (!canary) throw new Error('versions.json does not define the canary channel')
     if (isOlderThanCurrent(canary.release, recordedRelease)) return { changed: false, reason: 'stale' }
@@ -142,10 +145,11 @@ export async function syncRelease({ channel, release, root = scriptRoot }) {
     return { changed: true, reason: 'canary-updated' }
   }
 
-  if (channel === 'nightly') {
-    const nightly = manifest.channels.find(({ label }) => label === 'nightly')
-    if (!nightly) throw new Error('versions.json does not define the nightly channel')
-    if (isOlderThanCurrent(nightly.release, recordedRelease)) return { changed: false, reason: 'stale' }
+  if (channel === 'beta') {
+    if (!BETA_TAG_PATTERN.test(release.tag)) throw new Error(`Invalid beta release tag: ${release.tag}`)
+    const beta = manifest.channels.find(({ label }) => label === 'beta')
+    if (!beta) throw new Error('versions.json does not define the beta channel')
+    if (isOlderThanCurrent(beta.release, recordedRelease)) return { changed: false, reason: 'stale' }
 
     const sourceFiles = await collectSourceFiles(root, manifest)
     if (!sourceFiles.includes('index.md')) throw new Error('Canary documentation has no index.md')
@@ -154,7 +158,7 @@ export async function syncRelease({ channel, release, root = scriptRoot }) {
 
     try {
       const existing = JSON.parse(await readFile(join(snapshot, 'snapshot.json'), 'utf8'))
-      if (existing.release.sha !== release.sha || existing.release.tag !== release.tag) {
+      if (existing.release.sha !== release.sha) {
         throw new Error(`Snapshot ${release.sha} already exists with different provenance`)
       }
     } catch (error) {
@@ -162,13 +166,13 @@ export async function syncRelease({ channel, release, root = scriptRoot }) {
       await replaceTree(root, snapshot, sourceFiles, snapshotMetadata)
     }
 
-    if (JSON.stringify(nightly.release) === JSON.stringify(recordedRelease)) {
+    if (JSON.stringify(beta.release) === JSON.stringify(recordedRelease)) {
       return { changed: false, reason: 'current' }
     }
-    await copySnapshot(root, snapshot, join(root, 'nightly'))
-    nightly.release = recordedRelease
+    await copySnapshot(root, snapshot, join(root, 'beta'))
+    beta.release = recordedRelease
     await writeManifest(root, manifest)
-    return { changed: true, reason: 'nightly-promoted' }
+    return { changed: true, reason: 'beta-promoted' }
   }
 
   if (channel === 'release') {
@@ -180,13 +184,17 @@ export async function syncRelease({ channel, release, root = scriptRoot }) {
     } catch (error) {
       if (error.code === 'ENOENT') {
         throw new Error(
-          `Stable ${release.tag} targets ${release.sha}, but that commit has no nightly documentation snapshot`
+          `Stable ${release.tag} targets ${release.sha}, but that commit has no beta documentation snapshot`
         )
       }
       throw error
     }
     if (snapshotMetadata.release.sha !== release.sha) {
-      throw new Error(`Nightly snapshot provenance does not match ${release.sha}`)
+      throw new Error(`Beta snapshot provenance does not match ${release.sha}`)
+    }
+    const beta = BETA_TAG_PATTERN.exec(snapshotMetadata.release.tag)
+    if (!beta || beta[1] !== release.tag) {
+      throw new Error(`Stable ${release.tag} requires a beta snapshot from the same release series`)
     }
     const promotedRelease = {
       ...recordedRelease,
