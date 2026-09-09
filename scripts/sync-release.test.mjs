@@ -34,7 +34,7 @@ const release = {
 test('promotes canary to beta and the matching beta to stable', async () => {
   const root = await fixture()
   try {
-    const canary = { ...release, tag: `v1.2.3-canary.g${'a'.repeat(40)}` }
+    const canary = { ...release, tag: `v1.2.3-canary.g${'a'.repeat(7)}` }
     assert.equal((await syncRelease({ channel: 'canary', release: canary, root })).changed, true)
     assert.equal((await syncRelease({ channel: 'beta', release, root })).changed, true)
     assert.equal(await readFile(join(root, 'beta', 'index.md'), 'utf8'), '# Canary\n')
@@ -76,11 +76,11 @@ test('refuses stable docs without an exact beta snapshot', async () => {
 test('does not roll a channel back when an older event arrives late', async () => {
   const root = await fixture()
   try {
-    await syncRelease({ channel: 'canary', release: { ...release, tag: `v1.2.3-canary.g${'a'.repeat(40)}` }, root })
+    await syncRelease({ channel: 'canary', release: { ...release, tag: `v1.2.3-canary.g${'a'.repeat(7)}` }, root })
     const result = await syncRelease({
       channel: 'canary',
       release: {
-        tag: `v1.2.3-canary.g${'b'.repeat(40)}`,
+        tag: `v1.2.3-canary.g${'b'.repeat(7)}`,
         sha: 'b'.repeat(40),
         publishedAt: '2026-07-30T06:00:00Z'
       },
