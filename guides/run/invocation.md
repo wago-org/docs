@@ -10,7 +10,13 @@ Use the `fib.wasm` from [Getting started](/getting-started). It exports an ordin
 wago run --invoke fib fib.wasm 30
 ```
 
-Wago decodes and validates the module, compiles it to native code, creates an instance, calls the export, and prints the result.
+Wago decodes and validates the module, compiles it to native code, creates an instance, calls the export, and prints only the raw result:
+
+```text
+832040
+```
+
+Multiple results are comma-separated. Functions without results print nothing.
 
 ## Typed arguments
 

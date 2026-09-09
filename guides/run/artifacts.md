@@ -40,6 +40,10 @@ wago compile fib.wasm --invoke fib --target linux/arm64 -o fib-linux-arm64
 
 Wago supports Darwin, Linux, and Windows on AMD64 and ARM64. Core features, plugins, parallelism, and compiler settings are fixed at build time.
 
+Standalone builds use the `go` executable found on `PATH`. Pass `--tinygo` to
+use the `tinygo` executable from `PATH` for the final link. Wago does not install
+or select Go or TinyGo compiler versions.
+
 ## Select plugin scope
 
 ```sh
