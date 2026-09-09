@@ -5,20 +5,20 @@
       "label": "canary",
       "base": "",
       "release": {
-        "tag": "v0.1.0-canary.g2025c38",
-        "sha": "2025c38e687a904527c323ce274d0096fd071f55",
-        "publishedAt": "2026-09-09T20:05:03Z",
-        "docsSource": "69b3af12e475f9cf10c0c92cf916b46b8449ac67"
+        "tag": "v0.1.0-canary.g7b3efce",
+        "sha": "7b3efcedaa674c8dd05e91909daa0138476f107b",
+        "publishedAt": "2026-09-09T21:51:34Z",
+        "docsSource": "4299866bd8b9e196bc05f595b9b98e626c874490"
       }
     },
     {
       "label": "beta",
       "base": "/beta",
       "release": {
-        "tag": "v0.1.0-beta.1",
-        "sha": "31906f6acd172c2197dfee15cc2599b8292f2182",
-        "publishedAt": "2026-09-09T20:10:39Z",
-        "docsSource": "69b3af12e475f9cf10c0c92cf916b46b8449ac67"
+        "tag": "v0.1.0-beta.2",
+        "sha": "7b3efcedaa674c8dd05e91909daa0138476f107b",
+        "publishedAt": "2026-09-09T21:52:30Z",
+        "docsSource": "4299866bd8b9e196bc05f595b9b98e626c874490"
       }
     }
   ],
