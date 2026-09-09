@@ -6,7 +6,7 @@ const scriptRoot = resolve(process.env.DOCS_ROOT || dirname(fileURLToPath(import
 const SHA_PATTERN = /^[0-9a-f]{40}$/
 const STABLE_TAG_PATTERN = /^v(\d+)\.(\d+)\.(\d+)$/
 const BETA_TAG_PATTERN = /^(v\d+\.\d+\.\d+)-beta\.(0|[1-9]\d*)$/
-const CANARY_TAG_PATTERN = /^v\d+\.\d+\.\d+-canary\.g[0-9a-f]{40}$/
+const CANARY_TAG_PATTERN = /^v\d+\.\d+\.\d+-canary\.g[0-9a-f]{7}$/
 const SKIPPED_FILES = new Set(['README.md', 'components.md'])
 const SKIPPED_DIRECTORIES = new Set([
   '.docs-snapshots',

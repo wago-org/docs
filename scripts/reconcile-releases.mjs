@@ -28,7 +28,7 @@ async function normalizeRelease(release) {
 }
 
 function channelFor(release) {
-  if (release.prerelease && /^v\d+\.\d+\.\d+-canary\.g[0-9a-f]{40}$/.test(release.tag_name)) return 'canary'
+  if (release.prerelease && /^v\d+\.\d+\.\d+-canary\.g[0-9a-f]{7}$/.test(release.tag_name)) return 'canary'
   if (release.prerelease && /^v\d+\.\d+\.\d+-beta\.(0|[1-9]\d*)$/.test(release.tag_name)) return 'beta'
   if (!release.prerelease && /^v\d+\.\d+\.\d+$/.test(release.tag_name)) return 'release'
   return null
