@@ -10,7 +10,7 @@ Refresh rolling channels, pin exact runtime selections in CI, and keep automated
 
 ```sh
 wago version update canary
-wago version update nightly
+wago version update beta
 ```
 
 Use `--no-use` to refresh without switching and `--force` to reinstall a matching commit after a damaged cache or interrupted installation.

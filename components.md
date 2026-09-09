@@ -110,7 +110,7 @@ Execute the module and inspect its result.
 <Badge tone="green">stable</Badge>
 <Badge>experimental</Badge>
 <Badge tone="pink">deprecated</Badge>
-<Badge tone="muted">nightly</Badge>
+<Badge tone="muted">beta</Badge>
 
 ## Accordions
 
@@ -138,7 +138,7 @@ Record a completed plugin installation.
 
 ## Comparisons
 
-<ComparisonTable :columns="['Canary', 'Nightly', 'Official']">
+<ComparisonTable :columns="['Canary', 'Beta', 'Official']">
   <ComparisonRow feature="Cadence" :values="['Successful CI', 'Daily', 'Pinned']" />
   <ComparisonRow feature="Stability" :values="['Experimental', 'Preview', 'Stable']" />
   <ComparisonRow feature="Best for" :values="['Testing', 'Early access', 'Production']" />

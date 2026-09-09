@@ -28,8 +28,8 @@ async function normalizeRelease(release) {
 }
 
 function channelFor(release) {
-  if (release.prerelease && /^canary-[0-9a-f]{7}$/.test(release.tag_name)) return 'canary'
-  if (release.prerelease && /^nightly-\d{8}-[0-9a-f]{7}$/.test(release.tag_name)) return 'nightly'
+  if (release.prerelease && /^v\d+\.\d+\.\d+-canary\.g[0-9a-f]{40}$/.test(release.tag_name)) return 'canary'
+  if (release.prerelease && /^v\d+\.\d+\.\d+-beta\.(0|[1-9]\d*)$/.test(release.tag_name)) return 'beta'
   if (!release.prerelease && /^v\d+\.\d+\.\d+$/.test(release.tag_name)) return 'release'
   return null
 }
@@ -61,14 +61,14 @@ export async function reconcileLatestReleases() {
   const supported = releases.filter((release) => !release.draft && channelFor(release))
   const byPublishedAt = (a, b) => Date.parse(b.published_at) - Date.parse(a.published_at)
   const canary = supported.filter((release) => channelFor(release) === 'canary').sort(byPublishedAt)[0]
-  const nightly = supported.filter((release) => channelFor(release) === 'nightly').sort(byPublishedAt)[0]
+  const beta = supported.filter((release) => channelFor(release) === 'beta').sort(byPublishedAt)[0]
   const stable = supported
     .filter((release) => channelFor(release) === 'release')
     .sort((a, b) => Date.parse(a.published_at) - Date.parse(b.published_at))
 
   let changed = false
   if (canary) changed = (await sync('canary', canary)) || changed
-  if (nightly) changed = (await sync('nightly', nightly)) || changed
+  if (beta) changed = (await sync('beta', beta)) || changed
   for (const release of stable) changed = (await sync('release', release)) || changed
   return changed
 }

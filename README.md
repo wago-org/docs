@@ -45,20 +45,20 @@ edit, and it leaves hidden setup alone. The optimized GIFs are written to
 
 ## Documentation versions
 
-Canary documentation lives directly in the repository root. Other rolling
-channels and frozen releases live in directories such as `nightly/` and
-`v0.0.0/`.
+Canary documentation lives directly in the repository root. Qualified beta and
+stable documentation is generated into `beta/` and versioned directories.
 
 Only edit the canary documentation directly. Successful Wago releases update
 `versions.json` automatically:
 
 - canary records the code release associated with the root documentation;
-- nightly snapshots the root into both `nightly/` and an immutable commit-keyed
+- beta releases such as `v0.1.0-beta.1` snapshot the root into both `beta/` and an immutable commit-keyed
   source under `.docs-snapshots/`;
 - a stable `vMAJOR.MINOR.PATCH` release promotes the snapshot for the exact same
   Wago commit into its permanent version directory.
 
-Stable promotion fails if the code commit never received a nightly snapshot.
+Stable promotion fails if the code commit never received a beta snapshot for
+the same `vMAJOR.MINOR.PATCH` release series.
 This prevents a release from silently publishing documentation for different
 code. `.vitepress/versions.ts` reads `versions.json`, so the version selector,
 latest marker, provenance links, search index, sitemap, and LLM exports all move

@@ -2,7 +2,10 @@ import { access, readFile } from 'node:fs/promises'
 
 const output = new URL('../.vitepress/dist/', import.meta.url)
 const manifest = JSON.parse(await readFile(new URL('../versions.json', import.meta.url), 'utf8'))
-const versionBases = [...manifest.channels, ...manifest.releases]
+const versionBases = [
+  ...manifest.channels.filter(({ release }) => release),
+  ...manifest.releases
+]
   .map(({ base }) => base.replace(/^\//, ''))
   .filter(Boolean)
 const versionFiles = versionBases.flatMap((base) => [

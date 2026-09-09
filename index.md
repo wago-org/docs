@@ -24,7 +24,7 @@ We wanted Wago to be wonderful to use, so we've actually added quite a bit.
 
 - **Runtime and compiler**: execute Wasm, save precompiled `.wago` files, or build standalone executables for AMD64 and ARM64.
 - **Plugins**: extend the runtime with literally anything. Host capabilities, compiler hooks, and custom WebAssembly features all fit here.
-- **Manager**: install, swap, and update Wago runtimes across nightly, canary, or a specific commit.
+- **Manager**: install, swap, and update Wago runtimes across beta, canary, or a specific commit.
 - **Registry**: discover and publish extensions at [plugins.wago.sh](https://plugins.wago.sh).
 - **Go API**: compile once, create isolated instances, call typed exports, access guest state, and honor cancellation inside your own process.
 
