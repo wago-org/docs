@@ -4,12 +4,22 @@
     {
       "label": "canary",
       "base": "",
-      "release": null
+      "release": {
+        "tag": "v0.1.0-canary.g2025c38",
+        "sha": "2025c38e687a904527c323ce274d0096fd071f55",
+        "publishedAt": "2026-09-09T20:05:03Z",
+        "docsSource": "5a8c93cc75d9ae7947eb50f07848da6ba183c2a1"
+      }
     },
     {
       "label": "beta",
       "base": "/beta",
-      "release": null
+      "release": {
+        "tag": "v0.1.0-beta.1",
+        "sha": "2025c38e687a904527c323ce274d0096fd071f55",
+        "publishedAt": "2026-09-09T20:10:39Z",
+        "docsSource": "5a8c93cc75d9ae7947eb50f07848da6ba183c2a1"
+      }
     }
   ],
   "releases": []
