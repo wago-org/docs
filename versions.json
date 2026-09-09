@@ -8,7 +8,7 @@
         "tag": "v0.1.0-canary.g2025c38",
         "sha": "2025c38e687a904527c323ce274d0096fd071f55",
         "publishedAt": "2026-09-09T20:05:03Z",
-        "docsSource": "5a8c93cc75d9ae7947eb50f07848da6ba183c2a1"
+        "docsSource": "69b3af12e475f9cf10c0c92cf916b46b8449ac67"
       }
     },
     {
@@ -16,9 +16,9 @@
       "base": "/beta",
       "release": {
         "tag": "v0.1.0-beta.1",
-        "sha": "2025c38e687a904527c323ce274d0096fd071f55",
+        "sha": "31906f6acd172c2197dfee15cc2599b8292f2182",
         "publishedAt": "2026-09-09T20:10:39Z",
-        "docsSource": "5a8c93cc75d9ae7947eb50f07848da6ba183c2a1"
+        "docsSource": "69b3af12e475f9cf10c0c92cf916b46b8449ac67"
       }
     }
   ],
