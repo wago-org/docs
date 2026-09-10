@@ -5,10 +5,10 @@
       "label": "canary",
       "base": "",
       "release": {
-        "tag": "v0.1.0-canary.g81feb65",
-        "sha": "81feb65e87ed9401166dc942609110b29d17aa90",
-        "publishedAt": "2026-09-10T14:16:16Z",
-        "docsSource": "bbb1c2893ee2d71bcabbef171642e44fb6eb4942"
+        "tag": "v0.1.0-canary.g666cd54",
+        "sha": "666cd54ec8fc935d254f383f2e38d3a123e0fd33",
+        "publishedAt": "2026-09-10T15:22:10Z",
+        "docsSource": "4976031f41d4d716c61c417bbc8f7f4a5e429efd"
       }
     },
     {
