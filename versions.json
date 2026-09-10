@@ -15,10 +15,10 @@
       "label": "beta",
       "base": "/beta",
       "release": {
-        "tag": "v0.1.0-beta.2",
-        "sha": "3ca7525fa1f3e8962a4a46525883908ce0d44032",
-        "publishedAt": "2026-09-09T21:52:30Z",
-        "docsSource": "c1daa4f10a81e5f977f5ae9d50c5e5105dc785d8"
+        "tag": "v0.1.0-beta.7",
+        "sha": "d5c0648dd39a6e401a16eee82305311d1b9993ed",
+        "publishedAt": "2026-09-10T23:05:33Z",
+        "docsSource": "fcdfcaaed8e7a5d4c0504ec2e5b3dfad73bc4b44"
       }
     }
   ],
