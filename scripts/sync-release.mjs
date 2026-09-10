@@ -156,15 +156,18 @@ export async function syncRelease({ channel, release, root = scriptRoot }) {
     const snapshot = join(root, '.docs-snapshots', release.sha)
     const snapshotMetadata = { schemaVersion: 1, release: recordedRelease, files: sourceFiles }
 
+    let refreshSnapshot = false
     try {
       const existing = JSON.parse(await readFile(join(snapshot, 'snapshot.json'), 'utf8'))
       if (existing.release.sha !== release.sha) {
         throw new Error(`Snapshot ${release.sha} already exists with different provenance`)
       }
+      refreshSnapshot = existing.release.docsSource !== docsSource
     } catch (error) {
       if (error.code !== 'ENOENT') throw error
-      await replaceTree(root, snapshot, sourceFiles, snapshotMetadata)
+      refreshSnapshot = true
     }
+    if (refreshSnapshot) await replaceTree(root, snapshot, sourceFiles, snapshotMetadata)
 
     if (JSON.stringify(beta.release) === JSON.stringify(recordedRelease)) {
       return { changed: false, reason: 'current' }

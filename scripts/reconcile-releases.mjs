@@ -19,7 +19,10 @@ async function github(path) {
 }
 
 async function normalizeRelease(release) {
-  const commit = await github(`/commits/${encodeURIComponent(release.target_commitish)}`)
+  // target_commitish is commonly the mutable branch name even when the release
+  // was created from an immutable tag. Resolve the tag itself so documentation
+  // provenance cannot drift when that branch advances.
+  const commit = await github(`/commits/${encodeURIComponent(release.tag_name)}`)
   return {
     tag: release.tag_name,
     sha: commit.sha,

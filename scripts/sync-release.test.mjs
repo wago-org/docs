@@ -73,6 +73,30 @@ test('refuses stable docs without an exact beta snapshot', async () => {
   }
 })
 
+test('refreshes a beta snapshot when docs change for the same code commit', async () => {
+  const root = await fixture()
+  try {
+    await syncRelease({ channel: 'beta', release, root })
+    await writeFile(join(root, 'index.md'), '# Refreshed canary\n')
+
+    const refreshed = {
+      ...release,
+      tag: 'v1.2.3-beta.2',
+      publishedAt: '2026-07-31T07:00:00Z',
+      docsSource: 'new-docs-commit'
+    }
+    assert.equal((await syncRelease({ channel: 'beta', release: refreshed, root })).changed, true)
+    assert.equal(await readFile(join(root, 'beta', 'index.md'), 'utf8'), '# Refreshed canary\n')
+
+    const snapshot = JSON.parse(
+      await readFile(join(root, '.docs-snapshots', release.sha, 'snapshot.json'), 'utf8')
+    )
+    assert.equal(snapshot.release.docsSource, 'new-docs-commit')
+  } finally {
+    await rm(root, { recursive: true, force: true })
+  }
+})
+
 test('does not roll a channel back when an older event arrives late', async () => {
   const root = await fixture()
   try {
