@@ -84,13 +84,15 @@ export async function reconcileRequestedRelease({ channel, tag, sha }) {
 }
 
 export async function reconcileLatestReleases() {
-	const [tags, releases] = await Promise.all([
+	const [tags, commits, releases] = await Promise.all([
 		github('/tags?per_page=100&page=1'),
+		github('/commits?sha=main&per_page=100&page=1'),
 		github('/releases?per_page=100')
 	])
   const supported = releases.filter((release) => !release.draft && channelFor(release))
   const byPublishedAt = (a, b) => Date.parse(b.published_at) - Date.parse(a.published_at)
-	const canary = tags.find(({ name }) => isCanaryTag(name))
+	const canaryByCommit = new Map(tags.filter(({ name }) => isCanaryTag(name)).map((tag) => [tag.commit.sha, tag]))
+	const canary = commits.map(({ sha }) => canaryByCommit.get(sha)).find(Boolean)
   const beta = supported.filter((release) => channelFor(release) === 'beta').sort(byPublishedAt)[0]
   const stable = supported
     .filter((release) => channelFor(release) === 'release')
