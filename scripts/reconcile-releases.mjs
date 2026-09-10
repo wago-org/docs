@@ -27,11 +27,26 @@ async function normalizeRelease(release) {
   }
 }
 
+async function normalizeCanaryTag(tag, sha) {
+  const commit = await github(`/commits/${encodeURIComponent(sha)}`)
+  if (!commit.sha.startsWith(tag.slice(-7))) {
+    throw new Error(`Canary tag ${tag} does not match ${commit.sha}`)
+  }
+  return {
+    tag,
+    sha: commit.sha,
+    publishedAt: commit.commit?.committer?.date || commit.commit?.author?.date
+  }
+}
+
 function channelFor(release) {
-  if (release.prerelease && /^v\d+\.\d+\.\d+-canary\.g[0-9a-f]{7}$/.test(release.tag_name)) return 'canary'
   if (release.prerelease && /^v\d+\.\d+\.\d+-beta\.(0|[1-9]\d*)$/.test(release.tag_name)) return 'beta'
   if (!release.prerelease && /^v\d+\.\d+\.\d+$/.test(release.tag_name)) return 'release'
   return null
+}
+
+function isCanaryTag(tag) {
+  return /^v\d+\.\d+\.\d+-canary\.g[0-9a-f]{7}$/.test(tag)
 }
 
 async function sync(channel, release) {
@@ -42,6 +57,18 @@ async function sync(channel, release) {
 }
 
 export async function reconcileRequestedRelease({ channel, tag, sha }) {
+	if (channel === 'canary') {
+		if (!isCanaryTag(tag)) throw new Error(`Tag ${tag} is not a supported canary tag`)
+		const ref = await github(`/git/ref/tags/${encodeURIComponent(tag)}`)
+		if (ref.object?.type !== 'commit') throw new Error(`Canary tag ${tag} is not a lightweight commit tag`)
+		const normalized = await normalizeCanaryTag(tag, ref.object.sha)
+		if (sha && normalized.sha !== sha) {
+			throw new Error(`Dispatch SHA ${sha} does not match ${tag} at ${normalized.sha}`)
+		}
+		const result = await syncRelease({ channel, release: normalized })
+		console.log(`${result.changed ? 'Updated' : 'Skipped'} ${channel} ${tag}: ${result.reason}`)
+		return result.changed
+	}
   const release = await github(`/releases/tags/${encodeURIComponent(tag)}`)
   const actualChannel = channelFor(release)
   if (actualChannel !== channel) {
@@ -57,17 +84,25 @@ export async function reconcileRequestedRelease({ channel, tag, sha }) {
 }
 
 export async function reconcileLatestReleases() {
-  const releases = await github('/releases?per_page=100')
+	const [tags, releases] = await Promise.all([
+		github('/tags?per_page=100&page=1'),
+		github('/releases?per_page=100')
+	])
   const supported = releases.filter((release) => !release.draft && channelFor(release))
   const byPublishedAt = (a, b) => Date.parse(b.published_at) - Date.parse(a.published_at)
-  const canary = supported.filter((release) => channelFor(release) === 'canary').sort(byPublishedAt)[0]
+	const canary = tags.find(({ name }) => isCanaryTag(name))
   const beta = supported.filter((release) => channelFor(release) === 'beta').sort(byPublishedAt)[0]
   const stable = supported
     .filter((release) => channelFor(release) === 'release')
     .sort((a, b) => Date.parse(a.published_at) - Date.parse(b.published_at))
 
   let changed = false
-  if (canary) changed = (await sync('canary', canary)) || changed
+	if (canary) {
+		const normalized = await normalizeCanaryTag(canary.name, canary.commit.sha)
+		const result = await syncRelease({ channel: 'canary', release: normalized })
+		console.log(`${result.changed ? 'Updated' : 'Skipped'} canary ${normalized.tag}: ${result.reason}`)
+		changed = result.changed || changed
+	}
   if (beta) changed = (await sync('beta', beta)) || changed
   for (const release of stable) changed = (await sync('release', release)) || changed
   return changed
