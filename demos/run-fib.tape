@@ -21,6 +21,12 @@ Type "echo IyEvYmluL3NoCmNwIC90bXAvd2Fnby1kb2NzLXJ1bi9maWItc291cmNlLndhc20gZmliL
 Enter
 Type "chmod +x /tmp/wago-docs-run/bin/curl"
 Enter
+Type "export HOME=/tmp/wago-docs-install/home"
+Enter
+Type "export WAGO_HOME=/tmp/wago-docs-install/home/.wago"
+Enter
+Type "export WAGO_BIN_DIR=/tmp/wago-docs-install/home/.wago/bin"
+Enter
 Type "export PATH=/tmp/wago-docs-run/bin:/tmp/wago-docs-install/home/.wago/bin:/Users/work/.wago/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin"
 Enter
 Type "cd /tmp/wago-docs-run"
@@ -48,7 +54,7 @@ Sleep 220ms
 Enter
 Sleep 3s
 
-Type "wago compile --invoke fib fib.wasm"
+Type "wago compile fib.wasm"
 Sleep 220ms
 Enter
 Sleep 6s

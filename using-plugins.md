@@ -38,19 +38,21 @@ This creates a `wago.json` manifest. Keeping the plugin local makes the project'
 
 ## 2. Add WASI
 
-[WASI](https://wasi.dev/) defines system-style interfaces that WebAssembly modules can import. Wago provides those interfaces through the official `github.com/wago-org/wasi` plugin:
+[WASI](https://wasi.dev/) defines system-style interfaces that WebAssembly modules can import. Wago provides those interfaces through the official [wago-org/wasi](https://plugins.wago.sh/wago-org/wasi) plugin:
 
 ```sh
-wago add github.com/wago-org/wasi
+wago add wago-org/wasi
 ```
 
-When Wago asks which packages to include, keep **Preview 1** selected for this example. Review the source, dependencies, and requested Authorities shown in the next prompt before accepting them. Plugins are native Go dependencies; Authority grants limit their access to privileged Wago integration APIs, but they do not sandbox arbitrary plugin code.
+Keep **Preview 1** selected for this example. Review the source, dependencies, and requested Authorities before accepting them. Plugins are native Go dependencies; grants control access to privileged Wago integration APIs, but they do not sandbox arbitrary plugin code.
 
-After the build completes, inspect what Wago selected:
+Now, check to make sure it is installed:
 
 ```sh
-wago plugin tree
+wago plugins list
 ```
+
+> A lot of the subcommands have aliases so that it reads naturally. For example, `wago plugin` and `wago plugins` both work the same way.
 
 The command updates `wago.json`, writes the complete resolved graph and reviewed grants to `wago-lock.json`, and builds a project runtime. Commit both JSON files with your project.
 
@@ -79,6 +81,22 @@ You should see:
 ```text
 hello from wasi
 ```
+
+You can even compile it to a standalone executable:
+
+::: code-group
+
+```bash [macOS / Linux]
+wago compile wasi-hello.wasm -o wasi-hello
+./wasi-hello
+```
+
+```powershell [Windows]
+wago compile wasi-hello.wasm -o wasi-hello.exe
+.\wasi-hello.exe
+```
+
+:::
 
 Wago finds the nearest `wago.json`, selects its project runtime, and uses the WASI plugin to satisfy the module's import.
 

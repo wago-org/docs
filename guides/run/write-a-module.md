@@ -18,7 +18,9 @@ This tutorial builds the same `add(i32, i32) -> i32` export three ways. Pick one
   (func (export "add") (param i32 i32) (result i32)
     local.get 0
     local.get 1
-    i32.add))
+    i32.add
+  )
+)
 ```
 
 Save this as `add.wat`.

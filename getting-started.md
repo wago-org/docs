@@ -10,30 +10,25 @@ This guide takes you from an empty machine to a successful WebAssembly call. You
 
 ## 1. Install the manager
 
-<Tabs sync="install-os">
-  <Tab title="macOS / Linux">
+::: code-group
 
-```sh
+```bash [Go CLI]
+go install github.com/wago-org/wago@main
+```
+
+```bash [macOS / Linux]
 curl -fsSL https://install.wago.sh/unix | sh
 ```
 
-  </Tab>
-  <Tab title="Windows">
-
-In PowerShell:
-
-```powershell
+```powershell [PowerShell]
 irm https://install.wago.sh/ps | iex
 ```
 
-In Command Prompt:
-
-```cmd
+```cmd [Command Prompt]
 curl -fsSL https://install.wago.sh/cmd | cmd
 ```
 
-  </Tab>
-</Tabs>
+:::
 
 ```sh
 wago --version
@@ -69,7 +64,7 @@ You can inspect its exports before running it:
 wago module exports fib.wasm
 ```
 
-The module exports a `fib (i32) -> i32` function. Without `--invoke`, Wago selects `_start`, then `main`, then the module's only exported function. If several exported functions remain, name one with `--invoke` or `-e`.
+The module exports a `fib (i32) -> i32` function. Without `--invoke`, Wago selects `_start`, then `main`, then the module's only exported function—in this case, `fib`. If several exported functions remain, name one with `--invoke` or `-e`.
 
 ## 4. Run it
 
@@ -87,37 +82,29 @@ You should see:
 
 ## 5. Try the everyday commands
 
+> Wago uses either [Go 1.22 or newer](https://go.dev/) or [TinyGo 0.41.1](https://tinygo.org/getting-started/install/), the tested TinyGo baseline, to link standalone executables. Make sure one of them is available on `PATH`.
+
 Create a standalone executable:
 
 ```sh
-wago compile --invoke fib fib.wasm
+wago compile fib.wasm
 ```
 
-Standalone executables default to `_start`, so `--invoke fib` bakes the library-style function into this one.
+::: code-group
 
-<Tabs sync="run-os">
-  <Tab title="macOS / Linux">
-
-```sh
+```bash [macOS / Linux]
 ./fib 30
 ```
 
-  </Tab>
-  <Tab title="PowerShell">
-
-```powershell
-.\fib 30
+```powershell [PowerShell]
+.\fib.exe 30
 ```
 
-  </Tab>
-  <Tab title="Command Prompt">
-
-```cmd
-fib 30
+```cmd [Command Prompt]
+fib.exe 30
 ```
 
-  </Tab>
-</Tabs>
+:::
 
 ## Where to go next
 

@@ -21,6 +21,12 @@ Type "echo IyEvYmluL3NoCmNwIC90bXAvd2Fnby1kb2NzLXdhc2kvd2FzaS1zb3VyY2Uud2FzbSB3Y
 Enter
 Type "chmod +x /tmp/wago-docs-wasi/bin/curl"
 Enter
+Type "export HOME=/tmp/wago-docs-install/home"
+Enter
+Type "export WAGO_HOME=/tmp/wago-docs-install/home/.wago"
+Enter
+Type "export WAGO_BIN_DIR=/tmp/wago-docs-install/home/.wago/bin"
+Enter
 Type "export PATH=/tmp/wago-docs-wasi/bin:/tmp/wago-docs-install/home/.wago/bin:/Users/work/.wago/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin"
 Enter
 Type "cd /tmp/wago-docs-wasi"
@@ -33,10 +39,15 @@ Enter
 Sleep 500ms
 Show
 
-Type "wago add github.com/wago-org/wasi --allow-all --accept-contracts --no-input"
+Type "wago add wago-org/wasi --allow-all --accept-contracts --no-input"
 Sleep 240ms
 Enter
 Sleep 25s
+
+Type "wago plugins list"
+Sleep 220ms
+Enter
+Sleep 3s
 
 Type "curl -fsSL https://wago.sh/corpora/wasi-hello.wasm -o wasi-hello.wasm"
 Sleep 220ms

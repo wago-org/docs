@@ -136,9 +136,9 @@ if (!rawHomepage.includes('### [Extend Wago with plugins](/using-plugins)')) {
 }
 
 const gettingStarted = await readFile(new URL('getting-started.html', output), 'utf8')
-for (const os of ['macOS / Linux', 'Windows']) {
-  if (!gettingStarted.includes(`>${os}</button>`)) {
-    throw new Error(`Getting started did not render the ${os} install tab`)
+for (const option of ['Go CLI', 'macOS / Linux', 'PowerShell', 'Command Prompt']) {
+  if (!gettingStarted.includes(`data-title="${option}"`)) {
+    throw new Error(`Getting started did not render the ${option} install option`)
   }
 }
 
@@ -153,7 +153,7 @@ if (!rawGettingStarted.includes('### [Add host capabilities](/using-plugins)')) 
 const usingPlugins = await readFile(new URL('using-plugins.html', output), 'utf8')
 for (const marker of [
   '/demos/wasi.gif',
-  'github.com/wago-org/wasi',
+  'plugins.wago.sh/wago-org/wasi',
   'https://wago.sh/corpora/wasi-hello.wasm',
   'href="/guides/plugins/install-and-scope"'
 ]) {
@@ -163,7 +163,7 @@ for (const marker of [
 }
 
 const rawUsingPlugins = await readFile(new URL('raw/using-plugins.md', output), 'utf8')
-for (const marker of ['# Using plugins', 'Go 1.22 or newer', 'wago run wasi-hello.wasm']) {
+for (const marker of ['# Using plugins', 'Go 1.22 or newer', 'wago add wago-org/wasi', 'wago run wasi-hello.wasm']) {
   if (!rawUsingPlugins.includes(marker)) {
     throw new Error(`Using plugins Markdown is missing ${marker}`)
   }
