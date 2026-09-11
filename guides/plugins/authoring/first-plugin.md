@@ -96,4 +96,4 @@ wago plugin catalog --check
 
 ![Generating and checking a Wago plugin catalog](/demos/plugin-authoring.gif)
 
-The complete runnable version is [examples/08-custom-plugin](https://github.com/wago-org/wago/tree/main/examples/08-custom-plugin). Next, read [Definitions and providers](/guides/plugins/authoring/definitions-and-providers).
+The complete runnable version is [examples/08-custom-plugin](https://github.com/wago-org/wago/tree/main/examples/08-custom-plugin). Next, read [Definitions and providers](./definitions-and-providers).

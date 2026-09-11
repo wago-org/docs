@@ -2,6 +2,7 @@ import { mkdir, readFile, rm, writeFile } from 'node:fs/promises'
 import { basename, dirname, join, resolve, sep } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { glob } from 'node:fs/promises'
+import { publishedCanaryPath, scopeVersionedMarkdownLinks, versionDirectory } from './version-routing.mjs'
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const contentRoot = root
@@ -12,11 +13,11 @@ const tagline = 'A wonderfully quick, compact, and extensible WebAssembly runtim
 const versionManifest = JSON.parse(await readFile(join(root, 'versions.json'), 'utf8'))
 const versionSections = [
   ...versionManifest.channels.map(({ label, base }) => ({
-    base: base.replace(/^\//, ''),
+    base: versionDirectory(base),
     section: `${label[0].toUpperCase()}${label.slice(1)} channel`
   })),
   ...versionManifest.releases.map(({ label, base }) => ({
-    base: base.replace(/^\//, ''),
+    base: versionDirectory(base),
     section: `Official ${label}`
   }))
 ]
@@ -93,11 +94,15 @@ for await (const path of glob('**/*.md', { cwd: contentRoot })) {
 }
 paths.sort((a, b) => a.localeCompare(b, 'en'))
 
-const pages = await Promise.all(paths.map(async (path) => {
-  const source = await readFile(join(contentRoot, path), 'utf8')
-  const title = titleFrom(source, path)
+const pages = await Promise.all(paths.map(async (sourcePath) => {
+  const path = publishedCanaryPath(versionManifest, sourcePath)
+  const source = await readFile(join(contentRoot, sourcePath), 'utf8')
+  const title = titleFrom(source, sourcePath)
   const route = routeFor(path)
-  const cleaned = cleanMarkdown(source)
+  const versionBase = versionMatchers.find(({ base }) => path.startsWith(`${base}/`))?.base
+  const cleaned = versionBase
+    ? scopeVersionedMarkdownLinks(cleanMarkdown(source), `/${versionBase}`)
+    : cleanMarkdown(source)
   const headings = [...cleaned.matchAll(/^#{2,3}\s+(.+)$/gm)].map((match) => match[1].trim())
   return {
     path,

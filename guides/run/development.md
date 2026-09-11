@@ -56,6 +56,6 @@ Change one variable at a time and measure your workload. Do not ship an experime
 
 <Accordion title="Where should a lasting override live?">
 
-Put project-wide overrides under `settings` in `wago.json`. Keep a one-off diagnosis on the command line. See [Configuration](/reference/configuration).
+Put project-wide overrides under `settings` in `wago.json`. Keep a one-off diagnosis on the command line. See [Configuration](../../reference/configuration).
 
 </Accordion>

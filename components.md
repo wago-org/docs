@@ -69,10 +69,10 @@ Tabs with the same `sync` value remember the reader's choice and stay synchroniz
 ## Cards
 
 <CardGroup>
-  <Card title="Get started" href="/getting-started" icon="→">
+  <Card title="Get started" href="/canary/getting-started" icon="→">
     Install Wago and run your first module.
   </Card>
-  <Card title="Configuration" href="/reference/configuration" icon="⚙">
+  <Card title="Configuration" href="/canary/reference/configuration" icon="⚙">
     Learn the available project settings.
   </Card>
   <Card title="Plugin registry" href="https://plugins.wago.sh/" icon="✦">

@@ -3,11 +3,18 @@ import { existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { docsVersions } from './versions'
+import { publishedCanaryPath, scopeVersionedHtmlLinks, versionDirectory } from '../scripts/version-routing.mjs'
 
 const origin = 'https://docs.wago.sh'
 const tagline = 'A wonderfully quick, compact, and extensible WebAssembly runtime for Go'
 const socialImage = 'https://wago.sh/assets/og-card.png'
 const sourceRoot = fileURLToPath(new URL('..', import.meta.url))
+const canaryBase = docsVersions.find(({ label, group }) => label === 'canary' && group === 'channel')?.base
+if (!canaryBase) throw new Error('versions.json must publish canary documentation at a non-root base')
+
+function rewriteCanaryRoute(relativePath: string) {
+  return publishedCanaryPath(docsVersions, relativePath)
+}
 
 function routeFor(relativePath: string) {
   const withoutExtension = relativePath.replace(/\.md$/, '')
@@ -25,7 +32,10 @@ function sidebarFor(base: string) {
   const link = (path: string) => `${base}${path}` || '/'
   const pageExists = (path: string) => {
     const route = `${base}${path}` || '/'
-    const source = route.endsWith('/') ? `${route}index.md` : `${route}.md`
+    const publishedSource = route.endsWith('/') ? `${route}index.md` : `${route}.md`
+    const source = base === canaryBase
+      ? publishedSource.slice(canaryBase.length)
+      : publishedSource
     return existsSync(join(sourceRoot, source.replace(/^\//, '')))
   }
   const available = (items: { text: string; path: string }[]) =>
@@ -121,7 +131,7 @@ function sidebarFor(base: string) {
         ])
       ].filter((item) => item !== null)
     },
-    ...(base === ''
+    ...(base === canaryBase
       ? [
           {
             text: 'Authoring',
@@ -136,6 +146,7 @@ export default defineConfig({
   lang: 'en-US',
   title: 'Wago',
   description: 'Documentation for Wago',
+  rewrites: rewriteCanaryRoute,
   srcExclude: ['README.md', '.docs-snapshots/**', '.docs-sync-*/**', 'public/**/*.md'],
   cleanUrls: true,
   lastUpdated: true,
@@ -144,6 +155,7 @@ export default defineConfig({
     hostname: origin,
     transformItems: (items) => [
       ...items,
+      { url: '/', changefreq: 'weekly', priority: 1 },
       { url: '/llms.txt', changefreq: 'weekly', priority: 0.7 },
       { url: '/llms-full.txt', changefreq: 'weekly', priority: 0.6 },
       { url: '/data/docs.json', changefreq: 'weekly', priority: 0.5 }
@@ -240,6 +252,15 @@ export default defineConfig({
       ['meta', { name: 'twitter:image', content: socialImage }],
       ['script', { type: 'application/ld+json' }, JSON.stringify(structuredData).replace(/</g, '\\u003c')]
     ]
+  },
+
+  transformHtml(code, _id, context) {
+    const relativePath = context.pageData.relativePath
+    const version = docsVersions.find(({ base }) => {
+      const directory = versionDirectory(base)
+      return relativePath === `${directory}/index.md` || relativePath.startsWith(`${directory}/`)
+    })
+    return version ? scopeVersionedHtmlLinks(code, version.base) : code
   },
 
   themeConfig: {

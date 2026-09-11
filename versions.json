@@ -3,7 +3,7 @@
   "channels": [
     {
       "label": "canary",
-      "base": "",
+      "base": "/canary",
       "release": {
         "tag": "v0.1.0-canary.ge844da4",
         "sha": "e844da4d356cd981af9e1da278519c35ddc052df",

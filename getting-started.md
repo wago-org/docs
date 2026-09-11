@@ -101,16 +101,16 @@ fib.exe 30
 ## Where to go next
 
 <CardGroup>
-  <Card title="Use the CLI well" href="/guides/run-a-module" icon="→">
+  <Card title="Use the CLI well" href="./guides/run-a-module" icon="→">
     Pick exports, pass typed arguments, watch files, inspect imports, and precompile modules.
   </Card>
-  <Card title="Embed Wago in Go" href="/guides/embed-wago" icon="◇">
+  <Card title="Embed Wago in Go" href="./guides/embed-wago" icon="◇">
     Move from a shell command to a long-lived runtime inside your application.
   </Card>
-  <Card title="Add host capabilities" href="/using-plugins" icon="✦">
+  <Card title="Add host capabilities" href="./using-plugins" icon="✦">
     Install the WASI plugin, review its requested access, and run a module that uses it.
   </Card>
-  <Card title="Fix a first-run problem" href="/troubleshooting" icon="?">
+  <Card title="Fix a first-run problem" href="./troubleshooting" icon="?">
     Diagnose PATH, runtime selection, imports, exports, and stale precompiled files.
   </Card>
 </CardGroup>

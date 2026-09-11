@@ -14,7 +14,7 @@ In this guide, you will add WASI Preview 1 support to a local project and run a 
 
 You need:
 
-- Wago installed with a runtime selected. Complete [Getting started](/getting-started) first if `wago --version` does not show an active runtime.
+- Wago installed with a runtime selected. Complete [Getting started](./getting-started) first if `wago --version` does not show an active runtime.
 - [Go 1.22 or newer](https://go.dev/doc/install). Wago plugins are Go modules compiled into your runtime.
 
 Check both tools from your terminal:
@@ -103,19 +103,19 @@ Wago finds the nearest `wago.json`, selects its project runtime, and uses the WA
 ## Where to go next
 
 <CardGroup>
-  <Card title="Install and choose scope" href="/guides/plugins/install-and-scope" icon="fa-plug">
+  <Card title="Install and choose scope" href="./guides/plugins/install-and-scope" icon="fa-plug">
     Learn when to use local, global, or bare plugin selection.
   </Card>
-  <Card title="Review grants and lockfiles" href="/guides/plugins/grants-and-lockfiles" icon="fa-code">
+  <Card title="Review grants and lockfiles" href="./guides/plugins/grants-and-lockfiles" icon="fa-code">
     Understand Authorities, guest capabilities, dependency graphs, and reproducible builds.
   </Card>
-  <Card title="Write your own plugin" href="/guides/plugins/authoring/first-plugin" icon="fa-right-left">
+  <Card title="Write your own plugin" href="./guides/plugins/authoring/first-plugin" icon="fa-right-left">
     Scaffold a Go module and add a host import from definition to catalog.
   </Card>
   <Card title="Browse plugins" href="https://plugins.wago.sh" icon="↗">
     Find published host capabilities and runtime extensions.
   </Card>
-  <Card title="Troubleshoot a build" href="/troubleshooting/plugins-and-builds" icon="?">
+  <Card title="Troubleshoot a build" href="./troubleshooting/plugins-and-builds" icon="?">
     Fix missing Go tools, denied grants, stale lockfiles, and plugin build failures.
   </Card>
 </CardGroup>

@@ -8,7 +8,7 @@
   },
   "scripts": {
     "docs:demos": "bash scripts/record-demos.sh",
-    "docs:prepare": "node scripts/generate-discovery.mjs",
+    "docs:prepare": "node scripts/generate-root-redirect.mjs && node scripts/generate-discovery.mjs",
     "docs:test": "node --test scripts/*.test.mjs",
     "docs:dev": "npm run docs:prepare && vitepress dev .",
     "docs:build": "npm run docs:prepare && vitepress build .",

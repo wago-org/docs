@@ -1,7 +1,11 @@
 import { access, readFile } from 'node:fs/promises'
+import { preferredDocsBase } from './generate-root-redirect.mjs'
+import { channelBase, versionDirectory } from './version-routing.mjs'
 
 const output = new URL('../.vitepress/dist/', import.meta.url)
 const manifest = JSON.parse(await readFile(new URL('../versions.json', import.meta.url), 'utf8'))
+const canaryBase = versionDirectory(channelBase(manifest, 'canary'))
+const preferredBase = preferredDocsBase(manifest)
 const versionBases = [
   ...manifest.channels.filter(({ release }) => release),
   ...manifest.releases
@@ -17,9 +21,6 @@ const versionFiles = versionBases.flatMap((base) => [
 
 const expectedFiles = [
   'index.html',
-  'getting-started.html',
-  'using-plugins.html',
-  'reference/configuration.html',
   'components.html',
   'demos/install.gif',
   'demos/run-fib.gif',
@@ -33,15 +34,32 @@ const expectedFiles = [
   'llms.txt',
   'llms-full.txt',
   'data/docs.json',
-  'raw/index.md',
-  'raw/getting-started.md',
-  'raw/using-plugins.md',
   ...versionFiles
 ]
 
 await Promise.all(
   expectedFiles.map((file) => access(new URL(file, output)))
 )
+
+for (const retiredRootPage of ['getting-started.html', 'using-plugins.html', 'reference/configuration.html', 'raw/getting-started.md']) {
+  try {
+    await access(new URL(retiredRootPage, output))
+  } catch (error) {
+    if (error.code === 'ENOENT') continue
+    throw error
+  }
+  throw new Error(`Versioned documentation leaked back to /${retiredRootPage}`)
+}
+
+const rootRedirect = await readFile(new URL('index.html', output), 'utf8')
+for (const marker of [
+  `http-equiv="refresh" content="0; url=${preferredBase}"`,
+  `rel="canonical" href="https://docs.wago.sh${preferredBase}"`,
+  `href="${preferredBase}"`,
+  'window.location.replace(target)'
+]) {
+  if (!rootRedirect.includes(marker)) throw new Error(`Root redirect is missing ${marker}`)
+}
 
 const cname = (await readFile(new URL('CNAME', output), 'utf8')).trim()
 if (cname !== 'docs.wago.sh') {
@@ -76,33 +94,33 @@ for (const page of docsIndex.pages) {
 }
 
 for (const path of [
-  'guides/run-a-module.md',
-  'guides/run/write-a-module.md',
-  'guides/run/debug-traps.md',
-  'guides/embed-wago.md',
-  'guides/embed/limits-and-policy.md',
-  'guides/embed/services-and-concurrency.md',
-  'guides/host-functions.md',
-  'guides/plugins.md',
-  'guides/plugin-authoring.md',
-  'guides/plugins/authoring/first-plugin.md',
-  'guides/plugins/authoring/guest-languages.md',
-  'guides/plugins/authoring/custom-instructions.md',
-  'guides/plugins/authoring/custom-types.md',
-  'guides/plugins/authoring/testing.md',
-  'guides/plugins/faq.md',
-  'guides/version-channels.md',
-  'troubleshooting.md'
+  `${canaryBase}/guides/run-a-module.md`,
+  `${canaryBase}/guides/run/write-a-module.md`,
+  `${canaryBase}/guides/run/debug-traps.md`,
+  `${canaryBase}/guides/embed-wago.md`,
+  `${canaryBase}/guides/embed/limits-and-policy.md`,
+  `${canaryBase}/guides/embed/services-and-concurrency.md`,
+  `${canaryBase}/guides/host-functions.md`,
+  `${canaryBase}/guides/plugins.md`,
+  `${canaryBase}/guides/plugin-authoring.md`,
+  `${canaryBase}/guides/plugins/authoring/first-plugin.md`,
+  `${canaryBase}/guides/plugins/authoring/guest-languages.md`,
+  `${canaryBase}/guides/plugins/authoring/custom-instructions.md`,
+  `${canaryBase}/guides/plugins/authoring/custom-types.md`,
+  `${canaryBase}/guides/plugins/authoring/testing.md`,
+  `${canaryBase}/guides/plugins/faq.md`,
+  `${canaryBase}/guides/version-channels.md`,
+  `${canaryBase}/troubleshooting.md`
 ]) {
   if (!docsIndex.pages.some((page) => page.path === path)) {
     throw new Error(`Structured documentation index is missing ${path}`)
   }
 }
 
-const homepage = await readFile(new URL('index.html', output), 'utf8')
+const homepage = await readFile(new URL(`${canaryBase}/index.html`, output), 'utf8')
 for (const marker of [
-  'rel="canonical" href="https://docs.wago.sh/"',
-  'type="text/markdown" href="https://docs.wago.sh/raw/index.md"',
+  `rel="canonical" href="https://docs.wago.sh/${canaryBase}/"`,
+  `type="text/markdown" href="https://docs.wago.sh/raw/${canaryBase}/index.md"`,
   'property="og:title"',
   'type="application/ld+json"'
 ]) {
@@ -115,7 +133,7 @@ JSON.parse(jsonLd)
 
 for (const marker of [
   'Welcome to Wago',
-  'href="/getting-started"',
+  `href="/${canaryBase}/getting-started"`,
   'Run a Wasm file'
 ]) {
   if (!homepage.includes(marker)) throw new Error(`Homepage content did not render ${marker}`)
@@ -127,15 +145,15 @@ for (const icon of ['play', 'code', 'right-left', 'plug']) {
   }
 }
 
-const rawHomepage = await readFile(new URL('raw/index.md', output), 'utf8')
-if (!rawHomepage.includes('### [Run a Wasm file](/getting-started)')) {
+const rawHomepage = await readFile(new URL(`raw/${canaryBase}/index.md`, output), 'utf8')
+if (!rawHomepage.includes('### [Run a Wasm file](./getting-started)')) {
   throw new Error('Raw homepage lost the destination of its onboarding cards')
 }
-if (!rawHomepage.includes('### [Extend Wago with plugins](/using-plugins)')) {
+if (!rawHomepage.includes('### [Extend Wago with plugins](./using-plugins)')) {
   throw new Error('Raw homepage is missing the plugin onboarding route')
 }
 
-const gettingStarted = await readFile(new URL('getting-started.html', output), 'utf8')
+const gettingStarted = await readFile(new URL(`${canaryBase}/getting-started.html`, output), 'utf8')
 const versionMenu = gettingStarted.slice(gettingStarted.indexOf('<div class="version-switcher__menu">'))
 const versionOrder = ['Official versions', '>beta</span>', '>canary</span>']
 const versionPositions = versionOrder.map((marker) => versionMenu.indexOf(marker))
@@ -149,7 +167,7 @@ for (const option of ['macOS / Linux', 'PowerShell']) {
   }
 }
 
-const rawGettingStarted = await readFile(new URL('raw/getting-started.md', output), 'utf8')
+const rawGettingStarted = await readFile(new URL(`raw/${canaryBase}/getting-started.md`, output), 'utf8')
 for (const retiredInstaller of ['https://install.wago.sh/cmd', 'install.cmd']) {
   if (rawGettingStarted.includes(retiredInstaller)) {
     throw new Error(`Getting started still references the retired installer ${retiredInstaller}`)
@@ -158,35 +176,35 @@ for (const retiredInstaller of ['https://install.wago.sh/cmd', 'install.cmd']) {
 if (!rawGettingStarted.includes('https://wago.sh/corpora/fib.wasm')) {
   throw new Error('Getting started does not use the stable Wago corpus URL')
 }
-if (!rawGettingStarted.includes('### [Add host capabilities](/using-plugins)')) {
+if (!rawGettingStarted.includes('### [Add host capabilities](./using-plugins)')) {
   throw new Error('Getting started is missing the plugin onboarding route')
 }
 
-const usingPlugins = await readFile(new URL('using-plugins.html', output), 'utf8')
+const usingPlugins = await readFile(new URL(`${canaryBase}/using-plugins.html`, output), 'utf8')
 for (const marker of [
   '/demos/wasi.gif',
   'plugins.wago.sh/wago-org/wasi',
   'https://wago.sh/corpora/wasi-hello.wasm',
-  'href="/guides/plugins/install-and-scope"'
+  `href="/${canaryBase}/guides/plugins/install-and-scope"`
 ]) {
   if (!usingPlugins.includes(marker)) {
     throw new Error(`Using plugins did not render ${marker}`)
   }
 }
 
-const rawUsingPlugins = await readFile(new URL('raw/using-plugins.md', output), 'utf8')
+const rawUsingPlugins = await readFile(new URL(`raw/${canaryBase}/using-plugins.md`, output), 'utf8')
 for (const marker of ['# Using plugins', 'Go 1.22 or newer', 'wago add wago-org/wasi', 'wago run wasi-hello.wasm']) {
   if (!rawUsingPlugins.includes(marker)) {
     throw new Error(`Using plugins Markdown is missing ${marker}`)
   }
 }
 
-const firstPlugin = await readFile(new URL('guides/plugins/authoring/first-plugin.html', output), 'utf8')
+const firstPlugin = await readFile(new URL(`${canaryBase}/guides/plugins/authoring/first-plugin.html`, output), 'utf8')
 if (!firstPlugin.includes('/demos/plugin-authoring.gif')) {
   throw new Error('First plugin tutorial did not render its CLI demo')
 }
 
-const rawFirstPlugin = await readFile(new URL('raw/guides/plugins/authoring/first-plugin.md', output), 'utf8')
+const rawFirstPlugin = await readFile(new URL(`raw/${canaryBase}/guides/plugins/authoring/first-plugin.md`, output), 'utf8')
 for (const marker of [
   'wago init --plugin',
   'wago plugin catalog --check',
@@ -207,11 +225,19 @@ for (const installer of [
 
 const llms = await readFile(new URL('llms.txt', output), 'utf8')
 const full = await readFile(new URL('llms-full.txt', output), 'utf8')
-if (!llms.includes('https://docs.wago.sh/raw/getting-started.md')) {
+if (!llms.includes(`https://docs.wago.sh/raw/${canaryBase}/getting-started.md`)) {
   throw new Error('llms.txt is missing the getting-started Markdown route')
 }
 if (!full.includes('# Getting started')) {
   throw new Error('llms-full.txt is missing documentation content')
+}
+
+const betaHomepage = await readFile(new URL('beta/index.html', output), 'utf8')
+if (!betaHomepage.includes('href="/beta/getting-started"')) {
+  throw new Error('Beta documentation links escape the beta route prefix')
+}
+if (!homepage.includes(`href="/${canaryBase}/getting-started"`)) {
+  throw new Error('Canary documentation links escape the canary route prefix')
 }
 
 console.log(`Verified ${expectedFiles.length} deployment artifacts and ${docsIndex.pages.length} indexed pages for docs.wago.sh`)

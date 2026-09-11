@@ -45,13 +45,15 @@ edit, and it leaves hidden setup alone. The optimized GIFs are written to
 
 ## Documentation versions
 
-Canary documentation lives directly in the repository root. Qualified beta and
-stable documentation is generated into `beta/` and versioned directories.
+Canary source lives directly in the repository root and is published at
+`/canary/`. Qualified beta and stable documentation is generated into `beta/`
+and versioned directories. The site root redirects to the newest available
+official release, then beta, then canary.
 
 Only edit the canary documentation directly. Successful Wago canary tags and
 beta/stable releases update `versions.json` automatically:
 
-- canary records the code tag associated with the root documentation;
+- canary records the code tag associated with the `/canary/` documentation;
 - beta releases such as `v0.1.0-beta.1` snapshot the root into both `beta/` and an immutable commit-keyed
   source under `.docs-snapshots/`;
 - a stable `vMAJOR.MINOR.PATCH` release promotes the snapshot for the exact same

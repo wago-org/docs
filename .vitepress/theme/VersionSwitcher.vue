@@ -35,9 +35,10 @@ const activeVersion = computed(
 
 function versionHref(version: DocsVersion) {
   const currentBase = activeVersion.value.base
-  const pagePath = currentBase
+  const isVersionedRoute = route.path === currentBase || route.path.startsWith(`${currentBase}/`)
+  const pagePath = isVersionedRoute
     ? route.path.slice(currentBase.length) || '/'
-    : route.path
+    : '/'
   const normalizedPath = pagePath.startsWith('/') ? pagePath : `/${pagePath}`
 
   return withBase(`${version.base}${normalizedPath}` || '/')

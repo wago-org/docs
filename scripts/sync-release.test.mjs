@@ -16,7 +16,7 @@ async function fixture() {
   await writeFile(join(root, 'versions.json'), `${JSON.stringify({
     schemaVersion: 1,
     channels: [
-      { label: 'canary', base: '', release: null },
+      { label: 'canary', base: '/canary', release: null },
       { label: 'beta', base: '/beta', release: null }
     ],
     releases: []
