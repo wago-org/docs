@@ -27,8 +27,9 @@ if (manifest.schemaVersion !== 1 || !manifest.channels.length) {
   throw new Error('versions.json is not a supported documentation version manifest')
 }
 
-// The JSON manifest is the release automation's source of truth. Channels stay
-// first and official releases stay newest-first in the version selector.
+// The JSON manifest is the release automation's source of truth. Presentation
+// order belongs to the version switcher; official releases remain newest-first
+// in the manifest.
 export const docsVersions: DocsVersion[] = [
   ...manifest.channels.map((version) => ({ ...version, group: 'channel' as const })),
   ...manifest.releases.map((version) => ({ ...version, group: 'release' as const }))

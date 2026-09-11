@@ -136,6 +136,13 @@ if (!rawHomepage.includes('### [Extend Wago with plugins](/using-plugins)')) {
 }
 
 const gettingStarted = await readFile(new URL('getting-started.html', output), 'utf8')
+const versionMenu = gettingStarted.slice(gettingStarted.indexOf('<div class="version-switcher__menu">'))
+const versionOrder = ['Official versions', '>beta</span>', '>canary</span>']
+const versionPositions = versionOrder.map((marker) => versionMenu.indexOf(marker))
+if (versionPositions.some((position) => position < 0) ||
+    versionPositions.some((position, index) => index > 0 && position <= versionPositions[index - 1])) {
+  throw new Error(`Version switcher order is not ${versionOrder.join(', ')}`)
+}
 for (const option of ['macOS / Linux', 'PowerShell']) {
   if (!gettingStarted.includes(`data-title="${option}"`)) {
     throw new Error(`Getting started did not render the ${option} install option`)

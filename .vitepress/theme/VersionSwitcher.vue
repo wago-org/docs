@@ -6,14 +6,23 @@ import { docsVersions, type DocsVersion } from '../versions'
 const route = useRoute()
 const switcher = ref<HTMLDetailsElement | null>(null)
 
+const channelOrder = new Map([
+  ['beta', 0],
+  ['canary', 1]
+])
 const versionGroups = [
-  {
-    label: 'Channels',
-    versions: docsVersions.filter(({ group }) => group === 'channel')
-  },
   {
     label: 'Official versions',
     versions: docsVersions.filter(({ group }) => group === 'release')
+  },
+  {
+    label: 'Channels',
+    versions: docsVersions
+      .filter(({ group }) => group === 'channel')
+      .sort((left, right) =>
+        (channelOrder.get(left.label) ?? Number.MAX_SAFE_INTEGER) -
+        (channelOrder.get(right.label) ?? Number.MAX_SAFE_INTEGER)
+      )
   }
 ]
 
