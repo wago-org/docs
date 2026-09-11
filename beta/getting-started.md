@@ -12,20 +12,12 @@ This guide takes you from an empty machine to a successful WebAssembly call. You
 
 ::: code-group
 
-```bash [Go CLI]
-go install github.com/wago-org/wago@main
-```
-
 ```bash [macOS / Linux]
 curl -fsSL https://install.wago.sh/unix | sh
 ```
 
 ```powershell [PowerShell]
 irm https://install.wago.sh/ps | iex
-```
-
-```cmd [Command Prompt]
-curl -fsSL https://install.wago.sh/cmd | cmd
 ```
 
 :::
