@@ -136,13 +136,18 @@ if (!rawHomepage.includes('### [Extend Wago with plugins](/using-plugins)')) {
 }
 
 const gettingStarted = await readFile(new URL('getting-started.html', output), 'utf8')
-for (const option of ['Go CLI', 'macOS / Linux', 'PowerShell', 'Command Prompt']) {
+for (const option of ['macOS / Linux', 'PowerShell']) {
   if (!gettingStarted.includes(`data-title="${option}"`)) {
     throw new Error(`Getting started did not render the ${option} install option`)
   }
 }
 
 const rawGettingStarted = await readFile(new URL('raw/getting-started.md', output), 'utf8')
+for (const retiredInstaller of ['https://install.wago.sh/cmd', 'install.cmd']) {
+  if (rawGettingStarted.includes(retiredInstaller)) {
+    throw new Error(`Getting started still references the retired installer ${retiredInstaller}`)
+  }
+}
 if (!rawGettingStarted.includes('https://wago.sh/corpora/fib.wasm')) {
   throw new Error('Getting started does not use the stable Wago corpus URL')
 }
@@ -186,9 +191,7 @@ for (const marker of [
 }
 for (const installer of [
   'https://install.wago.sh/unix',
-  'https://install.wago.sh/ps',
-  'https://install.wago.sh/cmd',
-  'go get github.com/wago-org/wago'
+  'https://install.wago.sh/ps'
 ]) {
   if (!rawGettingStarted.includes(installer)) {
     throw new Error(`Getting started is missing the supported install path ${installer}`)

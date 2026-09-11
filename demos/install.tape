@@ -13,7 +13,11 @@ Set Theme { "name": "Wago", "black": "#161043", "red": "#ff9ec4", "green": "#74e
 Hide
 Type "find /tmp/wago-docs-install -depth -delete 2>/dev/null || true"
 Enter
-Type "mkdir -p /tmp/wago-docs-install/home"
+Type "mkdir -p /tmp/wago-docs-install/home /tmp/wago-docs-install/bin"
+Enter
+Type "echo IyEvYmluL3NoCm91dHB1dD0kKG1rdGVtcCkKaWYgL2Jpbi9zaCAiJEAiID4iJG91dHB1dCIgMj4mMTsgdGhlbiBzdGF0dXM9MDsgZWxzZSBzdGF0dXM9JD87IGZpCmNhdCAiJG91dHB1dCIKcm0gLWYgIiRvdXRwdXQiCmV4aXQgIiRzdGF0dXMiCg== | base64 -d > /tmp/wago-docs-install/bin/sh"
+Enter
+Type "chmod +x /tmp/wago-docs-install/bin/sh"
 Enter
 Type "export HOME=/tmp/wago-docs-install/home"
 Enter
@@ -27,9 +31,11 @@ Type "export WAGO_NO_MODIFY_PATH=1"
 Enter
 Type "export WAGO_NO_COMPLETIONS=1"
 Enter
+Type "export NO_COLOR=1"
+Enter
 Type "export WAGO_VERSION=canary"
 Enter
-Type "export PATH=/tmp/wago-docs-install/home/.wago/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin"
+Type "export PATH=/tmp/wago-docs-install/bin:/tmp/wago-docs-install/home/.wago/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin"
 Enter
 Type "clear"
 Enter

@@ -24,15 +24,11 @@ Enter
 Sleep 500ms
 Show
 
-Type "wago version switch"
+Type "wago version switch canary --profile standard --build normal"
 Sleep 220ms
 Enter
 Sleep 2s
-Down
-Sleep 900ms
-Down
-Sleep 900ms
-Up
-Sleep 900ms
-Ctrl+C
+Type "wago version current"
+Sleep 180ms
+Enter
 Sleep 2s
