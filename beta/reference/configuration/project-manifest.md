@@ -110,4 +110,4 @@ snapshot. Generate it with `wago plugin catalog`, verify it in CI with
 `wago plugin catalog --check`, and commit it before creating the release tag.
 It uses `https://wago.sh/v1/providers.schema.json`.
 
-See [Publish a plugin](/guides/plugins/publish) for the complete workflow.
+See [Publish a plugin](../../guides/plugins/publish) for the complete workflow.

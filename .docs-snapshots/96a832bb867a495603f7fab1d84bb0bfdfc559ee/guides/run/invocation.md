@@ -4,7 +4,7 @@ description: Select a WebAssembly export, pass typed CLI arguments, and choose t
 
 # Invoke a WebAssembly export
 
-Use the `fib.wasm` from [Getting started](/getting-started). It exports an ordinary function, so select it with `--invoke` or `-e`:
+Use the `fib.wasm` from [Getting started](../../getting-started). It exports an ordinary function, so select it with `--invoke` or `-e`:
 
 ```sh
 wago run --invoke fib fib.wasm 30

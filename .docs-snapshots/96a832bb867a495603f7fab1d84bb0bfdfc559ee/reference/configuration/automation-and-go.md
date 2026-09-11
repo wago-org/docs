@@ -55,4 +55,4 @@ Use `--output` for a specific completion file and `--rc` for a particular startu
 
 ## Go API
 
-Use `RuntimeConfig` for compiler policy and `WithPolicy` for per-instance guest limits. The runnable configuration example is in [Create runtimes and modules](/guides/embed/runtime-and-modules).
+Use `RuntimeConfig` for compiler policy and `WithPolicy` for per-instance guest limits. The runnable configuration example is in [Create runtimes and modules](../../guides/embed/runtime-and-modules).

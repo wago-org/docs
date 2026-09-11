@@ -95,4 +95,4 @@ Confirm that `add` accepts two `i32` values and returns one `i32`. If an export 
 wago run --invoke add add.wasm 20 22
 ```
 
-Imports work the same way in each language. Inspect them with `wago module imports`, then provide them through a plugin or your Go host. [Call a plugin from guest code](/guides/plugins/authoring/guest-languages) shows the three language spellings side by side.
+Imports work the same way in each language. Inspect them with `wago module imports`, then provide them through a plugin or your Go host. [Call a plugin from guest code](../plugins/authoring/guest-languages) shows the three language spellings side by side.

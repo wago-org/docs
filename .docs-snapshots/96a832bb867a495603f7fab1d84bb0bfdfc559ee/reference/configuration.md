@@ -14,13 +14,13 @@ Wago layers configuration from broad defaults to one command:
 ## Pick a topic
 
 <CardGroup>
-  <Card title="Scopes and settings" href="/reference/configuration/scopes-and-settings" icon="fa-code">
+  <Card title="Scopes and settings" href="./configuration/scopes-and-settings" icon="fa-code">
     Inspect, set, reset, and preview stable or experimental values.
   </Card>
-  <Card title="Project manifest" href="/reference/configuration/project-manifest" icon="fa-right-left">
+  <Card title="Project manifest" href="./configuration/project-manifest" icon="fa-right-left">
     Configure features, optimizations, workers, and project plugins in `wago.json`.
   </Card>
-  <Card title="Automation and Go" href="/reference/configuration/automation-and-go" icon="fa-play">
+  <Card title="Automation and Go" href="./configuration/automation-and-go" icon="fa-play">
     Isolate state, install completions, use locked modes, and configure the Go API.
   </Card>
 </CardGroup>

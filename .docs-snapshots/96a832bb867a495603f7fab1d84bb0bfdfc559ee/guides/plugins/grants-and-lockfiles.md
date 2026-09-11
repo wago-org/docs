@@ -64,7 +64,7 @@ wago plugin grant github.com/wago-org/workers
 
 The editor cannot add a module, raise a requested limit, or grant an Authority the definition did not request. Instance-owning limits are positive; zero does not mean unlimited. `maxMemoryBytes` bounds the aggregate declared maximum across all live instances owned through that handle.
 
-For non-interactive builds, see [Automation and Go](/reference/configuration/automation-and-go).
+For non-interactive builds, see [Automation and Go](../../reference/configuration/automation-and-go).
 
 ## Typed cross-plugin Contracts
 

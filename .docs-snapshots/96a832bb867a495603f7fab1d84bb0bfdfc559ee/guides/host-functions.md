@@ -19,13 +19,13 @@ go run github.com/wago-org/wago/examples/03-host-import@latest
 ## Pick a topic
 
 <CardGroup>
-  <Card title="Signatures and slots" href="/guides/host-functions/signatures" icon="fa-code">
+  <Card title="Signatures and slots" href="./host-functions/signatures" icon="fa-code">
     Bind imports and encode scalar, vector, and reference values correctly.
   </Card>
-  <Card title="Memory and errors" href="/guides/host-functions/memory-and-errors" icon="fa-right-left">
+  <Card title="Memory and errors" href="./host-functions/memory-and-errors" icon="fa-right-left">
     Validate pointer-length pairs and design a deliberate guest error contract.
   </Card>
-  <Card title="Authority and references" href="/guides/host-functions/authority-and-references" icon="fa-plug">
+  <Card title="Authority and references" href="./host-functions/authority-and-references" icon="fa-plug">
     Keep host power narrow and work safely with caller identity and references.
   </Card>
 </CardGroup>

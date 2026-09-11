@@ -6,7 +6,7 @@ description: Initialize, review, authenticate, and publish an open-source Wago p
 
 Package a reusable Wago plugin, preview exactly what will ship, then publish it to the public plugin registry.
 
-New plugin authors should finish [Write your first plugin](/guides/plugins/authoring/first-plugin) and [Test a plugin](/guides/plugins/authoring/testing) before tagging a release.
+New plugin authors should finish [Write your first plugin](./authoring/first-plugin) and [Test a plugin](./authoring/testing) before tagging a release.
 
 Publishing requires a public GitHub repository and a Wago registry account. The dry run works before login.
 

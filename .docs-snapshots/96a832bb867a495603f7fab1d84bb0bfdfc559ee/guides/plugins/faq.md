@@ -90,19 +90,19 @@ Yes. Give each provider a canonical package ID and immutable definition, then re
 
 <Accordion title="Can a plugin add custom Wasm instructions?">
 
-Yes. The guest imports an ordinary function, and a plugin with `compiler.instruction.define` supplies its semantics and compiler lowering. Start with [Custom instructions](/guides/plugins/authoring/custom-instructions).
+Yes. The guest imports an ordinary function, and a plugin with `compiler.instruction.define` supplies its semantics and compiler lowering. Start with [Custom instructions](./authoring/custom-instructions).
 
 </Accordion>
 
 <Accordion title="What is a custom compiler type?">
 
-It is a plugin-owned value that stays in native registers between custom instruction calls. The guest uses a standard carrier such as `externref`; no new Wasm binary type is required. See [Custom types](/guides/plugins/authoring/custom-types).
+It is a plugin-owned value that stays in native registers between custom instruction calls. The guest uses a standard carrier such as `externref`; no new Wasm binary type is required. See [Custom types](./authoring/custom-types).
 
 </Accordion>
 
 <Accordion title="Which guest languages can use a plugin?">
 
-Any language that can emit the plugin's ordinary Wasm imports. The examples include [WAT, AssemblyScript, and TinyGo](/guides/plugins/authoring/guest-languages).
+Any language that can emit the plugin's ordinary Wasm imports. The examples include [WAT, AssemblyScript, and TinyGo](./authoring/guest-languages).
 
 </Accordion>
 

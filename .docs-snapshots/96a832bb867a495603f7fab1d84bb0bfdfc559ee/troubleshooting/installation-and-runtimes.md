@@ -34,7 +34,7 @@ where wago
   </Tab>
 </Tabs>
 
-If nothing appears, rerun the installer from [Getting started](/getting-started). If two paths appear, the first one wins; remove or reorder the stale entry.
+If nothing appears, rerun the installer from [Getting started](../getting-started). If two paths appear, the first one wins; remove or reorder the stale entry.
 
 ## No runtime is active
 

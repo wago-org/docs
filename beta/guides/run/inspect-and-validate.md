@@ -35,7 +35,7 @@ wago init --run
 wago add github.com/wago-org/wasi
 ```
 
-Read [Use plugins](/guides/plugins) before granting access to host resources.
+Read [Use plugins](../plugins) before granting access to host resources.
 
 </Accordion>
 
