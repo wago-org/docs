@@ -6,7 +6,7 @@ description: Add strict JSON configuration to a Wago plugin and read it during r
 
 Configuration lives in the reviewed lock entry. The definition describes its shape; the plugin reads the selected value.
 
-## 1. Define the Go shape
+## Define the Go shape
 
 ```go
 type Config struct {
@@ -15,7 +15,7 @@ type Config struct {
 }
 ```
 
-## 2. Publish a schema
+## Publish a schema
 
 Set `PluginDefinition.ConfigSchema` to a JSON Schema. Reject unknown fields and bound numbers and strings where you can.
 
@@ -29,7 +29,7 @@ ConfigSchema: json.RawMessage(`{
 
 Use `PluginProvider.ValidateConfig` only for rules the schema cannot express, such as a relationship between two fields.
 
-## 3. Read the value
+## Read the value
 
 ```go
 var cfg Config

@@ -6,7 +6,7 @@ description: Test a Wago plugin's Go code, registration plan, provider catalog, 
 
 Test one boundary at a time. Most plugin mistakes appear before a Wasm module runs.
 
-## 1. Test ordinary Go code
+## Test ordinary Go code
 
 ```sh
 go test ./...
@@ -20,7 +20,7 @@ If callbacks share state, run:
 go test -race ./...
 ```
 
-## 2. Test registration
+## Test registration
 
 Build a `PluginSet` with the same definition, grants, configuration, dependencies, and Contract bindings a consumer will review. Then validate it:
 
@@ -34,7 +34,7 @@ Add a case for each optional Authority you can run without. Add a scope-boundary
 
 The runnable examples use [examples/internal/exampleplugin](https://github.com/wago-org/wago/tree/main/examples/internal/exampleplugin) to keep this setup out of each `main.go`.
 
-## 3. Check the catalog
+## Check the catalog
 
 After changing a definition, refresh its snapshot:
 
@@ -50,7 +50,7 @@ wago plugin catalog --check
 
 Commit `wago.providers.json` with the code it describes.
 
-## 4. Test shutdown
+## Test shutdown
 
 For a plugin with lifecycle work, cover:
 
@@ -62,7 +62,7 @@ For a plugin with lifecycle work, cover:
 
 Use a deadline for tests that wait on goroutines.
 
-## 5. Try the consumer path
+## Try the consumer path
 
 Push a test version, then use a new directory:
 

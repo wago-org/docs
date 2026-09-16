@@ -34,10 +34,10 @@ We wanted Wago to be wonderful to use, so we've actually added quite a bit.
   <Card title="Run a Wasm file" href="./getting-started" icon="fa-play">
     Install Wago, choose a runtime, and run a real module before moving on to the full CLI guide.
   </Card>
-  <Card title="Embed Wago in Go" href="./guides/embed-wago" icon="fa-code">
+  <Card title="Embed Wago in Go" href="./guides/embed/runtime-and-modules" icon="fa-code">
     Keep a runtime in your process, reuse compiled modules, and create isolated guest instances.
   </Card>
-  <Card title="Connect Wasm to Go" href="./guides/host-functions" icon="fa-right-left">
+  <Card title="Connect Wasm to Go" href="./guides/embed/host-functions" icon="fa-right-left">
     Bind reflection-free host functions and exchange values through checked guest memory.
   </Card>
   <Card title="Extend Wago with plugins" href="./using-plugins" icon="fa-plug">

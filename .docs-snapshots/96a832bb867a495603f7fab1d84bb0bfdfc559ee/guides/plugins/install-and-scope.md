@@ -1,89 +1,39 @@
 ---
-description: Add Wago plugins to local or global scope and select them for run, build, and compile commands.
+description: Create a local Wago project and add its first plugin interactively.
 ---
 
-# Install plugins and choose a scope
+# Add a plugin
 
-Install plugins locally for one project or globally for your machine, then choose which scope `run`, `build`, and `compile` should use.
+You need an active Wago runtime and Go 1.22 or newer. Complete [Getting started](../../getting-started) first if `wago status` does not show a runtime.
 
-## Add a plugin
-
-```sh
-wago init --run
-wago add github.com/wago-org/wasi
-```
-
-`wago add` is the short form of `wago plugin add`. Wago resolves direct and
-transitive packages, verifies typed Contract providers, and presents one review
-of exact sources, scoped Authorities, and bindings. It stages the download,
-provider catalog, generated runtime, and complete dry-run plan before atomically
-replacing project state. A failure leaves the previous runtime usable.
-
-## Local scope
-
-Local plugins belong to the nearest `wago.json`:
+Start in the directory that contains your `module.wasm`. Initialize a local project:
 
 ```sh
-wago plugin add --local github.com/wago-org/wasi
+wago init
 ```
 
-Use local scope for applications and repositories. The dependency and authority travel with the project.
+Select **Run WebAssembly**. Wago creates `wago.json` in the current directory.
 
-## Global scope
-
-Global plugins are shared across your user account:
+Inspect the module before choosing a plugin:
 
 ```sh
-wago plugin add --global github.com/wago-org/wasi
+wago module imports module.wasm
 ```
 
-This works well for personal tools used across unrelated directories.
-
-## Select a scope at run time
-
-<Tabs sync="plugin-scope">
-  <Tab title="Project">
+Find a package that provides those imports at [plugins.wago.sh](https://plugins.wago.sh), then add it. For a module that imports Wide's `as-simd` functions:
 
 ```sh
-wago run --local --invoke fib fib.wasm 20
+wago add JairusSW/wide
 ```
 
-Uses the nearest project's plugin set.
+Review the source and requested access in the interactive security screen, then confirm the build. Wago leaves the old project state in place if resolution or compilation fails.
 
-  </Tab>
-  <Tab title="Global">
+The nearest `wago.json` makes this a local install. Local plugins travel with the project and are the right default for repositories you share or deploy. Global plugins are intended for personal tools used across unrelated directories.
+
+Confirm that the plugin was built:
 
 ```sh
-wago run --global --invoke fib fib.wasm 20
+wago plugins list
 ```
 
-Uses the shared user-wide set.
-
-  </Tab>
-  <Tab title="Bare">
-
-```sh
-wago run --bare --invoke fib fib.wasm 20
-```
-
-Uses no plugins.
-
-  </Tab>
-</Tabs>
-
-Add plugins to `wago.json` before running so resolution, Authorities, and
-Contract bindings remain reviewable and reproducible.
-
-## Inspect the selection
-
-```sh
-wago plugin tree
-```
-
-`tree` shows why every transitive plugin was selected. To read one definition and its grants:
-
-```sh
-wago plugin inspect github.com/wago-org/wasi
-```
-
-Inspection does not start plugin code.
+Next, [review exactly what Wago installed](./grants-and-lockfiles).

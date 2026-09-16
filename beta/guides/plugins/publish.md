@@ -25,13 +25,13 @@ reason and enforceable scope. Declare package requirements separately from
 typed, major-versioned Contracts. Provider catalogs return values from
 `Providers()`; they never self-register from `init`.
 
-## 1. Sign in
+## Sign in
 
 ```sh
 wago auth login
 ```
 
-## 2. Refresh the catalog
+## Refresh the catalog
 
 ```sh
 wago plugin catalog
@@ -43,7 +43,7 @@ Run the plugin tests. Then check that no definition changed during the test run:
 wago plugin catalog --check
 ```
 
-## 3. Commit and tag
+## Commit and tag
 
 ```sh
 git add wago.json wago.providers.json register
@@ -59,13 +59,13 @@ git push origin HEAD v0.1.0
 
 The version in the tag, manifest, and definitions must match.
 
-## 4. Preview publication
+## Preview publication
 
 ```sh
 wago plugin publish --dry-run
 ```
 
-## 5. Publish
+## Publish
 
 ```sh
 wago plugin publish

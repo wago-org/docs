@@ -1,61 +1,112 @@
 ---
-description: Put compile, instance, memory, capability, and execution limits around guest WebAssembly.
+description: Bound compilation and instance resources, apply guest policy, and cancel WebAssembly calls.
 ---
 
-# Run untrusted modules with limits
+# Add limits and cancellation
 
-Treat module admission, instance admission, and execution time as separate boundaries. Set each one deliberately when users can supply Wasm.
+There are three separate boundaries:
 
-## 1. Bound compilation
+- `RuntimeConfig` controls compilation and runtime-wide resource ceilings.
+- `Policy` checks one module when an instance is created.
+- `context.Context` controls how long instantiation and calls may continue.
 
-`RuntimeConfig` rejects oversized work before it becomes a live instance:
+## Run with explicit boundaries
 
-```go
-cfg := wago.NewRuntimeConfig().
-	WithMaxModuleBytes(16 << 20).
-	WithMaxNativeCodeBytes(64 << 20).
-	WithMaxFunctionLocals(4096).
-	WithMemoryLimitPages(256)
-```
-
-`WithMemoryLimitPages` also applies to `memory.grow`. Use `WithInstanceLimits` when one runtime must cap its live instance count or aggregate declared memory.
-
-Call `cfg.Validate()` before constructing the runtime. A zero limit usually removes that extra quota, so do not rely on zero as a safe default for tenant-supplied modules.
-
-## 2. Limit one instance
-
-Apply guest capabilities and declared resources at instantiation:
+Use the `fib.wasm` from [Run WebAssembly from Go](./runtime-and-modules). Replace `main.go` with:
 
 ```go
-policy := wago.Policy{
-	AllowedCapabilities: []wago.Capability{"log.write"},
-	MaxMemoryBytes:      16 << 20,
-	MaxMemories:         1,
-	MaxTableEntries:     1024,
+package main
+
+import (
+	"context"
+	"fmt"
+	"log"
+	"os"
+	"time"
+
+	"github.com/wago-org/wago"
+)
+
+func run() error {
+	wasm, err := os.ReadFile("fib.wasm")
+	if err != nil {
+		return err
+	}
+
+	config := wago.NewRuntimeConfig().
+		WithMaxModuleBytes(16<<20).
+		WithMemoryLimitPages(256).
+		WithMaxFunctionLocals(4096).
+		WithInstanceLimits(8, 0)
+	if err := config.Validate(); err != nil {
+		return err
+	}
+
+	runtime := wago.NewRuntime(wago.WithRuntimeConfig(config))
+	defer runtime.Close()
+	module, err := runtime.Compile(wasm)
+	if err != nil {
+		return err
+	}
+	defer module.Close()
+
+	policy := wago.Policy{
+		MaxMemories:     1,
+		MaxTableEntries: 1024,
+	}
+
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
+	defer cancel()
+	instance, err := runtime.Instantiate(ctx, module, wago.WithPolicy(policy))
+	if err != nil {
+		return err
+	}
+	defer instance.Close()
+
+	results, err := instance.Call(ctx, "fib", wago.ValueI32(20))
+	if err != nil {
+		return err
+	}
+	fmt.Println(results[0].I32())
+	return nil
+}
+
+func main() {
+	if err := run(); err != nil {
+		log.Fatal(err)
+	}
 }
 ```
 
-```go
-inst, err := rt.Instantiate(ctx, mod, wago.WithPolicy(policy))
+```sh
+go run .
 ```
 
-A non-empty allow-list is exclusive, and explicit denies win. Memory policy checks the module's declared maximum. Require a finite maximum in guest modules when memory must fit a budget.
-
-Policy limits only the guest. Any Go host function or plugin still has the authority of your process.
-
-## 3. Put a deadline on calls
-
-```go
-ctx, cancel := context.WithTimeout(parent, 250*time.Millisecond)
-defer cancel()
-
-result, err := inst.Call(ctx, "work", wago.ValueI32(1000))
+```text
+6765
 ```
 
-The call context interrupts guest execution. Host functions must pass that deadline to their own blocking file, network, or database work.
+`WithMaxModuleBytes` rejects oversized input before compilation. `WithMemoryLimitPages` caps the live size of each linear memory. `WithInstanceLimits` bounds simultaneously live direct instances; a closed instance returns its admission budget.
 
-## 4. Handle rejections by kind
+`Policy` is an admission check against the module's declared capabilities and limits. The zero policy is permissive. A non-empty `AllowedCapabilities` list is exclusive, and `DeniedCapabilities` always wins. A `MaxMemoryBytes` policy also requires the module to declare a finite maximum.
 
-Use `errors.Is` instead of matching text. `wago.ErrResourceLimit` means a finite quota was exceeded. `wago.ErrPermissionDenied` covers policy and authority rejection. `wago.ErrUnsupported` means the Wasm is valid but the selected Wago build cannot execute it.
+## Handle cancellation and failures
 
-`rt.ResourceStats()` reports live instance and native-memory counters for limits enabled on that runtime. [examples/07-runtime-limits](https://github.com/wago-org/wago/tree/main/examples/07-runtime-limits) shows a one-instance quota being released and reused.
+`Call` returns `context.Canceled` or `context.DeadlineExceeded` when its context interrupts guest execution:
+
+```go
+if errors.Is(err, context.DeadlineExceeded) {
+	return fmt.Errorf("guest exceeded its deadline: %w", err)
+}
+```
+
+Policy failures wrap `wago.ErrPermissionDenied`. Runtime traps can be inspected without matching error text:
+
+```go
+var trap *wago.TrapError
+if errors.As(err, &trap) {
+	log.Printf("guest trapped: %s", trap.Code)
+}
+```
+
+A context can interrupt Wasm execution, but it cannot forcibly make arbitrary Go code return. Host functions that may block should accept a bounded dependency or cooperate with cancellation. Truly hostile blocking code needs process isolation.

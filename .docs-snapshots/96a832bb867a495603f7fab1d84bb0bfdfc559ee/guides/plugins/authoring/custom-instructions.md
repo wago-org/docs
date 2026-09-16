@@ -6,7 +6,7 @@ description: Define a custom imported operation with portable semantics and an o
 
 A custom instruction starts as an ordinary function import. Wago replaces calls to that import while compiling the guest.
 
-## 1. Pick the guest ABI
+## Pick the guest ABI
 
 This WAT import carries two four-bit values through normal `i32` parameters:
 
@@ -17,11 +17,11 @@ This WAT import carries two four-bit values through normal `i32` parameters:
 
 Any language that can emit the same import can use it.
 
-## 2. Request the module
+## Request the module
 
 Request `compiler.instruction.define` with `wago:instr/example.int` in `Scope.Modules`.
 
-## 3. Define its meaning
+## Define its meaning
 
 Get `Registrar.CompilerInstructions`, then define the logical widths and portable handler:
 
@@ -36,7 +36,7 @@ Handler: func(_ wago.InstructionContext, in []wago.Bits) ([]wago.Bits, error) {
 
 The handler is the fallback and the executable definition of the operation.
 
-## 4. Add a scalar lowering
+## Add a scalar lowering
 
 ```go
 Lower: func(ctx wago.LoweringContext) error {

@@ -6,7 +6,7 @@ description: Define an expression-scoped compiler value with a standard Wasm car
 
 Custom types keep plugin-owned values in native registers across a chain of custom instructions. The guest still uses a standard Wasm type such as `externref` for validation.
 
-## 1. Register the type
+## Register the type
 
 Request `compiler.type.define` for the `example.value` namespace, then define the value:
 
@@ -20,7 +20,7 @@ value, err := types.Define(wago.CustomTypeSpec{
 
 The size must be positive and 16-byte aligned.
 
-## 2. Use the returned token
+## Use the returned token
 
 Add the token to a custom instruction signature:
 
@@ -33,7 +33,7 @@ Custom: &wago.CustomSignature{
 
 The token belongs to that compiler registry. It cannot be forged or moved to another registry.
 
-## 3. Provide native code
+## Provide native code
 
 A custom value has no portable handler. Add target-specific lowerings in `codegen_amd64.go` and `codegen_arm64.go`. The lowering receives and returns the native register bundle through `InputCustom` and `OutputCustom`.
 

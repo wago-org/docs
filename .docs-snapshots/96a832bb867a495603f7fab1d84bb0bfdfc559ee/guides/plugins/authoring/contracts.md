@@ -6,7 +6,7 @@ description: Connect Wago plugins through typed, major-versioned Contracts.
 
 Use a Contract when one plugin needs a Go service from another.
 
-## 1. Name the service
+## Name the service
 
 Put the interface and Contract value in a small package both plugins import:
 
@@ -22,7 +22,7 @@ var Contract = plugin.NewContract[Clock](
 
 Change the major when providers and consumers can no longer share the same Go interface.
 
-## 2. Provide it
+## Provide it
 
 List `Contract.Spec()` in `PluginDefinition.Provides`. During registration, provide the value:
 
@@ -30,7 +30,7 @@ List `Contract.Spec()` in `PluginDefinition.Provides`. During registration, prov
 return plugin.Provide(reg, Contract, clock)
 ```
 
-## 3. Require it
+## Require it
 
 List the provider under `PluginDefinition.Requires` and the Contract under `Consumes`. Then get the typed reference:
 

@@ -6,7 +6,7 @@ description: Add reflection-free host imports to a Wago plugin and handle values
 
 A host import is a Go function called by Wasm. The plugin's `host.import.define` grant names the exact import modules it may add.
 
-## 1. Get the module
+## Get the module
 
 ```go
 imports, err := reg.HostImports()
@@ -18,7 +18,7 @@ math, err := imports.Module("acme_math")
 
 Return `err` before using `math`. A grant for `acme_math` does not cover a parent, child, or wildcard name.
 
-## 2. Write the callback
+## Write the callback
 
 ```go
 func addOne(_ wago.HostModule, params, results []uint64) {
@@ -29,7 +29,7 @@ func addOne(_ wago.HostModule, params, results []uint64) {
 
 Every callback uses this stack form. Each scalar or reference occupies one `uint64` slot; `v128` occupies two.
 
-## 3. Declare its Wasm signature
+## Declare its Wasm signature
 
 ```go
 math.Func("add_one", addOne).

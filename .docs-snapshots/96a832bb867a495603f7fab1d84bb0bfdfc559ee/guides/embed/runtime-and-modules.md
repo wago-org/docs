@@ -1,90 +1,175 @@
 ---
-description: Create a Wago runtime, compile modules once, instantiate isolated state, and configure compilation.
+description: Compile a WebAssembly module, create an isolated instance, and call an export from Go.
 ---
 
-# Create runtimes and modules
+# Run WebAssembly from Go
 
-The runtime owns shared compiler resources. A module holds reusable compiled code, and each instance gets isolated mutable guest state.
+Start here when Wago should live inside your Go process. You will build the same guest in WAT, AssemblyScript, or TinyGo, then compile it, create an instance, and call its `add` export from Go.
+
+## Create a small project
+
+You need Go 1.22 or newer and one guest compiler: [WABT](https://github.com/WebAssembly/wabt), [AssemblyScript](https://www.assemblyscript.org/getting-started.html), or [TinyGo](https://tinygo.org/getting-started/install/).
 
 ```sh
-go run github.com/wago-org/wago/examples/15-config@latest
+mkdir wago-embed
+cd wago-embed
+go mod init example.com/wago-embed
+go get github.com/wago-org/wago@main
+mkdir guest
 ```
 
-## Create the runtime
+Pick a guest language. Each version exports the same WebAssembly function.
+
+<Tabs sync="embed-guest-language">
+  <Tab title="WAT">
+
+Create `guest/add.wat`:
+
+```wat
+(module
+  (func (export "add") (param i32 i32) (result i32)
+    local.get 0
+    local.get 1
+    i32.add))
+```
+
+Build it:
+
+```sh
+wat2wasm guest/add.wat -o module.wasm
+```
+
+  </Tab>
+  <Tab title="AssemblyScript">
+
+Create `guest/add.ts`:
+
+```ts
+export function add(a: i32, b: i32): i32 {
+  return a + b;
+}
+```
+
+Build it with a pinned compiler:
+
+```sh
+npx --yes --package assemblyscript@0.28.8 asc \
+  guest/add.ts --runtime stub --optimize --noAssert \
+  --outFile module.wasm
+```
+
+  </Tab>
+  <Tab title="TinyGo">
+
+Create `guest/main.go`:
 
 ```go
-rt := wago.NewRuntime()
-defer rt.Close()
+//go:build tinygo
+
+package main
+
+//go:wasmexport add
+func add(a, b int32) int32 { return a + b }
+
+func main() {}
 ```
 
-`Runtime` owns compiler configuration, registered plugins, host imports, lifecycle hooks, and the compatible reference store.
+Build it:
 
-## Compile Wasm
+```sh
+tinygo build -target=wasm-unknown -no-debug \
+  -o module.wasm ./guest
+```
+
+  </Tab>
+</Tabs>
+
+Create `main.go`:
 
 ```go
-wasmBytes, err := os.ReadFile("fib.wasm")
-if err != nil {
-	return err
+package main
+
+import (
+	"context"
+	"fmt"
+	"log"
+	"os"
+	"slices"
+
+	"github.com/wago-org/wago"
+)
+
+func run(ctx context.Context) error {
+	wasm, err := os.ReadFile("module.wasm")
+	if err != nil {
+		return err
+	}
+
+	runtime := wago.NewRuntime()
+	defer runtime.Close()
+
+	module, err := runtime.Compile(wasm)
+	if err != nil {
+		return err
+	}
+	defer module.Close()
+
+	instance, err := runtime.Instantiate(ctx, module)
+	if err != nil {
+		return err
+	}
+	defer instance.Close()
+
+	// TinyGo reactors initialize their runtime through this export. WAT and
+	// AssemblyScript modules in this example do not emit it.
+	if slices.Contains(module.Exports(), "_initialize") {
+		if _, err := instance.Call(ctx, "_initialize"); err != nil {
+			return err
+		}
+	}
+
+	results, err := instance.Call(
+		ctx,
+		"add",
+		wago.ValueI32(20),
+		wago.ValueI32(22),
+	)
+	if err != nil {
+		return err
+	}
+	fmt.Println(results[0].I32())
+	return nil
 }
 
-mod, err := rt.Compile(wasmBytes)
-if err != nil {
-	return err
+func main() {
+	if err := run(context.Background()); err != nil {
+		log.Fatal(err)
+	}
 }
 ```
 
-Compilation decodes and validates the bytes under the runtime's configured feature set, then produces native code.
+Run it:
 
-## Instantiate isolated state
-
-```go
-first, err := rt.Instantiate(ctx, mod)
-if err != nil {
-	return err
-}
-defer first.Close()
-
-second, err := rt.Instantiate(ctx, mod)
-if err != nil {
-	return err
-}
-defer second.Close()
+```sh
+go run .
 ```
 
-The two instances share compiled code. Each has separate globals, tables, and linear memory.
-
-An individual instance has a non-concurrent call contract. Use separate instances when several goroutines need to execute guest code simultaneously.
-
-## Configure compilation
-
-```go
-cfg := wago.NewRuntimeConfig().
-	WithCoreFeatures(wago.CoreFeaturesV3).
-	WithMemoryLimitPages(256).
-	WithFunctionWorkers(0)
-
-if err := cfg.Validate(); err != nil {
-	return err
-}
-
-rt := wago.NewRuntime(wago.WithRuntimeConfig(cfg))
-defer rt.Close()
+```text
+42
 ```
 
-Core 2 compatibility is the default. Core 3 is explicit. Worker value `0` selects adaptive work, `1` forces serial work, and larger values set a maximum bounded by `GOMAXPROCS` and module size.
+The guest language changes how you produce `module.wasm`, not how you embed it. The Go side sees the same WebAssembly types and export name in every case. TinyGo's `_initialize` export is the one lifecycle difference in this example; call it once per new instance before calling your own exports.
 
-## Apply instance policy
+## Know what you own
 
-Compiler settings belong to `RuntimeConfig`. Guest authority and resource limits belong to an instance:
+`Runtime` owns shared compiler resources, plugins, and lifecycle state. `Module` holds validated native code that can be reused. `Instance` owns mutable guest state such as memory, tables, and globals.
 
-```go
-policy := wago.Policy{
-	DeniedCapabilities: []wago.Capability{"net.outbound"},
-	MaxMemoryBytes:     64 << 20,
-	MaxTableEntries:    4096,
-}
+Create the runtime and compile the module once. Create instances according to the lifetime of the guest state you need, and close all three resources when you are finished.
 
-inst, err := rt.Instantiate(ctx, mod, wago.WithPolicy(policy))
-```
+From here, choose the part your application needs:
 
-The zero policy is permissive. A non-empty allow-list becomes exclusive, explicit denies win, and declared resource limits are checked before execution.
+- [Calls and state](./calls-and-state) for values, memory, globals, and instance lifetime.
+- [Host functions](./host-functions) when Wasm needs to call your Go code.
+- [Limits and cancellation](./limits-and-policy) before running untrusted modules.
+- [Concurrency and shutdown](./services-and-concurrency) for a long-lived service.
+- [Precompiled artifacts](./artifacts) when startup compilation is too expensive.

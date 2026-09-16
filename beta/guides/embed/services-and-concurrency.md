@@ -1,57 +1,130 @@
 ---
-description: Compile once, create isolated instances for concurrent requests, and shut a long-lived Wago runtime down cleanly.
+description: Reuse compiled code across concurrent calls and shut a long-lived Wago runtime down cleanly.
 ---
 
-# Use Wago in a long-lived service
+# Run Wago in a service
 
-Create one runtime at service startup and compile each module once. Instances hold mutable guest state, so choose their lifetime around that state.
+Compile during service startup, then give each concurrent request its own instance. The requests share native code while keeping guest memory, tables, and globals isolated.
 
-## Compile during startup
+Use the `fib.wasm` from [Run WebAssembly from Go](./runtime-and-modules). Replace `main.go` with:
 
 ```go
-rt := wago.NewRuntime(wago.WithRuntimeConfig(cfg))
+package main
 
-mod, err := rt.Compile(wasmBytes)
-if err != nil {
-	return err
+import (
+	"context"
+	"errors"
+	"fmt"
+	"log"
+	"os"
+	"sort"
+	"sync"
+	"time"
+
+	"github.com/wago-org/wago"
+)
+
+type Service struct {
+	runtime *wago.Runtime
+	module  *wago.Module
+}
+
+func NewService(wasm []byte) (*Service, error) {
+	runtime := wago.NewRuntime()
+	module, err := runtime.Compile(wasm)
+	if err != nil {
+		_ = runtime.Close()
+		return nil, err
+	}
+	return &Service{runtime: runtime, module: module}, nil
+}
+
+func (s *Service) Fib(ctx context.Context, value int32) (int32, error) {
+	instance, err := s.runtime.Instantiate(ctx, s.module)
+	if err != nil {
+		return 0, err
+	}
+	defer instance.Close()
+
+	results, err := instance.Call(ctx, "fib", wago.ValueI32(value))
+	if err != nil {
+		return 0, err
+	}
+	return results[0].I32(), nil
+}
+
+func (s *Service) Close(ctx context.Context) error {
+	return errors.Join(s.module.Close(), s.runtime.CloseContext(ctx))
+}
+
+type response struct {
+	line string
+	err  error
+}
+
+func run() error {
+	wasm, err := os.ReadFile("fib.wasm")
+	if err != nil {
+		return err
+	}
+	service, err := NewService(wasm)
+	if err != nil {
+		return err
+	}
+	defer func() { _ = service.Close(context.Background()) }()
+
+	jobs := []int32{10, 20, 30}
+	responses := make(chan response, len(jobs))
+	var group sync.WaitGroup
+	for _, value := range jobs {
+		group.Add(1)
+		go func() {
+			defer group.Done()
+			result, err := service.Fib(context.Background(), value)
+			responses <- response{
+				line: fmt.Sprintf("fib(%d) = %d", value, result),
+				err:  err,
+			}
+		}()
+	}
+	group.Wait()
+	close(responses)
+
+	var lines []string
+	for result := range responses {
+		if result.err != nil {
+			return result.err
+		}
+		lines = append(lines, result.line)
+	}
+	sort.Strings(lines)
+	for _, line := range lines {
+		fmt.Println(line)
+	}
+
+	shutdown, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
+	return service.Close(shutdown)
+}
+
+func main() {
+	if err := run(); err != nil {
+		log.Fatal(err)
+	}
 }
 ```
 
-Keep both values on your service. Loading plugins and compiling on every request adds work and makes failures arrive after the service has started accepting traffic.
-
-## Give concurrent calls separate instances
-
-```go
-inst, err := rt.Instantiate(ctx, mod)
-if err != nil {
-	return err
-}
-defer inst.Close()
-
-return call(ctx, inst)
+```sh
+go run .
+go test -race ./...
 ```
 
-One instance accepts one call at a time. Separate instances can run concurrently while sharing the module's compiled code.
-
-Create a fresh instance per request when guest state should not survive. Keep an instance on one worker when globals or memory should persist. If several goroutines share that state, serialize access in your service.
-
-## Keep request authority narrow
-
-Pass request-specific imports with `wago.WithImport`, and apply a `wago.Policy` to every instance. Do not store request credentials in runtime-wide plugin state.
-
-Use the request context for both `Instantiate` and `Call`. A canceled request should stop waiting even if the service remains healthy.
-
-## Wait for shutdown
-
-`Runtime.Close()` starts shutdown and may finish asynchronously when plugins or active work are involved. At the service boundary, wait for the final result:
-
-```go
-shutdown, cancel := context.WithTimeout(context.Background(), 5*time.Second)
-defer cancel()
-
-if err := rt.CloseContext(shutdown); err != nil {
-	return err
-}
+```text
+fib(10) = 55
+fib(20) = 6765
+fib(30) = 832040
 ```
 
-Stop admitting requests first. Let active calls return, close persistent instances and modules, then close the runtime. [examples/06-runtime-service](https://github.com/wago-org/wago/tree/main/examples/06-runtime-service) contains the complete small service.
+An individual instance accepts one call at a time. Create a fresh instance per request when state should not survive. If state must persist, assign that instance to one worker and serialize access to it.
+
+At shutdown, stop admitting requests, wait for active calls, close persistent instances, close modules, and then call `Runtime.CloseContext`. `Runtime.Close` starts shutdown and may finish asynchronously when callbacks or active work are involved; use `CloseContext` when the service must wait for the final result.
