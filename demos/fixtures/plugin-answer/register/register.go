@@ -19,14 +19,7 @@ func (plugin) Register(reg *wago.Registrar) error {
 	if err != nil {
 		return err
 	}
-	module, err := imports.Module("tutorial")
-	if err != nil {
-		return err
-	}
-
-	module.Func("answer", func(_ wago.HostModule, _, results []uint64) {
-		results[0] = 42
-	}).Results(wago.ValI32).
+	imports.HostFunc("tutorial", "answer", func() int32 { return 42 }).
 		Capability(capAnswer).
 		Docs("return the tutorial answer")
 	return nil

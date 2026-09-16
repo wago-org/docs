@@ -58,7 +58,7 @@ instance, err := module.Instantiate(ctx)
 Call an exported WebAssembly function.
 
 ```go
-results, err := instance.Call(ctx, "answer")
+results, err := instance.InvokeValues(ctx, "answer")
 ```
 
   </Tab>

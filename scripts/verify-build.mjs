@@ -323,7 +323,7 @@ for (const marker of [
 const embedPages = [
   ['runtime-and-modules', ['# Run WebAssembly from Go', 'go get github.com/wago-org/wago@main', '### WAT', '### AssemblyScript', '### TinyGo', 'wat2wasm guest/add.wat -o module.wasm', 'assemblyscript@0.28.8', 'tinygo build -target=wasm-unknown', 'runtime.Compile(wasm)', 'runtime.Instantiate(ctx, module)', 'slices.Contains(module.Exports(), "_initialize")', '"add",']],
   ['calls-and-state', ['# Work with calls and state', 'wat2wasm counter.wat -o counter.wasm', 'instance.GlobalValue("count")', 'instance.SetGlobalValue("count", wago.ValueI32(40))', 'fresh instance: 1']],
-  ['host-functions', ['# Let Wasm call Go', '### WAT', '### AssemblyScript', '### TinyGo', '@external("host", "mul")', '//go:wasmimport host mul', 'wago.WithImport("host", "mul"', 'wago.HostFunc(func(', 'panic(wago.HostTrap{Err: err})']],
+  ['host-functions', ['# Let Wasm call Go', '### WAT', '### AssemblyScript', '### TinyGo', '@external("host", "mul")', '//go:wasmimport host mul', 'wago.NewImports()', 'imports.HostFunc("host", "mul"', 'func(caller wago.Caller, call wago.HostCall)', 'panic(wago.HostTrap{Err: err})']],
   ['limits-and-policy', ['# Add limits and cancellation', 'WithMaxModuleBytes(16<<20)', 'wago.WithPolicy(policy)', 'context.WithTimeout', 'Truly hostile blocking code needs process isolation']],
   ['services-and-concurrency', ['# Run Wago in a service', 'func NewService(wasm []byte)', 'func (s *Service) Fib(', 's.runtime.CloseContext(ctx)', 'go test -race ./...']],
   ['artifacts', ['# Cache compiled code', 'compiled.MarshalBinary()', 'wago.LoadTrustedArtifact(trustedBytes)', 'runtime.AdoptModule(trusted)', 'Treat artifacts as executable code']]

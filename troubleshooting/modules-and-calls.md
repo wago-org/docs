@@ -76,5 +76,5 @@ wago run --invoke fib fib.wasm 30:i32
 In Go, use matching typed values:
 
 ```go
-out, err := inst.Call(ctx, "add", wago.ValueI32(20), wago.ValueI32(22))
+out, err := inst.InvokeValues(ctx, "add", wago.ValueI32(20), wago.ValueI32(22))
 ```

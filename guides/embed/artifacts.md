@@ -64,7 +64,7 @@ func run(ctx context.Context) error {
 		return err
 	}
 	defer instance.Close()
-	results, err := instance.Call(ctx, "fib", wago.ValueI32(20))
+	results, err := instance.InvokeValues(ctx, "fib", wago.ValueI32(20))
 	if err != nil {
 		return err
 	}
