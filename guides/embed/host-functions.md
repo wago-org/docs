@@ -104,12 +104,15 @@ func run(ctx context.Context) error {
 	}
 	defer module.Close()
 
+	imports := wago.NewImports()
+	imports.HostFunc("host", "mul", func(a, b int32) int32 {
+		return a * b
+	})
+
 	instance, err := runtime.Instantiate(
 		ctx,
 		module,
-		wago.WithImport("host", "mul", func(a, b int32) int32 {
-			return a * b
-		}),
+		wago.WithImports(imports),
 	)
 	if err != nil {
 		return err
@@ -117,12 +120,12 @@ func run(ctx context.Context) error {
 	defer instance.Close()
 
 	if slices.Contains(module.Exports(), "_initialize") {
-		if _, err := instance.Call(ctx, "_initialize"); err != nil {
+		if _, err := instance.InvokeValues(ctx, "_initialize"); err != nil {
 			return err
 		}
 	}
 
-	results, err := instance.Call(ctx, "square", wago.ValueI32(9))
+	results, err := instance.InvokeValues(ctx, "square", wago.ValueI32(9))
 	if err != nil {
 		return err
 	}
@@ -145,43 +148,40 @@ go run .
 81
 ```
 
-`WithImport` keeps the Wasm module name and field name separate, so it remains unambiguous even when either contains a dot. Wago checks the Go function against the guest's declared signature during instantiation.
+`HostFunc` keeps the Wasm module name and field name separate, so it remains unambiguous even when either contains a dot. Wago checks the Go function against the guest's declared signature during instantiation. Configure an import collection before first use; instantiation seals it, after which it can be reused concurrently but cannot be modified.
 
 WAT spells the import directly, AssemblyScript uses `@external`, and TinyGo uses `//go:wasmimport`. All three produce the same WebAssembly boundary, so the host binding does not change.
 
 ## Read caller memory
 
-Pointer-length pairs from a guest are untrusted. A `HostFunc` receives raw slots and a `HostModule` view of the active caller:
+Pointer-length pairs from a guest are untrusted. Use the caller-aware `HostCall` form when a callback needs guest memory:
 
 ```go
-write := wago.HostFunc(func(
-	caller wago.HostModule,
-	params []uint64,
-	results []uint64,
-) {
-	ptr := uint32(params[0])
-	length := uint32(params[1])
+imports := wago.NewImports()
+imports.HostFunc("env", "write", func(caller wago.Caller, call wago.HostCall) {
+	ptr := uint32(call.I32(0))
+	length := uint32(call.I32(1))
 	memory := caller.Memory()
 
 	end := uint64(ptr) + uint64(length)
 	if end > uint64(len(memory)) {
-		results[0] = wago.I32(-1)
+		call.SetI32(0, -1)
 		return
 	}
 
 	data := append([]byte(nil), memory[ptr:end]...)
 	fmt.Printf("guest says %q\n", data)
-	results[0] = wago.I32(int32(length))
-})
+	call.SetI32(0, int32(length))
+}).Params(wago.ValI32, wago.ValI32).Results(wago.ValI32)
 ```
 
-Bind it the same way:
+Pass the collection during instantiation:
 
 ```go
-wago.WithImport("env", "write", write)
+wago.WithImports(imports)
 ```
 
-Use a wider integer for `ptr + length` so the addition cannot wrap before the bounds check. The memory view and `HostModule` are valid only during the callback. Copy anything that must survive it, and do not send either value to another goroutine.
+Use a wider integer for `ptr + length` so the addition cannot wrap before the bounds check. `HostCall`, its raw slot views, the memory view, and `Caller` are valid only during the callback. Copy anything that must survive it, and do not send borrowed values to another goroutine.
 
 ## Define failures deliberately
 

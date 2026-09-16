@@ -46,7 +46,7 @@ func (s *Service) Fib(ctx context.Context, value int32) (int32, error) {
 	}
 	defer instance.Close()
 
-	results, err := instance.Call(ctx, "fib", wago.ValueI32(value))
+	results, err := instance.InvokeValues(ctx, "fib", wago.ValueI32(value))
 	if err != nil {
 		return 0, err
 	}

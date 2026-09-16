@@ -51,22 +51,16 @@ imports, err := reg.HostImports()
 if err != nil {
 	return err
 }
-module, err := imports.Module("tutorial")
-if err != nil {
-	return err
-}
 ```
 
 Then add the function:
 
 ```go
-module.Func("answer", func(_ wago.HostModule, _, results []uint64) {
-	results[0] = 42
-}).Results(wago.ValI32)
+imports.HostFunc("tutorial", "answer", func() int32 { return 42 })
 return nil
 ```
 
-The Wasm signature comes from `Params` and `Results`. This function has no parameters and one `i32` result.
+Wago infers this function's no-parameter, one-`i32` signature.
 
 ## Check it
 

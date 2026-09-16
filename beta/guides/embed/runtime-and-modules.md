@@ -123,12 +123,12 @@ func run(ctx context.Context) error {
 	// TinyGo reactors initialize their runtime through this export. WAT and
 	// AssemblyScript modules in this example do not emit it.
 	if slices.Contains(module.Exports(), "_initialize") {
-		if _, err := instance.Call(ctx, "_initialize"); err != nil {
+		if _, err := instance.InvokeValues(ctx, "_initialize"); err != nil {
 			return err
 		}
 	}
 
-	results, err := instance.Call(
+	results, err := instance.InvokeValues(
 		ctx,
 		"add",
 		wago.ValueI32(20),

@@ -8,7 +8,7 @@ Start at the host-to-Wasm boundary: import signatures, checked memory ranges, co
 
 ## Host import mismatch
 
-Import keys use `module.name`. The value must be `wago.HostFunc` or a compatible `*wago.HostFuncRef` with the exact guest signature.
+Create imports with `wago.NewImports()` and register callbacks with `imports.HostFunc(module, name, fn)`. Module and function names remain separate exact identities. Wago checks the callback and declared signature before guest startup.
 
 Inspect the module first:
 
@@ -39,14 +39,14 @@ if !ok {
 }
 ```
 
-`HostModule.Memory()` is valid only during that synchronous callback. Copy bytes that must survive it.
+`Caller.Memory()`, `HostCall`, and its raw slot views are valid only during that synchronous callback. Copy bytes that must survive it.
 
 ## Cancellation does not stop work
 
 Use a context-aware call:
 
 ```go
-out, err := inst.Call(ctx, "work", args...)
+out, err := inst.InvokeValues(ctx, "work", args...)
 ```
 
 or the low-level form:
