@@ -37,7 +37,7 @@ wago init --run
 
 ## Feature settings
 
-`settings.features` enables or disables WebAssembly feature families. The runtime defaults to Core 2 compatibility; `--core 3` selects the complete supported Core 3 group for commands that expose it.
+`settings.features` enables or disables WebAssembly feature families. The runtime defaults to its supported Core 3 feature set; `--core 2` selects the narrower Core 2 compatibility profile for commands that expose it.
 
 Use individual settings when a project needs a narrower feature policy.
 

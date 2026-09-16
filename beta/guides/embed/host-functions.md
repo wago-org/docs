@@ -183,6 +183,16 @@ wago.WithImports(imports)
 
 Use a wider integer for `ptr + length` so the addition cannot wrap before the bounds check. `HostCall`, its raw slot views, the memory view, and `Caller` are valid only during the callback. Copy anything that must survive it, and do not send borrowed values to another goroutine.
 
+## Re-enter Wasm deliberately
+
+A caller-aware callback may synchronously invoke an export through `InvokeFromHost` while its `Caller` is active:
+
+```go
+out, err := instance.InvokeFromHost(ctx, caller, "normalize", wago.I32(value))
+```
+
+Use this only for guest APIs that require synchronous re-entry. The caller token is scoped to the callback and fails closed after it returns. One invocation chain may have at most four active `InvokeFromHost` calls across all instances; a fifth returns `wago.ErrPermissionDenied`. Each call still performs lifecycle admission, and no `WasmFunc` keeps an instance reserved between calls.
+
 ## Define failures deliberately
 
 Wasm has no built-in Go `error` result. Prefer an explicit guest ABI such as a numeric status, a sentinel result, or an output buffer. When the callback cannot continue the current invocation, abort it with the original error:

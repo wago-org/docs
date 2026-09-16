@@ -14,12 +14,12 @@ Separate validation from execution:
 wago validate fib.wasm
 ```
 
-Common causes are malformed bytes, a disabled proposal, a module built for Core 3 while Wago uses the Core 2 default, or a feature unavailable on the selected platform.
+Common causes are malformed bytes, a disabled proposal, a module built for a different WebAssembly feature profile, or a feature unavailable on the selected platform. Wago enables its supported Core 3 feature set by default.
 
-Try Core 3 only when the producer intentionally emits it:
+Select Core 2 compatibility when the producer or deployment requires that narrower profile:
 
 ```sh
-wago run --core 3 --invoke fib fib.wasm 20
+wago run --core 2 --invoke fib fib.wasm 20
 ```
 
 Do not use feature flags to force malformed Wasm through.
@@ -44,9 +44,10 @@ wago plugin list
 For the Go API:
 
 ```go
-wago.WithImports(wago.Imports{
-	"host.log": logFunc,
-})
+imports := wago.NewImports()
+imports.HostFunc("host", "log", logFunc)
+
+instance, err := runtime.Instantiate(ctx, module, wago.WithImports(imports))
 ```
 
 ## Missing export
