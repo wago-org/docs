@@ -4,7 +4,7 @@ description: Pass typed values, choose an instance lifetime, and access guest me
 
 # Work with calls and state
 
-`Instance.Call` is the normal invocation API. It checks typed arguments against the export signature and uses the supplied context for cancellation.
+`Instance.InvokeValues` checks typed arguments against the export signature and uses the supplied context for cancellation.
 
 | Wasm type | Go argument | Read a result |
 |---|---|---|
@@ -13,7 +13,7 @@ description: Pass typed values, choose an instance lifetime, and access guest me
 | `f32` | `wago.ValueF32(v)` | `result.F32()` |
 | `f64` | `wago.ValueF64(v)` | `result.F64()` |
 
-Use the lower-level `Invoke` API only when you need raw ABI slots or `v128` values.
+Use `Invoke` for raw ABI slots without a caller-supplied context, or `InvokeContext` when raw-slot execution also needs cancellation. Resolve repeated calls once with `WasmFunc`; its `Invoke` method accepts every arity and performs lifecycle admission for each call.
 
 ## See instance state survive
 
