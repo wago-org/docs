@@ -63,7 +63,7 @@ func run(ctx context.Context) error {
 	if err != nil { return err }; defer instance.Close()
 
 	for range 3 {
-		results, err := instance.Call(ctx, "inc")
+		results, err := instance.InvokeValues(ctx, "inc")
 		if err != nil { return err }; fmt.Println(results[0].I32())
 	}
 
@@ -72,12 +72,12 @@ func run(ctx context.Context) error {
 	fmt.Println("count:", count.I32())
 
 	if err := instance.SetGlobalValue("count", wago.ValueI32(40)); err != nil { return err }
-	results, err := instance.Call(ctx, "inc")
+	results, err := instance.InvokeValues(ctx, "inc")
 	if err != nil { return err }; fmt.Println("after set:", results[0].I32())
 
 	fresh, err := runtime.Instantiate(ctx, module)
 	if err != nil { return err }; defer fresh.Close()
-	results, err = fresh.Call(ctx, "inc")
+	results, err = fresh.InvokeValues(ctx, "inc")
 	if err != nil { return err }; fmt.Println("fresh instance:", results[0].I32())
 	return nil
 }
