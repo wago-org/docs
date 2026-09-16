@@ -94,13 +94,14 @@ for (const page of docsIndex.pages) {
 }
 
 for (const path of [
-  `${canaryBase}/guides/run-a-module.md`,
-  `${canaryBase}/guides/run/write-a-module.md`,
-  `${canaryBase}/guides/run/debug-traps.md`,
-  `${canaryBase}/guides/embed-wago.md`,
+  `${canaryBase}/guides/cli.md`,
+  `${canaryBase}/guides/cli/configuration.md`,
+  `${canaryBase}/guides/embed/runtime-and-modules.md`,
+  `${canaryBase}/guides/embed/calls-and-state.md`,
   `${canaryBase}/guides/embed/limits-and-policy.md`,
   `${canaryBase}/guides/embed/services-and-concurrency.md`,
-  `${canaryBase}/guides/host-functions.md`,
+  `${canaryBase}/guides/embed/host-functions.md`,
+  `${canaryBase}/guides/embed/artifacts.md`,
   `${canaryBase}/guides/plugins.md`,
   `${canaryBase}/guides/plugin-authoring.md`,
   `${canaryBase}/guides/plugins/authoring/first-plugin.md`,
@@ -109,11 +110,34 @@ for (const path of [
   `${canaryBase}/guides/plugins/authoring/custom-types.md`,
   `${canaryBase}/guides/plugins/authoring/testing.md`,
   `${canaryBase}/guides/plugins/faq.md`,
-  `${canaryBase}/guides/version-channels.md`,
   `${canaryBase}/troubleshooting.md`
 ]) {
   if (!docsIndex.pages.some((page) => page.path === path)) {
     throw new Error(`Structured documentation index is missing ${path}`)
+  }
+}
+
+for (const retiredPath of [
+  `${canaryBase}/guides/run-a-module.md`,
+  `${canaryBase}/guides/run/write-a-module.md`,
+  `${canaryBase}/guides/run/invocation.md`,
+  `${canaryBase}/guides/run/inspect-and-validate.md`,
+  `${canaryBase}/guides/run/development.md`,
+  `${canaryBase}/guides/run/artifacts.md`,
+  `${canaryBase}/guides/run/debug-traps.md`,
+  `${canaryBase}/guides/version-channels.md`,
+  `${canaryBase}/guides/versions/channels-and-switching.md`,
+  `${canaryBase}/guides/versions/profiles-and-builds.md`,
+  `${canaryBase}/guides/versions/updates-and-automation.md`,
+  `${canaryBase}/guides/embed-wago.md`,
+  `${canaryBase}/guides/host-functions.md`,
+  `${canaryBase}/guides/embed/imports-and-artifacts.md`,
+  `${canaryBase}/guides/host-functions/signatures.md`,
+  `${canaryBase}/guides/host-functions/memory-and-errors.md`,
+  `${canaryBase}/guides/host-functions/authority-and-references.md`
+]) {
+  if (docsIndex.pages.some((page) => page.path === retiredPath)) {
+    throw new Error(`Structured documentation index still contains ${retiredPath}`)
   }
 }
 
@@ -154,6 +178,67 @@ if (!rawHomepage.includes('### [Extend Wago with plugins](./using-plugins)')) {
 }
 
 const gettingStarted = await readFile(new URL(`${canaryBase}/getting-started.html`, output), 'utf8')
+for (const [version, html, sidebarOrder] of [
+  ['canary', gettingStarted, ['>Introduction</h2>', '>CLI</h2>', '>EMBED</h2>', '>PLUGINS</h2>', '>Reference</h2>']],
+  ['beta', await readFile(new URL('beta/getting-started.html', output), 'utf8'), ['>Introduction</h2>', '>EMBED</h2>', '>PLUGINS</h2>', '>Reference</h2>']]
+]) {
+  const positions = sidebarOrder.map((marker) => html.indexOf(marker))
+  if (positions.some((position) => position < 0) ||
+      positions.some((position, index) => index > 0 && position <= positions[index - 1])) {
+    throw new Error(`${version} sidebar order is not ${sidebarOrder.map((marker) => marker.slice(1, -5)).join(', ')}`)
+  }
+  const introduction = html.slice(positions[0], positions[1])
+  const introductionOrder = ['>Overview</p>', '>Getting started</p>', '>Using plugins</p>']
+    .map((marker) => introduction.indexOf(marker))
+  if (introductionOrder.some((position) => position < 0) ||
+      introductionOrder.some((position, index) => index > 0 && position <= introductionOrder[index - 1])) {
+    throw new Error(`${version} introduction order is not Overview, Getting started, Using plugins`)
+  }
+}
+if (!gettingStarted.includes(`href="/${canaryBase}/guides/cli"`)) {
+  throw new Error('Canary sidebar is missing the CLI overview')
+}
+if (!gettingStarted.includes(`href="/${canaryBase}/guides/cli/configuration"`)) {
+  throw new Error('Canary sidebar is missing the CLI configuration guide')
+}
+const cliSidebar = gettingStarted.slice(
+  gettingStarted.indexOf('>CLI</h2>'),
+  gettingStarted.indexOf('>EMBED</h2>')
+)
+for (const route of [
+  '/guides/cli',
+  '/guides/cli/configuration'
+]) {
+  if (!cliSidebar.includes(`href="/${canaryBase}${route}"`)) {
+    throw new Error(`Canary CLI sidebar is missing ${route}`)
+  }
+}
+for (const retiredRoute of ['/guides/run/', '/guides/version-channels', '/guides/versions/']) {
+  if (cliSidebar.includes(`href="/${canaryBase}${retiredRoute}`)) {
+    throw new Error(`Canary CLI sidebar still contains ${retiredRoute}`)
+  }
+}
+const embedSidebar = gettingStarted.slice(
+  gettingStarted.indexOf('>EMBED</h2>'),
+  gettingStarted.indexOf('>PLUGINS</h2>')
+)
+for (const route of [
+  '/guides/embed/runtime-and-modules',
+  '/guides/embed/calls-and-state',
+  '/guides/embed/host-functions',
+  '/guides/embed/limits-and-policy',
+  '/guides/embed/services-and-concurrency',
+  '/guides/embed/artifacts'
+]) {
+  if (!embedSidebar.includes(`href="/${canaryBase}${route}"`)) {
+    throw new Error(`Canary Embed sidebar is missing ${route}`)
+  }
+}
+for (const retiredRoute of ['/guides/embed-wago', '/guides/host-functions']) {
+  if (embedSidebar.includes(`href="/${canaryBase}${retiredRoute}"`)) {
+    throw new Error(`Canary Embed sidebar still contains ${retiredRoute}`)
+  }
+}
 const versionMenu = gettingStarted.slice(gettingStarted.indexOf('<div class="version-switcher__menu">'))
 const versionOrder = ['Official versions', '>beta</span>', '>canary</span>']
 const versionPositions = versionOrder.map((marker) => versionMenu.indexOf(marker))
@@ -196,6 +281,89 @@ const rawUsingPlugins = await readFile(new URL(`raw/${canaryBase}/using-plugins.
 for (const marker of ['# Using plugins', 'Go 1.22 or newer', 'wago add wago-org/wasi', 'wago run wasi-hello.wasm']) {
   if (!rawUsingPlugins.includes(marker)) {
     throw new Error(`Using plugins Markdown is missing ${marker}`)
+  }
+}
+
+const rawCliOverview = await readFile(new URL(`raw/${canaryBase}/guides/cli.md`, output), 'utf8')
+for (const marker of [
+  '# Use the CLI',
+  '## Invoke an export',
+  'wago run --invoke fib fib.wasm 30',
+  '## Inspect and validate',
+  'wago module capabilities fib.wasm',
+  '## Develop',
+  '## Debug a trap',
+  '## Cache native code',
+  'wago run --allow-native-artifact fib.wago 20'
+]) {
+  if (!rawCliOverview.includes(marker)) {
+    throw new Error(`CLI overview is missing ${marker}`)
+  }
+}
+
+const rawCliConfiguration = await readFile(new URL(`raw/${canaryBase}/guides/cli/configuration.md`, output), 'utf8')
+for (const marker of [
+  '# Configure and manage Wago',
+  '## Save configuration',
+  'wago config diff --local',
+  'wago config set optimizations.inline off --local',
+  '## Install completions',
+  'wago config completions zsh --install',
+  '## Select a runtime',
+  'wago version install --version <commit> --use --no-input',
+  '## Choose a build',
+  '## Update',
+  'wago update --all --dry-run --json'
+]) {
+  if (!rawCliConfiguration.includes(marker)) {
+    throw new Error(`CLI configuration guide is missing ${marker}`)
+  }
+}
+
+const embedPages = [
+  ['runtime-and-modules', ['# Run WebAssembly from Go', 'go get github.com/wago-org/wago@main', '### WAT', '### AssemblyScript', '### TinyGo', 'wat2wasm guest/add.wat -o module.wasm', 'assemblyscript@0.28.8', 'tinygo build -target=wasm-unknown', 'runtime.Compile(wasm)', 'runtime.Instantiate(ctx, module)', 'slices.Contains(module.Exports(), "_initialize")', '"add",']],
+  ['calls-and-state', ['# Work with calls and state', 'wat2wasm counter.wat -o counter.wasm', 'instance.GlobalValue("count")', 'instance.SetGlobalValue("count", wago.ValueI32(40))', 'fresh instance: 1']],
+  ['host-functions', ['# Let Wasm call Go', '### WAT', '### AssemblyScript', '### TinyGo', '@external("host", "mul")', '//go:wasmimport host mul', 'wago.WithImport("host", "mul"', 'wago.HostFunc(func(', 'panic(wago.HostTrap{Err: err})']],
+  ['limits-and-policy', ['# Add limits and cancellation', 'WithMaxModuleBytes(16<<20)', 'wago.WithPolicy(policy)', 'context.WithTimeout', 'Truly hostile blocking code needs process isolation']],
+  ['services-and-concurrency', ['# Run Wago in a service', 'func NewService(wasm []byte)', 'func (s *Service) Fib(', 's.runtime.CloseContext(ctx)', 'go test -race ./...']],
+  ['artifacts', ['# Cache compiled code', 'compiled.MarshalBinary()', 'wago.LoadTrustedArtifact(trustedBytes)', 'runtime.AdoptModule(trusted)', 'Treat artifacts as executable code']]
+]
+for (const [page, markers] of embedPages) {
+  const markdown = await readFile(new URL(`raw/${canaryBase}/guides/embed/${page}.md`, output), 'utf8')
+  for (const marker of markers) {
+    if (!markdown.includes(marker)) {
+      throw new Error(`Embed page ${page} is missing ${marker}`)
+    }
+  }
+  if (markdown.includes('github.com/wago-org/wago/examples/')) {
+    throw new Error(`Embed page ${page} links to the examples package`)
+  }
+}
+
+const rawPluginsOverview = await readFile(new URL(`raw/${canaryBase}/guides/plugins.md`, output), 'utf8')
+for (const marker of [
+  '# Use plugins',
+  'Project → add plugin → review access → build runtime → run module',
+  '## Follow the tutorial',
+  '- [Create a local project and add a plugin]',
+  '- [Run the module, update the plugin, and rebuild from the lockfile]'
+]) {
+  if (!rawPluginsOverview.includes(marker)) {
+    throw new Error(`Plugins overview is missing ${marker}`)
+  }
+}
+
+const pluginSteps = [
+  ['install-and-scope', ['# Add a plugin', 'wago init', 'Select **Run WebAssembly**', 'wago module imports module.wasm', 'wago add JairusSW/wide', 'wago plugins list']],
+  ['grants-and-lockfiles', ['# Review the install', 'wago plugin tree', 'wago plugin inspect', 'wago plugin grant', 'wago-lock.json']],
+  ['update-and-rebuild', ['# Run and maintain the plugin', 'wago run module.wasm', 'wago plugin outdated', 'wago plugin update', 'wago plugin rebuild']]
+]
+for (const [page, markers] of pluginSteps) {
+  const markdown = await readFile(new URL(`raw/${canaryBase}/guides/plugins/${page}.md`, output), 'utf8')
+  for (const marker of markers) {
+    if (!markdown.includes(marker)) {
+      throw new Error(`Plugin tutorial step ${page} is missing ${marker}`)
+    }
   }
 }
 

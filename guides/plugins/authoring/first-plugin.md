@@ -8,7 +8,7 @@ This plugin adds `tutorial.answer() -> i32` and returns `42`.
 
 You need Go 1.22 or newer and a standard Wago runtime.
 
-## 1. Start the wizard
+## Start the wizard
 
 ```sh
 mkdir wago-answer
@@ -27,7 +27,7 @@ go get github.com/wago-org/wago@main
 ```
 :::
 
-## 2. Request one Authority
+## Request one Authority
 
 Open `register/register.go`. Add this request to the generated definition:
 
@@ -42,7 +42,7 @@ Authorities: []wago.AuthorityRequest{{
 
 The scope covers the exact import module `tutorial`. It does not cover parent names or wildcards.
 
-## 3. Define the guest function
+## Define the guest function
 
 Inside `Register`, get the reviewed module:
 
@@ -68,7 +68,7 @@ return nil
 
 The Wasm signature comes from `Params` and `Results`. This function has no parameters and one `i32` result.
 
-## 4. Check it
+## Check it
 
 Format the file:
 

@@ -24,7 +24,7 @@ wago --version
 go version
 ```
 
-## 1. Create a local Wago project
+## Create a local Wago project
 
 Create or enter a directory for the example, then initialize it:
 
@@ -36,7 +36,7 @@ wago init --run
 
 This creates a `wago.json` manifest. Keeping the plugin local makes the project's dependencies and reviewed access reproducible instead of changing the runtime used by every project on your machine.
 
-## 2. Add WASI
+## Add WASI
 
 [WASI](https://wasi.dev/) defines system-style interfaces that WebAssembly modules can import. Wago provides those interfaces through the official [wago-org/wasi](https://plugins.wago.sh/wago-org/wasi) plugin:
 
@@ -56,7 +56,7 @@ wago plugins list
 
 The command updates `wago.json`, writes the complete resolved graph and reviewed grants to `wago-lock.json`, and builds a project runtime. Commit both JSON files with your project.
 
-## 3. Download a WASI module
+## Download a WASI module
 
 This small module imports WASI Preview 1's `fd_write` function and calls it from `_start`:
 
@@ -70,7 +70,7 @@ You can see the import before executing the module:
 wago module imports wasi-hello.wasm
 ```
 
-## 4. Run it
+## Run it
 
 ```sh
 wago run wasi-hello.wasm

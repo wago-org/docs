@@ -1,86 +1,124 @@
 ---
-description: Call typed WebAssembly exports, honor cancellation, and access instance memory and globals.
+description: Pass typed values, choose an instance lifetime, and access guest memory and globals.
 ---
 
-# Call exports and access guest state
+# Work with calls and state
 
-Use an instance to cross the host-to-Wasm boundary, then work with the memory and globals owned by that one guest.
+`Instance.Call` is the normal invocation API. It checks typed arguments against the export signature and uses the supplied context for cancellation.
 
-Run the complete examples from any directory:
+| Wasm type | Go argument | Read a result |
+|---|---|---|
+| `i32` | `wago.ValueI32(v)` | `result.I32()` |
+| `i64` | `wago.ValueI64(v)` | `result.I64()` |
+| `f32` | `wago.ValueF32(v)` | `result.F32()` |
+| `f64` | `wago.ValueF64(v)` | `result.F64()` |
+
+Use the lower-level `Invoke` API only when you need raw ABI slots or `v128` values.
+
+## See instance state survive
+
+Create `counter.wat`:
+
+```wat
+(module
+  (global $count (export "count") (mut i32) (i32.const 0))
+  (func (export "inc") (result i32)
+    global.get $count
+    i32.const 1
+    i32.add
+    global.set $count
+    global.get $count))
+```
+
+Compile it with [WABT](https://github.com/WebAssembly/wabt):
 
 ```sh
-go run github.com/wago-org/wago/examples/02-runtime-typed@latest
-go run github.com/wago-org/wago/examples/04-memory@latest
-go run github.com/wago-org/wago/examples/05-globals@latest
+wat2wasm counter.wat -o counter.wasm
 ```
 
-## Call an export
+Replace `main.go` with:
 
 ```go
-result, err := inst.Call(
-	ctx,
-	"fib",
-	wago.ValueI32(20),
+package main
+
+import (
+	"context"
+	"fmt"
+	"log"
+	"os"
+
+	"github.com/wago-org/wago"
 )
-if err != nil {
-	return err
+
+func run(ctx context.Context) error {
+	wasm, err := os.ReadFile("counter.wasm")
+	if err != nil { return err }
+
+	runtime := wago.NewRuntime()
+	defer runtime.Close()
+	module, err := runtime.Compile(wasm)
+	if err != nil { return err }; defer module.Close()
+
+	instance, err := runtime.Instantiate(ctx, module)
+	if err != nil { return err }; defer instance.Close()
+
+	for range 3 {
+		results, err := instance.Call(ctx, "inc")
+		if err != nil { return err }; fmt.Println(results[0].I32())
+	}
+
+	count, err := instance.GlobalValue("count")
+	if err != nil { return err }
+	fmt.Println("count:", count.I32())
+
+	if err := instance.SetGlobalValue("count", wago.ValueI32(40)); err != nil { return err }
+	results, err := instance.Call(ctx, "inc")
+	if err != nil { return err }; fmt.Println("after set:", results[0].I32())
+
+	fresh, err := runtime.Instantiate(ctx, module)
+	if err != nil { return err }; defer fresh.Close()
+	results, err = fresh.Call(ctx, "inc")
+	if err != nil { return err }; fmt.Println("fresh instance:", results[0].I32())
+	return nil
 }
 
-fmt.Println(result[0].I32()) // 6765
-```
-
-`Call` checks the values against the export's Wasm signature.
-
-| Wasm type | Constructor | Reader |
-|---|---|---|
-| `i32` | `wago.ValueI32(v)` | `value.I32()` |
-| `i64` | `wago.ValueI64(v)` | `value.I64()` |
-| `f32` | `wago.ValueF32(v)` | `value.F32()` |
-| `f64` | `wago.ValueF64(v)` | `value.F64()` |
-
-SIMD and reference types have dedicated values too. Check `value.Type()` when the signature is discovered dynamically.
-
-## Honor cancellation
-
-```go
-ctx, cancel := context.WithTimeout(parent, 250*time.Millisecond)
-defer cancel()
-
-out, err := inst.Call(ctx, "work", wago.ValueI32(1000))
-```
-
-A background context keeps the ordinary fast path. A cancellable context lets Wago interrupt long-running guest execution. Blocking Go work inside a host function still needs its own deadline.
-
-## Read and write memory
-
-```go
-if ok := inst.Write(128, []byte("hello")); !ok {
-	return fmt.Errorf("guest memory write is out of bounds")
+func main() {
+	if err := run(context.Background()); err != nil {
+		log.Fatal(err)
+	}
 }
+```
 
-data, ok := inst.Read(128, 5)
+```sh
+go run .
+```
+
+```text
+1
+2
+3
+count: 3
+after set: 41
+fresh instance: 1
+```
+
+One instance preserves state and accepts one call at a time. A fresh instance starts with the module's initial state while reusing the same compiled code.
+
+## Read and write memory safely
+
+Use checked copies for ordinary host access:
+
+```go
+data, ok := instance.Read(offset, length)
 if !ok {
-	return fmt.Errorf("guest memory read is out of bounds")
+	return fmt.Errorf("guest memory range is out of bounds")
 }
-fmt.Println(string(data))
-```
 
-`Read` returns a copy. Typed little-endian helpers include `ReadUint32Le`, `ReadUint64Le`, `WriteUint32Le`, and their floating-point counterparts.
-
-For zero-copy access to the default memory, use `Instance.Memory().Bytes()`. The returned view reflects live guest state, so keep instance serialization rules in mind.
-
-## Read and write globals
-
-```go
-count, err := inst.GlobalValue("count")
-if err != nil {
-	return err
-}
-fmt.Println(count.I32())
-
-if err := inst.SetGlobalValue("count", wago.ValueI32(100)); err != nil {
-	return err
+if ok := instance.Write(offset, replacement); !ok {
+	return fmt.Errorf("guest memory range is out of bounds")
 }
 ```
 
-Setting an immutable global or supplying the wrong value type returns an error.
+`Read` returns a copy. `Write` either copies the whole slice or changes nothing. Typed little-endian helpers such as `ReadUint32Le` and `WriteUint32Le` are available for scalar fields.
+
+`instance.Memory().UnsafeBytes()` is a zero-copy mutable view. Use it only when you can keep the view inside a tightly controlled operation; never retain it after closing the instance.

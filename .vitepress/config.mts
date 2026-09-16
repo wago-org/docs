@@ -67,32 +67,30 @@ function sidebarFor(base: string) {
       ])
     },
     {
-      text: 'Guides',
+      text: 'CLI',
+      items: available([
+        { text: 'Overview', path: '/guides/cli' },
+        { text: 'Configuration and versions', path: '/guides/cli/configuration' }
+      ])
+    },
+    {
+      text: 'EMBED',
+      items: available([
+        { text: 'Run WebAssembly from Go', path: '/guides/embed/runtime-and-modules' },
+        { text: 'Calls and state', path: '/guides/embed/calls-and-state' },
+        { text: 'Host functions', path: '/guides/embed/host-functions' },
+        { text: 'Limits and cancellation', path: '/guides/embed/limits-and-policy' },
+        { text: 'Concurrency and shutdown', path: '/guides/embed/services-and-concurrency' },
+        { text: 'Precompiled artifacts', path: '/guides/embed/artifacts' }
+      ])
+    },
+    {
+      text: 'PLUGINS',
       items: [
-        section('Run a module', '/guides/run-a-module', [
-          { text: 'Invoke an export', path: '/guides/run/invocation' },
-          { text: 'Write a module', path: '/guides/run/write-a-module' },
-          { text: 'Inspect and validate', path: '/guides/run/inspect-and-validate' },
-          { text: 'Debug traps', path: '/guides/run/debug-traps' },
-          { text: 'Develop and tune', path: '/guides/run/development' },
-          { text: 'Build artifacts', path: '/guides/run/artifacts' }
-        ]),
-        section('Embed Wago in Go', '/guides/embed-wago', [
-          { text: 'Runtime and modules', path: '/guides/embed/runtime-and-modules' },
-          { text: 'Calls and guest state', path: '/guides/embed/calls-and-state' },
-          { text: 'Limits and policy', path: '/guides/embed/limits-and-policy' },
-          { text: 'Services and concurrency', path: '/guides/embed/services-and-concurrency' },
-          { text: 'Imports and artifacts', path: '/guides/embed/imports-and-artifacts' }
-        ]),
-        section('Host functions', '/guides/host-functions', [
-          { text: 'Signatures and slots', path: '/guides/host-functions/signatures' },
-          { text: 'Memory and errors', path: '/guides/host-functions/memory-and-errors' },
-          { text: 'Authority and references', path: '/guides/host-functions/authority-and-references' }
-        ]),
         section('Use plugins', '/guides/plugins', [
-          { text: 'Install and choose scope', path: '/guides/plugins/install-and-scope' },
-          { text: 'Grants and lockfiles', path: '/guides/plugins/grants-and-lockfiles' },
-          { text: 'Update and rebuild', path: '/guides/plugins/update-and-rebuild' },
+          { text: 'Add a plugin', path: '/guides/plugins/install-and-scope' },
+          { text: 'Review the install', path: '/guides/plugins/grants-and-lockfiles' },
+          { text: 'Run and maintain', path: '/guides/plugins/update-and-rebuild' },
           { text: 'Plugin FAQ', path: '/guides/plugins/faq' }
         ]),
         section('Author plugins', '/guides/plugin-authoring', [
@@ -107,11 +105,6 @@ function sidebarFor(base: string) {
           { text: 'Custom types', path: '/guides/plugins/authoring/custom-types' },
           { text: 'Testing', path: '/guides/plugins/authoring/testing' },
           { text: 'Publish a plugin', path: '/guides/plugins/publish' }
-        ]),
-        section('Release channels', '/guides/version-channels', [
-          { text: 'Channels and switching', path: '/guides/versions/channels-and-switching' },
-          { text: 'Profiles and builds', path: '/guides/versions/profiles-and-builds' },
-          { text: 'Updates and automation', path: '/guides/versions/updates-and-automation' }
         ])
       ].filter((item) => item !== null)
     },
