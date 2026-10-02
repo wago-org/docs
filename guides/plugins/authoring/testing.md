@@ -32,7 +32,13 @@ if err := wago.ValidatePluginSet(reviewedSet()); err != nil {
 
 Add a case for each optional Authority you can run without. Add a scope-boundary case for modules or instance budgets.
 
-The runnable examples use [examples/internal/exampleplugin](https://github.com/wago-org/wago/tree/main/examples/internal/exampleplugin) to keep this setup out of each `main.go`.
+The runnable examples use [examples/internal/exampleplugin](https://github.com/wago-org/wago/tree/main/examples/internal/exampleplugin) to keep this setup out of each `main.go`. That is a Go `internal` package and cannot be imported by an external plugin module. Use the explicit `PluginSet` from [the first-plugin integration test](./first-plugin#call-it-from-wasm) in your own module.
+
+## Execute a guest
+
+A catalog test can pass while `Register` still fails. Include a small Wasm fixture that imports the plugin's function, load the reviewed `PluginSet`, instantiate the guest, and check its return value. [Write your first plugin](./first-plugin#call-it-from-wasm) includes a complete test.
+
+A selection for a standalone provider needs `Direct: true`; dependency-only providers must be reachable from a reviewed direct root. A digest and grant alone do not make a provider reachable.
 
 ## Check the catalog
 
@@ -64,7 +70,9 @@ Use a deadline for tests that wait on goroutines.
 
 ## Try the consumer path
 
-Push a test version, then use a new directory:
+First [publish a release of your own plugin](../publish). The `github.com/acme/wago-answer` name below is a placeholder, not a published package; replace it with your real module path. Publishing and registry submission are separate from the local authoring checks above.
+
+After your release is available, use a new directory:
 
 ```sh
 mkdir consumer-test
@@ -84,4 +92,6 @@ Read the review Wago shows, run a small guest, and rebuild once from the lockfil
 wago plugin rebuild --locked
 ```
 
-A clean directory catches missing release files and accidental module-cache dependencies.
+Run the guest again after rebuilding. Also test configuration changes with a real load: `wago plugin config` may successfully rebuild a configuration that the provider rejects at startup.
+
+A clean directory catches missing release files and accidental module-cache dependencies. An unpublished local provider should use Go tests or a Go host that links its provider directly; the public install path requires a published release.

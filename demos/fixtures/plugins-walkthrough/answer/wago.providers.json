@@ -1,0 +1,40 @@
+{
+  "$schema": "https://wago.sh/v1/providers.schema.json",
+  "providers": [
+    {
+      "importPath": "github.com/acme/wago-answer/register",
+      "definition": {
+        "id": "github.com/acme/wago-answer",
+        "name": "Wago Answer",
+        "version": "0.1.0",
+        "description": "A small host import for the Wago plugin tutorial.",
+        "stability": "experimental",
+        "compatibility": {
+          "engines": {
+            "wago": "*"
+          }
+        },
+        "provenance": {
+          "repository": "https://github.com/acme/wago-answer",
+          "license": "Apache-2.0",
+          "authors": [
+            "Example Maintainer"
+          ]
+        },
+        "authorities": [
+          {
+            "name": "host.import.define",
+            "mode": "required",
+            "reason": "define the tutorial guest API",
+            "scope": {
+              "modules": [
+                "tutorial"
+              ]
+            }
+          }
+        ]
+      },
+      "definitionDigest": "sha256:4f9362377220a34c57bbc68f67a5259f988a0410b00c9c62a207fbae62b1248c"
+    }
+  ]
+}

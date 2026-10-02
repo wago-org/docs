@@ -6,7 +6,11 @@ description: Install Wago, select a runtime, and run a real WebAssembly module f
 
 This guide takes you from an empty machine to a successful WebAssembly call. You will install the Wago version manager, select a runtime, download a tiny module, and run it.
 
-![Installing Wago and selecting a canary runtime](/demos/install.gif)
+## Before you begin
+
+Use a supported macOS, Linux, or Windows machine with network access and a writable home directory. The shell examples below use `curl` on macOS/Linux or PowerShell on Windows.
+
+Install [Go 1.22 or newer](https://go.dev/dl/) and [Git](https://git-scm.com/downloads) before starting if you use the Go installer or need a source-build fallback. Released binaries do not always exist for the selected channel and platform. Go is also required for plugins and standalone executables; a downloaded prebuilt core runtime can run without it.
 
 ## Install the manager
 
@@ -26,6 +30,22 @@ irm https://install.wago.sh/ps | iex
 
 :::
 
+The installer prints where it put `wago`. If it updated your `PATH`, open a new terminal. If it instead asks you to add the default `~/.wago/bin` directory yourself, add it for the current shell:
+
+::: code-group
+
+```sh [macOS / Linux]
+export PATH="$HOME/.wago/bin:$PATH"
+```
+
+```powershell [PowerShell]
+$env:Path = "$HOME\.wago\bin;$env:Path"
+```
+
+:::
+
+Use the actual directory printed by the installer if you chose another location. Add the same directory to your shell's startup configuration or Windows user `Path` to keep it for future terminals. Then check that your shell can find it:
+
 ```sh
 wago --version
 ```
@@ -44,9 +64,21 @@ go get github.com/wago-org/wago
 wago version install
 ```
 
+The interactive picker lets you choose a channel and build. For a repeatable
+first run without prompts, install the current beta's standard Go build:
+
+```sh
+wago version install --beta --profile standard --build normal --use --no-input
+wago --version
+```
+
+The first core-module example below works with the beta runtime. These are the **canary development docs**; use the version selector for documentation matching a released runtime. The selector changes the pages you read, not the runtime installed on your machine.
+
+[Configuration and versions](./guides/cli/configuration#pick-a-channel) shows how to switch to canary before trying development-only features. Go applications select their library version separately in `go.mod`; the embedding guides show that step explicitly.
+
 ## Download a small module
 
-![Downloading, inspecting, and running the Fibonacci module](/demos/run-fib.gif)
+![Downloading, inspecting, and running the Fibonacci module](/demos/run-module.gif)
 
 ```sh
 curl -fsSL https://wago.sh/corpora/fib.wasm -o fib.wasm
@@ -78,7 +110,9 @@ You should see:
 
 ## Try the everyday commands
 
-> Wago uses either [Go 1.22 or newer](https://go.dev/) or [TinyGo 0.41.1](https://tinygo.org/getting-started/install/), the tested TinyGo baseline, to link standalone executables. Make sure one of them is available on `PATH`.
+You need [Go 1.22 or newer](https://go.dev/) on `PATH` to build a standalone
+executable. TinyGo builds need **both Go and TinyGo**; the smaller build is an
+optional next step in [Standalone executables](./guides/cli/standalone).
 
 Create a standalone executable:
 
@@ -100,6 +134,11 @@ fib.exe 30
 ```
 
 :::
+
+The output includes its runtime. You can copy it to another machine with the
+same operating system, architecture, and compatible CPU features and run it
+without installing Wago.
+Keep the original `.wasm` when you need to rebuild for a different target.
 
 ## Where to go next
 

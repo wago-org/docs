@@ -23,31 +23,64 @@ Set `PluginDefinition.ConfigSchema` to a JSON Schema. Reject unknown fields and 
 ConfigSchema: json.RawMessage(`{
   "type":"object",
   "additionalProperties":false,
-  "properties":{"prefix":{"type":"string","maxLength":32}}
+  "properties":{
+    "prefix":{"type":"string","maxLength":32},
+    "sampleRate":{"type":"integer","minimum":1,"maximum":1000}
+  }
 }`),
 ```
 
-Use `PluginProvider.ValidateConfig` only for rules the schema cannot express, such as a relationship between two fields.
+The schema describes the public configuration, but the current runtime does not automatically enforce every JSON Schema constraint on the selected value. Implement the actual bounds and semantic checks in `PluginProvider.ValidateConfig` or during registration. Do not rely on `minimum`, `maximum`, or string-length metadata alone to reject a value.
 
 ## Read the value
 
 ```go
-var cfg Config
+cfg := Config{SampleRate: 10}
 if err := reg.Config(&cfg); err != nil {
 	return err
 }
 ```
 
-`Config` rejects unknown struct fields and trailing JSON. Apply defaults after decoding so they stay visible in code.
+`Config` rejects unknown struct fields and trailing JSON. Initialize defaults before decoding so an omitted field keeps its default while an explicit zero is still rejected by the bounds check:
+
+```go
+if cfg.SampleRate < 1 || cfg.SampleRate > 1000 {
+    return fmt.Errorf("sampleRate must be between 1 and 1000")
+}
+if utf8.RuneCountInString(cfg.Prefix) > 32 {
+    return fmt.Errorf("prefix must be at most 32 characters")
+}
+```
+
+This uses `fmt` and `unicode/utf8`. Put the same checks in a shared decoding helper if both `ValidateConfig` and `Register` need them.
 
 The complete flow is in [examples/09-plugin-config-lifecycle](https://github.com/wago-org/wago/tree/main/examples/09-plugin-config-lifecycle).
 
 ## Change configuration
 
-Let Wago prompt for the new value:
+These CLI commands apply to an already installed provider in a consumer project. `github.com/acme/wago-metrics` is a placeholder, not a package supplied by this guide; replace it with your published provider ID and use its actual schema. For an unpublished local plugin, set `PluginSelection.Config` in the Go integration test and call `LoadPlugins` there.
+
+Pass the complete configuration as JSON:
 
 ```sh
-wago plugin config github.com/acme/wago-metrics
+wago plugin config github.com/acme/wago-metrics \
+  '{"prefix":"demo","sampleRate":10}'
 ```
 
-Wago validates and rebuilds before replacing project state. Review the resulting `wago-lock.json` change.
+For a larger value, save the JSON in `metrics-config.json`:
+
+```sh
+wago plugin config github.com/acme/wago-metrics --file metrics-config.json
+```
+
+This replaces the selected configuration; it does not merge fields. Omitting both JSON and `--file` sets `{}`. It does not open an editor.
+
+Review the resulting `wago-lock.json` change, then run a representative guest. The CLI checks JSON syntax and rebuilds the runtime, but plugin-specific validation runs when the plugin is loaded. A successful configuration command alone does not prove that startup will succeed. Keep the previous JSON so you can restore it with the same command.
+
+For a real provider with environment, I/O, and filesystem settings, follow [Configure WASI](../../wasi).
+
+Run the published example without a source checkout:
+
+```sh
+go run github.com/wago-org/wago/examples/09-plugin-config-lifecycle@b084a7c9343f81a9120ca80a13d133884e88d514
+```

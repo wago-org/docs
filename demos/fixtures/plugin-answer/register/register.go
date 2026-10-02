@@ -19,7 +19,8 @@ func (plugin) Register(reg *wago.Registrar) error {
 	if err != nil {
 		return err
 	}
-	imports.HostFunc("tutorial", "answer", func() int32 { return 42 }).
+	imports.HostFunc("tutorial", "answer", func(call wago.HostCall) { call.SetI32(0, 42) }).
+		Results(wago.ValI32).
 		Capability(capAnswer).
 		Docs("return the tutorial answer")
 	return nil

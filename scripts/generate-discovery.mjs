@@ -83,6 +83,7 @@ const paths = []
 for await (const path of glob('**/*.md', { cwd: contentRoot })) {
   if (
     path === 'README.md' ||
+    path.startsWith(`demos${sep}`) ||
     path.startsWith(`public${sep}`) ||
     path.startsWith(`node_modules${sep}`) ||
     path.startsWith(`.docs-snapshots${sep}`) ||

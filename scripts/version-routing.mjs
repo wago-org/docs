@@ -30,6 +30,22 @@ export function publishedCanaryPath(manifest, sourcePath) {
     : `${versionDirectory(channelBase(versions, 'canary'))}/${sourcePath}`
 }
 
+export function versionRoute(currentPath, currentBase, targetBase, availableRoutes) {
+  const currentPrefix = normalizeVersionBase(currentBase).replace(/\/$/, '')
+  const targetPrefix = normalizeVersionBase(targetBase).replace(/\/$/, '')
+  const pathname = currentPath.split(/[?#]/, 1)[0].replace(/\.html$/, '')
+  const suffix = pathname === currentPrefix
+    ? '/'
+    : pathname.startsWith(`${currentPrefix}/`)
+      ? pathname.slice(currentPrefix.length)
+      : '/'
+  const candidate = `${targetPrefix}${suffix}`
+
+  // Versions are snapshots, so a new canary page may not exist in an older
+  // version. Keep the reader in the chosen version rather than sending a 404.
+  return availableRoutes.includes(candidate) ? candidate : `${targetPrefix}/`
+}
+
 export function preferredDocsBase(manifest) {
   const official = manifest.releases.find(({ latest, release }) => latest && release)
     ?? manifest.releases.find(({ release }) => release)

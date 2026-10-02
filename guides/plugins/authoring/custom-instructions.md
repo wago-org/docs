@@ -23,20 +23,30 @@ Request `compiler.instruction.define` with `wago:instr/example.int` in `Scope.Mo
 
 ## Define its meaning
 
-Get `Registrar.CompilerInstructions`, then define the logical widths and portable handler:
+Inside `Register`, get `Registrar.CompilerInstructions`, then define the logical widths and portable handler:
 
 ```go
-Input:  []int32{4, 4},
-Output: []int32{4},
-Handler: func(_ wago.InstructionContext, in []wago.Bits) ([]wago.Bits, error) {
-	value, err := wago.BitsFromUint32(4, in[0].Uint32()+in[1].Uint32())
-	return []wago.Bits{value}, err
-},
+instructions, err := reg.CompilerInstructions()
+if err != nil {
+    return err
+}
+return instructions.Define(wago.InstructionSpec{
+    Module: "wago:instr/example.int",
+    Name:   "i4.add",
+    Input:  []int32{4, 4},
+    Output: []int32{4},
+    Handler: func(_ wago.InstructionContext, in []wago.Bits) ([]wago.Bits, error) {
+        value, err := wago.BitsFromUint32(4, in[0].Uint32()+in[1].Uint32())
+        return []wago.Bits{value}, err
+    },
+})
 ```
 
 The handler is the fallback and the executable definition of the operation.
 
 ## Add a scalar lowering
+
+Add this `Lower` field to the same `InstructionSpec`:
 
 ```go
 Lower: func(ctx wago.LoweringContext) error {
@@ -50,3 +60,9 @@ Wago can inline this recipe on supported backends. The portable handler remains 
 Use target-specific code generation only when the scalar recipe cannot express the operation. Raw AMD64 or ARM64 emission is trusted backend code and needs architecture-tagged files.
 
 Run [examples/18-custom-instruction](https://github.com/wago-org/wago/tree/main/examples/18-custom-instruction) for the complete plugin and WAT guest.
+
+Run the published example without a source checkout:
+
+```sh
+go run github.com/wago-org/wago/examples/18-custom-instruction@b084a7c9343f81a9120ca80a13d133884e88d514
+```

@@ -63,14 +63,19 @@ function sidebarFor(base: string) {
       items: available([
         { text: 'Overview', path: '/' },
         { text: 'Getting started', path: '/getting-started' },
-        { text: 'Using plugins', path: '/using-plugins' }
+        { text: 'Using plugins', path: '/using-plugins' },
+        { text: 'WASI commands', path: '/guides/wasi' },
+        { text: 'Component Model', path: '/guides/components' }
       ])
     },
     {
       text: 'CLI',
       items: available([
         { text: 'Overview', path: '/guides/cli' },
-        { text: 'Configuration and versions', path: '/guides/cli/configuration' }
+        { text: 'Configuration and versions', path: '/guides/cli/configuration' },
+        { text: 'Run and inspect modules', path: '/guides/cli/running-modules' },
+        { text: 'Standalone executables', path: '/guides/cli/standalone' },
+        { text: 'Profiling', path: '/guides/cli/profiling' }
       ])
     },
     {
@@ -79,6 +84,7 @@ function sidebarFor(base: string) {
         { text: 'Run WebAssembly from Go', path: '/guides/embed/runtime-and-modules' },
         { text: 'Calls and state', path: '/guides/embed/calls-and-state' },
         { text: 'Host functions', path: '/guides/embed/host-functions' },
+        { text: 'Guest memory', path: '/guides/embed/guest-memory' },
         { text: 'Limits and cancellation', path: '/guides/embed/limits-and-policy' },
         { text: 'Concurrency and shutdown', path: '/guides/embed/services-and-concurrency' },
         { text: 'Precompiled artifacts', path: '/guides/embed/artifacts' }
@@ -140,7 +146,7 @@ export default defineConfig({
   title: 'Wago',
   description: 'Documentation for Wago',
   rewrites: rewriteCanaryRoute,
-  srcExclude: ['README.md', '.docs-snapshots/**', '.docs-sync-*/**', 'public/**/*.md'],
+  srcExclude: ['README.md', 'demos/**', '.docs-snapshots/**', '.docs-sync-*/**', 'public/**/*.md'],
   cleanUrls: true,
   lastUpdated: true,
   appearance: true,

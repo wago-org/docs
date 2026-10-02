@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import { preferredDocsBase, renderRootRedirect } from './generate-root-redirect.mjs'
-import { publishedCanaryPath, scopeVersionedHtmlLinks, scopeVersionedMarkdownLinks } from './version-routing.mjs'
+import { publishedCanaryPath, scopeVersionedHtmlLinks, scopeVersionedMarkdownLinks, versionRoute } from './version-routing.mjs'
 
 const release = { tag: 'tag' }
 
@@ -73,4 +73,15 @@ test('scopes legacy product links without changing shared assets or external lin
     scopeVersionedMarkdownLinks(markdown, '/beta'),
     '[Start](/beta/getting-started) ![Demo](/demos/run.gif)'
   )
+})
+
+test('keeps equivalent version pages and falls back when a snapshot lacks the page', () => {
+  const routes = ['/canary/', '/canary/getting-started', '/beta/', '/beta/getting-started']
+  assert.equal(versionRoute('/canary/getting-started', '/canary', '/beta', routes), '/beta/getting-started')
+  assert.equal(versionRoute('/beta/getting-started.html', '/beta', '/canary', routes), '/canary/getting-started')
+  for (const page of ['components', 'wasi', 'embed/guest-memory', 'cli/running-modules', 'cli/profiling', 'cli/standalone']) {
+    assert.equal(versionRoute(`/canary/guides/${page}`, '/canary', '/beta', routes), '/beta/')
+  }
+  assert.equal(versionRoute('/canary', '/canary', '/beta', routes), '/beta/')
+  assert.equal(versionRoute('/components', '/canary', '/beta', routes), '/beta/')
 })

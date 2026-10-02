@@ -1,0 +1,15 @@
+(module
+  (import "host" "step" (func $step (param i32) (result i32)))
+  (memory (export "memory") 1 1)
+  (func (export "i32") (param i32) (result i32) local.get 0)
+  (func (export "i64") (param i64) (result i64) local.get 0)
+  (func (export "f32") (param f32) (result f32) local.get 0)
+  (func (export "f64") (param f64) (result f64) local.get 0)
+  (func (export "v128") (param v128) (result v128) local.get 0)
+  (func (export "pair") (param i32 i64) (result i32 i64)
+    local.get 0 local.get 1)
+  (func (export "sum5") (param i32 i32 i32 i32 i32) (result i32)
+    local.get 0 local.get 1 i32.add local.get 2 i32.add
+    local.get 3 i32.add local.get 4 i32.add)
+  (func (export "host") (param i32) (result i32) local.get 0 call $step)
+  (func (export "unreachable") unreachable))

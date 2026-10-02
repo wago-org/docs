@@ -8,7 +8,13 @@ Start here when Wago should live inside your Go process. You will build the same
 
 ## Create a small project
 
-You need Go 1.22 or newer and one guest compiler: [WABT](https://github.com/WebAssembly/wabt), [AssemblyScript](https://www.assemblyscript.org/getting-started.html), or [TinyGo](https://tinygo.org/getting-started/install/).
+Install [Go 1.22 or newer](https://go.dev/dl/) and the tools for your guest language before creating the project:
+
+- **WAT:** [WABT](https://github.com/WebAssembly/wabt), with `wat2wasm` on your `PATH`. The later state, memory, and cancellation examples also use WAT, so install this to follow the whole embedding section.
+- **AssemblyScript:** Node.js 20 or newer and npm 10 or newer. The commands below download the pinned AssemblyScript 0.28.8 compiler with `npx`.
+- **TinyGo:** [TinyGo](https://tinygo.org/getting-started/install/) and a Go version that it supports, both on your `PATH`. Select that Go version before `go mod init`; a newer Go release can be too new for TinyGo. The examples were also checked with TinyGo 0.41.1 and Go 1.25.0.
+
+You need network access for the Go module download and, for AssemblyScript, the first `npx` command. The embedding programs do not require the Wago CLI.
 
 ```sh
 mkdir wago-embed
@@ -17,6 +23,14 @@ go mod init example.com/wago-embed
 go get github.com/wago-org/wago@main
 mkdir guest
 ```
+
+This canary guide uses `@main`. `@latest` selects a tagged release, which may have a different API; use that release's documentation when you choose it. For a deployed application, pin a release tag or commit and keep `go.mod` and `go.sum` with your application. Check what was selected with:
+
+```sh
+go list -m github.com/wago-org/wago
+```
+
+Run this guide and the following embedding pages from the `wago-embed` directory. Each complete Go program replaces `main.go`; do not keep multiple copies of `main` in the project. Keep the generated Wasm files for the later pages.
 
 Pick a guest language. Each version exports the same WebAssembly function.
 
@@ -123,21 +137,21 @@ func run(ctx context.Context) error {
 	// TinyGo reactors initialize their runtime through this export. WAT and
 	// AssemblyScript modules in this example do not emit it.
 	if slices.Contains(module.Exports(), "_initialize") {
-		if _, err := instance.InvokeValues(ctx, "_initialize"); err != nil {
+		if _, err := instance.InvokeContext(ctx, "_initialize"); err != nil {
 			return err
 		}
 	}
 
-	results, err := instance.InvokeValues(
+	results, err := instance.InvokeContext(
 		ctx,
 		"add",
-		wago.ValueI32(20),
-		wago.ValueI32(22),
+		wago.I32(20),
+		wago.I32(22),
 	)
 	if err != nil {
 		return err
 	}
-	fmt.Println(results[0].I32())
+	fmt.Println(wago.AsI32(results[0]))
 	return nil
 }
 
@@ -158,17 +172,22 @@ go run .
 42
 ```
 
+`InvokeContext` takes raw WebAssembly value slots. `wago.I32` encodes an `i32`, and `wago.AsI32` reads one back. These helpers do not change the guest signature. The returned slice belongs to the instance until its next call; copy any results you want to keep. [Calls and state](./calls-and-state) covers the typed API and other scalar types.
+
 The guest language changes how you produce `module.wasm`, not how you embed it. The Go side sees the same WebAssembly types and export name in every case. TinyGo's `_initialize` export is the one lifecycle difference in this example; call it once per new instance before calling your own exports.
 
 ## Know what you own
 
 `Runtime` owns shared compiler resources, plugins, and lifecycle state. `Module` holds validated native code that can be reused. `Instance` owns mutable guest state such as memory, tables, and globals.
 
+Instantiation runs a WebAssembly start section, if present. Exports such as `_start`, `main`, and `_initialize` are separate functions: the Go API does not choose and call them for you. This example invokes `_initialize` only when the guest exports it.
+
 Create the runtime and compile the module once. Create instances according to the lifetime of the guest state you need, and close all three resources when you are finished.
 
 From here, choose the part your application needs:
 
 - [Calls and state](./calls-and-state) for values, memory, globals, and instance lifetime.
+- [Guest memory](./guest-memory) for a complete pointer-length exchange and checked memory copies.
 - [Host functions](./host-functions) when Wasm needs to call your Go code.
 - [Limits and cancellation](./limits-and-policy) before running untrusted modules.
 - [Concurrency and shutdown](./services-and-concurrency) for a long-lived service.

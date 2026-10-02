@@ -25,6 +25,12 @@ Start small. One definition, one provider, and one useful registration are enoug
   </Card>
 </CardGroup>
 
+## Before you begin
+
+Complete [Getting started](../getting-started) to install the manager and select a standard runtime. The first-plugin walkthrough also needs Go 1.22 or newer on `PATH`. It starts from an empty directory; you do not need to clone Wago or publish a package to run its tests.
+
+The later pages show focused code fragments, rather than cumulative edits to the answer plugin. The runnable examples on later pages include commands pinned to the public revision tested for this walkthrough. Those `go run ...@revision` commands work outside a Wago checkout and do not install plugins into your selected CLI runtime. The examples include their compiled Wasm guests.
+
 ## Pick one next step
 
 - To give Wasm a function, read [Host imports](./plugins/authoring/host-imports).
@@ -32,6 +38,7 @@ Start small. One definition, one provider, and one useful registration are enoug
 - To own work or observe calls, read [Lifecycle and hooks](./plugins/authoring/lifecycle-and-hooks).
 - To accept settings, read [Configuration](./plugins/authoring/configuration).
 - To connect plugins, read [Contracts and dependencies](./plugins/authoring/contracts).
+- To host a WIT interface or a Preview 2 command, read [Component Model](./components).
 - To extend compilation, start with [Custom instructions](./plugins/authoring/custom-instructions), then [Custom types](./plugins/authoring/custom-types).
 
 Each privileged handle needs an exact publisher-authored Authority request and a consumer-reviewed grant. If your plugin only needs a host import, do not ask for instance management or runtime hooks.

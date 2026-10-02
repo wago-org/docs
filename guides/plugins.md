@@ -14,6 +14,8 @@ Project → add plugin → review access → build runtime → run module
 
 Plugins are Go packages compiled into the Wago runtime. Review them as native dependencies, even when their requested Wago Authorities are narrow.
 
+If you want a complete guest to start with, [Using plugins](../using-plugins) downloads and runs a small WASI command. Continue with [WASI configuration](./wasi) for arguments, environment, I/O, and files, or [Component Model](./components) for typed component calls from Go.
+
 ## Follow the tutorial
 
 - [Create a local project and add a plugin](./plugins/install-and-scope).

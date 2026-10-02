@@ -8,7 +8,7 @@ Wago keeps host capabilities outside the core runtime. Plugins add the capabilit
 
 In this guide, you will add WASI Preview 1 support to a local project and run a module that writes to standard output.
 
-![Installing the WASI plugin and running a WASI module](/demos/wasi.gif)
+![Inspecting an installed Preview 1 provider and running a WASI module](/demos/wasi-command.gif)
 
 ## Before you begin
 
@@ -41,10 +41,12 @@ This creates a `wago.json` manifest. Keeping the plugin local makes the project'
 [WASI](https://wasi.dev/) defines system-style interfaces that WebAssembly modules can import. Wago provides those interfaces through the official [wago-org/wasi](https://plugins.wago.sh/wago-org/wasi) plugin:
 
 ```sh
-wago add wago-org/wasi
+wago add wago-org/wasi/p1
 ```
 
-Keep **Preview 1** selected for this example. Review the source, dependencies, and requested Authorities before accepting them. Plugins are native Go dependencies; grants control access to privileged Wago integration APIs, but they do not sandbox arbitrary plugin code.
+The `/p1` suffix selects **Preview 1** directly. Adding the root `wago-org/wasi` instead opens a provider picker; a non-interactive root install selects the whole bundle, including Preview 2 and its Component Model dependency.
+
+Review the source, dependencies, and requested Authorities before accepting them. Plugins are native Go dependencies; grants control access to privileged Wago integration APIs, but they do not sandbox arbitrary plugin code.
 
 Now, check to make sure it is installed:
 
@@ -103,6 +105,12 @@ Wago finds the nearest `wago.json`, selects its project runtime, and uses the WA
 ## Where to go next
 
 <CardGroup>
+  <Card title="Configure a WASI command" href="./guides/wasi" icon="fa-terminal">
+    Pass arguments, choose environment values, and grant bounded filesystem access.
+  </Card>
+  <Card title="Run a component" href="./guides/components" icon="fa-code">
+    Use typed Component Model exports and the Preview 2 command service from Go.
+  </Card>
   <Card title="Install and choose scope" href="./guides/plugins/install-and-scope" icon="fa-plug">
     Learn when to use local, global, or bare plugin selection.
   </Card>

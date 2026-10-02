@@ -25,7 +25,17 @@ func addOne(value int32) int32 {
 }
 ```
 
-Ordinary supported Go signatures are inferred without runtime reflection. Use `func(wago.HostCall)` for arbitrary supported scalar/reference arity, or `func(wago.Caller, wago.HostCall)` when the callback needs guest state.
+Ordinary supported Go signatures are inferred without runtime reflection. The adapter supports a fixed set of signatures; it does not accept every Go function with Wasm-compatible types. Use `func(wago.HostCall)` for arbitrary supported scalar/reference arity, or `func(wago.Caller, wago.HostCall)` when the callback needs guest state.
+
+For example, use the portable callback for a no-argument function returning `i32`:
+
+```go
+imports.HostFunc("acme_math", "answer", func(call wago.HostCall) {
+	call.SetI32(0, 42)
+}).Results(wago.ValI32)
+```
+
+A plain `func() int32` is not a supported inferred signature. Registration reports `unsupported host callback` for it.
 
 ## Declare its Wasm signature
 
@@ -62,6 +72,24 @@ err := reg.GuestCapability(
 )
 ```
 
-The guest capability governs Wasm. The Plugin Authority governs trusted Go plugin code.
+Handle that error, then attach the capability to the function builder. Declaring a capability alone does not require it for an import:
+
+```go
+if err != nil {
+    return err
+}
+imports.HostFunc("acme_clock", "now_millis", func(call wago.HostCall) {
+    call.SetI64(0, time.Now().UnixMilli())
+}).Results(wago.ValI64).Capability(wago.Capability("clock.read"))
+```
+
+This callback imports `time`; the definition and reviewed grant must include `acme_clock` in the `host.import.define` module scope. The guest capability governs Wasm. The Plugin Authority governs trusted Go plugin code.
 
 Run [examples/08-custom-plugin](https://github.com/wago-org/wago/tree/main/examples/08-custom-plugin) for a complete import and capability.
+
+Run the published examples without a source checkout:
+
+```sh
+go run github.com/wago-org/wago/examples/08-custom-plugin@b084a7c9343f81a9120ca80a13d133884e88d514
+go run github.com/wago-org/wago/examples/21-guest-storage@b084a7c9343f81a9120ca80a13d133884e88d514
+```

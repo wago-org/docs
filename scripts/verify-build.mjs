@@ -1,6 +1,7 @@
 import { access, readFile } from 'node:fs/promises'
 import { preferredDocsBase } from './generate-root-redirect.mjs'
 import { channelBase, versionDirectory } from './version-routing.mjs'
+import { verifyNavigation } from './verify-navigation.mjs'
 
 const output = new URL('../.vitepress/dist/', import.meta.url)
 const manifest = JSON.parse(await readFile(new URL('../versions.json', import.meta.url), 'utf8'))
@@ -24,6 +25,9 @@ const expectedFiles = [
   'components.html',
   'demos/install.gif',
   'demos/run-fib.gif',
+  'demos/run-module.gif',
+  'demos/standalone.gif',
+  'demos/wasi-command.gif',
   'demos/wasi.gif',
   'demos/plugin-authoring.gif',
   'demos/version-switcher.gif',
@@ -180,7 +184,7 @@ if (!rawHomepage.includes('### [Extend Wago with plugins](./using-plugins)')) {
 const gettingStarted = await readFile(new URL(`${canaryBase}/getting-started.html`, output), 'utf8')
 for (const [version, html, sidebarOrder] of [
   ['canary', gettingStarted, ['>Introduction</h2>', '>CLI</h2>', '>EMBED</h2>', '>PLUGINS</h2>', '>Reference</h2>']],
-  ['beta', await readFile(new URL('beta/getting-started.html', output), 'utf8'), ['>Introduction</h2>', '>EMBED</h2>', '>PLUGINS</h2>', '>Reference</h2>']]
+  ['beta', await readFile(new URL('beta/getting-started.html', output), 'utf8'), ['>Introduction</h2>', '>CLI</h2>', '>EMBED</h2>', '>PLUGINS</h2>', '>Reference</h2>']]
 ]) {
   const positions = sidebarOrder.map((marker) => html.indexOf(marker))
   if (positions.some((position) => position < 0) ||
@@ -267,7 +271,7 @@ if (!rawGettingStarted.includes('### [Add host capabilities](./using-plugins)'))
 
 const usingPlugins = await readFile(new URL(`${canaryBase}/using-plugins.html`, output), 'utf8')
 for (const marker of [
-  '/demos/wasi.gif',
+  '/demos/wasi-command.gif',
   'plugins.wago.sh/wago-org/wasi',
   'https://wago.sh/corpora/wasi-hello.wasm',
   `href="/${canaryBase}/guides/plugins/install-and-scope"`
@@ -284,48 +288,27 @@ for (const marker of ['# Using plugins', 'Go 1.22 or newer', 'wago add wago-org/
   }
 }
 
-const rawCliOverview = await readFile(new URL(`raw/${canaryBase}/guides/cli.md`, output), 'utf8')
-for (const marker of [
-  '# Use the CLI',
-  '## Invoke an export',
-  'wago run --invoke fib fib.wasm 30',
-  '## Inspect and validate',
-  'wago module capabilities fib.wasm',
-  '## Develop',
-  '## Debug a trap',
-  '## Cache native code',
-  'wago run --allow-native-artifact fib.wago 20'
-]) {
-  if (!rawCliOverview.includes(marker)) {
-    throw new Error(`CLI overview is missing ${marker}`)
-  }
-}
-
-const rawCliConfiguration = await readFile(new URL(`raw/${canaryBase}/guides/cli/configuration.md`, output), 'utf8')
-for (const marker of [
-  '# Configure and manage Wago',
-  '## Save configuration',
-  'wago config diff --local',
-  'wago config set optimizations.inline off --local',
-  '## Install completions',
-  'wago config completions zsh --install',
-  '## Select a runtime',
-  'wago version install --version <commit> --use --no-input',
-  '## Choose a build',
-  '## Update',
-  'wago update --all --dry-run --json'
-]) {
-  if (!rawCliConfiguration.includes(marker)) {
-    throw new Error(`CLI configuration guide is missing ${marker}`)
+const cliPages = [
+  ['cli', ['# Use the CLI', './cli/running-modules', './cli/standalone', './cli/profiling', './cli/configuration', 'wago run --help']],
+  ['cli/running-modules', ['# Run and inspect modules', 'wago run --invoke fib fib.wasm 30', 'wago module capabilities fib.wasm', 'wago run --allow-native-artifact --invoke fib fib.wago 20', '## Rerun after a rebuild']],
+  ['cli/standalone', ['# Build a standalone executable', 'wago compile --bare --invoke fib fib.wasm -o fib', 'Both commands must be on `PATH`', '## Build on the destination platform']],
+  ['cli/profiling', ['# Profile and debug a workload', './scripts/build-profiler.sh', 'profile top', 'profile annotate']],
+  ['cli/configuration', ['# Configure and manage Wago', 'wago config diff --local', 'wago config set optimizations.inline off --local', 'wago config completions zsh --install', 'wago version install --version <tag-or-commit>', 'wago update --all --dry-run --json']]
+]
+for (const [page, markers] of cliPages) {
+  const markdown = await readFile(new URL(`raw/${canaryBase}/guides/${page}.md`, output), 'utf8')
+  for (const marker of markers) {
+    if (!markdown.includes(marker)) throw new Error(`CLI page ${page} is missing ${marker}`)
   }
 }
 
 const embedPages = [
+  ['guest-memory', ['# Exchange bytes with a guest', 'instance.Read(0, 15)', 'instance.Write(65535', 'uint64(ptr) + uint64(length)', 'borrowed']],
   ['runtime-and-modules', ['# Run WebAssembly from Go', 'go get github.com/wago-org/wago@main', '### WAT', '### AssemblyScript', '### TinyGo', 'wat2wasm guest/add.wat -o module.wasm', 'assemblyscript@0.28.8', 'tinygo build -target=wasm-unknown', 'runtime.Compile(wasm)', 'runtime.Instantiate(ctx, module)', 'slices.Contains(module.Exports(), "_initialize")', '"add",']],
   ['calls-and-state', ['# Work with calls and state', 'wat2wasm counter.wat -o counter.wasm', 'instance.GlobalValue("count")', 'instance.SetGlobalValue("count", wago.ValueI32(40))', 'fresh instance: 1']],
   ['host-functions', ['# Let Wasm call Go', '### WAT', '### AssemblyScript', '### TinyGo', '@external("host", "mul")', '//go:wasmimport host mul', 'wago.NewImports()', 'imports.HostFunc("host", "mul"', 'func(caller wago.Caller, call wago.HostCall)', 'panic(wago.HostTrap{Err: err})']],
   ['limits-and-policy', ['# Add limits and cancellation', 'WithMaxModuleBytes(16<<20)', 'wago.WithPolicy(policy)', 'context.WithTimeout', 'Truly hostile blocking code needs process isolation']],
-  ['services-and-concurrency', ['# Run Wago in a service', 'func NewService(wasm []byte)', 'func (s *Service) Fib(', 's.runtime.CloseContext(ctx)', 'go test -race ./...']],
+  ['services-and-concurrency', ['# Run Wago in a service', 'func NewService(wasm []byte)', 'func (s *Service) Add(', 's.runtime.CloseContext(ctx)', 'go run -race .']],
   ['artifacts', ['# Cache compiled code', 'compiled.MarshalBinary()', 'wago.LoadTrustedArtifact(trustedBytes)', 'runtime.AdoptModule(trusted)', 'Treat artifacts as executable code']]
 ]
 for (const [page, markers] of embedPages) {
@@ -338,6 +321,19 @@ for (const [page, markers] of embedPages) {
   if (markdown.includes('github.com/wago-org/wago/examples/')) {
     throw new Error(`Embed page ${page} links to the examples package`)
   }
+}
+
+for (const [page, markers] of [
+  ['wasi', ['# Run a WASI command', 'wago-org/wasi/p1', 'wago-lock.json']],
+  ['components', ['# Run a WebAssembly component', 'component.Contract', 'WithInstance', 'component-model']]
+]) {
+  const markdown = await readFile(new URL(`raw/${canaryBase}/guides/${page}.md`, output), 'utf8')
+  for (const marker of markers) {
+    if (!markdown.includes(marker)) throw new Error(`Host guide ${page} is missing ${marker}`)
+  }
+}
+if (docsIndex.pages.some(page => new URL(page.url).pathname.includes('/demos/fixtures/'))) {
+  throw new Error('Development walkthrough fixtures leaked into the public page index')
 }
 
 const rawPluginsOverview = await readFile(new URL(`raw/${canaryBase}/guides/plugins.md`, output), 'utf8')
@@ -376,7 +372,7 @@ const rawFirstPlugin = await readFile(new URL(`raw/${canaryBase}/guides/plugins/
 for (const marker of [
   'wago init --plugin',
   'wago plugin catalog --check',
-  'github.com/wago-org/wago@main'
+  'github.com/wago-org/wago@b084a7c9343f81a9120ca80a13d133884e88d514'
 ]) {
   if (!rawFirstPlugin.includes(marker)) {
     throw new Error(`First plugin tutorial Markdown is missing ${marker}`)
@@ -401,6 +397,10 @@ if (!full.includes('# Getting started')) {
 }
 
 const betaHomepage = await readFile(new URL('beta/index.html', output), 'utf8')
+for (const marker of ['Last recorded canary', 'selecting docs does not switch your installed runtime']) {
+  if (!homepage.includes(marker)) throw new Error(`Canary provenance banner is missing ${marker}`)
+  if (betaHomepage.includes(marker)) throw new Error(`Canary-only banner wording leaked into beta: ${marker}`)
+}
 if (!betaHomepage.includes('href="/beta/getting-started"')) {
   throw new Error('Beta documentation links escape the beta route prefix')
 }
@@ -408,4 +408,9 @@ if (!homepage.includes(`href="/${canaryBase}/getting-started"`)) {
   throw new Error('Canary documentation links escape the canary route prefix')
 }
 
-console.log(`Verified ${expectedFiles.length} deployment artifacts and ${docsIndex.pages.length} indexed pages for docs.wago.sh`)
+const navigationLinks = await verifyNavigation(output, [
+  'https://docs.wago.sh/',
+  ...docsIndex.pages.map(({ url }) => url)
+])
+
+console.log(`Verified ${expectedFiles.length} deployment artifacts, ${docsIndex.pages.length} indexed pages, and ${navigationLinks} internal links for docs.wago.sh`)

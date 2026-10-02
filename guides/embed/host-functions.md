@@ -4,6 +4,8 @@ description: Bind Go functions as WebAssembly imports and safely exchange data t
 
 # Let Wasm call Go
 
+Continue in the `wago-embed` project from [Run WebAssembly from Go](./runtime-and-modules), with its `guest` directory and Go module. If you choose TinyGo again, replace the earlier `guest/main.go` with the new guest below.
+
 A host function supplies an import declared by the guest. Start with an ordinary typed Go function; use the lower-level `HostFunc` form only when the callback needs the calling instance or its memory.
 
 ## Bind a typed function
@@ -120,16 +122,16 @@ func run(ctx context.Context) error {
 	defer instance.Close()
 
 	if slices.Contains(module.Exports(), "_initialize") {
-		if _, err := instance.InvokeValues(ctx, "_initialize"); err != nil {
+		if _, err := instance.InvokeContext(ctx, "_initialize"); err != nil {
 			return err
 		}
 	}
 
-	results, err := instance.InvokeValues(ctx, "square", wago.ValueI32(9))
+	results, err := instance.InvokeContext(ctx, "square", wago.I32(9))
 	if err != nil {
 		return err
 	}
-	fmt.Println(results[0].I32())
+	fmt.Println(wago.AsI32(results[0]))
 	return nil
 }
 
@@ -153,6 +155,8 @@ go run .
 WAT spells the import directly, AssemblyScript uses `@external`, and TinyGo uses `//go:wasmimport`. All three produce the same WebAssembly boundary, so the host binding does not change.
 
 ## Read caller memory
+
+[Exchange bytes with a guest](./guest-memory) is a complete runnable version of this pattern, including a pointer-overflow attempt and checked host reads and writes.
 
 Pointer-length pairs from a guest are untrusted. Use the caller-aware `HostCall` form when a callback needs guest memory:
 
