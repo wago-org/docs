@@ -25,7 +25,17 @@ func addOne(value int32) int32 {
 }
 ```
 
-Ordinary supported Go signatures are inferred without runtime reflection. Use `func(wago.HostCall)` for arbitrary supported scalar/reference arity, or `func(wago.Caller, wago.HostCall)` when the callback needs guest state.
+Ordinary supported Go signatures are inferred without runtime reflection. The adapter supports a fixed set of signatures; it does not accept every Go function with Wasm-compatible types. Use `func(wago.HostCall)` for arbitrary supported scalar/reference arity, or `func(wago.Caller, wago.HostCall)` when the callback needs guest state.
+
+For example, use the portable callback for a no-argument function returning `i32`:
+
+```go
+imports.HostFunc("acme_math", "answer", func(call wago.HostCall) {
+	call.SetI32(0, 42)
+}).Results(wago.ValI32)
+```
+
+A plain `func() int32` is not a supported inferred signature. Registration reports `unsupported host callback` for it.
 
 ## Declare its Wasm signature
 

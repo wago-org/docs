@@ -1,62 +1,26 @@
 ---
-description: Invoke, inspect, develop, debug, and precompile WebAssembly modules with the Wago CLI.
+description: Run and inspect Wasm, build standalone executables, and diagnose Wago workloads from the terminal.
 ---
 
 # Use the CLI
 
-[Getting started](../getting-started) covers installation, running a module, and compiling an executable. This page contains the module operations that go beyond that path.
+Start with [installation and your first module](../getting-started). These guides cover the next steps:
 
-## Invoke an export
+- [Run and inspect modules](./cli/running-modules): choose exports, pass arguments, inspect metadata, watch files, and reuse compiled code
+- [Build a standalone executable](./cli/standalone): package a module with Go or TinyGo so it runs without an installed Wago command
+- [Profile and debug a workload](./cli/profiling): reproduce traps, collect a checked workload, and read timing or CPU reports
+- [Configure Wago](./cli/configuration): keep project settings and compiler options consistent
 
-Select a function and pass its arguments after the module path:
-
-```sh
-wago run --invoke fib fib.wasm 30
-```
-
-Use `30:i32`, `30:i64`, `30:f32`, or `30:f64` when the type must be explicit. Put Wago flags before the module path.
-
-## Inspect and validate
-
-Inspect a module without executing it:
+## Find the right command
 
 ```sh
-wago module imports fib.wasm
-wago module exports fib.wasm
-wago module capabilities fib.wasm
-wago validate fib.wasm
+wago run --help
+wago module --help
+wago build --help
+wago compile --help
+wago run --help-optimizations
 ```
 
-Add `--json` when another program needs the output.
+`run` executes Wasm. `build` saves a host-specific `.wago` artifact for later use by Wago. `compile` produces a standalone executable containing the runtime and precompiled guest code.
 
-## Develop
-
-Rerun when the module changes or parallelize work on a large module:
-
-```sh
-wago run --watch --invoke fib fib.wasm 20
-wago run --parallel=4 --invoke fib fib.wasm 20
-```
-
-Parallelism adds overhead to small modules. Measure before keeping it enabled.
-
-## Debug a trap
-
-Reproduce the exact export and arguments outside watch mode. If validation passes, Wago reports the trap reason and any Wasm frames:
-
-```sh
-wago run --invoke process module.wasm 42
-```
-
-`context.Canceled` and `context.DeadlineExceeded` are host cancellation, not guest traps.
-
-## Cache native code
-
-Build a host-specific `.wago` artifact when startup compilation matters:
-
-```sh
-wago build fib.wasm -o fib.wago
-wago run --allow-native-artifact fib.wago 20
-```
-
-A `.wago` file contains native code. Run only artifacts you trust, retain the original Wasm, and rebuild for each architecture or incompatible Wago release.
+For machine-readable inspection, add `--json` to `validate`, `module imports`, `module exports`, or `module capabilities`. The available flags depend on the selected runtime's platform and build profile; use its help output when a flag is missing.

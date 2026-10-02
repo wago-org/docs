@@ -32,6 +32,7 @@ Start small. One definition, one provider, and one useful registration are enoug
 - To own work or observe calls, read [Lifecycle and hooks](./plugins/authoring/lifecycle-and-hooks).
 - To accept settings, read [Configuration](./plugins/authoring/configuration).
 - To connect plugins, read [Contracts and dependencies](./plugins/authoring/contracts).
+- To host a WIT interface or a Preview 2 command, read [Component Model](./components).
 - To extend compilation, start with [Custom instructions](./plugins/authoring/custom-instructions), then [Custom types](./plugins/authoring/custom-types).
 
 Each privileged handle needs an exact publisher-authored Authority request and a consumer-reviewed grant. If your plugin only needs a host import, do not ask for instance management or runtime hooks.

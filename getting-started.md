@@ -6,8 +6,6 @@ description: Install Wago, select a runtime, and run a real WebAssembly module f
 
 This guide takes you from an empty machine to a successful WebAssembly call. You will install the Wago version manager, select a runtime, download a tiny module, and run it.
 
-![Installing Wago and selecting a canary runtime](/demos/install.gif)
-
 ## Install the manager
 
 ::: code-group
@@ -26,9 +24,17 @@ irm https://install.wago.sh/ps | iex
 
 :::
 
+The installer prints where it put `wago`. Open a new terminal if it updated your
+`PATH`, then check that your shell can find it:
+
 ```sh
 wago --version
 ```
+
+The manager can download a prebuilt binary or build from source when one is not
+available. Have [Go 1.22 or newer](https://go.dev/dl/) on `PATH` for that fallback,
+plugin builds, and standalone executables. You can run a prebuilt core runtime
+without a Go toolchain.
 
 You can think of the wago command as a **version manager**. It handles version installing, upgrading, and switching. In order to run wasm, you need to install the actual runtime.
 
@@ -44,9 +50,21 @@ go get github.com/wago-org/wago
 wago version install
 ```
 
+The interactive picker lets you choose a channel and build. For a repeatable
+first run without prompts, install the current beta's standard Go build:
+
+```sh
+wago version install --beta --profile standard --build normal --use --no-input
+wago --version
+```
+
+This page is the current development guide. Use the version selector when you
+need docs for an installed release. [Configuration and versions](./guides/cli/configuration)
+explains profiles, channels, and pinning an exact revision.
+
 ## Download a small module
 
-![Downloading, inspecting, and running the Fibonacci module](/demos/run-fib.gif)
+![Downloading, inspecting, and running the Fibonacci module](/demos/run-module.gif)
 
 ```sh
 curl -fsSL https://wago.sh/corpora/fib.wasm -o fib.wasm
@@ -78,7 +96,9 @@ You should see:
 
 ## Try the everyday commands
 
-> Wago uses either [Go 1.22 or newer](https://go.dev/) or [TinyGo 0.41.1](https://tinygo.org/getting-started/install/), the tested TinyGo baseline, to link standalone executables. Make sure one of them is available on `PATH`.
+You need [Go 1.22 or newer](https://go.dev/) on `PATH` to build a standalone
+executable. TinyGo builds need **both Go and TinyGo**; the smaller build is an
+optional next step in [Standalone executables](./guides/cli/standalone).
 
 Create a standalone executable:
 
@@ -100,6 +120,11 @@ fib.exe 30
 ```
 
 :::
+
+The output includes its runtime. You can copy it to another machine with the
+same operating system, architecture, and compatible CPU features and run it
+without installing Wago.
+Keep the original `.wasm` when you need to rebuild for a different target.
 
 ## Where to go next
 

@@ -108,7 +108,7 @@ Any language that can emit the plugin's ordinary Wasm imports. The examples incl
 
 <Accordion title="Where does plugin configuration live?">
 
-The selected JSON value lives in the plugin entry in `wago-lock.json`. Change it with `wago plugin config`; do not put plugin-owned settings under the core `settings` object in `wago.json`.
+The selected JSON value lives in the plugin entry in `wago-lock.json`. Change it with `wago plugin config <id> '{"key":"value"}'` or `--file config.json`; do not put plugin-owned settings under the core `settings` object in `wago.json`. The value replaces the existing configuration. Omitting it sets `{}`. Run a guest afterward to check provider-specific validation and startup.
 
 </Accordion>
 

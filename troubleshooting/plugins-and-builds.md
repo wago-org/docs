@@ -34,6 +34,50 @@ Then identify the failing stage:
 
 Use `--verbose` when the underlying Go build diagnostic matters.
 
+## A first plugin passes tests but cannot load
+
+The scaffold's original test only checks the provider catalog. It does not call `Register`. Add the [guest execution test](../guides/plugins/authoring/first-plugin#call-it-from-wasm).
+
+For `unsupported host callback func() int32`, use the portable result-slot callback:
+
+```go
+imports.HostFunc("tutorial", "answer", func(call wago.HostCall) {
+    call.SetI32(0, 42)
+}).Results(wago.ValI32)
+```
+
+For `selected plugin is unreachable from every reviewed direct root`, mark the intended root selection `Direct: true`, or connect it through a selected consumer's declared dependency. Do not mark every transitive provider direct just to silence the graph check.
+
+## Configuration succeeds but startup fails
+
+`wago plugin config` checks JSON syntax and rebuilds. A provider can still reject the value or fail to open a resource when the next runtime loads.
+
+Restore your last working configuration and smoke-test it:
+
+```sh
+wago plugin config github.com/wago-org/wasi/p1 --file wasi-config.json
+wago run wasi-hello.wasm
+```
+
+The value is a complete replacement, not a field merge. Omitting both the JSON argument and `--file` applies `{}`; the command does not open a configuration editor. Unknown WASI fields, relative host paths, missing mount directories, and invalid environment entries are common startup failures.
+
+## A component reports `bad version at offset 4`
+
+Check whether the file is a Component Model binary, such as Rust output for `wasm32-wasip2`. The current `wago run` path decodes core Wasm modules. Installing `/p2` does not add component dispatch to that command.
+
+Use the [typed Component Model or Preview 2 Go service](../guides/components), or build a Preview 1 command for `wago run`. A real malformed core binary can produce the same decoder error, so verify the guest target before changing plugins.
+
+## WASI access fails
+
+- The guest environment is empty unless `env` explicitly supplies values. Exporting a variable in your shell does not pass it to WASI.
+- Filesystem access needs a configured mount with the required rights. A host path existing on disk is not enough.
+- `read`, `write`, and `mutateDirectory` are separate. A read grant does not permit creating an output file.
+- `Capabilities insufficient` can mean the guest requested wider descriptor rights than the mount allows. For example, Go 1.27's Preview 1 `os.ReadFile` requests a broad inheriting-rights mask. Do not widen a read-only mount without checking the guest's needs.
+- Paths that escape a preopen are denied. Safe internal symlink or `..` behavior depends on the preview and host filesystem implementation; use paths below the intended preopen.
+- Preview 2 socket and name-lookup interfaces return `access-denied` while networking is disabled. Adding the provider does not grant network access.
+
+Review the [WASI configuration walkthrough](../guides/wasi) and the exact provider version in `wago-lock.json`.
+
 ## Locked mode fails
 
 The operation would need to change `wago.json` or `wago-lock.json`. Preview it outside the final build:
@@ -84,7 +128,8 @@ wago plugin grant github.com/wago-org/workers
 
 A required Authority must remain present, but its scope can be narrowed. If the
 plugin needs a withheld module or a larger minimum resource budget, registration
-fails before commit and your previous runtime stays active. A grant cannot widen
+or startup fails when the runtime loads. Restore the previous reviewed scope
+with `wago plugin grant`, then run a representative guest. A grant cannot widen
 the publisher's request.
 
 ## Offline mode fails

@@ -30,18 +30,53 @@ npm run docs:check
 
 ## Terminal demos
 
-The onboarding recordings are generated from the readable source tapes in
-`demos/`. To record them again, install [VHS](https://github.com/charmbracelet/vhs) and
-`gifsicle`, make sure an active `wago` runtime is on your `PATH`, then run:
+The current walkthrough recordings are generated from `demos/run-module.tape`
+and `demos/standalone.tape`. Install [VHS](https://github.com/charmbracelet/vhs),
+its `ttyd` and `ffmpeg` dependencies, `gifsicle`, and Go. Select a standard Wago
+runtime on `PATH`, then run:
 
 ```sh
 npm run docs:demos
+# Or record one walkthrough:
+npm run docs:demos -- run-module
 ```
 
-The recording script passes each tape through `scripts/humanize-tape.py`. It
-adds reproducible per-letter cadence without making the source tapes hard to
-edit, and it leaves hidden setup alone. The optimized GIFs are written to
-`public/demos/`.
+The script checks the real download, invocation, and standalone result before
+recording. Each recording gets a temporary working directory. It inherits the
+selected runtime and `WAGO_HOME`; use a clean Wago home when you want to avoid
+project or global plugin defaults. No download or command output is mocked.
+
+VHS tapes go through `scripts/humanize-tape.py` for reproducible per-letter
+cadence. If Chromium cannot start in your environment, install
+[agg](https://docs.asciinema.org/manual/agg/) and use the browser-free path:
+
+```sh
+WAGO_DEMO_RENDERER=agg npm run docs:demos
+```
+
+That path reads the same tapes, executes their visible commands, and captures
+actual combined output in asciicast format before rendering. It supports only
+linear command tapes, skips hidden VHS session setup, and fails on a failed
+command rather than publishing a successful-looking recording. Both paths use
+`gifsicle` and write to `public/demos/`. Inspect the GIFs before committing them.
+To record the WASI example, first complete the Preview 1 setup in the guide,
+then pass its project directory (with `wago.json` and `wago-lock.json`):
+
+```sh
+WAGO_DEMO_PROJECT=/path/to/wasi-example npm run docs:demos -- wasi-command
+```
+
+Keep `WAGO_HOME` pointing at the installation that has those plugins cached.
+The script copies the manifests into the recording directory and runs a locked,
+offline command. Older tapes and recordings remain available for the frozen
+release docs.
+
+## Executable walkthroughs
+
+The fixture READMEs in `demos/fixtures/` explain how to repeat the CLI,
+embedding, and plugin checks. They are development inputs, excluded from the
+published page tree and discovery exports. Keep their pinned toolchain/runtime
+versions alongside the results; a Linux smoke test is not an all-platform pass.
 
 ## Documentation versions
 

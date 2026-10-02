@@ -49,7 +49,7 @@ wago version which
 Non-interactively:
 
 ```sh
-wago version install --canary --use --no-input
+wago version install --beta --profile standard --build normal --use --no-input
 ```
 
 ## The wrong variant is active
@@ -58,7 +58,23 @@ wago version install --canary --use --no-input
 wago version switch canary --profile standard --build normal
 ```
 
-`wago version current` reports version, profile, and build.
+`wago version current` reports the selected channel or version, profile, and
+build. Use `wago --version` for the resolved release and toolchain.
+
+## The installer is building from source
+
+This can happen when the selected release asset or its checksum cannot be
+fetched. It is slower than a binary download. Check that `go version` and
+`git --version` work, and retain the complete error if the source build fails.
+A successful manager install still needs a runtime selected afterward.
+
+## Standard commands are missing
+
+Check the profile in `wago --version`. The minimal runtime is run-only. Switch
+to `standard/normal` for inspection, validation, and precompilation.
+[Profiling](../guides/cli/profiling) requires a separate opt-in build.
+Use the matching docs version and the installed command's `--help` when a flag
+is missing.
 
 ## A `.wago` file stopped loading
 

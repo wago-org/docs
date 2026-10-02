@@ -74,8 +74,19 @@ Use a value that matches the signature:
 wago run --invoke fib fib.wasm 30:i32
 ```
 
-In Go, use matching typed values:
+In Go, match the declared signature with slot helpers (`wago.I32`, `wago.I64`, `wago.F32`, `wago.F64`). The typed API can also report a type mismatch before running the guest:
 
 ```go
 out, err := inst.InvokeValues(ctx, "add", wago.ValueI32(20), wago.ValueI32(22))
 ```
+
+
+## A Go embedder never starts the program
+
+The CLI chooses an export for you. `Runtime.Instantiate` only runs a WebAssembly start section if one exists; it does not select `_start`, `main`, or `_initialize`. Invoke the entry point the guest toolchain documents. TinyGo reactor guests in the embedding tutorial export `_initialize`, which must run once per instance before your own exports.
+
+A guest that uses WASI also needs those imports. A successful `Compile` checks the module, but it does not install a WASI provider or grant filesystem access.
+
+## A raw result changes after another call
+
+`Invoke`, `InvokeContext`, and `WasmFunc.Invoke` return instance-owned result slots. Copy a result slice before the next invocation if you need to keep it. `InvokeValues` returns an independently owned typed slice, but is deprecated in favor of the raw APIs for normal invocation; use it deliberately when its typed checks or Runtime invoke hooks are needed.

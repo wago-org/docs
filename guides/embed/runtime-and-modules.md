@@ -18,6 +18,8 @@ go get github.com/wago-org/wago@main
 mkdir guest
 ```
 
+This canary guide uses `@main`. For a deployed application, pin a release tag or commit and keep `go.mod` and `go.sum` with your application.
+
 Pick a guest language. Each version exports the same WebAssembly function.
 
 <Tabs sync="embed-guest-language">
@@ -123,21 +125,21 @@ func run(ctx context.Context) error {
 	// TinyGo reactors initialize their runtime through this export. WAT and
 	// AssemblyScript modules in this example do not emit it.
 	if slices.Contains(module.Exports(), "_initialize") {
-		if _, err := instance.InvokeValues(ctx, "_initialize"); err != nil {
+		if _, err := instance.InvokeContext(ctx, "_initialize"); err != nil {
 			return err
 		}
 	}
 
-	results, err := instance.InvokeValues(
+	results, err := instance.InvokeContext(
 		ctx,
 		"add",
-		wago.ValueI32(20),
-		wago.ValueI32(22),
+		wago.I32(20),
+		wago.I32(22),
 	)
 	if err != nil {
 		return err
 	}
-	fmt.Println(results[0].I32())
+	fmt.Println(wago.AsI32(results[0]))
 	return nil
 }
 
@@ -158,17 +160,22 @@ go run .
 42
 ```
 
+`InvokeContext` takes raw WebAssembly value slots. `wago.I32` encodes an `i32`, and `wago.AsI32` reads one back. These helpers do not change the guest signature. The returned slice belongs to the instance until its next call; copy any results you want to keep. [Calls and state](./calls-and-state) covers the typed API and other scalar types.
+
 The guest language changes how you produce `module.wasm`, not how you embed it. The Go side sees the same WebAssembly types and export name in every case. TinyGo's `_initialize` export is the one lifecycle difference in this example; call it once per new instance before calling your own exports.
 
 ## Know what you own
 
 `Runtime` owns shared compiler resources, plugins, and lifecycle state. `Module` holds validated native code that can be reused. `Instance` owns mutable guest state such as memory, tables, and globals.
 
+Instantiation runs a WebAssembly start section, if present. Exports such as `_start`, `main`, and `_initialize` are separate functions: the Go API does not choose and call them for you. This example invokes `_initialize` only when the guest exports it.
+
 Create the runtime and compile the module once. Create instances according to the lifetime of the guest state you need, and close all three resources when you are finished.
 
 From here, choose the part your application needs:
 
 - [Calls and state](./calls-and-state) for values, memory, globals, and instance lifetime.
+- [Guest memory](./guest-memory) for a complete pointer-length exchange and checked memory copies.
 - [Host functions](./host-functions) when Wasm needs to call your Go code.
 - [Limits and cancellation](./limits-and-policy) before running untrusted modules.
 - [Concurrency and shutdown](./services-and-concurrency) for a long-lived service.
