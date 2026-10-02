@@ -122,7 +122,7 @@ A context can interrupt Wasm execution, but it cannot forcibly make arbitrary Go
 
 ## Interrupt a guest that does not return
 
-A fast `add` call rarely reaches its deadline. To check your actual cancellation path, create `guest/loop.wat`:
+A fast `add` call rarely reaches its deadline. This test needs WABT's `wat2wasm`, regardless of your earlier guest language. To check your actual cancellation path, create `guest/loop.wat`:
 
 ```wat
 (module

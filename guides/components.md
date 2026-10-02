@@ -16,13 +16,15 @@ Use the typed Go service below for components. Use [WASI Preview 1](./wasi) when
 
 ## Run the complete example
 
-The [walkthrough fixture](https://github.com/wago-org/docs/tree/main/demos/fixtures/plugins-walkthrough/components) includes the complete host, explicit provider selections, and pinned Go dependencies.
+The [walkthrough fixture](https://github.com/wago-org/docs/tree/c10fc427b008e71878e9cb890e2c609d0f008a8c/demos/fixtures/plugins-walkthrough/components) includes the complete host, explicit provider selections, and pinned Go dependencies.
 
-Clone the docs and enter the fixture:
+Clone the docs, select the tested fixture revision, and enter its directory:
 
 ```sh
 git clone https://github.com/wago-org/docs.git
-cd docs/demos/fixtures/plugins-walkthrough/components
+cd docs
+git checkout c10fc427b008e71878e9cb890e2c609d0f008a8c
+cd demos/fixtures/plugins-walkthrough/components
 go mod download
 ```
 

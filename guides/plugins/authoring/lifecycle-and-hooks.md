@@ -55,3 +55,10 @@ return calls.After(func(event wago.InvocationEvent) {
 Observers record outcomes. Interceptors may return an error to stop an operation. Use opaque event identities to correlate state instead of retaining a `Runtime`, `Module`, or `Instance`.
 
 Run [examples/10-hooks](https://github.com/wago-org/wago/tree/main/examples/10-hooks) to see the complete compile, instantiate, invoke, close, and runtime-close order.
+
+Run the published examples without a source checkout:
+
+```sh
+go run github.com/wago-org/wago/examples/09-plugin-config-lifecycle@b084a7c9343f81a9120ca80a13d133884e88d514
+go run github.com/wago-org/wago/examples/10-hooks@b084a7c9343f81a9120ca80a13d133884e88d514
+```

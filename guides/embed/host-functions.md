@@ -4,6 +4,8 @@ description: Bind Go functions as WebAssembly imports and safely exchange data t
 
 # Let Wasm call Go
 
+Continue in the `wago-embed` project from [Run WebAssembly from Go](./runtime-and-modules), with its `guest` directory and Go module. If you choose TinyGo again, replace the earlier `guest/main.go` with the new guest below.
+
 A host function supplies an import declared by the guest. Start with an ordinary typed Go function; use the lower-level `HostFunc` form only when the callback needs the calling instance or its memory.
 
 ## Bind a typed function

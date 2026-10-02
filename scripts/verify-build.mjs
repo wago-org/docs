@@ -1,6 +1,7 @@
 import { access, readFile } from 'node:fs/promises'
 import { preferredDocsBase } from './generate-root-redirect.mjs'
 import { channelBase, versionDirectory } from './version-routing.mjs'
+import { verifyNavigation } from './verify-navigation.mjs'
 
 const output = new URL('../.vitepress/dist/', import.meta.url)
 const manifest = JSON.parse(await readFile(new URL('../versions.json', import.meta.url), 'utf8'))
@@ -183,7 +184,7 @@ if (!rawHomepage.includes('### [Extend Wago with plugins](./using-plugins)')) {
 const gettingStarted = await readFile(new URL(`${canaryBase}/getting-started.html`, output), 'utf8')
 for (const [version, html, sidebarOrder] of [
   ['canary', gettingStarted, ['>Introduction</h2>', '>CLI</h2>', '>EMBED</h2>', '>PLUGINS</h2>', '>Reference</h2>']],
-  ['beta', await readFile(new URL('beta/getting-started.html', output), 'utf8'), ['>Introduction</h2>', '>EMBED</h2>', '>PLUGINS</h2>', '>Reference</h2>']]
+  ['beta', await readFile(new URL('beta/getting-started.html', output), 'utf8'), ['>Introduction</h2>', '>CLI</h2>', '>EMBED</h2>', '>PLUGINS</h2>', '>Reference</h2>']]
 ]) {
   const positions = sidebarOrder.map((marker) => html.indexOf(marker))
   if (positions.some((position) => position < 0) ||
@@ -371,7 +372,7 @@ const rawFirstPlugin = await readFile(new URL(`raw/${canaryBase}/guides/plugins/
 for (const marker of [
   'wago init --plugin',
   'wago plugin catalog --check',
-  'github.com/wago-org/wago@main'
+  'github.com/wago-org/wago@b084a7c9343f81a9120ca80a13d133884e88d514'
 ]) {
   if (!rawFirstPlugin.includes(marker)) {
     throw new Error(`First plugin tutorial Markdown is missing ${marker}`)
@@ -396,6 +397,10 @@ if (!full.includes('# Getting started')) {
 }
 
 const betaHomepage = await readFile(new URL('beta/index.html', output), 'utf8')
+for (const marker of ['Last recorded canary', 'selecting docs does not switch your installed runtime']) {
+  if (!homepage.includes(marker)) throw new Error(`Canary provenance banner is missing ${marker}`)
+  if (betaHomepage.includes(marker)) throw new Error(`Canary-only banner wording leaked into beta: ${marker}`)
+}
 if (!betaHomepage.includes('href="/beta/getting-started"')) {
   throw new Error('Beta documentation links escape the beta route prefix')
 }
@@ -403,4 +408,9 @@ if (!homepage.includes(`href="/${canaryBase}/getting-started"`)) {
   throw new Error('Canary documentation links escape the canary route prefix')
 }
 
-console.log(`Verified ${expectedFiles.length} deployment artifacts and ${docsIndex.pages.length} indexed pages for docs.wago.sh`)
+const navigationLinks = await verifyNavigation(output, [
+  'https://docs.wago.sh/',
+  ...docsIndex.pages.map(({ url }) => url)
+])
+
+console.log(`Verified ${expectedFiles.length} deployment artifacts, ${docsIndex.pages.length} indexed pages, and ${navigationLinks} internal links for docs.wago.sh`)

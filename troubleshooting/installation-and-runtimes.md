@@ -34,7 +34,7 @@ where wago
   </Tab>
 </Tabs>
 
-If nothing appears, rerun the installer from [Getting started](../getting-started). If two paths appear, the first one wins; remove or reorder the stale entry.
+If nothing appears, check the installation output. An installer that asked you to add `~/.wago/bin` did not change `PATH` automatically; follow the [PATH setup](../getting-started#install-the-manager) before rerunning the installer. If two paths appear, the first one wins; remove or reorder the stale entry.
 
 ## No runtime is active
 

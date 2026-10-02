@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run the complete Go programs in the embedding guides against a runtime checkout."""
+"""Run embedding-guide programs against a public module version or runtime checkout."""
 import argparse
 import os
 from pathlib import Path
@@ -10,19 +10,35 @@ import sys
 import tempfile
 
 parser = argparse.ArgumentParser(description=__doc__)
-parser.add_argument('--runtime', required=True, type=Path)
+selection = parser.add_mutually_exclusive_group(required=True)
+selection.add_argument('--runtime', type=Path, help='use a local checkout (not a public-install test)')
+selection.add_argument('--module-version', help='download a public module reference, for example main or v0.1.0-beta.11')
 parser.add_argument('--go', default='go')
 parser.add_argument('--wat2wasm', default='wat2wasm')
 parser.add_argument('--work-dir', type=Path)
 args = parser.parse_args()
 root = Path(__file__).resolve().parents[3]
 work = (args.work_dir or Path(tempfile.mkdtemp(prefix='wago-embed-check-'))).resolve()
+if args.module_version and work.exists() and any(work.iterdir()):
+    parser.error('--module-version needs a new or empty --work-dir for isolated caches')
 work.mkdir(parents=True, exist_ok=True)
 env = dict(os.environ, GOWORK='off', GOMAXPROCS=os.environ.get('GOMAXPROCS', '2'))
 env['GOFLAGS'] = '-p=1'
+if args.module_version:
+    for variable, subdir in [
+        ('HOME', 'home'), ('GOPATH', 'gopath'), ('GOMODCACHE', 'gomodcache'),
+        ('GOCACHE', 'gocache'), ('XDG_CACHE_HOME', 'cache'),
+    ]:
+        folder = work / 'environment' / subdir
+        folder.mkdir(parents=True, exist_ok=True)
+        env[variable] = str(folder)
+    # Ignore a user's saved go env settings and npm/tool caches in public mode.
+    env['GOENV'] = 'off'
+    print('Fresh public-module environment: ' + str(work / 'environment'), flush=True)
 
 def command(cmd, cwd):
-    result = subprocess.run(cmd, cwd=cwd, env=env, capture_output=True, text=True, timeout=180)
+    print('$ ' + ' '.join(map(str, cmd)) + ' [cwd=' + str(cwd) + ']', flush=True)
+    result = subprocess.run(cmd, cwd=cwd, env=env, capture_output=True, text=True, timeout=300)
     if result.returncode:
         print(result.stdout + result.stderr, file=sys.stderr)
         result.check_returncode()
@@ -59,10 +75,23 @@ expected = {
 def project(name):
     folder = work / name
     folder.mkdir(exist_ok=True)
-    (folder / 'go.mod').write_text('module example.com/wago-embed-check\n\ngo 1.22\n\nrequire github.com/wago-org/wago v0.0.0\n\nreplace github.com/wago-org/wago => ' + str(args.runtime.resolve()) + '\n')
+    if args.module_version:
+        command([args.go, 'mod', 'init', 'example.com/wago-embed-check'], folder)
+        command([args.go, 'get', 'github.com/wago-org/wago@' + resolved_version], folder)
+    else:
+        (folder / 'go.mod').write_text('module example.com/wago-embed-check\n\ngo 1.22\n\nrequire github.com/wago-org/wago v0.0.0\n\nreplace github.com/wago-org/wago => ' + str(args.runtime.resolve()) + '\n')
     for wasm in fixtures.glob('*.wasm'):
         shutil.copy(wasm, folder)
     return folder
+
+resolved_version = None
+if args.module_version:
+    dependency = work / 'public-dependency'
+    dependency.mkdir()
+    command([args.go, 'mod', 'init', 'example.com/wago-embed-dependency'], dependency)
+    command([args.go, 'get', 'github.com/wago-org/wago@' + args.module_version], dependency)
+    resolved_version = command([args.go, 'list', '-m', '-f', '{{.Version}}', 'github.com/wago-org/wago'], dependency).strip()
+    print('Public module resolved to ' + resolved_version, flush=True)
 
 print(command([args.go, 'version'], work).strip(), flush=True)
 print('wat2wasm ' + command([args.wat2wasm, '--version'], work).strip(), flush=True)
@@ -72,7 +101,8 @@ for name, page in pages.items():
         key = f'{name}-{index}'
         folder = project(key)
         (folder / 'main.go').write_text(main)
-        command([args.go, 'mod', 'tidy'], folder)
+        if args.runtime:
+            command([args.go, 'mod', 'tidy'], folder)
         output = command([args.go, 'run', '.'], folder)
         if key.startswith('artifacts-'):
             assert re.fullmatch(r'artifact: \d+ bytes\n42\n', output), output
@@ -85,6 +115,7 @@ for name, page in pages.items():
             print('PASS services-and-concurrency race-enabled run', flush=True)
 folder = project('api-boundaries')
 shutil.copy(Path(__file__).with_name('api_test.go'), folder)
-command([args.go, 'mod', 'tidy'], folder)
+if args.runtime:
+    command([args.go, 'mod', 'tidy'], folder)
 print(command([args.go, 'test', '-race', '-v', '-count=1', '.'], folder), end='', flush=True)
 print(f'All embedding walkthrough checks passed; work directory: {work}', flush=True)

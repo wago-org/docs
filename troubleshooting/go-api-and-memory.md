@@ -6,14 +6,26 @@ description: Diagnose Wago Go API host signatures, guest memory access, cancella
 
 Start at the host-to-Wasm boundary: import signatures, checked memory ranges, context cancellation, and instance ownership.
 
+## The example does not compile
+
+Check the dependency selected in your Go project:
+
+```sh
+go list -m github.com/wago-org/wago
+```
+
+The canary [embedding walkthrough](../guides/embed/runtime-and-modules) uses `go get github.com/wago-org/wago@main`. `@latest` selects a tagged release, so use the matching release docs or deliberately update your dependency. Run each complete program as a replacement for `main.go`, not alongside another example that also declares `main`.
+
+If TinyGo reports an unsupported Go version, put a Go version supported by your TinyGo release on `PATH` before creating the project. A `go.mod` created with a newer Go version can also force a newer toolchain. Check `go version`, `tinygo version`, and the `go` directive in `go.mod`; do not assume every Go version above Wago's minimum is supported by TinyGo.
+
 ## Host import mismatch
 
 Both the module name and field name must match the guest, including case. Create imports with `wago.NewImports()` and register callbacks with `imports.HostFunc(module, name, fn)`. Module and function names remain separate exact identities. Wago checks the callback and declared signature before guest startup.
 
-Inspect the module first:
+If you have the [Wago CLI installed](../getting-started), inspect the module first. For the guest from [Host functions](../guides/embed/host-functions):
 
 ```sh
-wago module imports fib.wasm
+wago module imports square.wasm
 ```
 
 Then compare the parameter and result slots with the guest declaration. Typed callbacks infer their signatures. With `func(wago.HostCall)` or `func(wago.Caller, wago.HostCall)`, set `.Params(...)` and `.Results(...)` explicitly.

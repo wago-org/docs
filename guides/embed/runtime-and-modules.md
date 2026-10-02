@@ -8,7 +8,13 @@ Start here when Wago should live inside your Go process. You will build the same
 
 ## Create a small project
 
-You need Go 1.22 or newer and one guest compiler: [WABT](https://github.com/WebAssembly/wabt), [AssemblyScript](https://www.assemblyscript.org/getting-started.html), or [TinyGo](https://tinygo.org/getting-started/install/).
+Install [Go 1.22 or newer](https://go.dev/dl/) and the tools for your guest language before creating the project:
+
+- **WAT:** [WABT](https://github.com/WebAssembly/wabt), with `wat2wasm` on your `PATH`. The later state, memory, and cancellation examples also use WAT, so install this to follow the whole embedding section.
+- **AssemblyScript:** Node.js 20 or newer and npm 10 or newer. The commands below download the pinned AssemblyScript 0.28.8 compiler with `npx`.
+- **TinyGo:** [TinyGo](https://tinygo.org/getting-started/install/) and a Go version that it supports, both on your `PATH`. Select that Go version before `go mod init`; a newer Go release can be too new for TinyGo. The examples were also checked with TinyGo 0.41.1 and Go 1.25.0.
+
+You need network access for the Go module download and, for AssemblyScript, the first `npx` command. The embedding programs do not require the Wago CLI.
 
 ```sh
 mkdir wago-embed
@@ -18,7 +24,13 @@ go get github.com/wago-org/wago@main
 mkdir guest
 ```
 
-This canary guide uses `@main`. For a deployed application, pin a release tag or commit and keep `go.mod` and `go.sum` with your application.
+This canary guide uses `@main`. `@latest` selects a tagged release, which may have a different API; use that release's documentation when you choose it. For a deployed application, pin a release tag or commit and keep `go.mod` and `go.sum` with your application. Check what was selected with:
+
+```sh
+go list -m github.com/wago-org/wago
+```
+
+Run this guide and the following embedding pages from the `wago-embed` directory. Each complete Go program replaces `main.go`; do not keep multiple copies of `main` in the project. Keep the generated Wasm files for the later pages.
 
 Pick a guest language. Each version exports the same WebAssembly function.
 

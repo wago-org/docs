@@ -2,6 +2,8 @@
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useRoute, withBase } from 'vitepress'
 import { docsVersions, type DocsVersion } from '../versions'
+import { data as availableRoutes } from '../version-routes.data'
+import { versionRoute } from '../../scripts/version-routing.mjs'
 
 const route = useRoute()
 const switcher = ref<HTMLDetailsElement | null>(null)
@@ -34,14 +36,7 @@ const activeVersion = computed(
 )
 
 function versionHref(version: DocsVersion) {
-  const currentBase = activeVersion.value.base
-  const isVersionedRoute = route.path === currentBase || route.path.startsWith(`${currentBase}/`)
-  const pagePath = isVersionedRoute
-    ? route.path.slice(currentBase.length) || '/'
-    : '/'
-  const normalizedPath = pagePath.startsWith('/') ? pagePath : `/${pagePath}`
-
-  return withBase(`${version.base}${normalizedPath}` || '/')
+  return withBase(versionRoute(route.path, activeVersion.value.base, version.base, availableRoutes))
 }
 
 function closeWhenClickingOutside(event: PointerEvent) {

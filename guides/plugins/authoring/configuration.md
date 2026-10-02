@@ -35,18 +35,15 @@ The schema describes the public configuration, but the current runtime does not 
 ## Read the value
 
 ```go
-var cfg Config
+cfg := Config{SampleRate: 10}
 if err := reg.Config(&cfg); err != nil {
 	return err
 }
 ```
 
-`Config` rejects unknown struct fields and trailing JSON. Apply defaults after decoding so they stay visible in code, then enforce bounds:
+`Config` rejects unknown struct fields and trailing JSON. Initialize defaults before decoding so an omitted field keeps its default while an explicit zero is still rejected by the bounds check:
 
 ```go
-if cfg.SampleRate == 0 {
-    cfg.SampleRate = 10
-}
 if cfg.SampleRate < 1 || cfg.SampleRate > 1000 {
     return fmt.Errorf("sampleRate must be between 1 and 1000")
 }
@@ -60,6 +57,8 @@ This uses `fmt` and `unicode/utf8`. Put the same checks in a shared decoding hel
 The complete flow is in [examples/09-plugin-config-lifecycle](https://github.com/wago-org/wago/tree/main/examples/09-plugin-config-lifecycle).
 
 ## Change configuration
+
+These CLI commands apply to an already installed provider in a consumer project. `github.com/acme/wago-metrics` is a placeholder, not a package supplied by this guide; replace it with your published provider ID and use its actual schema. For an unpublished local plugin, set `PluginSelection.Config` in the Go integration test and call `LoadPlugins` there.
 
 Pass the complete configuration as JSON:
 
@@ -79,3 +78,9 @@ This replaces the selected configuration; it does not merge fields. Omitting bot
 Review the resulting `wago-lock.json` change, then run a representative guest. The CLI checks JSON syntax and rebuilds the runtime, but plugin-specific validation runs when the plugin is loaded. A successful configuration command alone does not prove that startup will succeed. Keep the previous JSON so you can restore it with the same command.
 
 For a real provider with environment, I/O, and filesystem settings, follow [Configure WASI](../../wasi).
+
+Run the published example without a source checkout:
+
+```sh
+go run github.com/wago-org/wago/examples/09-plugin-config-lifecycle@b084a7c9343f81a9120ca80a13d133884e88d514
+```

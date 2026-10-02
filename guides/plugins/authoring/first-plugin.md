@@ -6,7 +6,7 @@ description: Scaffold, register, and execute a Wago plugin that provides one hos
 
 This plugin adds `tutorial.answer() -> i32` and returns `42`. You will create its catalog, then test an actual guest call so registration errors cannot hide behind a passing metadata test.
 
-You need Go 1.22 or newer and a standard Wago runtime.
+You need Go 1.22 or newer on `PATH`, the Wago manager, and a standard runtime. Complete [Getting started](../../../getting-started) first, then check `wago --version`. The walkthrough works with the beta.11 manager and standard runtime; the Go dependency below is pinned separately.
 
 ## Start the wizard
 
@@ -18,17 +18,17 @@ wago init --plugin
 
 Choose your public Go module path, name, description, version, license, repository, and author. Use a repository you control for a plugin you intend to publish. The wizard writes `wago.json`, `wago.providers.json`, `go.mod`, `register/register.go`, and a catalog test.
 
-The complete [answer fixture](https://github.com/wago-org/docs/tree/main/demos/fixtures/plugins-walkthrough/answer) uses `github.com/acme/wago-answer` as an example identity. It is local test code, not a package to install from that GitHub account.
+The complete [answer fixture](https://github.com/wago-org/docs/tree/c10fc427b008e71878e9cb890e2c609d0f008a8c/demos/fixtures/plugins-walkthrough/answer) uses `github.com/acme/wago-answer` as an example identity. It is local test code, not a package to install from that GitHub account.
 
 ::: info Canary dependency
-The scaffold currently writes `github.com/wago-org/wago v0.1.0`. If that release is not available, resolve current canary source and commit the resulting exact Go dependency:
+The beta.11 scaffold writes `github.com/wago-org/wago v0.1.0`, which is not published. Replace it with the public canary revision used by this walkthrough before generating the catalog:
 
 ```sh
 go mod edit -droprequire github.com/wago-org/wago
-go get github.com/wago-org/wago@main
+go get github.com/wago-org/wago@b084a7c9343f81a9120ca80a13d133884e88d514
 ```
 
-The fixture pins the canary revision used to verify this guide. Do not leave a moving `main` reference as the only record of a tested release.
+Go records the exact pseudo-version in `go.mod`. Commit `go.mod` and `go.sum`; no local checkout or `replace` directive is needed. Use a newer revision only after rerunning the same tests.
 :::
 
 ## Request one Authority
@@ -155,8 +155,14 @@ go test ./... -v
 wago plugin catalog --check
 ```
 
-You should see `TestProviderCatalog` and `TestAnswerFromGuest` pass.
+You should see `TestProviderCatalog` and `TestAnswerFromGuest` pass. These tests link the local provider directly. They do not install it into the `wago` CLI runtime; keep using the Go test until you publish and install your own package.
 
 ## Keep going
 
-For a complete plugin with a guest capability and state, run [examples/08-custom-plugin](https://github.com/wago-org/wago/tree/main/examples/08-custom-plugin). Read [Definitions and providers](./definitions-and-providers) to grow this definition, then [Test a plugin](./testing) before publishing.
+For a complete plugin with a guest capability and state, run [examples/08-custom-plugin](https://github.com/wago-org/wago/tree/main/examples/08-custom-plugin). You can run the published example without cloning Wago:
+
+```sh
+go run github.com/wago-org/wago/examples/08-custom-plugin@b084a7c9343f81a9120ca80a13d133884e88d514
+```
+
+Read [Definitions and providers](./definitions-and-providers) to grow this definition, then [Test a plugin](./testing) before publishing.

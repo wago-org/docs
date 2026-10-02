@@ -6,6 +6,12 @@ description: Install Wago, select a runtime, and run a real WebAssembly module f
 
 This guide takes you from an empty machine to a successful WebAssembly call. You will install the Wago version manager, select a runtime, download a tiny module, and run it.
 
+## Before you begin
+
+Use a supported macOS, Linux, or Windows machine with network access and a writable home directory. The shell examples below use `curl` on macOS/Linux or PowerShell on Windows.
+
+Install [Go 1.22 or newer](https://go.dev/dl/) and [Git](https://git-scm.com/downloads) before starting if you use the Go installer or need a source-build fallback. Released binaries do not always exist for the selected channel and platform. Go is also required for plugins and standalone executables; a downloaded prebuilt core runtime can run without it.
+
 ## Install the manager
 
 ::: code-group
@@ -24,17 +30,25 @@ irm https://install.wago.sh/ps | iex
 
 :::
 
-The installer prints where it put `wago`. Open a new terminal if it updated your
-`PATH`, then check that your shell can find it:
+The installer prints where it put `wago`. If it updated your `PATH`, open a new terminal. If it instead asks you to add the default `~/.wago/bin` directory yourself, add it for the current shell:
+
+::: code-group
+
+```sh [macOS / Linux]
+export PATH="$HOME/.wago/bin:$PATH"
+```
+
+```powershell [PowerShell]
+$env:Path = "$HOME\.wago\bin;$env:Path"
+```
+
+:::
+
+Use the actual directory printed by the installer if you chose another location. Add the same directory to your shell's startup configuration or Windows user `Path` to keep it for future terminals. Then check that your shell can find it:
 
 ```sh
 wago --version
 ```
-
-The manager can download a prebuilt binary or build from source when one is not
-available. Have [Go 1.22 or newer](https://go.dev/dl/) on `PATH` for that fallback,
-plugin builds, and standalone executables. You can run a prebuilt core runtime
-without a Go toolchain.
 
 You can think of the wago command as a **version manager**. It handles version installing, upgrading, and switching. In order to run wasm, you need to install the actual runtime.
 
@@ -58,9 +72,9 @@ wago version install --beta --profile standard --build normal --use --no-input
 wago --version
 ```
 
-This page is the current development guide. Use the version selector when you
-need docs for an installed release. [Configuration and versions](./guides/cli/configuration)
-explains profiles, channels, and pinning an exact revision.
+The first core-module example below works with the beta runtime. These are the **canary development docs**; use the version selector for documentation matching a released runtime. The selector changes the pages you read, not the runtime installed on your machine.
+
+[Configuration and versions](./guides/cli/configuration#pick-a-channel) shows how to switch to canary before trying development-only features. Go applications select their library version separately in `go.mod`; the embedding guides show that step explicitly.
 
 ## Download a small module
 

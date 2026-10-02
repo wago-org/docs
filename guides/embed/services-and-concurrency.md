@@ -121,6 +121,8 @@ func main() {
 }
 ```
 
+Run the program normally, then with Go's race detector. The second command needs a platform supported by Go's race detector, cgo enabled, and a C compiler on `PATH`; the ordinary embedding program does not require a C compiler.
+
 ```sh
 go run .
 go run -race .

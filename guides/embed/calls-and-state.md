@@ -4,6 +4,8 @@ description: Pass typed values, choose an instance lifetime, and access guest me
 
 # Work with calls and state
 
+Continue in the project from [Run WebAssembly from Go](./runtime-and-modules). The short call snippets below fit inside that program; the counter example later on replaces `main.go`. Its guest needs WABT's `wat2wasm`, even if you used another language for the first guest.
+
 For normal calls, use `InvokeContext` when you have a request context, or `Invoke` when you do not need cancellation. Both use raw `uint64` ABI slots:
 
 | Wasm type | Encode an argument | Read a result |
@@ -13,7 +15,7 @@ For normal calls, use `InvokeContext` when you have a request context, or `Invok
 | `f32` | `wago.F32(v)` | `wago.AsF32(slot)` |
 | `f64` | `wago.F64(v)` | `wago.AsF64(slot)` |
 
-Encode the type the export actually declares. Casting a Go float to `uint64` does not preserve its WebAssembly bit representation. Inspect a module with `wago module exports module.wasm` when the signature is unclear.
+Encode the type the export actually declares. Casting a Go float to `uint64` does not preserve its WebAssembly bit representation. If you also have the [Wago CLI installed](../../getting-started), inspect a module with `wago module exports module.wasm` when the signature is unclear.
 
 Raw results belong to the instance and remain valid only until its next invocation. Read or copy them before another call, including a call through a resolved `WasmFunc`:
 

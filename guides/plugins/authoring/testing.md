@@ -32,7 +32,7 @@ if err := wago.ValidatePluginSet(reviewedSet()); err != nil {
 
 Add a case for each optional Authority you can run without. Add a scope-boundary case for modules or instance budgets.
 
-The runnable examples use [examples/internal/exampleplugin](https://github.com/wago-org/wago/tree/main/examples/internal/exampleplugin) to keep this setup out of each `main.go`.
+The runnable examples use [examples/internal/exampleplugin](https://github.com/wago-org/wago/tree/main/examples/internal/exampleplugin) to keep this setup out of each `main.go`. That is a Go `internal` package and cannot be imported by an external plugin module. Use the explicit `PluginSet` from [the first-plugin integration test](./first-plugin#call-it-from-wasm) in your own module.
 
 ## Execute a guest
 
@@ -70,7 +70,9 @@ Use a deadline for tests that wait on goroutines.
 
 ## Try the consumer path
 
-Push a test version, then use a new directory:
+First [publish a release of your own plugin](../publish). The `github.com/acme/wago-answer` name below is a placeholder, not a published package; replace it with your real module path. Publishing and registry submission are separate from the local authoring checks above.
+
+After your release is available, use a new directory:
 
 ```sh
 mkdir consumer-test

@@ -72,6 +72,24 @@ err := reg.GuestCapability(
 )
 ```
 
-The guest capability governs Wasm. The Plugin Authority governs trusted Go plugin code.
+Handle that error, then attach the capability to the function builder. Declaring a capability alone does not require it for an import:
+
+```go
+if err != nil {
+    return err
+}
+imports.HostFunc("acme_clock", "now_millis", func(call wago.HostCall) {
+    call.SetI64(0, time.Now().UnixMilli())
+}).Results(wago.ValI64).Capability(wago.Capability("clock.read"))
+```
+
+This callback imports `time`; the definition and reviewed grant must include `acme_clock` in the `host.import.define` module scope. The guest capability governs Wasm. The Plugin Authority governs trusted Go plugin code.
 
 Run [examples/08-custom-plugin](https://github.com/wago-org/wago/tree/main/examples/08-custom-plugin) for a complete import and capability.
+
+Run the published examples without a source checkout:
+
+```sh
+go run github.com/wago-org/wago/examples/08-custom-plugin@b084a7c9343f81a9120ca80a13d133884e88d514
+go run github.com/wago-org/wago/examples/21-guest-storage@b084a7c9343f81a9120ca80a13d133884e88d514
+```

@@ -8,7 +8,7 @@ WebAssembly pointers are offsets into linear memory. A pointer-length pair needs
 
 This example gives the guest one 64 KiB memory page. The guest calls `env.write`, and the host copies the requested bytes before printing them. You will also try an invalid range and see how checked host reads behave after a write.
 
-Continue in the Go project from [Run WebAssembly from Go](./runtime-and-modules). Create `guest/message.wat`:
+Continue in the Go project from [Run WebAssembly from Go](./runtime-and-modules). This example needs WABT's `wat2wasm`, regardless of your earlier guest language. Create `guest/message.wat`:
 
 ```wat
 (module

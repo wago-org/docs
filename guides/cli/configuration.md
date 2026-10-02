@@ -4,8 +4,9 @@ description: Choose Wago runtime profiles, pin a revision, and keep project and 
 
 # Configure and manage Wago
 
-The `wago` command is a manager. The runtime it selects does the actual Wasm
-work. Updating one does not automatically mean you changed the other.
+The `wago` command is a manager. The runtime it selects does the actual Wasm work. Updating one does not automatically mean you changed the other.
+
+There are three separate choices: the manager executable on `PATH`, the selected CLI runtime, and the Wago library version in each Go application's `go.mod`. A `go get` does not switch the CLI runtime. The documentation version selector changes none of them.
 
 ## Know what is running
 
@@ -63,6 +64,12 @@ For example:
 
 ```sh
 wago version install --beta --profile minimal --build normal --use --no-input
+```
+
+That example makes the run-only profile active. Switch back before continuing the inspection and standalone tutorials:
+
+```sh
+wago version switch beta --profile standard --build normal
 ```
 
 These switches choose the installed runtime. `wago compile --tinygo` separately
