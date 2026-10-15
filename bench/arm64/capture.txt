@@ -1,0 +1,1601 @@
+# git 281387e2a4e9f914a2fc6536a49d64a7aef1a826
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec       	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/tiny         	    3752	     58205 ns/op	       120.0 code-B	  280861 B/op	     183 allocs/op
+BenchmarkWazeroCompile/tiny         	    3602	     59465 ns/op	       120.0 code-B	  280875 B/op	     183 allocs/op
+BenchmarkWazeroCompile/tiny         	    4374	     58740 ns/op	       120.0 code-B	  280784 B/op	     183 allocs/op
+BenchmarkWazeroInstantiate/tiny     	   26892	      9124 ns/op	    7176 B/op	      21 allocs/op
+BenchmarkWazeroInstantiate/tiny     	   27030	      8862 ns/op	    7176 B/op	      21 allocs/op
+BenchmarkWazeroInstantiate/tiny     	   26677	      9012 ns/op	    7176 B/op	      21 allocs/op
+BenchmarkWazeroExec/tiny.add        	      99	        23.32 ns/op	    100905 calls/batch	      16 B/op	       1 allocs/op
+BenchmarkWazeroExec/tiny.add        	      97	        22.74 ns/op	    100512 calls/batch	      16 B/op	       1 allocs/op
+BenchmarkWazeroExec/tiny.add        	      96	        23.14 ns/op	    100436 calls/batch	      16 B/op	       1 allocs/op
+BenchmarkDecode/tiny                	  365055	       591.1 ns/op	    1530 B/op	      15 allocs/op
+BenchmarkDecode/tiny                	  396560	       621.0 ns/op	    1530 B/op	      15 allocs/op
+BenchmarkDecode/tiny                	  391591	       596.0 ns/op	    1530 B/op	      15 allocs/op
+BenchmarkValidate/tiny              	  353660	       684.3 ns/op	    1560 B/op	      11 allocs/op
+BenchmarkValidate/tiny              	  372190	       688.1 ns/op	    1560 B/op	      11 allocs/op
+BenchmarkValidate/tiny              	  354230	       748.8 ns/op	    1560 B/op	      11 allocs/op
+BenchmarkCompile/tiny               	   34069	      6823 ns/op	   12192 B/op	      23 allocs/op
+BenchmarkCompile/tiny               	   34124	      7118 ns/op	   12192 B/op	      23 allocs/op
+BenchmarkCompile/tiny               	   34927	      6969 ns/op	   12192 B/op	      23 allocs/op
+BenchmarkCompileFull/tiny           	   23168	     10422 ns/op	       144.0 code-B	   22465 B/op	      92 allocs/op
+BenchmarkCompileFull/tiny           	   21392	     10538 ns/op	       144.0 code-B	   22465 B/op	      92 allocs/op
+BenchmarkCompileFull/tiny           	   22299	     10173 ns/op	       144.0 code-B	   22465 B/op	      92 allocs/op
+BenchmarkInstantiate/tiny           	   53558	      4504 ns/op	    1280 B/op	       4 allocs/op
+BenchmarkInstantiate/tiny           	   52863	      4517 ns/op	    1280 B/op	       4 allocs/op
+BenchmarkInstantiate/tiny           	   52639	      5504 ns/op	    1280 B/op	       4 allocs/op
+BenchmarkExec/tiny.add              	     100	         8.842 ns/op	    234673 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/tiny.add              	     100	         8.738 ns/op	    233700 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/tiny.add              	     100	         8.853 ns/op	    235870 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec       	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000011 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/fib_rec         	    5654	     55084 ns/op	       148.0 code-B	  283118 B/op	     225 allocs/op
+BenchmarkWazeroCompile/fib_rec         	    5067	     67458 ns/op	       148.0 code-B	  283064 B/op	     225 allocs/op
+BenchmarkWazeroCompile/fib_rec         	    4179	     59848 ns/op	       148.0 code-B	  283064 B/op	     225 allocs/op
+BenchmarkWazeroInstantiate/fib_rec     	   26566	      9205 ns/op	    7176 B/op	      21 allocs/op
+BenchmarkWazeroInstantiate/fib_rec     	   26538	      8935 ns/op	    7176 B/op	      21 allocs/op
+BenchmarkWazeroInstantiate/fib_rec     	   27208	      8884 ns/op	    7176 B/op	      21 allocs/op
+BenchmarkWazeroExec/fib_rec.fib        	      72	   1665799 ns/op	         2.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/fib_rec.fib        	      72	   1643266 ns/op	         2.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/fib_rec.fib        	      73	   1624318 ns/op	         2.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkDecode/fib_rec                	  484851	       494.4 ns/op	    1192 B/op	      14 allocs/op
+BenchmarkDecode/fib_rec                	  473956	       493.4 ns/op	    1192 B/op	      14 allocs/op
+BenchmarkDecode/fib_rec                	  467998	       506.2 ns/op	    1192 B/op	      14 allocs/op
+BenchmarkValidate/fib_rec              	  289216	       838.0 ns/op	    1664 B/op	      11 allocs/op
+BenchmarkValidate/fib_rec              	  287161	       835.3 ns/op	    1664 B/op	      11 allocs/op
+BenchmarkValidate/fib_rec              	  288397	       867.6 ns/op	    1664 B/op	      11 allocs/op
+BenchmarkCompile/fib_rec               	   17938	     12648 ns/op	   22472 B/op	      42 allocs/op
+BenchmarkCompile/fib_rec               	   18244	     12302 ns/op	   22472 B/op	      42 allocs/op
+BenchmarkCompile/fib_rec               	   19426	     13134 ns/op	   22472 B/op	      42 allocs/op
+BenchmarkCompileFull/fib_rec           	   15806	     14423 ns/op	       356.0 code-B	   30609 B/op	      98 allocs/op
+BenchmarkCompileFull/fib_rec           	   17108	     14180 ns/op	       356.0 code-B	   30609 B/op	      98 allocs/op
+BenchmarkCompileFull/fib_rec           	   16930	     14841 ns/op	       356.0 code-B	   30609 B/op	      98 allocs/op
+BenchmarkInstantiate/fib_rec           	   53403	      4559 ns/op	    1280 B/op	       4 allocs/op
+BenchmarkInstantiate/fib_rec           	   49669	      4455 ns/op	    1280 B/op	       4 allocs/op
+BenchmarkInstantiate/fib_rec           	   53568	      4539 ns/op	    1280 B/op	       4 allocs/op
+BenchmarkExec/fib_rec.fib              	     100	    690668 ns/op	         4.000 calls/batch	      13 B/op	       0 allocs/op
+BenchmarkExec/fib_rec.fib              	     100	    608052 ns/op	         4.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/fib_rec.fib              	     100	    602619 ns/op	         4.000 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec       	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000010 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000007 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/dispatch         	    3042	     85653 ns/op	       556.0 code-B	  288219 B/op	     229 allocs/op
+BenchmarkWazeroCompile/dispatch         	    3231	     81862 ns/op	       556.0 code-B	  288017 B/op	     229 allocs/op
+BenchmarkWazeroCompile/dispatch         	    3468	    107916 ns/op	       556.0 code-B	  288017 B/op	     229 allocs/op
+BenchmarkWazeroInstantiate/dispatch     	   25429	      9461 ns/op	    7504 B/op	      32 allocs/op
+BenchmarkWazeroInstantiate/dispatch     	   26042	      9114 ns/op	    7504 B/op	      32 allocs/op
+BenchmarkWazeroInstantiate/dispatch     	   26418	      9071 ns/op	    7504 B/op	      32 allocs/op
+BenchmarkWazeroExec/dispatch.apply      	     100	        23.97 ns/op	    102382 calls/batch	      24 B/op	       1 allocs/op
+BenchmarkWazeroExec/dispatch.apply      	      92	        25.32 ns/op	    101348 calls/batch	      24 B/op	       1 allocs/op
+BenchmarkWazeroExec/dispatch.apply      	      91	        24.28 ns/op	    103024 calls/batch	      24 B/op	       1 allocs/op
+BenchmarkDecode/dispatch                	  211208	      1035 ns/op	    2296 B/op	      21 allocs/op
+BenchmarkDecode/dispatch                	  237637	       988.1 ns/op	    2296 B/op	      21 allocs/op
+BenchmarkDecode/dispatch                	  249658	      1009 ns/op	    2296 B/op	      21 allocs/op
+BenchmarkValidate/dispatch              	  184069	      1385 ns/op	    2408 B/op	      14 allocs/op
+BenchmarkValidate/dispatch              	  172177	      1354 ns/op	    2408 B/op	      14 allocs/op
+BenchmarkValidate/dispatch              	  177836	      1361 ns/op	    2408 B/op	      14 allocs/op
+BenchmarkCompile/dispatch               	   15316	     16793 ns/op	   20864 B/op	      46 allocs/op
+BenchmarkCompile/dispatch               	   15088	     15639 ns/op	   20864 B/op	      46 allocs/op
+BenchmarkCompile/dispatch               	   14734	     15635 ns/op	   20864 B/op	      46 allocs/op
+BenchmarkCompileFull/dispatch           	   10000	     21857 ns/op	       944.0 code-B	   38025 B/op	     144 allocs/op
+BenchmarkCompileFull/dispatch           	   10000	     20420 ns/op	       944.0 code-B	   38025 B/op	     144 allocs/op
+BenchmarkCompileFull/dispatch           	   10000	     21592 ns/op	       944.0 code-B	   38025 B/op	     144 allocs/op
+BenchmarkInstantiate/dispatch           	   47929	      4884 ns/op	    1280 B/op	       4 allocs/op
+BenchmarkInstantiate/dispatch           	   48525	      4759 ns/op	    1280 B/op	       4 allocs/op
+BenchmarkInstantiate/dispatch           	   50072	      4878 ns/op	    1280 B/op	       4 allocs/op
+BenchmarkExec/dispatch.apply            	     100	        10.50 ns/op	    192896 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/dispatch.apply            	     100	        10.62 ns/op	    196574 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/dispatch.apply            	     100	        10.84 ns/op	    197014 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/memory_tree         	    2708	     89860 ns/op	       456.0 code-B	  313982 B/op	     336 allocs/op
+BenchmarkWazeroCompile/memory_tree         	    2540	     93867 ns/op	       456.0 code-B	  314000 B/op	     336 allocs/op
+BenchmarkWazeroCompile/memory_tree         	    2947	     87213 ns/op	       456.0 code-B	  313936 B/op	     336 allocs/op
+BenchmarkWazeroInstantiate/memory_tree     	   17617	     13215 ns/op	   72875 B/op	      23 allocs/op
+BenchmarkWazeroInstantiate/memory_tree     	   18451	     13100 ns/op	   72875 B/op	      23 allocs/op
+BenchmarkWazeroInstantiate/memory_tree     	   17661	     14114 ns/op	   72875 B/op	      23 allocs/op
+BenchmarkWazeroExec/memory_tree.run        	     100	     12325 ns/op	       165.0 calls/batch	      16 B/op	       1 allocs/op
+BenchmarkWazeroExec/memory_tree.run        	     100	     12200 ns/op	       168.0 calls/batch	      16 B/op	       1 allocs/op
+BenchmarkWazeroExec/memory_tree.run        	     100	     12121 ns/op	       169.0 calls/batch	      16 B/op	       1 allocs/op
+BenchmarkDecode/memory_tree                	  241966	       997.9 ns/op	    1640 B/op	      18 allocs/op
+BenchmarkDecode/memory_tree                	  249856	      1352 ns/op	    1640 B/op	      18 allocs/op
+BenchmarkDecode/memory_tree                	  247995	      1032 ns/op	    1640 B/op	      18 allocs/op
+BenchmarkValidate/memory_tree              	  106942	      2151 ns/op	    2376 B/op	      16 allocs/op
+BenchmarkValidate/memory_tree              	  113502	      2169 ns/op	    2376 B/op	      16 allocs/op
+BenchmarkValidate/memory_tree              	  114920	      2124 ns/op	    2376 B/op	      16 allocs/op
+BenchmarkCompile/memory_tree               	   16508	     15277 ns/op	   16648 B/op	      37 allocs/op
+BenchmarkCompile/memory_tree               	   16105	     14936 ns/op	   16648 B/op	      37 allocs/op
+BenchmarkCompile/memory_tree               	   15094	     15405 ns/op	   16648 B/op	      37 allocs/op
+BenchmarkCompileFull/memory_tree           	   10000	     22049 ns/op	       548.0 code-B	   29393 B/op	     116 allocs/op
+BenchmarkCompileFull/memory_tree           	   10000	     21665 ns/op	       548.0 code-B	   29393 B/op	     116 allocs/op
+BenchmarkCompileFull/memory_tree           	   10000	     23241 ns/op	       548.0 code-B	   29393 B/op	     116 allocs/op
+BenchmarkInstantiate/memory_tree           	   53875	      4472 ns/op	    1280 B/op	       4 allocs/op
+BenchmarkInstantiate/memory_tree           	   54115	      4542 ns/op	    1280 B/op	       4 allocs/op
+BenchmarkInstantiate/memory_tree           	   52389	      4621 ns/op	    1280 B/op	       4 allocs/op
+BenchmarkExec/memory_tree.run              	     100	      4940 ns/op	       415.0 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/memory_tree.run              	     100	      4925 ns/op	       418.0 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/memory_tree.run              	     100	      4895 ns/op	       422.0 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec       	1000000000	         0.0000007 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/fannkuch         	     321	    767567 ns/op	      7068 code-B	 1038825 B/op	    2087 allocs/op
+BenchmarkWazeroCompile/fannkuch         	     304	    760555 ns/op	      7068 code-B	 1038768 B/op	    2087 allocs/op
+BenchmarkWazeroCompile/fannkuch         	     318	    790848 ns/op	      7068 code-B	 1038768 B/op	    2087 allocs/op
+BenchmarkWazeroInstantiate/fannkuch     	    3266	     63890 ns/op	 1056177 B/op	      27 allocs/op
+BenchmarkWazeroInstantiate/fannkuch     	    3714	     74123 ns/op	 1056180 B/op	      27 allocs/op
+BenchmarkWazeroInstantiate/fannkuch     	    3352	     65815 ns/op	 1056177 B/op	      27 allocs/op
+BenchmarkWazeroExec/fannkuch.run        	     100	   1085472 ns/op	         2.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/fannkuch.run        	     100	   1057698 ns/op	         2.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/fannkuch.run        	     100	   1102210 ns/op	         2.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkDecode/fannkuch                	   43075	      5602 ns/op	    3600 B/op	      41 allocs/op
+BenchmarkDecode/fannkuch                	   42597	      5645 ns/op	    3600 B/op	      41 allocs/op
+BenchmarkDecode/fannkuch                	   43579	      5602 ns/op	    3600 B/op	      41 allocs/op
+BenchmarkValidate/fannkuch              	   12619	     21923 ns/op	    4928 B/op	      16 allocs/op
+BenchmarkValidate/fannkuch              	   12615	     18681 ns/op	    4928 B/op	      16 allocs/op
+BenchmarkValidate/fannkuch              	   12603	     18842 ns/op	    4928 B/op	      16 allocs/op
+BenchmarkCompile/fannkuch               	    2122	    100741 ns/op	   42376 B/op	      50 allocs/op
+BenchmarkCompile/fannkuch               	    3160	     79746 ns/op	   42376 B/op	      50 allocs/op
+BenchmarkCompile/fannkuch               	    3204	    100082 ns/op	   42376 B/op	      50 allocs/op
+BenchmarkCompileFull/fannkuch           	    2271	    104197 ns/op	      4168 code-B	   61475 B/op	     152 allocs/op
+BenchmarkCompileFull/fannkuch           	    2331	    100123 ns/op	      4168 code-B	   61475 B/op	     152 allocs/op
+BenchmarkCompileFull/fannkuch           	    2370	     98771 ns/op	      4168 code-B	   61475 B/op	     152 allocs/op
+BenchmarkInstantiate/fannkuch           	    6938	     36179 ns/op	    1432 B/op	       6 allocs/op
+BenchmarkInstantiate/fannkuch           	    6891	     35798 ns/op	    1432 B/op	       6 allocs/op
+BenchmarkInstantiate/fannkuch           	    6722	     36331 ns/op	    1432 B/op	       6 allocs/op
+BenchmarkExec/fannkuch.run              	      84	    940310 ns/op	         3.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/fannkuch.run              	      87	    927833 ns/op	         3.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/fannkuch.run              	      85	    925345 ns/op	         3.000 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec       	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000007 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000006 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/nbody         	     604	    389634 ns/op	      5144 code-B	  717518 B/op	     926 allocs/op
+BenchmarkWazeroCompile/nbody         	     536	    375229 ns/op	      5144 code-B	  717472 B/op	     926 allocs/op
+BenchmarkWazeroCompile/nbody         	     600	    369120 ns/op	      5144 code-B	  717472 B/op	     926 allocs/op
+BenchmarkWazeroInstantiate/nbody     	    3729	     70121 ns/op	 1056178 B/op	      27 allocs/op
+BenchmarkWazeroInstantiate/nbody     	    3727	     66670 ns/op	 1056177 B/op	      27 allocs/op
+BenchmarkWazeroInstantiate/nbody     	    3708	     67659 ns/op	 1056177 B/op	      27 allocs/op
+BenchmarkWazeroExec/nbody.step       	     100	    151317 ns/op	        14.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/nbody.step       	     100	    151755 ns/op	        14.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/nbody.step       	     100	    152451 ns/op	        14.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkDecode/nbody                	   51226	      4717 ns/op	    2040 B/op	      28 allocs/op
+BenchmarkDecode/nbody                	   49902	      4665 ns/op	    2040 B/op	      28 allocs/op
+BenchmarkDecode/nbody                	   50826	      4649 ns/op	    2040 B/op	      28 allocs/op
+BenchmarkValidate/nbody              	   16543	     14710 ns/op	    3584 B/op	      15 allocs/op
+BenchmarkValidate/nbody              	   16232	     14703 ns/op	    3584 B/op	      15 allocs/op
+BenchmarkValidate/nbody              	   16486	     14426 ns/op	    3584 B/op	      15 allocs/op
+BenchmarkCompile/nbody               	    3471	     64214 ns/op	   43968 B/op	      56 allocs/op
+BenchmarkCompile/nbody               	    3783	     64416 ns/op	   43968 B/op	      56 allocs/op
+BenchmarkCompile/nbody               	    3794	     63636 ns/op	   43968 B/op	      56 allocs/op
+BenchmarkCompileFull/nbody           	    2876	     81121 ns/op	      3152 code-B	   62755 B/op	     142 allocs/op
+BenchmarkCompileFull/nbody           	    2888	     96466 ns/op	      3152 code-B	   62755 B/op	     142 allocs/op
+BenchmarkCompileFull/nbody           	    2822	     83798 ns/op	      3152 code-B	   62755 B/op	     142 allocs/op
+BenchmarkInstantiate/nbody           	    6792	     36186 ns/op	    1432 B/op	       6 allocs/op
+BenchmarkInstantiate/nbody           	    6848	     36593 ns/op	    1432 B/op	       6 allocs/op
+BenchmarkInstantiate/nbody           	    6835	     36204 ns/op	    1432 B/op	       6 allocs/op
+BenchmarkExec/nbody.step             	     100	    141080 ns/op	        16.00 calls/batch	       3 B/op	       0 allocs/op
+BenchmarkExec/nbody.step             	     100	    143578 ns/op	        15.00 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/nbody.step             	     100	    169675 ns/op	        15.00 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec       	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000009 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/matmul         	     637	    339860 ns/op	      2668 code-B	  604060 B/op	    1155 allocs/op
+BenchmarkWazeroCompile/matmul         	     770	    314096 ns/op	      2668 code-B	  603952 B/op	    1155 allocs/op
+BenchmarkWazeroCompile/matmul         	     768	    310283 ns/op	      2668 code-B	  603952 B/op	    1155 allocs/op
+BenchmarkWazeroInstantiate/matmul     	    3824	     66435 ns/op	 1056177 B/op	      27 allocs/op
+BenchmarkWazeroInstantiate/matmul     	    3619	     71639 ns/op	 1056179 B/op	      27 allocs/op
+BenchmarkWazeroInstantiate/matmul     	    3523	     67534 ns/op	 1056178 B/op	      27 allocs/op
+BenchmarkWazeroExec/matmul.run        	     100	    233005 ns/op	         9.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/matmul.run        	     100	    235491 ns/op	         9.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/matmul.run        	     100	    235881 ns/op	         9.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkDecode/matmul                	   83072	      2702 ns/op	    2040 B/op	      28 allocs/op
+BenchmarkDecode/matmul                	   89181	      2793 ns/op	    2040 B/op	      28 allocs/op
+BenchmarkDecode/matmul                	   84510	      2676 ns/op	    2040 B/op	      28 allocs/op
+BenchmarkValidate/matmul              	   29784	      8326 ns/op	    3584 B/op	      15 allocs/op
+BenchmarkValidate/matmul              	   29029	      8094 ns/op	    3584 B/op	      15 allocs/op
+BenchmarkValidate/matmul              	   29372	      8123 ns/op	    3584 B/op	      15 allocs/op
+BenchmarkCompile/matmul               	    5668	     42940 ns/op	   23272 B/op	      41 allocs/op
+BenchmarkCompile/matmul               	    6280	     41919 ns/op	   23272 B/op	      41 allocs/op
+BenchmarkCompile/matmul               	    6081	     42525 ns/op	   23272 B/op	      41 allocs/op
+BenchmarkCompileFull/matmul           	    4248	     55503 ns/op	      1968 code-B	   37865 B/op	     130 allocs/op
+BenchmarkCompileFull/matmul           	    4490	     55881 ns/op	      1968 code-B	   37865 B/op	     130 allocs/op
+BenchmarkCompileFull/matmul           	    4197	     54429 ns/op	      1968 code-B	   37865 B/op	     130 allocs/op
+BenchmarkInstantiate/matmul           	    6483	     36265 ns/op	    1432 B/op	       6 allocs/op
+BenchmarkInstantiate/matmul           	    6792	     36068 ns/op	    1432 B/op	       6 allocs/op
+BenchmarkInstantiate/matmul           	    6764	     36523 ns/op	    1432 B/op	       6 allocs/op
+BenchmarkExec/matmul.run              	     118	     77772 ns/op	        27.00 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/matmul.run              	     100	     78061 ns/op	        26.00 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/matmul.run              	     100	     77980 ns/op	        27.00 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec       	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000009 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/raytrace         	     177	   1246204 ns/op	     11032 code-B	 1490913 B/op	    2594 allocs/op
+BenchmarkWazeroCompile/raytrace         	     171	   1319830 ns/op	     11032 code-B	 1490860 B/op	    2594 allocs/op
+BenchmarkWazeroCompile/raytrace         	     182	   1269081 ns/op	     11032 code-B	 1490961 B/op	    2594 allocs/op
+BenchmarkWazeroInstantiate/raytrace     	    3670	     65267 ns/op	 1056177 B/op	      27 allocs/op
+BenchmarkWazeroInstantiate/raytrace     	    3350	     71329 ns/op	 1056178 B/op	      27 allocs/op
+BenchmarkWazeroInstantiate/raytrace     	    3370	     75973 ns/op	 1056179 B/op	      27 allocs/op
+BenchmarkWazeroExec/raytrace.render     	     100	    308752 ns/op	         8.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/raytrace.render     	     100	    250582 ns/op	         8.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/raytrace.render     	     100	    248837 ns/op	         9.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkDecode/raytrace                	   20372	     11510 ns/op	    2448 B/op	      30 allocs/op
+BenchmarkDecode/raytrace                	   20736	     11275 ns/op	    2448 B/op	      30 allocs/op
+BenchmarkDecode/raytrace                	   20580	     11561 ns/op	    2448 B/op	      30 allocs/op
+BenchmarkValidate/raytrace              	    6471	     39220 ns/op	    3784 B/op	      17 allocs/op
+BenchmarkValidate/raytrace              	    6327	     38798 ns/op	    3784 B/op	      17 allocs/op
+BenchmarkValidate/raytrace              	    6528	     38897 ns/op	    3784 B/op	      17 allocs/op
+BenchmarkCompile/raytrace               	    1446	    153689 ns/op	   84032 B/op	      76 allocs/op
+BenchmarkCompile/raytrace               	    1596	    158885 ns/op	   84032 B/op	      76 allocs/op
+BenchmarkCompile/raytrace               	    1554	    159972 ns/op	   84032 B/op	      76 allocs/op
+BenchmarkCompileFull/raytrace           	    1144	    200835 ns/op	      8496 code-B	  151734 B/op	     179 allocs/op
+BenchmarkCompileFull/raytrace           	    1171	    198921 ns/op	      8496 code-B	  151734 B/op	     179 allocs/op
+BenchmarkCompileFull/raytrace           	    1218	    206269 ns/op	      8496 code-B	  151734 B/op	     179 allocs/op
+BenchmarkInstantiate/raytrace           	    6872	     36315 ns/op	    1432 B/op	       6 allocs/op
+BenchmarkInstantiate/raytrace           	    5635	     36493 ns/op	    1432 B/op	       6 allocs/op
+BenchmarkInstantiate/raytrace           	    6771	     35838 ns/op	    1432 B/op	       6 allocs/op
+BenchmarkExec/raytrace.render           	     114	    261232 ns/op	         9.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/raytrace.render           	     100	    264314 ns/op	         8.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/raytrace.render           	     100	    262994 ns/op	         8.000 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec       	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000010 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/sha256         	     541	    454228 ns/op	      6192 code-B	  828084 B/op	    1069 allocs/op
+BenchmarkWazeroCompile/sha256         	     549	    443488 ns/op	      6192 code-B	  828033 B/op	    1069 allocs/op
+BenchmarkWazeroCompile/sha256         	     567	    433489 ns/op	      6192 code-B	  828035 B/op	    1069 allocs/op
+BenchmarkWazeroInstantiate/sha256     	    3508	     64426 ns/op	 1121737 B/op	      28 allocs/op
+BenchmarkWazeroInstantiate/sha256     	    3718	     75632 ns/op	 1121741 B/op	      28 allocs/op
+BenchmarkWazeroInstantiate/sha256     	    3255	     67042 ns/op	 1121737 B/op	      28 allocs/op
+BenchmarkWazeroExec/sha256.hashN      	     100	     46087 ns/op	        45.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/sha256.hashN      	     100	     46127 ns/op	        44.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/sha256.hashN      	     100	     46610 ns/op	        44.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkDecode/sha256                	   47244	      4948 ns/op	    4008 B/op	      42 allocs/op
+BenchmarkDecode/sha256                	   43262	      6005 ns/op	    4008 B/op	      42 allocs/op
+BenchmarkDecode/sha256                	   47096	      5064 ns/op	    4008 B/op	      42 allocs/op
+BenchmarkValidate/sha256              	   17931	     13422 ns/op	    3760 B/op	      16 allocs/op
+BenchmarkValidate/sha256              	   17883	     13605 ns/op	    3760 B/op	      16 allocs/op
+BenchmarkValidate/sha256              	   17625	     16148 ns/op	    3760 B/op	      16 allocs/op
+BenchmarkCompile/sha256               	    3736	     62317 ns/op	   23968 B/op	      40 allocs/op
+BenchmarkCompile/sha256               	    4102	     62590 ns/op	   23968 B/op	      40 allocs/op
+BenchmarkCompile/sha256               	    4333	     61070 ns/op	   23968 B/op	      40 allocs/op
+BenchmarkCompileFull/sha256           	    3024	     79631 ns/op	      2824 code-B	   43330 B/op	     145 allocs/op
+BenchmarkCompileFull/sha256           	    2992	     78925 ns/op	      2824 code-B	   43330 B/op	     145 allocs/op
+BenchmarkCompileFull/sha256           	    3138	     81031 ns/op	      2824 code-B	   43330 B/op	     145 allocs/op
+BenchmarkInstantiate/sha256           	    6354	     38273 ns/op	    1432 B/op	       6 allocs/op
+BenchmarkInstantiate/sha256           	    6546	     38866 ns/op	    1432 B/op	       6 allocs/op
+BenchmarkInstantiate/sha256           	    6441	     38338 ns/op	    1432 B/op	       6 allocs/op
+BenchmarkExec/sha256.hashN            	     100	     24683 ns/op	        84.00 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/sha256.hashN            	     100	     24692 ns/op	        82.00 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/sha256.hashN            	     121	     24906 ns/op	        85.00 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec       	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000007 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000006 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000007 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000006 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/json-as-simd         	      33	   8452366 ns/op	     85060 code-B	 2319996 B/op	    5829 allocs/op
+BenchmarkWazeroCompile/json-as-simd         	      26	   8740418 ns/op	     85060 code-B	 2319558 B/op	    5829 allocs/op
+BenchmarkWazeroCompile/json-as-simd         	      26	   8537059 ns/op	     85060 code-B	 2319559 B/op	    5829 allocs/op
+BenchmarkWazeroInstantiate/json-as-simd     	   15642	     15462 ns/op	   77931 B/op	      53 allocs/op
+BenchmarkWazeroInstantiate/json-as-simd     	   14406	     15912 ns/op	   77931 B/op	      53 allocs/op
+BenchmarkWazeroInstantiate/json-as-simd     	   15448	     15630 ns/op	   77931 B/op	      53 allocs/op
+BenchmarkWazeroExec/json-as-simd.serializeN 	     100	     27536 ns/op	        74.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/json-as-simd.serializeN 	     100	     27532 ns/op	        75.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/json-as-simd.serializeN 	     100	     27348 ns/op	        82.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/json-as-simd.deserializeN         	     100	     56044 ns/op	        38.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/json-as-simd.deserializeN         	     100	     56441 ns/op	        37.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/json-as-simd.deserializeN         	     100	     56833 ns/op	        37.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkDecode/json-as-simd                          	    4012	     61366 ns/op	   24152 B/op	      89 allocs/op
+BenchmarkDecode/json-as-simd                          	    4152	     59423 ns/op	   24152 B/op	      89 allocs/op
+BenchmarkDecode/json-as-simd                          	    4478	     58913 ns/op	   24152 B/op	      89 allocs/op
+BenchmarkValidate/json-as-simd                        	    1272	    202005 ns/op	   10888 B/op	      51 allocs/op
+BenchmarkValidate/json-as-simd                        	    1179	    268560 ns/op	   10888 B/op	      51 allocs/op
+BenchmarkValidate/json-as-simd                        	    1238	    216803 ns/op	   10888 B/op	      51 allocs/op
+BenchmarkCompile/json-as-simd                         	     208	   1098014 ns/op	   57928 B/op	      92 allocs/op
+BenchmarkCompile/json-as-simd                         	     218	   1154098 ns/op	   57928 B/op	      92 allocs/op
+BenchmarkCompile/json-as-simd                         	     231	   1285562 ns/op	   57928 B/op	      92 allocs/op
+BenchmarkCompileFull/json-as-simd                     	     163	   1560702 ns/op	     73992 code-B	  388302 B/op	     390 allocs/op
+BenchmarkCompileFull/json-as-simd                     	     157	   1481884 ns/op	     73992 code-B	  388302 B/op	     390 allocs/op
+BenchmarkCompileFull/json-as-simd                     	     166	   1552504 ns/op	     73992 code-B	  388302 B/op	     390 allocs/op
+BenchmarkInstantiate/json-as-simd                     	   30272	      8033 ns/op	    3032 B/op	      19 allocs/op
+BenchmarkInstantiate/json-as-simd                     	   30542	      8000 ns/op	    3032 B/op	      19 allocs/op
+BenchmarkInstantiate/json-as-simd                     	   30382	      8029 ns/op	    3032 B/op	      19 allocs/op
+BenchmarkExec/json-as-simd.serializeN                 	     120	     20323 ns/op	       100.0 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/json-as-simd.serializeN                 	     100	     20342 ns/op	       101.0 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/json-as-simd.serializeN                 	     100	     20601 ns/op	       102.0 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/json-as-simd.deserializeN               	      97	     40795 ns/op	        54.00 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/json-as-simd.deserializeN               	     100	     40554 ns/op	        51.00 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/json-as-simd.deserializeN               	     112	     40897 ns/op	        62.00 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000008 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/blake-as-simd         	     100	   2613327 ns/op	     42440 code-B	 1529384 B/op	    1189 allocs/op
+BenchmarkWazeroCompile/blake-as-simd         	      93	   2494826 ns/op	     42440 code-B	 1529439 B/op	    1189 allocs/op
+BenchmarkWazeroCompile/blake-as-simd         	      98	   2533276 ns/op	     42440 code-B	 1529240 B/op	    1189 allocs/op
+BenchmarkWazeroInstantiate/blake-as-simd     	   17206	     13449 ns/op	   73859 B/op	      38 allocs/op
+BenchmarkWazeroInstantiate/blake-as-simd     	   17834	     13735 ns/op	   73859 B/op	      38 allocs/op
+BenchmarkWazeroInstantiate/blake-as-simd     	   18156	     13171 ns/op	   73859 B/op	      38 allocs/op
+BenchmarkWazeroExec/blake-as-simd.hashN      	     100	    451132 ns/op	         5.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/blake-as-simd.hashN      	     100	    452857 ns/op	         5.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/blake-as-simd.hashN      	     106	    462062 ns/op	         5.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkDecode/blake-as-simd                	    4041	     59254 ns/op	    5184 B/op	      33 allocs/op
+BenchmarkDecode/blake-as-simd                	    4008	     57666 ns/op	    5184 B/op	      33 allocs/op
+BenchmarkDecode/blake-as-simd                	    4098	     59211 ns/op	    5184 B/op	      33 allocs/op
+BenchmarkValidate/blake-as-simd              	    1351	    181327 ns/op	    4736 B/op	      25 allocs/op
+BenchmarkValidate/blake-as-simd              	    1384	    180752 ns/op	    4736 B/op	      25 allocs/op
+BenchmarkValidate/blake-as-simd              	    1356	    202411 ns/op	    4736 B/op	      25 allocs/op
+BenchmarkCompile/blake-as-simd               	     412	    538498 ns/op	  177240 B/op	      80 allocs/op
+BenchmarkCompile/blake-as-simd               	     450	    529449 ns/op	  177240 B/op	      80 allocs/op
+BenchmarkCompile/blake-as-simd               	     453	    550779 ns/op	  177240 B/op	      80 allocs/op
+BenchmarkCompileFull/blake-as-simd           	     294	    807022 ns/op	     24304 code-B	  385073 B/op	     233 allocs/op
+BenchmarkCompileFull/blake-as-simd           	     272	    972988 ns/op	     24304 code-B	  385073 B/op	     233 allocs/op
+BenchmarkCompileFull/blake-as-simd           	     302	    797185 ns/op	     24304 code-B	  385073 B/op	     233 allocs/op
+BenchmarkInstantiate/blake-as-simd           	   49640	      4988 ns/op	    1968 B/op	       6 allocs/op
+BenchmarkInstantiate/blake-as-simd           	   48726	      5018 ns/op	    1968 B/op	       6 allocs/op
+BenchmarkInstantiate/blake-as-simd           	   48568	      4933 ns/op	    1968 B/op	       6 allocs/op
+BenchmarkExec/blake-as-simd.hashN            	     100	    424671 ns/op	         5.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/blake-as-simd.hashN            	     100	    432636 ns/op	         5.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/blake-as-simd.hashN            	     100	    424060 ns/op	         5.000 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec       	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000007 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000010 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/utf-as-simd         	     100	   2479107 ns/op	     28496 code-B	 1193647 B/op	    2874 allocs/op
+BenchmarkWazeroCompile/utf-as-simd         	     100	   2159381 ns/op	     28496 code-B	 1193664 B/op	    2874 allocs/op
+BenchmarkWazeroCompile/utf-as-simd         	      99	   2378303 ns/op	     28496 code-B	 1193480 B/op	    2874 allocs/op
+BenchmarkWazeroInstantiate/utf-as-simd     	   14083	     16737 ns/op	   79979 B/op	      30 allocs/op
+BenchmarkWazeroInstantiate/utf-as-simd     	   14452	     17432 ns/op	   79979 B/op	      30 allocs/op
+BenchmarkWazeroInstantiate/utf-as-simd     	   14451	     16767 ns/op	   79979 B/op	      30 allocs/op
+BenchmarkWazeroExec/utf-as-simd.convertN   	     100	    101406 ns/op	        20.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/utf-as-simd.convertN   	     120	    100360 ns/op	        20.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/utf-as-simd.convertN   	     100	     99869 ns/op	        21.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/utf-as-simd.validateN  	     133	    163403 ns/op	        13.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/utf-as-simd.validateN  	     100	    163420 ns/op	        13.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/utf-as-simd.validateN  	     100	    162922 ns/op	        13.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkDecode/utf-as-simd                	    7951	     32984 ns/op	   28816 B/op	      42 allocs/op
+BenchmarkDecode/utf-as-simd                	    7930	     33417 ns/op	   28816 B/op	      42 allocs/op
+BenchmarkDecode/utf-as-simd                	    7831	     33669 ns/op	   28816 B/op	      42 allocs/op
+BenchmarkValidate/utf-as-simd              	    2532	    101465 ns/op	    5652 B/op	      26 allocs/op
+BenchmarkValidate/utf-as-simd              	    2626	    100038 ns/op	    5652 B/op	      26 allocs/op
+BenchmarkValidate/utf-as-simd              	    2550	     98953 ns/op	    5652 B/op	      26 allocs/op
+BenchmarkCompile/utf-as-simd               	     694	    347690 ns/op	   75488 B/op	      70 allocs/op
+BenchmarkCompile/utf-as-simd               	     703	    343764 ns/op	   75488 B/op	      70 allocs/op
+BenchmarkCompile/utf-as-simd               	     690	    336430 ns/op	   75488 B/op	      70 allocs/op
+BenchmarkCompileFull/utf-as-simd           	     475	    504996 ns/op	     18548 code-B	  306373 B/op	     236 allocs/op
+BenchmarkCompileFull/utf-as-simd           	     495	    483240 ns/op	     18548 code-B	  306372 B/op	     236 allocs/op
+BenchmarkCompileFull/utf-as-simd           	     480	    499056 ns/op	     18548 code-B	  306372 B/op	     236 allocs/op
+BenchmarkInstantiate/utf-as-simd           	   24604	     11477 ns/op	    1848 B/op	      19 allocs/op
+BenchmarkInstantiate/utf-as-simd           	   26463	      9116 ns/op	    1848 B/op	      19 allocs/op
+BenchmarkInstantiate/utf-as-simd           	   25783	      9143 ns/op	    1848 B/op	      19 allocs/op
+BenchmarkExec/utf-as-simd.convertN         	     100	     36587 ns/op	        56.00 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/utf-as-simd.convertN         	     100	     36591 ns/op	        55.00 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/utf-as-simd.convertN         	     100	     36680 ns/op	        57.00 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/utf-as-simd.validateN        	     120	    132469 ns/op	        17.00 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/utf-as-simd.validateN        	     100	    133461 ns/op	        16.00 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/utf-as-simd.validateN        	     100	    132689 ns/op	        16.00 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec       	1000000000	         0.0000008 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/coremark         	      78	   2606667 ns/op	     28940 code-B	 2118765 B/op	    4983 allocs/op
+BenchmarkWazeroCompile/coremark         	      88	   2679458 ns/op	     28940 code-B	 2118721 B/op	    4983 allocs/op
+BenchmarkWazeroCompile/coremark         	      86	   2667554 ns/op	     28940 code-B	 2118720 B/op	    4983 allocs/op
+BenchmarkWazeroInstantiate/coremark     	   12346	     17988 ns/op	  138534 B/op	      26 allocs/op
+BenchmarkWazeroInstantiate/coremark     	   13706	     17358 ns/op	  138534 B/op	      26 allocs/op
+BenchmarkWazeroInstantiate/coremark     	   14502	     16746 ns/op	  138534 B/op	      26 allocs/op
+BenchmarkWazeroExec/coremark.coremark_run         	       5	  43909617 ns/op	         1.000 calls/batch	      16 B/op	       1 allocs/op
+BenchmarkWazeroExec/coremark.coremark_run         	       5	  43492417 ns/op	         1.000 calls/batch	      16 B/op	       1 allocs/op
+BenchmarkWazeroExec/coremark.coremark_run         	       5	  43902483 ns/op	         1.000 calls/batch	      16 B/op	       1 allocs/op
+BenchmarkDecode/coremark                          	   12595	     18794 ns/op	    2856 B/op	      33 allocs/op
+BenchmarkDecode/coremark                          	   12471	     19021 ns/op	    2856 B/op	      33 allocs/op
+BenchmarkDecode/coremark                          	   12476	     19282 ns/op	    2856 B/op	      33 allocs/op
+BenchmarkValidate/coremark                        	    3699	     71271 ns/op	    5112 B/op	      21 allocs/op
+BenchmarkValidate/coremark                        	    3697	     70811 ns/op	    5112 B/op	      21 allocs/op
+BenchmarkValidate/coremark                        	    3752	     79141 ns/op	    5112 B/op	      21 allocs/op
+BenchmarkCompile/coremark                         	     716	    337856 ns/op	   46088 B/op	      75 allocs/op
+BenchmarkCompile/coremark                         	     742	    332886 ns/op	   46088 B/op	      75 allocs/op
+BenchmarkCompile/coremark                         	     753	    337799 ns/op	   46088 B/op	      75 allocs/op
+BenchmarkCompileFull/coremark                     	     600	    391143 ns/op	     14996 code-B	  124149 B/op	     186 allocs/op
+BenchmarkCompileFull/coremark                     	     618	    409650 ns/op	     14996 code-B	  124149 B/op	     186 allocs/op
+BenchmarkCompileFull/coremark                     	     597	    412197 ns/op	     14996 code-B	  124149 B/op	     186 allocs/op
+BenchmarkInstantiate/coremark                     	   35620	      6809 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkInstantiate/coremark                     	   34826	      6919 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkInstantiate/coremark                     	   34874	      6839 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkExec/coremark.coremark_run               	       8	  26586312 ns/op	         1.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/coremark.coremark_run               	       8	  26744724 ns/op	         1.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/coremark.coremark_run               	       8	  26838635 ns/op	         1.000 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec       	1000000000	         0.0000013 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000013 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000007 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/blake3         	     100	   2786935 ns/op	     37432 code-B	 1511220 B/op	    2124 allocs/op
+BenchmarkWazeroCompile/blake3         	      86	   2754409 ns/op	     37432 code-B	 1510891 B/op	    2124 allocs/op
+BenchmarkWazeroCompile/blake3         	      86	   2834203 ns/op	     37432 code-B	 1510892 B/op	    2124 allocs/op
+BenchmarkWazeroInstantiate/blake3     	    3408	     63762 ns/op	 1056057 B/op	      26 allocs/op
+BenchmarkWazeroInstantiate/blake3     	    3418	     67653 ns/op	 1056058 B/op	      26 allocs/op
+BenchmarkWazeroInstantiate/blake3     	    3412	     66581 ns/op	 1056057 B/op	      26 allocs/op
+BenchmarkWazeroExec/blake3.blake3_hash         	     100	    259020 ns/op	         8.000 calls/batch	     840 B/op	      35 allocs/op
+BenchmarkWazeroExec/blake3.blake3_hash         	     100	    255606 ns/op	         8.000 calls/batch	     840 B/op	      35 allocs/op
+BenchmarkWazeroExec/blake3.blake3_hash         	     100	    256051 ns/op	         8.000 calls/batch	     840 B/op	      35 allocs/op
+BenchmarkWazeroExec/blake3.blake3_keyed_hash   	     100	    259147 ns/op	         8.000 calls/batch	     840 B/op	      35 allocs/op
+BenchmarkWazeroExec/blake3.blake3_keyed_hash   	     100	    258267 ns/op	         8.000 calls/batch	     840 B/op	      35 allocs/op
+BenchmarkWazeroExec/blake3.blake3_keyed_hash   	     100	    257742 ns/op	         8.000 calls/batch	     840 B/op	      35 allocs/op
+BenchmarkWazeroExec/blake3.blake3_derive_key   	     100	    266346 ns/op	         8.000 calls/batch	     840 B/op	      35 allocs/op
+BenchmarkWazeroExec/blake3.blake3_derive_key   	     100	    267092 ns/op	         8.000 calls/batch	     840 B/op	      35 allocs/op
+BenchmarkWazeroExec/blake3.blake3_derive_key   	     100	    267762 ns/op	         8.000 calls/batch	     840 B/op	      35 allocs/op
+BenchmarkDecode/blake3                         	    6430	     37468 ns/op	    6104 B/op	      52 allocs/op
+BenchmarkDecode/blake3                         	    6871	     36881 ns/op	    6104 B/op	      52 allocs/op
+BenchmarkDecode/blake3                         	    6685	     37558 ns/op	    6104 B/op	      52 allocs/op
+BenchmarkValidate/blake3                       	    1888	    133405 ns/op	    6296 B/op	      40 allocs/op
+BenchmarkValidate/blake3                       	    2005	    126500 ns/op	    6296 B/op	      40 allocs/op
+BenchmarkValidate/blake3                       	    1981	    126017 ns/op	    6296 B/op	      40 allocs/op
+BenchmarkCompile/blake3                        	     375	    616628 ns/op	   62424 B/op	      86 allocs/op
+BenchmarkCompile/blake3                        	     390	    787870 ns/op	   62424 B/op	      86 allocs/op
+BenchmarkCompile/blake3                        	     375	    639930 ns/op	   62424 B/op	      86 allocs/op
+BenchmarkCompileFull/blake3                    	     316	    738420 ns/op	     26648 code-B	  222777 B/op	     254 allocs/op
+BenchmarkCompileFull/blake3                    	     324	    776391 ns/op	     26648 code-B	  222778 B/op	     254 allocs/op
+BenchmarkCompileFull/blake3                    	     290	    769477 ns/op	     26648 code-B	  222777 B/op	     254 allocs/op
+BenchmarkInstantiate/blake3                    	    6795	     43649 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkInstantiate/blake3                    	    6859	     35698 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkInstantiate/blake3                    	    6770	     36140 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkExec/blake3.blake3_hash               	     100	    230563 ns/op	         9.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/blake3.blake3_hash               	     100	    231961 ns/op	         9.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/blake3.blake3_hash               	     100	    232977 ns/op	         9.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/blake3.blake3_keyed_hash         	     100	    238596 ns/op	         9.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/blake3.blake3_keyed_hash         	     100	    230256 ns/op	         9.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/blake3.blake3_keyed_hash         	     128	    231990 ns/op	         9.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/blake3.blake3_derive_key         	     100	    236054 ns/op	         9.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/blake3.blake3_derive_key         	     100	    239417 ns/op	         9.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/blake3.blake3_derive_key         	     100	    238458 ns/op	         9.000 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/qoi 	     256	    919970 ns/op	     10772 code-B	  852972 B/op	    1612 allocs/op
+BenchmarkWazeroCompile/qoi 	     254	    987236 ns/op	     10772 code-B	  852812 B/op	    1612 allocs/op
+BenchmarkWazeroCompile/qoi 	     240	    985873 ns/op	     10772 code-B	  852812 B/op	    1612 allocs/op
+BenchmarkWazeroInstantiate/qoi         	    2124	    101855 ns/op	 2104634 B/op	      26 allocs/op
+BenchmarkWazeroInstantiate/qoi         	    2226	    102441 ns/op	 2104637 B/op	      26 allocs/op
+BenchmarkWazeroInstantiate/qoi         	    2619	    106394 ns/op	 2104636 B/op	      26 allocs/op
+BenchmarkWazeroExec/qoi.qoi_encode_run 	     100	      8815 ns/op	       227.0 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/qoi.qoi_encode_run 	     100	      8875 ns/op	       230.0 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/qoi.qoi_encode_run 	     120	      8854 ns/op	       226.0 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/qoi.qoi_decode_run 	     100	      7074 ns/op	       295.0 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/qoi.qoi_decode_run 	     100	      7043 ns/op	       290.0 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/qoi.qoi_decode_run 	     100	      7012 ns/op	       291.0 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkDecode/qoi                    	   30186	      7993 ns/op	    3712 B/op	      37 allocs/op
+BenchmarkDecode/qoi                    	   30135	      7993 ns/op	    3712 B/op	      37 allocs/op
+BenchmarkDecode/qoi                    	   29568	      8021 ns/op	    3712 B/op	      37 allocs/op
+BenchmarkValidate/qoi                  	   10000	     26202 ns/op	    5592 B/op	      26 allocs/op
+BenchmarkValidate/qoi                  	   10000	     26777 ns/op	    5592 B/op	      26 allocs/op
+BenchmarkValidate/qoi                  	   10000	     26321 ns/op	    5592 B/op	      26 allocs/op
+BenchmarkCompile/qoi                   	    1842	    124701 ns/op	   26456 B/op	      78 allocs/op
+BenchmarkCompile/qoi                   	    2012	    148069 ns/op	   26456 B/op	      78 allocs/op
+BenchmarkCompile/qoi                   	    2059	    126163 ns/op	   26456 B/op	      78 allocs/op
+BenchmarkCompileFull/qoi               	    1563	    156076 ns/op	      5096 code-B	   70947 B/op	     195 allocs/op
+BenchmarkCompileFull/qoi               	    1544	    150606 ns/op	      5096 code-B	   70947 B/op	     195 allocs/op
+BenchmarkCompileFull/qoi               	    1593	    156803 ns/op	      5096 code-B	   70947 B/op	     195 allocs/op
+BenchmarkInstantiate/qoi               	    3374	     69616 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkInstantiate/qoi               	    3397	     88362 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkInstantiate/qoi               	    3446	     70928 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkExec/qoi.qoi_encode_run       	     100	      4388 ns/op	       475.0 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/qoi.qoi_encode_run       	     100	      4443 ns/op	       468.0 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/qoi.qoi_encode_run       	     120	      4355 ns/op	       453.0 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/qoi.qoi_decode_run       	     100	      5244 ns/op	       396.0 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/qoi.qoi_decode_run       	     100	      5179 ns/op	       398.0 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/qoi.qoi_decode_run       	      99	      5263 ns/op	       393.0 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec       	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/lz4 	     186	   1280388 ns/op	     10552 code-B	  968547 B/op	    2213 allocs/op
+BenchmarkWazeroCompile/lz4 	     195	   1190917 ns/op	     10552 code-B	  968448 B/op	    2213 allocs/op
+BenchmarkWazeroCompile/lz4 	     201	   1256897 ns/op	     10552 code-B	  968448 B/op	    2213 allocs/op
+BenchmarkWazeroInstantiate/lz4         	    2450	     95189 ns/op	 2104679 B/op	      27 allocs/op
+BenchmarkWazeroInstantiate/lz4         	    2518	    135255 ns/op	 2104699 B/op	      27 allocs/op
+BenchmarkWazeroInstantiate/lz4         	    1953	    108642 ns/op	 2104684 B/op	      27 allocs/op
+BenchmarkWazeroExec/lz4.lz4_compress_run         	     121	     41309 ns/op	        49.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/lz4.lz4_compress_run         	     100	     41197 ns/op	        49.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/lz4.lz4_compress_run         	     100	     41604 ns/op	        49.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/lz4.lz4_decompress_run       	     100	      5340 ns/op	       381.0 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/lz4.lz4_decompress_run       	     100	      5270 ns/op	       385.0 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/lz4.lz4_decompress_run       	     100	      5289 ns/op	       382.0 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkDecode/lz4                              	   33414	      7318 ns/op	    2720 B/op	      34 allocs/op
+BenchmarkDecode/lz4                              	   32358	      7332 ns/op	    2720 B/op	      34 allocs/op
+BenchmarkDecode/lz4                              	   32221	      7290 ns/op	    2720 B/op	      34 allocs/op
+BenchmarkValidate/lz4                            	   10000	     24806 ns/op	    4936 B/op	      17 allocs/op
+BenchmarkValidate/lz4                            	   10000	     24799 ns/op	    4936 B/op	      17 allocs/op
+BenchmarkValidate/lz4                            	   10000	     25470 ns/op	    4936 B/op	      17 allocs/op
+BenchmarkCompile/lz4                             	    2175	    119372 ns/op	   24872 B/op	      54 allocs/op
+BenchmarkCompile/lz4                             	    2342	    117445 ns/op	   24872 B/op	      54 allocs/op
+BenchmarkCompile/lz4                             	    2283	    120882 ns/op	   24872 B/op	      54 allocs/op
+BenchmarkCompileFull/lz4                         	    1652	    148379 ns/op	      5412 code-B	   66051 B/op	     157 allocs/op
+BenchmarkCompileFull/lz4                         	    1608	    146027 ns/op	      5412 code-B	   66051 B/op	     157 allocs/op
+BenchmarkCompileFull/lz4                         	    1654	    142677 ns/op	      5412 code-B	   66051 B/op	     157 allocs/op
+BenchmarkInstantiate/lz4                         	    3373	     70101 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkInstantiate/lz4                         	    3397	     69919 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkInstantiate/lz4                         	    3511	     70415 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkExec/lz4.lz4_compress_run               	     100	     26799 ns/op	        80.00 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/lz4.lz4_compress_run               	     100	     32013 ns/op	        78.00 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/lz4.lz4_compress_run               	     100	     26020 ns/op	        81.00 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/lz4.lz4_decompress_run             	     100	      2025 ns/op	      1015 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/lz4.lz4_decompress_run             	     100	      2110 ns/op	       965.0 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/lz4.lz4_decompress_run             	     120	      1995 ns/op	      1003 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec       	1000000000	         0.0000016 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/zstd         	       7	  33228357 ns/op	    265680 code-B	24845993 B/op	   41191 allocs/op
+BenchmarkWazeroCompile/zstd         	       7	  31937976 ns/op	    265680 code-B	24846000 B/op	   41191 allocs/op
+BenchmarkWazeroCompile/zstd         	       7	  32830589 ns/op	    265680 code-B	24845988 B/op	   41191 allocs/op
+BenchmarkWazeroInstantiate/zstd     	    2263	    110623 ns/op	 2105149 B/op	      30 allocs/op
+BenchmarkWazeroInstantiate/zstd     	    2442	    100720 ns/op	 2105142 B/op	      30 allocs/op
+BenchmarkWazeroInstantiate/zstd     	    2280	    114999 ns/op	 2105148 B/op	      30 allocs/op
+BenchmarkWazeroExec/zstd.zstd_decompress_run         	     100	      6536 ns/op	       314.0 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/zstd.zstd_decompress_run         	     100	      6516 ns/op	       316.0 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/zstd.zstd_decompress_run         	     100	      6513 ns/op	       316.0 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkDecode/zstd                                 	    1540	    150458 ns/op	   10184 B/op	      74 allocs/op
+BenchmarkDecode/zstd                                 	    1614	    151948 ns/op	   10184 B/op	      74 allocs/op
+BenchmarkDecode/zstd                                 	    1580	    152356 ns/op	   10184 B/op	      74 allocs/op
+BenchmarkValidate/zstd                               	     435	    574232 ns/op	   13304 B/op	      85 allocs/op
+BenchmarkValidate/zstd                               	     448	    585877 ns/op	   13304 B/op	      85 allocs/op
+BenchmarkValidate/zstd                               	     438	    577620 ns/op	   13304 B/op	      85 allocs/op
+BenchmarkCompile/zstd                                	      78	   2788381 ns/op	  366280 B/op	     214 allocs/op
+BenchmarkCompile/zstd                                	      92	   2782485 ns/op	  366280 B/op	     214 allocs/op
+BenchmarkCompile/zstd                                	      86	   2922042 ns/op	  366280 B/op	     214 allocs/op
+BenchmarkCompileFull/zstd                            	      73	   3419499 ns/op	    150992 code-B	 1032937 B/op	     471 allocs/op
+BenchmarkCompileFull/zstd                            	      78	   3284574 ns/op	    150992 code-B	 1032948 B/op	     472 allocs/op
+BenchmarkCompileFull/zstd                            	      76	   3317431 ns/op	    150992 code-B	 1032948 B/op	     472 allocs/op
+BenchmarkInstantiate/zstd                            	    3229	     81779 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkInstantiate/zstd                            	    3388	     71862 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkInstantiate/zstd                            	    3350	     70997 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkExec/zstd.zstd_decompress_run               	     100	      5738 ns/op	       363.0 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/zstd.zstd_decompress_run               	     100	      5723 ns/op	       355.0 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/zstd.zstd_decompress_run               	     100	      5805 ns/op	       358.0 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000006 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/yyjson         	       4	  51949854 ns/op	    507732 code-B	52800332 B/op	  104336 allocs/op
+BenchmarkWazeroCompile/yyjson         	       4	  60873833 ns/op	    507732 code-B	52799104 B/op	  104336 allocs/op
+BenchmarkWazeroCompile/yyjson         	       4	  56307688 ns/op	    507732 code-B	52799108 B/op	  104336 allocs/op
+BenchmarkWazeroInstantiate/yyjson     	   10000	     20015 ns/op	  140327 B/op	      36 allocs/op
+BenchmarkWazeroInstantiate/yyjson     	   11671	     19340 ns/op	  140327 B/op	      36 allocs/op
+BenchmarkWazeroInstantiate/yyjson     	   12338	     21033 ns/op	  140327 B/op	      36 allocs/op
+BenchmarkWazeroExec/yyjson.yyjson_run 	     100	       786.8 ns/op	      2564 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/yyjson.yyjson_run 	     100	       791.0 ns/op	      2588 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/yyjson.yyjson_run 	     100	       803.4 ns/op	      2575 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkDecode/yyjson                	     777	    301327 ns/op	   12968 B/op	      71 allocs/op
+BenchmarkDecode/yyjson                	     842	    296609 ns/op	   12968 B/op	      71 allocs/op
+BenchmarkDecode/yyjson                	     837	    291935 ns/op	   12968 B/op	      71 allocs/op
+BenchmarkValidate/yyjson              	     226	   1095582 ns/op	   32984 B/op	      89 allocs/op
+BenchmarkValidate/yyjson              	     220	   1089580 ns/op	   32984 B/op	      89 allocs/op
+BenchmarkValidate/yyjson              	     217	   1082588 ns/op	   32984 B/op	      89 allocs/op
+BenchmarkCompile/yyjson               	      42	   6040897 ns/op	 1012179 B/op	     988 allocs/op
+BenchmarkCompile/yyjson               	      45	   5874237 ns/op	 1012178 B/op	     988 allocs/op
+BenchmarkCompile/yyjson               	      46	   5737064 ns/op	 1012179 B/op	     988 allocs/op
+BenchmarkCompileFull/yyjson           	      33	   7043644 ns/op	    269180 code-B	 2407812 B/op	    1245 allocs/op
+BenchmarkCompileFull/yyjson           	      38	   7099746 ns/op	    269180 code-B	 2407818 B/op	    1246 allocs/op
+BenchmarkCompileFull/yyjson           	      37	   7249830 ns/op	    269180 code-B	 2407818 B/op	    1246 allocs/op
+BenchmarkInstantiate/yyjson           	   27439	      8718 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkInstantiate/yyjson           	   28876	      8520 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkInstantiate/yyjson           	   28083	      8458 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkExec/yyjson.yyjson_run       	     100	       782.3 ns/op	      2658 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/yyjson.yyjson_run       	     116	       798.8 ns/op	      2556 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/yyjson.yyjson_run       	     100	      1049 ns/op	      2566 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec       	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000015 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/pcre2         	       2	 161910375 ns/op	   1049744 code-B	126898520 B/op	  225709 allocs/op
+BenchmarkWazeroCompile/pcre2         	       2	 161032770 ns/op	   1049744 code-B	126896072 B/op	  225708 allocs/op
+BenchmarkWazeroCompile/pcre2         	       2	 149286250 ns/op	   1049744 code-B	126896072 B/op	  225708 allocs/op
+BenchmarkWazeroInstantiate/pcre2     	    6903	     35496 ns/op	  273008 B/op	      34 allocs/op
+BenchmarkWazeroInstantiate/pcre2     	    7880	     33577 ns/op	  273008 B/op	      34 allocs/op
+BenchmarkWazeroInstantiate/pcre2     	    6843	     35880 ns/op	  273007 B/op	      34 allocs/op
+BenchmarkWazeroExec/pcre2.pcre2_run  	     100	     12434 ns/op	       163.0 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/pcre2.pcre2_run  	     100	     12316 ns/op	       163.0 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/pcre2.pcre2_run  	     121	     12202 ns/op	       170.0 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkDecode/pcre2                	     428	    563458 ns/op	   26304 B/op	     120 allocs/op
+BenchmarkDecode/pcre2                	     421	    634798 ns/op	   26304 B/op	     120 allocs/op
+BenchmarkDecode/pcre2                	     441	    568355 ns/op	   26304 B/op	     120 allocs/op
+BenchmarkValidate/pcre2              	     129	   1830538 ns/op	   78608 B/op	     228 allocs/op
+BenchmarkValidate/pcre2              	     132	   1837504 ns/op	   78608 B/op	     228 allocs/op
+BenchmarkValidate/pcre2              	     126	   2222467 ns/op	   78608 B/op	     228 allocs/op
+BenchmarkCompile/pcre2               	      30	   8381282 ns/op	 1179032 B/op	     837 allocs/op
+BenchmarkCompile/pcre2               	      34	   8075940 ns/op	 1179033 B/op	     837 allocs/op
+BenchmarkCompile/pcre2               	      31	   8355956 ns/op	 1179032 B/op	     837 allocs/op
+BenchmarkCompileFull/pcre2           	      22	  10583233 ns/op	    429084 code-B	 3719742 B/op	    1332 allocs/op
+BenchmarkCompileFull/pcre2           	      24	  10662651 ns/op	    429084 code-B	 3719752 B/op	    1332 allocs/op
+BenchmarkCompileFull/pcre2           	      24	  10493231 ns/op	    429084 code-B	 3719760 B/op	    1332 allocs/op
+BenchmarkInstantiate/pcre2           	   14035	     17665 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkInstantiate/pcre2           	   14062	     17240 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkInstantiate/pcre2           	   13665	     17389 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkExec/pcre2.pcre2_run        	     100	      8291 ns/op	       254.0 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/pcre2.pcre2_run        	     100	      8345 ns/op	       254.0 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/pcre2.pcre2_run        	     100	      8298 ns/op	       245.0 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec/sightglass-libsodium-hash         	      82	   2883284 ns/op	   53856 B/op	     573 allocs/op
+BenchmarkCommandExec/sightglass-libsodium-hash         	      74	   2820892 ns/op	   53792 B/op	     573 allocs/op
+BenchmarkCommandExec/sightglass-libsodium-hash         	      90	   2740645 ns/op	   53792 B/op	     573 allocs/op
+BenchmarkWazeroCommandExec/sightglass-libsodium-hash   	      62	   4165218 ns/op	16866336 B/op	      98 allocs/op
+BenchmarkWazeroCommandExec/sightglass-libsodium-hash   	      61	   4092809 ns/op	16866336 B/op	      98 allocs/op
+BenchmarkWazeroCommandExec/sightglass-libsodium-hash   	      58	   4060582 ns/op	16866337 B/op	      98 allocs/op
+BenchmarkWazeroCompile/sightglass-libsodium-hash       	      16	  18994276 ns/op	    187572 code-B	 9478442 B/op	   21244 allocs/op
+BenchmarkWazeroCompile/sightglass-libsodium-hash       	      13	  19231644 ns/op	    187572 code-B	 9476691 B/op	   21244 allocs/op
+BenchmarkWazeroCompile/sightglass-libsodium-hash       	      13	  16885263 ns/op	    187572 code-B	 9476699 B/op	   21244 allocs/op
+BenchmarkWazeroInstantiate                             	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                             	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                             	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                                    	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                                    	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                                    	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/sightglass-libsodium-hash              	    1634	    138038 ns/op	   23648 B/op	     155 allocs/op
+BenchmarkDecode/sightglass-libsodium-hash              	    1855	    135513 ns/op	   23648 B/op	     155 allocs/op
+BenchmarkDecode/sightglass-libsodium-hash              	    1825	    156006 ns/op	   23648 B/op	     155 allocs/op
+BenchmarkValidate/sightglass-libsodium-hash            	     516	    481759 ns/op	   15224 B/op	      96 allocs/op
+BenchmarkValidate/sightglass-libsodium-hash            	     520	    493237 ns/op	   15224 B/op	      96 allocs/op
+BenchmarkValidate/sightglass-libsodium-hash            	     508	    489221 ns/op	   15224 B/op	      96 allocs/op
+BenchmarkCompile/sightglass-libsodium-hash             	      92	   2567141 ns/op	  220296 B/op	     236 allocs/op
+BenchmarkCompile/sightglass-libsodium-hash             	     100	   3191368 ns/op	  220296 B/op	     236 allocs/op
+BenchmarkCompile/sightglass-libsodium-hash             	      96	   2636113 ns/op	  220296 B/op	     236 allocs/op
+BenchmarkCompileFull/sightglass-libsodium-hash         	      76	   3388649 ns/op	    130476 code-B	  506660 B/op	     672 allocs/op
+BenchmarkCompileFull/sightglass-libsodium-hash         	      80	   3396302 ns/op	    130476 code-B	  506659 B/op	     672 allocs/op
+BenchmarkCompileFull/sightglass-libsodium-hash         	      76	   3372189 ns/op	    130476 code-B	  506658 B/op	     672 allocs/op
+BenchmarkInstantiate                                   	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                                   	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                                   	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                          	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                          	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                          	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec/php-buckets         	      49	   4680810 ns/op	   78233 B/op	     968 allocs/op
+BenchmarkCommandExec/php-buckets         	      49	   4649377 ns/op	   78343 B/op	     968 allocs/op
+BenchmarkCommandExec/php-buckets         	      48	   4952859 ns/op	   78232 B/op	     968 allocs/op
+BenchmarkWazeroCommandExec/php-buckets   	      34	   6034521 ns/op	28655474 B/op	   21415 allocs/op
+BenchmarkWazeroCommandExec/php-buckets   	      37	   6003797 ns/op	28655474 B/op	   21415 allocs/op
+BenchmarkWazeroCommandExec/php-buckets   	      37	   6182014 ns/op	28655474 B/op	   21415 allocs/op
+BenchmarkWazeroCompile/php-buckets       	       1	3060790250 ns/op	  60686256 code-B	345526048 B/op	  467299 allocs/op
+BenchmarkWazeroCompile/php-buckets       	       1	3054994583 ns/op	  60686256 code-B	345507600 B/op	  467297 allocs/op
+BenchmarkWazeroCompile/php-buckets       	       1	3078559416 ns/op	  60686256 code-B	345507600 B/op	  467297 allocs/op
+BenchmarkWazeroInstantiate               	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate               	1000000000	         0.0000006 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate               	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                      	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                      	1000000000	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                      	1000000000	       0 B/op	       0 allocs/op
+BenchmarkDecode/php-buckets              	       6	  43489340 ns/op	12004170 B/op	   12836 allocs/op
+BenchmarkDecode/php-buckets              	       6	  35500097 ns/op	12004170 B/op	   12836 allocs/op
+BenchmarkDecode/php-buckets              	       6	  35323847 ns/op	12004170 B/op	   12836 allocs/op
+BenchmarkValidate/php-buckets            	       3	  96211972 ns/op	  339792 B/op	    1762 allocs/op
+BenchmarkValidate/php-buckets            	       3	  96203431 ns/op	  339792 B/op	    1762 allocs/op
+BenchmarkValidate/php-buckets            	       3	  96863389 ns/op	  339792 B/op	    1762 allocs/op
+BenchmarkCompile/php-buckets             	       1	 516209584 ns/op	 5948264 B/op	   15670 allocs/op
+BenchmarkCompile/php-buckets             	       1	 509770333 ns/op	 5948264 B/op	   15670 allocs/op
+BenchmarkCompile/php-buckets             	       1	 509059292 ns/op	 5948264 B/op	   15670 allocs/op
+BenchmarkCompileFull/php-buckets         	       1	 581719000 ns/op	  28289416 code-B	64565072 B/op	   36462 allocs/op
+BenchmarkCompileFull/php-buckets         	       1	 590427083 ns/op	  28289416 code-B	64564880 B/op	   36459 allocs/op
+BenchmarkCompileFull/php-buckets         	       1	 575205959 ns/op	  28289416 code-B	64564864 B/op	   36459 allocs/op
+BenchmarkInstantiate                     	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                     	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                     	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                            	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                            	1000000000	         0.0000007 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                            	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec/ruby-buckets         	      16	  13646193 ns/op	   81300 B/op	     991 allocs/op
+BenchmarkCommandExec/ruby-buckets         	      18	  13300387 ns/op	   81299 B/op	     991 allocs/op
+BenchmarkCommandExec/ruby-buckets         	      18	  13170590 ns/op	   81296 B/op	     991 allocs/op
+BenchmarkWazeroCommandExec/ruby-buckets   	      16	  13983255 ns/op	261100616 B/op	    3552 allocs/op
+BenchmarkWazeroCommandExec/ruby-buckets   	      16	  13662094 ns/op	261100617 B/op	    3552 allocs/op
+BenchmarkWazeroCommandExec/ruby-buckets   	      16	  14190016 ns/op	261100617 B/op	    3552 allocs/op
+BenchmarkWazeroCompile/ruby-buckets       	       1	2386505417 ns/op	  26553720 code-B	414703760 B/op	  756663 allocs/op
+BenchmarkWazeroCompile/ruby-buckets       	       1	2475373583 ns/op	  26553720 code-B	414694256 B/op	  756661 allocs/op
+BenchmarkWazeroCompile/ruby-buckets       	       1	2463485000 ns/op	  26553720 code-B	414694272 B/op	  756661 allocs/op
+BenchmarkWazeroInstantiate                	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                       	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                       	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                       	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/ruby-buckets              	      14	  15784536 ns/op	 3643421 B/op	    5359 allocs/op
+BenchmarkDecode/ruby-buckets              	      15	  15594331 ns/op	 3643422 B/op	    5359 allocs/op
+BenchmarkDecode/ruby-buckets              	      15	  15909675 ns/op	 3643421 B/op	    5359 allocs/op
+BenchmarkValidate/ruby-buckets            	       5	  50001958 ns/op	  287129 B/op	    1843 allocs/op
+BenchmarkValidate/ruby-buckets            	       5	  49316317 ns/op	  287129 B/op	    1843 allocs/op
+BenchmarkValidate/ruby-buckets            	       5	  48755308 ns/op	  287129 B/op	    1843 allocs/op
+BenchmarkCompile/ruby-buckets             	       1	 251164125 ns/op	 4743808 B/op	    4145 allocs/op
+BenchmarkCompile/ruby-buckets             	       1	 266175417 ns/op	 4743808 B/op	    4145 allocs/op
+BenchmarkCompile/ruby-buckets             	       1	 292885834 ns/op	 4743808 B/op	    4145 allocs/op
+BenchmarkCompileFull/ruby-buckets         	       1	 296277000 ns/op	  12158640 code-B	30994240 B/op	   15126 allocs/op
+BenchmarkCompileFull/ruby-buckets         	       1	 296444541 ns/op	  12158640 code-B	30994048 B/op	   15123 allocs/op
+BenchmarkCompileFull/ruby-buckets         	       1	 369953584 ns/op	  12158640 code-B	30994048 B/op	   15123 allocs/op
+BenchmarkInstantiate                      	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                      	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                      	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                             	1000000000	         0.0000044 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                             	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                             	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec/coreutils-sort         	     398	    553410 ns/op	   70552 B/op	     831 allocs/op
+BenchmarkCommandExec/coreutils-sort         	     436	    577418 ns/op	   70552 B/op	     831 allocs/op
+BenchmarkCommandExec/coreutils-sort         	     434	    576872 ns/op	   70552 B/op	     831 allocs/op
+BenchmarkWazeroCommandExec/coreutils-sort   	     454	    531081 ns/op	11204704 B/op	    2111 allocs/op
+BenchmarkWazeroCommandExec/coreutils-sort   	     470	    558375 ns/op	11204704 B/op	    2111 allocs/op
+BenchmarkWazeroCommandExec/coreutils-sort   	     454	    499041 ns/op	11204704 B/op	    2111 allocs/op
+BenchmarkWazeroCompile/coreutils-sort       	       1	1538015750 ns/op	  26327004 code-B	170775744 B/op	  107664 allocs/op
+BenchmarkWazeroCompile/coreutils-sort       	       1	1472127125 ns/op	  26327004 code-B	170766240 B/op	  107662 allocs/op
+BenchmarkWazeroCompile/coreutils-sort       	       1	1594709041 ns/op	  26327004 code-B	170766240 B/op	  107662 allocs/op
+BenchmarkWazeroInstantiate                  	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                  	1000000000	         0.0000007 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                  	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                         	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                         	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                         	1000000000	       0 B/op	       0 allocs/op
+BenchmarkDecode/coreutils-sort              	      12	  19683219 ns/op	 2816064 B/op	    5014 allocs/op
+BenchmarkDecode/coreutils-sort              	      12	  19120049 ns/op	 2816065 B/op	    5014 allocs/op
+BenchmarkDecode/coreutils-sort              	      12	  19692385 ns/op	 2816064 B/op	    5014 allocs/op
+BenchmarkValidate/coreutils-sort            	       4	  55617177 ns/op	  164456 B/op	    3449 allocs/op
+BenchmarkValidate/coreutils-sort            	       4	  54432750 ns/op	  164456 B/op	    3449 allocs/op
+BenchmarkValidate/coreutils-sort            	       4	  54461938 ns/op	  164456 B/op	    3449 allocs/op
+BenchmarkCompile/coreutils-sort             	       1	 283195000 ns/op	 3822152 B/op	   22318 allocs/op
+BenchmarkCompile/coreutils-sort             	       1	 281307250 ns/op	 3822152 B/op	   22318 allocs/op
+BenchmarkCompile/coreutils-sort             	       1	 284070500 ns/op	 3822152 B/op	   22318 allocs/op
+BenchmarkCompileFull/coreutils-sort         	       1	 347016583 ns/op	  19164608 code-B	33342016 B/op	   34369 allocs/op
+BenchmarkCompileFull/coreutils-sort         	       1	 338173084 ns/op	  19164608 code-B	33341824 B/op	   34366 allocs/op
+BenchmarkCompileFull/coreutils-sort         	       1	 345477042 ns/op	  19164608 code-B	33341824 B/op	   34366 allocs/op
+BenchmarkInstantiate                        	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                        	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                        	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                               	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                               	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                               	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec/ripgrep-source         	     333	    657329 ns/op	   67488 B/op	     750 allocs/op
+BenchmarkCommandExec/ripgrep-source         	     378	    664674 ns/op	   67488 B/op	     750 allocs/op
+BenchmarkCommandExec/ripgrep-source         	     379	    654032 ns/op	   67488 B/op	     750 allocs/op
+BenchmarkWazeroCommandExec/ripgrep-source   	     400	    577592 ns/op	 5412824 B/op	    4499 allocs/op
+BenchmarkWazeroCommandExec/ripgrep-source   	     368	    585446 ns/op	 5412824 B/op	    4499 allocs/op
+BenchmarkWazeroCommandExec/ripgrep-source   	     356	    574894 ns/op	 5412824 B/op	    4499 allocs/op
+BenchmarkWazeroCompile/ripgrep-source       	       1	 615008500 ns/op	  11511952 code-B	96505576 B/op	   78948 allocs/op
+BenchmarkWazeroCompile/ripgrep-source       	       1	 648695292 ns/op	  11511952 code-B	96496088 B/op	   78946 allocs/op
+BenchmarkWazeroCompile/ripgrep-source       	       1	 688328542 ns/op	  11511952 code-B	96496072 B/op	   78946 allocs/op
+BenchmarkWazeroInstantiate                  	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                  	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                  	1000000000	         0.0000050 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                         	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                         	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                         	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/ripgrep-source              	      22	   9309638 ns/op	21965137 B/op	   10487 allocs/op
+BenchmarkDecode/ripgrep-source              	      25	  11461945 ns/op	21965136 B/op	   10487 allocs/op
+BenchmarkDecode/ripgrep-source              	      26	   9552093 ns/op	21965138 B/op	   10487 allocs/op
+BenchmarkValidate/ripgrep-source            	       8	  25498156 ns/op	   64506 B/op	    1308 allocs/op
+BenchmarkValidate/ripgrep-source            	       9	  24157296 ns/op	   64505 B/op	    1308 allocs/op
+BenchmarkValidate/ripgrep-source            	       9	  23629866 ns/op	   64504 B/op	    1308 allocs/op
+BenchmarkCompile/ripgrep-source             	       2	 122571896 ns/op	 2894896 B/op	    7668 allocs/op
+BenchmarkCompile/ripgrep-source             	       2	 122838542 ns/op	 2894896 B/op	    7668 allocs/op
+BenchmarkCompile/ripgrep-source             	       2	 122801625 ns/op	 2894896 B/op	    7668 allocs/op
+BenchmarkCompileFull/ripgrep-source         	       2	 150831208 ns/op	   6523212 code-B	37472044 B/op	   22806 allocs/op
+BenchmarkCompileFull/ripgrep-source         	       2	 151374062 ns/op	   6523212 code-B	37472044 B/op	   22806 allocs/op
+BenchmarkCompileFull/ripgrep-source         	       2	 148795729 ns/op	   6523212 code-B	37472044 B/op	   22806 allocs/op
+BenchmarkInstantiate                        	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                        	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                        	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                               	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                               	1000000000	         0.0000015 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                               	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec/yosys-counter         	      52	   4056154 ns/op	   95504 B/op	     966 allocs/op
+BenchmarkCommandExec/yosys-counter         	      62	   3749086 ns/op	   95504 B/op	     966 allocs/op
+BenchmarkCommandExec/yosys-counter         	      61	   3694075 ns/op	   95504 B/op	     966 allocs/op
+BenchmarkWazeroCommandExec/yosys-counter   	      73	   3336087 ns/op	14574392 B/op	    7959 allocs/op
+BenchmarkWazeroCommandExec/yosys-counter   	      69	   3404516 ns/op	14574392 B/op	    7959 allocs/op
+BenchmarkWazeroCommandExec/yosys-counter   	      78	   3360485 ns/op	14574392 B/op	    7959 allocs/op
+BenchmarkWazeroCompile/yosys-counter       	       1	4789810792 ns/op	  87029140 code-B	480170760 B/op	  377580 allocs/op
+BenchmarkWazeroCompile/yosys-counter       	       1	4765854417 ns/op	  87029140 code-B	480152296 B/op	  377578 allocs/op
+BenchmarkWazeroCompile/yosys-counter       	       1	4887604750 ns/op	  87029140 code-B	480152296 B/op	  377578 allocs/op
+BenchmarkWazeroInstantiate                 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                 	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                        	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                        	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                        	1000000000	       0 B/op	       0 allocs/op
+BenchmarkDecode/yosys-counter              	       4	  57257448 ns/op	18368296 B/op	   26325 allocs/op
+BenchmarkDecode/yosys-counter              	       4	  58406062 ns/op	18368296 B/op	   26325 allocs/op
+BenchmarkDecode/yosys-counter              	       4	  57237948 ns/op	18368296 B/op	   26325 allocs/op
+BenchmarkValidate/yosys-counter            	       2	 154009375 ns/op	  226680 B/op	    3211 allocs/op
+BenchmarkValidate/yosys-counter            	       2	 153947730 ns/op	  226680 B/op	    3211 allocs/op
+BenchmarkValidate/yosys-counter            	       2	 154380916 ns/op	  226680 B/op	    3211 allocs/op
+BenchmarkCompile/yosys-counter             	       1	 857418000 ns/op	14978832 B/op	   34241 allocs/op
+BenchmarkCompile/yosys-counter             	       1	 932991291 ns/op	14978832 B/op	   34241 allocs/op
+BenchmarkCompile/yosys-counter             	       1	 943593375 ns/op	14978832 B/op	   34241 allocs/op
+BenchmarkCompileFull/yosys-counter         	       1	1014850500 ns/op	  41989532 code-B	106682376 B/op	   76264 allocs/op
+BenchmarkCompileFull/yosys-counter         	       1	1006156708 ns/op	  41989532 code-B	106682184 B/op	   76261 allocs/op
+BenchmarkCompileFull/yosys-counter         	       1	1028824917 ns/op	  41989532 code-B	106682184 B/op	   76261 allocs/op
+BenchmarkInstantiate                       	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                       	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                       	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                              	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                              	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                              	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec/icebram-generate         	     759	    334318 ns/op	  137233 B/op	    1337 allocs/op
+BenchmarkCommandExec/icebram-generate         	     730	    377432 ns/op	  137232 B/op	    1337 allocs/op
+BenchmarkCommandExec/icebram-generate         	     723	    326251 ns/op	  137232 B/op	    1337 allocs/op
+BenchmarkWazeroCommandExec/icebram-generate   	    1467	    166388 ns/op	  387464 B/op	     482 allocs/op
+BenchmarkWazeroCommandExec/icebram-generate   	    1522	    163875 ns/op	  387464 B/op	     482 allocs/op
+BenchmarkWazeroCommandExec/icebram-generate   	    1267	    175044 ns/op	  387464 B/op	     482 allocs/op
+BenchmarkWazeroCompile/icebram-generate       	       3	  80007167 ns/op	   1410772 code-B	10683784 B/op	   28041 allocs/op
+BenchmarkWazeroCompile/icebram-generate       	       3	  85800361 ns/op	   1410772 code-B	10683784 B/op	   28041 allocs/op
+BenchmarkWazeroCompile/icebram-generate       	       3	  84198639 ns/op	   1410772 code-B	10683784 B/op	   28041 allocs/op
+BenchmarkWazeroInstantiate                    	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                    	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                    	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                           	1000000000	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                           	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                           	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/icebram-generate              	     152	   1603002 ns/op	  903344 B/op	    2266 allocs/op
+BenchmarkDecode/icebram-generate              	     154	   1585805 ns/op	  903344 B/op	    2266 allocs/op
+BenchmarkDecode/icebram-generate              	     142	   1625480 ns/op	  903344 B/op	    2266 allocs/op
+BenchmarkValidate/icebram-generate            	      62	   4022822 ns/op	   32456 B/op	     223 allocs/op
+BenchmarkValidate/icebram-generate            	      63	   4086593 ns/op	   32456 B/op	     223 allocs/op
+BenchmarkValidate/icebram-generate            	      63	   3858970 ns/op	   32456 B/op	     223 allocs/op
+BenchmarkCompile/icebram-generate             	      10	  23776762 ns/op	  834240 B/op	     951 allocs/op
+BenchmarkCompile/icebram-generate             	      10	  23725408 ns/op	  834240 B/op	     951 allocs/op
+BenchmarkCompile/icebram-generate             	      10	  23915988 ns/op	  834240 B/op	     951 allocs/op
+BenchmarkCompileFull/icebram-generate         	       8	  26949312 ns/op	   1421104 code-B	 4215658 B/op	    4487 allocs/op
+BenchmarkCompileFull/icebram-generate         	       8	  26181286 ns/op	   1421104 code-B	 4215684 B/op	    4487 allocs/op
+BenchmarkCompileFull/icebram-generate         	       8	  25511599 ns/op	   1421104 code-B	 4215684 B/op	    4487 allocs/op
+BenchmarkInstantiate                          	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                          	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                          	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                 	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                 	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                 	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec/json2csv-people         	    2182	     96756 ns/op	   55232 B/op	     593 allocs/op
+BenchmarkCommandExec/json2csv-people         	    2538	     93204 ns/op	   55232 B/op	     593 allocs/op
+BenchmarkCommandExec/json2csv-people         	    2595	     93919 ns/op	   55232 B/op	     593 allocs/op
+BenchmarkWazeroCommandExec/json2csv-people   	    3436	     69697 ns/op	  182248 B/op	      82 allocs/op
+BenchmarkWazeroCommandExec/json2csv-people   	    4000	     68936 ns/op	  182248 B/op	      82 allocs/op
+BenchmarkWazeroCommandExec/json2csv-people   	    3183	     76500 ns/op	  182248 B/op	      82 allocs/op
+BenchmarkWazeroCompile/json2csv-people       	       2	 152434646 ns/op	   1939736 code-B	40147672 B/op	   42903 allocs/op
+BenchmarkWazeroCompile/json2csv-people       	       2	 174122354 ns/op	   1939736 code-B	40166136 B/op	   42905 allocs/op
+BenchmarkWazeroCompile/json2csv-people       	       2	 168809834 ns/op	   1939736 code-B	40166136 B/op	   42905 allocs/op
+BenchmarkWazeroInstantiate                   	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                   	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                   	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                          	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                          	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                          	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/json2csv-people              	     270	    885557 ns/op	   99848 B/op	     827 allocs/op
+BenchmarkDecode/json2csv-people              	     274	    875472 ns/op	   99848 B/op	     827 allocs/op
+BenchmarkDecode/json2csv-people              	     280	    897093 ns/op	   99848 B/op	     827 allocs/op
+BenchmarkValidate/json2csv-people            	      90	   2588249 ns/op	   31264 B/op	     241 allocs/op
+BenchmarkValidate/json2csv-people            	      94	   2648999 ns/op	   31264 B/op	     241 allocs/op
+BenchmarkValidate/json2csv-people            	      93	   2626582 ns/op	   31264 B/op	     241 allocs/op
+BenchmarkCompile/json2csv-people             	      16	  14831331 ns/op	  350408 B/op	     523 allocs/op
+BenchmarkCompile/json2csv-people             	      16	  14485557 ns/op	  350408 B/op	     523 allocs/op
+BenchmarkCompile/json2csv-people             	      16	  15109450 ns/op	  350408 B/op	     523 allocs/op
+BenchmarkCompileFull/json2csv-people         	      13	  17549603 ns/op	    704384 code-B	 1736909 B/op	    1988 allocs/op
+BenchmarkCompileFull/json2csv-people         	      14	  17568521 ns/op	    704384 code-B	 1736925 B/op	    1989 allocs/op
+BenchmarkCompileFull/json2csv-people         	      14	  17269235 ns/op	    704384 code-B	 1736925 B/op	    1989 allocs/op
+BenchmarkInstantiate                         	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                         	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                         	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                	1000000000	         0.0000010 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec/brotli-compress         	       1	 715861000 ns/op	   57272 B/op	     618 allocs/op
+BenchmarkCommandExec/brotli-compress         	       1	 758207041 ns/op	   57272 B/op	     618 allocs/op
+BenchmarkCommandExec/brotli-compress         	       1	 718907750 ns/op	   57272 B/op	     618 allocs/op
+BenchmarkWazeroCommandExec/brotli-compress   	       1	 881226459 ns/op	472242264 B/op	      89 allocs/op
+BenchmarkWazeroCommandExec/brotli-compress   	       1	 875160000 ns/op	472242264 B/op	      89 allocs/op
+BenchmarkWazeroCommandExec/brotli-compress   	       1	 860080375 ns/op	472242264 B/op	      89 allocs/op
+BenchmarkWazeroCompile/brotli-compress       	       1	 243889583 ns/op	   1926984 code-B	205687184 B/op	  358731 allocs/op
+BenchmarkWazeroCompile/brotli-compress       	       1	 234951375 ns/op	   1926984 code-B	205682288 B/op	  358729 allocs/op
+BenchmarkWazeroCompile/brotli-compress       	       1	 258993875 ns/op	   1926984 code-B	205682288 B/op	  358729 allocs/op
+BenchmarkWazeroInstantiate                   	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                   	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                   	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                          	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                          	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                          	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/brotli-compress              	     178	   1441737 ns/op	  464578 B/op	     232 allocs/op
+BenchmarkDecode/brotli-compress              	     170	   1394801 ns/op	  464579 B/op	     232 allocs/op
+BenchmarkDecode/brotli-compress              	     175	   1392625 ns/op	  464578 B/op	     232 allocs/op
+BenchmarkValidate/brotli-compress            	      48	   4846564 ns/op	   48616 B/op	     200 allocs/op
+BenchmarkValidate/brotli-compress            	      49	   4827161 ns/op	   48616 B/op	     200 allocs/op
+BenchmarkValidate/brotli-compress            	      50	   4745829 ns/op	   48616 B/op	     200 allocs/op
+BenchmarkCompile/brotli-compress             	      14	  17854095 ns/op	 1695328 B/op	     713 allocs/op
+BenchmarkCompile/brotli-compress             	      14	  18320274 ns/op	 1695328 B/op	     713 allocs/op
+BenchmarkCompile/brotli-compress             	      13	  17906189 ns/op	 1695329 B/op	     713 allocs/op
+BenchmarkCompileFull/brotli-compress         	       9	  25534306 ns/op	   1088748 code-B	 8050443 B/op	    1425 allocs/op
+BenchmarkCompileFull/brotli-compress         	       8	  25030698 ns/op	   1088748 code-B	 8050448 B/op	    1425 allocs/op
+BenchmarkCompileFull/brotli-compress         	       8	  25478281 ns/op	   1088748 code-B	 8050444 B/op	    1425 allocs/op
+BenchmarkInstantiate                         	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                         	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                         	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec/jq-json-transform         	       1	 398018333 ns/op	   55376 B/op	     624 allocs/op
+BenchmarkCommandExec/jq-json-transform         	       1	 388231958 ns/op	   55376 B/op	     624 allocs/op
+BenchmarkCommandExec/jq-json-transform         	       1	 401983375 ns/op	   55376 B/op	     624 allocs/op
+BenchmarkWazeroCommandExec/jq-json-transform   	       1	 657115166 ns/op	167299312 B/op	     301 allocs/op
+BenchmarkWazeroCommandExec/jq-json-transform   	       1	 629831958 ns/op	167299312 B/op	     301 allocs/op
+BenchmarkWazeroCommandExec/jq-json-transform   	       1	 621365250 ns/op	167299312 B/op	     301 allocs/op
+BenchmarkWazeroCompile/jq-json-transform       	       2	 155370958 ns/op	   2664668 code-B	28911392 B/op	   46437 allocs/op
+BenchmarkWazeroCompile/jq-json-transform       	       2	 167665333 ns/op	   2664668 code-B	28911400 B/op	   46437 allocs/op
+BenchmarkWazeroCompile/jq-json-transform       	       1	 219333083 ns/op	   2664668 code-B	28911400 B/op	   46437 allocs/op
+BenchmarkWazeroInstantiate                     	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                     	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                     	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                            	1000000000	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                            	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                            	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/jq-json-transform              	     100	   2014421 ns/op	  209600 B/op	     745 allocs/op
+BenchmarkDecode/jq-json-transform              	     122	   1918828 ns/op	  209601 B/op	     745 allocs/op
+BenchmarkDecode/jq-json-transform              	     122	   2030461 ns/op	  209601 B/op	     745 allocs/op
+BenchmarkValidate/jq-json-transform            	      39	   5993609 ns/op	   77576 B/op	     405 allocs/op
+BenchmarkValidate/jq-json-transform            	      40	   5939714 ns/op	   77576 B/op	     405 allocs/op
+BenchmarkValidate/jq-json-transform            	      40	   5959964 ns/op	   77576 B/op	     405 allocs/op
+BenchmarkCompile/jq-json-transform             	       7	  31481214 ns/op	  901158 B/op	    1766 allocs/op
+BenchmarkCompile/jq-json-transform             	       8	  30010438 ns/op	  901156 B/op	    1766 allocs/op
+BenchmarkCompile/jq-json-transform             	       8	  30299948 ns/op	  901158 B/op	    1766 allocs/op
+BenchmarkCompileFull/jq-json-transform         	       6	  35414667 ns/op	   1700668 code-B	 3988445 B/op	    3590 allocs/op
+BenchmarkCompileFull/jq-json-transform         	       6	  34359021 ns/op	   1700668 code-B	 3988480 B/op	    3590 allocs/op
+BenchmarkCompileFull/jq-json-transform         	       6	  33725472 ns/op	   1700668 code-B	 3988480 B/op	    3590 allocs/op
+BenchmarkInstantiate                           	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                           	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                           	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                  	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                  	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                  	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec/age-decrypt         	      80	   3420976 ns/op	   71474 B/op	     760 allocs/op
+BenchmarkCommandExec/age-decrypt         	      70	   3167735 ns/op	   71408 B/op	     760 allocs/op
+BenchmarkCommandExec/age-decrypt         	      75	   3023513 ns/op	   71408 B/op	     760 allocs/op
+BenchmarkWazeroCommandExec/age-decrypt   	      50	   4119290 ns/op	20103067 B/op	    4321 allocs/op
+BenchmarkWazeroCommandExec/age-decrypt   	      58	   4567892 ns/op	20103064 B/op	    4321 allocs/op
+BenchmarkWazeroCommandExec/age-decrypt   	      54	   4256229 ns/op	20103064 B/op	    4321 allocs/op
+BenchmarkWazeroCompile/age-decrypt       	       1	1345199541 ns/op	  31175764 code-B	94791136 B/op	  230783 allocs/op
+BenchmarkWazeroCompile/age-decrypt       	       1	1335872541 ns/op	  31175764 code-B	94791120 B/op	  230783 allocs/op
+BenchmarkWazeroCompile/age-decrypt       	       1	1320814958 ns/op	  31175764 code-B	94791120 B/op	  230783 allocs/op
+BenchmarkWazeroInstantiate               	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate               	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate               	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                      	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                      	1000000000	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                      	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/age-decrypt              	      13	  18537965 ns/op	 8216608 B/op	    8468 allocs/op
+BenchmarkDecode/age-decrypt              	      13	  18715926 ns/op	 8216609 B/op	    8468 allocs/op
+BenchmarkDecode/age-decrypt              	      12	  19577615 ns/op	 8216609 B/op	    8468 allocs/op
+BenchmarkValidate/age-decrypt            	       5	  47924058 ns/op	  767443 B/op	    4160 allocs/op
+BenchmarkValidate/age-decrypt            	       5	  48744325 ns/op	  767443 B/op	    4160 allocs/op
+BenchmarkValidate/age-decrypt            	       4	  50026125 ns/op	  767448 B/op	    4160 allocs/op
+BenchmarkCompile/age-decrypt             	       2	 182147042 ns/op	 2400992 B/op	    2103 allocs/op
+BenchmarkCompile/age-decrypt             	       2	 184942166 ns/op	 2400992 B/op	    2103 allocs/op
+BenchmarkCompile/age-decrypt             	       2	 184580166 ns/op	 2400992 B/op	    2103 allocs/op
+BenchmarkCompileFull/age-decrypt         	       1	 267472875 ns/op	  14666844 code-B	39474024 B/op	   14888 allocs/op
+BenchmarkCompileFull/age-decrypt         	       1	 257317750 ns/op	  14666844 code-B	39474024 B/op	   14888 allocs/op
+BenchmarkCompileFull/age-decrypt         	       1	 270637708 ns/op	  14666844 code-B	39474024 B/op	   14888 allocs/op
+BenchmarkInstantiate                     	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                     	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                     	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                            	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                            	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                            	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec/sqlite3-query         	       1	 263437833 ns/op	   60248 B/op	     709 allocs/op
+BenchmarkCommandExec/sqlite3-query         	       1	 269658250 ns/op	   65568 B/op	     715 allocs/op
+BenchmarkCommandExec/sqlite3-query         	       1	 264279291 ns/op	   60248 B/op	     709 allocs/op
+BenchmarkWazeroCommandExec/sqlite3-query   	       1	 366223292 ns/op	 2890672 B/op	     614 allocs/op
+BenchmarkWazeroCommandExec/sqlite3-query   	       1	 367005167 ns/op	 2890672 B/op	     614 allocs/op
+BenchmarkWazeroCommandExec/sqlite3-query   	       1	 367131958 ns/op	 2890672 B/op	     614 allocs/op
+BenchmarkWazeroCompile/sqlite3-query       	       1	 444288792 ns/op	   7027344 code-B	70021824 B/op	  121936 allocs/op
+BenchmarkWazeroCompile/sqlite3-query       	       1	 424760083 ns/op	   7027344 code-B	70012320 B/op	  121934 allocs/op
+BenchmarkWazeroCompile/sqlite3-query       	       1	 496660208 ns/op	   7027344 code-B	70012320 B/op	  121934 allocs/op
+BenchmarkWazeroInstantiate                 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                 	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                        	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                        	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                        	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/sqlite3-query              	      43	   4738356 ns/op	  788728 B/op	    1499 allocs/op
+BenchmarkDecode/sqlite3-query              	      52	   4603868 ns/op	  788728 B/op	    1499 allocs/op
+BenchmarkDecode/sqlite3-query              	      52	   4760613 ns/op	  788728 B/op	    1499 allocs/op
+BenchmarkValidate/sqlite3-query            	      16	  14023628 ns/op	  105024 B/op	     688 allocs/op
+BenchmarkValidate/sqlite3-query            	      18	  13935882 ns/op	  105024 B/op	     688 allocs/op
+BenchmarkValidate/sqlite3-query            	      16	  13939359 ns/op	  105025 B/op	     688 allocs/op
+BenchmarkCompile/sqlite3-query             	       3	  79182500 ns/op	 1598770 B/op	    4405 allocs/op
+BenchmarkCompile/sqlite3-query             	       3	  76951111 ns/op	 1598765 B/op	    4405 allocs/op
+BenchmarkCompile/sqlite3-query             	       3	  74597694 ns/op	 1598770 B/op	    4405 allocs/op
+BenchmarkCompileFull/sqlite3-query         	       3	  84182139 ns/op	   4248444 code-B	 7699290 B/op	    7898 allocs/op
+BenchmarkCompileFull/sqlite3-query         	       3	  86397181 ns/op	   4248444 code-B	 7699290 B/op	    7898 allocs/op
+BenchmarkCompileFull/sqlite3-query         	       3	  84474083 ns/op	   4248444 code-B	 7699290 B/op	    7898 allocs/op
+BenchmarkInstantiate                       	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                       	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                       	1000000000	         0.0000006 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                              	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                              	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                              	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec/quickjs-script         	       2	 151047062 ns/op	   63936 B/op	     716 allocs/op
+BenchmarkCommandExec/quickjs-script         	       2	 148544188 ns/op	   63936 B/op	     716 allocs/op
+BenchmarkCommandExec/quickjs-script         	       2	 164870375 ns/op	   63936 B/op	     716 allocs/op
+BenchmarkWazeroCommandExec/quickjs-script   	       2	 172212292 ns/op	 2882880 B/op	     505 allocs/op
+BenchmarkWazeroCommandExec/quickjs-script   	       2	 174383730 ns/op	 2882880 B/op	     505 allocs/op
+BenchmarkWazeroCommandExec/quickjs-script   	       2	 172795520 ns/op	 2882880 B/op	     505 allocs/op
+BenchmarkWazeroCompile/quickjs-script       	       2	 197681021 ns/op	   3020852 code-B	38714656 B/op	   71486 allocs/op
+BenchmarkWazeroCompile/quickjs-script       	       2	 204916020 ns/op	   3020852 code-B	38714656 B/op	   71486 allocs/op
+BenchmarkWazeroCompile/quickjs-script       	       1	 228994166 ns/op	   3020852 code-B	38714656 B/op	   71486 allocs/op
+BenchmarkWazeroInstantiate                  	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                  	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                  	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                         	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                         	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                         	1000000000	       0 B/op	       0 allocs/op
+BenchmarkDecode/quickjs-script              	     100	   2036972 ns/op	  260776 B/op	    1007 allocs/op
+BenchmarkDecode/quickjs-script              	     100	   2115138 ns/op	  260776 B/op	    1007 allocs/op
+BenchmarkDecode/quickjs-script              	     100	   2065670 ns/op	  260776 B/op	    1007 allocs/op
+BenchmarkValidate/quickjs-script            	      37	   6379730 ns/op	  111640 B/op	     807 allocs/op
+BenchmarkValidate/quickjs-script            	      37	   6356499 ns/op	  111640 B/op	     807 allocs/op
+BenchmarkValidate/quickjs-script            	      37	   6652831 ns/op	  111640 B/op	     807 allocs/op
+BenchmarkCompile/quickjs-script             	       6	  35173694 ns/op	  905482 B/op	    2062 allocs/op
+BenchmarkCompile/quickjs-script             	       7	  35616673 ns/op	  905484 B/op	    2062 allocs/op
+BenchmarkCompile/quickjs-script             	       7	  36779863 ns/op	  905482 B/op	    2062 allocs/op
+BenchmarkCompileFull/quickjs-script         	       6	  39587451 ns/op	   1891920 code-B	 4050722 B/op	    4859 allocs/op
+BenchmarkCompileFull/quickjs-script         	       6	  40002979 ns/op	   1891920 code-B	 4050722 B/op	    4859 allocs/op
+BenchmarkCompileFull/quickjs-script         	       6	  38231570 ns/op	   1891920 code-B	 4050722 B/op	    4859 allocs/op
+BenchmarkInstantiate                        	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                        	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                        	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                               	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                               	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                               	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec/esbuild-minify         	       1	 320129000 ns/op	   80416 B/op	     890 allocs/op
+BenchmarkCommandExec/esbuild-minify         	       1	 315315166 ns/op	   80416 B/op	     890 allocs/op
+BenchmarkCommandExec/esbuild-minify         	       1	 342723125 ns/op	   80416 B/op	     890 allocs/op
+BenchmarkWazeroCommandExec/esbuild-minify   	       1	 954615333 ns/op	758463824 B/op	    8703 allocs/op
+BenchmarkWazeroCommandExec/esbuild-minify   	       1	 883431667 ns/op	758463824 B/op	    8703 allocs/op
+BenchmarkWazeroCommandExec/esbuild-minify   	       1	 855731833 ns/op	758463824 B/op	    8703 allocs/op
+BenchmarkWazeroCompile/esbuild-minify       	       1	4212607708 ns/op	  91675516 code-B	315276064 B/op	  518294 allocs/op
+BenchmarkWazeroCompile/esbuild-minify       	       1	4300319041 ns/op	  91675516 code-B	315276064 B/op	  518294 allocs/op
+BenchmarkWazeroCompile/esbuild-minify       	       1	4106636541 ns/op	  91675516 code-B	315276064 B/op	  518294 allocs/op
+BenchmarkWazeroInstantiate                  	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                  	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                  	1000000000	         0.0000007 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                         	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                         	1000000000	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                         	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/esbuild-minify              	       5	  48516325 ns/op	14291467 B/op	   17295 allocs/op
+BenchmarkDecode/esbuild-minify              	       5	  47413592 ns/op	14291467 B/op	   17295 allocs/op
+BenchmarkDecode/esbuild-minify              	       4	  61553562 ns/op	14291468 B/op	   17295 allocs/op
+BenchmarkValidate/esbuild-minify            	       2	 130745104 ns/op	 2959784 B/op	    8590 allocs/op
+BenchmarkValidate/esbuild-minify            	       2	 132035500 ns/op	 2959784 B/op	    8590 allocs/op
+BenchmarkValidate/esbuild-minify            	       2	 135510750 ns/op	 2959784 B/op	    8590 allocs/op
+BenchmarkCompile/esbuild-minify             	       1	 549715958 ns/op	 8229272 B/op	    5758 allocs/op
+BenchmarkCompile/esbuild-minify             	       1	 544262500 ns/op	 8229272 B/op	    5758 allocs/op
+BenchmarkCompile/esbuild-minify             	       1	 538628375 ns/op	 8229272 B/op	    5758 allocs/op
+BenchmarkCompileFull/esbuild-minify         	       1	 700264042 ns/op	  39554856 code-B	91153744 B/op	   31800 allocs/op
+BenchmarkCompileFull/esbuild-minify         	       1	 698211583 ns/op	  39554856 code-B	91153552 B/op	   31797 allocs/op
+BenchmarkCompileFull/esbuild-minify         	       1	 684418834 ns/op	  39554856 code-B	91153552 B/op	   31797 allocs/op
+BenchmarkInstantiate                        	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                        	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                        	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                               	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                               	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                               	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec/swift-format-source         	      13	  17821702 ns/op	   78056 B/op	     917 allocs/op
+BenchmarkCommandExec/swift-format-source         	      12	  17704701 ns/op	   78056 B/op	     917 allocs/op
+BenchmarkCommandExec/swift-format-source         	      13	  21431333 ns/op	   78056 B/op	     917 allocs/op
+BenchmarkWazeroCommandExec/swift-format-source   	      10	  21488100 ns/op	98499089 B/op	   87755 allocs/op
+BenchmarkWazeroCommandExec/swift-format-source   	      10	  20281808 ns/op	98499089 B/op	   87755 allocs/op
+BenchmarkWazeroCommandExec/swift-format-source   	      12	  19233347 ns/op	98499089 B/op	   87755 allocs/op
+BenchmarkWazeroCompile/swift-format-source       	       1	5367096500 ns/op	  80297076 code-B	273130328 B/op	  519335 allocs/op
+BenchmarkWazeroCompile/swift-format-source       	       1	5465529542 ns/op	  80297076 code-B	273126248 B/op	  519337 allocs/op
+BenchmarkWazeroCompile/swift-format-source       	       1	5070544208 ns/op	  80297076 code-B	273126248 B/op	  519337 allocs/op
+BenchmarkWazeroInstantiate                       	1000000000	         0.0000007 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                       	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                       	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                              	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                              	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                              	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/swift-format-source              	       4	  52255177 ns/op	45362488 B/op	   19056 allocs/op
+BenchmarkDecode/swift-format-source              	       4	  54592760 ns/op	45362488 B/op	   19056 allocs/op
+BenchmarkDecode/swift-format-source              	       4	  54376146 ns/op	45362488 B/op	   19056 allocs/op
+BenchmarkValidate/swift-format-source            	       2	 134055500 ns/op	  919920 B/op	    8898 allocs/op
+BenchmarkValidate/swift-format-source            	       2	 135309229 ns/op	  919920 B/op	    8898 allocs/op
+BenchmarkValidate/swift-format-source            	       2	 135955021 ns/op	  919920 B/op	    8898 allocs/op
+BenchmarkCompile/swift-format-source             	       1	 905999875 ns/op	42187960 B/op	  115138 allocs/op
+BenchmarkCompile/swift-format-source             	       1	 903178125 ns/op	42187976 B/op	  115138 allocs/op
+BenchmarkCompile/swift-format-source             	       1	 945846000 ns/op	42187976 B/op	  115138 allocs/op
+BenchmarkCompileFull/swift-format-source         	       1	1124869584 ns/op	  68536060 code-B	303299544 B/op	  199193 allocs/op
+BenchmarkCompileFull/swift-format-source         	       1	1086888916 ns/op	  68536060 code-B	303299336 B/op	  199190 allocs/op
+BenchmarkCompileFull/swift-format-source         	       1	1106732792 ns/op	  68536060 code-B	303299336 B/op	  199190 allocs/op
+BenchmarkInstantiate                             	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                             	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                             	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                    	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                    	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                    	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec/cjson 	    6926	     37599 ns/op	   41752 B/op	     423 allocs/op
+BenchmarkCommandExec/cjson 	    7032	     34697 ns/op	   41752 B/op	     423 allocs/op
+BenchmarkCommandExec/cjson 	    7225	     39695 ns/op	   41752 B/op	     423 allocs/op
+BenchmarkWazeroCommandExec/cjson         	   10452	     21735 ns/op	  151888 B/op	      57 allocs/op
+BenchmarkWazeroCommandExec/cjson         	    9548	     22173 ns/op	  151888 B/op	      57 allocs/op
+BenchmarkWazeroCommandExec/cjson         	   10806	     21793 ns/op	  151888 B/op	      57 allocs/op
+BenchmarkWazeroCompile/cjson             	       9	  25824093 ns/op	    219016 code-B	 9014299 B/op	   22646 allocs/op
+BenchmarkWazeroCompile/cjson             	       8	  25305146 ns/op	    219016 code-B	 9014296 B/op	   22646 allocs/op
+BenchmarkWazeroCompile/cjson             	       8	  27361448 ns/op	    219016 code-B	 9014298 B/op	   22646 allocs/op
+BenchmarkWazeroInstantiate               	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate               	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate               	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                      	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                      	1000000000	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                      	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/cjson                    	    2133	    121680 ns/op	   14776 B/op	     106 allocs/op
+BenchmarkDecode/cjson                    	    2065	    117711 ns/op	   14776 B/op	     106 allocs/op
+BenchmarkDecode/cjson                    	    2116	    139974 ns/op	   14776 B/op	     106 allocs/op
+BenchmarkValidate/cjson                  	     566	    439285 ns/op	   14472 B/op	      87 allocs/op
+BenchmarkValidate/cjson                  	     535	    442494 ns/op	   14472 B/op	      87 allocs/op
+BenchmarkValidate/cjson                  	     592	    433322 ns/op	   14472 B/op	      87 allocs/op
+BenchmarkCompile/cjson                   	      93	   2504185 ns/op	  156801 B/op	     267 allocs/op
+BenchmarkCompile/cjson                   	      97	   2644627 ns/op	  156800 B/op	     267 allocs/op
+BenchmarkCompile/cjson                   	     100	   2432348 ns/op	  156800 B/op	     267 allocs/op
+BenchmarkCompileFull/cjson               	      79	   3104741 ns/op	    135520 code-B	  392125 B/op	     584 allocs/op
+BenchmarkCompileFull/cjson               	      88	   2908130 ns/op	    135520 code-B	  392124 B/op	     584 allocs/op
+BenchmarkCompileFull/cjson               	      87	   3051324 ns/op	    135520 code-B	  392124 B/op	     584 allocs/op
+BenchmarkInstantiate                     	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                     	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                     	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                            	1000000000	         0.0000006 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                            	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                            	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec/lodepng         	     139	   1738503 ns/op	   41064 B/op	     412 allocs/op
+BenchmarkCommandExec/lodepng         	     140	   1742883 ns/op	   41064 B/op	     412 allocs/op
+BenchmarkCommandExec/lodepng         	     133	   1684982 ns/op	   41064 B/op	     412 allocs/op
+BenchmarkWazeroCommandExec/lodepng   	      62	   3341273 ns/op	 1306568 B/op	      54 allocs/op
+BenchmarkWazeroCommandExec/lodepng   	      73	   3374007 ns/op	 1306568 B/op	      54 allocs/op
+BenchmarkWazeroCommandExec/lodepng   	      67	   3293879 ns/op	 1306568 B/op	      54 allocs/op
+BenchmarkWazeroCompile/lodepng       	       7	  39110256 ns/op	    455900 code-B	20261766 B/op	   37149 allocs/op
+BenchmarkWazeroCompile/lodepng       	       6	  38146368 ns/op	    455900 code-B	20260400 B/op	   37149 allocs/op
+BenchmarkWazeroCompile/lodepng       	       7	  48017845 ns/op	    455900 code-B	20260400 B/op	   37149 allocs/op
+BenchmarkWazeroInstantiate           	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate           	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate           	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                  	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                  	1000000000	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                  	1000000000	       0 B/op	       0 allocs/op
+BenchmarkDecode/lodepng              	     933	    258538 ns/op	   15752 B/op	     116 allocs/op
+BenchmarkDecode/lodepng              	     992	    254202 ns/op	   15752 B/op	     116 allocs/op
+BenchmarkDecode/lodepng              	     916	    256638 ns/op	   15752 B/op	     116 allocs/op
+BenchmarkValidate/lodepng            	     280	    876890 ns/op	   15064 B/op	     117 allocs/op
+BenchmarkValidate/lodepng            	     280	    874660 ns/op	   15064 B/op	     117 allocs/op
+BenchmarkValidate/lodepng            	     278	    885076 ns/op	   15064 B/op	     117 allocs/op
+BenchmarkCompile/lodepng             	      48	   5420799 ns/op	  394896 B/op	     264 allocs/op
+BenchmarkCompile/lodepng             	      51	   4781650 ns/op	  394896 B/op	     264 allocs/op
+BenchmarkCompile/lodepng             	      52	   4817878 ns/op	  394896 B/op	     264 allocs/op
+BenchmarkCompileFull/lodepng         	      43	   5862147 ns/op	    244664 code-B	  761087 B/op	     618 allocs/op
+BenchmarkCompileFull/lodepng         	      39	   5996050 ns/op	    244664 code-B	  761086 B/op	     618 allocs/op
+BenchmarkCompileFull/lodepng         	      43	   6044384 ns/op	    244664 code-B	  761084 B/op	     618 allocs/op
+BenchmarkInstantiate                 	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                 	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                 	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                        	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                        	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                        	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec/wren  	     522	    469490 ns/op	   41752 B/op	     423 allocs/op
+BenchmarkCommandExec/wren  	     526	    455070 ns/op	   41752 B/op	     423 allocs/op
+BenchmarkCommandExec/wren  	     532	    458824 ns/op	   41752 B/op	     423 allocs/op
+BenchmarkWazeroCommandExec/wren         	     346	    718817 ns/op	  994112 B/op	     249 allocs/op
+BenchmarkWazeroCommandExec/wren         	     327	    722632 ns/op	  994112 B/op	     249 allocs/op
+BenchmarkWazeroCommandExec/wren         	     367	    698257 ns/op	  994112 B/op	     249 allocs/op
+BenchmarkWazeroCompile/wren             	       5	  48935575 ns/op	    684660 code-B	10493328 B/op	   24790 allocs/op
+BenchmarkWazeroCompile/wren             	       6	  50824236 ns/op	    684660 code-B	10493320 B/op	   24790 allocs/op
+BenchmarkWazeroCompile/wren             	       4	  55362323 ns/op	    684660 code-B	10493320 B/op	   24790 allocs/op
+BenchmarkWazeroInstantiate              	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate              	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate              	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                     	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                     	1000000000	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                     	1000000000	       0 B/op	       0 allocs/op
+BenchmarkDecode/wren                    	     589	    385168 ns/op	   81280 B/op	     344 allocs/op
+BenchmarkDecode/wren                    	     625	    404381 ns/op	   81280 B/op	     344 allocs/op
+BenchmarkDecode/wren                    	     602	    405174 ns/op	   81280 B/op	     344 allocs/op
+BenchmarkValidate/wren                  	     189	   1281965 ns/op	   27976 B/op	     177 allocs/op
+BenchmarkValidate/wren                  	     196	   1265503 ns/op	   27976 B/op	     177 allocs/op
+BenchmarkValidate/wren                  	     198	   1243097 ns/op	   27976 B/op	     177 allocs/op
+BenchmarkCompile/wren                   	      31	   7622640 ns/op	  302961 B/op	     521 allocs/op
+BenchmarkCompile/wren                   	      32	   7515151 ns/op	  302961 B/op	     521 allocs/op
+BenchmarkCompile/wren                   	      31	   7524661 ns/op	  302961 B/op	     521 allocs/op
+BenchmarkCompileFull/wren               	      27	   9435852 ns/op	    412988 code-B	 1116945 B/op	    1407 allocs/op
+BenchmarkCompileFull/wren               	      28	   9321966 ns/op	    412988 code-B	 1116948 B/op	    1408 allocs/op
+BenchmarkCompileFull/wren               	      28	   9513955 ns/op	    412988 code-B	 1116948 B/op	    1408 allocs/op
+BenchmarkInstantiate                    	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                    	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                    	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                           	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                           	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                           	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec/tinyxml2         	    6398	     47274 ns/op	   42392 B/op	     434 allocs/op
+BenchmarkCommandExec/tinyxml2         	    6056	     40136 ns/op	   42392 B/op	     434 allocs/op
+BenchmarkCommandExec/tinyxml2         	    6274	     40541 ns/op	   42392 B/op	     434 allocs/op
+BenchmarkWazeroCommandExec/tinyxml2   	    9496	     24798 ns/op	  156888 B/op	     156 allocs/op
+BenchmarkWazeroCommandExec/tinyxml2   	    9523	     32873 ns/op	  156888 B/op	     156 allocs/op
+BenchmarkWazeroCommandExec/tinyxml2   	    8943	     25062 ns/op	  156888 B/op	     156 allocs/op
+BenchmarkWazeroCompile/tinyxml2       	       9	  24836477 ns/op	    253848 code-B	 9760617 B/op	   24026 allocs/op
+BenchmarkWazeroCompile/tinyxml2       	       9	  23134255 ns/op	    253848 code-B	 9761675 B/op	   24026 allocs/op
+BenchmarkWazeroCompile/tinyxml2       	       9	  22974917 ns/op	    253848 code-B	 9760621 B/op	   24026 allocs/op
+BenchmarkWazeroInstantiate            	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate            	1000000000	         0.0000006 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate            	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                   	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                   	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                   	1000000000	       0 B/op	       0 allocs/op
+BenchmarkDecode/tinyxml2              	    1932	    122332 ns/op	   19928 B/op	     130 allocs/op
+BenchmarkDecode/tinyxml2              	    1999	    121199 ns/op	   19928 B/op	     130 allocs/op
+BenchmarkDecode/tinyxml2              	    2169	    113381 ns/op	   19928 B/op	     130 allocs/op
+BenchmarkValidate/tinyxml2            	     586	    433589 ns/op	   13608 B/op	      83 allocs/op
+BenchmarkValidate/tinyxml2            	     535	    434609 ns/op	   13608 B/op	      83 allocs/op
+BenchmarkValidate/tinyxml2            	     588	    437969 ns/op	   13608 B/op	      83 allocs/op
+BenchmarkCompile/tinyxml2             	      80	   2718602 ns/op	  227104 B/op	     332 allocs/op
+BenchmarkCompile/tinyxml2             	      91	   2742540 ns/op	  227104 B/op	     332 allocs/op
+BenchmarkCompile/tinyxml2             	      85	   2662693 ns/op	  227104 B/op	     332 allocs/op
+BenchmarkCompileFull/tinyxml2         	      75	   3222233 ns/op	    166736 code-B	  472591 B/op	     676 allocs/op
+BenchmarkCompileFull/tinyxml2         	      78	   3241119 ns/op	    166736 code-B	  472594 B/op	     676 allocs/op
+BenchmarkCompileFull/tinyxml2         	      79	   3356621 ns/op	    166736 code-B	  472592 B/op	     676 allocs/op
+BenchmarkInstantiate                  	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                  	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                  	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                         	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                         	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                         	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec/lua   	    2290	     99934 ns/op	   45272 B/op	     480 allocs/op
+BenchmarkCommandExec/lua   	    2437	    101159 ns/op	   45274 B/op	     480 allocs/op
+BenchmarkCommandExec/lua   	    2232	    108288 ns/op	   45272 B/op	     480 allocs/op
+BenchmarkWazeroCommandExec/lua         	    2109	    110373 ns/op	  157744 B/op	      96 allocs/op
+BenchmarkWazeroCommandExec/lua         	    2142	    111856 ns/op	  157744 B/op	      96 allocs/op
+BenchmarkWazeroCommandExec/lua         	    2016	    108920 ns/op	  157744 B/op	      96 allocs/op
+BenchmarkWazeroCompile/lua             	       3	  76463361 ns/op	    982284 code-B	18898445 B/op	   43045 allocs/op
+BenchmarkWazeroCompile/lua             	       3	  73848583 ns/op	    982284 code-B	18898445 B/op	   43045 allocs/op
+BenchmarkWazeroCompile/lua             	       3	  76433889 ns/op	    982284 code-B	18898440 B/op	   43045 allocs/op
+BenchmarkWazeroInstantiate             	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate             	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate             	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                    	1000000000	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                    	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                    	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/lua                    	     379	    619574 ns/op	   76024 B/op	     389 allocs/op
+BenchmarkDecode/lua                    	     406	    579118 ns/op	   76024 B/op	     389 allocs/op
+BenchmarkDecode/lua                    	     420	    575451 ns/op	   76024 B/op	     389 allocs/op
+BenchmarkValidate/lua                  	     130	   1980769 ns/op	   47528 B/op	     267 allocs/op
+BenchmarkValidate/lua                  	     124	   1921445 ns/op	   47528 B/op	     267 allocs/op
+BenchmarkValidate/lua                  	     128	   1937024 ns/op	   47528 B/op	     267 allocs/op
+BenchmarkCompile/lua                   	      20	  11516500 ns/op	  534424 B/op	     547 allocs/op
+BenchmarkCompile/lua                   	      22	  11013098 ns/op	  534425 B/op	     547 allocs/op
+BenchmarkCompile/lua                   	      22	  11590981 ns/op	  534426 B/op	     547 allocs/op
+BenchmarkCompileFull/lua               	      19	  13347715 ns/op	    528248 code-B	 1479380 B/op	    1540 allocs/op
+BenchmarkCompileFull/lua               	      18	  13324569 ns/op	    528248 code-B	 1479381 B/op	    1540 allocs/op
+BenchmarkCompileFull/lua               	      19	  12458428 ns/op	    528248 code-B	 1479368 B/op	    1540 allocs/op
+BenchmarkInstantiate                   	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                   	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                   	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                          	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                          	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                          	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkCommandExec/sightglass-shootout-base64         	     147	   1623699 ns/op	   50672 B/op	     531 allocs/op
+BenchmarkCommandExec/sightglass-shootout-base64         	     146	   1614271 ns/op	   50672 B/op	     531 allocs/op
+BenchmarkCommandExec/sightglass-shootout-base64         	     146	   1655905 ns/op	   50672 B/op	     531 allocs/op
+BenchmarkWazeroCommandExec/sightglass-shootout-base64   	     120	   1909614 ns/op	  153696 B/op	      81 allocs/op
+BenchmarkWazeroCommandExec/sightglass-shootout-base64   	     120	   2022008 ns/op	  153696 B/op	      81 allocs/op
+BenchmarkWazeroCommandExec/sightglass-shootout-base64   	     100	   2027586 ns/op	  153696 B/op	      81 allocs/op
+BenchmarkWazeroCompile/sightglass-shootout-base64       	      16	  15832411 ns/op	    127604 code-B	 8759791 B/op	   22417 allocs/op
+BenchmarkWazeroCompile/sightglass-shootout-base64       	      22	  15098555 ns/op	    127604 code-B	 8760631 B/op	   22417 allocs/op
+BenchmarkWazeroCompile/sightglass-shootout-base64       	      13	  15791071 ns/op	    127604 code-B	 8759792 B/op	   22417 allocs/op
+BenchmarkWazeroInstantiate                              	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                              	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                              	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                                     	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                                     	1000000000	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                                     	1000000000	       0 B/op	       0 allocs/op
+BenchmarkDecode/sightglass-shootout-base64              	    2530	     90643 ns/op	  201600 B/op	     144 allocs/op
+BenchmarkDecode/sightglass-shootout-base64              	    2703	    103793 ns/op	  201600 B/op	     144 allocs/op
+BenchmarkDecode/sightglass-shootout-base64              	    2616	     93468 ns/op	  201600 B/op	     144 allocs/op
+BenchmarkValidate/sightglass-shootout-base64            	     913	    288646 ns/op	   14344 B/op	      80 allocs/op
+BenchmarkValidate/sightglass-shootout-base64            	     903	    292408 ns/op	   14344 B/op	      80 allocs/op
+BenchmarkValidate/sightglass-shootout-base64            	     914	    283157 ns/op	   14344 B/op	      80 allocs/op
+BenchmarkCompile/sightglass-shootout-base64             	     157	   1894711 ns/op	  153880 B/op	     255 allocs/op
+BenchmarkCompile/sightglass-shootout-base64             	     150	   1543185 ns/op	  153880 B/op	     255 allocs/op
+BenchmarkCompile/sightglass-shootout-base64             	     160	   1451783 ns/op	  153880 B/op	     255 allocs/op
+BenchmarkCompileFull/sightglass-shootout-base64         	     100	   2040739 ns/op	     82076 code-B	  516389 B/op	     686 allocs/op
+BenchmarkCompileFull/sightglass-shootout-base64         	     100	   2138563 ns/op	     82076 code-B	  516391 B/op	     686 allocs/op
+BenchmarkCompileFull/sightglass-shootout-base64         	     100	   2168708 ns/op	     82076 code-B	  516391 B/op	     686 allocs/op
+BenchmarkInstantiate                                    	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                                    	1000000000	         0.0000008 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                                    	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                           	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                           	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                           	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: Apple M4 Max
+BenchmarkExecCallOverhead_wago                       	 7788634	        30.67 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecCallOverhead_wago                       	 7863663	        30.40 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecCallOverhead_wago                       	 7949004	        31.35 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecCallOverhead_wazero                     	10670044	        23.60 ns/op	      16 B/op	       2 allocs/op
+BenchmarkExecCallOverhead_wazero                     	10128967	        23.57 ns/op	      16 B/op	       2 allocs/op
+BenchmarkExecCallOverhead_wazero                     	 9682364	        23.93 ns/op	      16 B/op	       2 allocs/op
+BenchmarkExecTypedCall_wago                          	30908416	         7.814 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecTypedCall_wago                          	31103355	         7.713 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecTypedCall_wago                          	31297544	         7.571 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecInstanceCall_wago                       	33524820	         7.213 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecInstanceCall_wago                       	33759229	         7.178 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecInstanceCall_wago                       	33721874	         7.181 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecSessionCall_wago                        	40227674	         5.968 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecSessionCall_wago                        	41558743	         5.813 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecSessionCall_wago                        	41168738	         5.958 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostRoundtrip_wago                      	 3363014	        71.07 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostRoundtrip_wago                      	 3410311	        69.35 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostRoundtrip_wago                      	 3423265	        70.12 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostCallback_wago                       	21861904	        10.62 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostCallback_wago                       	22208341	        10.88 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostCallback_wago                       	22800595	        10.70 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostCallbackInstance_wago               	14209100	        17.02 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostCallbackInstance_wago               	14043300	        16.73 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostCallbackInstance_wago               	14517298	        16.80 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostCallbackInstanceAlternatingF64_wago 	  794788	       300.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostCallbackInstanceAlternatingF64_wago 	  795876	       339.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostCallbackInstanceAlternatingF64_wago 	  785822	       303.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostCallbackInstanceF64_wago            	 1588209	       147.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostCallbackInstanceF64_wago            	 1633786	       148.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostCallbackInstanceF64_wago            	 1616506	       146.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostCallbackResolvedF64_wago            	 1685136	       142.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostCallbackResolvedF64_wago            	 1708670	       139.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostCallbackResolvedF64_wago            	 1689811	       138.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecSessionHostCallback_wago                	24497397	         9.150 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecSessionHostCallback_wago                	23906070	         9.405 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecSessionHostCallback_wago                	23640370	         9.694 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostRoundtrip_wazero                    	  814870	       306.9 ns/op	     112 B/op	       7 allocs/op
+BenchmarkExecHostRoundtrip_wazero                    	  849957	       311.3 ns/op	     112 B/op	       7 allocs/op
+BenchmarkExecHostRoundtrip_wazero                    	  818169	       310.2 ns/op	     112 B/op	       7 allocs/op
+PASS

@@ -1,0 +1,2540 @@
+{
+  "version": "281387e",
+  "commit": "281387e",
+  "date": "2026-10-15T01:17:11-07:00",
+  "goos": "darwin",
+  "goarch": "arm64",
+  "cpu": "Apple M4 Max",
+  "modules": {
+    "age-decrypt": {
+      "category": "application",
+      "suite": "age",
+      "desc": "age WASI CLI decrypts a pinned test ciphertext with an exact plaintext oracle",
+      "bytes": 7999782
+    },
+    "age-keygen-public": {
+      "category": "application",
+      "suite": "age-keygen",
+      "desc": "age-keygen WASI CLI derives the public recipient from a pinned test identity",
+      "bytes": 4523855
+    },
+    "blake-as": {
+      "category": "real",
+      "desc": "AssemblyScript blake-as: BLAKE3 hash (SWAR) of a 4 KiB buffer",
+      "bytes": 4713
+    },
+    "blake-as-simd": {
+      "category": "real-simd",
+      "desc": "AssemblyScript blake-as SIMD: BLAKE3 hash of a 4 KiB buffer",
+      "bytes": 23486
+    },
+    "blake3": {
+      "category": "semantic",
+      "desc": "BLAKE3 reference implementation with published hash, keyed-hash, and key-derivation vectors",
+      "bytes": 13174
+    },
+    "brotli-compress": {
+      "category": "application",
+      "suite": "brotli",
+      "desc": "Brotli WASI CLI compresses 2.16 MB of generated JavaScript at quality 10 with an exact output oracle",
+      "bytes": 791733
+    },
+    "brotli-decompress": {
+      "category": "application",
+      "suite": "brotli",
+      "desc": "Brotli WASI CLI decompresses a pinned stream with an exact plaintext oracle",
+      "bytes": 791733
+    },
+    "cjson": {
+      "category": "application",
+      "suite": "cJSON",
+      "desc": "cJSON parse, DOM mutation, and compact serialization workload",
+      "bytes": 45701
+    },
+    "clang-c-kernels": {
+      "category": "application",
+      "suite": "clang",
+      "desc": "Clang 8 parses two C kernels and emits LLVM IR",
+      "bytes": 31208660
+    },
+    "clang-cpp-kernels": {
+      "category": "application",
+      "suite": "clang",
+      "desc": "Clang 8 parses a C++17 function template and emits LLVM IR",
+      "bytes": 31208660
+    },
+    "coremark": {
+      "category": "semantic",
+      "desc": "CoreMark 1.0 integer, list, matrix, and state-machine workload",
+      "bytes": 8156
+    },
+    "coreutils-base64": {
+      "category": "application",
+      "suite": "uutils/coreutils",
+      "desc": "Rust coreutils base64-encodes a pinned text file",
+      "bytes": 9769583
+    },
+    "coreutils-sha256sum": {
+      "category": "application",
+      "suite": "uutils/coreutils",
+      "desc": "Rust coreutils hashes a pinned text file with SHA-256",
+      "bytes": 9769583
+    },
+    "coreutils-sort": {
+      "category": "application",
+      "suite": "uutils/coreutils",
+      "desc": "Rust coreutils sorts a pinned twenty-four-record text file",
+      "bytes": 9769583
+    },
+    "coreutils-wc": {
+      "category": "application",
+      "suite": "uutils/coreutils",
+      "desc": "Rust coreutils counts lines, words, and bytes in a pinned text file",
+      "bytes": 9769583
+    },
+    "dispatch": {
+      "category": "calls",
+      "desc": "call_indirect through a function table",
+      "bytes": 108
+    },
+    "drwav": {
+      "category": "semantic",
+      "desc": "dr_wav in-memory PCM decoding, chunked reads, and seeking",
+      "bytes": 29993
+    },
+    "duktape-script": {
+      "category": "application",
+      "suite": "duktape",
+      "desc": "Duktape WASI CLI parses and aggregates 50,000 generated service events",
+      "bytes": 561627
+    },
+    "ecpbram-generate": {
+      "category": "application",
+      "suite": "trellis",
+      "desc": "ecpbram generates a seeded 512-word ECP5 BRAM hex file",
+      "bytes": 660239
+    },
+    "ecppack-bitstream": {
+      "category": "application",
+      "suite": "trellis",
+      "desc": "ecppack converts a pinned ECP5 text configuration and device database into a bitstream",
+      "bytes": 807499
+    },
+    "ecppll-clock": {
+      "category": "application",
+      "suite": "trellis",
+      "desc": "ecppll calculates ECP5 PLL divisors for a fixed 12 to 24 MHz clock request",
+      "bytes": 562700
+    },
+    "ecpunpack-config": {
+      "category": "application",
+      "suite": "trellis",
+      "desc": "ecpunpack decodes a pinned ECP5 bitstream into its text configuration",
+      "bytes": 767087
+    },
+    "embench-crc32": {
+      "category": "application",
+      "suite": "Embench",
+      "desc": "CRC-32",
+      "bytes": 19412
+    },
+    "embench-huffbench": {
+      "category": "application",
+      "suite": "Embench",
+      "desc": "Huffman compression",
+      "bytes": 22095
+    },
+    "embench-matmult-int": {
+      "category": "application",
+      "suite": "Embench",
+      "desc": "integer matrix multiplication",
+      "bytes": 22566
+    },
+    "embench-nettle-aes": {
+      "category": "application",
+      "suite": "Embench",
+      "desc": "AES encryption",
+      "bytes": 31550
+    },
+    "embench-nettle-sha256": {
+      "category": "application",
+      "suite": "Embench",
+      "desc": "SHA-256",
+      "bytes": 23208
+    },
+    "embench-qrduino": {
+      "category": "application",
+      "suite": "Embench",
+      "desc": "QR encoder",
+      "bytes": 38432
+    },
+    "esbuild-minify": {
+      "category": "application",
+      "suite": "esbuild",
+      "desc": "esbuild WASI CLI minifies 2.16 MB of generated production-shaped JavaScript",
+      "bytes": 20677268
+    },
+    "fannkuch": {
+      "category": "compute",
+      "desc": "Benchmarks-Game fannkuch-redux: permute + pancake-flip (branch/array churn, no f64)",
+      "bytes": 2667
+    },
+    "fastfloat": {
+      "category": "semantic",
+      "desc": "fast_float decimal parsing across IEEE-754 boundary values",
+      "bytes": 30010
+    },
+    "fasttree-phylogeny": {
+      "category": "application",
+      "suite": "Biowasm",
+      "desc": "FastTree 2.1.11 infers a nucleotide phylogeny from a pinned multiple-sequence alignment",
+      "bytes": 254477
+    },
+    "fib_rec": {
+      "category": "calls",
+      "desc": "recursion; call/return heavy",
+      "bytes": 62
+    },
+    "gnu-seq-range": {
+      "category": "application",
+      "suite": "Biowasm GNU coreutils",
+      "desc": "GNU seq 8.32 prints a pinned integer range",
+      "bytes": 76306
+    },
+    "gnu-tr-uppercase": {
+      "category": "application",
+      "suite": "Biowasm GNU coreutils",
+      "desc": "GNU tr 8.32 uppercases a pinned record stream",
+      "bytes": 71050
+    },
+    "grain-stdlib-array": {
+      "category": "application",
+      "suite": "Grain stdlib",
+      "desc": "Grain 0.7.2 upstream array standard-library assertions",
+      "bytes": 261487
+    },
+    "grain-stdlib-json-subset": {
+      "category": "application",
+      "suite": "Grain stdlib",
+      "desc": "Grain 0.7.2 JSON Parse, ToString, and Lenses assertion subset (Validation excluded)",
+      "bytes": 284532
+    },
+    "grain-stdlib-string": {
+      "category": "application",
+      "suite": "Grain stdlib",
+      "desc": "Grain 0.7.2 upstream string standard-library assertions",
+      "bytes": 237342
+    },
+    "icebram-generate": {
+      "category": "application",
+      "suite": "icestorm",
+      "desc": "icebram generates seeded 8-bit BRAM initialization words",
+      "bytes": 510411
+    },
+    "icemulti-image": {
+      "category": "application",
+      "suite": "icestorm",
+      "desc": "icemulti packages a 1K FPGA bitstream as a multiboot image",
+      "bytes": 463065
+    },
+    "icepack-pack": {
+      "category": "application",
+      "suite": "icestorm",
+      "desc": "icepack reconstructs a 1K FPGA bitstream from an ASCII configuration",
+      "bytes": 552512
+    },
+    "icepll-clock": {
+      "category": "application",
+      "suite": "icestorm",
+      "desc": "icepll computes iCE40 PLL divisors for a fixed 12 to 24 MHz clock request",
+      "bytes": 59862
+    },
+    "iceunpack-unpack": {
+      "category": "application",
+      "suite": "icestorm",
+      "desc": "iceunpack decodes a 1K FPGA bitstream into its ASCII configuration",
+      "bytes": 552512
+    },
+    "jq-json-transform": {
+      "category": "application",
+      "suite": "jq",
+      "desc": "jq WASI CLI sorts, groups, and aggregates 50,000 generated JSON objects with an exact output oracle",
+      "bytes": 957803
+    },
+    "json-as": {
+      "category": "real",
+      "desc": "AssemblyScript json-as (SWAR): serialize/deserialize a struct",
+      "bytes": 23410
+    },
+    "json-as-simd": {
+      "category": "real-simd",
+      "desc": "AssemblyScript json-as SIMD: serialize/deserialize canonical payload",
+      "bytes": 25576
+    },
+    "json2csv-people": {
+      "category": "application",
+      "suite": "json2csv",
+      "desc": "json2csv CLI extracts nested fields from newline-delimited JSON into CSV",
+      "bytes": 308856
+    },
+    "kissfft": {
+      "category": "semantic",
+      "desc": "KissFFT 257-point complex forward and inverse transforms",
+      "bytes": 18901
+    },
+    "lcs-substrings": {
+      "category": "application",
+      "suite": "Biowasm seq-align",
+      "desc": "lcs enumerates repeated substrings of a pinned sequence",
+      "bytes": 24549
+    },
+    "libtommath": {
+      "category": "semantic",
+      "desc": "LibTomMath modular exponentiation, GCD, and serialization",
+      "bytes": 35037
+    },
+    "linked_list": {
+      "category": "compute",
+      "desc": "singly-linked list build + dependent-load pointer chase",
+      "bytes": 144
+    },
+    "lodepng": {
+      "category": "application",
+      "suite": "LodePNG",
+      "desc": "LodePNG RGBA encoding, decoding, and exact pixel round trip",
+      "bytes": 97731
+    },
+    "lua": {
+      "category": "application",
+      "suite": "Lua",
+      "desc": "Lua 5.4 interpreter running tables, closures, patterns, and GC",
+      "bytes": 193904
+    },
+    "lua-cli-buckets": {
+      "category": "application",
+      "suite": "lua",
+      "desc": "standalone Lua 5.4.6 interpreter aggregates one million generated events into 257 ranked buckets",
+      "bytes": 306612
+    },
+    "lz4": {
+      "category": "semantic",
+      "desc": "LZ4 compression/decompression with exact size and byte oracles",
+      "bytes": 2918
+    },
+    "lzmadec-decompress": {
+      "category": "application",
+      "suite": "lzmadec",
+      "desc": "XZ Utils LZMA decoder CLI decompresses a pinned LZMA stream with an exact output oracle",
+      "bytes": 57345
+    },
+    "lzmainfo-header": {
+      "category": "application",
+      "suite": "lzmainfo",
+      "desc": "XZ Utils lzmainfo CLI parses a pinned LZMA header with an exact output oracle",
+      "bytes": 45585
+    },
+    "many_funcs": {
+      "category": "scale",
+      "desc": "300 small functions; per-function compile cost",
+      "bytes": 2992
+    },
+    "matmul": {
+      "category": "compute",
+      "desc": "dense n x n f64 matrix multiply (fp multiply-add + strided memory)",
+      "bytes": 1042
+    },
+    "memory": {
+      "category": "memory",
+      "desc": "linear-memory load/store loop",
+      "bytes": 139
+    },
+    "memory_tree": {
+      "category": "calls+memory",
+      "desc": "recursive call tree with load/store churn at every node",
+      "bytes": 194
+    },
+    "micropython-squares": {
+      "category": "application",
+      "suite": "micropython",
+      "desc": "MicroPython runs two million state, aggregate, modulo, and branch iterations",
+      "bytes": 370907
+    },
+    "miniz": {
+      "category": "semantic",
+      "desc": "miniz deflate compression and decompression round trip",
+      "bytes": 36915
+    },
+    "monocypher": {
+      "category": "semantic",
+      "desc": "Monocypher authenticated encryption and streaming BLAKE2b",
+      "bytes": 15833
+    },
+    "nanosvg": {
+      "category": "semantic",
+      "desc": "NanoSVG parsing and shape/path traversal workload",
+      "bytes": 62625
+    },
+    "nbody": {
+      "category": "compute",
+      "desc": "Benchmarks-Game N-body: leapfrog solar-system integration (f64 mul/add/div/sqrt)",
+      "bytes": 2255
+    },
+    "needleman-wunsch-dna": {
+      "category": "application",
+      "suite": "Biowasm seq-align",
+      "desc": "needleman_wunsch globally aligns two pinned DNA sequences",
+      "bytes": 125804
+    },
+    "pcre2": {
+      "category": "semantic",
+      "desc": "PCRE2 Unicode pattern compilation, matching, and capture extraction",
+      "bytes": 311039
+    },
+    "php-buckets": {
+      "category": "application",
+      "suite": "php",
+      "desc": "PHP 8.2.6 groups five thousand integers into seventeen weighted buckets",
+      "bytes": 13622978
+    },
+    "polybench-2mm": {
+      "category": "linear-algebra",
+      "suite": "PolyBench/C",
+      "desc": "PolyBench/C 2mm (small dataset)",
+      "bytes": 2534
+    },
+    "polybench-3mm": {
+      "category": "linear-algebra",
+      "suite": "PolyBench/C",
+      "desc": "PolyBench/C 3mm (small dataset)",
+      "bytes": 2966
+    },
+    "polybench-adi": {
+      "category": "stencil",
+      "suite": "PolyBench/C",
+      "desc": "PolyBench/C adi (small dataset)",
+      "bytes": 3125
+    },
+    "polybench-atax": {
+      "category": "linear-algebra",
+      "suite": "PolyBench/C",
+      "desc": "PolyBench/C atax (small dataset)",
+      "bytes": 1952
+    },
+    "polybench-bicg": {
+      "category": "linear-algebra",
+      "suite": "PolyBench/C",
+      "desc": "PolyBench/C bicg (small dataset)",
+      "bytes": 2061
+    },
+    "polybench-cholesky": {
+      "category": "solver",
+      "suite": "PolyBench/C",
+      "desc": "PolyBench/C cholesky (small dataset)",
+      "bytes": 2516
+    },
+    "polybench-correlation": {
+      "category": "statistics",
+      "suite": "PolyBench/C",
+      "desc": "PolyBench/C correlation (small dataset)",
+      "bytes": 2417
+    },
+    "polybench-covariance": {
+      "category": "statistics",
+      "suite": "PolyBench/C",
+      "desc": "PolyBench/C covariance (small dataset)",
+      "bytes": 2151
+    },
+    "polybench-deriche": {
+      "category": "image-processing",
+      "suite": "PolyBench/C",
+      "desc": "PolyBench/C deriche (small dataset)",
+      "bytes": 2794
+    },
+    "polybench-doitgen": {
+      "category": "linear-algebra",
+      "suite": "PolyBench/C",
+      "desc": "PolyBench/C doitgen (small dataset)",
+      "bytes": 2980
+    },
+    "polybench-durbin": {
+      "category": "solver",
+      "suite": "PolyBench/C",
+      "desc": "PolyBench/C durbin (small dataset)",
+      "bytes": 1862
+    },
+    "polybench-fdtd-2d": {
+      "category": "stencil",
+      "suite": "PolyBench/C",
+      "desc": "PolyBench/C fdtd-2d (small dataset)",
+      "bytes": 3841
+    },
+    "polybench-floyd-warshall": {
+      "category": "graph",
+      "suite": "PolyBench/C",
+      "desc": "PolyBench/C floyd-warshall (small dataset)",
+      "bytes": 1581
+    },
+    "polybench-gemm": {
+      "category": "blas",
+      "suite": "PolyBench/C",
+      "desc": "PolyBench/C gemm (small dataset)",
+      "bytes": 2184
+    },
+    "polybench-gemver": {
+      "category": "blas",
+      "suite": "PolyBench/C",
+      "desc": "PolyBench/C gemver (small dataset)",
+      "bytes": 2932
+    },
+    "polybench-gesummv": {
+      "category": "blas",
+      "suite": "PolyBench/C",
+      "desc": "PolyBench/C gesummv (small dataset)",
+      "bytes": 1925
+    },
+    "polybench-gramschmidt": {
+      "category": "solver",
+      "suite": "PolyBench/C",
+      "desc": "PolyBench/C gramschmidt (small dataset)",
+      "bytes": 2288
+    },
+    "polybench-heat-3d": {
+      "category": "stencil",
+      "suite": "PolyBench/C",
+      "desc": "PolyBench/C heat-3d (small dataset)",
+      "bytes": 2941
+    },
+    "polybench-jacobi-1d": {
+      "category": "stencil",
+      "suite": "PolyBench/C",
+      "desc": "PolyBench/C jacobi-1d (small dataset)",
+      "bytes": 1605
+    },
+    "polybench-jacobi-2d": {
+      "category": "stencil",
+      "suite": "PolyBench/C",
+      "desc": "PolyBench/C jacobi-2d (small dataset)",
+      "bytes": 1816
+    },
+    "polybench-lu": {
+      "category": "solver",
+      "suite": "PolyBench/C",
+      "desc": "PolyBench/C lu (small dataset)",
+      "bytes": 2461
+    },
+    "polybench-ludcmp": {
+      "category": "solver",
+      "suite": "PolyBench/C",
+      "desc": "PolyBench/C ludcmp (small dataset)",
+      "bytes": 3291
+    },
+    "polybench-mvt": {
+      "category": "linear-algebra",
+      "suite": "PolyBench/C",
+      "desc": "PolyBench/C mvt (small dataset)",
+      "bytes": 2264
+    },
+    "polybench-nussinov": {
+      "category": "dynamic-programming",
+      "suite": "PolyBench/C",
+      "desc": "PolyBench/C nussinov (small dataset)",
+      "bytes": 1930
+    },
+    "polybench-seidel-2d": {
+      "category": "stencil",
+      "suite": "PolyBench/C",
+      "desc": "PolyBench/C seidel-2d (small dataset)",
+      "bytes": 1603
+    },
+    "polybench-symm": {
+      "category": "blas",
+      "suite": "PolyBench/C",
+      "desc": "PolyBench/C symm (small dataset)",
+      "bytes": 2554
+    },
+    "polybench-syr2k": {
+      "category": "blas",
+      "suite": "PolyBench/C",
+      "desc": "PolyBench/C syr2k (small dataset)",
+      "bytes": 2169
+    },
+    "polybench-syrk": {
+      "category": "blas",
+      "suite": "PolyBench/C",
+      "desc": "PolyBench/C syrk (small dataset)",
+      "bytes": 2143
+    },
+    "polybench-trisolv": {
+      "category": "solver",
+      "suite": "PolyBench/C",
+      "desc": "PolyBench/C trisolv (small dataset)",
+      "bytes": 1852
+    },
+    "polybench-trmm": {
+      "category": "blas",
+      "suite": "PolyBench/C",
+      "desc": "PolyBench/C trmm (small dataset)",
+      "bytes": 2207
+    },
+    "qoi": {
+      "category": "semantic",
+      "desc": "QOI image encode/decode with exact byte and pixel oracles",
+      "bytes": 2933
+    },
+    "quickjs-script": {
+      "category": "application",
+      "suite": "quickjs",
+      "desc": "QuickJS WASI CLI parses and aggregates 50,000 generated service events",
+      "bytes": 727617
+    },
+    "raytrace": {
+      "category": "compute",
+      "desc": "recursive Whitted ray tracer: n x n frame, 4 spheres + checker plane, depth-4 mirrors (heavy f64 vector math)",
+      "bytes": 5803
+    },
+    "ripgrep-source": {
+      "category": "application",
+      "suite": "ripgrep",
+      "desc": "ripgrep searches a JavaScript program and returns exact matching source lines",
+      "bytes": 21103589
+    },
+    "ruby-buckets": {
+      "category": "application",
+      "suite": "ruby",
+      "desc": "Ruby 3.2.2 groups five thousand integers into seventeen weighted buckets",
+      "bytes": 8239563
+    },
+    "sed-records": {
+      "category": "application",
+      "suite": "Biowasm",
+      "desc": "GNU sed 4.8 performs two substitutions over a pinned record stream",
+      "bytes": 184939
+    },
+    "seqtk-fastq-to-fasta": {
+      "category": "application",
+      "suite": "Biowasm",
+      "desc": "seqtk 1.4 converts a pinned FASTQ stream to FASTA",
+      "bytes": 148484
+    },
+    "sha256": {
+      "category": "compute",
+      "desc": "standards-correct SHA-256 of an n-KiB buffer (i32 rotate/shift/xor/add, 64-round)",
+      "bytes": 2818
+    },
+    "sightglass-libsodium-hash": {
+      "category": "application",
+      "suite": "Sightglass",
+      "desc": "libsodium hash self-test, 1,061 iterations",
+      "bytes": 56707
+    },
+    "sightglass-shootout-base64": {
+      "category": "application",
+      "suite": "Sightglass",
+      "desc": "base64 shootout kernel",
+      "bytes": 202614
+    },
+    "smith-waterman-dna": {
+      "category": "application",
+      "suite": "Biowasm seq-align",
+      "desc": "smith_waterman locally aligns two pinned DNA sequences and reports suboptimal hits",
+      "bytes": 128101
+    },
+    "sqlite3-query": {
+      "category": "application",
+      "suite": "sqlite3",
+      "desc": "SQLite WASI shell recursively generates one million rows and computes four exact aggregates",
+      "bytes": 1318577
+    },
+    "swift-format-source": {
+      "category": "application",
+      "suite": "swift-format",
+      "desc": "Swift formatter CLI reformats source from stdin with an exact output oracle",
+      "bytes": 51209935
+    },
+    "tacle-bsort": {
+      "category": "application",
+      "suite": "TACLeBench",
+      "desc": "self-checking bubble sort",
+      "bytes": 823
+    },
+    "tiny": {
+      "category": "micro",
+      "desc": "minimal module; fixed pipeline overhead",
+      "bytes": 60
+    },
+    "tinyxml2": {
+      "category": "application",
+      "suite": "TinyXML-2",
+      "desc": "TinyXML-2 parse, query, and DOM mutation workload",
+      "bytes": 47054
+    },
+    "tree-ashell-list": {
+      "category": "application",
+      "suite": "tree",
+      "desc": "a-Shell tree command traverses a pinned directory with a-Shell host imports",
+      "bytes": 267777
+    },
+    "tree-list": {
+      "category": "application",
+      "suite": "tree",
+      "desc": "tree WASI CLI recursively lists a pinned source directory with an exact output oracle",
+      "bytes": 97725
+    },
+    "utf-as": {
+      "category": "real",
+      "desc": "AssemblyScript utf-as: UTF-8 -\u003e UTF-16 transcode (SWAR) of a 4 KiB buffer",
+      "bytes": 20173
+    },
+    "utf-as-simd": {
+      "category": "real-simd",
+      "desc": "AssemblyScript utf-as SIMD: UTF-8 length and validation of mixed text",
+      "bytes": 29801
+    },
+    "utf8proc": {
+      "category": "semantic",
+      "desc": "utf8proc Unicode compatibility normalization and case folding",
+      "bytes": 332333
+    },
+    "wren": {
+      "category": "application",
+      "suite": "Wren",
+      "desc": "Wren VM executing classes, closures, collections, and allocation-heavy loops",
+      "bytes": 165660
+    },
+    "wren-modulo": {
+      "category": "application",
+      "suite": "Wren",
+      "desc": "Wren prime sieve using floating modulo, with an exact f64 bit oracle including a fractional remainder",
+      "bytes": 165660
+    },
+    "xxhash": {
+      "category": "semantic",
+      "desc": "XXH64 hashing across short, boundary, and large inputs",
+      "bytes": 2772
+    },
+    "xzdec-decompress": {
+      "category": "application",
+      "suite": "xzdec",
+      "desc": "XZ Utils decoder CLI decompresses a pinned XZ stream with an exact output oracle",
+      "bytes": 92842
+    },
+    "yosys-counter": {
+      "category": "application",
+      "suite": "yosys",
+      "desc": "Yosys parses a synchronous Verilog counter, converts processes, and reports exact cell statistics",
+      "bytes": 21017284
+    },
+    "yyjson": {
+      "category": "semantic",
+      "desc": "yyjson parse, DOM edit, and serialization workload",
+      "bytes": 127009
+    },
+    "zlib": {
+      "category": "semantic",
+      "desc": "zlib inflate workload with an exact output oracle",
+      "bytes": 17044
+    },
+    "zstd": {
+      "category": "semantic",
+      "desc": "Zstandard decompression workload with an exact output oracle",
+      "bytes": 58777
+    }
+  },
+  "metrics": {
+    "CommandExec/age-decrypt": {
+      "ns": 3167735,
+      "bytes": 71408,
+      "allocs": 760
+    },
+    "CommandExec/brotli-compress": {
+      "ns": 718907750,
+      "bytes": 57272,
+      "allocs": 618
+    },
+    "CommandExec/cjson": {
+      "ns": 37599,
+      "bytes": 41752,
+      "allocs": 423
+    },
+    "CommandExec/coreutils-sort": {
+      "ns": 576872,
+      "bytes": 70552,
+      "allocs": 831
+    },
+    "CommandExec/esbuild-minify": {
+      "ns": 320129000,
+      "bytes": 80416,
+      "allocs": 890
+    },
+    "CommandExec/icebram-generate": {
+      "ns": 334318,
+      "bytes": 137232,
+      "allocs": 1337
+    },
+    "CommandExec/jq-json-transform": {
+      "ns": 398018333,
+      "bytes": 55376,
+      "allocs": 624
+    },
+    "CommandExec/json2csv-people": {
+      "ns": 93919,
+      "bytes": 55232,
+      "allocs": 593
+    },
+    "CommandExec/lodepng": {
+      "ns": 1738503,
+      "bytes": 41064,
+      "allocs": 412
+    },
+    "CommandExec/lua": {
+      "ns": 101159,
+      "bytes": 45272,
+      "allocs": 480
+    },
+    "CommandExec/php-buckets": {
+      "ns": 4680810,
+      "bytes": 78233,
+      "allocs": 968
+    },
+    "CommandExec/quickjs-script": {
+      "ns": 151047062,
+      "bytes": 63936,
+      "allocs": 716
+    },
+    "CommandExec/ripgrep-source": {
+      "ns": 657329,
+      "bytes": 67488,
+      "allocs": 750
+    },
+    "CommandExec/ruby-buckets": {
+      "ns": 13300387,
+      "bytes": 81299,
+      "allocs": 991
+    },
+    "CommandExec/sightglass-libsodium-hash": {
+      "ns": 2820892,
+      "bytes": 53792,
+      "allocs": 573
+    },
+    "CommandExec/sightglass-shootout-base64": {
+      "ns": 1623699,
+      "bytes": 50672,
+      "allocs": 531
+    },
+    "CommandExec/sqlite3-query": {
+      "ns": 264279291,
+      "bytes": 60248,
+      "allocs": 709
+    },
+    "CommandExec/swift-format-source": {
+      "ns": 17821702,
+      "bytes": 78056,
+      "allocs": 917
+    },
+    "CommandExec/tinyxml2": {
+      "ns": 40541,
+      "bytes": 42392,
+      "allocs": 434
+    },
+    "CommandExec/wren": {
+      "ns": 458824,
+      "bytes": 41752,
+      "allocs": 423
+    },
+    "CommandExec/yosys-counter": {
+      "ns": 3749086,
+      "bytes": 95504,
+      "allocs": 966
+    },
+    "Compile/age-decrypt": {
+      "ns": 184580166,
+      "bytes": 2400992,
+      "allocs": 2103
+    },
+    "Compile/blake-as-simd": {
+      "ns": 538498,
+      "bytes": 177240,
+      "allocs": 80
+    },
+    "Compile/blake3": {
+      "ns": 639930,
+      "bytes": 62424,
+      "allocs": 86
+    },
+    "Compile/brotli-compress": {
+      "ns": 17906189,
+      "bytes": 1695328,
+      "allocs": 713
+    },
+    "Compile/cjson": {
+      "ns": 2504185,
+      "bytes": 156800,
+      "allocs": 267
+    },
+    "Compile/coremark": {
+      "ns": 337799,
+      "bytes": 46088,
+      "allocs": 75
+    },
+    "Compile/coreutils-sort": {
+      "ns": 283195000,
+      "bytes": 3822152,
+      "allocs": 22318
+    },
+    "Compile/dispatch": {
+      "ns": 15639,
+      "bytes": 20864,
+      "allocs": 46
+    },
+    "Compile/esbuild-minify": {
+      "ns": 544262500,
+      "bytes": 8229272,
+      "allocs": 5758
+    },
+    "Compile/fannkuch": {
+      "ns": 100082,
+      "bytes": 42376,
+      "allocs": 50
+    },
+    "Compile/fib_rec": {
+      "ns": 12648,
+      "bytes": 22472,
+      "allocs": 42
+    },
+    "Compile/icebram-generate": {
+      "ns": 23776762,
+      "bytes": 834240,
+      "allocs": 951
+    },
+    "Compile/jq-json-transform": {
+      "ns": 30299948,
+      "bytes": 901158,
+      "allocs": 1766
+    },
+    "Compile/json-as-simd": {
+      "ns": 1154098,
+      "bytes": 57928,
+      "allocs": 92
+    },
+    "Compile/json2csv-people": {
+      "ns": 14831331,
+      "bytes": 350408,
+      "allocs": 523
+    },
+    "Compile/lodepng": {
+      "ns": 4817878,
+      "bytes": 394896,
+      "allocs": 264
+    },
+    "Compile/lua": {
+      "ns": 11516500,
+      "bytes": 534425,
+      "allocs": 547
+    },
+    "Compile/lz4": {
+      "ns": 119372,
+      "bytes": 24872,
+      "allocs": 54
+    },
+    "Compile/matmul": {
+      "ns": 42525,
+      "bytes": 23272,
+      "allocs": 41
+    },
+    "Compile/memory_tree": {
+      "ns": 15277,
+      "bytes": 16648,
+      "allocs": 37
+    },
+    "Compile/nbody": {
+      "ns": 64214,
+      "bytes": 43968,
+      "allocs": 56
+    },
+    "Compile/pcre2": {
+      "ns": 8355956,
+      "bytes": 1179032,
+      "allocs": 837
+    },
+    "Compile/php-buckets": {
+      "ns": 509770333,
+      "bytes": 5948264,
+      "allocs": 15670
+    },
+    "Compile/qoi": {
+      "ns": 126163,
+      "bytes": 26456,
+      "allocs": 78
+    },
+    "Compile/quickjs-script": {
+      "ns": 35616673,
+      "bytes": 905482,
+      "allocs": 2062
+    },
+    "Compile/raytrace": {
+      "ns": 158885,
+      "bytes": 84032,
+      "allocs": 76
+    },
+    "Compile/ripgrep-source": {
+      "ns": 122801625,
+      "bytes": 2894896,
+      "allocs": 7668
+    },
+    "Compile/ruby-buckets": {
+      "ns": 266175417,
+      "bytes": 4743808,
+      "allocs": 4145
+    },
+    "Compile/sha256": {
+      "ns": 62317,
+      "bytes": 23968,
+      "allocs": 40
+    },
+    "Compile/sightglass-libsodium-hash": {
+      "ns": 2636113,
+      "bytes": 220296,
+      "allocs": 236
+    },
+    "Compile/sightglass-shootout-base64": {
+      "ns": 1543185,
+      "bytes": 153880,
+      "allocs": 255
+    },
+    "Compile/sqlite3-query": {
+      "ns": 76951111,
+      "bytes": 1598770,
+      "allocs": 4405
+    },
+    "Compile/swift-format-source": {
+      "ns": 905999875,
+      "bytes": 42187976,
+      "allocs": 115138
+    },
+    "Compile/tiny": {
+      "ns": 6969,
+      "bytes": 12192,
+      "allocs": 23
+    },
+    "Compile/tinyxml2": {
+      "ns": 2718602,
+      "bytes": 227104,
+      "allocs": 332
+    },
+    "Compile/utf-as-simd": {
+      "ns": 343764,
+      "bytes": 75488,
+      "allocs": 70
+    },
+    "Compile/wren": {
+      "ns": 7524661,
+      "bytes": 302961,
+      "allocs": 521
+    },
+    "Compile/yosys-counter": {
+      "ns": 932991291,
+      "bytes": 14978832,
+      "allocs": 34241
+    },
+    "Compile/yyjson": {
+      "ns": 5874237,
+      "bytes": 1012179,
+      "allocs": 988
+    },
+    "Compile/zstd": {
+      "ns": 2788381,
+      "bytes": 366280,
+      "allocs": 214
+    },
+    "CompileFull/age-decrypt": {
+      "ns": 267472875,
+      "bytes": 39474024,
+      "allocs": 14888,
+      "codeBytes": 14666844
+    },
+    "CompileFull/blake-as-simd": {
+      "ns": 807022,
+      "bytes": 385073,
+      "allocs": 233,
+      "codeBytes": 24304
+    },
+    "CompileFull/blake3": {
+      "ns": 769477,
+      "bytes": 222777,
+      "allocs": 254,
+      "codeBytes": 26648
+    },
+    "CompileFull/brotli-compress": {
+      "ns": 25478281,
+      "bytes": 8050444,
+      "allocs": 1425,
+      "codeBytes": 1088748
+    },
+    "CompileFull/cjson": {
+      "ns": 3051324,
+      "bytes": 392124,
+      "allocs": 584,
+      "codeBytes": 135520
+    },
+    "CompileFull/coremark": {
+      "ns": 409650,
+      "bytes": 124149,
+      "allocs": 186,
+      "codeBytes": 14996
+    },
+    "CompileFull/coreutils-sort": {
+      "ns": 345477042,
+      "bytes": 33341824,
+      "allocs": 34366,
+      "codeBytes": 19164608
+    },
+    "CompileFull/dispatch": {
+      "ns": 21592,
+      "bytes": 38025,
+      "allocs": 144,
+      "codeBytes": 944
+    },
+    "CompileFull/esbuild-minify": {
+      "ns": 698211583,
+      "bytes": 91153552,
+      "allocs": 31797,
+      "codeBytes": 39554856
+    },
+    "CompileFull/fannkuch": {
+      "ns": 100123,
+      "bytes": 61475,
+      "allocs": 152,
+      "codeBytes": 4168
+    },
+    "CompileFull/fib_rec": {
+      "ns": 14423,
+      "bytes": 30609,
+      "allocs": 98,
+      "codeBytes": 356
+    },
+    "CompileFull/icebram-generate": {
+      "ns": 26181286,
+      "bytes": 4215684,
+      "allocs": 4487,
+      "codeBytes": 1421104
+    },
+    "CompileFull/jq-json-transform": {
+      "ns": 34359021,
+      "bytes": 3988480,
+      "allocs": 3590,
+      "codeBytes": 1700668
+    },
+    "CompileFull/json-as-simd": {
+      "ns": 1552504,
+      "bytes": 388302,
+      "allocs": 390,
+      "codeBytes": 73992
+    },
+    "CompileFull/json2csv-people": {
+      "ns": 17549603,
+      "bytes": 1736925,
+      "allocs": 1989,
+      "codeBytes": 704384
+    },
+    "CompileFull/lodepng": {
+      "ns": 5996050,
+      "bytes": 761086,
+      "allocs": 618,
+      "codeBytes": 244664
+    },
+    "CompileFull/lua": {
+      "ns": 13324569,
+      "bytes": 1479380,
+      "allocs": 1540,
+      "codeBytes": 528248
+    },
+    "CompileFull/lz4": {
+      "ns": 146027,
+      "bytes": 66051,
+      "allocs": 157,
+      "codeBytes": 5412
+    },
+    "CompileFull/matmul": {
+      "ns": 55503,
+      "bytes": 37865,
+      "allocs": 130,
+      "codeBytes": 1968
+    },
+    "CompileFull/memory_tree": {
+      "ns": 22049,
+      "bytes": 29393,
+      "allocs": 116,
+      "codeBytes": 548
+    },
+    "CompileFull/nbody": {
+      "ns": 83798,
+      "bytes": 62755,
+      "allocs": 142,
+      "codeBytes": 3152
+    },
+    "CompileFull/pcre2": {
+      "ns": 10583233,
+      "bytes": 3719752,
+      "allocs": 1332,
+      "codeBytes": 429084
+    },
+    "CompileFull/php-buckets": {
+      "ns": 581719000,
+      "bytes": 64564880,
+      "allocs": 36459,
+      "codeBytes": 28289416
+    },
+    "CompileFull/qoi": {
+      "ns": 156076,
+      "bytes": 70947,
+      "allocs": 195,
+      "codeBytes": 5096
+    },
+    "CompileFull/quickjs-script": {
+      "ns": 39587451,
+      "bytes": 4050722,
+      "allocs": 4859,
+      "codeBytes": 1891920
+    },
+    "CompileFull/raytrace": {
+      "ns": 200835,
+      "bytes": 151734,
+      "allocs": 179,
+      "codeBytes": 8496
+    },
+    "CompileFull/ripgrep-source": {
+      "ns": 150831208,
+      "bytes": 37472044,
+      "allocs": 22806,
+      "codeBytes": 6523212
+    },
+    "CompileFull/ruby-buckets": {
+      "ns": 296444541,
+      "bytes": 30994048,
+      "allocs": 15123,
+      "codeBytes": 12158640
+    },
+    "CompileFull/sha256": {
+      "ns": 79631,
+      "bytes": 43330,
+      "allocs": 145,
+      "codeBytes": 2824
+    },
+    "CompileFull/sightglass-libsodium-hash": {
+      "ns": 3388649,
+      "bytes": 506659,
+      "allocs": 672,
+      "codeBytes": 130476
+    },
+    "CompileFull/sightglass-shootout-base64": {
+      "ns": 2138563,
+      "bytes": 516391,
+      "allocs": 686,
+      "codeBytes": 82076
+    },
+    "CompileFull/sqlite3-query": {
+      "ns": 84474083,
+      "bytes": 7699290,
+      "allocs": 7898,
+      "codeBytes": 4248444
+    },
+    "CompileFull/swift-format-source": {
+      "ns": 1106732792,
+      "bytes": 303299336,
+      "allocs": 199190,
+      "codeBytes": 68536060
+    },
+    "CompileFull/tiny": {
+      "ns": 10422,
+      "bytes": 22465,
+      "allocs": 92,
+      "codeBytes": 144
+    },
+    "CompileFull/tinyxml2": {
+      "ns": 3241119,
+      "bytes": 472592,
+      "allocs": 676,
+      "codeBytes": 166736
+    },
+    "CompileFull/utf-as-simd": {
+      "ns": 499056,
+      "bytes": 306372,
+      "allocs": 236,
+      "codeBytes": 18548
+    },
+    "CompileFull/wren": {
+      "ns": 9435852,
+      "bytes": 1116948,
+      "allocs": 1408,
+      "codeBytes": 412988
+    },
+    "CompileFull/yosys-counter": {
+      "ns": 1014850500,
+      "bytes": 106682184,
+      "allocs": 76261,
+      "codeBytes": 41989532
+    },
+    "CompileFull/yyjson": {
+      "ns": 7099746,
+      "bytes": 2407818,
+      "allocs": 1246,
+      "codeBytes": 269180
+    },
+    "CompileFull/zstd": {
+      "ns": 3317431,
+      "bytes": 1032948,
+      "allocs": 472,
+      "codeBytes": 150992
+    },
+    "Decode/age-decrypt": {
+      "ns": 18715926,
+      "bytes": 8216609,
+      "allocs": 8468
+    },
+    "Decode/blake-as-simd": {
+      "ns": 59211,
+      "bytes": 5184,
+      "allocs": 33
+    },
+    "Decode/blake3": {
+      "ns": 37468,
+      "bytes": 6104,
+      "allocs": 52
+    },
+    "Decode/brotli-compress": {
+      "ns": 1394801,
+      "bytes": 464578,
+      "allocs": 232
+    },
+    "Decode/cjson": {
+      "ns": 121680,
+      "bytes": 14776,
+      "allocs": 106
+    },
+    "Decode/coremark": {
+      "ns": 19021,
+      "bytes": 2856,
+      "allocs": 33
+    },
+    "Decode/coreutils-sort": {
+      "ns": 19683219,
+      "bytes": 2816064,
+      "allocs": 5014
+    },
+    "Decode/dispatch": {
+      "ns": 1009,
+      "bytes": 2296,
+      "allocs": 21
+    },
+    "Decode/esbuild-minify": {
+      "ns": 48516325,
+      "bytes": 14291467,
+      "allocs": 17295
+    },
+    "Decode/fannkuch": {
+      "ns": 5602,
+      "bytes": 3600,
+      "allocs": 41
+    },
+    "Decode/fib_rec": {
+      "ns": 494.4,
+      "bytes": 1192,
+      "allocs": 14
+    },
+    "Decode/icebram-generate": {
+      "ns": 1603002,
+      "bytes": 903344,
+      "allocs": 2266
+    },
+    "Decode/jq-json-transform": {
+      "ns": 2014421,
+      "bytes": 209601,
+      "allocs": 745
+    },
+    "Decode/json-as-simd": {
+      "ns": 59423,
+      "bytes": 24152,
+      "allocs": 89
+    },
+    "Decode/json2csv-people": {
+      "ns": 885557,
+      "bytes": 99848,
+      "allocs": 827
+    },
+    "Decode/lodepng": {
+      "ns": 256638,
+      "bytes": 15752,
+      "allocs": 116
+    },
+    "Decode/lua": {
+      "ns": 579118,
+      "bytes": 76024,
+      "allocs": 389
+    },
+    "Decode/lz4": {
+      "ns": 7318,
+      "bytes": 2720,
+      "allocs": 34
+    },
+    "Decode/matmul": {
+      "ns": 2702,
+      "bytes": 2040,
+      "allocs": 28
+    },
+    "Decode/memory_tree": {
+      "ns": 1032,
+      "bytes": 1640,
+      "allocs": 18
+    },
+    "Decode/nbody": {
+      "ns": 4665,
+      "bytes": 2040,
+      "allocs": 28
+    },
+    "Decode/pcre2": {
+      "ns": 568355,
+      "bytes": 26304,
+      "allocs": 120
+    },
+    "Decode/php-buckets": {
+      "ns": 35500097,
+      "bytes": 12004170,
+      "allocs": 12836
+    },
+    "Decode/qoi": {
+      "ns": 7993,
+      "bytes": 3712,
+      "allocs": 37
+    },
+    "Decode/quickjs-script": {
+      "ns": 2065670,
+      "bytes": 260776,
+      "allocs": 1007
+    },
+    "Decode/raytrace": {
+      "ns": 11510,
+      "bytes": 2448,
+      "allocs": 30
+    },
+    "Decode/ripgrep-source": {
+      "ns": 9552093,
+      "bytes": 21965137,
+      "allocs": 10487
+    },
+    "Decode/ruby-buckets": {
+      "ns": 15784536,
+      "bytes": 3643421,
+      "allocs": 5359
+    },
+    "Decode/sha256": {
+      "ns": 5064,
+      "bytes": 4008,
+      "allocs": 42
+    },
+    "Decode/sightglass-libsodium-hash": {
+      "ns": 138038,
+      "bytes": 23648,
+      "allocs": 155
+    },
+    "Decode/sightglass-shootout-base64": {
+      "ns": 93468,
+      "bytes": 201600,
+      "allocs": 144
+    },
+    "Decode/sqlite3-query": {
+      "ns": 4738356,
+      "bytes": 788728,
+      "allocs": 1499
+    },
+    "Decode/swift-format-source": {
+      "ns": 54376146,
+      "bytes": 45362488,
+      "allocs": 19056
+    },
+    "Decode/tiny": {
+      "ns": 596,
+      "bytes": 1530,
+      "allocs": 15
+    },
+    "Decode/tinyxml2": {
+      "ns": 121199,
+      "bytes": 19928,
+      "allocs": 130
+    },
+    "Decode/utf-as-simd": {
+      "ns": 33417,
+      "bytes": 28816,
+      "allocs": 42
+    },
+    "Decode/wren": {
+      "ns": 404381,
+      "bytes": 81280,
+      "allocs": 344
+    },
+    "Decode/yosys-counter": {
+      "ns": 57257448,
+      "bytes": 18368296,
+      "allocs": 26325
+    },
+    "Decode/yyjson": {
+      "ns": 296609,
+      "bytes": 12968,
+      "allocs": 71
+    },
+    "Decode/zstd": {
+      "ns": 151948,
+      "bytes": 10184,
+      "allocs": 74
+    },
+    "Exec/blake-as-simd.hashN": {
+      "ns": 424671,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/blake3.blake3_derive_key": {
+      "ns": 238458,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/blake3.blake3_hash": {
+      "ns": 231961,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/blake3.blake3_keyed_hash": {
+      "ns": 231990,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/coremark.coremark_run": {
+      "ns": 26744724,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/dispatch.apply": {
+      "ns": 10.62,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/fannkuch.run": {
+      "ns": 927833,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/fib_rec.fib": {
+      "ns": 608052,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/json-as-simd.deserializeN": {
+      "ns": 40795,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/json-as-simd.serializeN": {
+      "ns": 20342,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/lz4.lz4_compress_run": {
+      "ns": 26799,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/lz4.lz4_decompress_run": {
+      "ns": 2025,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/matmul.run": {
+      "ns": 77980,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/memory_tree.run": {
+      "ns": 4925,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/nbody.step": {
+      "ns": 143578,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/pcre2.pcre2_run": {
+      "ns": 8298,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/qoi.qoi_decode_run": {
+      "ns": 5244,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/qoi.qoi_encode_run": {
+      "ns": 4388,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/raytrace.render": {
+      "ns": 262994,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/sha256.hashN": {
+      "ns": 24692,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/tiny.add": {
+      "ns": 8.842,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/utf-as-simd.convertN": {
+      "ns": 36591,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/utf-as-simd.validateN": {
+      "ns": 132689,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/yyjson.yyjson_run": {
+      "ns": 798.8,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Exec/zstd.zstd_decompress_run": {
+      "ns": 5738,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "ExecCallOverhead_wago": {
+      "ns": 30.67,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "ExecCallOverhead_wazero": {
+      "ns": 23.6,
+      "bytes": 16,
+      "allocs": 2
+    },
+    "ExecHostCallbackInstanceAlternatingF64_wago": {
+      "ns": 303.6,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "ExecHostCallbackInstanceF64_wago": {
+      "ns": 147.7,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "ExecHostCallbackInstance_wago": {
+      "ns": 16.8,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "ExecHostCallbackResolvedF64_wago": {
+      "ns": 139.8,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "ExecHostCallback_wago": {
+      "ns": 10.7,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "ExecHostRoundtrip_wago": {
+      "ns": 70.12,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "ExecHostRoundtrip_wazero": {
+      "ns": 310.2,
+      "bytes": 112,
+      "allocs": 7
+    },
+    "ExecInstanceCall_wago": {
+      "ns": 7.181,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "ExecSessionCall_wago": {
+      "ns": 5.958,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "ExecSessionHostCallback_wago": {
+      "ns": 9.405,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "ExecTypedCall_wago": {
+      "ns": 7.713,
+      "bytes": 0,
+      "allocs": 0
+    },
+    "Instantiate/blake-as-simd": {
+      "ns": 4988,
+      "bytes": 1968,
+      "allocs": 6
+    },
+    "Instantiate/blake3": {
+      "ns": 36140,
+      "bytes": 1336,
+      "allocs": 6
+    },
+    "Instantiate/coremark": {
+      "ns": 6839,
+      "bytes": 1336,
+      "allocs": 6
+    },
+    "Instantiate/dispatch": {
+      "ns": 4878,
+      "bytes": 1280,
+      "allocs": 4
+    },
+    "Instantiate/fannkuch": {
+      "ns": 36179,
+      "bytes": 1432,
+      "allocs": 6
+    },
+    "Instantiate/fib_rec": {
+      "ns": 4539,
+      "bytes": 1280,
+      "allocs": 4
+    },
+    "Instantiate/json-as-simd": {
+      "ns": 8029,
+      "bytes": 3032,
+      "allocs": 19
+    },
+    "Instantiate/lz4": {
+      "ns": 70101,
+      "bytes": 1336,
+      "allocs": 6
+    },
+    "Instantiate/matmul": {
+      "ns": 36265,
+      "bytes": 1432,
+      "allocs": 6
+    },
+    "Instantiate/memory_tree": {
+      "ns": 4542,
+      "bytes": 1280,
+      "allocs": 4
+    },
+    "Instantiate/nbody": {
+      "ns": 36204,
+      "bytes": 1432,
+      "allocs": 6
+    },
+    "Instantiate/pcre2": {
+      "ns": 17389,
+      "bytes": 1336,
+      "allocs": 6
+    },
+    "Instantiate/qoi": {
+      "ns": 70928,
+      "bytes": 1336,
+      "allocs": 6
+    },
+    "Instantiate/raytrace": {
+      "ns": 36315,
+      "bytes": 1432,
+      "allocs": 6
+    },
+    "Instantiate/sha256": {
+      "ns": 38338,
+      "bytes": 1432,
+      "allocs": 6
+    },
+    "Instantiate/tiny": {
+      "ns": 4517,
+      "bytes": 1280,
+      "allocs": 4
+    },
+    "Instantiate/utf-as-simd": {
+      "ns": 9143,
+      "bytes": 1848,
+      "allocs": 19
+    },
+    "Instantiate/yyjson": {
+      "ns": 8520,
+      "bytes": 1336,
+      "allocs": 6
+    },
+    "Instantiate/zstd": {
+      "ns": 71862,
+      "bytes": 1336,
+      "allocs": 6
+    },
+    "Validate/age-decrypt": {
+      "ns": 48744325,
+      "bytes": 767443,
+      "allocs": 4160
+    },
+    "Validate/blake-as-simd": {
+      "ns": 181327,
+      "bytes": 4736,
+      "allocs": 25
+    },
+    "Validate/blake3": {
+      "ns": 126500,
+      "bytes": 6296,
+      "allocs": 40
+    },
+    "Validate/brotli-compress": {
+      "ns": 4827161,
+      "bytes": 48616,
+      "allocs": 200
+    },
+    "Validate/cjson": {
+      "ns": 439285,
+      "bytes": 14472,
+      "allocs": 87
+    },
+    "Validate/coremark": {
+      "ns": 71271,
+      "bytes": 5112,
+      "allocs": 21
+    },
+    "Validate/coreutils-sort": {
+      "ns": 54461938,
+      "bytes": 164456,
+      "allocs": 3449
+    },
+    "Validate/dispatch": {
+      "ns": 1361,
+      "bytes": 2408,
+      "allocs": 14
+    },
+    "Validate/esbuild-minify": {
+      "ns": 132035500,
+      "bytes": 2959784,
+      "allocs": 8590
+    },
+    "Validate/fannkuch": {
+      "ns": 18842,
+      "bytes": 4928,
+      "allocs": 16
+    },
+    "Validate/fib_rec": {
+      "ns": 838,
+      "bytes": 1664,
+      "allocs": 11
+    },
+    "Validate/icebram-generate": {
+      "ns": 4022822,
+      "bytes": 32456,
+      "allocs": 223
+    },
+    "Validate/jq-json-transform": {
+      "ns": 5959964,
+      "bytes": 77576,
+      "allocs": 405
+    },
+    "Validate/json-as-simd": {
+      "ns": 216803,
+      "bytes": 10888,
+      "allocs": 51
+    },
+    "Validate/json2csv-people": {
+      "ns": 2626582,
+      "bytes": 31264,
+      "allocs": 241
+    },
+    "Validate/lodepng": {
+      "ns": 876890,
+      "bytes": 15064,
+      "allocs": 117
+    },
+    "Validate/lua": {
+      "ns": 1937024,
+      "bytes": 47528,
+      "allocs": 267
+    },
+    "Validate/lz4": {
+      "ns": 24806,
+      "bytes": 4936,
+      "allocs": 17
+    },
+    "Validate/matmul": {
+      "ns": 8123,
+      "bytes": 3584,
+      "allocs": 15
+    },
+    "Validate/memory_tree": {
+      "ns": 2151,
+      "bytes": 2376,
+      "allocs": 16
+    },
+    "Validate/nbody": {
+      "ns": 14703,
+      "bytes": 3584,
+      "allocs": 15
+    },
+    "Validate/pcre2": {
+      "ns": 1837504,
+      "bytes": 78608,
+      "allocs": 228
+    },
+    "Validate/php-buckets": {
+      "ns": 96211972,
+      "bytes": 339792,
+      "allocs": 1762
+    },
+    "Validate/qoi": {
+      "ns": 26321,
+      "bytes": 5592,
+      "allocs": 26
+    },
+    "Validate/quickjs-script": {
+      "ns": 6379730,
+      "bytes": 111640,
+      "allocs": 807
+    },
+    "Validate/raytrace": {
+      "ns": 38897,
+      "bytes": 3784,
+      "allocs": 17
+    },
+    "Validate/ripgrep-source": {
+      "ns": 24157296,
+      "bytes": 64505,
+      "allocs": 1308
+    },
+    "Validate/ruby-buckets": {
+      "ns": 49316317,
+      "bytes": 287129,
+      "allocs": 1843
+    },
+    "Validate/sha256": {
+      "ns": 13605,
+      "bytes": 3760,
+      "allocs": 16
+    },
+    "Validate/sightglass-libsodium-hash": {
+      "ns": 489221,
+      "bytes": 15224,
+      "allocs": 96
+    },
+    "Validate/sightglass-shootout-base64": {
+      "ns": 288646,
+      "bytes": 14344,
+      "allocs": 80
+    },
+    "Validate/sqlite3-query": {
+      "ns": 13939359,
+      "bytes": 105024,
+      "allocs": 688
+    },
+    "Validate/swift-format-source": {
+      "ns": 135309229,
+      "bytes": 919920,
+      "allocs": 8898
+    },
+    "Validate/tiny": {
+      "ns": 688.1,
+      "bytes": 1560,
+      "allocs": 11
+    },
+    "Validate/tinyxml2": {
+      "ns": 434609,
+      "bytes": 13608,
+      "allocs": 83
+    },
+    "Validate/utf-as-simd": {
+      "ns": 100038,
+      "bytes": 5652,
+      "allocs": 26
+    },
+    "Validate/wren": {
+      "ns": 1265503,
+      "bytes": 27976,
+      "allocs": 177
+    },
+    "Validate/yosys-counter": {
+      "ns": 154009375,
+      "bytes": 226680,
+      "allocs": 3211
+    },
+    "Validate/yyjson": {
+      "ns": 1089580,
+      "bytes": 32984,
+      "allocs": 89
+    },
+    "Validate/zstd": {
+      "ns": 577620,
+      "bytes": 13304,
+      "allocs": 85
+    },
+    "WazeroCommandExec/age-decrypt": {
+      "ns": 4256229,
+      "bytes": 20103064,
+      "allocs": 4321
+    },
+    "WazeroCommandExec/brotli-compress": {
+      "ns": 875160000,
+      "bytes": 472242264,
+      "allocs": 89
+    },
+    "WazeroCommandExec/cjson": {
+      "ns": 21793,
+      "bytes": 151888,
+      "allocs": 57
+    },
+    "WazeroCommandExec/coreutils-sort": {
+      "ns": 531081,
+      "bytes": 11204704,
+      "allocs": 2111
+    },
+    "WazeroCommandExec/esbuild-minify": {
+      "ns": 883431667,
+      "bytes": 758463824,
+      "allocs": 8703
+    },
+    "WazeroCommandExec/icebram-generate": {
+      "ns": 166388,
+      "bytes": 387464,
+      "allocs": 482
+    },
+    "WazeroCommandExec/jq-json-transform": {
+      "ns": 629831958,
+      "bytes": 167299312,
+      "allocs": 301
+    },
+    "WazeroCommandExec/json2csv-people": {
+      "ns": 69697,
+      "bytes": 182248,
+      "allocs": 82
+    },
+    "WazeroCommandExec/lodepng": {
+      "ns": 3341273,
+      "bytes": 1306568,
+      "allocs": 54
+    },
+    "WazeroCommandExec/lua": {
+      "ns": 110373,
+      "bytes": 157744,
+      "allocs": 96
+    },
+    "WazeroCommandExec/php-buckets": {
+      "ns": 6034521,
+      "bytes": 28655474,
+      "allocs": 21415
+    },
+    "WazeroCommandExec/quickjs-script": {
+      "ns": 172795520,
+      "bytes": 2882880,
+      "allocs": 505
+    },
+    "WazeroCommandExec/ripgrep-source": {
+      "ns": 577592,
+      "bytes": 5412824,
+      "allocs": 4499
+    },
+    "WazeroCommandExec/ruby-buckets": {
+      "ns": 13983255,
+      "bytes": 261100617,
+      "allocs": 3552
+    },
+    "WazeroCommandExec/sightglass-libsodium-hash": {
+      "ns": 4092809,
+      "bytes": 16866336,
+      "allocs": 98
+    },
+    "WazeroCommandExec/sightglass-shootout-base64": {
+      "ns": 2022008,
+      "bytes": 153696,
+      "allocs": 81
+    },
+    "WazeroCommandExec/sqlite3-query": {
+      "ns": 367005167,
+      "bytes": 2890672,
+      "allocs": 614
+    },
+    "WazeroCommandExec/swift-format-source": {
+      "ns": 20281808,
+      "bytes": 98499089,
+      "allocs": 87755
+    },
+    "WazeroCommandExec/tinyxml2": {
+      "ns": 25062,
+      "bytes": 156888,
+      "allocs": 156
+    },
+    "WazeroCommandExec/wren": {
+      "ns": 718817,
+      "bytes": 994112,
+      "allocs": 249
+    },
+    "WazeroCommandExec/yosys-counter": {
+      "ns": 3360485,
+      "bytes": 14574392,
+      "allocs": 7959
+    },
+    "WazeroCompile/age-decrypt": {
+      "ns": 1335872541,
+      "bytes": 94791120,
+      "allocs": 230783,
+      "codeBytes": 31175764
+    },
+    "WazeroCompile/blake-as-simd": {
+      "ns": 2533276,
+      "bytes": 1529384,
+      "allocs": 1189,
+      "codeBytes": 42440
+    },
+    "WazeroCompile/blake3": {
+      "ns": 2786935,
+      "bytes": 1510892,
+      "allocs": 2124,
+      "codeBytes": 37432
+    },
+    "WazeroCompile/brotli-compress": {
+      "ns": 243889583,
+      "bytes": 205682288,
+      "allocs": 358729,
+      "codeBytes": 1926984
+    },
+    "WazeroCompile/cjson": {
+      "ns": 25824093,
+      "bytes": 9014298,
+      "allocs": 22646,
+      "codeBytes": 219016
+    },
+    "WazeroCompile/coremark": {
+      "ns": 2667554,
+      "bytes": 2118721,
+      "allocs": 4983,
+      "codeBytes": 28940
+    },
+    "WazeroCompile/coreutils-sort": {
+      "ns": 1538015750,
+      "bytes": 170766240,
+      "allocs": 107662,
+      "codeBytes": 26327004
+    },
+    "WazeroCompile/dispatch": {
+      "ns": 85653,
+      "bytes": 288017,
+      "allocs": 229,
+      "codeBytes": 556
+    },
+    "WazeroCompile/esbuild-minify": {
+      "ns": 4212607708,
+      "bytes": 315276064,
+      "allocs": 518294,
+      "codeBytes": 91675516
+    },
+    "WazeroCompile/fannkuch": {
+      "ns": 767567,
+      "bytes": 1038768,
+      "allocs": 2087,
+      "codeBytes": 7068
+    },
+    "WazeroCompile/fib_rec": {
+      "ns": 59848,
+      "bytes": 283064,
+      "allocs": 225,
+      "codeBytes": 148
+    },
+    "WazeroCompile/icebram-generate": {
+      "ns": 84198639,
+      "bytes": 10683784,
+      "allocs": 28041,
+      "codeBytes": 1410772
+    },
+    "WazeroCompile/jq-json-transform": {
+      "ns": 167665333,
+      "bytes": 28911400,
+      "allocs": 46437,
+      "codeBytes": 2664668
+    },
+    "WazeroCompile/json-as-simd": {
+      "ns": 8537059,
+      "bytes": 2319559,
+      "allocs": 5829,
+      "codeBytes": 85060
+    },
+    "WazeroCompile/json2csv-people": {
+      "ns": 168809834,
+      "bytes": 40166136,
+      "allocs": 42905,
+      "codeBytes": 1939736
+    },
+    "WazeroCompile/lodepng": {
+      "ns": 39110256,
+      "bytes": 20260400,
+      "allocs": 37149,
+      "codeBytes": 455900
+    },
+    "WazeroCompile/lua": {
+      "ns": 76433889,
+      "bytes": 18898445,
+      "allocs": 43045,
+      "codeBytes": 982284
+    },
+    "WazeroCompile/lz4": {
+      "ns": 1256897,
+      "bytes": 968448,
+      "allocs": 2213,
+      "codeBytes": 10552
+    },
+    "WazeroCompile/matmul": {
+      "ns": 314096,
+      "bytes": 603952,
+      "allocs": 1155,
+      "codeBytes": 2668
+    },
+    "WazeroCompile/memory_tree": {
+      "ns": 89860,
+      "bytes": 313982,
+      "allocs": 336,
+      "codeBytes": 456
+    },
+    "WazeroCompile/nbody": {
+      "ns": 375229,
+      "bytes": 717472,
+      "allocs": 926,
+      "codeBytes": 5144
+    },
+    "WazeroCompile/pcre2": {
+      "ns": 161032770,
+      "bytes": 126896072,
+      "allocs": 225708,
+      "codeBytes": 1049744
+    },
+    "WazeroCompile/php-buckets": {
+      "ns": 3060790250,
+      "bytes": 345507600,
+      "allocs": 467297,
+      "codeBytes": 60686256
+    },
+    "WazeroCompile/qoi": {
+      "ns": 985873,
+      "bytes": 852812,
+      "allocs": 1612,
+      "codeBytes": 10772
+    },
+    "WazeroCompile/quickjs-script": {
+      "ns": 204916020,
+      "bytes": 38714656,
+      "allocs": 71486,
+      "codeBytes": 3020852
+    },
+    "WazeroCompile/raytrace": {
+      "ns": 1269081,
+      "bytes": 1490913,
+      "allocs": 2594,
+      "codeBytes": 11032
+    },
+    "WazeroCompile/ripgrep-source": {
+      "ns": 648695292,
+      "bytes": 96496088,
+      "allocs": 78946,
+      "codeBytes": 11511952
+    },
+    "WazeroCompile/ruby-buckets": {
+      "ns": 2463485000,
+      "bytes": 414694272,
+      "allocs": 756661,
+      "codeBytes": 26553720
+    },
+    "WazeroCompile/sha256": {
+      "ns": 443488,
+      "bytes": 828035,
+      "allocs": 1069,
+      "codeBytes": 6192
+    },
+    "WazeroCompile/sightglass-libsodium-hash": {
+      "ns": 18994276,
+      "bytes": 9476699,
+      "allocs": 21244,
+      "codeBytes": 187572
+    },
+    "WazeroCompile/sightglass-shootout-base64": {
+      "ns": 15791071,
+      "bytes": 8759792,
+      "allocs": 22417,
+      "codeBytes": 127604
+    },
+    "WazeroCompile/sqlite3-query": {
+      "ns": 444288792,
+      "bytes": 70012320,
+      "allocs": 121934,
+      "codeBytes": 7027344
+    },
+    "WazeroCompile/swift-format-source": {
+      "ns": 5367096500,
+      "bytes": 273126248,
+      "allocs": 519337,
+      "codeBytes": 80297076
+    },
+    "WazeroCompile/tiny": {
+      "ns": 58740,
+      "bytes": 280861,
+      "allocs": 183,
+      "codeBytes": 120
+    },
+    "WazeroCompile/tinyxml2": {
+      "ns": 23134255,
+      "bytes": 9760621,
+      "allocs": 24026,
+      "codeBytes": 253848
+    },
+    "WazeroCompile/utf-as-simd": {
+      "ns": 2378303,
+      "bytes": 1193647,
+      "allocs": 2874,
+      "codeBytes": 28496
+    },
+    "WazeroCompile/wren": {
+      "ns": 50824236,
+      "bytes": 10493320,
+      "allocs": 24790,
+      "codeBytes": 684660
+    },
+    "WazeroCompile/yosys-counter": {
+      "ns": 4789810792,
+      "bytes": 480152296,
+      "allocs": 377578,
+      "codeBytes": 87029140
+    },
+    "WazeroCompile/yyjson": {
+      "ns": 56307688,
+      "bytes": 52799108,
+      "allocs": 104336,
+      "codeBytes": 507732
+    },
+    "WazeroCompile/zstd": {
+      "ns": 32830589,
+      "bytes": 24845993,
+      "allocs": 41191,
+      "codeBytes": 265680
+    },
+    "WazeroExec/blake-as-simd.hashN": {
+      "ns": 452857,
+      "bytes": 8,
+      "allocs": 1
+    },
+    "WazeroExec/blake3.blake3_derive_key": {
+      "ns": 267092,
+      "bytes": 840,
+      "allocs": 35
+    },
+    "WazeroExec/blake3.blake3_hash": {
+      "ns": 256051,
+      "bytes": 840,
+      "allocs": 35
+    },
+    "WazeroExec/blake3.blake3_keyed_hash": {
+      "ns": 258267,
+      "bytes": 840,
+      "allocs": 35
+    },
+    "WazeroExec/coremark.coremark_run": {
+      "ns": 43902483,
+      "bytes": 16,
+      "allocs": 1
+    },
+    "WazeroExec/dispatch.apply": {
+      "ns": 24.28,
+      "bytes": 24,
+      "allocs": 1
+    },
+    "WazeroExec/fannkuch.run": {
+      "ns": 1085472,
+      "bytes": 8,
+      "allocs": 1
+    },
+    "WazeroExec/fib_rec.fib": {
+      "ns": 1643266,
+      "bytes": 8,
+      "allocs": 1
+    },
+    "WazeroExec/json-as-simd.deserializeN": {
+      "ns": 56441,
+      "bytes": 8,
+      "allocs": 1
+    },
+    "WazeroExec/json-as-simd.serializeN": {
+      "ns": 27532,
+      "bytes": 8,
+      "allocs": 1
+    },
+    "WazeroExec/lz4.lz4_compress_run": {
+      "ns": 41309,
+      "bytes": 8,
+      "allocs": 1
+    },
+    "WazeroExec/lz4.lz4_decompress_run": {
+      "ns": 5289,
+      "bytes": 8,
+      "allocs": 1
+    },
+    "WazeroExec/matmul.run": {
+      "ns": 235491,
+      "bytes": 8,
+      "allocs": 1
+    },
+    "WazeroExec/memory_tree.run": {
+      "ns": 12200,
+      "bytes": 16,
+      "allocs": 1
+    },
+    "WazeroExec/nbody.step": {
+      "ns": 151755,
+      "bytes": 8,
+      "allocs": 1
+    },
+    "WazeroExec/pcre2.pcre2_run": {
+      "ns": 12316,
+      "bytes": 8,
+      "allocs": 1
+    },
+    "WazeroExec/qoi.qoi_decode_run": {
+      "ns": 7043,
+      "bytes": 8,
+      "allocs": 1
+    },
+    "WazeroExec/qoi.qoi_encode_run": {
+      "ns": 8854,
+      "bytes": 8,
+      "allocs": 1
+    },
+    "WazeroExec/raytrace.render": {
+      "ns": 250582,
+      "bytes": 8,
+      "allocs": 1
+    },
+    "WazeroExec/sha256.hashN": {
+      "ns": 46127,
+      "bytes": 8,
+      "allocs": 1
+    },
+    "WazeroExec/tiny.add": {
+      "ns": 23.14,
+      "bytes": 16,
+      "allocs": 1
+    },
+    "WazeroExec/utf-as-simd.convertN": {
+      "ns": 100360,
+      "bytes": 8,
+      "allocs": 1
+    },
+    "WazeroExec/utf-as-simd.validateN": {
+      "ns": 163403,
+      "bytes": 8,
+      "allocs": 1
+    },
+    "WazeroExec/yyjson.yyjson_run": {
+      "ns": 791,
+      "bytes": 8,
+      "allocs": 1
+    },
+    "WazeroExec/zstd.zstd_decompress_run": {
+      "ns": 6516,
+      "bytes": 8,
+      "allocs": 1
+    },
+    "WazeroInstantiate/blake-as-simd": {
+      "ns": 13449,
+      "bytes": 73859,
+      "allocs": 38
+    },
+    "WazeroInstantiate/blake3": {
+      "ns": 66581,
+      "bytes": 1056057,
+      "allocs": 26
+    },
+    "WazeroInstantiate/coremark": {
+      "ns": 17358,
+      "bytes": 138534,
+      "allocs": 26
+    },
+    "WazeroInstantiate/dispatch": {
+      "ns": 9114,
+      "bytes": 7504,
+      "allocs": 32
+    },
+    "WazeroInstantiate/fannkuch": {
+      "ns": 65815,
+      "bytes": 1056177,
+      "allocs": 27
+    },
+    "WazeroInstantiate/fib_rec": {
+      "ns": 8935,
+      "bytes": 7176,
+      "allocs": 21
+    },
+    "WazeroInstantiate/json-as-simd": {
+      "ns": 15630,
+      "bytes": 77931,
+      "allocs": 53
+    },
+    "WazeroInstantiate/lz4": {
+      "ns": 108642,
+      "bytes": 2104684,
+      "allocs": 27
+    },
+    "WazeroInstantiate/matmul": {
+      "ns": 67534,
+      "bytes": 1056178,
+      "allocs": 27
+    },
+    "WazeroInstantiate/memory_tree": {
+      "ns": 13215,
+      "bytes": 72875,
+      "allocs": 23
+    },
+    "WazeroInstantiate/nbody": {
+      "ns": 67659,
+      "bytes": 1056177,
+      "allocs": 27
+    },
+    "WazeroInstantiate/pcre2": {
+      "ns": 35496,
+      "bytes": 273008,
+      "allocs": 34
+    },
+    "WazeroInstantiate/qoi": {
+      "ns": 102441,
+      "bytes": 2104636,
+      "allocs": 26
+    },
+    "WazeroInstantiate/raytrace": {
+      "ns": 71329,
+      "bytes": 1056178,
+      "allocs": 27
+    },
+    "WazeroInstantiate/sha256": {
+      "ns": 67042,
+      "bytes": 1121737,
+      "allocs": 28
+    },
+    "WazeroInstantiate/tiny": {
+      "ns": 9012,
+      "bytes": 7176,
+      "allocs": 21
+    },
+    "WazeroInstantiate/utf-as-simd": {
+      "ns": 16767,
+      "bytes": 79979,
+      "allocs": 30
+    },
+    "WazeroInstantiate/yyjson": {
+      "ns": 20015,
+      "bytes": 140327,
+      "allocs": 36
+    },
+    "WazeroInstantiate/zstd": {
+      "ns": 110623,
+      "bytes": 2105148,
+      "allocs": 30
+    }
+  }
+}

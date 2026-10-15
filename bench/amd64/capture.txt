@@ -1,0 +1,1601 @@
+# git 281387e2a4e9f914a2fc6536a49d64a7aef1a826
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec       	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/tiny         	    3237	     90289 ns/op	       123.0 code-B	  274831 B/op	     191 allocs/op
+BenchmarkWazeroCompile/tiny         	    2739	     90073 ns/op	       123.0 code-B	  274816 B/op	     191 allocs/op
+BenchmarkWazeroCompile/tiny         	    2716	     75694 ns/op	       123.0 code-B	  274847 B/op	     191 allocs/op
+BenchmarkWazeroInstantiate/tiny     	   30145	      7899 ns/op	    7176 B/op	      21 allocs/op
+BenchmarkWazeroInstantiate/tiny     	   30165	      7873 ns/op	    7176 B/op	      21 allocs/op
+BenchmarkWazeroInstantiate/tiny     	   30109	      7867 ns/op	    7176 B/op	      21 allocs/op
+BenchmarkWazeroExec/tiny.add        	     104	        28.30 ns/op	     83564 calls/batch	      16 B/op	       1 allocs/op
+BenchmarkWazeroExec/tiny.add        	     100	        28.96 ns/op	     82293 calls/batch	      16 B/op	       1 allocs/op
+BenchmarkWazeroExec/tiny.add        	     100	        28.74 ns/op	     79625 calls/batch	      16 B/op	       1 allocs/op
+BenchmarkDecode/tiny                	  345045	       696.4 ns/op	    1530 B/op	      15 allocs/op
+BenchmarkDecode/tiny                	  291726	       695.9 ns/op	    1530 B/op	      15 allocs/op
+BenchmarkDecode/tiny                	  292149	       697.0 ns/op	    1530 B/op	      15 allocs/op
+BenchmarkValidate/tiny              	  237574	       894.4 ns/op	    1560 B/op	      11 allocs/op
+BenchmarkValidate/tiny              	  239316	       890.3 ns/op	    1560 B/op	      11 allocs/op
+BenchmarkValidate/tiny              	  238318	       890.5 ns/op	    1560 B/op	      11 allocs/op
+BenchmarkCompile/tiny               	   23455	     10178 ns/op	    8816 B/op	      24 allocs/op
+BenchmarkCompile/tiny               	   23482	     10165 ns/op	    8816 B/op	      24 allocs/op
+BenchmarkCompile/tiny               	   23079	     10195 ns/op	    8816 B/op	      24 allocs/op
+BenchmarkCompileFull/tiny           	   17636	     13540 ns/op	        96.00 code-B	   18880 B/op	      93 allocs/op
+BenchmarkCompileFull/tiny           	   17648	     13530 ns/op	        96.00 code-B	   18880 B/op	      93 allocs/op
+BenchmarkCompileFull/tiny           	   17655	     13518 ns/op	        96.00 code-B	   18880 B/op	      93 allocs/op
+BenchmarkInstantiate/tiny           	   32769	      7206 ns/op	    1280 B/op	       4 allocs/op
+BenchmarkInstantiate/tiny           	   33231	      7186 ns/op	    1280 B/op	       4 allocs/op
+BenchmarkInstantiate/tiny           	   32409	      7212 ns/op	    1280 B/op	       4 allocs/op
+BenchmarkExec/tiny.add              	     120	        13.44 ns/op	    149620 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/tiny.add              	     120	        13.41 ns/op	    149369 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/tiny.add              	     120	        13.40 ns/op	    150477 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/fib_rec         	    3376	     74173 ns/op	       150.0 code-B	  279418 B/op	     233 allocs/op
+BenchmarkWazeroCompile/fib_rec         	    3280	     74284 ns/op	       150.0 code-B	  279376 B/op	     233 allocs/op
+BenchmarkWazeroCompile/fib_rec         	    3313	     74176 ns/op	       150.0 code-B	  279376 B/op	     233 allocs/op
+BenchmarkWazeroInstantiate/fib_rec     	   29990	      7882 ns/op	    7176 B/op	      21 allocs/op
+BenchmarkWazeroInstantiate/fib_rec     	   29989	      7907 ns/op	    7176 B/op	      21 allocs/op
+BenchmarkWazeroInstantiate/fib_rec     	   30075	      7989 ns/op	    7176 B/op	      21 allocs/op
+BenchmarkWazeroExec/fib_rec.fib        	     100	   2066529 ns/op	         1.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/fib_rec.fib        	     100	   2063491 ns/op	         1.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/fib_rec.fib        	     100	   2075339 ns/op	         1.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkDecode/fib_rec                	  400533	       603.9 ns/op	    1192 B/op	      14 allocs/op
+BenchmarkDecode/fib_rec                	  397610	       602.4 ns/op	    1192 B/op	      14 allocs/op
+BenchmarkDecode/fib_rec                	  398076	       601.8 ns/op	    1192 B/op	      14 allocs/op
+BenchmarkValidate/fib_rec              	  197727	      1111 ns/op	    1664 B/op	      11 allocs/op
+BenchmarkValidate/fib_rec              	  198223	      1103 ns/op	    1664 B/op	      11 allocs/op
+BenchmarkValidate/fib_rec              	  199258	      1104 ns/op	    1664 B/op	      11 allocs/op
+BenchmarkCompile/fib_rec               	   12207	     19328 ns/op	   27192 B/op	      50 allocs/op
+BenchmarkCompile/fib_rec               	   12343	     19526 ns/op	   27192 B/op	      50 allocs/op
+BenchmarkCompile/fib_rec               	   12326	     19547 ns/op	   27192 B/op	      50 allocs/op
+BenchmarkCompileFull/fib_rec           	   11738	     20426 ns/op	       320.0 code-B	   35881 B/op	     107 allocs/op
+BenchmarkCompileFull/fib_rec           	   11791	     20307 ns/op	       320.0 code-B	   35881 B/op	     107 allocs/op
+BenchmarkCompileFull/fib_rec           	   11697	     20550 ns/op	       320.0 code-B	   35881 B/op	     107 allocs/op
+BenchmarkInstantiate/fib_rec           	   33244	      7207 ns/op	    1280 B/op	       4 allocs/op
+BenchmarkInstantiate/fib_rec           	   32710	      7294 ns/op	    1280 B/op	       4 allocs/op
+BenchmarkInstantiate/fib_rec           	   33016	      7152 ns/op	    1280 B/op	       4 allocs/op
+BenchmarkExec/fib_rec.fib              	     121	    658911 ns/op	         4.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/fib_rec.fib              	      91	    659052 ns/op	         4.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/fib_rec.fib              	      90	    659225 ns/op	         4.000 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/dispatch         	    2678	    101257 ns/op	       503.0 code-B	  280809 B/op	     230 allocs/op
+BenchmarkWazeroCompile/dispatch         	    2457	    101747 ns/op	       503.0 code-B	  280761 B/op	     230 allocs/op
+BenchmarkWazeroCompile/dispatch         	    2463	    101824 ns/op	       503.0 code-B	  280761 B/op	     230 allocs/op
+BenchmarkWazeroInstantiate/dispatch     	   28960	      8171 ns/op	    7504 B/op	      32 allocs/op
+BenchmarkWazeroInstantiate/dispatch     	   28878	      8215 ns/op	    7504 B/op	      32 allocs/op
+BenchmarkWazeroInstantiate/dispatch     	   29090	      8176 ns/op	    7504 B/op	      32 allocs/op
+BenchmarkWazeroExec/dispatch.apply      	      96	        30.72 ns/op	     78291 calls/batch	      24 B/op	       1 allocs/op
+BenchmarkWazeroExec/dispatch.apply      	     100	        31.17 ns/op	     76937 calls/batch	      24 B/op	       1 allocs/op
+BenchmarkWazeroExec/dispatch.apply      	     108	        30.93 ns/op	     77158 calls/batch	      24 B/op	       1 allocs/op
+BenchmarkDecode/dispatch                	  185214	      1172 ns/op	    2296 B/op	      21 allocs/op
+BenchmarkDecode/dispatch                	  186508	      1176 ns/op	    2296 B/op	      21 allocs/op
+BenchmarkDecode/dispatch                	  184766	      1175 ns/op	    2296 B/op	      21 allocs/op
+BenchmarkValidate/dispatch              	  135937	      1642 ns/op	    2408 B/op	      14 allocs/op
+BenchmarkValidate/dispatch              	  137784	      1650 ns/op	    2408 B/op	      14 allocs/op
+BenchmarkValidate/dispatch              	  136632	      1650 ns/op	    2408 B/op	      14 allocs/op
+BenchmarkCompile/dispatch               	   12614	     18998 ns/op	   25016 B/op	      40 allocs/op
+BenchmarkCompile/dispatch               	   12582	     18846 ns/op	   25016 B/op	      40 allocs/op
+BenchmarkCompile/dispatch               	   12654	     18953 ns/op	   25016 B/op	      40 allocs/op
+BenchmarkCompileFull/dispatch           	    9217	     26090 ns/op	       475.0 code-B	   40689 B/op	     138 allocs/op
+BenchmarkCompileFull/dispatch           	    8104	     26097 ns/op	       475.0 code-B	   40689 B/op	     138 allocs/op
+BenchmarkCompileFull/dispatch           	    9198	     26217 ns/op	       475.0 code-B	   40689 B/op	     138 allocs/op
+BenchmarkInstantiate/dispatch           	   31567	      7550 ns/op	    1280 B/op	       4 allocs/op
+BenchmarkInstantiate/dispatch           	   31186	      7603 ns/op	    1280 B/op	       4 allocs/op
+BenchmarkInstantiate/dispatch           	   31425	      7599 ns/op	    1280 B/op	       4 allocs/op
+BenchmarkExec/dispatch.apply            	     120	        14.55 ns/op	    140026 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/dispatch.apply            	     100	        14.55 ns/op	    138495 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/dispatch.apply            	     100	        14.56 ns/op	    139296 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000066 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000010 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/memory_tree         	    1789	    130564 ns/op	       500.0 code-B	  318109 B/op	     342 allocs/op
+BenchmarkWazeroCompile/memory_tree         	    1742	    130792 ns/op	       500.0 code-B	  318040 B/op	     342 allocs/op
+BenchmarkWazeroCompile/memory_tree         	    1849	    135541 ns/op	       500.0 code-B	  318040 B/op	     342 allocs/op
+BenchmarkWazeroInstantiate/memory_tree     	   18432	     13084 ns/op	   72875 B/op	      23 allocs/op
+BenchmarkWazeroInstantiate/memory_tree     	   18596	     12888 ns/op	   72875 B/op	      23 allocs/op
+BenchmarkWazeroInstantiate/memory_tree     	   18519	     12812 ns/op	   72875 B/op	      23 allocs/op
+BenchmarkWazeroExec/memory_tree.run        	     100	     20956 ns/op	        97.00 calls/batch	      16 B/op	       1 allocs/op
+BenchmarkWazeroExec/memory_tree.run        	     100	     20917 ns/op	        96.00 calls/batch	      16 B/op	       1 allocs/op
+BenchmarkWazeroExec/memory_tree.run        	     120	     20908 ns/op	        95.00 calls/batch	      16 B/op	       1 allocs/op
+BenchmarkDecode/memory_tree                	  181152	      1213 ns/op	    1640 B/op	      18 allocs/op
+BenchmarkDecode/memory_tree                	  178335	      1229 ns/op	    1640 B/op	      18 allocs/op
+BenchmarkDecode/memory_tree                	  181677	      1230 ns/op	    1640 B/op	      18 allocs/op
+BenchmarkValidate/memory_tree              	   86137	      2702 ns/op	    2376 B/op	      16 allocs/op
+BenchmarkValidate/memory_tree              	   85411	      2703 ns/op	    2376 B/op	      16 allocs/op
+BenchmarkValidate/memory_tree              	   85176	      2699 ns/op	    2376 B/op	      16 allocs/op
+BenchmarkCompile/memory_tree               	   10000	     22493 ns/op	   15352 B/op	      44 allocs/op
+BenchmarkCompile/memory_tree               	   10000	     22354 ns/op	   15352 B/op	      44 allocs/op
+BenchmarkCompile/memory_tree               	   10000	     22431 ns/op	   15352 B/op	      44 allocs/op
+BenchmarkCompileFull/memory_tree           	    7912	     29921 ns/op	       495.0 code-B	   28641 B/op	     125 allocs/op
+BenchmarkCompileFull/memory_tree           	    7984	     29859 ns/op	       495.0 code-B	   28641 B/op	     125 allocs/op
+BenchmarkCompileFull/memory_tree           	    8856	     30006 ns/op	       495.0 code-B	   28641 B/op	     125 allocs/op
+BenchmarkInstantiate/memory_tree           	   32304	      7211 ns/op	    1280 B/op	       4 allocs/op
+BenchmarkInstantiate/memory_tree           	   32446	      7220 ns/op	    1280 B/op	       4 allocs/op
+BenchmarkInstantiate/memory_tree           	   33026	      7243 ns/op	    1280 B/op	       4 allocs/op
+BenchmarkExec/memory_tree.run              	     100	      9402 ns/op	       224.0 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/memory_tree.run              	     100	      9402 ns/op	       225.0 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/memory_tree.run              	     100	      9574 ns/op	       226.0 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec       	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/fannkuch         	     241	   1028215 ns/op	      7237 code-B	 1043976 B/op	    2101 allocs/op
+BenchmarkWazeroCompile/fannkuch         	     238	   1008007 ns/op	      7237 code-B	 1043976 B/op	    2101 allocs/op
+BenchmarkWazeroCompile/fannkuch         	     236	   1032447 ns/op	      7237 code-B	 1043976 B/op	    2101 allocs/op
+BenchmarkWazeroInstantiate/fannkuch     	    2366	     93972 ns/op	 1056194 B/op	      27 allocs/op
+BenchmarkWazeroInstantiate/fannkuch     	    2466	     93083 ns/op	 1056195 B/op	      27 allocs/op
+BenchmarkWazeroInstantiate/fannkuch     	    2486	     93259 ns/op	 1056194 B/op	      27 allocs/op
+BenchmarkWazeroExec/fannkuch.run        	      86	   1382373 ns/op	         2.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/fannkuch.run        	      86	   1385750 ns/op	         2.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/fannkuch.run        	      86	   1382274 ns/op	         2.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkDecode/fannkuch                	   35197	      6866 ns/op	    3600 B/op	      41 allocs/op
+BenchmarkDecode/fannkuch                	   34087	      6948 ns/op	    3600 B/op	      41 allocs/op
+BenchmarkDecode/fannkuch                	   33940	      6968 ns/op	    3600 B/op	      41 allocs/op
+BenchmarkValidate/fannkuch              	   10000	     22035 ns/op	    4928 B/op	      16 allocs/op
+BenchmarkValidate/fannkuch              	   10000	     22018 ns/op	    4928 B/op	      16 allocs/op
+BenchmarkValidate/fannkuch              	   10000	     22032 ns/op	    4928 B/op	      16 allocs/op
+BenchmarkCompile/fannkuch               	    1944	    111662 ns/op	   68336 B/op	      75 allocs/op
+BenchmarkCompile/fannkuch               	    1952	    112130 ns/op	   68336 B/op	      75 allocs/op
+BenchmarkCompile/fannkuch               	    1998	    110452 ns/op	   68336 B/op	      75 allocs/op
+BenchmarkCompileFull/fannkuch           	    1549	    144234 ns/op	      3587 code-B	   89820 B/op	     175 allocs/op
+BenchmarkCompileFull/fannkuch           	    1592	    144871 ns/op	      3587 code-B	   89820 B/op	     175 allocs/op
+BenchmarkCompileFull/fannkuch           	    1533	    144975 ns/op	      3587 code-B	   89820 B/op	     175 allocs/op
+BenchmarkInstantiate/fannkuch           	   31480	      8419 ns/op	    1432 B/op	       6 allocs/op
+BenchmarkInstantiate/fannkuch           	   25275	      9466 ns/op	    1432 B/op	       6 allocs/op
+BenchmarkInstantiate/fannkuch           	   25197	      9460 ns/op	    1432 B/op	       6 allocs/op
+BenchmarkExec/fannkuch.run              	     100	   1060357 ns/op	         2.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/fannkuch.run              	     100	   1061042 ns/op	         2.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/fannkuch.run              	     100	   1061194 ns/op	         2.000 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/nbody         	     420	    574530 ns/op	      5764 code-B	  746221 B/op	     940 allocs/op
+BenchmarkWazeroCompile/nbody         	     414	    568737 ns/op	      5764 code-B	  746208 B/op	     940 allocs/op
+BenchmarkWazeroCompile/nbody         	     416	    571963 ns/op	      5764 code-B	  746230 B/op	     940 allocs/op
+BenchmarkWazeroInstantiate/nbody     	    2360	     92447 ns/op	 1056194 B/op	      27 allocs/op
+BenchmarkWazeroInstantiate/nbody     	    2487	     92617 ns/op	 1056195 B/op	      27 allocs/op
+BenchmarkWazeroInstantiate/nbody     	    2485	     93305 ns/op	 1056194 B/op	      27 allocs/op
+BenchmarkWazeroExec/nbody.step       	     100	    344649 ns/op	         6.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/nbody.step       	     100	    345053 ns/op	         6.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/nbody.step       	     100	    344846 ns/op	         6.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkDecode/nbody                	   43585	      5511 ns/op	    2040 B/op	      28 allocs/op
+BenchmarkDecode/nbody                	   42691	      5554 ns/op	    2040 B/op	      28 allocs/op
+BenchmarkDecode/nbody                	   41869	      5621 ns/op	    2040 B/op	      28 allocs/op
+BenchmarkValidate/nbody              	   14452	     16646 ns/op	    3584 B/op	      15 allocs/op
+BenchmarkValidate/nbody              	   14152	     16717 ns/op	    3584 B/op	      15 allocs/op
+BenchmarkValidate/nbody              	   14392	     16737 ns/op	    3584 B/op	      15 allocs/op
+BenchmarkCompile/nbody               	    2443	     87985 ns/op	   68928 B/op	      77 allocs/op
+BenchmarkCompile/nbody               	    2662	     88266 ns/op	   68928 B/op	      77 allocs/op
+BenchmarkCompile/nbody               	    2461	     88638 ns/op	   68928 B/op	      77 allocs/op
+BenchmarkCompileFull/nbody           	    1803	    115648 ns/op	      2831 code-B	   89724 B/op	     161 allocs/op
+BenchmarkCompileFull/nbody           	    1869	    115463 ns/op	      2831 code-B	   89724 B/op	     161 allocs/op
+BenchmarkCompileFull/nbody           	    1932	    115858 ns/op	      2831 code-B	   89724 B/op	     161 allocs/op
+BenchmarkInstantiate/nbody           	   31586	      7560 ns/op	    1432 B/op	       6 allocs/op
+BenchmarkInstantiate/nbody           	   31719	      7475 ns/op	    1432 B/op	       6 allocs/op
+BenchmarkInstantiate/nbody           	   31838	      7521 ns/op	    1432 B/op	       6 allocs/op
+BenchmarkExec/nbody.step             	     100	    246299 ns/op	         9.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/nbody.step             	     100	    246087 ns/op	         9.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/nbody.step             	     100	    245159 ns/op	         9.000 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/matmul         	     436	    542770 ns/op	      3453 code-B	  636536 B/op	    1170 allocs/op
+BenchmarkWazeroCompile/matmul         	     438	    538546 ns/op	      3453 code-B	  636536 B/op	    1170 allocs/op
+BenchmarkWazeroCompile/matmul         	     440	    536407 ns/op	      3453 code-B	  636536 B/op	    1170 allocs/op
+BenchmarkWazeroInstantiate/matmul     	    2368	     93469 ns/op	 1056195 B/op	      27 allocs/op
+BenchmarkWazeroInstantiate/matmul     	    2505	     92753 ns/op	 1056194 B/op	      27 allocs/op
+BenchmarkWazeroInstantiate/matmul     	    2482	     92972 ns/op	 1056195 B/op	      27 allocs/op
+BenchmarkWazeroExec/matmul.run        	     100	    301060 ns/op	         7.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/matmul.run        	     100	    300528 ns/op	         7.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/matmul.run        	     100	    300590 ns/op	         7.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkDecode/matmul                	   70226	      3361 ns/op	    2040 B/op	      28 allocs/op
+BenchmarkDecode/matmul                	   68674	      3375 ns/op	    2040 B/op	      28 allocs/op
+BenchmarkDecode/matmul                	   68755	      3381 ns/op	    2040 B/op	      28 allocs/op
+BenchmarkValidate/matmul              	   25018	      9616 ns/op	    3584 B/op	      15 allocs/op
+BenchmarkValidate/matmul              	   24726	      9639 ns/op	    3584 B/op	      15 allocs/op
+BenchmarkValidate/matmul              	   25048	      9502 ns/op	    3584 B/op	      15 allocs/op
+BenchmarkCompile/matmul               	    3186	     67556 ns/op	   30392 B/op	      67 allocs/op
+BenchmarkCompile/matmul               	    3441	     67844 ns/op	   30392 B/op	      67 allocs/op
+BenchmarkCompile/matmul               	    3853	     67775 ns/op	   30392 B/op	      67 allocs/op
+BenchmarkCompileFull/matmul           	    2250	     89045 ns/op	      2663 code-B	   45898 B/op	     155 allocs/op
+BenchmarkCompileFull/matmul           	    2554	     89060 ns/op	      2663 code-B	   45898 B/op	     155 allocs/op
+BenchmarkCompileFull/matmul           	    2337	     89724 ns/op	      2663 code-B	   45898 B/op	     155 allocs/op
+BenchmarkInstantiate/matmul           	   31420	      9365 ns/op	    1432 B/op	       6 allocs/op
+BenchmarkInstantiate/matmul           	   25456	      9466 ns/op	    1432 B/op	       6 allocs/op
+BenchmarkInstantiate/matmul           	   25156	      9458 ns/op	    1432 B/op	       6 allocs/op
+BenchmarkExec/matmul.run              	     100	     59815 ns/op	        41.00 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/matmul.run              	     100	     58896 ns/op	        38.00 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/matmul.run              	     100	     59953 ns/op	        37.00 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/raytrace         	     133	   1825540 ns/op	     14404 code-B	 1629110 B/op	    2619 allocs/op
+BenchmarkWazeroCompile/raytrace         	     136	   1779226 ns/op	     14404 code-B	 1629112 B/op	    2619 allocs/op
+BenchmarkWazeroCompile/raytrace         	     133	   1754518 ns/op	     14404 code-B	 1629111 B/op	    2619 allocs/op
+BenchmarkWazeroInstantiate/raytrace     	    2379	     94284 ns/op	 1056195 B/op	      27 allocs/op
+BenchmarkWazeroInstantiate/raytrace     	    2418	     95112 ns/op	 1056194 B/op	      27 allocs/op
+BenchmarkWazeroInstantiate/raytrace     	    2469	     94101 ns/op	 1056194 B/op	      27 allocs/op
+BenchmarkWazeroExec/raytrace.render     	     100	    351577 ns/op	         6.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/raytrace.render     	     100	    351218 ns/op	         6.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/raytrace.render     	     100	    349062 ns/op	         6.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkDecode/raytrace                	   18662	     12993 ns/op	    2448 B/op	      30 allocs/op
+BenchmarkDecode/raytrace                	   18229	     13258 ns/op	    2448 B/op	      30 allocs/op
+BenchmarkDecode/raytrace                	   17858	     13241 ns/op	    2448 B/op	      30 allocs/op
+BenchmarkValidate/raytrace              	    5618	     44677 ns/op	    3784 B/op	      17 allocs/op
+BenchmarkValidate/raytrace              	    5686	     44250 ns/op	    3784 B/op	      17 allocs/op
+BenchmarkValidate/raytrace              	    5653	     45171 ns/op	    3784 B/op	      17 allocs/op
+BenchmarkCompile/raytrace               	    1075	    214557 ns/op	   74272 B/op	      92 allocs/op
+BenchmarkCompile/raytrace               	    1117	    214579 ns/op	   74272 B/op	      92 allocs/op
+BenchmarkCompile/raytrace               	    1149	    216298 ns/op	   74272 B/op	      92 allocs/op
+BenchmarkCompileFull/raytrace           	     877	    255066 ns/op	     11304 code-B	  149166 B/op	     194 allocs/op
+BenchmarkCompileFull/raytrace           	     903	    254347 ns/op	     11304 code-B	  149166 B/op	     194 allocs/op
+BenchmarkCompileFull/raytrace           	     902	    254815 ns/op	     11304 code-B	  149166 B/op	     194 allocs/op
+BenchmarkInstantiate/raytrace           	   31993	      7566 ns/op	    1432 B/op	       6 allocs/op
+BenchmarkInstantiate/raytrace           	   31548	      7583 ns/op	    1432 B/op	       6 allocs/op
+BenchmarkInstantiate/raytrace           	   31677	      7561 ns/op	    1432 B/op	       6 allocs/op
+BenchmarkExec/raytrace.render           	     100	    348848 ns/op	         6.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/raytrace.render           	     100	    346191 ns/op	         6.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/raytrace.render           	     100	    345876 ns/op	         6.000 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/sha256         	     379	    608625 ns/op	      5595 code-B	  826844 B/op	    1080 allocs/op
+BenchmarkWazeroCompile/sha256         	     372	    610998 ns/op	      5595 code-B	  826844 B/op	    1080 allocs/op
+BenchmarkWazeroCompile/sha256         	     384	    635860 ns/op	      5595 code-B	  826843 B/op	    1080 allocs/op
+BenchmarkWazeroInstantiate/sha256     	    2322	     95015 ns/op	 1121755 B/op	      28 allocs/op
+BenchmarkWazeroInstantiate/sha256     	    2436	     95576 ns/op	 1121754 B/op	      28 allocs/op
+BenchmarkWazeroInstantiate/sha256     	    2396	     94813 ns/op	 1121754 B/op	      28 allocs/op
+BenchmarkWazeroExec/sha256.hashN      	     100	     52251 ns/op	        39.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/sha256.hashN      	     100	     52146 ns/op	        39.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/sha256.hashN      	     100	     52168 ns/op	        39.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkDecode/sha256                	   40424	      5866 ns/op	    4008 B/op	      42 allocs/op
+BenchmarkDecode/sha256                	   40005	      5913 ns/op	    4008 B/op	      42 allocs/op
+BenchmarkDecode/sha256                	   39654	      5899 ns/op	    4008 B/op	      42 allocs/op
+BenchmarkValidate/sha256              	   14596	     15907 ns/op	    3760 B/op	      16 allocs/op
+BenchmarkValidate/sha256              	   14973	     15911 ns/op	    3760 B/op	      16 allocs/op
+BenchmarkValidate/sha256              	   14968	     16018 ns/op	    3760 B/op	      16 allocs/op
+BenchmarkCompile/sha256               	    2720	     75657 ns/op	   64920 B/op	      59 allocs/op
+BenchmarkCompile/sha256               	    2749	     75538 ns/op	   64920 B/op	      59 allocs/op
+BenchmarkCompile/sha256               	    2740	     75531 ns/op	   64920 B/op	      59 allocs/op
+BenchmarkCompileFull/sha256           	    1999	    105336 ns/op	      2035 code-B	   86268 B/op	     163 allocs/op
+BenchmarkCompileFull/sha256           	    2161	    104908 ns/op	      2035 code-B	   86268 B/op	     163 allocs/op
+BenchmarkCompileFull/sha256           	    2169	    104327 ns/op	      2035 code-B	   86268 B/op	     163 allocs/op
+BenchmarkInstantiate/sha256           	   23685	     10003 ns/op	    1432 B/op	       6 allocs/op
+BenchmarkInstantiate/sha256           	   23835	     10110 ns/op	    1432 B/op	       6 allocs/op
+BenchmarkInstantiate/sha256           	   23614	     10051 ns/op	    1432 B/op	       6 allocs/op
+BenchmarkExec/sha256.hashN            	     100	     35364 ns/op	        63.00 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/sha256.hashN            	     100	     35056 ns/op	        63.00 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/sha256.hashN            	     100	     34736 ns/op	        63.00 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec       	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/json-as-simd         	      26	   9219596 ns/op	     84536 code-B	 2314019 B/op	    5900 allocs/op
+BenchmarkWazeroCompile/json-as-simd         	      22	   9945127 ns/op	     84536 code-B	 2314125 B/op	    5900 allocs/op
+BenchmarkWazeroCompile/json-as-simd         	      21	   9763896 ns/op	     84536 code-B	 2313824 B/op	    5900 allocs/op
+BenchmarkWazeroInstantiate/json-as-simd     	   14175	     16025 ns/op	   77931 B/op	      53 allocs/op
+BenchmarkWazeroInstantiate/json-as-simd     	   14872	     16579 ns/op	   77931 B/op	      53 allocs/op
+BenchmarkWazeroInstantiate/json-as-simd     	   14832	     16835 ns/op	   77931 B/op	      53 allocs/op
+BenchmarkWazeroExec/json-as-simd.serializeN 	     100	     38812 ns/op	        55.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/json-as-simd.serializeN 	     100	     38776 ns/op	        52.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/json-as-simd.serializeN 	     100	     38988 ns/op	        52.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/json-as-simd.deserializeN         	      93	     77530 ns/op	        29.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/json-as-simd.deserializeN         	     100	     77545 ns/op	        30.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/json-as-simd.deserializeN         	      94	     77605 ns/op	        30.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkDecode/json-as-simd                          	    3420	     66469 ns/op	   24152 B/op	      89 allocs/op
+BenchmarkDecode/json-as-simd                          	    3478	     67685 ns/op	   24152 B/op	      89 allocs/op
+BenchmarkDecode/json-as-simd                          	    3758	     66291 ns/op	   24152 B/op	      89 allocs/op
+BenchmarkValidate/json-as-simd                        	    1102	    228541 ns/op	   10888 B/op	      51 allocs/op
+BenchmarkValidate/json-as-simd                        	    1130	    220777 ns/op	   10888 B/op	      51 allocs/op
+BenchmarkValidate/json-as-simd                        	    1128	    224622 ns/op	   10888 B/op	      51 allocs/op
+BenchmarkCompile/json-as-simd                         	     157	   1537336 ns/op	  330009 B/op	     216 allocs/op
+BenchmarkCompile/json-as-simd                         	     157	   1503701 ns/op	  330009 B/op	     216 allocs/op
+BenchmarkCompile/json-as-simd                         	     157	   1526310 ns/op	  330009 B/op	     216 allocs/op
+BenchmarkCompileFull/json-as-simd                     	     123	   1921255 ns/op	     69792 code-B	  521046 B/op	     520 allocs/op
+BenchmarkCompileFull/json-as-simd                     	     123	   1939369 ns/op	     69792 code-B	  521046 B/op	     520 allocs/op
+BenchmarkCompileFull/json-as-simd                     	     123	   1929162 ns/op	     69792 code-B	  521046 B/op	     520 allocs/op
+BenchmarkInstantiate/json-as-simd                     	   14635	     16597 ns/op	    3032 B/op	      19 allocs/op
+BenchmarkInstantiate/json-as-simd                     	   14607	     16302 ns/op	    3032 B/op	      19 allocs/op
+BenchmarkInstantiate/json-as-simd                     	   14542	     16286 ns/op	    3032 B/op	      19 allocs/op
+BenchmarkExec/json-as-simd.serializeN                 	     100	     24584 ns/op	        87.00 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/json-as-simd.serializeN                 	     100	     24429 ns/op	        87.00 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/json-as-simd.serializeN                 	     100	     24905 ns/op	        87.00 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/json-as-simd.deserializeN               	     100	     45814 ns/op	        45.00 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/json-as-simd.deserializeN               	     100	     45814 ns/op	        46.00 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/json-as-simd.deserializeN               	     100	     45810 ns/op	        46.00 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec       	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/blake-as-simd         	      79	   3163116 ns/op	     59423 code-B	 2035616 B/op	    1253 allocs/op
+BenchmarkWazeroCompile/blake-as-simd         	      78	   2923606 ns/op	     59423 code-B	 2035687 B/op	    1253 allocs/op
+BenchmarkWazeroCompile/blake-as-simd         	      73	   3042633 ns/op	     59423 code-B	 2035616 B/op	    1253 allocs/op
+BenchmarkWazeroInstantiate/blake-as-simd     	   17600	     13256 ns/op	   73859 B/op	      38 allocs/op
+BenchmarkWazeroInstantiate/blake-as-simd     	   17624	     13304 ns/op	   73859 B/op	      38 allocs/op
+BenchmarkWazeroInstantiate/blake-as-simd     	   17668	     13324 ns/op	   73859 B/op	      38 allocs/op
+BenchmarkWazeroExec/blake-as-simd.hashN      	     100	    504192 ns/op	         4.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/blake-as-simd.hashN      	     100	    504807 ns/op	         4.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/blake-as-simd.hashN      	     100	    503761 ns/op	         4.000 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkDecode/blake-as-simd                	    3902	     62022 ns/op	    5184 B/op	      33 allocs/op
+BenchmarkDecode/blake-as-simd                	    3896	     62027 ns/op	    5184 B/op	      33 allocs/op
+BenchmarkDecode/blake-as-simd                	    3938	     62180 ns/op	    5184 B/op	      33 allocs/op
+BenchmarkValidate/blake-as-simd              	    1011	    235341 ns/op	    4736 B/op	      25 allocs/op
+BenchmarkValidate/blake-as-simd              	    1014	    235845 ns/op	    4736 B/op	      25 allocs/op
+BenchmarkValidate/blake-as-simd              	    1014	    236879 ns/op	    4736 B/op	      25 allocs/op
+BenchmarkCompile/blake-as-simd               	     266	    874285 ns/op	  113656 B/op	     109 allocs/op
+BenchmarkCompile/blake-as-simd               	     282	    864248 ns/op	  113656 B/op	     109 allocs/op
+BenchmarkCompile/blake-as-simd               	     282	    865655 ns/op	  113656 B/op	     109 allocs/op
+BenchmarkCompileFull/blake-as-simd           	     198	   1205235 ns/op	     36459 code-B	  358503 B/op	     263 allocs/op
+BenchmarkCompileFull/blake-as-simd           	     198	   1191393 ns/op	     36459 code-B	  358503 B/op	     263 allocs/op
+BenchmarkCompileFull/blake-as-simd           	     199	   1194563 ns/op	     36459 code-B	  358503 B/op	     263 allocs/op
+BenchmarkInstantiate/blake-as-simd           	   24837	      9662 ns/op	    1968 B/op	       6 allocs/op
+BenchmarkInstantiate/blake-as-simd           	   24687	      9581 ns/op	    1968 B/op	       6 allocs/op
+BenchmarkInstantiate/blake-as-simd           	   24636	      9612 ns/op	    1968 B/op	       6 allocs/op
+BenchmarkExec/blake-as-simd.hashN            	     100	    390730 ns/op	         6.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/blake-as-simd.hashN            	     100	    390626 ns/op	         6.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/blake-as-simd.hashN            	     100	    390973 ns/op	         6.000 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec       	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/utf-as-simd         	     100	   3316815 ns/op	     31056 code-B	 1356474 B/op	    2916 allocs/op
+BenchmarkWazeroCompile/utf-as-simd         	      63	   3367716 ns/op	     31056 code-B	 1356402 B/op	    2916 allocs/op
+BenchmarkWazeroCompile/utf-as-simd         	      70	   3411350 ns/op	     31056 code-B	 1356403 B/op	    2916 allocs/op
+BenchmarkWazeroInstantiate/utf-as-simd     	   13263	     17990 ns/op	   79980 B/op	      30 allocs/op
+BenchmarkWazeroInstantiate/utf-as-simd     	   13266	     17971 ns/op	   79979 B/op	      30 allocs/op
+BenchmarkWazeroInstantiate/utf-as-simd     	   13429	     17970 ns/op	   79980 B/op	      30 allocs/op
+BenchmarkWazeroExec/utf-as-simd.convertN   	     100	     66992 ns/op	        31.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/utf-as-simd.convertN   	     100	     66990 ns/op	        30.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/utf-as-simd.convertN   	     100	     66958 ns/op	        30.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/utf-as-simd.validateN  	     100	    181933 ns/op	        11.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/utf-as-simd.validateN  	     100	    182084 ns/op	        12.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/utf-as-simd.validateN  	     100	    182011 ns/op	        11.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkDecode/utf-as-simd                	    5514	     38988 ns/op	   28816 B/op	      42 allocs/op
+BenchmarkDecode/utf-as-simd                	    6574	     38941 ns/op	   28816 B/op	      42 allocs/op
+BenchmarkDecode/utf-as-simd                	    5865	     38970 ns/op	   28816 B/op	      42 allocs/op
+BenchmarkValidate/utf-as-simd              	    2078	    115046 ns/op	    5652 B/op	      26 allocs/op
+BenchmarkValidate/utf-as-simd              	    2182	    116123 ns/op	    5652 B/op	      26 allocs/op
+BenchmarkValidate/utf-as-simd              	    2174	    116019 ns/op	    5652 B/op	      26 allocs/op
+BenchmarkCompile/utf-as-simd               	     494	    478833 ns/op	   97560 B/op	     109 allocs/op
+BenchmarkCompile/utf-as-simd               	     490	    488379 ns/op	   97560 B/op	     109 allocs/op
+BenchmarkCompile/utf-as-simd               	     488	    485707 ns/op	   97560 B/op	     109 allocs/op
+BenchmarkCompileFull/utf-as-simd           	     348	    681571 ns/op	     19949 code-B	  336879 B/op	     275 allocs/op
+BenchmarkCompileFull/utf-as-simd           	     343	    679755 ns/op	     19949 code-B	  336879 B/op	     275 allocs/op
+BenchmarkCompileFull/utf-as-simd           	     354	    682061 ns/op	     19949 code-B	  336880 B/op	     275 allocs/op
+BenchmarkInstantiate/utf-as-simd           	   10000	     22615 ns/op	    1848 B/op	      19 allocs/op
+BenchmarkInstantiate/utf-as-simd           	   10000	     22806 ns/op	    1848 B/op	      19 allocs/op
+BenchmarkInstantiate/utf-as-simd           	   10000	     22829 ns/op	    1848 B/op	      19 allocs/op
+BenchmarkExec/utf-as-simd.convertN         	     100	     50272 ns/op	        43.00 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/utf-as-simd.convertN         	     100	     50740 ns/op	        43.00 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/utf-as-simd.convertN         	     100	     50572 ns/op	        43.00 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/utf-as-simd.validateN        	     122	    139448 ns/op	        14.00 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/utf-as-simd.validateN        	     100	    139385 ns/op	        15.00 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/utf-as-simd.validateN        	     100	    139933 ns/op	        15.00 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/coremark         	      62	   3380946 ns/op	     32237 code-B	 2151499 B/op	    5011 allocs/op
+BenchmarkWazeroCompile/coremark         	      68	   3253342 ns/op	     32237 code-B	 2151480 B/op	    5011 allocs/op
+BenchmarkWazeroCompile/coremark         	      72	   3182694 ns/op	     32237 code-B	 2151480 B/op	    5011 allocs/op
+BenchmarkWazeroInstantiate/coremark     	   13814	     17252 ns/op	  138534 B/op	      26 allocs/op
+BenchmarkWazeroInstantiate/coremark     	   13720	     17461 ns/op	  138534 B/op	      26 allocs/op
+BenchmarkWazeroInstantiate/coremark     	   13740	     17395 ns/op	  138534 B/op	      26 allocs/op
+BenchmarkWazeroExec/coremark.coremark_run         	       4	  52073450 ns/op	         1.000 calls/batch	      16 B/op	       1 allocs/op
+BenchmarkWazeroExec/coremark.coremark_run         	       4	  52061069 ns/op	         1.000 calls/batch	      16 B/op	       1 allocs/op
+BenchmarkWazeroExec/coremark.coremark_run         	       4	  52053775 ns/op	         1.000 calls/batch	      16 B/op	       1 allocs/op
+BenchmarkDecode/coremark                          	   10000	     22679 ns/op	    2856 B/op	      33 allocs/op
+BenchmarkDecode/coremark                          	   10000	     22771 ns/op	    2856 B/op	      33 allocs/op
+BenchmarkDecode/coremark                          	   10000	     22840 ns/op	    2856 B/op	      33 allocs/op
+BenchmarkValidate/coremark                        	    3188	     80308 ns/op	    5112 B/op	      21 allocs/op
+BenchmarkValidate/coremark                        	    3220	     75043 ns/op	    5112 B/op	      21 allocs/op
+BenchmarkValidate/coremark                        	    3249	     75883 ns/op	    5112 B/op	      21 allocs/op
+BenchmarkCompile/coremark                         	     421	    559847 ns/op	   73184 B/op	      98 allocs/op
+BenchmarkCompile/coremark                         	     417	    576679 ns/op	   73184 B/op	      98 allocs/op
+BenchmarkCompile/coremark                         	     416	    567865 ns/op	   73184 B/op	      98 allocs/op
+BenchmarkCompileFull/coremark                     	     355	    667724 ns/op	     18747 code-B	  166896 B/op	     209 allocs/op
+BenchmarkCompileFull/coremark                     	     358	    667480 ns/op	     18747 code-B	  166896 B/op	     209 allocs/op
+BenchmarkCompileFull/coremark                     	     360	    668173 ns/op	     18747 code-B	  166896 B/op	     209 allocs/op
+BenchmarkInstantiate/coremark                     	   24592	     11438 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkInstantiate/coremark                     	   20992	     11441 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkInstantiate/coremark                     	   20726	     11471 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkExec/coremark.coremark_run               	       7	  31219673 ns/op	         1.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/coremark.coremark_run               	       7	  31337999 ns/op	         1.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/coremark.coremark_run               	       7	  31316631 ns/op	         1.000 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/blake3         	      49	   4269941 ns/op	     38993 code-B	 1616883 B/op	    2155 allocs/op
+BenchmarkWazeroCompile/blake3         	      52	   4439799 ns/op	     38993 code-B	 1616782 B/op	    2155 allocs/op
+BenchmarkWazeroCompile/blake3         	      51	   4542320 ns/op	     38993 code-B	 1616784 B/op	    2155 allocs/op
+BenchmarkWazeroInstantiate/blake3     	    3406	     79475 ns/op	 1056064 B/op	      26 allocs/op
+BenchmarkWazeroInstantiate/blake3     	    3375	     72394 ns/op	 1056058 B/op	      26 allocs/op
+BenchmarkWazeroInstantiate/blake3     	    3152	     71479 ns/op	 1056057 B/op	      26 allocs/op
+BenchmarkWazeroExec/blake3.blake3_hash         	     100	    292959 ns/op	         7.000 calls/batch	     840 B/op	      35 allocs/op
+BenchmarkWazeroExec/blake3.blake3_hash         	     100	    292429 ns/op	         7.000 calls/batch	     840 B/op	      35 allocs/op
+BenchmarkWazeroExec/blake3.blake3_hash         	     100	    292422 ns/op	         7.000 calls/batch	     840 B/op	      35 allocs/op
+BenchmarkWazeroExec/blake3.blake3_keyed_hash   	     100	    292224 ns/op	         7.000 calls/batch	     840 B/op	      35 allocs/op
+BenchmarkWazeroExec/blake3.blake3_keyed_hash   	     100	    291910 ns/op	         7.000 calls/batch	     840 B/op	      35 allocs/op
+BenchmarkWazeroExec/blake3.blake3_keyed_hash   	     100	    291769 ns/op	         7.000 calls/batch	     840 B/op	      35 allocs/op
+BenchmarkWazeroExec/blake3.blake3_derive_key   	     100	    305800 ns/op	         7.000 calls/batch	     840 B/op	      35 allocs/op
+BenchmarkWazeroExec/blake3.blake3_derive_key   	     100	    306115 ns/op	         7.000 calls/batch	     840 B/op	      35 allocs/op
+BenchmarkWazeroExec/blake3.blake3_derive_key   	     100	    305939 ns/op	         7.000 calls/batch	     840 B/op	      35 allocs/op
+BenchmarkDecode/blake3                         	    5884	     41210 ns/op	    6104 B/op	      52 allocs/op
+BenchmarkDecode/blake3                         	    6098	     40586 ns/op	    6104 B/op	      52 allocs/op
+BenchmarkDecode/blake3                         	    6081	     40438 ns/op	    6104 B/op	      52 allocs/op
+BenchmarkValidate/blake3                       	    1681	    142643 ns/op	    6296 B/op	      40 allocs/op
+BenchmarkValidate/blake3                       	    1668	    142402 ns/op	    6296 B/op	      40 allocs/op
+BenchmarkValidate/blake3                       	    1735	    145187 ns/op	    6296 B/op	      40 allocs/op
+BenchmarkCompile/blake3                        	     246	    974556 ns/op	  159664 B/op	     109 allocs/op
+BenchmarkCompile/blake3                        	     246	    980848 ns/op	  159664 B/op	     109 allocs/op
+BenchmarkCompile/blake3                        	     236	    992867 ns/op	  159664 B/op	     109 allocs/op
+BenchmarkCompileFull/blake3                    	     211	   1094179 ns/op	     26132 code-B	  328343 B/op	     277 allocs/op
+BenchmarkCompileFull/blake3                    	     217	   1094209 ns/op	     26132 code-B	  328343 B/op	     277 allocs/op
+BenchmarkCompileFull/blake3                    	     217	   1092991 ns/op	     26132 code-B	  328343 B/op	     277 allocs/op
+BenchmarkInstantiate/blake3                    	   24166	     11856 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkInstantiate/blake3                    	   19784	     12012 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkInstantiate/blake3                    	   19838	     12063 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkExec/blake3.blake3_hash               	     100	    265963 ns/op	         8.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/blake3.blake3_hash               	     128	    267647 ns/op	         8.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/blake3.blake3_hash               	     100	    266633 ns/op	         8.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/blake3.blake3_keyed_hash         	     100	    265600 ns/op	         8.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/blake3.blake3_keyed_hash         	     100	    264734 ns/op	         8.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/blake3.blake3_keyed_hash         	     100	    264853 ns/op	         8.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/blake3.blake3_derive_key         	     100	    274927 ns/op	         8.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/blake3.blake3_derive_key         	     123	    275226 ns/op	         8.000 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/blake3.blake3_derive_key         	     100	    276727 ns/op	         8.000 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/qoi 	     187	   1289046 ns/op	     10739 code-B	  856320 B/op	    1628 allocs/op
+BenchmarkWazeroCompile/qoi 	     183	   1299205 ns/op	     10739 code-B	  856320 B/op	    1628 allocs/op
+BenchmarkWazeroCompile/qoi 	     186	   1295261 ns/op	     10739 code-B	  856320 B/op	    1628 allocs/op
+BenchmarkWazeroInstantiate/qoi         	    1233	    176912 ns/op	 2104703 B/op	      26 allocs/op
+BenchmarkWazeroInstantiate/qoi         	    1338	    176523 ns/op	 2104700 B/op	      26 allocs/op
+BenchmarkWazeroInstantiate/qoi         	    1305	    174245 ns/op	 2104696 B/op	      26 allocs/op
+BenchmarkWazeroExec/qoi.qoi_encode_run 	     100	     12859 ns/op	       157.0 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/qoi.qoi_encode_run 	     100	     12835 ns/op	       156.0 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/qoi.qoi_encode_run 	     100	     12849 ns/op	       157.0 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/qoi.qoi_decode_run 	     100	     13531 ns/op	       149.0 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/qoi.qoi_decode_run 	     100	     13527 ns/op	       148.0 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/qoi.qoi_decode_run 	     100	     13522 ns/op	       148.0 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkDecode/qoi                    	   26066	      9280 ns/op	    3712 B/op	      37 allocs/op
+BenchmarkDecode/qoi                    	   25664	      9268 ns/op	    3712 B/op	      37 allocs/op
+BenchmarkDecode/qoi                    	   25600	      9348 ns/op	    3712 B/op	      37 allocs/op
+BenchmarkValidate/qoi                  	    8514	     29169 ns/op	    5592 B/op	      26 allocs/op
+BenchmarkValidate/qoi                  	    8640	     29131 ns/op	    5592 B/op	      26 allocs/op
+BenchmarkValidate/qoi                  	    9094	     29074 ns/op	    5592 B/op	      26 allocs/op
+BenchmarkCompile/qoi                   	    1233	    185600 ns/op	   67384 B/op	     100 allocs/op
+BenchmarkCompile/qoi                   	    1296	    185832 ns/op	   67384 B/op	     100 allocs/op
+BenchmarkCompile/qoi                   	    1248	    185805 ns/op	   67384 B/op	     100 allocs/op
+BenchmarkCompileFull/qoi               	    1021	    222997 ns/op	      4940 code-B	  115477 B/op	     216 allocs/op
+BenchmarkCompileFull/qoi               	    1083	    223158 ns/op	      4940 code-B	  115477 B/op	     216 allocs/op
+BenchmarkCompileFull/qoi               	    1035	    222735 ns/op	      4940 code-B	  115477 B/op	     216 allocs/op
+BenchmarkInstantiate/qoi               	   32242	      7426 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkInstantiate/qoi               	   31992	      7421 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkInstantiate/qoi               	   32067	      7437 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkExec/qoi.qoi_encode_run       	     100	      7412 ns/op	       279.0 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/qoi.qoi_encode_run       	     100	      7452 ns/op	       283.0 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/qoi.qoi_encode_run       	     100	      7528 ns/op	       282.0 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/qoi.qoi_decode_run       	     100	      5264 ns/op	       402.0 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/qoi.qoi_decode_run       	     100	      5242 ns/op	       400.0 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/qoi.qoi_decode_run       	     100	      5235 ns/op	       401.0 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec       	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/lz4 	     148	   1612610 ns/op	     11071 code-B	  974061 B/op	    2236 allocs/op
+BenchmarkWazeroCompile/lz4 	     147	   1616738 ns/op	     11071 code-B	  974024 B/op	    2236 allocs/op
+BenchmarkWazeroCompile/lz4 	     141	   1626524 ns/op	     11071 code-B	  974024 B/op	    2236 allocs/op
+BenchmarkWazeroInstantiate/lz4         	    1257	    177727 ns/op	 2104749 B/op	      27 allocs/op
+BenchmarkWazeroInstantiate/lz4         	    1419	    178377 ns/op	 2104748 B/op	      27 allocs/op
+BenchmarkWazeroInstantiate/lz4         	    1416	    180355 ns/op	 2104748 B/op	      27 allocs/op
+BenchmarkWazeroExec/lz4.lz4_compress_run         	     120	     52560 ns/op	        39.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/lz4.lz4_compress_run         	     100	     52675 ns/op	        38.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/lz4.lz4_compress_run         	     100	     52494 ns/op	        39.00 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/lz4.lz4_decompress_run       	     120	      5450 ns/op	       368.0 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/lz4.lz4_decompress_run       	     100	      5432 ns/op	       370.0 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/lz4.lz4_decompress_run       	     100	      5456 ns/op	       369.0 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkDecode/lz4                              	   26586	      8990 ns/op	    2720 B/op	      34 allocs/op
+BenchmarkDecode/lz4                              	   26414	      9035 ns/op	    2720 B/op	      34 allocs/op
+BenchmarkDecode/lz4                              	   25686	      9230 ns/op	    2720 B/op	      34 allocs/op
+BenchmarkValidate/lz4                            	    8638	     29095 ns/op	    4936 B/op	      17 allocs/op
+BenchmarkValidate/lz4                            	    9024	     29247 ns/op	    4936 B/op	      17 allocs/op
+BenchmarkValidate/lz4                            	    8906	     28602 ns/op	    4936 B/op	      17 allocs/op
+BenchmarkCompile/lz4                             	    1383	    158143 ns/op	   62616 B/op	      63 allocs/op
+BenchmarkCompile/lz4                             	    1513	    158517 ns/op	   62616 B/op	      63 allocs/op
+BenchmarkCompile/lz4                             	    1407	    161032 ns/op	   62616 B/op	      63 allocs/op
+BenchmarkCompileFull/lz4                         	    1186	    185163 ns/op	      4914 code-B	  105708 B/op	     166 allocs/op
+BenchmarkCompileFull/lz4                         	    1297	    181857 ns/op	      4914 code-B	  105708 B/op	     166 allocs/op
+BenchmarkCompileFull/lz4                         	    1262	    184321 ns/op	      4914 code-B	  105708 B/op	     166 allocs/op
+BenchmarkInstantiate/lz4                         	   22576	     10524 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkInstantiate/lz4                         	   22492	     10769 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkInstantiate/lz4                         	   22338	     10639 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkExec/lz4.lz4_compress_run               	     100	     30095 ns/op	        70.00 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/lz4.lz4_compress_run               	     100	     29789 ns/op	        71.00 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/lz4.lz4_compress_run               	     100	     29854 ns/op	        73.00 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/lz4.lz4_decompress_run             	     100	      2181 ns/op	       958.0 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/lz4.lz4_decompress_run             	     100	      2214 ns/op	       920.0 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/lz4.lz4_decompress_run             	     100	      2188 ns/op	       937.0 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/zstd         	       6	  35429189 ns/op	    286565 code-B	24699792 B/op	   41352 allocs/op
+BenchmarkWazeroCompile/zstd         	       6	  36303864 ns/op	    286565 code-B	24699789 B/op	   41352 allocs/op
+BenchmarkWazeroCompile/zstd         	       7	  34238428 ns/op	    286565 code-B	24699789 B/op	   41352 allocs/op
+BenchmarkWazeroInstantiate/zstd     	    1195	    186168 ns/op	 2105204 B/op	      30 allocs/op
+BenchmarkWazeroInstantiate/zstd     	    1202	    188048 ns/op	 2105204 B/op	      30 allocs/op
+BenchmarkWazeroInstantiate/zstd     	    1186	    189945 ns/op	 2105205 B/op	      30 allocs/op
+BenchmarkWazeroExec/zstd.zstd_decompress_run         	     100	      8131 ns/op	       246.0 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/zstd.zstd_decompress_run         	     100	      8095 ns/op	       248.0 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/zstd.zstd_decompress_run         	     120	      8085 ns/op	       248.0 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkDecode/zstd                                 	    1423	    170892 ns/op	   10184 B/op	      74 allocs/op
+BenchmarkDecode/zstd                                 	    1419	    170048 ns/op	   10184 B/op	      74 allocs/op
+BenchmarkDecode/zstd                                 	    1387	    169701 ns/op	   10184 B/op	      74 allocs/op
+BenchmarkValidate/zstd                               	     364	    661957 ns/op	   13304 B/op	      85 allocs/op
+BenchmarkValidate/zstd                               	     366	    665147 ns/op	   13304 B/op	      85 allocs/op
+BenchmarkValidate/zstd                               	     364	    666593 ns/op	   13304 B/op	      85 allocs/op
+BenchmarkCompile/zstd                                	      67	   3601399 ns/op	  146840 B/op	     201 allocs/op
+BenchmarkCompile/zstd                                	      69	   3514319 ns/op	  146840 B/op	     201 allocs/op
+BenchmarkCompile/zstd                                	      69	   3547945 ns/op	  146840 B/op	     201 allocs/op
+BenchmarkCompileFull/zstd                            	      57	   4371683 ns/op	    137637 code-B	  771211 B/op	     465 allocs/op
+BenchmarkCompileFull/zstd                            	      58	   4202417 ns/op	    137637 code-B	  771214 B/op	     465 allocs/op
+BenchmarkCompileFull/zstd                            	      58	   4172707 ns/op	    137637 code-B	  771217 B/op	     465 allocs/op
+BenchmarkInstantiate/zstd                            	   21039	     12840 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkInstantiate/zstd                            	   17806	     13492 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkInstantiate/zstd                            	   17734	     13601 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkExec/zstd.zstd_decompress_run               	     100	      5624 ns/op	       369.0 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/zstd.zstd_decompress_run               	     100	      5609 ns/op	       371.0 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/zstd.zstd_decompress_run               	     100	      5682 ns/op	       370.0 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/yyjson         	       3	  67071233 ns/op	    545061 code-B	53264128 B/op	  104706 allocs/op
+BenchmarkWazeroCompile/yyjson         	       4	  60045862 ns/op	    545061 code-B	53264128 B/op	  104706 allocs/op
+BenchmarkWazeroCompile/yyjson         	       4	  65129971 ns/op	    545061 code-B	53264128 B/op	  104706 allocs/op
+BenchmarkWazeroInstantiate/yyjson     	   10000	     20817 ns/op	  140327 B/op	      36 allocs/op
+BenchmarkWazeroInstantiate/yyjson     	   10000	     20610 ns/op	  140327 B/op	      36 allocs/op
+BenchmarkWazeroInstantiate/yyjson     	   10000	     20700 ns/op	  140327 B/op	      36 allocs/op
+BenchmarkWazeroExec/yyjson.yyjson_run 	     100	      1278 ns/op	      1579 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/yyjson.yyjson_run 	     100	      1278 ns/op	      1570 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/yyjson.yyjson_run 	     100	      1278 ns/op	      1583 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkDecode/yyjson                	     727	    330085 ns/op	   12968 B/op	      71 allocs/op
+BenchmarkDecode/yyjson                	     705	    338405 ns/op	   12968 B/op	      71 allocs/op
+BenchmarkDecode/yyjson                	     699	    351227 ns/op	   12968 B/op	      71 allocs/op
+BenchmarkValidate/yyjson              	     186	   1287710 ns/op	   32984 B/op	      89 allocs/op
+BenchmarkValidate/yyjson              	     187	   1287326 ns/op	   32984 B/op	      89 allocs/op
+BenchmarkValidate/yyjson              	     183	   1291131 ns/op	   32984 B/op	      89 allocs/op
+BenchmarkCompile/yyjson               	      34	   7023396 ns/op	 1167888 B/op	     399 allocs/op
+BenchmarkCompile/yyjson               	      37	   7080435 ns/op	 1167888 B/op	     399 allocs/op
+BenchmarkCompile/yyjson               	      36	   7219695 ns/op	 1167888 B/op	     399 allocs/op
+BenchmarkCompileFull/yyjson           	      30	   9096771 ns/op	    237282 code-B	 2643559 B/op	     654 allocs/op
+BenchmarkCompileFull/yyjson           	      30	   9151337 ns/op	    237282 code-B	 2643576 B/op	     654 allocs/op
+BenchmarkCompileFull/yyjson           	      28	   9032761 ns/op	    237282 code-B	 2643560 B/op	     654 allocs/op
+BenchmarkInstantiate/yyjson           	   13707	     17370 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkInstantiate/yyjson           	   13824	     17400 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkInstantiate/yyjson           	   13879	     17513 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkExec/yyjson.yyjson_run       	     100	       797.3 ns/op	      2569 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/yyjson.yyjson_run       	     100	       801.0 ns/op	      2565 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/yyjson.yyjson_run       	     100	       804.4 ns/op	      2573 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec       	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCommandExec       	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCommandExec 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroCompile/pcre2         	       2	 167828964 ns/op	   1129723 code-B	124508536 B/op	  226032 allocs/op
+BenchmarkWazeroCompile/pcre2         	       2	 162535004 ns/op	   1129723 code-B	124508552 B/op	  226032 allocs/op
+BenchmarkWazeroCompile/pcre2         	       1	 244102514 ns/op	   1129723 code-B	124508536 B/op	  226032 allocs/op
+BenchmarkWazeroInstantiate/pcre2     	    4633	     46502 ns/op	  273007 B/op	      34 allocs/op
+BenchmarkWazeroInstantiate/pcre2     	    5931	     45677 ns/op	  273007 B/op	      34 allocs/op
+BenchmarkWazeroInstantiate/pcre2     	    5440	     39598 ns/op	  273009 B/op	      34 allocs/op
+BenchmarkWazeroExec/pcre2.pcre2_run  	     120	     17920 ns/op	       111.0 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/pcre2.pcre2_run  	     120	     17949 ns/op	       112.0 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkWazeroExec/pcre2.pcre2_run  	     100	     17961 ns/op	       112.0 calls/batch	       8 B/op	       1 allocs/op
+BenchmarkDecode/pcre2                	     338	    700360 ns/op	   26304 B/op	     120 allocs/op
+BenchmarkDecode/pcre2                	     340	    702548 ns/op	   26304 B/op	     120 allocs/op
+BenchmarkDecode/pcre2                	     336	    707051 ns/op	   26304 B/op	     120 allocs/op
+BenchmarkValidate/pcre2              	     100	   2103779 ns/op	   78608 B/op	     228 allocs/op
+BenchmarkValidate/pcre2              	     100	   2100322 ns/op	   78608 B/op	     228 allocs/op
+BenchmarkValidate/pcre2              	     100	   2089169 ns/op	   78608 B/op	     228 allocs/op
+BenchmarkCompile/pcre2               	      22	  12833945 ns/op	 1364694 B/op	     568 allocs/op
+BenchmarkCompile/pcre2               	      22	  13254808 ns/op	 1364693 B/op	     568 allocs/op
+BenchmarkCompile/pcre2               	      22	  13438775 ns/op	 1364693 B/op	     568 allocs/op
+BenchmarkCompileFull/pcre2           	      14	  15947853 ns/op	    391680 code-B	 3752153 B/op	    1046 allocs/op
+BenchmarkCompileFull/pcre2           	      13	  15840654 ns/op	    391680 code-B	 3752164 B/op	    1047 allocs/op
+BenchmarkCompileFull/pcre2           	      15	  15015188 ns/op	    391680 code-B	 3752172 B/op	    1047 allocs/op
+BenchmarkInstantiate/pcre2           	    3789	     61671 ns/op	    1337 B/op	       6 allocs/op
+BenchmarkInstantiate/pcre2           	    3590	     61417 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkInstantiate/pcre2           	    3750	     61539 ns/op	    1336 B/op	       6 allocs/op
+BenchmarkExec/pcre2.pcre2_run        	     100	      9709 ns/op	       221.0 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/pcre2.pcre2_run        	     100	      9614 ns/op	       220.0 calls/batch	       0 B/op	       0 allocs/op
+BenchmarkExec/pcre2.pcre2_run        	     100	      9628 ns/op	       219.0 calls/batch	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec/sightglass-libsodium-hash         	      74	   3212016 ns/op	   54019 B/op	     574 allocs/op
+BenchmarkCommandExec/sightglass-libsodium-hash         	      73	   3210135 ns/op	   53944 B/op	     574 allocs/op
+BenchmarkCommandExec/sightglass-libsodium-hash         	      74	   3208137 ns/op	   53944 B/op	     574 allocs/op
+BenchmarkWazeroCommandExec/sightglass-libsodium-hash   	      43	   5887040 ns/op	16866341 B/op	      98 allocs/op
+BenchmarkWazeroCommandExec/sightglass-libsodium-hash   	      43	   5948050 ns/op	16866340 B/op	      98 allocs/op
+BenchmarkWazeroCommandExec/sightglass-libsodium-hash   	      43	   5780366 ns/op	16866341 B/op	      98 allocs/op
+BenchmarkWazeroCompile/sightglass-libsodium-hash       	      10	  21374136 ns/op	    207622 code-B	 9582809 B/op	   21410 allocs/op
+BenchmarkWazeroCompile/sightglass-libsodium-hash       	      10	  21360675 ns/op	    207622 code-B	 9582812 B/op	   21410 allocs/op
+BenchmarkWazeroCompile/sightglass-libsodium-hash       	      10	  20731528 ns/op	    207622 code-B	 9582811 B/op	   21410 allocs/op
+BenchmarkWazeroInstantiate                             	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                             	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                             	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                                    	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                                    	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                                    	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/sightglass-libsodium-hash              	    1582	    151157 ns/op	   23648 B/op	     155 allocs/op
+BenchmarkDecode/sightglass-libsodium-hash              	    1574	    151324 ns/op	   23648 B/op	     155 allocs/op
+BenchmarkDecode/sightglass-libsodium-hash              	    1581	    152053 ns/op	   23648 B/op	     155 allocs/op
+BenchmarkValidate/sightglass-libsodium-hash            	     410	    592380 ns/op	   15224 B/op	      96 allocs/op
+BenchmarkValidate/sightglass-libsodium-hash            	     416	    591396 ns/op	   15224 B/op	      96 allocs/op
+BenchmarkValidate/sightglass-libsodium-hash            	     414	    583153 ns/op	   15224 B/op	      96 allocs/op
+BenchmarkCompile/sightglass-libsodium-hash             	      79	   3294056 ns/op	  423512 B/op	     403 allocs/op
+BenchmarkCompile/sightglass-libsodium-hash             	      81	   3309787 ns/op	  423512 B/op	     403 allocs/op
+BenchmarkCompile/sightglass-libsodium-hash             	      81	   3316329 ns/op	  423512 B/op	     403 allocs/op
+BenchmarkCompileFull/sightglass-libsodium-hash         	      66	   4283487 ns/op	    126734 code-B	  758389 B/op	     830 allocs/op
+BenchmarkCompileFull/sightglass-libsodium-hash         	      66	   4371416 ns/op	    126734 code-B	  758389 B/op	     830 allocs/op
+BenchmarkCompileFull/sightglass-libsodium-hash         	      66	   4375580 ns/op	    126734 code-B	  758389 B/op	     830 allocs/op
+BenchmarkInstantiate                                   	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                                   	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                                   	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                          	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                          	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                          	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec/php-buckets         	      25	   9007251 ns/op	   78081 B/op	     962 allocs/op
+BenchmarkCommandExec/php-buckets         	      24	   8952353 ns/op	   78082 B/op	     962 allocs/op
+BenchmarkCommandExec/php-buckets         	      26	   8953675 ns/op	   78080 B/op	     962 allocs/op
+BenchmarkWazeroCommandExec/php-buckets   	      31	   7097217 ns/op	28677232 B/op	   21416 allocs/op
+BenchmarkWazeroCommandExec/php-buckets   	      32	   7016164 ns/op	28677232 B/op	   21416 allocs/op
+BenchmarkWazeroCommandExec/php-buckets   	      31	   7253228 ns/op	28677232 B/op	   21416 allocs/op
+BenchmarkWazeroCompile/php-buckets       	       1	3307387444 ns/op	  56884802 code-B	341282392 B/op	  480471 allocs/op
+BenchmarkWazeroCompile/php-buckets       	       1	3283613990 ns/op	  56884802 code-B	341263928 B/op	  480469 allocs/op
+BenchmarkWazeroCompile/php-buckets       	       1	3279195989 ns/op	  56884802 code-B	341263944 B/op	  480469 allocs/op
+BenchmarkWazeroInstantiate               	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate               	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate               	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                      	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                      	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                      	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/php-buckets              	       6	  39392000 ns/op	12004173 B/op	   12836 allocs/op
+BenchmarkDecode/php-buckets              	       6	  39751521 ns/op	12004173 B/op	   12836 allocs/op
+BenchmarkDecode/php-buckets              	       6	  40216729 ns/op	12004173 B/op	   12836 allocs/op
+BenchmarkValidate/php-buckets            	       2	 104610480 ns/op	  339792 B/op	    1762 allocs/op
+BenchmarkValidate/php-buckets            	       2	 104543918 ns/op	  339792 B/op	    1762 allocs/op
+BenchmarkValidate/php-buckets            	       2	 104797016 ns/op	  339792 B/op	    1762 allocs/op
+BenchmarkCompile/php-buckets             	       1	 573106474 ns/op	57507016 B/op	   14910 allocs/op
+BenchmarkCompile/php-buckets             	       1	 567490311 ns/op	57507016 B/op	   14910 allocs/op
+BenchmarkCompile/php-buckets             	       1	 569156606 ns/op	57507016 B/op	   14910 allocs/op
+BenchmarkCompileFull/php-buckets         	       1	 670006730 ns/op	  18498169 code-B	115870432 B/op	   35797 allocs/op
+BenchmarkCompileFull/php-buckets         	       1	 677372726 ns/op	  18498169 code-B	115870224 B/op	   35794 allocs/op
+BenchmarkCompileFull/php-buckets         	       1	 671850329 ns/op	  18498169 code-B	115870224 B/op	   35794 allocs/op
+BenchmarkInstantiate                     	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                     	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                     	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                            	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                            	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                            	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec/ruby-buckets         	       9	  23046217 ns/op	   79664 B/op	     939 allocs/op
+BenchmarkCommandExec/ruby-buckets         	       9	  23074648 ns/op	   79664 B/op	     939 allocs/op
+BenchmarkCommandExec/ruby-buckets         	       9	  23137738 ns/op	   79664 B/op	     939 allocs/op
+BenchmarkWazeroCommandExec/ruby-buckets   	       6	  34808356 ns/op	261215306 B/op	    3552 allocs/op
+BenchmarkWazeroCommandExec/ruby-buckets   	       9	  29991534 ns/op	261215307 B/op	    3552 allocs/op
+BenchmarkWazeroCommandExec/ruby-buckets   	       9	  33807136 ns/op	261215307 B/op	    3552 allocs/op
+BenchmarkWazeroCompile/ruby-buckets       	       1	2646448504 ns/op	  29708572 code-B	413649136 B/op	  762736 allocs/op
+BenchmarkWazeroCompile/ruby-buckets       	       1	2631534349 ns/op	  29708572 code-B	413639632 B/op	  762734 allocs/op
+BenchmarkWazeroCompile/ruby-buckets       	       1	2670046291 ns/op	  29708572 code-B	413639664 B/op	  762734 allocs/op
+BenchmarkWazeroInstantiate                	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                       	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                       	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                       	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/ruby-buckets              	      12	  17661779 ns/op	 3643422 B/op	    5359 allocs/op
+BenchmarkDecode/ruby-buckets              	      13	  17861508 ns/op	 3643422 B/op	    5359 allocs/op
+BenchmarkDecode/ruby-buckets              	      12	  17894308 ns/op	 3643422 B/op	    5359 allocs/op
+BenchmarkValidate/ruby-buckets            	       4	  61266057 ns/op	  287128 B/op	    1843 allocs/op
+BenchmarkValidate/ruby-buckets            	       4	  61235246 ns/op	  287128 B/op	    1843 allocs/op
+BenchmarkValidate/ruby-buckets            	       4	  60776365 ns/op	  287128 B/op	    1843 allocs/op
+BenchmarkCompile/ruby-buckets             	       1	 280004794 ns/op	25646264 B/op	    7354 allocs/op
+BenchmarkCompile/ruby-buckets             	       1	 283653844 ns/op	25646280 B/op	    7354 allocs/op
+BenchmarkCompile/ruby-buckets             	       1	 277217091 ns/op	25646264 B/op	    7354 allocs/op
+BenchmarkCompileFull/ruby-buckets         	       1	 344685588 ns/op	  11873971 code-B	51741208 B/op	   18333 allocs/op
+BenchmarkCompileFull/ruby-buckets         	       1	 342959900 ns/op	  11873971 code-B	51741016 B/op	   18330 allocs/op
+BenchmarkCompileFull/ruby-buckets         	       1	 343954057 ns/op	  11873971 code-B	51741016 B/op	   18330 allocs/op
+BenchmarkInstantiate                      	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                      	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                      	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                             	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                             	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                             	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec/coreutils-sort         	     100	   2247471 ns/op	   70464 B/op	     826 allocs/op
+BenchmarkCommandExec/coreutils-sort         	     100	   2176780 ns/op	   70464 B/op	     826 allocs/op
+BenchmarkCommandExec/coreutils-sort         	     100	   2185401 ns/op	   70464 B/op	     826 allocs/op
+BenchmarkWazeroCommandExec/coreutils-sort   	     277	    856385 ns/op	11226464 B/op	    2112 allocs/op
+BenchmarkWazeroCommandExec/coreutils-sort   	     271	    867215 ns/op	11226464 B/op	    2112 allocs/op
+BenchmarkWazeroCommandExec/coreutils-sort   	     266	    881906 ns/op	11226464 B/op	    2112 allocs/op
+BenchmarkWazeroCompile/coreutils-sort       	       1	1723551335 ns/op	  26906000 code-B	169769736 B/op	  113118 allocs/op
+BenchmarkWazeroCompile/coreutils-sort       	       1	1718279355 ns/op	  26906000 code-B	169769736 B/op	  113118 allocs/op
+BenchmarkWazeroCompile/coreutils-sort       	       1	1717527219 ns/op	  26906000 code-B	169769736 B/op	  113118 allocs/op
+BenchmarkWazeroInstantiate                  	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                  	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                  	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                         	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                         	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                         	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/coreutils-sort              	      10	  21755598 ns/op	 2816064 B/op	    5014 allocs/op
+BenchmarkDecode/coreutils-sort              	      10	  21766137 ns/op	 2816064 B/op	    5014 allocs/op
+BenchmarkDecode/coreutils-sort              	      10	  22066812 ns/op	 2816064 B/op	    5014 allocs/op
+BenchmarkValidate/coreutils-sort            	       4	  65375972 ns/op	  164456 B/op	    3449 allocs/op
+BenchmarkValidate/coreutils-sort            	       4	  64514999 ns/op	  164456 B/op	    3449 allocs/op
+BenchmarkValidate/coreutils-sort            	       4	  64393647 ns/op	  164456 B/op	    3449 allocs/op
+BenchmarkCompile/coreutils-sort             	       1	 315728668 ns/op	23281760 B/op	   12075 allocs/op
+BenchmarkCompile/coreutils-sort             	       1	 317481838 ns/op	23281760 B/op	   12075 allocs/op
+BenchmarkCompile/coreutils-sort             	       1	 319759007 ns/op	23281776 B/op	   12075 allocs/op
+BenchmarkCompileFull/coreutils-sort         	       1	 373424052 ns/op	  15396378 code-B	52629360 B/op	   24193 allocs/op
+BenchmarkCompileFull/coreutils-sort         	       1	 363823527 ns/op	  15396378 code-B	52629168 B/op	   24190 allocs/op
+BenchmarkCompileFull/coreutils-sort         	       1	 363276934 ns/op	  15396378 code-B	52629168 B/op	   24190 allocs/op
+BenchmarkInstantiate                        	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                        	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                        	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                               	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                               	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                               	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec/ripgrep-source         	     158	   1495656 ns/op	   67040 B/op	     736 allocs/op
+BenchmarkCommandExec/ripgrep-source         	     163	   1445482 ns/op	   67040 B/op	     736 allocs/op
+BenchmarkCommandExec/ripgrep-source         	     164	   1442793 ns/op	   67040 B/op	     736 allocs/op
+BenchmarkWazeroCommandExec/ripgrep-source   	     225	    944512 ns/op	 5412824 B/op	    4499 allocs/op
+BenchmarkWazeroCommandExec/ripgrep-source   	     219	    982383 ns/op	 5412824 B/op	    4499 allocs/op
+BenchmarkWazeroCommandExec/ripgrep-source   	     236	    918312 ns/op	 5412824 B/op	    4499 allocs/op
+BenchmarkWazeroCompile/ripgrep-source       	       1	 734633637 ns/op	  11557578 code-B	94129232 B/op	   85748 allocs/op
+BenchmarkWazeroCompile/ripgrep-source       	       1	 735993193 ns/op	  11557578 code-B	94119728 B/op	   85746 allocs/op
+BenchmarkWazeroCompile/ripgrep-source       	       1	 726048688 ns/op	  11557578 code-B	94119744 B/op	   85746 allocs/op
+BenchmarkWazeroInstantiate                  	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                  	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                  	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                         	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                         	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                         	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/ripgrep-source              	      19	  11117918 ns/op	21965137 B/op	   10487 allocs/op
+BenchmarkDecode/ripgrep-source              	      22	  12035321 ns/op	21965137 B/op	   10487 allocs/op
+BenchmarkDecode/ripgrep-source              	      22	  11310622 ns/op	21965138 B/op	   10487 allocs/op
+BenchmarkValidate/ripgrep-source            	       8	  27232431 ns/op	   64506 B/op	    1308 allocs/op
+BenchmarkValidate/ripgrep-source            	       8	  27275724 ns/op	   64506 B/op	    1308 allocs/op
+BenchmarkValidate/ripgrep-source            	       8	  27402001 ns/op	   64506 B/op	    1308 allocs/op
+BenchmarkCompile/ripgrep-source             	       2	 141571462 ns/op	19196968 B/op	    8818 allocs/op
+BenchmarkCompile/ripgrep-source             	       2	 140432632 ns/op	19196968 B/op	    8818 allocs/op
+BenchmarkCompile/ripgrep-source             	       2	 140189077 ns/op	19196968 B/op	    8818 allocs/op
+BenchmarkCompileFull/ripgrep-source         	       2	 165590127 ns/op	   5490982 code-B	53600096 B/op	   23972 allocs/op
+BenchmarkCompileFull/ripgrep-source         	       2	 165634340 ns/op	   5490982 code-B	53600104 B/op	   23972 allocs/op
+BenchmarkCompileFull/ripgrep-source         	       2	 165201478 ns/op	   5490982 code-B	53600096 B/op	   23972 allocs/op
+BenchmarkInstantiate                        	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                        	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                        	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                               	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                               	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                               	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec/yosys-counter         	      46	   5252455 ns/op	   95641 B/op	     964 allocs/op
+BenchmarkCommandExec/yosys-counter         	      44	   5249012 ns/op	   95520 B/op	     964 allocs/op
+BenchmarkCommandExec/yosys-counter         	      45	   5261399 ns/op	   95520 B/op	     964 allocs/op
+BenchmarkWazeroCommandExec/yosys-counter   	      48	   4760226 ns/op	14571704 B/op	    7959 allocs/op
+BenchmarkWazeroCommandExec/yosys-counter   	      50	   4712848 ns/op	14571704 B/op	    7959 allocs/op
+BenchmarkWazeroCommandExec/yosys-counter   	      48	   4693311 ns/op	14571704 B/op	    7959 allocs/op
+BenchmarkWazeroCompile/yosys-counter       	       1	5319392736 ns/op	  83685629 code-B	471121072 B/op	  406787 allocs/op
+BenchmarkWazeroCompile/yosys-counter       	       1	5350644352 ns/op	  83685629 code-B	471102624 B/op	  406785 allocs/op
+BenchmarkWazeroCompile/yosys-counter       	       1	5323885274 ns/op	  83685629 code-B	471102608 B/op	  406785 allocs/op
+BenchmarkWazeroInstantiate                 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                        	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                        	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                        	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/yosys-counter              	       4	  66052358 ns/op	18368296 B/op	   26325 allocs/op
+BenchmarkDecode/yosys-counter              	       4	  66693238 ns/op	18368296 B/op	   26325 allocs/op
+BenchmarkDecode/yosys-counter              	       4	  67087680 ns/op	18368296 B/op	   26325 allocs/op
+BenchmarkValidate/yosys-counter            	       2	 183823583 ns/op	  226680 B/op	    3211 allocs/op
+BenchmarkValidate/yosys-counter            	       2	 184249818 ns/op	  226680 B/op	    3211 allocs/op
+BenchmarkValidate/yosys-counter            	       2	 184767414 ns/op	  226680 B/op	    3211 allocs/op
+BenchmarkCompile/yosys-counter             	       1	1010696623 ns/op	143156536 B/op	   47651 allocs/op
+BenchmarkCompile/yosys-counter             	       1	1009912782 ns/op	143156536 B/op	   47651 allocs/op
+BenchmarkCompile/yosys-counter             	       1	1008116320 ns/op	143156552 B/op	   47651 allocs/op
+BenchmarkCompileFull/yosys-counter         	       1	1196137210 ns/op	  38070344 code-B	234273488 B/op	   89737 allocs/op
+BenchmarkCompileFull/yosys-counter         	       1	1175477196 ns/op	  38070344 code-B	234273296 B/op	   89734 allocs/op
+BenchmarkCompileFull/yosys-counter         	       1	1185577141 ns/op	  38070344 code-B	234273296 B/op	   89734 allocs/op
+BenchmarkInstantiate                       	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                       	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                       	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                              	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                              	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                              	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec/icebram-generate         	     549	    433972 ns/op	  137243 B/op	    1337 allocs/op
+BenchmarkCommandExec/icebram-generate         	     548	    429426 ns/op	  137233 B/op	    1337 allocs/op
+BenchmarkCommandExec/icebram-generate         	     555	    432463 ns/op	  137232 B/op	    1337 allocs/op
+BenchmarkWazeroCommandExec/icebram-generate   	     993	    225534 ns/op	  387464 B/op	     482 allocs/op
+BenchmarkWazeroCommandExec/icebram-generate   	    1032	    225778 ns/op	  387464 B/op	     482 allocs/op
+BenchmarkWazeroCommandExec/icebram-generate   	    1022	    227027 ns/op	  387464 B/op	     482 allocs/op
+BenchmarkWazeroCompile/icebram-generate       	       3	  88853700 ns/op	   1364100 code-B	10843432 B/op	   30262 allocs/op
+BenchmarkWazeroCompile/icebram-generate       	       3	  87985180 ns/op	   1364100 code-B	10843432 B/op	   30262 allocs/op
+BenchmarkWazeroCompile/icebram-generate       	       3	  87832452 ns/op	   1364100 code-B	10843432 B/op	   30262 allocs/op
+BenchmarkWazeroInstantiate                    	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                    	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                    	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                           	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                           	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                           	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/icebram-generate              	     130	   1834239 ns/op	  903344 B/op	    2266 allocs/op
+BenchmarkDecode/icebram-generate              	     128	   1861900 ns/op	  903344 B/op	    2266 allocs/op
+BenchmarkDecode/icebram-generate              	     128	   1850097 ns/op	  903344 B/op	    2266 allocs/op
+BenchmarkValidate/icebram-generate            	      50	   4789924 ns/op	   32456 B/op	     223 allocs/op
+BenchmarkValidate/icebram-generate            	      50	   4786923 ns/op	   32456 B/op	     223 allocs/op
+BenchmarkValidate/icebram-generate            	      50	   4797711 ns/op	   32456 B/op	     223 allocs/op
+BenchmarkCompile/icebram-generate             	       6	  34452478 ns/op	 9184453 B/op	    3449 allocs/op
+BenchmarkCompile/icebram-generate             	       7	  33592624 ns/op	 9184441 B/op	    3449 allocs/op
+BenchmarkCompile/icebram-generate             	       6	  34507105 ns/op	 9184453 B/op	    3449 allocs/op
+BenchmarkCompileFull/icebram-generate         	       6	  35832270 ns/op	   1363698 code-B	12437117 B/op	    6972 allocs/op
+BenchmarkCompileFull/icebram-generate         	       6	  36075155 ns/op	   1363698 code-B	12437149 B/op	    6973 allocs/op
+BenchmarkCompileFull/icebram-generate         	       6	  37064736 ns/op	   1363698 code-B	12437149 B/op	    6973 allocs/op
+BenchmarkInstantiate                          	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                          	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                          	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec/json2csv-people         	    1840	    127649 ns/op	   55504 B/op	     597 allocs/op
+BenchmarkCommandExec/json2csv-people         	    1864	    128134 ns/op	   55504 B/op	     597 allocs/op
+BenchmarkCommandExec/json2csv-people         	    1815	    131877 ns/op	   55504 B/op	     597 allocs/op
+BenchmarkWazeroCommandExec/json2csv-people   	    2768	     79147 ns/op	  186344 B/op	      82 allocs/op
+BenchmarkWazeroCommandExec/json2csv-people   	    2744	     79766 ns/op	  186344 B/op	      82 allocs/op
+BenchmarkWazeroCommandExec/json2csv-people   	    2833	     78979 ns/op	  186344 B/op	      82 allocs/op
+BenchmarkWazeroCompile/json2csv-people       	       2	 180340394 ns/op	   2399260 code-B	39207736 B/op	   43321 allocs/op
+BenchmarkWazeroCompile/json2csv-people       	       2	 183137224 ns/op	   2399260 code-B	39207728 B/op	   43321 allocs/op
+BenchmarkWazeroCompile/json2csv-people       	       2	 179518988 ns/op	   2399260 code-B	39207728 B/op	   43321 allocs/op
+BenchmarkWazeroInstantiate                   	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                   	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                   	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                          	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                          	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                          	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/json2csv-people              	     228	   1065815 ns/op	   99848 B/op	     827 allocs/op
+BenchmarkDecode/json2csv-people              	     223	   1068593 ns/op	   99848 B/op	     827 allocs/op
+BenchmarkDecode/json2csv-people              	     223	   1067224 ns/op	   99848 B/op	     827 allocs/op
+BenchmarkValidate/json2csv-people            	      75	   3139820 ns/op	   31264 B/op	     241 allocs/op
+BenchmarkValidate/json2csv-people            	      75	   3138427 ns/op	   31264 B/op	     241 allocs/op
+BenchmarkValidate/json2csv-people            	      75	   3151200 ns/op	   31264 B/op	     241 allocs/op
+BenchmarkCompile/json2csv-people             	      14	  17284471 ns/op	 1472464 B/op	     764 allocs/op
+BenchmarkCompile/json2csv-people             	      14	  17492470 ns/op	 1472464 B/op	     764 allocs/op
+BenchmarkCompile/json2csv-people             	      15	  17946727 ns/op	 1472465 B/op	     764 allocs/op
+BenchmarkCompileFull/json2csv-people         	      10	  22621394 ns/op	    656131 code-B	 2784956 B/op	    2231 allocs/op
+BenchmarkCompileFull/json2csv-people         	      10	  23570261 ns/op	    656131 code-B	 2784937 B/op	    2230 allocs/op
+BenchmarkCompileFull/json2csv-people         	       9	  22482800 ns/op	    656131 code-B	 2784989 B/op	    2231 allocs/op
+BenchmarkInstantiate                         	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                         	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                         	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec/brotli-compress         	       1	 686525451 ns/op	   57576 B/op	     622 allocs/op
+BenchmarkCommandExec/brotli-compress         	       1	 682357813 ns/op	   57576 B/op	     622 allocs/op
+BenchmarkCommandExec/brotli-compress         	       1	 686983414 ns/op	   57576 B/op	     622 allocs/op
+BenchmarkWazeroCommandExec/brotli-compress   	       1	1081883709 ns/op	472250456 B/op	      89 allocs/op
+BenchmarkWazeroCommandExec/brotli-compress   	       1	1042489179 ns/op	472250456 B/op	      89 allocs/op
+BenchmarkWazeroCommandExec/brotli-compress   	       1	1172196791 ns/op	472250456 B/op	      89 allocs/op
+BenchmarkWazeroCompile/brotli-compress       	       1	 303105264 ns/op	   2078392 code-B	203987616 B/op	  359663 allocs/op
+BenchmarkWazeroCompile/brotli-compress       	       1	 289824803 ns/op	   2078392 code-B	203982736 B/op	  359661 allocs/op
+BenchmarkWazeroCompile/brotli-compress       	       1	 249906365 ns/op	   2078392 code-B	203982736 B/op	  359661 allocs/op
+BenchmarkWazeroInstantiate                   	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                   	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                   	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                          	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                          	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                          	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/brotli-compress              	     138	   1715939 ns/op	  464579 B/op	     232 allocs/op
+BenchmarkDecode/brotli-compress              	     136	   1759348 ns/op	  464579 B/op	     232 allocs/op
+BenchmarkDecode/brotli-compress              	     135	   1757186 ns/op	  464579 B/op	     232 allocs/op
+BenchmarkValidate/brotli-compress            	      40	   5776330 ns/op	   48616 B/op	     200 allocs/op
+BenchmarkValidate/brotli-compress            	      42	   5753762 ns/op	   48616 B/op	     200 allocs/op
+BenchmarkValidate/brotli-compress            	      42	   5751674 ns/op	   48616 B/op	     200 allocs/op
+BenchmarkCompile/brotli-compress             	       9	  26350174 ns/op	 1369077 B/op	     604 allocs/op
+BenchmarkCompile/brotli-compress             	       9	  25918971 ns/op	 1369077 B/op	     604 allocs/op
+BenchmarkCompile/brotli-compress             	       9	  26503375 ns/op	 1369077 B/op	     604 allocs/op
+BenchmarkCompileFull/brotli-compress         	       7	  31736010 ns/op	    962823 code-B	 7353562 B/op	    1289 allocs/op
+BenchmarkCompileFull/brotli-compress         	       7	  31265895 ns/op	    962823 code-B	 7353592 B/op	    1290 allocs/op
+BenchmarkCompileFull/brotli-compress         	       7	  31013244 ns/op	    962823 code-B	 7353592 B/op	    1290 allocs/op
+BenchmarkInstantiate                         	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                         	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                         	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec/jq-json-transform         	       1	 448154377 ns/op	   60952 B/op	     631 allocs/op
+BenchmarkCommandExec/jq-json-transform         	       1	 449514334 ns/op	   55376 B/op	     624 allocs/op
+BenchmarkCommandExec/jq-json-transform         	       1	 448453572 ns/op	   55376 B/op	     624 allocs/op
+BenchmarkWazeroCommandExec/jq-json-transform   	       1	 759627956 ns/op	167299312 B/op	     301 allocs/op
+BenchmarkWazeroCommandExec/jq-json-transform   	       1	 757802269 ns/op	167299312 B/op	     301 allocs/op
+BenchmarkWazeroCommandExec/jq-json-transform   	       1	 759122681 ns/op	167299312 B/op	     301 allocs/op
+BenchmarkWazeroCompile/jq-json-transform       	       2	 170977090 ns/op	   2732371 code-B	28649176 B/op	   47265 allocs/op
+BenchmarkWazeroCompile/jq-json-transform       	       2	 170628552 ns/op	   2732371 code-B	28649176 B/op	   47265 allocs/op
+BenchmarkWazeroCompile/jq-json-transform       	       2	 171076908 ns/op	   2732371 code-B	28649176 B/op	   47265 allocs/op
+BenchmarkWazeroInstantiate                     	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                     	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                     	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                            	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                            	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                            	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/jq-json-transform              	     100	   2236987 ns/op	  209601 B/op	     745 allocs/op
+BenchmarkDecode/jq-json-transform              	     100	   2238260 ns/op	  209601 B/op	     745 allocs/op
+BenchmarkDecode/jq-json-transform              	     100	   2232650 ns/op	  209601 B/op	     745 allocs/op
+BenchmarkValidate/jq-json-transform            	      34	   6855794 ns/op	   77576 B/op	     405 allocs/op
+BenchmarkValidate/jq-json-transform            	      34	   6828174 ns/op	   77576 B/op	     405 allocs/op
+BenchmarkValidate/jq-json-transform            	      34	   6817075 ns/op	   77576 B/op	     405 allocs/op
+BenchmarkCompile/jq-json-transform             	       5	  40381434 ns/op	 3625193 B/op	    2317 allocs/op
+BenchmarkCompile/jq-json-transform             	       5	  40362530 ns/op	 3625196 B/op	    2317 allocs/op
+BenchmarkCompile/jq-json-transform             	       5	  40579348 ns/op	 3625196 B/op	    2317 allocs/op
+BenchmarkCompileFull/jq-json-transform         	       5	  46082276 ns/op	   1380056 code-B	 6565180 B/op	    4137 allocs/op
+BenchmarkCompileFull/jq-json-transform         	       5	  42999550 ns/op	   1380056 code-B	 6565177 B/op	    4137 allocs/op
+BenchmarkCompileFull/jq-json-transform         	       5	  43956649 ns/op	   1380056 code-B	 6565184 B/op	    4137 allocs/op
+BenchmarkInstantiate                           	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                           	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                           	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                  	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                  	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                  	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec/age-decrypt         	      45	   5377307 ns/op	   71563 B/op	     758 allocs/op
+BenchmarkCommandExec/age-decrypt         	      45	   5313422 ns/op	   71440 B/op	     758 allocs/op
+BenchmarkCommandExec/age-decrypt         	      44	   5365727 ns/op	   71440 B/op	     758 allocs/op
+BenchmarkWazeroCommandExec/age-decrypt   	      36	   6531851 ns/op	20103065 B/op	    4321 allocs/op
+BenchmarkWazeroCommandExec/age-decrypt   	      31	   6583416 ns/op	20103064 B/op	    4321 allocs/op
+BenchmarkWazeroCommandExec/age-decrypt   	      30	   7030018 ns/op	20103065 B/op	    4321 allocs/op
+BenchmarkWazeroCompile/age-decrypt       	       1	1568869430 ns/op	  30313397 code-B	92756144 B/op	  235125 allocs/op
+BenchmarkWazeroCompile/age-decrypt       	       1	1527129681 ns/op	  30313397 code-B	92753808 B/op	  235123 allocs/op
+BenchmarkWazeroCompile/age-decrypt       	       1	1536286244 ns/op	  30313397 code-B	92753808 B/op	  235123 allocs/op
+BenchmarkWazeroInstantiate               	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate               	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate               	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                      	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                      	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                      	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/age-decrypt              	      10	  21093195 ns/op	 8216608 B/op	    8468 allocs/op
+BenchmarkDecode/age-decrypt              	      12	  21382955 ns/op	 8216609 B/op	    8468 allocs/op
+BenchmarkDecode/age-decrypt              	      10	  21724452 ns/op	 8216608 B/op	    8468 allocs/op
+BenchmarkValidate/age-decrypt            	       4	  57076495 ns/op	  767444 B/op	    4160 allocs/op
+BenchmarkValidate/age-decrypt            	       4	  57840748 ns/op	  767444 B/op	    4160 allocs/op
+BenchmarkValidate/age-decrypt            	       4	  57578127 ns/op	  767444 B/op	    4160 allocs/op
+BenchmarkCompile/age-decrypt             	       1	 254183392 ns/op	15100968 B/op	    3537 allocs/op
+BenchmarkCompile/age-decrypt             	       1	 246303687 ns/op	15100968 B/op	    3537 allocs/op
+BenchmarkCompile/age-decrypt             	       1	 252300397 ns/op	15100968 B/op	    3537 allocs/op
+BenchmarkCompileFull/age-decrypt         	       1	 321225342 ns/op	  11512011 code-B	51997112 B/op	   16656 allocs/op
+BenchmarkCompileFull/age-decrypt         	       1	 318887940 ns/op	  11512011 code-B	51997112 B/op	   16656 allocs/op
+BenchmarkCompileFull/age-decrypt         	       1	 319040268 ns/op	  11512011 code-B	51997112 B/op	   16656 allocs/op
+BenchmarkInstantiate                     	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                     	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                     	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                            	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                            	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                            	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec/sqlite3-query         	       1	 271405243 ns/op	   65824 B/op	     716 allocs/op
+BenchmarkCommandExec/sqlite3-query         	       1	 271677937 ns/op	   60248 B/op	     709 allocs/op
+BenchmarkCommandExec/sqlite3-query         	       1	 271428106 ns/op	   60248 B/op	     709 allocs/op
+BenchmarkWazeroCommandExec/sqlite3-query   	       1	 726126154 ns/op	 2896176 B/op	     614 allocs/op
+BenchmarkWazeroCommandExec/sqlite3-query   	       1	 744676752 ns/op	 2896176 B/op	     614 allocs/op
+BenchmarkWazeroCommandExec/sqlite3-query   	       1	 730844630 ns/op	 2896176 B/op	     614 allocs/op
+BenchmarkWazeroCompile/sqlite3-query       	       1	 499539408 ns/op	   6974561 code-B	68658864 B/op	  123700 allocs/op
+BenchmarkWazeroCompile/sqlite3-query       	       1	 492570000 ns/op	   6974561 code-B	68649360 B/op	  123698 allocs/op
+BenchmarkWazeroCompile/sqlite3-query       	       1	 495818914 ns/op	   6974561 code-B	68649360 B/op	  123698 allocs/op
+BenchmarkWazeroInstantiate                 	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                 	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                 	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                        	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                        	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                        	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/sqlite3-query              	      45	   5308209 ns/op	  788728 B/op	    1499 allocs/op
+BenchmarkDecode/sqlite3-query              	      46	   5304868 ns/op	  788728 B/op	    1499 allocs/op
+BenchmarkDecode/sqlite3-query              	      45	   5325941 ns/op	  788728 B/op	    1499 allocs/op
+BenchmarkValidate/sqlite3-query            	      14	  16504766 ns/op	  105025 B/op	     688 allocs/op
+BenchmarkValidate/sqlite3-query            	      14	  16364216 ns/op	  105024 B/op	     688 allocs/op
+BenchmarkValidate/sqlite3-query            	      14	  16491777 ns/op	  105025 B/op	     688 allocs/op
+BenchmarkCompile/sqlite3-query             	       3	  93620040 ns/op	 7503624 B/op	    3421 allocs/op
+BenchmarkCompile/sqlite3-query             	       3	  94388460 ns/op	 7503618 B/op	    3421 allocs/op
+BenchmarkCompile/sqlite3-query             	       3	  93020458 ns/op	 7503624 B/op	    3421 allocs/op
+BenchmarkCompileFull/sqlite3-query         	       3	 101029163 ns/op	   3298519 code-B	13308832 B/op	    6925 allocs/op
+BenchmarkCompileFull/sqlite3-query         	       2	 100428856 ns/op	   3298519 code-B	13308832 B/op	    6925 allocs/op
+BenchmarkCompileFull/sqlite3-query         	       3	 100159455 ns/op	   3298519 code-B	13308832 B/op	    6925 allocs/op
+BenchmarkInstantiate                       	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                       	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                       	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                              	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                              	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                              	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec/quickjs-script         	       2	 158902171 ns/op	   64088 B/op	     717 allocs/op
+BenchmarkCommandExec/quickjs-script         	       2	 158620970 ns/op	   64088 B/op	     717 allocs/op
+BenchmarkCommandExec/quickjs-script         	       2	 158710890 ns/op	   64088 B/op	     717 allocs/op
+BenchmarkWazeroCommandExec/quickjs-script   	       1	 265388121 ns/op	 2932032 B/op	     506 allocs/op
+BenchmarkWazeroCommandExec/quickjs-script   	       1	 264443338 ns/op	 2932032 B/op	     506 allocs/op
+BenchmarkWazeroCommandExec/quickjs-script   	       1	 263975404 ns/op	 2932032 B/op	     506 allocs/op
+BenchmarkWazeroCompile/quickjs-script       	       1	 219972818 ns/op	   3120469 code-B	37789296 B/op	   72478 allocs/op
+BenchmarkWazeroCompile/quickjs-script       	       1	 220967746 ns/op	   3120469 code-B	37779808 B/op	   72476 allocs/op
+BenchmarkWazeroCompile/quickjs-script       	       1	 218410770 ns/op	   3120469 code-B	37779792 B/op	   72476 allocs/op
+BenchmarkWazeroInstantiate                  	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                  	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                  	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                         	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                         	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                         	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/quickjs-script              	      97	   2433536 ns/op	  260776 B/op	    1007 allocs/op
+BenchmarkDecode/quickjs-script              	      99	   2434331 ns/op	  260776 B/op	    1007 allocs/op
+BenchmarkDecode/quickjs-script              	      99	   2437580 ns/op	  260776 B/op	    1007 allocs/op
+BenchmarkValidate/quickjs-script            	      31	   7749959 ns/op	  111640 B/op	     807 allocs/op
+BenchmarkValidate/quickjs-script            	      31	   7865222 ns/op	  111640 B/op	     807 allocs/op
+BenchmarkValidate/quickjs-script            	      31	   7807498 ns/op	  111640 B/op	     807 allocs/op
+BenchmarkCompile/quickjs-script             	       5	  47905880 ns/op	 4089680 B/op	    2162 allocs/op
+BenchmarkCompile/quickjs-script             	       5	  47474726 ns/op	 4089680 B/op	    2162 allocs/op
+BenchmarkCompile/quickjs-script             	       5	  47557081 ns/op	 4089683 B/op	    2162 allocs/op
+BenchmarkCompileFull/quickjs-script         	       4	  51203427 ns/op	   1592741 code-B	 7090232 B/op	    4953 allocs/op
+BenchmarkCompileFull/quickjs-script         	       4	  51591130 ns/op	   1592741 code-B	 7090236 B/op	    4953 allocs/op
+BenchmarkCompileFull/quickjs-script         	       4	  50928592 ns/op	   1592741 code-B	 7090232 B/op	    4953 allocs/op
+BenchmarkInstantiate                        	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                        	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                        	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                               	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                               	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                               	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec/esbuild-minify         	       1	 473062304 ns/op	   80704 B/op	     894 allocs/op
+BenchmarkCommandExec/esbuild-minify         	       1	 474434883 ns/op	   80704 B/op	     894 allocs/op
+BenchmarkCommandExec/esbuild-minify         	       1	 476535705 ns/op	   80704 B/op	     894 allocs/op
+BenchmarkWazeroCommandExec/esbuild-minify   	       1	1147970544 ns/op	759569744 B/op	    8704 allocs/op
+BenchmarkWazeroCommandExec/esbuild-minify   	       1	1107915682 ns/op	759569744 B/op	    8704 allocs/op
+BenchmarkWazeroCommandExec/esbuild-minify   	       1	1146905374 ns/op	759569744 B/op	    8704 allocs/op
+BenchmarkWazeroCompile/esbuild-minify       	       1	4521699989 ns/op	  91098954 code-B	310300080 B/op	  527692 allocs/op
+BenchmarkWazeroCompile/esbuild-minify       	       1	4470569631 ns/op	  91098954 code-B	310337008 B/op	  527696 allocs/op
+BenchmarkWazeroCompile/esbuild-minify       	       1	4537203095 ns/op	  91098954 code-B	310337008 B/op	  527696 allocs/op
+BenchmarkWazeroInstantiate                  	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                  	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                  	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                         	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                         	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                         	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/esbuild-minify              	       4	  51305886 ns/op	14291468 B/op	   17295 allocs/op
+BenchmarkDecode/esbuild-minify              	       4	  51454161 ns/op	14291468 B/op	   17295 allocs/op
+BenchmarkDecode/esbuild-minify              	       4	  50917832 ns/op	14291468 B/op	   17295 allocs/op
+BenchmarkValidate/esbuild-minify            	       2	 149332740 ns/op	 2959784 B/op	    8590 allocs/op
+BenchmarkValidate/esbuild-minify            	       2	 150534366 ns/op	 2959784 B/op	    8590 allocs/op
+BenchmarkValidate/esbuild-minify            	       2	 149789421 ns/op	 2959784 B/op	    8590 allocs/op
+BenchmarkCompile/esbuild-minify             	       1	 690455361 ns/op	34572824 B/op	   10080 allocs/op
+BenchmarkCompile/esbuild-minify             	       1	 686375432 ns/op	34572824 B/op	   10080 allocs/op
+BenchmarkCompile/esbuild-minify             	       1	 678344006 ns/op	34572824 B/op	   10080 allocs/op
+BenchmarkCompileFull/esbuild-minify         	       1	 843985919 ns/op	  31108723 code-B	116848080 B/op	   36863 allocs/op
+BenchmarkCompileFull/esbuild-minify         	       1	 838282864 ns/op	  31108723 code-B	116847888 B/op	   36860 allocs/op
+BenchmarkCompileFull/esbuild-minify         	       1	 832834410 ns/op	  31108723 code-B	116847888 B/op	   36860 allocs/op
+BenchmarkInstantiate                        	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                        	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                        	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                               	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                               	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                               	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec/swift-format-source         	       7	  31884008 ns/op	   78028 B/op	     893 allocs/op
+BenchmarkCommandExec/swift-format-source         	       7	  32500167 ns/op	   77241 B/op	     892 allocs/op
+BenchmarkCommandExec/swift-format-source         	       7	  32727955 ns/op	   77238 B/op	     892 allocs/op
+BenchmarkWazeroCommandExec/swift-format-source   	       6	  33882996 ns/op	98518162 B/op	   87755 allocs/op
+BenchmarkWazeroCommandExec/swift-format-source   	       7	  32320750 ns/op	98518161 B/op	   87755 allocs/op
+BenchmarkWazeroCommandExec/swift-format-source   	       6	  35238858 ns/op	98518162 B/op	   87755 allocs/op
+BenchmarkWazeroCompile/swift-format-source       	       1	5643291015 ns/op	  78040507 code-B	274490136 B/op	  585015 allocs/op
+BenchmarkWazeroCompile/swift-format-source       	       1	5672216417 ns/op	  78040507 code-B	274449128 B/op	  585013 allocs/op
+BenchmarkWazeroCompile/swift-format-source       	       1	5620732762 ns/op	  78040507 code-B	274409960 B/op	  585004 allocs/op
+BenchmarkWazeroInstantiate                       	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                       	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                       	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                              	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                              	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                              	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/swift-format-source              	       4	  62394630 ns/op	45362488 B/op	   19056 allocs/op
+BenchmarkDecode/swift-format-source              	       4	  61076206 ns/op	45362488 B/op	   19056 allocs/op
+BenchmarkDecode/swift-format-source              	       4	  62075886 ns/op	45362488 B/op	   19056 allocs/op
+BenchmarkValidate/swift-format-source            	       2	 161494127 ns/op	  919920 B/op	    8898 allocs/op
+BenchmarkValidate/swift-format-source            	       2	 161995292 ns/op	  919920 B/op	    8898 allocs/op
+BenchmarkValidate/swift-format-source            	       2	 161830206 ns/op	  919920 B/op	    8898 allocs/op
+BenchmarkCompile/swift-format-source             	       1	1050023736 ns/op	160479544 B/op	  114798 allocs/op
+BenchmarkCompile/swift-format-source             	       1	1049076595 ns/op	160479560 B/op	  114798 allocs/op
+BenchmarkCompile/swift-format-source             	       1	1046027319 ns/op	160479560 B/op	  114798 allocs/op
+BenchmarkCompileFull/swift-format-source         	       1	1271709090 ns/op	  51243477 code-B	419569008 B/op	  198883 allocs/op
+BenchmarkCompileFull/swift-format-source         	       1	1240302683 ns/op	  51243477 code-B	419568800 B/op	  198880 allocs/op
+BenchmarkCompileFull/swift-format-source         	       1	1254239351 ns/op	  51243477 code-B	419568800 B/op	  198880 allocs/op
+BenchmarkInstantiate                             	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                             	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                             	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                    	1000000000	         0.0000005 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                    	1000000000	         0.0000004 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                    	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec/cjson 	    4374	     47689 ns/op	   41753 B/op	     423 allocs/op
+BenchmarkCommandExec/cjson 	    4292	     48061 ns/op	   41752 B/op	     423 allocs/op
+BenchmarkCommandExec/cjson 	    4782	     47914 ns/op	   41752 B/op	     423 allocs/op
+BenchmarkWazeroCommandExec/cjson         	    9572	     25328 ns/op	  151888 B/op	      57 allocs/op
+BenchmarkWazeroCommandExec/cjson         	    8246	     24885 ns/op	  151888 B/op	      57 allocs/op
+BenchmarkWazeroCommandExec/cjson         	    8151	     25219 ns/op	  151888 B/op	      57 allocs/op
+BenchmarkWazeroCompile/cjson             	       9	  27509706 ns/op	    229227 code-B	 9093018 B/op	   22736 allocs/op
+BenchmarkWazeroCompile/cjson             	       8	  26718021 ns/op	    229227 code-B	 9093014 B/op	   22736 allocs/op
+BenchmarkWazeroCompile/cjson             	       9	  24537310 ns/op	    229227 code-B	 9093018 B/op	   22736 allocs/op
+BenchmarkWazeroInstantiate               	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate               	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate               	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                      	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                      	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                      	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/cjson                    	    1802	    131572 ns/op	   14776 B/op	     106 allocs/op
+BenchmarkDecode/cjson                    	    1827	    133204 ns/op	   14776 B/op	     106 allocs/op
+BenchmarkDecode/cjson                    	    1800	    133251 ns/op	   14776 B/op	     106 allocs/op
+BenchmarkValidate/cjson                  	     451	    536735 ns/op	   14472 B/op	      87 allocs/op
+BenchmarkValidate/cjson                  	     452	    541338 ns/op	   14472 B/op	      87 allocs/op
+BenchmarkValidate/cjson                  	     451	    540086 ns/op	   14472 B/op	      87 allocs/op
+BenchmarkCompile/cjson                   	      80	   3207962 ns/op	  319040 B/op	     358 allocs/op
+BenchmarkCompile/cjson                   	      80	   3357114 ns/op	  319040 B/op	     358 allocs/op
+BenchmarkCompile/cjson                   	      81	   3304387 ns/op	  319040 B/op	     358 allocs/op
+BenchmarkCompileFull/cjson               	      68	   4136582 ns/op	    121256 code-B	  595322 B/op	     676 allocs/op
+BenchmarkCompileFull/cjson               	      68	   4146938 ns/op	    121256 code-B	  595322 B/op	     676 allocs/op
+BenchmarkCompileFull/cjson               	      67	   4142042 ns/op	    121256 code-B	  595322 B/op	     676 allocs/op
+BenchmarkInstantiate                     	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                     	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                     	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                            	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                            	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                            	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec/lodepng         	      98	   2400110 ns/op	   41121 B/op	     412 allocs/op
+BenchmarkCommandExec/lodepng         	      97	   2400318 ns/op	   41064 B/op	     412 allocs/op
+BenchmarkCommandExec/lodepng         	      90	   2402413 ns/op	   41064 B/op	     412 allocs/op
+BenchmarkWazeroCommandExec/lodepng   	      51	   4324520 ns/op	 1306568 B/op	      54 allocs/op
+BenchmarkWazeroCommandExec/lodepng   	      56	   4339087 ns/op	 1306568 B/op	      54 allocs/op
+BenchmarkWazeroCommandExec/lodepng   	      56	   4368252 ns/op	 1306568 B/op	      54 allocs/op
+BenchmarkWazeroCompile/lodepng       	       5	  49579542 ns/op	    470169 code-B	20094080 B/op	   37312 allocs/op
+BenchmarkWazeroCompile/lodepng       	       5	  51103599 ns/op	    470169 code-B	20094083 B/op	   37312 allocs/op
+BenchmarkWazeroCompile/lodepng       	       5	  46074176 ns/op	    470169 code-B	20094080 B/op	   37312 allocs/op
+BenchmarkWazeroInstantiate           	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate           	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate           	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                  	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                  	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                  	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/lodepng              	     703	    345725 ns/op	   15752 B/op	     116 allocs/op
+BenchmarkDecode/lodepng              	     675	    351164 ns/op	   15752 B/op	     116 allocs/op
+BenchmarkDecode/lodepng              	     676	    352854 ns/op	   15752 B/op	     116 allocs/op
+BenchmarkValidate/lodepng            	     224	   1079926 ns/op	   15064 B/op	     117 allocs/op
+BenchmarkValidate/lodepng            	     224	   1082230 ns/op	   15064 B/op	     117 allocs/op
+BenchmarkValidate/lodepng            	     225	   1086388 ns/op	   15064 B/op	     117 allocs/op
+BenchmarkCompile/lodepng             	      42	   6009366 ns/op	  371297 B/op	     293 allocs/op
+BenchmarkCompile/lodepng             	      42	   6120997 ns/op	  371296 B/op	     293 allocs/op
+BenchmarkCompile/lodepng             	      42	   6002436 ns/op	  371296 B/op	     293 allocs/op
+BenchmarkCompileFull/lodepng         	      36	   7046171 ns/op	    224429 code-B	  749401 B/op	     657 allocs/op
+BenchmarkCompileFull/lodepng         	      36	   7187935 ns/op	    224429 code-B	  749407 B/op	     657 allocs/op
+BenchmarkCompileFull/lodepng         	      36	   7111611 ns/op	    224429 code-B	  749402 B/op	     657 allocs/op
+BenchmarkInstantiate                 	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                 	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                 	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                        	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                        	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                        	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec/wren  	     386	    603961 ns/op	   41752 B/op	     423 allocs/op
+BenchmarkCommandExec/wren  	     388	    602401 ns/op	   41752 B/op	     423 allocs/op
+BenchmarkCommandExec/wren  	     387	    603685 ns/op	   41752 B/op	     423 allocs/op
+BenchmarkWazeroCommandExec/wren         	     238	    982711 ns/op	  994112 B/op	     249 allocs/op
+BenchmarkWazeroCommandExec/wren         	     240	    978475 ns/op	  994113 B/op	     249 allocs/op
+BenchmarkWazeroCommandExec/wren         	     237	    992989 ns/op	  994112 B/op	     249 allocs/op
+BenchmarkWazeroCompile/wren             	       4	  52115882 ns/op	    676891 code-B	10437784 B/op	   25165 allocs/op
+BenchmarkWazeroCompile/wren             	       4	  50812772 ns/op	    676891 code-B	10437784 B/op	   25165 allocs/op
+BenchmarkWazeroCompile/wren             	       4	  51247628 ns/op	    676891 code-B	10437784 B/op	   25165 allocs/op
+BenchmarkWazeroInstantiate              	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate              	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate              	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                     	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                     	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                     	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/wren                    	     454	    525494 ns/op	   81280 B/op	     344 allocs/op
+BenchmarkDecode/wren                    	     451	    529931 ns/op	   81280 B/op	     344 allocs/op
+BenchmarkDecode/wren                    	     454	    530344 ns/op	   81280 B/op	     344 allocs/op
+BenchmarkValidate/wren                  	     156	   1514104 ns/op	   27976 B/op	     177 allocs/op
+BenchmarkValidate/wren                  	     154	   1495459 ns/op	   27976 B/op	     177 allocs/op
+BenchmarkValidate/wren                  	     157	   1501103 ns/op	   27976 B/op	     177 allocs/op
+BenchmarkCompile/wren                   	      27	  10240911 ns/op	 1648452 B/op	     831 allocs/op
+BenchmarkCompile/wren                   	      27	  10599700 ns/op	 1648452 B/op	     831 allocs/op
+BenchmarkCompile/wren                   	      27	  10456540 ns/op	 1648453 B/op	     831 allocs/op
+BenchmarkCompileFull/wren               	      20	  11740816 ns/op	    331964 code-B	 2430915 B/op	    1736 allocs/op
+BenchmarkCompileFull/wren               	      21	  12044017 ns/op	    331964 code-B	 2430922 B/op	    1736 allocs/op
+BenchmarkCompileFull/wren               	      19	  11782309 ns/op	    331964 code-B	 2430928 B/op	    1736 allocs/op
+BenchmarkInstantiate                    	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                    	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                    	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                           	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                           	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                           	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec/tinyxml2         	    3480	     61760 ns/op	   42393 B/op	     434 allocs/op
+BenchmarkCommandExec/tinyxml2         	    3532	     61366 ns/op	   42392 B/op	     434 allocs/op
+BenchmarkCommandExec/tinyxml2         	    3510	     61748 ns/op	   42392 B/op	     434 allocs/op
+BenchmarkWazeroCommandExec/tinyxml2   	    8060	     29901 ns/op	  156888 B/op	     156 allocs/op
+BenchmarkWazeroCommandExec/tinyxml2   	    7850	     29973 ns/op	  156888 B/op	     156 allocs/op
+BenchmarkWazeroCommandExec/tinyxml2   	    8019	     29870 ns/op	  156888 B/op	     156 allocs/op
+BenchmarkWazeroCompile/tinyxml2       	      10	  25442934 ns/op	    250708 code-B	 9679364 B/op	   24158 allocs/op
+BenchmarkWazeroCompile/tinyxml2       	      12	  25450204 ns/op	    250708 code-B	 9679361 B/op	   24158 allocs/op
+BenchmarkWazeroCompile/tinyxml2       	      10	  26558164 ns/op	    250708 code-B	 9679363 B/op	   24158 allocs/op
+BenchmarkWazeroInstantiate            	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate            	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate            	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                   	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                   	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                   	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/tinyxml2              	    1750	    136242 ns/op	   19928 B/op	     130 allocs/op
+BenchmarkDecode/tinyxml2              	    1741	    135036 ns/op	   19928 B/op	     130 allocs/op
+BenchmarkDecode/tinyxml2              	    1801	    137000 ns/op	   19928 B/op	     130 allocs/op
+BenchmarkValidate/tinyxml2            	     462	    528652 ns/op	   13608 B/op	      83 allocs/op
+BenchmarkValidate/tinyxml2            	     460	    533006 ns/op	   13608 B/op	      83 allocs/op
+BenchmarkValidate/tinyxml2            	     460	    531355 ns/op	   13608 B/op	      83 allocs/op
+BenchmarkCompile/tinyxml2             	      78	   3458445 ns/op	  560177 B/op	     387 allocs/op
+BenchmarkCompile/tinyxml2             	      80	   3657028 ns/op	  560177 B/op	     387 allocs/op
+BenchmarkCompile/tinyxml2             	      81	   3604871 ns/op	  560176 B/op	     387 allocs/op
+BenchmarkCompileFull/tinyxml2         	      68	   4362831 ns/op	    128847 code-B	  854477 B/op	     741 allocs/op
+BenchmarkCompileFull/tinyxml2         	      68	   4327894 ns/op	    128847 code-B	  854478 B/op	     741 allocs/op
+BenchmarkCompileFull/tinyxml2         	      68	   4264097 ns/op	    128847 code-B	  854480 B/op	     741 allocs/op
+BenchmarkInstantiate                  	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                  	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                  	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                         	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                         	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                         	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec/lua   	    1610	    167048 ns/op	   45275 B/op	     480 allocs/op
+BenchmarkCommandExec/lua   	    1358	    166865 ns/op	   45272 B/op	     480 allocs/op
+BenchmarkCommandExec/lua   	    1411	    168633 ns/op	   45272 B/op	     480 allocs/op
+BenchmarkWazeroCommandExec/lua         	    1731	    139692 ns/op	  157744 B/op	      96 allocs/op
+BenchmarkWazeroCommandExec/lua         	    1684	    139653 ns/op	  157744 B/op	      96 allocs/op
+BenchmarkWazeroCommandExec/lua         	    1647	    139983 ns/op	  157744 B/op	      96 allocs/op
+BenchmarkWazeroCompile/lua             	       3	  79911949 ns/op	    977103 code-B	18817378 B/op	   43493 allocs/op
+BenchmarkWazeroCompile/lua             	       3	  71538082 ns/op	    977103 code-B	18817373 B/op	   43493 allocs/op
+BenchmarkWazeroCompile/lua             	       3	  74530886 ns/op	    977103 code-B	18817384 B/op	   43493 allocs/op
+BenchmarkWazeroInstantiate             	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate             	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate             	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                    	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                    	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                    	1000000000	         0.0000000 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/lua                    	     304	    778229 ns/op	   76024 B/op	     389 allocs/op
+BenchmarkDecode/lua                    	     302	    790831 ns/op	   76024 B/op	     389 allocs/op
+BenchmarkDecode/lua                    	     306	    791838 ns/op	   76024 B/op	     389 allocs/op
+BenchmarkValidate/lua                  	     100	   2236217 ns/op	   47528 B/op	     267 allocs/op
+BenchmarkValidate/lua                  	     100	   2194991 ns/op	   47528 B/op	     267 allocs/op
+BenchmarkValidate/lua                  	     100	   2188752 ns/op	   47528 B/op	     267 allocs/op
+BenchmarkCompile/lua                   	      19	  15095143 ns/op	 1854967 B/op	    1057 allocs/op
+BenchmarkCompile/lua                   	      19	  15114138 ns/op	 1854967 B/op	    1057 allocs/op
+BenchmarkCompile/lua                   	      19	  15058530 ns/op	 1854967 B/op	    1057 allocs/op
+BenchmarkCompileFull/lua               	      13	  17075358 ns/op	    461953 code-B	 2760938 B/op	    2058 allocs/op
+BenchmarkCompileFull/lua               	      14	  17015156 ns/op	    461953 code-B	 2760945 B/op	    2058 allocs/op
+BenchmarkCompileFull/lua               	      14	  16916207 ns/op	    461953 code-B	 2760946 B/op	    2058 allocs/op
+BenchmarkInstantiate                   	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                   	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                   	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                          	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                          	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                          	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkCommandExec/sightglass-shootout-base64         	      79	   2981719 ns/op	   50777 B/op	     531 allocs/op
+BenchmarkCommandExec/sightglass-shootout-base64         	      79	   2983557 ns/op	   50776 B/op	     531 allocs/op
+BenchmarkCommandExec/sightglass-shootout-base64         	      80	   2990141 ns/op	   50776 B/op	     531 allocs/op
+BenchmarkWazeroCommandExec/sightglass-shootout-base64   	      76	   3079185 ns/op	  153696 B/op	      81 allocs/op
+BenchmarkWazeroCommandExec/sightglass-shootout-base64   	      75	   3079634 ns/op	  153696 B/op	      81 allocs/op
+BenchmarkWazeroCommandExec/sightglass-shootout-base64   	      78	   3070415 ns/op	  153696 B/op	      81 allocs/op
+BenchmarkWazeroCompile/sightglass-shootout-base64       	      13	  17524127 ns/op	    135542 code-B	 8925385 B/op	   22542 allocs/op
+BenchmarkWazeroCompile/sightglass-shootout-base64       	      12	  18915726 ns/op	    135542 code-B	 8925388 B/op	   22542 allocs/op
+BenchmarkWazeroCompile/sightglass-shootout-base64       	      13	  18959189 ns/op	    135542 code-B	 8925387 B/op	   22542 allocs/op
+BenchmarkWazeroInstantiate                              	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                              	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroInstantiate                              	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                                     	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                                     	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWazeroExec                                     	1000000000	         0.0000001 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDecode/sightglass-shootout-base64              	    2050	    105609 ns/op	  201600 B/op	     144 allocs/op
+BenchmarkDecode/sightglass-shootout-base64              	    2223	    106301 ns/op	  201600 B/op	     144 allocs/op
+BenchmarkDecode/sightglass-shootout-base64              	    2121	    107375 ns/op	  201600 B/op	     144 allocs/op
+BenchmarkValidate/sightglass-shootout-base64            	     664	    362292 ns/op	   14344 B/op	      80 allocs/op
+BenchmarkValidate/sightglass-shootout-base64            	     661	    363046 ns/op	   14344 B/op	      80 allocs/op
+BenchmarkValidate/sightglass-shootout-base64            	     672	    364985 ns/op	   14344 B/op	      80 allocs/op
+BenchmarkCompile/sightglass-shootout-base64             	     100	   2262118 ns/op	  406841 B/op	     388 allocs/op
+BenchmarkCompile/sightglass-shootout-base64             	     100	   2291162 ns/op	  406840 B/op	     388 allocs/op
+BenchmarkCompile/sightglass-shootout-base64             	     100	   2276177 ns/op	  406840 B/op	     388 allocs/op
+BenchmarkCompileFull/sightglass-shootout-base64         	     100	   2936115 ns/op	     77662 code-B	  793372 B/op	     813 allocs/op
+BenchmarkCompileFull/sightglass-shootout-base64         	     100	   2921507 ns/op	     77662 code-B	  793373 B/op	     813 allocs/op
+BenchmarkCompileFull/sightglass-shootout-base64         	     100	   2923907 ns/op	     77662 code-B	  793372 B/op	     813 allocs/op
+BenchmarkInstantiate                                    	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                                    	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInstantiate                                    	1000000000	         0.0000002 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                           	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                           	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExec                                           	1000000000	         0.0000003 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/wago-org/wago/bench/suite
+cpu: AMD Ryzen 7 7800X3D 8-Core Processor           
+BenchmarkExecCallOverhead_wago                       	10137508	        22.74 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecCallOverhead_wago                       	10603422	        22.79 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecCallOverhead_wago                       	10605337	        22.76 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecCallOverhead_wazero                     	 8432372	        28.73 ns/op	      16 B/op	       2 allocs/op
+BenchmarkExecCallOverhead_wazero                     	 8112343	        28.96 ns/op	      16 B/op	       2 allocs/op
+BenchmarkExecCallOverhead_wazero                     	 7977636	        28.71 ns/op	      16 B/op	       2 allocs/op
+BenchmarkExecTypedCall_wago                          	18682839	        12.85 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecTypedCall_wago                          	18664016	        12.84 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecTypedCall_wago                          	18682226	        12.84 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecInstanceCall_wago                       	19039233	        12.59 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecInstanceCall_wago                       	19043424	        12.59 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecInstanceCall_wago                       	19091338	        12.59 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecSessionCall_wago                        	19890381	        10.28 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecSessionCall_wago                        	23262451	        10.28 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecSessionCall_wago                        	23258386	        10.28 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostRoundtrip_wago                      	 3199899	        74.44 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostRoundtrip_wago                      	 3171586	        75.15 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostRoundtrip_wago                      	 3214819	        75.05 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostCallback_wago                       	17315508	        13.55 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostCallback_wago                       	18630775	        12.89 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostCallback_wago                       	18577978	        12.88 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostCallbackInstance_wago               	 9561642	        24.74 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostCallbackInstance_wago               	10464237	        22.96 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostCallbackInstance_wago               	10431092	        22.94 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostCallbackInstanceAlternatingF64_wago 	  644427	       367.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostCallbackInstanceAlternatingF64_wago 	  660572	       361.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostCallbackInstanceAlternatingF64_wago 	  663116	       361.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostCallbackInstanceF64_wago            	 1320000	       181.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostCallbackInstanceF64_wago            	 1340734	       179.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostCallbackInstanceF64_wago            	 1339526	       179.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostCallbackResolvedF64_wago            	 1506339	       157.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostCallbackResolvedF64_wago            	 1539668	       155.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostCallbackResolvedF64_wago            	 1530045	       159.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecSessionHostCallback_wago                	22636998	        10.57 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecSessionHostCallback_wago                	22770862	        10.54 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecSessionHostCallback_wago                	22738330	        10.55 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecHostRoundtrip_wazero                    	  601186	       387.1 ns/op	     112 B/op	       7 allocs/op
+BenchmarkExecHostRoundtrip_wazero                    	  613286	       385.3 ns/op	     112 B/op	       7 allocs/op
+BenchmarkExecHostRoundtrip_wazero                    	  616197	       385.8 ns/op	     112 B/op	       7 allocs/op
+PASS

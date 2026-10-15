@@ -1,0 +1,153 @@
+<svg width="1180" height="490" viewBox="0 0 1180 490" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif">
+<style>.val{font-size:10px;fill:#444}.bval{font-size:8px;fill:#555}.cat{font-size:11px;fill:#333}.leg{font-size:11px;fill:#333}.ax{font-size:10px;fill:#888}.grid{stroke:#eee}.axis{stroke:#bbb}</style>
+<rect width="1180" height="490" fill="#fff"/>
+<text x="70" y="26" font-size="15" font-weight="600" fill="#222">exec time: wago vs wazero (ns/op, log scale, lower is faster)</text>
+<rect x="70.0" y="34" width="10" height="10" fill="#4e79a7" fill-opacity="1.00"/>
+<text x="84.0" y="43.0" class="leg" text-anchor="start">wago</text>
+<rect x="117.6" y="34" width="10" height="10" fill="#e15759" fill-opacity="1.00"/>
+<text x="131.6" y="43.0" class="leg" text-anchor="start">wazero</text>
+<line x1="70" y1="394.0" x2="1156" y2="394.0" class="grid"/>
+<text x="64" y="397.0" class="ax" text-anchor="end">1ns</text>
+<line x1="70" y1="358.0" x2="1156" y2="358.0" class="grid"/>
+<text x="64" y="361.0" class="ax" text-anchor="end">10ns</text>
+<line x1="70" y1="322.0" x2="1156" y2="322.0" class="grid"/>
+<text x="64" y="325.0" class="ax" text-anchor="end">100ns</text>
+<line x1="70" y1="286.0" x2="1156" y2="286.0" class="grid"/>
+<text x="64" y="289.0" class="ax" text-anchor="end">1µs</text>
+<line x1="70" y1="250.0" x2="1156" y2="250.0" class="grid"/>
+<text x="64" y="253.0" class="ax" text-anchor="end">10µs</text>
+<line x1="70" y1="214.0" x2="1156" y2="214.0" class="grid"/>
+<text x="64" y="217.0" class="ax" text-anchor="end">100µs</text>
+<line x1="70" y1="178.0" x2="1156" y2="178.0" class="grid"/>
+<text x="64" y="181.0" class="ax" text-anchor="end">1ms</text>
+<line x1="70" y1="142.0" x2="1156" y2="142.0" class="grid"/>
+<text x="64" y="145.0" class="ax" text-anchor="end">10ms</text>
+<line x1="70" y1="106.0" x2="1156" y2="106.0" class="grid"/>
+<text x="64" y="109.0" class="ax" text-anchor="end">100ms</text>
+<rect x="74.3" y="191.4" width="15.6" height="202.6" fill="#4e79a7"/>
+<text x="82.2" y="188.4" class="bval" text-anchor="start" transform="rotate(-90 82.2 188.4)">424.7µs</text>
+<rect x="91.7" y="190.4" width="15.6" height="203.6" fill="#e15759"/>
+<text x="99.5" y="187.4" class="bval" text-anchor="start" transform="rotate(-90 99.5 187.4)">452.9µs</text>
+<text x="91.7" y="408.0" class="cat" text-anchor="end" transform="rotate(-35 91.7 408.0)">blake-as-simd.hashN</text>
+<rect x="117.8" y="200.4" width="15.6" height="193.6" fill="#4e79a7"/>
+<text x="125.6" y="197.4" class="bval" text-anchor="start" transform="rotate(-90 125.6 197.4)">238.5µs</text>
+<rect x="135.2" y="198.6" width="15.6" height="195.4" fill="#e15759"/>
+<text x="143.0" y="195.6" class="bval" text-anchor="start" transform="rotate(-90 143.0 195.6)">267.1µs</text>
+<text x="135.2" y="408.0" class="cat" text-anchor="end" transform="rotate(-35 135.2 408.0)">blake3.blake3_derive_key</text>
+<rect x="161.2" y="200.8" width="15.6" height="193.2" fill="#4e79a7"/>
+<text x="169.0" y="197.8" class="bval" text-anchor="start" transform="rotate(-90 169.0 197.8)">232µs</text>
+<rect x="178.6" y="199.3" width="15.6" height="194.7" fill="#e15759"/>
+<text x="186.4" y="196.3" class="bval" text-anchor="start" transform="rotate(-90 186.4 196.3)">256.1µs</text>
+<text x="178.6" y="408.0" class="cat" text-anchor="end" transform="rotate(-35 178.6 408.0)">blake3.blake3_hash</text>
+<rect x="204.7" y="200.8" width="15.6" height="193.2" fill="#4e79a7"/>
+<text x="212.5" y="197.8" class="bval" text-anchor="start" transform="rotate(-90 212.5 197.8)">232µs</text>
+<rect x="222.0" y="199.2" width="15.6" height="194.8" fill="#e15759"/>
+<text x="229.9" y="196.2" class="bval" text-anchor="start" transform="rotate(-90 229.9 196.2)">258.3µs</text>
+<text x="222.0" y="408.0" class="cat" text-anchor="end" transform="rotate(-35 222.0 408.0)">blake3.blake3_keyed_hash</text>
+<rect x="248.1" y="126.6" width="15.6" height="267.4" fill="#4e79a7"/>
+<text x="255.9" y="123.6" class="bval" text-anchor="start" transform="rotate(-90 255.9 123.6)">26.7ms</text>
+<rect x="265.5" y="118.9" width="15.6" height="275.1" fill="#e15759"/>
+<text x="273.3" y="115.9" class="bval" text-anchor="start" transform="rotate(-90 273.3 115.9)">43.9ms</text>
+<text x="265.5" y="408.0" class="cat" text-anchor="end" transform="rotate(-35 265.5 408.0)">coremark.coremark_run</text>
+<rect x="291.5" y="357.1" width="15.6" height="36.9" fill="#4e79a7"/>
+<text x="299.4" y="354.1" class="bval" text-anchor="start" transform="rotate(-90 299.4 354.1)">10.6ns</text>
+<rect x="308.9" y="344.1" width="15.6" height="49.9" fill="#e15759"/>
+<text x="316.7" y="341.1" class="bval" text-anchor="start" transform="rotate(-90 316.7 341.1)">24.3ns</text>
+<text x="308.9" y="408.0" class="cat" text-anchor="end" transform="rotate(-35 308.9 408.0)">dispatch.apply</text>
+<rect x="335.0" y="179.2" width="15.6" height="214.8" fill="#4e79a7"/>
+<text x="342.8" y="176.2" class="bval" text-anchor="start" transform="rotate(-90 342.8 176.2)">927.8µs</text>
+<rect x="352.4" y="176.7" width="15.6" height="217.3" fill="#e15759"/>
+<text x="360.2" y="173.7" class="bval" text-anchor="start" transform="rotate(-90 360.2 173.7)">1.1ms</text>
+<text x="352.4" y="408.0" class="cat" text-anchor="end" transform="rotate(-35 352.4 408.0)">fannkuch.run</text>
+<rect x="378.4" y="185.8" width="15.6" height="208.2" fill="#4e79a7"/>
+<text x="386.2" y="182.8" class="bval" text-anchor="start" transform="rotate(-90 386.2 182.8)">608.1µs</text>
+<rect x="395.8" y="170.2" width="15.6" height="223.8" fill="#e15759"/>
+<text x="403.6" y="167.2" class="bval" text-anchor="start" transform="rotate(-90 403.6 167.2)">1.6ms</text>
+<text x="395.8" y="408.0" class="cat" text-anchor="end" transform="rotate(-35 395.8 408.0)">fib_rec.fib</text>
+<rect x="421.9" y="228.0" width="15.6" height="166.0" fill="#4e79a7"/>
+<text x="429.7" y="225.0" class="bval" text-anchor="start" transform="rotate(-90 429.7 225.0)">40.8µs</text>
+<rect x="439.2" y="222.9" width="15.6" height="171.1" fill="#e15759"/>
+<text x="447.1" y="219.9" class="bval" text-anchor="start" transform="rotate(-90 447.1 219.9)">56.4µs</text>
+<text x="439.2" y="408.0" class="cat" text-anchor="end" transform="rotate(-35 439.2 408.0)">json-as-simd.deserializeN</text>
+<rect x="465.3" y="238.9" width="15.6" height="155.1" fill="#4e79a7"/>
+<text x="473.1" y="235.9" class="bval" text-anchor="start" transform="rotate(-90 473.1 235.9)">20.3µs</text>
+<rect x="482.7" y="234.2" width="15.6" height="159.8" fill="#e15759"/>
+<text x="490.5" y="231.2" class="bval" text-anchor="start" transform="rotate(-90 490.5 231.2)">27.5µs</text>
+<text x="482.7" y="408.0" class="cat" text-anchor="end" transform="rotate(-35 482.7 408.0)">json-as-simd.serializeN</text>
+<rect x="508.7" y="234.6" width="15.6" height="159.4" fill="#4e79a7"/>
+<text x="516.6" y="231.6" class="bval" text-anchor="start" transform="rotate(-90 516.6 231.6)">26.8µs</text>
+<rect x="526.1" y="227.8" width="15.6" height="166.2" fill="#e15759"/>
+<text x="533.9" y="224.8" class="bval" text-anchor="start" transform="rotate(-90 533.9 224.8)">41.3µs</text>
+<text x="526.1" y="408.0" class="cat" text-anchor="end" transform="rotate(-35 526.1 408.0)">lz4.lz4_compress_run</text>
+<rect x="552.2" y="275.0" width="15.6" height="119.0" fill="#4e79a7"/>
+<text x="560.0" y="272.0" class="bval" text-anchor="start" transform="rotate(-90 560.0 272.0)">2µs</text>
+<rect x="569.6" y="260.0" width="15.6" height="134.0" fill="#e15759"/>
+<text x="577.4" y="257.0" class="bval" text-anchor="start" transform="rotate(-90 577.4 257.0)">5.3µs</text>
+<text x="569.6" y="408.0" class="cat" text-anchor="end" transform="rotate(-35 569.6 408.0)">lz4.lz4_decompress_run</text>
+<rect x="595.6" y="217.9" width="15.6" height="176.1" fill="#4e79a7"/>
+<text x="603.4" y="214.9" class="bval" text-anchor="start" transform="rotate(-90 603.4 214.9)">78µs</text>
+<rect x="613.0" y="200.6" width="15.6" height="193.4" fill="#e15759"/>
+<text x="620.8" y="197.6" class="bval" text-anchor="start" transform="rotate(-90 620.8 197.6)">235.5µs</text>
+<text x="613.0" y="408.0" class="cat" text-anchor="end" transform="rotate(-35 613.0 408.0)">matmul.run</text>
+<rect x="639.1" y="261.1" width="15.6" height="132.9" fill="#4e79a7"/>
+<text x="646.9" y="258.1" class="bval" text-anchor="start" transform="rotate(-90 646.9 258.1)">4.9µs</text>
+<rect x="656.4" y="246.9" width="15.6" height="147.1" fill="#e15759"/>
+<text x="664.3" y="243.9" class="bval" text-anchor="start" transform="rotate(-90 664.3 243.9)">12.2µs</text>
+<text x="656.4" y="408.0" class="cat" text-anchor="end" transform="rotate(-35 656.4 408.0)">memory_tree.run</text>
+<rect x="682.5" y="208.3" width="15.6" height="185.7" fill="#4e79a7"/>
+<text x="690.3" y="205.3" class="bval" text-anchor="start" transform="rotate(-90 690.3 205.3)">143.6µs</text>
+<rect x="699.9" y="207.5" width="15.6" height="186.5" fill="#e15759"/>
+<text x="707.7" y="204.5" class="bval" text-anchor="start" transform="rotate(-90 707.7 204.5)">151.8µs</text>
+<text x="699.9" y="408.0" class="cat" text-anchor="end" transform="rotate(-35 699.9 408.0)">nbody.step</text>
+<rect x="725.9" y="252.9" width="15.6" height="141.1" fill="#4e79a7"/>
+<text x="733.8" y="249.9" class="bval" text-anchor="start" transform="rotate(-90 733.8 249.9)">8.3µs</text>
+<rect x="743.3" y="246.7" width="15.6" height="147.3" fill="#e15759"/>
+<text x="751.1" y="243.7" class="bval" text-anchor="start" transform="rotate(-90 751.1 243.7)">12.3µs</text>
+<text x="743.3" y="408.0" class="cat" text-anchor="end" transform="rotate(-35 743.3 408.0)">pcre2.pcre2_run</text>
+<rect x="769.4" y="260.1" width="15.6" height="133.9" fill="#4e79a7"/>
+<text x="777.2" y="257.1" class="bval" text-anchor="start" transform="rotate(-90 777.2 257.1)">5.2µs</text>
+<rect x="786.8" y="255.5" width="15.6" height="138.5" fill="#e15759"/>
+<text x="794.6" y="252.5" class="bval" text-anchor="start" transform="rotate(-90 794.6 252.5)">7µs</text>
+<text x="786.8" y="408.0" class="cat" text-anchor="end" transform="rotate(-35 786.8 408.0)">qoi.qoi_decode_run</text>
+<rect x="812.8" y="262.9" width="15.6" height="131.1" fill="#4e79a7"/>
+<text x="820.6" y="259.9" class="bval" text-anchor="start" transform="rotate(-90 820.6 259.9)">4.4µs</text>
+<rect x="830.2" y="251.9" width="15.6" height="142.1" fill="#e15759"/>
+<text x="838.0" y="248.9" class="bval" text-anchor="start" transform="rotate(-90 838.0 248.9)">8.9µs</text>
+<text x="830.2" y="408.0" class="cat" text-anchor="end" transform="rotate(-35 830.2 408.0)">qoi.qoi_encode_run</text>
+<rect x="856.3" y="198.9" width="15.6" height="195.1" fill="#4e79a7"/>
+<text x="864.1" y="195.9" class="bval" text-anchor="start" transform="rotate(-90 864.1 195.9)">263µs</text>
+<rect x="873.6" y="199.6" width="15.6" height="194.4" fill="#e15759"/>
+<text x="881.5" y="196.6" class="bval" text-anchor="start" transform="rotate(-90 881.5 196.6)">250.6µs</text>
+<text x="873.6" y="408.0" class="cat" text-anchor="end" transform="rotate(-35 873.6 408.0)">raytrace.render</text>
+<rect x="899.7" y="235.9" width="15.6" height="158.1" fill="#4e79a7"/>
+<text x="907.5" y="232.9" class="bval" text-anchor="start" transform="rotate(-90 907.5 232.9)">24.7µs</text>
+<rect x="917.1" y="226.1" width="15.6" height="167.9" fill="#e15759"/>
+<text x="924.9" y="223.1" class="bval" text-anchor="start" transform="rotate(-90 924.9 223.1)">46.1µs</text>
+<text x="917.1" y="408.0" class="cat" text-anchor="end" transform="rotate(-35 917.1 408.0)">sha256.hashN</text>
+<rect x="943.1" y="359.9" width="15.6" height="34.1" fill="#4e79a7"/>
+<text x="951.0" y="356.9" class="bval" text-anchor="start" transform="rotate(-90 951.0 356.9)">8.8ns</text>
+<rect x="960.5" y="344.9" width="15.6" height="49.1" fill="#e15759"/>
+<text x="968.3" y="341.9" class="bval" text-anchor="start" transform="rotate(-90 968.3 341.9)">23.1ns</text>
+<text x="960.5" y="408.0" class="cat" text-anchor="end" transform="rotate(-35 960.5 408.0)">tiny.add</text>
+<rect x="986.6" y="229.7" width="15.6" height="164.3" fill="#4e79a7"/>
+<text x="994.4" y="226.7" class="bval" text-anchor="start" transform="rotate(-90 994.4 226.7)">36.6µs</text>
+<rect x="1004.0" y="213.9" width="15.6" height="180.1" fill="#e15759"/>
+<text x="1011.8" y="210.9" class="bval" text-anchor="start" transform="rotate(-90 1011.8 210.9)">100.4µs</text>
+<text x="1004.0" y="408.0" class="cat" text-anchor="end" transform="rotate(-35 1004.0 408.0)">utf-as-simd.convertN</text>
+<rect x="1030.0" y="209.6" width="15.6" height="184.4" fill="#4e79a7"/>
+<text x="1037.8" y="206.6" class="bval" text-anchor="start" transform="rotate(-90 1037.8 206.6)">132.7µs</text>
+<rect x="1047.4" y="206.3" width="15.6" height="187.7" fill="#e15759"/>
+<text x="1055.2" y="203.3" class="bval" text-anchor="start" transform="rotate(-90 1055.2 203.3)">163.4µs</text>
+<text x="1047.4" y="408.0" class="cat" text-anchor="end" transform="rotate(-35 1047.4 408.0)">utf-as-simd.validateN</text>
+<rect x="1073.5" y="289.5" width="15.6" height="104.5" fill="#4e79a7"/>
+<text x="1081.3" y="286.5" class="bval" text-anchor="start" transform="rotate(-90 1081.3 286.5)">798.8ns</text>
+<rect x="1090.8" y="289.7" width="15.6" height="104.3" fill="#e15759"/>
+<text x="1098.7" y="286.7" class="bval" text-anchor="start" transform="rotate(-90 1098.7 286.7)">791ns</text>
+<text x="1090.8" y="408.0" class="cat" text-anchor="end" transform="rotate(-35 1090.8 408.0)">yyjson.yyjson_run</text>
+<rect x="1116.9" y="258.7" width="15.6" height="135.3" fill="#4e79a7"/>
+<text x="1124.7" y="255.7" class="bval" text-anchor="start" transform="rotate(-90 1124.7 255.7)">5.7µs</text>
+<rect x="1134.3" y="256.7" width="15.6" height="137.3" fill="#e15759"/>
+<text x="1142.1" y="253.7" class="bval" text-anchor="start" transform="rotate(-90 1142.1 253.7)">6.5µs</text>
+<text x="1134.3" y="408.0" class="cat" text-anchor="end" transform="rotate(-35 1134.3 408.0)">zstd.zstd_decompress_run</text>
+<line x1="70" y1="394.0" x2="1156" y2="394.0" class="axis"/>
+</svg>

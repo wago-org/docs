@@ -1,0 +1,16 @@
+{
+  "revision": "281387e2a4e9f914a2fc6536a49d64a7aef1a826",
+  "cpu": "Apple M4 Max",
+  "os": "darwin",
+  "arch": "arm64",
+  "samples": 3,
+  "benchtime": "200ms",
+  "buildTags": [
+    "wago_guardpage"
+  ],
+  "bounds": "signals",
+  "gomaxprocs": 1,
+  "cpuAffinity": "OS managed",
+  "rawSha256": "692848fc6545d4c3ea7b9a5f3939a604f5ead99b380d70ce91ac09f0fafa0d63",
+  "metrics": 343
+}

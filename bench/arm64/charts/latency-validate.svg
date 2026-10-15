@@ -1,0 +1,142 @@
+<svg width="1180" height="420" viewBox="0 0 1180 420" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif">
+<style>.val{font-size:10px;fill:#444}.bval{font-size:8px;fill:#555}.cat{font-size:11px;fill:#333}.leg{font-size:11px;fill:#333}.ax{font-size:10px;fill:#888}.grid{stroke:#eee}.axis{stroke:#bbb}</style>
+<rect width="1180" height="420" fill="#fff"/>
+<text x="70" y="26" font-size="15" font-weight="600" fill="#222">wago Validate — ns/op by module (log scale, lower is faster)</text>
+<line x1="70" y1="324.0" x2="1156" y2="324.0" class="grid"/>
+<text x="64" y="327.0" class="ax" text-anchor="end">100ns</text>
+<line x1="70" y1="284.6" x2="1156" y2="284.6" class="grid"/>
+<text x="64" y="287.6" class="ax" text-anchor="end">1µs</text>
+<line x1="70" y1="245.1" x2="1156" y2="245.1" class="grid"/>
+<text x="64" y="248.1" class="ax" text-anchor="end">10µs</text>
+<line x1="70" y1="205.7" x2="1156" y2="205.7" class="grid"/>
+<text x="64" y="208.7" class="ax" text-anchor="end">100µs</text>
+<line x1="70" y1="166.3" x2="1156" y2="166.3" class="grid"/>
+<text x="64" y="169.3" class="ax" text-anchor="end">1ms</text>
+<line x1="70" y1="126.9" x2="1156" y2="126.9" class="grid"/>
+<text x="64" y="129.9" class="ax" text-anchor="end">10ms</text>
+<line x1="70" y1="87.4" x2="1156" y2="87.4" class="grid"/>
+<text x="64" y="90.4" class="ax" text-anchor="end">100ms</text>
+<line x1="70" y1="48.0" x2="1156" y2="48.0" class="grid"/>
+<text x="64" y="51.0" class="ax" text-anchor="end">1s</text>
+<rect x="75.4" y="99.7" width="16.3" height="224.3" fill="#4e79a7"/>
+<text x="83.6" y="95.7" class="val" text-anchor="middle">48.7ms</text>
+<text x="83.6" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 83.6 338.0)">age-decrypt</text>
+<rect x="102.6" y="195.5" width="16.3" height="128.5" fill="#f28e2b"/>
+<text x="110.7" y="191.5" class="val" text-anchor="middle">181.3µs</text>
+<text x="110.7" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 110.7 338.0)">blake-as-simd</text>
+<rect x="129.7" y="201.7" width="16.3" height="122.3" fill="#59a14f"/>
+<text x="137.9" y="197.7" class="val" text-anchor="middle">126.5µs</text>
+<text x="137.9" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 137.9 338.0)">blake3</text>
+<rect x="156.9" y="139.3" width="16.3" height="184.7" fill="#e15759"/>
+<text x="165.0" y="135.3" class="val" text-anchor="middle">4.8ms</text>
+<text x="165.0" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 165.0 338.0)">brotli-compress</text>
+<rect x="184.0" y="180.4" width="16.3" height="143.6" fill="#76b7b2"/>
+<text x="192.2" y="176.4" class="val" text-anchor="middle">439.3µs</text>
+<text x="192.2" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 192.2 338.0)">cjson</text>
+<rect x="211.2" y="211.5" width="16.3" height="112.5" fill="#edc948"/>
+<text x="219.3" y="207.5" class="val" text-anchor="middle">71.3µs</text>
+<text x="219.3" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 219.3 338.0)">coremark</text>
+<rect x="238.3" y="97.8" width="16.3" height="226.2" fill="#b07aa1"/>
+<text x="246.5" y="93.8" class="val" text-anchor="middle">54.5ms</text>
+<text x="246.5" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 246.5 338.0)">coreutils-sort</text>
+<rect x="265.5" y="279.3" width="16.3" height="44.7" fill="#ff9da7"/>
+<text x="273.6" y="275.3" class="val" text-anchor="middle">1.4µs</text>
+<text x="273.6" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 273.6 338.0)">dispatch</text>
+<rect x="292.6" y="82.7" width="16.3" height="241.3" fill="#9c755f"/>
+<text x="300.8" y="78.7" class="val" text-anchor="middle">132ms</text>
+<text x="300.8" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 300.8 338.0)">esbuild-minify</text>
+<rect x="319.8" y="234.3" width="16.3" height="89.7" fill="#bab0ac"/>
+<text x="327.9" y="230.3" class="val" text-anchor="middle">18.8µs</text>
+<text x="327.9" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 327.9 338.0)">fannkuch</text>
+<rect x="346.9" y="287.6" width="16.3" height="36.4" fill="#1b9e77"/>
+<text x="355.1" y="283.6" class="val" text-anchor="middle">838ns</text>
+<text x="355.1" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 355.1 338.0)">fib_rec</text>
+<rect x="374.1" y="142.4" width="16.3" height="181.6" fill="#d95f02"/>
+<text x="382.2" y="138.4" class="val" text-anchor="middle">4ms</text>
+<text x="382.2" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 382.2 338.0)">icebram-generate</text>
+<rect x="401.2" y="135.7" width="16.3" height="188.3" fill="#4e79a7"/>
+<text x="409.4" y="131.7" class="val" text-anchor="middle">6ms</text>
+<text x="409.4" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 409.4 338.0)">jq-json-transform</text>
+<rect x="428.4" y="192.5" width="16.3" height="131.5" fill="#f28e2b"/>
+<text x="436.5" y="188.5" class="val" text-anchor="middle">216.8µs</text>
+<text x="436.5" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 436.5 338.0)">json-as-simd</text>
+<rect x="455.5" y="149.7" width="16.3" height="174.3" fill="#59a14f"/>
+<text x="463.7" y="145.7" class="val" text-anchor="middle">2.6ms</text>
+<text x="463.7" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 463.7 338.0)">json2csv-people</text>
+<rect x="482.7" y="168.5" width="16.3" height="155.5" fill="#e15759"/>
+<text x="490.8" y="164.5" class="val" text-anchor="middle">876.9µs</text>
+<text x="490.8" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 490.8 338.0)">lodepng</text>
+<rect x="509.8" y="155.0" width="16.3" height="169.0" fill="#76b7b2"/>
+<text x="518.0" y="151.0" class="val" text-anchor="middle">1.9ms</text>
+<text x="518.0" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 518.0 338.0)">lua</text>
+<rect x="537.0" y="229.6" width="16.3" height="94.4" fill="#edc948"/>
+<text x="545.1" y="225.6" class="val" text-anchor="middle">24.8µs</text>
+<text x="545.1" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 545.1 338.0)">lz4</text>
+<rect x="564.1" y="248.7" width="16.3" height="75.3" fill="#b07aa1"/>
+<text x="572.3" y="244.7" class="val" text-anchor="middle">8.1µs</text>
+<text x="572.3" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 572.3 338.0)">matmul</text>
+<rect x="591.3" y="271.5" width="16.3" height="52.5" fill="#ff9da7"/>
+<text x="599.4" y="267.5" class="val" text-anchor="middle">2.2µs</text>
+<text x="599.4" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 599.4 338.0)">memory_tree</text>
+<rect x="618.4" y="238.5" width="16.3" height="85.5" fill="#9c755f"/>
+<text x="626.6" y="234.5" class="val" text-anchor="middle">14.7µs</text>
+<text x="626.6" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 626.6 338.0)">nbody</text>
+<rect x="645.6" y="155.9" width="16.3" height="168.1" fill="#bab0ac"/>
+<text x="653.7" y="151.9" class="val" text-anchor="middle">1.8ms</text>
+<text x="653.7" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 653.7 338.0)">pcre2</text>
+<rect x="672.7" y="88.1" width="16.3" height="235.9" fill="#1b9e77"/>
+<text x="680.9" y="84.1" class="val" text-anchor="middle">96.2ms</text>
+<text x="680.9" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 680.9 338.0)">php-buckets</text>
+<rect x="699.9" y="228.6" width="16.3" height="95.4" fill="#d95f02"/>
+<text x="708.0" y="224.6" class="val" text-anchor="middle">26.3µs</text>
+<text x="708.0" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 708.0 338.0)">qoi</text>
+<rect x="727.0" y="134.6" width="16.3" height="189.4" fill="#4e79a7"/>
+<text x="735.2" y="130.6" class="val" text-anchor="middle">6.4ms</text>
+<text x="735.2" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 735.2 338.0)">quickjs-script</text>
+<rect x="754.2" y="221.9" width="16.3" height="102.1" fill="#f28e2b"/>
+<text x="762.3" y="217.9" class="val" text-anchor="middle">38.9µs</text>
+<text x="762.3" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 762.3 338.0)">raytrace</text>
+<rect x="781.3" y="111.8" width="16.3" height="212.2" fill="#59a14f"/>
+<text x="789.5" y="107.8" class="val" text-anchor="middle">24.2ms</text>
+<text x="789.5" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 789.5 338.0)">ripgrep-source</text>
+<rect x="808.5" y="99.5" width="16.3" height="224.5" fill="#e15759"/>
+<text x="816.6" y="95.5" class="val" text-anchor="middle">49.3ms</text>
+<text x="816.6" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 816.6 338.0)">ruby-buckets</text>
+<rect x="835.6" y="239.9" width="16.3" height="84.1" fill="#76b7b2"/>
+<text x="843.8" y="235.9" class="val" text-anchor="middle">13.6µs</text>
+<text x="843.8" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 843.8 338.0)">sha256</text>
+<rect x="862.8" y="178.5" width="16.3" height="145.5" fill="#edc948"/>
+<text x="870.9" y="174.5" class="val" text-anchor="middle">489.2µs</text>
+<text x="870.9" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 870.9 338.0)">sightglass-libsodium-hash</text>
+<rect x="889.9" y="187.6" width="16.3" height="136.4" fill="#b07aa1"/>
+<text x="898.1" y="183.6" class="val" text-anchor="middle">288.6µs</text>
+<text x="898.1" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 898.1 338.0)">sightglass-shootout-base64</text>
+<rect x="917.1" y="121.2" width="16.3" height="202.8" fill="#ff9da7"/>
+<text x="925.2" y="117.2" class="val" text-anchor="middle">13.9ms</text>
+<text x="925.2" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 925.2 338.0)">sqlite3-query</text>
+<rect x="944.2" y="82.3" width="16.3" height="241.7" fill="#9c755f"/>
+<text x="952.4" y="78.3" class="val" text-anchor="middle">135.3ms</text>
+<text x="952.4" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 952.4 338.0)">swift-format-source</text>
+<rect x="971.4" y="291.0" width="16.3" height="33.0" fill="#bab0ac"/>
+<text x="979.5" y="287.0" class="val" text-anchor="middle">688.1ns</text>
+<text x="979.5" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 979.5 338.0)">tiny</text>
+<rect x="998.5" y="180.6" width="16.3" height="143.4" fill="#1b9e77"/>
+<text x="1006.7" y="176.6" class="val" text-anchor="middle">434.6µs</text>
+<text x="1006.7" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 1006.7 338.0)">tinyxml2</text>
+<rect x="1025.7" y="205.7" width="16.3" height="118.3" fill="#d95f02"/>
+<text x="1033.8" y="201.7" class="val" text-anchor="middle">100µs</text>
+<text x="1033.8" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 1033.8 338.0)">utf-as-simd</text>
+<rect x="1052.8" y="162.3" width="16.3" height="161.7" fill="#4e79a7"/>
+<text x="1061.0" y="158.3" class="val" text-anchor="middle">1.3ms</text>
+<text x="1061.0" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 1061.0 338.0)">wren</text>
+<rect x="1080.0" y="80.0" width="16.3" height="244.0" fill="#f28e2b"/>
+<text x="1088.1" y="76.0" class="val" text-anchor="middle">154ms</text>
+<text x="1088.1" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 1088.1 338.0)">yosys-counter</text>
+<rect x="1107.1" y="164.8" width="16.3" height="159.2" fill="#59a14f"/>
+<text x="1115.3" y="160.8" class="val" text-anchor="middle">1.1ms</text>
+<text x="1115.3" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 1115.3 338.0)">yyjson</text>
+<rect x="1134.3" y="175.7" width="16.3" height="148.3" fill="#e15759"/>
+<text x="1142.4" y="171.7" class="val" text-anchor="middle">577.6µs</text>
+<text x="1142.4" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 1142.4 338.0)">zstd</text>
+<line x1="70" y1="324.0" x2="1156" y2="324.0" class="axis"/>
+</svg>

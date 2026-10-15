@@ -1,0 +1,67 @@
+<svg width="1180" height="510" viewBox="0 0 1180 510" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif">
+<style>.val{font-size:10px;fill:#444}.bval{font-size:8px;fill:#555}.cat{font-size:11px;fill:#333}.leg{font-size:11px;fill:#333}.ax{font-size:10px;fill:#888}.grid{stroke:#eee}.axis{stroke:#bbb}</style>
+<rect width="1180" height="510" fill="#fff"/>
+<text x="70" y="26" font-size="15" font-weight="600" fill="#222">real-world corpus — pipeline cost by module (ns/op, log scale)</text>
+<rect x="70.0" y="34" width="10" height="10" fill="#4e79a7"/>
+<text x="84.0" y="43.0" class="leg" text-anchor="start">Decode</text>
+<rect x="136.0" y="34" width="10" height="10" fill="#f28e2b"/>
+<text x="150.0" y="43.0" class="leg" text-anchor="start">Validate</text>
+<rect x="216.0" y="34" width="10" height="10" fill="#59a14f"/>
+<text x="230.0" y="43.0" class="leg" text-anchor="start">Compile</text>
+<rect x="289.0" y="34" width="10" height="10" fill="#e15759"/>
+<text x="303.0" y="43.0" class="leg" text-anchor="start">Instantiate</text>
+<line x1="70" y1="414.0" x2="1156" y2="414.0" class="grid"/>
+<text x="64" y="417.0" class="ax" text-anchor="end">1µs</text>
+<line x1="70" y1="311.3" x2="1156" y2="311.3" class="grid"/>
+<text x="64" y="314.3" class="ax" text-anchor="end">10µs</text>
+<line x1="70" y1="208.7" x2="1156" y2="208.7" class="grid"/>
+<text x="64" y="211.7" class="ax" text-anchor="end">100µs</text>
+<line x1="70" y1="106.0" x2="1156" y2="106.0" class="grid"/>
+<text x="64" y="109.0" class="ax" text-anchor="end">1ms</text>
+<rect x="91.7" y="369.7" width="39.1" height="44.3" fill="#4e79a7"/>
+<text x="111.3" y="366.7" class="bval" text-anchor="start" transform="rotate(-90 111.3 366.7)">2.7µs</text>
+<rect x="135.2" y="320.6" width="39.1" height="93.4" fill="#f28e2b"/>
+<text x="154.7" y="317.6" class="bval" text-anchor="start" transform="rotate(-90 154.7 317.6)">8.1µs</text>
+<rect x="178.6" y="246.8" width="39.1" height="167.2" fill="#59a14f"/>
+<text x="198.1" y="243.8" class="bval" text-anchor="start" transform="rotate(-90 198.1 243.8)">42.5µs</text>
+<rect x="222.0" y="253.9" width="39.1" height="160.1" fill="#e15759"/>
+<text x="241.6" y="250.9" class="bval" text-anchor="start" transform="rotate(-90 241.6 250.9)">36.3µs</text>
+<text x="178.6" y="428.0" class="cat" text-anchor="end" transform="rotate(-35 178.6 428.0)">matmul (1KB)</text>
+<rect x="308.9" y="345.3" width="39.1" height="68.7" fill="#4e79a7"/>
+<text x="328.5" y="342.3" class="bval" text-anchor="start" transform="rotate(-90 328.5 342.3)">4.7µs</text>
+<rect x="352.4" y="294.1" width="39.1" height="119.9" fill="#f28e2b"/>
+<text x="371.9" y="291.1" class="bval" text-anchor="start" transform="rotate(-90 371.9 291.1)">14.7µs</text>
+<rect x="395.8" y="228.4" width="39.1" height="185.6" fill="#59a14f"/>
+<text x="415.3" y="225.4" class="bval" text-anchor="start" transform="rotate(-90 415.3 225.4)">64.2µs</text>
+<rect x="439.2" y="254.0" width="39.1" height="160.0" fill="#e15759"/>
+<text x="458.8" y="251.0" class="bval" text-anchor="start" transform="rotate(-90 458.8 251.0)">36.2µs</text>
+<text x="395.8" y="428.0" class="cat" text-anchor="end" transform="rotate(-35 395.8 428.0)">nbody (2.2KB)</text>
+<rect x="526.1" y="337.2" width="39.1" height="76.8" fill="#4e79a7"/>
+<text x="545.7" y="334.2" class="bval" text-anchor="start" transform="rotate(-90 545.7 334.2)">5.6µs</text>
+<rect x="569.6" y="283.1" width="39.1" height="130.9" fill="#f28e2b"/>
+<text x="589.1" y="280.1" class="bval" text-anchor="start" transform="rotate(-90 589.1 280.1)">18.8µs</text>
+<rect x="613.0" y="208.6" width="39.1" height="205.4" fill="#59a14f"/>
+<text x="632.5" y="205.6" class="bval" text-anchor="start" transform="rotate(-90 632.5 205.6)">100.1µs</text>
+<rect x="656.4" y="254.0" width="39.1" height="160.0" fill="#e15759"/>
+<text x="676.0" y="251.0" class="bval" text-anchor="start" transform="rotate(-90 676.0 251.0)">36.2µs</text>
+<text x="613.0" y="428.0" class="cat" text-anchor="end" transform="rotate(-35 613.0 428.0)">fannkuch (2.6KB)</text>
+<rect x="743.3" y="341.7" width="39.1" height="72.3" fill="#4e79a7"/>
+<text x="762.9" y="338.7" class="bval" text-anchor="start" transform="rotate(-90 762.9 338.7)">5.1µs</text>
+<rect x="786.8" y="297.6" width="39.1" height="116.4" fill="#f28e2b"/>
+<text x="806.3" y="294.6" class="bval" text-anchor="start" transform="rotate(-90 806.3 294.6)">13.6µs</text>
+<rect x="830.2" y="229.8" width="39.1" height="184.2" fill="#59a14f"/>
+<text x="849.7" y="226.8" class="bval" text-anchor="start" transform="rotate(-90 849.7 226.8)">62.3µs</text>
+<rect x="873.6" y="251.4" width="39.1" height="162.6" fill="#e15759"/>
+<text x="893.2" y="248.4" class="bval" text-anchor="start" transform="rotate(-90 893.2 248.4)">38.3µs</text>
+<text x="830.2" y="428.0" class="cat" text-anchor="end" transform="rotate(-35 830.2 428.0)">sha256 (2.8KB)</text>
+<rect x="960.5" y="305.1" width="39.1" height="108.9" fill="#4e79a7"/>
+<text x="980.1" y="302.1" class="bval" text-anchor="start" transform="rotate(-90 980.1 302.1)">11.5µs</text>
+<rect x="1004.0" y="250.8" width="39.1" height="163.2" fill="#f28e2b"/>
+<text x="1023.5" y="247.8" class="bval" text-anchor="start" transform="rotate(-90 1023.5 247.8)">38.9µs</text>
+<rect x="1047.4" y="188.0" width="39.1" height="226.0" fill="#59a14f"/>
+<text x="1066.9" y="185.0" class="bval" text-anchor="start" transform="rotate(-90 1066.9 185.0)">158.9µs</text>
+<rect x="1090.8" y="253.8" width="39.1" height="160.2" fill="#e15759"/>
+<text x="1110.4" y="250.8" class="bval" text-anchor="start" transform="rotate(-90 1110.4 250.8)">36.3µs</text>
+<text x="1047.4" y="428.0" class="cat" text-anchor="end" transform="rotate(-35 1047.4 428.0)">raytrace (5.7KB)</text>
+<line x1="70" y1="414.0" x2="1156" y2="414.0" class="axis"/>
+</svg>

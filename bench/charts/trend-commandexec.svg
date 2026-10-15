@@ -1,0 +1,103 @@
+<svg width="1180" height="460" viewBox="0 0 1180 460" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif">
+<style>.val{font-size:10px;fill:#444}.bval{font-size:8px;fill:#555}.cat{font-size:11px;fill:#333}.leg{font-size:11px;fill:#333}.ax{font-size:10px;fill:#888}.grid{stroke:#eee}.axis{stroke:#bbb}</style>
+<rect width="1180" height="460" fill="#fff"/>
+<text x="70" y="26" font-size="15" font-weight="600" fill="#222">wago CommandExec — ns/op over versions (log scale)</text>
+<line x1="70" y1="364.0" x2="1156" y2="364.0" class="grid"/>
+<text x="64" y="367.0" class="ax" text-anchor="end">10µs</text>
+<line x1="70" y1="300.8" x2="1156" y2="300.8" class="grid"/>
+<text x="64" y="303.8" class="ax" text-anchor="end">100µs</text>
+<line x1="70" y1="237.6" x2="1156" y2="237.6" class="grid"/>
+<text x="64" y="240.6" class="ax" text-anchor="end">1ms</text>
+<line x1="70" y1="174.4" x2="1156" y2="174.4" class="grid"/>
+<text x="64" y="177.4" class="ax" text-anchor="end">10ms</text>
+<line x1="70" y1="111.2" x2="1156" y2="111.2" class="grid"/>
+<text x="64" y="114.2" class="ax" text-anchor="end">100ms</text>
+<line x1="70" y1="48.0" x2="1156" y2="48.0" class="grid"/>
+<text x="64" y="51.0" class="ax" text-anchor="end">1s</text>
+<circle cx="538.0" cy="191.5" r="2.5" fill="#4e79a7"/>
+<text x="543.0" y="194.5" class="bval" text-anchor="start">5.4ms</text>
+<rect x="1024.0" y="48.0" width="10" height="10" fill="#4e79a7"/>
+<text x="1038.0" y="57.0" class="leg" text-anchor="start">age-decrypt</text>
+<circle cx="538.0" cy="58.3" r="2.5" fill="#f28e2b"/>
+<text x="543.0" y="61.3" class="bval" text-anchor="start">686.5ms</text>
+<rect x="1024.0" y="64.0" width="10" height="10" fill="#f28e2b"/>
+<text x="1038.0" y="73.0" class="leg" text-anchor="start">brotli-compress</text>
+<circle cx="538.0" cy="321.0" r="2.5" fill="#59a14f"/>
+<text x="543.0" y="324.0" class="bval" text-anchor="start">47.9µs</text>
+<rect x="1024.0" y="80.0" width="10" height="10" fill="#59a14f"/>
+<text x="1038.0" y="89.0" class="leg" text-anchor="start">cjson</text>
+<circle cx="538.0" cy="216.1" r="2.5" fill="#e15759"/>
+<text x="543.0" y="219.1" class="bval" text-anchor="start">2.2ms</text>
+<rect x="1024.0" y="96.0" width="10" height="10" fill="#e15759"/>
+<text x="1038.0" y="105.0" class="leg" text-anchor="start">coreutils-sort</text>
+<circle cx="538.0" cy="68.5" r="2.5" fill="#76b7b2"/>
+<text x="543.0" y="71.5" class="bval" text-anchor="start">474.4ms</text>
+<rect x="1024.0" y="112.0" width="10" height="10" fill="#76b7b2"/>
+<text x="1038.0" y="121.0" class="leg" text-anchor="start">esbuild-minify</text>
+<circle cx="538.0" cy="260.6" r="2.5" fill="#edc948"/>
+<text x="543.0" y="263.6" class="bval" text-anchor="start">432.5µs</text>
+<rect x="1024.0" y="128.0" width="10" height="10" fill="#edc948"/>
+<text x="1038.0" y="137.0" class="leg" text-anchor="start">icebram-generate</text>
+<circle cx="538.0" cy="70.0" r="2.5" fill="#b07aa1"/>
+<text x="543.0" y="73.0" class="bval" text-anchor="start">448.5ms</text>
+<rect x="1024.0" y="144.0" width="10" height="10" fill="#b07aa1"/>
+<text x="1038.0" y="153.0" class="leg" text-anchor="start">jq-json-transform</text>
+<circle cx="538.0" cy="294.0" r="2.5" fill="#ff9da7"/>
+<text x="543.0" y="297.0" class="bval" text-anchor="start">128.1µs</text>
+<rect x="1024.0" y="160.0" width="10" height="10" fill="#ff9da7"/>
+<text x="1038.0" y="169.0" class="leg" text-anchor="start">json2csv-people</text>
+<circle cx="538.0" cy="213.6" r="2.5" fill="#9c755f"/>
+<text x="543.0" y="216.6" class="bval" text-anchor="start">2.4ms</text>
+<rect x="1024.0" y="176.0" width="10" height="10" fill="#9c755f"/>
+<text x="1038.0" y="185.0" class="leg" text-anchor="start">lodepng</text>
+<circle cx="538.0" cy="286.7" r="2.5" fill="#bab0ac"/>
+<text x="543.0" y="289.7" class="bval" text-anchor="start">167µs</text>
+<rect x="1024.0" y="192.0" width="10" height="10" fill="#bab0ac"/>
+<text x="1038.0" y="201.0" class="leg" text-anchor="start">lua</text>
+<circle cx="538.0" cy="177.4" r="2.5" fill="#1b9e77"/>
+<text x="543.0" y="180.4" class="bval" text-anchor="start">9ms</text>
+<rect x="1024.0" y="208.0" width="10" height="10" fill="#1b9e77"/>
+<text x="1038.0" y="217.0" class="leg" text-anchor="start">php-buckets</text>
+<circle cx="538.0" cy="98.5" r="2.5" fill="#d95f02"/>
+<text x="543.0" y="101.5" class="bval" text-anchor="start">158.7ms</text>
+<rect x="1024.0" y="224.0" width="10" height="10" fill="#d95f02"/>
+<text x="1038.0" y="233.0" class="leg" text-anchor="start">quickjs-script</text>
+<circle cx="538.0" cy="227.5" r="2.5" fill="#4e79a7"/>
+<text x="543.0" y="230.5" class="bval" text-anchor="start">1.4ms</text>
+<rect x="1024.0" y="240.0" width="10" height="10" fill="#4e79a7"/>
+<text x="1038.0" y="249.0" class="leg" text-anchor="start">ripgrep-source</text>
+<circle cx="538.0" cy="151.4" r="2.5" fill="#f28e2b"/>
+<text x="543.0" y="154.4" class="bval" text-anchor="start">23.1ms</text>
+<rect x="1024.0" y="256.0" width="10" height="10" fill="#f28e2b"/>
+<text x="1038.0" y="265.0" class="leg" text-anchor="start">ruby-buckets</text>
+<circle cx="538.0" cy="205.6" r="2.5" fill="#59a14f"/>
+<text x="543.0" y="208.6" class="bval" text-anchor="start">3.2ms</text>
+<rect x="1024.0" y="272.0" width="10" height="10" fill="#59a14f"/>
+<text x="1038.0" y="281.0" class="leg" text-anchor="start">sightglass-libsodium-hash</text>
+<circle cx="538.0" cy="207.6" r="2.5" fill="#e15759"/>
+<text x="543.0" y="210.6" class="bval" text-anchor="start">3ms</text>
+<rect x="1024.0" y="288.0" width="10" height="10" fill="#e15759"/>
+<text x="1038.0" y="297.0" class="leg" text-anchor="start">sightglass-shootout-base64</text>
+<circle cx="538.0" cy="83.8" r="2.5" fill="#76b7b2"/>
+<text x="543.0" y="86.8" class="bval" text-anchor="start">271.4ms</text>
+<rect x="1024.0" y="304.0" width="10" height="10" fill="#76b7b2"/>
+<text x="1038.0" y="313.0" class="leg" text-anchor="start">sqlite3-query</text>
+<circle cx="538.0" cy="142.0" r="2.5" fill="#edc948"/>
+<text x="543.0" y="145.0" class="bval" text-anchor="start">32.5ms</text>
+<rect x="1024.0" y="320.0" width="10" height="10" fill="#edc948"/>
+<text x="1038.0" y="329.0" class="leg" text-anchor="start">swift-format-source</text>
+<circle cx="538.0" cy="314.0" r="2.5" fill="#b07aa1"/>
+<text x="543.0" y="317.0" class="bval" text-anchor="start">61.7µs</text>
+<rect x="1024.0" y="336.0" width="10" height="10" fill="#b07aa1"/>
+<text x="1038.0" y="345.0" class="leg" text-anchor="start">tinyxml2</text>
+<circle cx="538.0" cy="251.5" r="2.5" fill="#ff9da7"/>
+<text x="543.0" y="254.5" class="bval" text-anchor="start">603.7µs</text>
+<rect x="1024.0" y="352.0" width="10" height="10" fill="#ff9da7"/>
+<text x="1038.0" y="361.0" class="leg" text-anchor="start">wren</text>
+<circle cx="538.0" cy="192.1" r="2.5" fill="#9c755f"/>
+<text x="543.0" y="195.1" class="bval" text-anchor="start">5.3ms</text>
+<rect x="1024.0" y="368.0" width="10" height="10" fill="#9c755f"/>
+<text x="1038.0" y="377.0" class="leg" text-anchor="start">yosys-counter</text>
+<text x="538.0" y="378.0" class="cat" text-anchor="end" transform="rotate(-35 538.0 378.0)">281387e</text>
+<line x1="70" y1="364.0" x2="1156" y2="364.0" class="axis"/>
+</svg>

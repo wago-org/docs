@@ -1,0 +1,181 @@
+<svg width="1180" height="460" viewBox="0 0 1180 460" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif">
+<style>.val{font-size:10px;fill:#444}.bval{font-size:8px;fill:#555}.cat{font-size:11px;fill:#333}.leg{font-size:11px;fill:#333}.ax{font-size:10px;fill:#888}.grid{stroke:#eee}.axis{stroke:#bbb}</style>
+<rect width="1180" height="460" fill="#fff"/>
+<text x="70" y="26" font-size="15" font-weight="600" fill="#222">wago Compile — ns/op over versions (log scale)</text>
+<line x1="70" y1="364.0" x2="1156" y2="364.0" class="grid"/>
+<text x="64" y="367.0" class="ax" text-anchor="end">10µs</text>
+<line x1="70" y1="311.3" x2="1156" y2="311.3" class="grid"/>
+<text x="64" y="314.3" class="ax" text-anchor="end">100µs</text>
+<line x1="70" y1="258.7" x2="1156" y2="258.7" class="grid"/>
+<text x="64" y="261.7" class="ax" text-anchor="end">1ms</text>
+<line x1="70" y1="206.0" x2="1156" y2="206.0" class="grid"/>
+<text x="64" y="209.0" class="ax" text-anchor="end">10ms</text>
+<line x1="70" y1="153.3" x2="1156" y2="153.3" class="grid"/>
+<text x="64" y="156.3" class="ax" text-anchor="end">100ms</text>
+<line x1="70" y1="100.7" x2="1156" y2="100.7" class="grid"/>
+<text x="64" y="103.7" class="ax" text-anchor="end">1s</text>
+<line x1="70" y1="48.0" x2="1156" y2="48.0" class="grid"/>
+<text x="64" y="51.0" class="ax" text-anchor="end">10s</text>
+<circle cx="538.0" cy="132.2" r="2.5" fill="#4e79a7"/>
+<text x="543.0" y="135.2" class="bval" text-anchor="start">252.3ms</text>
+<rect x="1024.0" y="48.0" width="10" height="10" fill="#4e79a7"/>
+<text x="1038.0" y="57.0" class="leg" text-anchor="start">age-decrypt</text>
+<circle cx="538.0" cy="262.0" r="2.5" fill="#f28e2b"/>
+<text x="543.0" y="265.0" class="bval" text-anchor="start">865.7µs</text>
+<rect x="1024.0" y="64.0" width="10" height="10" fill="#f28e2b"/>
+<text x="1038.0" y="73.0" class="leg" text-anchor="start">blake-as-simd</text>
+<circle cx="538.0" cy="259.1" r="2.5" fill="#59a14f"/>
+<text x="543.0" y="262.1" class="bval" text-anchor="start">980.8µs</text>
+<rect x="1024.0" y="80.0" width="10" height="10" fill="#59a14f"/>
+<text x="1038.0" y="89.0" class="leg" text-anchor="start">blake3</text>
+<circle cx="538.0" cy="183.8" r="2.5" fill="#e15759"/>
+<text x="543.0" y="186.8" class="bval" text-anchor="start">26.4ms</text>
+<rect x="1024.0" y="96.0" width="10" height="10" fill="#e15759"/>
+<text x="1038.0" y="105.0" class="leg" text-anchor="start">brotli-compress</text>
+<circle cx="538.0" cy="231.3" r="2.5" fill="#76b7b2"/>
+<text x="543.0" y="234.3" class="bval" text-anchor="start">3.3ms</text>
+<rect x="1024.0" y="112.0" width="10" height="10" fill="#76b7b2"/>
+<text x="1038.0" y="121.0" class="leg" text-anchor="start">cjson</text>
+<circle cx="538.0" cy="271.6" r="2.5" fill="#edc948"/>
+<text x="543.0" y="274.6" class="bval" text-anchor="start">567.9µs</text>
+<rect x="1024.0" y="128.0" width="10" height="10" fill="#edc948"/>
+<text x="1038.0" y="137.0" class="leg" text-anchor="start">coremark</text>
+<circle cx="538.0" cy="126.9" r="2.5" fill="#b07aa1"/>
+<text x="543.0" y="129.9" class="bval" text-anchor="start">317.5ms</text>
+<rect x="1024.0" y="144.0" width="10" height="10" fill="#b07aa1"/>
+<text x="1038.0" y="153.0" class="leg" text-anchor="start">coreutils-sort</text>
+<circle cx="538.0" cy="349.4" r="2.5" fill="#ff9da7"/>
+<text x="543.0" y="352.4" class="bval" text-anchor="start">19µs</text>
+<rect x="1024.0" y="160.0" width="10" height="10" fill="#ff9da7"/>
+<text x="1038.0" y="169.0" class="leg" text-anchor="start">dispatch</text>
+<circle cx="538.0" cy="109.3" r="2.5" fill="#9c755f"/>
+<text x="543.0" y="112.3" class="bval" text-anchor="start">686.4ms</text>
+<rect x="1024.0" y="176.0" width="10" height="10" fill="#9c755f"/>
+<text x="1038.0" y="185.0" class="leg" text-anchor="start">esbuild-minify</text>
+<circle cx="538.0" cy="308.8" r="2.5" fill="#bab0ac"/>
+<text x="543.0" y="311.8" class="bval" text-anchor="start">111.7µs</text>
+<rect x="1024.0" y="192.0" width="10" height="10" fill="#bab0ac"/>
+<text x="1038.0" y="201.0" class="leg" text-anchor="start">fannkuch</text>
+<circle cx="538.0" cy="348.7" r="2.5" fill="#1b9e77"/>
+<text x="543.0" y="351.7" class="bval" text-anchor="start">19.5µs</text>
+<rect x="1024.0" y="208.0" width="10" height="10" fill="#1b9e77"/>
+<text x="1038.0" y="217.0" class="leg" text-anchor="start">fib_rec</text>
+<circle cx="538.0" cy="177.7" r="2.5" fill="#d95f02"/>
+<text x="543.0" y="180.7" class="bval" text-anchor="start">34.5ms</text>
+<rect x="1024.0" y="224.0" width="10" height="10" fill="#d95f02"/>
+<text x="1038.0" y="233.0" class="leg" text-anchor="start">icebram-generate</text>
+<circle cx="538.0" cy="174.1" r="2.5" fill="#4e79a7"/>
+<text x="543.0" y="177.1" class="bval" text-anchor="start">40.4ms</text>
+<rect x="1024.0" y="240.0" width="10" height="10" fill="#4e79a7"/>
+<text x="1038.0" y="249.0" class="leg" text-anchor="start">jq-json-transform</text>
+<circle cx="538.0" cy="249.0" r="2.5" fill="#f28e2b"/>
+<text x="543.0" y="252.0" class="bval" text-anchor="start">1.5ms</text>
+<rect x="1024.0" y="256.0" width="10" height="10" fill="#f28e2b"/>
+<text x="1038.0" y="265.0" class="leg" text-anchor="start">json-as-simd</text>
+<circle cx="538.0" cy="193.2" r="2.5" fill="#59a14f"/>
+<text x="543.0" y="196.2" class="bval" text-anchor="start">17.5ms</text>
+<rect x="1024.0" y="272.0" width="10" height="10" fill="#59a14f"/>
+<text x="1038.0" y="281.0" class="leg" text-anchor="start">json2csv-people</text>
+<circle cx="538.0" cy="217.6" r="2.5" fill="#e15759"/>
+<text x="543.0" y="220.6" class="bval" text-anchor="start">6ms</text>
+<rect x="1024.0" y="288.0" width="10" height="10" fill="#e15759"/>
+<text x="1038.0" y="297.0" class="leg" text-anchor="start">lodepng</text>
+<circle cx="538.0" cy="196.6" r="2.5" fill="#76b7b2"/>
+<text x="543.0" y="199.6" class="bval" text-anchor="start">15.1ms</text>
+<rect x="1024.0" y="304.0" width="10" height="10" fill="#76b7b2"/>
+<text x="1038.0" y="313.0" class="leg" text-anchor="start">lua</text>
+<circle cx="538.0" cy="300.8" r="2.5" fill="#edc948"/>
+<text x="543.0" y="303.8" class="bval" text-anchor="start">158.5µs</text>
+<rect x="1024.0" y="320.0" width="10" height="10" fill="#edc948"/>
+<text x="1038.0" y="329.0" class="leg" text-anchor="start">lz4</text>
+<circle cx="538.0" cy="320.2" r="2.5" fill="#b07aa1"/>
+<text x="543.0" y="323.2" class="bval" text-anchor="start">67.8µs</text>
+<rect x="1024.0" y="336.0" width="10" height="10" fill="#b07aa1"/>
+<text x="1038.0" y="345.0" class="leg" text-anchor="start">matmul</text>
+<circle cx="538.0" cy="345.5" r="2.5" fill="#ff9da7"/>
+<text x="543.0" y="348.5" class="bval" text-anchor="start">22.4µs</text>
+<rect x="1024.0" y="352.0" width="10" height="10" fill="#ff9da7"/>
+<text x="1038.0" y="361.0" class="leg" text-anchor="start">memory_tree</text>
+<circle cx="538.0" cy="314.2" r="2.5" fill="#9c755f"/>
+<text x="543.0" y="317.2" class="bval" text-anchor="start">88.3µs</text>
+<rect x="1024.0" y="368.0" width="10" height="10" fill="#9c755f"/>
+<text x="1038.0" y="377.0" class="leg" text-anchor="start">nbody</text>
+<circle cx="538.0" cy="199.6" r="2.5" fill="#bab0ac"/>
+<text x="543.0" y="202.6" class="bval" text-anchor="start">13.3ms</text>
+<rect x="1024.0" y="384.0" width="10" height="10" fill="#bab0ac"/>
+<text x="1038.0" y="393.0" class="leg" text-anchor="start">pcre2</text>
+<circle cx="538.0" cy="113.6" r="2.5" fill="#1b9e77"/>
+<text x="543.0" y="116.6" class="bval" text-anchor="start">569.2ms</text>
+<rect x="1024.0" y="400.0" width="10" height="10" fill="#1b9e77"/>
+<text x="1038.0" y="409.0" class="leg" text-anchor="start">php-buckets</text>
+<circle cx="538.0" cy="297.2" r="2.5" fill="#d95f02"/>
+<text x="543.0" y="300.2" class="bval" text-anchor="start">185.8µs</text>
+<rect x="1024.0" y="416.0" width="10" height="10" fill="#d95f02"/>
+<text x="1038.0" y="425.0" class="leg" text-anchor="start">qoi</text>
+<circle cx="538.0" cy="170.3" r="2.5" fill="#4e79a7"/>
+<text x="543.0" y="173.3" class="bval" text-anchor="start">47.6ms</text>
+<rect x="1024.0" y="432.0" width="10" height="10" fill="#4e79a7"/>
+<text x="1038.0" y="441.0" class="leg" text-anchor="start">quickjs-script</text>
+<circle cx="538.0" cy="293.9" r="2.5" fill="#f28e2b"/>
+<text x="543.0" y="296.9" class="bval" text-anchor="start">214.6µs</text>
+<rect x="1024.0" y="448.0" width="10" height="10" fill="#f28e2b"/>
+<text x="1038.0" y="457.0" class="leg" text-anchor="start">raytrace</text>
+<circle cx="538.0" cy="145.6" r="2.5" fill="#59a14f"/>
+<text x="543.0" y="148.6" class="bval" text-anchor="start">140.4ms</text>
+<rect x="1024.0" y="464.0" width="10" height="10" fill="#59a14f"/>
+<text x="1038.0" y="473.0" class="leg" text-anchor="start">ripgrep-source</text>
+<circle cx="538.0" cy="129.8" r="2.5" fill="#e15759"/>
+<text x="543.0" y="132.8" class="bval" text-anchor="start">280ms</text>
+<rect x="1024.0" y="480.0" width="10" height="10" fill="#e15759"/>
+<text x="1038.0" y="489.0" class="leg" text-anchor="start">ruby-buckets</text>
+<circle cx="538.0" cy="317.7" r="2.5" fill="#76b7b2"/>
+<text x="543.0" y="320.7" class="bval" text-anchor="start">75.5µs</text>
+<rect x="1024.0" y="496.0" width="10" height="10" fill="#76b7b2"/>
+<text x="1038.0" y="505.0" class="leg" text-anchor="start">sha256</text>
+<circle cx="538.0" cy="231.3" r="2.5" fill="#edc948"/>
+<text x="543.0" y="234.3" class="bval" text-anchor="start">3.3ms</text>
+<rect x="1024.0" y="512.0" width="10" height="10" fill="#edc948"/>
+<text x="1038.0" y="521.0" class="leg" text-anchor="start">sightglass-libsodium-hash</text>
+<circle cx="538.0" cy="239.9" r="2.5" fill="#b07aa1"/>
+<text x="543.0" y="242.9" class="bval" text-anchor="start">2.3ms</text>
+<rect x="1024.0" y="528.0" width="10" height="10" fill="#b07aa1"/>
+<text x="1038.0" y="537.0" class="leg" text-anchor="start">sightglass-shootout-base64</text>
+<circle cx="538.0" cy="154.8" r="2.5" fill="#ff9da7"/>
+<text x="543.0" y="157.8" class="bval" text-anchor="start">93.6ms</text>
+<rect x="1024.0" y="544.0" width="10" height="10" fill="#ff9da7"/>
+<text x="1038.0" y="553.0" class="leg" text-anchor="start">sqlite3-query</text>
+<circle cx="538.0" cy="99.6" r="2.5" fill="#9c755f"/>
+<text x="543.0" y="102.6" class="bval" text-anchor="start">1s</text>
+<rect x="1024.0" y="560.0" width="10" height="10" fill="#9c755f"/>
+<text x="1038.0" y="569.0" class="leg" text-anchor="start">swift-format-source</text>
+<circle cx="538.0" cy="363.6" r="2.5" fill="#bab0ac"/>
+<text x="543.0" y="366.6" class="bval" text-anchor="start">10.2µs</text>
+<rect x="1024.0" y="576.0" width="10" height="10" fill="#bab0ac"/>
+<text x="1038.0" y="585.0" class="leg" text-anchor="start">tiny</text>
+<circle cx="538.0" cy="229.3" r="2.5" fill="#1b9e77"/>
+<text x="543.0" y="232.3" class="bval" text-anchor="start">3.6ms</text>
+<rect x="1024.0" y="592.0" width="10" height="10" fill="#1b9e77"/>
+<text x="1038.0" y="601.0" class="leg" text-anchor="start">tinyxml2</text>
+<circle cx="538.0" cy="275.2" r="2.5" fill="#d95f02"/>
+<text x="543.0" y="278.2" class="bval" text-anchor="start">485.7µs</text>
+<rect x="1024.0" y="608.0" width="10" height="10" fill="#d95f02"/>
+<text x="1038.0" y="617.0" class="leg" text-anchor="start">utf-as-simd</text>
+<circle cx="538.0" cy="205.0" r="2.5" fill="#4e79a7"/>
+<text x="543.0" y="208.0" class="bval" text-anchor="start">10.5ms</text>
+<rect x="1024.0" y="624.0" width="10" height="10" fill="#4e79a7"/>
+<text x="1038.0" y="633.0" class="leg" text-anchor="start">wren</text>
+<circle cx="538.0" cy="100.4" r="2.5" fill="#f28e2b"/>
+<text x="543.0" y="103.4" class="bval" text-anchor="start">1s</text>
+<rect x="1024.0" y="640.0" width="10" height="10" fill="#f28e2b"/>
+<text x="1038.0" y="649.0" class="leg" text-anchor="start">yosys-counter</text>
+<circle cx="538.0" cy="213.9" r="2.5" fill="#59a14f"/>
+<text x="543.0" y="216.9" class="bval" text-anchor="start">7.1ms</text>
+<rect x="1024.0" y="656.0" width="10" height="10" fill="#59a14f"/>
+<text x="1038.0" y="665.0" class="leg" text-anchor="start">yyjson</text>
+<circle cx="538.0" cy="229.7" r="2.5" fill="#e15759"/>
+<text x="543.0" y="232.7" class="bval" text-anchor="start">3.5ms</text>
+<rect x="1024.0" y="672.0" width="10" height="10" fill="#e15759"/>
+<text x="1038.0" y="681.0" class="leg" text-anchor="start">zstd</text>
+<text x="538.0" y="378.0" class="cat" text-anchor="end" transform="rotate(-35 538.0 378.0)">281387e</text>
+<line x1="70" y1="364.0" x2="1156" y2="364.0" class="axis"/>
+</svg>

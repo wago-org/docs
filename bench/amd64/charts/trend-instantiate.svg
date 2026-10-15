@@ -1,0 +1,89 @@
+<svg width="1180" height="460" viewBox="0 0 1180 460" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif">
+<style>.val{font-size:10px;fill:#444}.bval{font-size:8px;fill:#555}.cat{font-size:11px;fill:#333}.leg{font-size:11px;fill:#333}.ax{font-size:10px;fill:#888}.grid{stroke:#eee}.axis{stroke:#bbb}</style>
+<rect width="1180" height="460" fill="#fff"/>
+<text x="70" y="26" font-size="15" font-weight="600" fill="#222">wago Instantiate — ns/op over versions (log scale)</text>
+<line x1="70" y1="364.0" x2="1156" y2="364.0" class="grid"/>
+<text x="64" y="367.0" class="ax" text-anchor="end">1µs</text>
+<line x1="70" y1="206.0" x2="1156" y2="206.0" class="grid"/>
+<text x="64" y="209.0" class="ax" text-anchor="end">10µs</text>
+<line x1="70" y1="48.0" x2="1156" y2="48.0" class="grid"/>
+<text x="64" y="51.0" class="ax" text-anchor="end">100µs</text>
+<circle cx="538.0" cy="208.7" r="2.5" fill="#4e79a7"/>
+<text x="543.0" y="211.7" class="bval" text-anchor="start">9.6µs</text>
+<rect x="1024.0" y="48.0" width="10" height="10" fill="#4e79a7"/>
+<text x="1038.0" y="57.0" class="leg" text-anchor="start">blake-as-simd</text>
+<circle cx="538.0" cy="193.4" r="2.5" fill="#f28e2b"/>
+<text x="543.0" y="196.4" class="bval" text-anchor="start">12µs</text>
+<rect x="1024.0" y="64.0" width="10" height="10" fill="#f28e2b"/>
+<text x="1038.0" y="73.0" class="leg" text-anchor="start">blake3</text>
+<circle cx="538.0" cy="196.8" r="2.5" fill="#59a14f"/>
+<text x="543.0" y="199.8" class="bval" text-anchor="start">11.4µs</text>
+<rect x="1024.0" y="80.0" width="10" height="10" fill="#59a14f"/>
+<text x="1038.0" y="89.0" class="leg" text-anchor="start">coremark</text>
+<circle cx="538.0" cy="224.8" r="2.5" fill="#e15759"/>
+<text x="543.0" y="227.8" class="bval" text-anchor="start">7.6µs</text>
+<rect x="1024.0" y="96.0" width="10" height="10" fill="#e15759"/>
+<text x="1038.0" y="105.0" class="leg" text-anchor="start">dispatch</text>
+<circle cx="538.0" cy="209.8" r="2.5" fill="#76b7b2"/>
+<text x="543.0" y="212.8" class="bval" text-anchor="start">9.5µs</text>
+<rect x="1024.0" y="112.0" width="10" height="10" fill="#76b7b2"/>
+<text x="1038.0" y="121.0" class="leg" text-anchor="start">fannkuch</text>
+<circle cx="538.0" cy="228.5" r="2.5" fill="#edc948"/>
+<text x="543.0" y="231.5" class="bval" text-anchor="start">7.2µs</text>
+<rect x="1024.0" y="128.0" width="10" height="10" fill="#edc948"/>
+<text x="1038.0" y="137.0" class="leg" text-anchor="start">fib_rec</text>
+<circle cx="538.0" cy="172.5" r="2.5" fill="#b07aa1"/>
+<text x="543.0" y="175.5" class="bval" text-anchor="start">16.3µs</text>
+<rect x="1024.0" y="144.0" width="10" height="10" fill="#b07aa1"/>
+<text x="1038.0" y="153.0" class="leg" text-anchor="start">json-as-simd</text>
+<circle cx="538.0" cy="201.7" r="2.5" fill="#ff9da7"/>
+<text x="543.0" y="204.7" class="bval" text-anchor="start">10.6µs</text>
+<rect x="1024.0" y="160.0" width="10" height="10" fill="#ff9da7"/>
+<text x="1038.0" y="169.0" class="leg" text-anchor="start">lz4</text>
+<circle cx="538.0" cy="209.8" r="2.5" fill="#9c755f"/>
+<text x="543.0" y="212.8" class="bval" text-anchor="start">9.5µs</text>
+<rect x="1024.0" y="176.0" width="10" height="10" fill="#9c755f"/>
+<text x="1038.0" y="185.0" class="leg" text-anchor="start">matmul</text>
+<circle cx="538.0" cy="228.4" r="2.5" fill="#bab0ac"/>
+<text x="543.0" y="231.4" class="bval" text-anchor="start">7.2µs</text>
+<rect x="1024.0" y="192.0" width="10" height="10" fill="#bab0ac"/>
+<text x="1038.0" y="201.0" class="leg" text-anchor="start">memory_tree</text>
+<circle cx="538.0" cy="225.5" r="2.5" fill="#1b9e77"/>
+<text x="543.0" y="228.5" class="bval" text-anchor="start">7.5µs</text>
+<rect x="1024.0" y="208.0" width="10" height="10" fill="#1b9e77"/>
+<text x="1038.0" y="217.0" class="leg" text-anchor="start">nbody</text>
+<circle cx="538.0" cy="81.3" r="2.5" fill="#d95f02"/>
+<text x="543.0" y="84.3" class="bval" text-anchor="start">61.5µs</text>
+<rect x="1024.0" y="224.0" width="10" height="10" fill="#d95f02"/>
+<text x="1038.0" y="233.0" class="leg" text-anchor="start">pcre2</text>
+<circle cx="538.0" cy="226.4" r="2.5" fill="#4e79a7"/>
+<text x="543.0" y="229.4" class="bval" text-anchor="start">7.4µs</text>
+<rect x="1024.0" y="240.0" width="10" height="10" fill="#4e79a7"/>
+<text x="1038.0" y="249.0" class="leg" text-anchor="start">qoi</text>
+<circle cx="538.0" cy="225.1" r="2.5" fill="#f28e2b"/>
+<text x="543.0" y="228.1" class="bval" text-anchor="start">7.6µs</text>
+<rect x="1024.0" y="256.0" width="10" height="10" fill="#f28e2b"/>
+<text x="1038.0" y="265.0" class="leg" text-anchor="start">raytrace</text>
+<circle cx="538.0" cy="205.7" r="2.5" fill="#59a14f"/>
+<text x="543.0" y="208.7" class="bval" text-anchor="start">10.1µs</text>
+<rect x="1024.0" y="272.0" width="10" height="10" fill="#59a14f"/>
+<text x="1038.0" y="281.0" class="leg" text-anchor="start">sha256</text>
+<circle cx="538.0" cy="228.5" r="2.5" fill="#e15759"/>
+<text x="543.0" y="231.5" class="bval" text-anchor="start">7.2µs</text>
+<rect x="1024.0" y="288.0" width="10" height="10" fill="#e15759"/>
+<text x="1038.0" y="297.0" class="leg" text-anchor="start">tiny</text>
+<circle cx="538.0" cy="149.4" r="2.5" fill="#76b7b2"/>
+<text x="543.0" y="152.4" class="bval" text-anchor="start">22.8µs</text>
+<rect x="1024.0" y="304.0" width="10" height="10" fill="#76b7b2"/>
+<text x="1038.0" y="313.0" class="leg" text-anchor="start">utf-as-simd</text>
+<circle cx="538.0" cy="168.0" r="2.5" fill="#edc948"/>
+<text x="543.0" y="171.0" class="bval" text-anchor="start">17.4µs</text>
+<rect x="1024.0" y="320.0" width="10" height="10" fill="#edc948"/>
+<text x="1038.0" y="329.0" class="leg" text-anchor="start">yyjson</text>
+<circle cx="538.0" cy="185.4" r="2.5" fill="#b07aa1"/>
+<text x="543.0" y="188.4" class="bval" text-anchor="start">13.5µs</text>
+<rect x="1024.0" y="336.0" width="10" height="10" fill="#b07aa1"/>
+<text x="1038.0" y="345.0" class="leg" text-anchor="start">zstd</text>
+<text x="538.0" y="378.0" class="cat" text-anchor="end" transform="rotate(-35 538.0 378.0)">281387e</text>
+<line x1="70" y1="364.0" x2="1156" y2="364.0" class="axis"/>
+</svg>

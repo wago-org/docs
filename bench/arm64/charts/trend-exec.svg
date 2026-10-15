@@ -1,0 +1,125 @@
+<svg width="1180" height="460" viewBox="0 0 1180 460" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif">
+<style>.val{font-size:10px;fill:#444}.bval{font-size:8px;fill:#555}.cat{font-size:11px;fill:#333}.leg{font-size:11px;fill:#333}.ax{font-size:10px;fill:#888}.grid{stroke:#eee}.axis{stroke:#bbb}</style>
+<rect width="1180" height="460" fill="#fff"/>
+<text x="70" y="26" font-size="15" font-weight="600" fill="#222">wago Exec — ns/op over versions (log scale)</text>
+<line x1="70" y1="364.0" x2="1156" y2="364.0" class="grid"/>
+<text x="64" y="367.0" class="ax" text-anchor="end">1ns</text>
+<line x1="70" y1="324.5" x2="1156" y2="324.5" class="grid"/>
+<text x="64" y="327.5" class="ax" text-anchor="end">10ns</text>
+<line x1="70" y1="285.0" x2="1156" y2="285.0" class="grid"/>
+<text x="64" y="288.0" class="ax" text-anchor="end">100ns</text>
+<line x1="70" y1="245.5" x2="1156" y2="245.5" class="grid"/>
+<text x="64" y="248.5" class="ax" text-anchor="end">1µs</text>
+<line x1="70" y1="206.0" x2="1156" y2="206.0" class="grid"/>
+<text x="64" y="209.0" class="ax" text-anchor="end">10µs</text>
+<line x1="70" y1="166.5" x2="1156" y2="166.5" class="grid"/>
+<text x="64" y="169.5" class="ax" text-anchor="end">100µs</text>
+<line x1="70" y1="127.0" x2="1156" y2="127.0" class="grid"/>
+<text x="64" y="130.0" class="ax" text-anchor="end">1ms</text>
+<line x1="70" y1="87.5" x2="1156" y2="87.5" class="grid"/>
+<text x="64" y="90.5" class="ax" text-anchor="end">10ms</text>
+<line x1="70" y1="48.0" x2="1156" y2="48.0" class="grid"/>
+<text x="64" y="51.0" class="ax" text-anchor="end">100ms</text>
+<circle cx="538.0" cy="141.7" r="2.5" fill="#4e79a7"/>
+<text x="543.0" y="144.7" class="bval" text-anchor="start">424.7µs</text>
+<rect x="1024.0" y="48.0" width="10" height="10" fill="#4e79a7"/>
+<text x="1038.0" y="57.0" class="leg" text-anchor="start">blake-as-simd.hashN</text>
+<circle cx="538.0" cy="151.6" r="2.5" fill="#f28e2b"/>
+<text x="543.0" y="154.6" class="bval" text-anchor="start">238.5µs</text>
+<rect x="1024.0" y="64.0" width="10" height="10" fill="#f28e2b"/>
+<text x="1038.0" y="73.0" class="leg" text-anchor="start">blake3.blake3_derive_key</text>
+<circle cx="538.0" cy="152.1" r="2.5" fill="#59a14f"/>
+<text x="543.0" y="155.1" class="bval" text-anchor="start">232µs</text>
+<rect x="1024.0" y="80.0" width="10" height="10" fill="#59a14f"/>
+<text x="1038.0" y="89.0" class="leg" text-anchor="start">blake3.blake3_hash</text>
+<circle cx="538.0" cy="152.1" r="2.5" fill="#e15759"/>
+<text x="543.0" y="155.1" class="bval" text-anchor="start">232µs</text>
+<rect x="1024.0" y="96.0" width="10" height="10" fill="#e15759"/>
+<text x="1038.0" y="105.0" class="leg" text-anchor="start">blake3.blake3_keyed_hash</text>
+<circle cx="538.0" cy="70.6" r="2.5" fill="#76b7b2"/>
+<text x="543.0" y="73.6" class="bval" text-anchor="start">26.7ms</text>
+<rect x="1024.0" y="112.0" width="10" height="10" fill="#76b7b2"/>
+<text x="1038.0" y="121.0" class="leg" text-anchor="start">coremark.coremark_run</text>
+<circle cx="538.0" cy="323.5" r="2.5" fill="#edc948"/>
+<text x="543.0" y="326.5" class="bval" text-anchor="start">10.6ns</text>
+<rect x="1024.0" y="128.0" width="10" height="10" fill="#edc948"/>
+<text x="1038.0" y="137.0" class="leg" text-anchor="start">dispatch.apply</text>
+<circle cx="538.0" cy="128.3" r="2.5" fill="#b07aa1"/>
+<text x="543.0" y="131.3" class="bval" text-anchor="start">927.8µs</text>
+<rect x="1024.0" y="144.0" width="10" height="10" fill="#b07aa1"/>
+<text x="1038.0" y="153.0" class="leg" text-anchor="start">fannkuch.run</text>
+<circle cx="538.0" cy="135.5" r="2.5" fill="#ff9da7"/>
+<text x="543.0" y="138.5" class="bval" text-anchor="start">608.1µs</text>
+<rect x="1024.0" y="160.0" width="10" height="10" fill="#ff9da7"/>
+<text x="1038.0" y="169.0" class="leg" text-anchor="start">fib_rec.fib</text>
+<circle cx="538.0" cy="181.9" r="2.5" fill="#9c755f"/>
+<text x="543.0" y="184.9" class="bval" text-anchor="start">40.8µs</text>
+<rect x="1024.0" y="176.0" width="10" height="10" fill="#9c755f"/>
+<text x="1038.0" y="185.0" class="leg" text-anchor="start">json-as-simd.deserializeN</text>
+<circle cx="538.0" cy="193.8" r="2.5" fill="#bab0ac"/>
+<text x="543.0" y="196.8" class="bval" text-anchor="start">20.3µs</text>
+<rect x="1024.0" y="192.0" width="10" height="10" fill="#bab0ac"/>
+<text x="1038.0" y="201.0" class="leg" text-anchor="start">json-as-simd.serializeN</text>
+<circle cx="538.0" cy="189.1" r="2.5" fill="#1b9e77"/>
+<text x="543.0" y="192.1" class="bval" text-anchor="start">26.8µs</text>
+<rect x="1024.0" y="208.0" width="10" height="10" fill="#1b9e77"/>
+<text x="1038.0" y="217.0" class="leg" text-anchor="start">lz4.lz4_compress_run</text>
+<circle cx="538.0" cy="233.4" r="2.5" fill="#d95f02"/>
+<text x="543.0" y="236.4" class="bval" text-anchor="start">2µs</text>
+<rect x="1024.0" y="224.0" width="10" height="10" fill="#d95f02"/>
+<text x="1038.0" y="233.0" class="leg" text-anchor="start">lz4.lz4_decompress_run</text>
+<circle cx="538.0" cy="170.8" r="2.5" fill="#4e79a7"/>
+<text x="543.0" y="173.8" class="bval" text-anchor="start">78µs</text>
+<rect x="1024.0" y="240.0" width="10" height="10" fill="#4e79a7"/>
+<text x="1038.0" y="249.0" class="leg" text-anchor="start">matmul.run</text>
+<circle cx="538.0" cy="218.1" r="2.5" fill="#f28e2b"/>
+<text x="543.0" y="221.1" class="bval" text-anchor="start">4.9µs</text>
+<rect x="1024.0" y="256.0" width="10" height="10" fill="#f28e2b"/>
+<text x="1038.0" y="265.0" class="leg" text-anchor="start">memory_tree.run</text>
+<circle cx="538.0" cy="160.3" r="2.5" fill="#59a14f"/>
+<text x="543.0" y="163.3" class="bval" text-anchor="start">143.6µs</text>
+<rect x="1024.0" y="272.0" width="10" height="10" fill="#59a14f"/>
+<text x="1038.0" y="281.0" class="leg" text-anchor="start">nbody.step</text>
+<circle cx="538.0" cy="209.2" r="2.5" fill="#e15759"/>
+<text x="543.0" y="212.2" class="bval" text-anchor="start">8.3µs</text>
+<rect x="1024.0" y="288.0" width="10" height="10" fill="#e15759"/>
+<text x="1038.0" y="297.0" class="leg" text-anchor="start">pcre2.pcre2_run</text>
+<circle cx="538.0" cy="217.1" r="2.5" fill="#76b7b2"/>
+<text x="543.0" y="220.1" class="bval" text-anchor="start">5.2µs</text>
+<rect x="1024.0" y="304.0" width="10" height="10" fill="#76b7b2"/>
+<text x="1038.0" y="313.0" class="leg" text-anchor="start">qoi.qoi_decode_run</text>
+<circle cx="538.0" cy="220.1" r="2.5" fill="#edc948"/>
+<text x="543.0" y="223.1" class="bval" text-anchor="start">4.4µs</text>
+<rect x="1024.0" y="320.0" width="10" height="10" fill="#edc948"/>
+<text x="1038.0" y="329.0" class="leg" text-anchor="start">qoi.qoi_encode_run</text>
+<circle cx="538.0" cy="149.9" r="2.5" fill="#b07aa1"/>
+<text x="543.0" y="152.9" class="bval" text-anchor="start">263µs</text>
+<rect x="1024.0" y="336.0" width="10" height="10" fill="#b07aa1"/>
+<text x="1038.0" y="345.0" class="leg" text-anchor="start">raytrace.render</text>
+<circle cx="538.0" cy="190.5" r="2.5" fill="#ff9da7"/>
+<text x="543.0" y="193.5" class="bval" text-anchor="start">24.7µs</text>
+<rect x="1024.0" y="352.0" width="10" height="10" fill="#ff9da7"/>
+<text x="1038.0" y="361.0" class="leg" text-anchor="start">sha256.hashN</text>
+<circle cx="538.0" cy="326.6" r="2.5" fill="#9c755f"/>
+<text x="543.0" y="329.6" class="bval" text-anchor="start">8.8ns</text>
+<rect x="1024.0" y="368.0" width="10" height="10" fill="#9c755f"/>
+<text x="1038.0" y="377.0" class="leg" text-anchor="start">tiny.add</text>
+<circle cx="538.0" cy="183.7" r="2.5" fill="#bab0ac"/>
+<text x="543.0" y="186.7" class="bval" text-anchor="start">36.6µs</text>
+<rect x="1024.0" y="384.0" width="10" height="10" fill="#bab0ac"/>
+<text x="1038.0" y="393.0" class="leg" text-anchor="start">utf-as-simd.convertN</text>
+<circle cx="538.0" cy="161.6" r="2.5" fill="#1b9e77"/>
+<text x="543.0" y="164.6" class="bval" text-anchor="start">132.7µs</text>
+<rect x="1024.0" y="400.0" width="10" height="10" fill="#1b9e77"/>
+<text x="1038.0" y="409.0" class="leg" text-anchor="start">utf-as-simd.validateN</text>
+<circle cx="538.0" cy="249.4" r="2.5" fill="#d95f02"/>
+<text x="543.0" y="252.4" class="bval" text-anchor="start">798.8ns</text>
+<rect x="1024.0" y="416.0" width="10" height="10" fill="#d95f02"/>
+<text x="1038.0" y="425.0" class="leg" text-anchor="start">yyjson.yyjson_run</text>
+<circle cx="538.0" cy="215.5" r="2.5" fill="#4e79a7"/>
+<text x="543.0" y="218.5" class="bval" text-anchor="start">5.7µs</text>
+<rect x="1024.0" y="432.0" width="10" height="10" fill="#4e79a7"/>
+<text x="1038.0" y="441.0" class="leg" text-anchor="start">zstd.zstd_decompress_run</text>
+<text x="538.0" y="378.0" class="cat" text-anchor="end" transform="rotate(-35 538.0 378.0)">281387e</text>
+<line x1="70" y1="364.0" x2="1156" y2="364.0" class="axis"/>
+</svg>

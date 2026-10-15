@@ -1,0 +1,81 @@
+<svg width="1180" height="420" viewBox="0 0 1180 420" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif">
+<style>.val{font-size:10px;fill:#444}.bval{font-size:8px;fill:#555}.cat{font-size:11px;fill:#333}.leg{font-size:11px;fill:#333}.ax{font-size:10px;fill:#888}.grid{stroke:#eee}.axis{stroke:#bbb}</style>
+<rect width="1180" height="420" fill="#fff"/>
+<text x="70" y="26" font-size="15" font-weight="600" fill="#222">wago CommandExec — ns/op by module (log scale, lower is faster)</text>
+<line x1="70" y1="324.0" x2="1156" y2="324.0" class="grid"/>
+<text x="64" y="327.0" class="ax" text-anchor="end">10µs</text>
+<line x1="70" y1="268.8" x2="1156" y2="268.8" class="grid"/>
+<text x="64" y="271.8" class="ax" text-anchor="end">100µs</text>
+<line x1="70" y1="213.6" x2="1156" y2="213.6" class="grid"/>
+<text x="64" y="216.6" class="ax" text-anchor="end">1ms</text>
+<line x1="70" y1="158.4" x2="1156" y2="158.4" class="grid"/>
+<text x="64" y="161.4" class="ax" text-anchor="end">10ms</text>
+<line x1="70" y1="103.2" x2="1156" y2="103.2" class="grid"/>
+<text x="64" y="106.2" class="ax" text-anchor="end">100ms</text>
+<line x1="70" y1="48.0" x2="1156" y2="48.0" class="grid"/>
+<text x="64" y="51.0" class="ax" text-anchor="end">1s</text>
+<rect x="80.3" y="173.3" width="31.0" height="150.7" fill="#4e79a7"/>
+<text x="95.9" y="169.3" class="val" text-anchor="middle">5.4ms</text>
+<text x="95.9" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 95.9 338.0)">age-decrypt</text>
+<rect x="132.1" y="57.0" width="31.0" height="267.0" fill="#f28e2b"/>
+<text x="147.6" y="53.0" class="val" text-anchor="middle">686.5ms</text>
+<text x="147.6" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 147.6 338.0)">brotli-compress</text>
+<rect x="183.8" y="286.4" width="31.0" height="37.6" fill="#59a14f"/>
+<text x="199.3" y="282.4" class="val" text-anchor="middle">47.9µs</text>
+<text x="199.3" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 199.3 338.0)">cjson</text>
+<rect x="235.5" y="194.9" width="31.0" height="129.1" fill="#e15759"/>
+<text x="251.0" y="190.9" class="val" text-anchor="middle">2.2ms</text>
+<text x="251.0" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 251.0 338.0)">coreutils-sort</text>
+<rect x="287.2" y="65.9" width="31.0" height="258.1" fill="#76b7b2"/>
+<text x="302.7" y="61.9" class="val" text-anchor="middle">474.4ms</text>
+<text x="302.7" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 302.7 338.0)">esbuild-minify</text>
+<rect x="338.9" y="233.7" width="31.0" height="90.3" fill="#edc948"/>
+<text x="354.4" y="229.7" class="val" text-anchor="middle">432.5µs</text>
+<text x="354.4" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 354.4 338.0)">icebram-generate</text>
+<rect x="390.6" y="67.2" width="31.0" height="256.8" fill="#b07aa1"/>
+<text x="406.1" y="63.2" class="val" text-anchor="middle">448.5ms</text>
+<text x="406.1" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 406.1 338.0)">jq-json-transform</text>
+<rect x="442.3" y="262.9" width="31.0" height="61.1" fill="#ff9da7"/>
+<text x="457.9" y="258.9" class="val" text-anchor="middle">128.1µs</text>
+<text x="457.9" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 457.9 338.0)">json2csv-people</text>
+<rect x="494.1" y="192.6" width="31.0" height="131.4" fill="#9c755f"/>
+<text x="509.6" y="188.6" class="val" text-anchor="middle">2.4ms</text>
+<text x="509.6" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 509.6 338.0)">lodepng</text>
+<rect x="545.8" y="256.5" width="31.0" height="67.5" fill="#bab0ac"/>
+<text x="561.3" y="252.5" class="val" text-anchor="middle">167µs</text>
+<text x="561.3" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 561.3 338.0)">lua</text>
+<rect x="597.5" y="161.0" width="31.0" height="163.0" fill="#1b9e77"/>
+<text x="613.0" y="157.0" class="val" text-anchor="middle">9ms</text>
+<text x="613.0" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 613.0 338.0)">php-buckets</text>
+<rect x="649.2" y="92.1" width="31.0" height="231.9" fill="#d95f02"/>
+<text x="664.7" y="88.1" class="val" text-anchor="middle">158.7ms</text>
+<text x="664.7" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 664.7 338.0)">quickjs-script</text>
+<rect x="700.9" y="204.8" width="31.0" height="119.2" fill="#4e79a7"/>
+<text x="716.4" y="200.8" class="val" text-anchor="middle">1.4ms</text>
+<text x="716.4" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 716.4 338.0)">ripgrep-source</text>
+<rect x="752.6" y="138.4" width="31.0" height="185.6" fill="#f28e2b"/>
+<text x="768.1" y="134.4" class="val" text-anchor="middle">23.1ms</text>
+<text x="768.1" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 768.1 338.0)">ruby-buckets</text>
+<rect x="804.3" y="185.6" width="31.0" height="138.4" fill="#59a14f"/>
+<text x="819.9" y="181.6" class="val" text-anchor="middle">3.2ms</text>
+<text x="819.9" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 819.9 338.0)">sightglass-libsodium-hash</text>
+<rect x="856.1" y="187.4" width="31.0" height="136.6" fill="#e15759"/>
+<text x="871.6" y="183.4" class="val" text-anchor="middle">3ms</text>
+<text x="871.6" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 871.6 338.0)">sightglass-shootout-base64</text>
+<rect x="907.8" y="79.3" width="31.0" height="244.7" fill="#76b7b2"/>
+<text x="923.3" y="75.3" class="val" text-anchor="middle">271.4ms</text>
+<text x="923.3" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 923.3 338.0)">sqlite3-query</text>
+<rect x="959.5" y="130.1" width="31.0" height="193.9" fill="#edc948"/>
+<text x="975.0" y="126.1" class="val" text-anchor="middle">32.5ms</text>
+<text x="975.0" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 975.0 338.0)">swift-format-source</text>
+<rect x="1011.2" y="280.4" width="31.0" height="43.6" fill="#b07aa1"/>
+<text x="1026.7" y="276.4" class="val" text-anchor="middle">61.7µs</text>
+<text x="1026.7" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 1026.7 338.0)">tinyxml2</text>
+<rect x="1062.9" y="225.7" width="31.0" height="98.3" fill="#ff9da7"/>
+<text x="1078.4" y="221.7" class="val" text-anchor="middle">603.7µs</text>
+<text x="1078.4" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 1078.4 338.0)">wren</text>
+<rect x="1114.6" y="173.8" width="31.0" height="150.2" fill="#9c755f"/>
+<text x="1130.1" y="169.8" class="val" text-anchor="middle">5.3ms</text>
+<text x="1130.1" y="338.0" class="cat" text-anchor="end" transform="rotate(-35 1130.1 338.0)">yosys-counter</text>
+<line x1="70" y1="324.0" x2="1156" y2="324.0" class="axis"/>
+</svg>

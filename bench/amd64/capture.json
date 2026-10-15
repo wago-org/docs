@@ -1,0 +1,16 @@
+{
+  "revision": "281387e2a4e9f914a2fc6536a49d64a7aef1a826",
+  "cpu": "AMD Ryzen 7 7800X3D 8-Core Processor",
+  "os": "linux",
+  "arch": "amd64",
+  "samples": 3,
+  "benchtime": "200ms",
+  "buildTags": [
+    "wago_guardpage"
+  ],
+  "bounds": "signals",
+  "gomaxprocs": 1,
+  "cpuAffinity": 2,
+  "rawSha256": "9e61b7b27e88446fa5d22a240b4732a9be61e1a33da8818ed57da76c0ed91801",
+  "metrics": 343
+}
